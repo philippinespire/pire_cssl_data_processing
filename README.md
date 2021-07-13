@@ -21,14 +21,14 @@
 6. Filter the `bam` files
  * Use [dDocentHPC fltrBAM](https://github.com/cbirdlab/dDocentHPC)
  * visualize results with IGV or equivalent on a local computer to look for mapping artifacts
-  * look at both contemp and albatross (that goes for anything that follows)
+   * look at both contemp and albatross (that goes for anything that follows)
  * compare the filtered (`RG.bam`) to unfiltered (`RAW.bam`) files
-  * were a lot of reads lost?
+   * were a lot of reads lost?
 
 7. Genotype the `bam` files
  * Use [`dDocentHPC mkVCF`](https://github.com/cbirdlab/dDocentHPC) 
 
 8. Filter the `vcf` files
  * Use [`fltrVCF`](https://github.com/cbirdlab/fltrVCF)
-  * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
+   * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
 
