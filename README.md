@@ -2,7 +2,7 @@
 
 
 1. Rename files to follow the `ddocent` naming convention
-  * `population_indivdual.R1.fq.gz`
+   * `population_indivdual.R1.fq.gz`
 
 2. Clone denovo_genome_assembly repo to your working dir
 
