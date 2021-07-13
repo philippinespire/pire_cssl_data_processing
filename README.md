@@ -7,11 +7,11 @@
 2. Clone [`denovo_genome_assembly`](https://github.com/philippinespire/denovo_genome_assembly) repo to your working dir
 
 3. Run [`fastqc`]()
-    * visualize results with ['multiqc']()
+    * review results with `multiqc` output
   
 4. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-    * review the outputs from fastp with multiqc
+    * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
 
 5. Map processed reads against best reference genome
     * Best genome can be found by running [`wrangelData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
