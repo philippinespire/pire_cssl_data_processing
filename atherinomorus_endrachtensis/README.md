@@ -1,6 +1,6 @@
-# Generic Data Processing Log
+# Aen Data Processing Log
 
-copy and paste this into a new species dir and fill in as steps are accomplished.
+Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *Atherinomorus endrachtensis* samples from Hamilo Cove.
 
 ---
 
@@ -9,11 +9,10 @@ copy and paste this into a new species dir and fill in as steps are accomplished
 Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
 
 ```
-# repalce YOURUSERNAME and SPECIESDIR in paths
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
 #runFASTP_1.sbatch <indir> <outdir>
-sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/SPECIESDIR/fq_raw fq_fp1
+sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
 [Report](fill in url to multiqc report here), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
