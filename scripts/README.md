@@ -6,13 +6,17 @@ copy and paste this into a new species dir and fill in as steps are accomplished
 
 ## Step 1.  1st fastp
 
-Fill in description
+Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
 
 ```
-fill in commands
+# repalce YOURUSERNAME and SPECIESDIR in paths
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
+
+#runFASTP_1.sbatch <indir> <outdir>
+sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/SPECIESDIR/fq_raw fq_fp1
 ```
 
-[Report](fill in url), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+[Report](fill in url to multiqc report here), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
 
 Potential issues:  
 * fill in
