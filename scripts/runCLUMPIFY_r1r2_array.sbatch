@@ -22,7 +22,10 @@ INDIR=${1}
 OUTDIR=${2}
 THREADS=1   #clumpify uses a ton of ram, be conservative
 GROUPS=auto   #controls how much ram is used, refer to manual
-RAMPERTHREAD=233g   #have had to set as high as 233g with groups=1
+RAMPERTHREAD=160g   #have had to set as high as 233g with groups=1
+
+ulimit -u 40960
+ulimit -a
 
 mkdir -p $OUTDIR
 
@@ -33,7 +36,7 @@ all_samples=($all_samples)
 sample_name=${all_samples[${SLURM_ARRAY_TASK_ID}]}
 echo ${sample_name}
 
-clumpify.sh \
+crun clumpify.sh \
 	in=$INDIR/${sample_name}r1.fq.gz \
 	in2=$INDIR/${sample_name}r2.fq.gz \
 	out=$OUTDIR/${sample_name}clmp.r1.fq.gz \
