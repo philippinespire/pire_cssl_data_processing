@@ -14,11 +14,19 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
 
-[Report](fill in url), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
 
 Potential issues:  
-* fill in
-
+* % duplication - high for albatross, 
+  * alb:70s, contemp: 50s
+* gc content - reasonable
+* passing filter - good
+* % adapter - high, but that was expected, 
+  * alb: 80s, contemp: 40s
+* number of reads - decent
+  * generally more for albatross than contemp, as we attempted to do
+  * alb: 30mil, contemp: 8 mil
+ 
 ---
 
 ## Step 2. Clumpify
