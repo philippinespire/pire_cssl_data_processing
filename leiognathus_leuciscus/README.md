@@ -54,17 +54,21 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_1.html), download and open in web browser
 
-Potential issues:
-* about 50% of reads were tossed due to our MINLEN=140.  We probably want to make this less stringent when trimming files for mapping.
+Potential issues:  
+* % duplication - good  
+  * alb:20s, contemp: 20s
+* gc content - reasonable
+  * alb: 40s, contemp: 40s 
+* passing filter - good
+  * alb: 90s, contemp: 90s 
+* % adapter - good
+  * alb: 2s, contemp: 2s
+* number of reads - lost alot for albatross
+  * generally more for albatross than contemp, as we attempted to do
+  * alb: 7 mil, contemp: YY mil
 
-had to rename files
-```
-cd fq_fp1_clmp_fpw
-rename clmp_fp2_r clmp-fp2-r *gz
-cd ..
-```
 
 ---
 
