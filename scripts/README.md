@@ -30,7 +30,10 @@ Clumpify can use a lot of ram and if it runs out you will loose files.  [checkCl
 There are two ways to run, either as a normal sbatch script on a turing himem node `runCLUMPIFY.sbatch` or as an array on multiple nodes simultaneously.
 
 ```
-fill in
+# run clumpify as normal sbatch on turing
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
+#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
+sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/YOURUSERNAME
 ```
 
 ---
