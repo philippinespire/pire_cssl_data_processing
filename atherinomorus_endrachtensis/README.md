@@ -6,7 +6,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ## Step 1.  1st fastp
 
-Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
+Raw data in `/home/e1garcia/shotgun_PIRE/Aen/raw_fq` (check Atherinomorus-endrachtensis channel on Slack).  The root outdir for all analyses will be  `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus-endrachtensis`. Both on Wahab/Turing (ODU HPCs).
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
@@ -15,10 +15,18 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html), download and open in web browser.
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
 
 Potential issues:  
-* fill in
+* % duplication is high for most but not all Albatross. Lower for contemporary.
+  * Most Albatross ~60% (some in the 40s). Most contemporary ~45%.
+* GC content good for Albatross & contemporary.
+* Most reads passed filters for both Albatross & contemporary.
+  * >95% passed for contemp, for Albatross generally >90% although some closer to 50-60% passing (tend to be ones with lower % dup).
+* % adapter high, esp. for Albatross.
+  * Albatross: 80%, Contemporary: 30-40%
+* # reads seem to be okay.
+  * Albatross generally much higher # reads BUT some are very low (less than 1 mil).
 
 ---
 
