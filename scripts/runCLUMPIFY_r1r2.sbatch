@@ -31,7 +31,6 @@ ulimit -a
 
 mkdir $OUTDIR
 
-
 ls $INDIR/*r1.fq.gz | \
   sed -e 's/r1\.fq\.gz//' -e 's/.*\///g' | \
   crun parallel --no-notice -j $THREADS --line-buffer \
