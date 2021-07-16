@@ -44,7 +44,7 @@ ___
 
 ## Data Processing Roadmap
 
-1. Clone [`denovo_genome_assembly`](https://github.com/philippinespire/denovo_genome_assembly) repo to your working dir
+1. Clone this repo to your working dir
 
 2. Run [`fastqc`]()
     * review results with `multiqc` output
