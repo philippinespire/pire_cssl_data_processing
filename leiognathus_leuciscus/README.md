@@ -29,6 +29,13 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/cbird
 ```
 
+this runs clumpify in an array
+
+```
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+#runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
+bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/cbird 20
+```
 ---
 
 ## Step 3. Run fastp2
