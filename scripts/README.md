@@ -51,7 +51,7 @@ bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOU
 Insert notes here
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runFASTP_2.sbatch <indir> <outdir> 
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
