@@ -1,0 +1,28 @@
+/shared/apps/common/lua/5.3.5-7zdr/bin/lua: ...lmod/8.1.5-kk2l/lmod/lmod/libexec/../tools/TermWidth.lua:53: attempt to index a nil value (local 'r_c')
+stack traceback:
+	...lmod/8.1.5-kk2l/lmod/lmod/libexec/../tools/TermWidth.lua:53: in upvalue 'askSystem'
+	...lmod/8.1.5-kk2l/lmod/lmod/libexec/../tools/TermWidth.lua:92: in function 'TermWidth'
+	...d/8.1.5-kk2l/lmod/lmod/libexec/../tools/serializeTbl.lua:162: in upvalue 'outputTblHelper'
+	...d/8.1.5-kk2l/lmod/lmod/libexec/../tools/serializeTbl.lua:224: in function 'serializeTbl'
+	...red/apps/common/lmod/8.1.5-kk2l/lmod/lmod/libexec/MT.lua:347: in function 'MT.serializeTbl'
+	/shared/apps/common/lmod/8.1.5-kk2l/lmod/lmod/libexec/lmod:526: in function 'main'
+	/shared/apps/common/lmod/8.1.5-kk2l/lmod/lmod/libexec/lmod:554: in main chunk
+	[C]: in ?
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1542052
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 40960
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+LlC01074_CKDL210012719-1a-AK3905-AK9148_HF5TCDSX2_L1_
+/var/spool/slurmd/job223523/slurm_script: line 39: crun: command not found
