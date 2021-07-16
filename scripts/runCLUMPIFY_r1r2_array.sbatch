@@ -2,24 +2,24 @@
 
 #SBATCH --job-name=clmp_r12
 #SBATCH -o clmp_r1r2_-%A_%a.out
-#SBATCH -p normal,gpu,cbirdq
+#SBATCH -p main
 #SBATCH --time=24:00:00
 
-#enable_lmod
-#module load container_env pire_genome_assembly/2021.03.25
+enable_lmod
+module load container_env pire_genome_assembly/2021.03.25
 #module load java/1.8
-module load bbmap/38.90
-module load parallel
+#module load bbmap/38.90
+#module load parallel
 
-#export SINGULARITY_BIND=/home/e1garcia
+export SINGULARITY_BIND=/home/e1garcia
 
 #TEMPDIR=/scratch-lustre/cbird
 #INDIR=/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1
 #OUTDIR=/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp
-FQPATTERN=${1}
-TEMPDIR=/tmp
-INDIR=${2}
-OUTDIR=${3}
+FQPATTERN=${4}
+TEMPDIR=${3}
+INDIR=${1}
+OUTDIR=${2}
 THREADS=1   #clumpify uses a ton of ram, be conservative
 GROUPS=auto   #controls how much ram is used, refer to manual
 RAMPERTHREAD=233g   #have had to set as high as 233g with groups=1
