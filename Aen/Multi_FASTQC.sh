@@ -56,9 +56,9 @@ cd /home/e1garcia/shotgun_PIRE/Aen/raw_fq/
 ls *$1 | parallel "crun fastqc {}" &&
 
 # run multiqc with specific report and subdirectory names
-crun multiqc . -n multiqc_report_$1.html -o /home/r3clark/PIRE/capture_shotgun_data_processing/PIRE-Aen-Ham/Multi_FASTQC &&
+crun multiqc . -n multiqc_report_$1.html -o /home/r3clark/PIRE/capture_shotgun_data_processing/Aen/Multi_FASTQC &&
 
 # move fastqc files to new subdirectory
-ls *fastqc.html | parallel "mv {} /home/r3clark/PIRE/capture_shotgun_data_processing/PIRE-Aen-Ham/Multi_FASTQC" &&
-ls *fastqc.zip | parallel "mv {} /home/r3clark/PIRE/capture_shotgun_data_processing/PIRE-Aen-Ham/Multi_FASTQC"
+ls *fastqc.html | parallel "mv {} /home/r3clark/PIRE/capture_shotgun_data_processing/Aen/Multi_FASTQC" &&
+ls *fastqc.zip | parallel "mv {} /home/r3clark/PIRE/capture_shotgun_data_processing/Aen/Multi_FASTQC"
 
