@@ -29,7 +29,7 @@ RAMPERTHREAD=120g   #have had to set as high as 233g with groups=1
 ulimit -u 40960
 ulimit -a
 
-mkdir $OUTDIR
+mkdir -p $OUTDIR
 
 ls $INDIR/*r1.fq.gz | \
   sed -e 's/r1\.fq\.gz//' -e 's/.*\///g' | \
