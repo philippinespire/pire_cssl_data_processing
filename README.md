@@ -1,5 +1,43 @@
 # CAPTURE SHOTGUN DATA PROCESSING
 
+---
+
+The purpose of this repo is to document the processing and analysis of capture shotgun data for the Philippines PIRE Project. 
+
+For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  The Lle dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
+
+---
+
+## Use Git/GitHub to Track Progress
+
+To process a species, begin by cloning this repo to your dir.
+
+```
+git clone <insert url here>
+```
+
+The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo.  For example, the dir `dDocentHPC` contains the [dDocentHPC](https://github.com/cbirdlab/dDocentHPC) repo which you will be using, but we don't need to save that to this repo, so `dDocentHPC/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
+
+Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
+
+---
+
+## Maintaining Git Repo
+
+You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
+
+```
+git add --all
+git commit -m "insert message"
+git pull
+git push
+```
+
+If you should be met with a conflict screen, you are in the archane `vim` editor.  You can look up instructions on how to interface with it. I typically do the following:
+
+* hit escape key twice
+* type the following
+  `:quit!`
 
 1. Rename files to follow the `ddocent` naming convention
    * `population_indivdual.R1.fq.gz`
