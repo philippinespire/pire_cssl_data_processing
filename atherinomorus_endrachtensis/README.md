@@ -15,7 +15,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
-[Report](file:///C:/Users/rclar/Dropbox/Pinsky_Lab/PIRE_Proj/PIRE2021_Assembly/PIRE_Aen_Ham/1st_fastp_report.html), download and open in web browser.
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html), download and open in web browser.
 
 Potential issues:  
 * fill in
