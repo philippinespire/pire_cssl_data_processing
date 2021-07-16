@@ -27,6 +27,7 @@ Because large data files will not be saved to github, they will reside in an ind
 You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
 
 ```
+git pull
 git add --all
 git commit -m "insert message"
 git pull
@@ -38,18 +39,22 @@ If you should be met with a conflict screen, you are in the archane `vim` editor
 * hit escape key twice
 * type the following
   `:quit!`
+  
+___
 
-1. Rename files to follow the `ddocent` naming convention
-   * `population_indivdual.R1.fq.gz`
+## Data Processing Roadmap
 
-2. Clone [`denovo_genome_assembly`](https://github.com/philippinespire/denovo_genome_assembly) repo to your working dir
+1. Clone [`denovo_genome_assembly`](https://github.com/philippinespire/denovo_genome_assembly) repo to your working dir
 
-3. Run [`fastqc`]()
+2. Run [`fastqc`]()
     * review results with `multiqc` output
   
-4. Trim, deduplicate, and decontaminate the raw `fq.gz` files
+3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
     * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
+
+4. Rename files to follow the `ddocent` naming convention
+   * `population_indivdual.R1.fq.gz`
 
 5. Map processed reads against best reference genome
     * Best genome can be found by running [`wrangelData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
