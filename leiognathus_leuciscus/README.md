@@ -24,7 +24,9 @@ Potential issues:
 ## Step 2. Clumpify
 
 ```
-fill in
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
+sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/cbird
 ```
 
 ---
