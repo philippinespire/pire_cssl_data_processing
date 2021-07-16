@@ -6,11 +6,12 @@ copy and paste this into a new species dir and fill in as steps are accomplished
 
 ## Step 1.  1st fastp
 
-Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/yourusername/pire_cssl_data_processing/yourspeciesdir`
+Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
 
 ```
+cd /home/cbird/pire_cssl_data_processing/
 #runFASTP_1.sbatch <indir> <outdir>
-sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw /home/e1garcia/shotgun_PIRE/fq_fp1
+sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
 
 [Report](fill in url), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
