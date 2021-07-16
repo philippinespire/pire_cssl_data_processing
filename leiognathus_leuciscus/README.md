@@ -31,13 +31,14 @@ Potential issues:
 
 ## Step 2. Clumpify
 
+something odd happened here, so I'm running it again.
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
 sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/cbird
 ```
 
-this runs clumpify in an array
+this runs clumpify in an array, but the script is running out of memory
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
@@ -47,6 +48,8 @@ bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/cbi
 ---
 
 ## Step 3. Run fastp2
+
+will need to run again with clumpify is done
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
