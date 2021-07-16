@@ -34,6 +34,14 @@ There are two ways to run, either as a normal sbatch script on a turing himem no
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
 sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/YOURUSERNAME
+#when complete, search the *out file for java.lang.OutOfMemoryError.  If this occurs, then increase ram, set groups to 1 in script
+```
+
+```
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
+#runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
+bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOURUSERNAME 20
+#after completion, run checkClumpify.R to see if any files failed
 ```
 
 ---
