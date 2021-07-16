@@ -18,14 +18,14 @@ sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 [Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
 
 Potential issues:  
-* % duplication is high for most but not all Albatross. Lower for contemporary.
-  * Most Albatross ~60% (some in the 40s). Most contemporary ~45%.
-* GC content good for Albatross & contemporary.
-* Most reads passed filters for both Albatross & contemporary.
-  * 95% passed for contemp, for Albatross generally >90% although some closer to 50-60% passing (tend to be ones with lower % dup).
-* % adapter high, esp. for Albatross.
-  * Albatross: 80%, Contemporary: 30-40%
-* num reads seem to be okay.
+* % duplication - high for most but not all Albatross, lower for contemporary
+  * Alb: ~60% (some in the 40s), Contemp: ~45%
+* GC content - good
+* passing filter - most reads passed filters for both Albatross & contemporary
+  * Alb: >90% (some closer to 50-60% and those tend to be ones with lower % dup), Contemp: ~95% passed for contemp
+* % adapter - high, esp. for Albatross
+  * Alb: 80%, Contemp: 30-40%
+* number of reads - seems to be okay
   * Albatross generally much higher # reads BUT some are very low (less than 1 mil).
 
 ---
