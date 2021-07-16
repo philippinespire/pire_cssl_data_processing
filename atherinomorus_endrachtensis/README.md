@@ -26,7 +26,7 @@ Potential issues:
 * % adapter - high, esp. for Albatross
   * Alb: 80%, Contemp: 30-40%
 * number of reads - seems to be okay
-  * Albatross generally much higher # reads BUT some are very low.
+  * Alb: generally much higher # (>40 mil) BUT some are very low (1-2 mil), Contemp: ~10-20 mil
 
 ---
 
