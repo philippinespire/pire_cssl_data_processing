@@ -21,8 +21,8 @@ TEMPDIR=${3}
 INDIR=${1}
 OUTDIR=${2}
 THREADS=1   #clumpify uses a ton of ram, be conservative
-GROUPS=1   #controls how much ram is used, refer to manual
-RAMPERTHREAD=300g   #have had to set as high as 233g with groups=1
+GROUPS=auto   #controls how much ram is used, refer to manual
+RAMPERTHREAD=160g   #have had to set as high as 233g with groups=1
 
 ulimit -u 40960
 ulimit -a
