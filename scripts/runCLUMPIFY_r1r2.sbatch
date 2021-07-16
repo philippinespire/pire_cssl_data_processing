@@ -3,8 +3,7 @@
 #SBATCH --job-name=clmp_r12
 #SBATCH -o clmp_r1r2_-%j.out
 #SBATCH --exclusive
-## -C coreV3|coreV4 is Turing only
-#SBATCH -C coreV3|coreV4
+#SBATCH -C coreV3|coreV4    ## -C coreV3|coreV4 is Turing only, otherwise comment out
 
 ##SBATCH -p himem
 ##SBATCH --time=00:00:00
