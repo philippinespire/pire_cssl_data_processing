@@ -9,7 +9,7 @@ copy and paste this into a new species dir and fill in as steps are accomplished
 Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
 
 ```
-cd /home/cbird/pire_cssl_data_processing/
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_1.sbatch <indir> <outdir>
 sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
