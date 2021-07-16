@@ -25,6 +25,10 @@ Potential issues:
 
 ## Step 2. Clumpify
 
+Clumpify can use a lot of ram and if it runs out you will loose files.  [checkClumpify.R]() should be run after clumpify to make sure no files ran out of ram.  You can also use `sacct` to query how much ram was used to dial this in.
+
+There are two ways to run, either as a normal sbatch script on a turing himem node `runCLUMPIFY.sbatch` or as an array on multiple nodes simultaneously.
+
 ```
 fill in
 ```
