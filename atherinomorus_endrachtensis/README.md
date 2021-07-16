@@ -33,7 +33,11 @@ Potential issues:
 ## Step 2. Clumpify
 
 ```
-fill in
+#on Turing
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+enable_lmod
+sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
 ```
 
 ---
