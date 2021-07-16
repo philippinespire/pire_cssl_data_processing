@@ -38,6 +38,7 @@ sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/YOU
 ```
 
 ```
+#note: this runs out of ram right now.  not sure why
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
 bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOURUSERNAME 20
