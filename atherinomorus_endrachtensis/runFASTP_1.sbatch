@@ -20,7 +20,7 @@ module load container_env multiqc
 export SINGULARITY_BIND=/home/e1garcia
 
 INDIR=$1                 #/home/e1garcia/shotgun_PIRE/Aen/raw_fq
-OUTDIR=$2                #/home/e1garcia/shotgun_PIRE/fq_fp1
+OUTDIR=$2                #/home/r3clark/pire_cssl_data_processing/atherinomorus_endrachtensis/fq_fp1
 FQPATTERN=*.fq.gz        #determines files to be trimmed
 EXTPATTERN=[12]\.fq\.gz  # pattern match to fq extensions
 FWDEXT=1.fq.gz
