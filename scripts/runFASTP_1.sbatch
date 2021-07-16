@@ -54,5 +54,9 @@ ls $INDIR/$FQPATTERN | \
 		--trim_poly_x \
 		--report_title "First Trim 4 De Novo" 
 
+#move unpaired files
+
+mv $OUTDIR/*unprd*gz $OUTDIR/failed
+
 #add multiqc line when it's updated
 crun multiqc $OUTDIR -n $OUTDIR/1st_fastp_report
