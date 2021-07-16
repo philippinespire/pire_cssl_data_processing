@@ -33,8 +33,8 @@ ls $INDIR/$FQPATTERN | \
 		--in2 $INDIR/{}$REVEXT \
 		--out1 $OUTDIR/{}r1.fq.gz \
 		--out2 $OUTDIR/{}r2.fq.gz \
-		--unpaired1 $OUTDIR/{}unprd.fq.gz \
-		--unpaired2 $OUTDIR/{}unprd.fq.gz \
+		--unpaired1 $OUTDIR/failed/{}unprd.fq.gz \
+		--unpaired2 $OUTDIR/failed/{}unprd.fq.gz \
 		--failed_out $OUTDIR/failed/{}fail.fq.gz \
 		-h $OUTDIR/{}fastp.html \
 		-j $OUTDIR/{}fastp.json \
@@ -53,10 +53,6 @@ ls $INDIR/$FQPATTERN | \
 		--poly_g_min_len 10 \
 		--trim_poly_x \
 		--report_title "First Trim 4 De Novo" 
-
-#move unpaired files
-
-mv $OUTDIR/*unprd*gz $OUTDIR/failed
 
 #add multiqc line when it's updated
 crun multiqc $OUTDIR -n $OUTDIR/1st_fastp_report
