@@ -48,23 +48,18 @@ bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOU
 
 ## Step 3. Run fastp2
 
-I updated the variables
+Insert notes here
 
 ```
-sbatch runFASTP_2nd_trim.sbatch
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+#runFASTP_2.sbatch <indir> <outdir> 
+sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser
+[Report](insert url to report here), download and open in web browser
 
 Potential issues:
-* about 50% of reads were tossed due to our MINLEN=140.  We probably want to make this less stringent when trimming files for mapping.
-
-had to rename files
-```
-cd fq_fp1_clmp_fpw
-rename clmp_fp2_r clmp-fp2-r *gz
-cd ..
-```
+* list issues here
 
 ---
 
