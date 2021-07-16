@@ -5,7 +5,7 @@
 # this is third step in prepping reads for de novo assembly
 
 #SBATCH --job-name=fastp
-#SBATCH -o fastp_1st_-%j.out
+#SBATCH -o fastp_2nd_-%j.out
 #SBATCH --time=00:00:00
 #SBATCH --cpus-per-task=40
 
