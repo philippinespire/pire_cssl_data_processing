@@ -14,9 +14,9 @@ module load container_env pire_genome_assembly/2021.03.25
 
 export SINGULARITY_BIND=/home/e1garcia
 
-INDIR=$1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw
-OUTDIR=$2 /home/e1garcia/shotgun_PIRE/fq_fp1
-FQPATTERN=*.fq.gz  #determines files to be trimmed
+INDIR=$1                 #/home/e1garcia/shotgun_PIRE/Lle/fq_raw
+OUTDIR=$2                #/home/e1garcia/shotgun_PIRE/fq_fp1
+FQPATTERN=*.fq.gz        #determines files to be trimmed
 EXTPATTERN=[12]\.fq\.gz  # pattern match to fq extensions
 FWDEXT=1.fq.gz
 REVEXT=2.fq.gz
