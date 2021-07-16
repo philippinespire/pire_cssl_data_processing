@@ -130,3 +130,399 @@ HTML report: fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_fastp.h
 
 fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
 fastp v0.20.1, time used: 192 seconds
+Read1 before filtering:
+total reads: 11715924
+total bases: 1757388600
+Q20 bases: 1712048226(97.42%)
+Q30 bases: 1642636375(93.4703%)
+
+Read2 before filtering:
+total reads: 11715924
+total bases: 1757388600
+Q20 bases: 1689497190(96.1368%)
+Q30 bases: 1598005124(90.9307%)
+
+Read1 after filtering:
+total reads: 11174548
+total bases: 1348024987
+Q20 bases: 1321984993(98.0683%)
+Q30 bases: 1273677881(94.4847%)
+
+Read2 aftering filtering:
+total reads: 11174548
+total bases: 1348510032
+Q20 bases: 1320032711(97.8882%)
+Q30 bases: 1263804730(93.7186%)
+
+Filtering result:
+reads passed filter: 22349096
+reads failed due to low quality: 523048
+reads failed due to too many N: 590
+reads failed due to too short: 383804
+reads failed due to low complexity: 175310
+reads with adapter trimmed: 18038845
+bases trimmed due to adapters: 662683084
+reads with polyX in 3' end: 228625
+bases trimmed in polyX tail: 4815400
+
+Duplication rate: 77.6435%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 313 seconds
+Read1 before filtering:
+total reads: 15155774
+total bases: 2273366100
+Q20 bases: 2212228028(97.3107%)
+Q30 bases: 2119731428(93.242%)
+
+Read2 before filtering:
+total reads: 15155774
+total bases: 2273366100
+Q20 bases: 2182417344(95.9994%)
+Q30 bases: 2064637253(90.8185%)
+
+Read1 after filtering:
+total reads: 14485891
+total bases: 1630981367
+Q20 bases: 1599872186(98.0926%)
+Q30 bases: 1541416698(94.5085%)
+
+Read2 aftering filtering:
+total reads: 14485891
+total bases: 1631601309
+Q20 bases: 1598214469(97.9537%)
+Q30 bases: 1531676060(93.8756%)
+
+Filtering result:
+reads passed filter: 28971782
+reads failed due to low quality: 718474
+reads failed due to too many N: 650
+reads failed due to too short: 418172
+reads failed due to low complexity: 202470
+reads with adapter trimmed: 26487463
+bases trimmed due to adapters: 1085329272
+reads with polyX in 3' end: 317434
+bases trimmed in polyX tail: 7108802
+
+Duplication rate: 74.9897%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 410 seconds
+Read1 before filtering:
+total reads: 15070281
+total bases: 2260542150
+Q20 bases: 2197181008(97.1971%)
+Q30 bases: 2104958858(93.1174%)
+
+Read2 before filtering:
+total reads: 15070281
+total bases: 2260542150
+Q20 bases: 2178705588(96.3798%)
+Q30 bases: 2062286341(91.2297%)
+
+Read1 after filtering:
+total reads: 14564409
+total bases: 1753470752
+Q20 bases: 1717386348(97.9421%)
+Q30 bases: 1652765076(94.2568%)
+
+Read2 aftering filtering:
+total reads: 14564409
+total bases: 1754206180
+Q20 bases: 1715338396(97.7843%)
+Q30 bases: 1639485579(93.4603%)
+
+Filtering result:
+reads passed filter: 29128818
+reads failed due to low quality: 518214
+reads failed due to too many N: 770
+reads failed due to too short: 348144
+reads failed due to low complexity: 144616
+reads with adapter trimmed: 23592049
+bases trimmed due to adapters: 863333534
+reads with polyX in 3' end: 253817
+bases trimmed in polyX tail: 4659937
+
+Duplication rate: 77.1995%
+
+Insert size peak (evaluated by paired-end reads): 109
+
+JSON report: fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 435 seconds
+Read1 before filtering:
+total reads: 17673539
+total bases: 2651030850
+Q20 bases: 2556918896(96.45%)
+Q30 bases: 2438920722(91.999%)
+
+Read2 before filtering:
+total reads: 17673539
+total bases: 2651030850
+Q20 bases: 2545684530(96.0262%)
+Q30 bases: 2407657589(90.8197%)
+
+Read1 after filtering:
+total reads: 17302010
+total bases: 1779548815
+Q20 bases: 1742973519(97.9447%)
+Q30 bases: 1678725666(94.3343%)
+
+Read2 aftering filtering:
+total reads: 17302010
+total bases: 1780394496
+Q20 bases: 1742075868(97.8477%)
+Q30 bases: 1669741507(93.7849%)
+
+Filtering result:
+reads passed filter: 34604020
+reads failed due to low quality: 524358
+reads failed due to too many N: 708
+reads failed due to too short: 138378
+reads failed due to low complexity: 79614
+reads with adapter trimmed: 32659598
+bases trimmed due to adapters: 1574843555
+reads with polyX in 3' end: 295897
+bases trimmed in polyX tail: 4680722
+
+Duplication rate: 66.9406%
+
+Insert size peak (evaluated by paired-end reads): 96
+
+JSON report: fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 525 seconds
+Read1 before filtering:
+total reads: 18956050
+total bases: 2843407500
+Q20 bases: 2765817814(97.2712%)
+Q30 bases: 2651748686(93.2595%)
+
+Read2 before filtering:
+total reads: 18956050
+total bases: 2843407500
+Q20 bases: 2736400974(96.2367%)
+Q30 bases: 2586547945(90.9665%)
+
+Read1 after filtering:
+total reads: 18433179
+total bases: 2057781836
+Q20 bases: 2019738315(98.1512%)
+Q30 bases: 1948402322(94.6846%)
+
+Read2 aftering filtering:
+total reads: 18433179
+total bases: 2058757712
+Q20 bases: 2015601128(97.9038%)
+Q30 bases: 1928004242(93.6489%)
+
+Filtering result:
+reads passed filter: 36866358
+reads failed due to low quality: 708780
+reads failed due to too many N: 848
+reads failed due to too short: 159378
+reads failed due to low complexity: 176736
+reads with adapter trimmed: 32978709
+bases trimmed due to adapters: 1397966711
+reads with polyX in 3' end: 358829
+bases trimmed in polyX tail: 6595140
+
+Duplication rate: 75.1218%
+
+Insert size peak (evaluated by paired-end reads): 105
+
+JSON report: fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 526 seconds
+Read1 before filtering:
+total reads: 17206867
+total bases: 2581030050
+Q20 bases: 2499443318(96.839%)
+Q30 bases: 2389710204(92.5875%)
+
+Read2 before filtering:
+total reads: 17206867
+total bases: 2581030050
+Q20 bases: 2486945712(96.3548%)
+Q30 bases: 2358829066(91.391%)
+
+Read1 after filtering:
+total reads: 16816399
+total bases: 1815776790
+Q20 bases: 1779730326(98.0148%)
+Q30 bases: 1714863569(94.4424%)
+
+Read2 aftering filtering:
+total reads: 16816399
+total bases: 1816658064
+Q20 bases: 1777168750(97.8263%)
+Q30 bases: 1701298059(93.6499%)
+
+Filtering result:
+reads passed filter: 33632798
+reads failed due to low quality: 547520
+reads failed due to too many N: 728
+reads failed due to too short: 150022
+reads failed due to low complexity: 82666
+reads with adapter trimmed: 30825963
+bases trimmed due to adapters: 1380574805
+reads with polyX in 3' end: 271485
+bases trimmed in polyX tail: 4561929
+
+Duplication rate: 70.2907%
+
+Insert size peak (evaluated by paired-end reads): 99
+
+JSON report: fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 460 seconds
+Read1 before filtering:
+total reads: 18496683
+total bases: 2774502450
+Q20 bases: 2700876906(97.3464%)
+Q30 bases: 2590434285(93.3657%)
+
+Read2 before filtering:
+total reads: 18496683
+total bases: 2774502450
+Q20 bases: 2666074070(96.092%)
+Q30 bases: 2522089953(90.9024%)
+
+Read1 after filtering:
+total reads: 17864728
+total bases: 2005664058
+Q20 bases: 1968731999(98.1586%)
+Q30 bases: 1899137859(94.6887%)
+
+Read2 aftering filtering:
+total reads: 17864728
+total bases: 2006462101
+Q20 bases: 1965449226(97.956%)
+Q30 bases: 1883443600(93.8689%)
+
+Filtering result:
+reads passed filter: 35729456
+reads failed due to low quality: 798354
+reads failed due to too many N: 818
+reads failed due to too short: 245650
+reads failed due to low complexity: 219088
+reads with adapter trimmed: 32404179
+bases trimmed due to adapters: 1339021606
+reads with polyX in 3' end: 368510
+bases trimmed in polyX tail: 7406093
+
+Duplication rate: 75.1996%
+
+Insert size peak (evaluated by paired-end reads): 107
+
+JSON report: fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 556 seconds
+Read1 before filtering:
+total reads: 19843785
+total bases: 2976567750
+Q20 bases: 2883112281(96.8603%)
+Q30 bases: 2759119744(92.6947%)
+
+Read2 before filtering:
+total reads: 19843785
+total bases: 2976567750
+Q20 bases: 2872309879(96.4974%)
+Q30 bases: 2719939057(91.3784%)
+
+Read1 after filtering:
+total reads: 19356234
+total bases: 2239538903
+Q20 bases: 2198071530(98.1484%)
+Q30 bases: 2120256037(94.6738%)
+
+Read2 aftering filtering:
+total reads: 19356234
+total bases: 2240386583
+Q20 bases: 2193439978(97.9045%)
+Q30 bases: 2098083442(93.6483%)
+
+Filtering result:
+reads passed filter: 38712468
+reads failed due to low quality: 634542
+reads failed due to too many N: 964
+reads failed due to too short: 201854
+reads failed due to low complexity: 137742
+reads with adapter trimmed: 33406392
+bases trimmed due to adapters: 1316892451
+reads with polyX in 3' end: 319017
+bases trimmed in polyX tail: 5884947
+
+Duplication rate: 76.8961%
+
+Insert size peak (evaluated by paired-end reads): 107
+
+JSON report: fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 588 seconds
+Read1 before filtering:
+total reads: 21932929
+total bases: 3289939350
+Q20 bases: 3190716922(96.9841%)
+Q30 bases: 3055671007(92.8793%)
+
+Read2 before filtering:
+total reads: 21932929
+total bases: 3289939350
+Q20 bases: 3163162706(96.1465%)
+Q30 bases: 2987451088(90.8057%)
+
+Read1 after filtering:
+total reads: 21299712
+total bases: 2467780221
+Q20 bases: 2422086059(98.1484%)
+Q30 bases: 2336519024(94.681%)
+
+Read2 aftering filtering:
+total reads: 21299712
+total bases: 2469015384
+Q20 bases: 2414817180(97.8049%)
+Q30 bases: 2306152272(93.4037%)
+
+Filtering result:
+reads passed filter: 42599424
+reads failed due to low quality: 886516
+reads failed due to too many N: 1038
+reads failed due to too short: 176150
+reads failed due to low complexity: 202730
+reads with adapter trimmed: 37589737
+bases trimmed due to adapters: 1450506987
+reads with polyX in 3' end: 400516
+bases trimmed in polyX tail: 7955761
+
+Duplication rate: 75.9299%
+
+Insert size peak (evaluated by paired-end reads): 109
+
+JSON report: fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_fastp.json
+HTML report: fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/Lle/fq_raw/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_2.fq.gz --out1 fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_r1.fq.gz --out2 fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_r2.fq.gz --unpaired1 fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_unprd.fq.gz --unpaired2 fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_unprd.fq.gz --failed_out fq_fp1/failed/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_fail.fq.gz -h fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_fastp.html -j fq_fp1/LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 617 seconds
