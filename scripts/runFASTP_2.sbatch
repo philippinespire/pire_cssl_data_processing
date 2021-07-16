@@ -40,7 +40,7 @@ ls $INDIR/$FQPATTERN | \
 		-h $OUTDIR/{}r1r2_fastp.html \
 		-j $OUTDIR/{}r1r2_fastp.json \
 		--detect_adapter_for_pe \
-		--length_required 140 \
+		--length_required 33 \
 		--cut_front \
 		--cut_front_window_size 1 \
 		--cut_front_mean_quality 20 \
