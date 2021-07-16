@@ -19,7 +19,14 @@ sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/SPECIESDIR/fq_ra
 [Report](fill in url to multiqc report here), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
 
 Potential issues:  
-* fill in
+* % duplication - _______
+  * alb:XXs, contemp: YYs
+* gc content - ______
+* passing filter - _____
+* % adapter - _________
+  * alb: XXs, contemp: YYs
+* number of reads - _____
+  * alb: XX mil, contemp: YY mil
 
 ---
 
