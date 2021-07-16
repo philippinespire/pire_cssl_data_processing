@@ -15,7 +15,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
-[Report](fill in url to multiqc report here), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+[Report](file:///C:/Users/rclar/Dropbox/Pinsky_Lab/PIRE_Proj/PIRE2021_Assembly/PIRE_Aen_Ham/1st_fastp_report.html), download and open in web browser.
 
 Potential issues:  
 * fill in
