@@ -22,7 +22,7 @@ Potential issues:
   * Most Albatross ~60% (some in the 40s). Most contemporary ~45%.
 * GC content good for Albatross & contemporary.
 * Most reads passed filters for both Albatross & contemporary.
-  * >95% passed for contemp, for Albatross generally >90% although some closer to 50-60% passing (tend to be ones with lower % dup).
+  * 95% passed for contemp, for Albatross generally >90% although some closer to 50-60% passing (tend to be ones with lower % dup).
 * % adapter high, esp. for Albatross.
   * Albatross: 80%, Contemporary: 30-40%
 * # reads seem to be okay.
