@@ -42,7 +42,7 @@ this runs clumpify in an array, but the script is running out of memory
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-#runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
+#runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <num nodes>
 bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/cbird 20
 ```
 ---
