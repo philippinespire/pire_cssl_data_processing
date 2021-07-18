@@ -44,10 +44,10 @@ sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
 
 ## Step 3. Run fastp2
 
-I updated the variables
-
 ```
-sbatch runFASTP_2nd_trim.sbatch
+scd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
 [Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser
