@@ -21,8 +21,9 @@ Potential issues:
 * % duplication - high for most but not all Albatross, lower for contemporary
   * Alb: ~60% (some in the 40s), Contemp: ~45%
 * GC content - good
+  * Alb: 40%, Contemp: 45%
 * passing filter - most reads passed filters for both Albatross & contemporary
-  * Alb: >90% (some closer to 50-60% and those tend to be ones with lower % dup), Contemp: ~95% passed for contemp
+  * Alb: >90% (some closer to 50-60% and those tend to be ones with lower % dup), Contemp: ~95%
 * % adapter - high, esp. for Albatross
   * Alb: 80%, Contemp: 30-40%
 * number of reads - seems to be okay
@@ -54,7 +55,19 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+
+Potential issues:  
+* % duplication - good
+  * Alb: ~10%, Contemp: ~10%
+* GC content - good
+*  Alb: 40%, Contemp: 45%
+* passing filter - good
+  * Alb: ~98%, Contemp: ~99%
+* % adapter - good
+  * Alb: <2%, Contemp: <1%
+* number of reads - took a hit, especially Albatross
+  * Alb: about half ~10-25 mil & about half ~1-7 mil, Contemp: 5-10 mil
 
 ---
 
