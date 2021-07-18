@@ -37,30 +37,24 @@ Potential issues:
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
 enable_lmod
+#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
 sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
 ```
+
+Checked that all files ran with `checkCLUMPIFY.R`. All ran (no RAM issues).
 
 ---
 
 ## Step 3. Run fastp2
 
 ```
-scd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
+#runFASTP_2.sbatch <indir> <outdir>
 sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
 [Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser
-
-Potential issues:
-* about 50% of reads were tossed due to our MINLEN=140.  We probably want to make this less stringent when trimming files for mapping.
-
-had to rename files
-```
-cd fq_fp1_clmp_fpw
-rename clmp_fp2_r clmp-fp2-r *gz
-cd ..
-```
 
 ---
 
