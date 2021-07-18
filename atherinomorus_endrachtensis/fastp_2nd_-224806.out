@@ -1,0 +1,2646 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 766889
+total bases: 76563193
+Q20 bases: 74444313(97.2325%)
+Q30 bases: 71421608(93.2845%)
+
+Read2 before filtering:
+total reads: 766889
+total bases: 76661414
+Q20 bases: 74150363(96.7245%)
+Q30 bases: 70364488(91.7861%)
+
+Read1 after filtering:
+total reads: 760415
+total bases: 75150597
+Q20 bases: 73630470(97.9772%)
+Q30 bases: 70819492(94.2368%)
+
+Read2 aftering filtering:
+total reads: 760415
+total bases: 75077124
+Q20 bases: 73308562(97.6443%)
+Q30 bases: 69787769(92.9548%)
+
+Filtering result:
+reads passed filter: 1520830
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 12948
+reads with adapter trimmed: 21592
+bases trimmed due to adapters: 55115
+reads corrected by overlap analysis: 159254
+bases corrected by overlap analysis: 293852
+
+Duplication rate: 7.43134%
+
+Insert size peak (evaluated by paired-end reads): 88
+
+JSON report: fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 43 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 312492
+total bases: 31768084
+Q20 bases: 30990817(97.5533%)
+Q30 bases: 29746289(93.6358%)
+
+Read2 before filtering:
+total reads: 312492
+total bases: 31793391
+Q20 bases: 30911169(97.2251%)
+Q30 bases: 29420911(92.5378%)
+
+Read1 after filtering:
+total reads: 309936
+total bases: 31244742
+Q20 bases: 30676640(98.1818%)
+Q30 bases: 29516367(94.4683%)
+
+Read2 aftering filtering:
+total reads: 309936
+total bases: 31225257
+Q20 bases: 30593837(97.9779%)
+Q30 bases: 29202125(93.5208%)
+
+Filtering result:
+reads passed filter: 619872
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 5112
+reads with adapter trimmed: 9334
+bases trimmed due to adapters: 18976
+reads corrected by overlap analysis: 49740
+bases corrected by overlap analysis: 87574
+
+Duplication rate: 2.8533%
+
+Insert size peak (evaluated by paired-end reads): 92
+
+JSON report: fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 65 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 480542
+total bases: 49705044
+Q20 bases: 48593967(97.7647%)
+Q30 bases: 46743277(94.0413%)
+
+Read2 before filtering:
+total reads: 480542
+total bases: 49747391
+Q20 bases: 48412190(97.316%)
+Q30 bases: 46074276(92.6165%)
+
+Read1 after filtering:
+total reads: 477407
+total bases: 49042760
+Q20 bases: 48200249(98.2821%)
+Q30 bases: 46449534(94.7123%)
+
+Read2 aftering filtering:
+total reads: 477407
+total bases: 49017333
+Q20 bases: 48019234(97.9638%)
+Q30 bases: 45802035(93.4405%)
+
+Filtering result:
+reads passed filter: 954814
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 6270
+reads with adapter trimmed: 13354
+bases trimmed due to adapters: 29053
+reads corrected by overlap analysis: 76744
+bases corrected by overlap analysis: 134858
+
+Duplication rate: 2.90015%
+
+Insert size peak (evaluated by paired-end reads): 95
+
+JSON report: fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 66 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 735602
+total bases: 70364709
+Q20 bases: 68455398(97.2866%)
+Q30 bases: 65733797(93.4187%)
+
+Read2 before filtering:
+total reads: 735602
+total bases: 70444662
+Q20 bases: 68268981(96.9115%)
+Q30 bases: 64945913(92.1942%)
+
+Read1 after filtering:
+total reads: 729608
+total bases: 69111126
+Q20 bases: 67730326(98.0021%)
+Q30 bases: 65194075(94.3322%)
+
+Read2 aftering filtering:
+total reads: 729608
+total bases: 69098250
+Q20 bases: 67549406(97.7585%)
+Q30 bases: 64447964(93.27%)
+
+Filtering result:
+reads passed filter: 1459216
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 11988
+reads with adapter trimmed: 21408
+bases trimmed due to adapters: 50775
+reads corrected by overlap analysis: 144241
+bases corrected by overlap analysis: 259358
+
+Duplication rate: 7.23339%
+
+Insert size peak (evaluated by paired-end reads): 83
+
+JSON report: fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 67 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1278781
+total bases: 121447370
+Q20 bases: 117598398(96.8307%)
+Q30 bases: 112656556(92.7616%)
+
+Read2 before filtering:
+total reads: 1278781
+total bases: 121671848
+Q20 bases: 116967496(96.1336%)
+Q30 bases: 110511316(90.8274%)
+
+Read1 after filtering:
+total reads: 1266935
+total bases: 118780915
+Q20 bases: 116111346(97.7525%)
+Q30 bases: 111565112(93.9251%)
+
+Read2 aftering filtering:
+total reads: 1266935
+total bases: 118684141
+Q20 bases: 115452024(97.2767%)
+Q30 bases: 109493558(92.2563%)
+
+Filtering result:
+reads passed filter: 2533870
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 23692
+reads with adapter trimmed: 37000
+bases trimmed due to adapters: 98911
+reads corrected by overlap analysis: 324225
+bases corrected by overlap analysis: 612030
+
+Duplication rate: 11.6439%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 74 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 169261
+total bases: 17116540
+Q20 bases: 16727358(97.7263%)
+Q30 bases: 16087575(93.9885%)
+
+Read2 before filtering:
+total reads: 169261
+total bases: 17127581
+Q20 bases: 16679610(97.3845%)
+Q30 bases: 15899571(92.8302%)
+
+Read1 after filtering:
+total reads: 168263
+total bases: 16898353
+Q20 bases: 16602645(98.2501%)
+Q30 bases: 15995714(94.6584%)
+
+Read2 aftering filtering:
+total reads: 168263
+total bases: 16889862
+Q20 bases: 16553970(98.0113%)
+Q30 bases: 15813243(93.6256%)
+
+Filtering result:
+reads passed filter: 336526
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 1996
+reads with adapter trimmed: 4490
+bases trimmed due to adapters: 8211
+reads corrected by overlap analysis: 27178
+bases corrected by overlap analysis: 47702
+
+Duplication rate: 3.54466%
+
+Insert size peak (evaluated by paired-end reads): 91
+
+JSON report: fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 39 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1933110
+total bases: 203763179
+Q20 bases: 197372667(96.8638%)
+Q30 bases: 189006025(92.7577%)
+
+Read2 before filtering:
+total reads: 1933110
+total bases: 203997977
+Q20 bases: 196044704(96.1013%)
+Q30 bases: 185104167(90.7382%)
+
+Read1 after filtering:
+total reads: 1912801
+total bases: 199154095
+Q20 bases: 194587634(97.7071%)
+Q30 bases: 186889217(93.8415%)
+
+Read2 aftering filtering:
+total reads: 1912801
+total bases: 198803796
+Q20 bases: 193245418(97.2041%)
+Q30 bases: 183171057(92.1366%)
+
+Filtering result:
+reads passed filter: 3825602
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 40618
+reads with adapter trimmed: 55538
+bases trimmed due to adapters: 175147
+reads corrected by overlap analysis: 503032
+bases corrected by overlap analysis: 933677
+
+Duplication rate: 12.7803%
+
+Insert size peak (evaluated by paired-end reads): 88
+
+JSON report: fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 98 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1198569
+total bases: 113337953
+Q20 bases: 110202594(97.2336%)
+Q30 bases: 105888761(93.4275%)
+
+Read2 before filtering:
+total reads: 1198569
+total bases: 113515291
+Q20 bases: 109625504(96.5733%)
+Q30 bases: 103966181(91.5878%)
+
+Read1 after filtering:
+total reads: 1188001
+total bases: 111228839
+Q20 bases: 108963301(97.9632%)
+Q30 bases: 104955030(94.3595%)
+
+Read2 aftering filtering:
+total reads: 1188001
+total bases: 111140482
+Q20 bases: 108379968(97.5162%)
+Q30 bases: 103114662(92.7787%)
+
+Filtering result:
+reads passed filter: 2376002
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 21136
+reads with adapter trimmed: 33706
+bases trimmed due to adapters: 78691
+reads corrected by overlap analysis: 259533
+bases corrected by overlap analysis: 467483
+
+Duplication rate: 9.59348%
+
+Insert size peak (evaluated by paired-end reads): 83
+
+JSON report: fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 58 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 4845050
+total bases: 463611287
+Q20 bases: 448922635(96.8317%)
+Q30 bases: 430359336(92.8276%)
+
+Read2 before filtering:
+total reads: 4845050
+total bases: 464468461
+Q20 bases: 445871275(95.996%)
+Q30 bases: 420856666(90.6104%)
+
+Read1 after filtering:
+total reads: 4794322
+total bases: 453270832
+Q20 bases: 442790574(97.6879%)
+Q30 bases: 425715429(93.9208%)
+
+Read2 aftering filtering:
+total reads: 4794322
+total bases: 452556857
+Q20 bases: 439627131(97.143%)
+Q30 bases: 416594877(92.0536%)
+
+Filtering result:
+reads passed filter: 9588644
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 101456
+reads with adapter trimmed: 149426
+bases trimmed due to adapters: 395002
+reads corrected by overlap analysis: 1260908
+bases corrected by overlap analysis: 2309831
+
+Duplication rate: 12.638%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 126 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1660493
+total bases: 155609381
+Q20 bases: 150888641(96.9663%)
+Q30 bases: 144713151(92.9977%)
+
+Read2 before filtering:
+total reads: 1660493
+total bases: 155833630
+Q20 bases: 150076802(96.3058%)
+Q30 bases: 142057357(91.1596%)
+
+Read1 after filtering:
+total reads: 1644763
+total bases: 152391027
+Q20 bases: 149016300(97.7855%)
+Q30 bases: 143312498(94.0426%)
+
+Read2 aftering filtering:
+total reads: 1644763
+total bases: 152199504
+Q20 bases: 148168912(97.3518%)
+Q30 bases: 140750823(92.4778%)
+
+Filtering result:
+reads passed filter: 3289526
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 31460
+reads with adapter trimmed: 48868
+bases trimmed due to adapters: 130333
+reads corrected by overlap analysis: 397191
+bases corrected by overlap analysis: 719438
+
+Duplication rate: 11.1663%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 63 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5853919
+total bases: 597980354
+Q20 bases: 576762298(96.4517%)
+Q30 bases: 550337234(92.0327%)
+
+Read2 before filtering:
+total reads: 5853919
+total bases: 599080503
+Q20 bases: 572112365(95.4984%)
+Q30 bases: 537484237(89.7182%)
+
+Read1 after filtering:
+total reads: 5776004
+total bases: 581422212
+Q20 bases: 566607763(97.452%)
+Q30 bases: 542580427(93.3195%)
+
+Read2 aftering filtering:
+total reads: 5776004
+total bases: 580072655
+Q20 bases: 561812681(96.8521%)
+Q30 bases: 530396420(91.4362%)
+
+Filtering result:
+reads passed filter: 11552008
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 155830
+reads with adapter trimmed: 191606
+bases trimmed due to adapters: 611160
+reads corrected by overlap analysis: 1717817
+bases corrected by overlap analysis: 3205885
+
+Duplication rate: 13.7062%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 149 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 7296638
+total bases: 739510220
+Q20 bases: 714439592(96.6098%)
+Q30 bases: 683160615(92.3801%)
+
+Read2 before filtering:
+total reads: 7296638
+total bases: 740775214
+Q20 bases: 709828966(95.8225%)
+Q30 bases: 668460487(90.238%)
+
+Read1 after filtering:
+total reads: 7219143
+total bases: 721738457
+Q20 bases: 704048522(97.549%)
+Q30 bases: 675371257(93.5756%)
+
+Read2 aftering filtering:
+total reads: 7219143
+total bases: 720798772
+Q20 bases: 699362365(97.026%)
+Q30 bases: 661307622(91.7465%)
+
+Filtering result:
+reads passed filter: 14438286
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 154990
+reads with adapter trimmed: 229164
+bases trimmed due to adapters: 661868
+reads corrected by overlap analysis: 2076923
+bases corrected by overlap analysis: 3839586
+
+Duplication rate: 14.5674%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 154 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 3391600
+total bases: 325529641
+Q20 bases: 315032158(96.7753%)
+Q30 bases: 301683085(92.6745%)
+
+Read2 before filtering:
+total reads: 3391600
+total bases: 326133454
+Q20 bases: 312937321(95.9538%)
+Q30 bases: 295330346(90.5551%)
+
+Read1 after filtering:
+total reads: 3354479
+total bases: 318019236
+Q20 bases: 310574492(97.659%)
+Q30 bases: 298306500(93.8014%)
+
+Read2 aftering filtering:
+total reads: 3354479
+total bases: 317487140
+Q20 bases: 308379963(97.1315%)
+Q30 bases: 292212998(92.0393%)
+
+Filtering result:
+reads passed filter: 6708958
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 74242
+reads with adapter trimmed: 104782
+bases trimmed due to adapters: 277501
+reads corrected by overlap analysis: 894385
+bases corrected by overlap analysis: 1639304
+
+Duplication rate: 12.7943%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 88 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 3317969
+total bases: 308383834
+Q20 bases: 299405472(97.0886%)
+Q30 bases: 287560000(93.2474%)
+
+Read2 before filtering:
+total reads: 3317969
+total bases: 308944970
+Q20 bases: 297762318(96.3804%)
+Q30 bases: 281776832(91.2062%)
+
+Read1 after filtering:
+total reads: 3287477
+total bases: 302264198
+Q20 bases: 295841788(97.8752%)
+Q30 bases: 284890864(94.2523%)
+
+Read2 aftering filtering:
+total reads: 3287477
+total bases: 301936238
+Q20 bases: 294102198(97.4054%)
+Q30 bases: 279285438(92.4982%)
+
+Filtering result:
+reads passed filter: 6574954
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 60984
+reads with adapter trimmed: 95946
+bases trimmed due to adapters: 236067
+reads corrected by overlap analysis: 760299
+bases corrected by overlap analysis: 1368269
+
+Duplication rate: 10.2183%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 83 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 6114564
+total bases: 596446294
+Q20 bases: 577037272(96.7459%)
+Q30 bases: 552349148(92.6067%)
+
+Read2 before filtering:
+total reads: 6114564
+total bases: 597281447
+Q20 bases: 573911245(96.0872%)
+Q30 bases: 542348083(90.8028%)
+
+Read1 after filtering:
+total reads: 6050054
+total bases: 582784903
+Q20 bases: 568980394(97.6313%)
+Q30 bases: 546298097(93.7392%)
+
+Read2 aftering filtering:
+total reads: 6050054
+total bases: 582005289
+Q20 bases: 565731980(97.2039%)
+Q30 bases: 536694703(92.2147%)
+
+Filtering result:
+reads passed filter: 12100108
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 129020
+reads with adapter trimmed: 189898
+bases trimmed due to adapters: 552528
+reads corrected by overlap analysis: 1582049
+bases corrected by overlap analysis: 2896548
+
+Duplication rate: 12.379%
+
+Insert size peak (evaluated by paired-end reads): 82
+
+JSON report: fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 160 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 7896477
+total bases: 751715627
+Q20 bases: 725260418(96.4807%)
+Q30 bases: 693100938(92.2025%)
+
+Read2 before filtering:
+total reads: 7896477
+total bases: 752916253
+Q20 bases: 722634146(95.978%)
+Q30 bases: 682824011(90.6906%)
+
+Read1 after filtering:
+total reads: 7814832
+total bases: 732895120
+Q20 bases: 714875596(97.5413%)
+Q30 bases: 685518690(93.5357%)
+
+Read2 aftering filtering:
+total reads: 7814832
+total bases: 732470678
+Q20 bases: 712029374(97.2093%)
+Q30 bases: 675590102(92.2344%)
+
+Filtering result:
+reads passed filter: 15629664
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 163290
+reads with adapter trimmed: 246578
+bases trimmed due to adapters: 711561
+reads corrected by overlap analysis: 2164649
+bases corrected by overlap analysis: 4097097
+
+Duplication rate: 13.5018%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 162 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5331900
+total bases: 609022541
+Q20 bases: 586272868(96.2646%)
+Q30 bases: 558166635(91.6496%)
+
+Read2 before filtering:
+total reads: 5331900
+total bases: 609576846
+Q20 bases: 581410098(95.3793%)
+Q30 bases: 544839215(89.3799%)
+
+Read1 after filtering:
+total reads: 5269455
+total bases: 592566337
+Q20 bases: 576540248(97.2955%)
+Q30 bases: 550904276(92.9692%)
+
+Read2 aftering filtering:
+total reads: 5269455
+total bases: 591249934
+Q20 bases: 571550754(96.6682%)
+Q30 bases: 538008904(90.9952%)
+
+Filtering result:
+reads passed filter: 10538910
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 124890
+reads with adapter trimmed: 155030
+bases trimmed due to adapters: 620298
+reads corrected by overlap analysis: 1772083
+bases corrected by overlap analysis: 3338996
+
+Duplication rate: 18.3358%
+
+Insert size peak (evaluated by paired-end reads): 96
+
+JSON report: fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 162 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 287753
+total bases: 28382983
+Q20 bases: 27642088(97.3897%)
+Q30 bases: 26541649(93.5125%)
+
+Read2 before filtering:
+total reads: 287753
+total bases: 28412478
+Q20 bases: 27569212(97.0321%)
+Q30 bases: 26228422(92.313%)
+
+Read1 after filtering:
+total reads: 285493
+total bases: 27903253
+Q20 bases: 27364162(98.068%)
+Q30 bases: 26335505(94.3815%)
+
+Read2 aftering filtering:
+total reads: 285493
+total bases: 27892548
+Q20 bases: 27288968(97.8361%)
+Q30 bases: 26034574(93.3388%)
+
+Filtering result:
+reads passed filter: 570986
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 4520
+reads with adapter trimmed: 8212
+bases trimmed due to adapters: 22534
+reads corrected by overlap analysis: 53153
+bases corrected by overlap analysis: 96039
+
+Duplication rate: 5.6127%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 35 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 6226322
+total bases: 616684589
+Q20 bases: 596303342(96.695%)
+Q30 bases: 570559025(92.5204%)
+
+Read2 before filtering:
+total reads: 6226322
+total bases: 617755922
+Q20 bases: 591461884(95.7436%)
+Q30 bases: 556317452(90.0546%)
+
+Read1 after filtering:
+total reads: 6163272
+total bases: 602588990
+Q20 bases: 588062837(97.5894%)
+Q30 bases: 564385385(93.6601%)
+
+Read2 aftering filtering:
+total reads: 6163272
+total bases: 601444378
+Q20 bases: 583071958(96.9453%)
+Q30 bases: 550639824(91.5529%)
+
+Filtering result:
+reads passed filter: 12326544
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 126100
+reads with adapter trimmed: 192268
+bases trimmed due to adapters: 527044
+reads corrected by overlap analysis: 1777331
+bases corrected by overlap analysis: 3263434
+
+Duplication rate: 13.9914%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 172 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 7098900
+total bases: 744046459
+Q20 bases: 719382704(96.6852%)
+Q30 bases: 688081818(92.4783%)
+
+Read2 before filtering:
+total reads: 7098900
+total bases: 745114964
+Q20 bases: 714137798(95.8426%)
+Q30 bases: 672804381(90.2954%)
+
+Read1 after filtering:
+total reads: 7017520
+total bases: 726890792
+Q20 bases: 708912758(97.5267%)
+Q30 bases: 680088647(93.5613%)
+
+Read2 aftering filtering:
+total reads: 7017520
+total bases: 725776509
+Q20 bases: 703718226(96.9607%)
+Q30 bases: 665599562(91.7086%)
+
+Filtering result:
+reads passed filter: 14035040
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 162760
+reads with adapter trimmed: 238874
+bases trimmed due to adapters: 764330
+reads corrected by overlap analysis: 2092709
+bases corrected by overlap analysis: 3793397
+
+Duplication rate: 15.1568%
+
+Insert size peak (evaluated by paired-end reads): 88
+
+JSON report: fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 173 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 10359501
+total bases: 1025081256
+Q20 bases: 991062342(96.6813%)
+Q30 bases: 948050647(92.4854%)
+
+Read2 before filtering:
+total reads: 10359501
+total bases: 1026821941
+Q20 bases: 983953331(95.8251%)
+Q30 bases: 926557283(90.2354%)
+
+Read1 after filtering:
+total reads: 10241169
+total bases: 1000396301
+Q20 bases: 976191404(97.5805%)
+Q30 bases: 936790622(93.642%)
+
+Read2 aftering filtering:
+total reads: 10241169
+total bases: 998804981
+Q20 bases: 968985217(97.0145%)
+Q30 bases: 916274291(91.7371%)
+
+Filtering result:
+reads passed filter: 20482338
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 236664
+reads with adapter trimmed: 329856
+bases trimmed due to adapters: 972063
+reads corrected by overlap analysis: 2847270
+bases corrected by overlap analysis: 5196784
+
+Duplication rate: 12.7132%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 179 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 8874960
+total bases: 892155825
+Q20 bases: 862570972(96.6839%)
+Q30 bases: 824834871(92.4541%)
+
+Read2 before filtering:
+total reads: 8874960
+total bases: 893739273
+Q20 bases: 855275029(95.6963%)
+Q30 bases: 803933414(89.9517%)
+
+Read1 after filtering:
+total reads: 8772813
+total bases: 870441431
+Q20 bases: 849377377(97.5801%)
+Q30 bases: 814776773(93.605%)
+
+Read2 aftering filtering:
+total reads: 8772813
+total bases: 868651119
+Q20 bases: 841961205(96.9274%)
+Q30 bases: 794828443(91.5015%)
+
+Filtering result:
+reads passed filter: 17545626
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 204294
+reads with adapter trimmed: 277384
+bases trimmed due to adapters: 818472
+reads corrected by overlap analysis: 2510076
+bases corrected by overlap analysis: 4601929
+
+Duplication rate: 13.315%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 179 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 9101855
+total bases: 866058904
+Q20 bases: 837577840(96.7114%)
+Q30 bases: 801563155(92.553%)
+
+Read2 before filtering:
+total reads: 9101855
+total bases: 867465644
+Q20 bases: 833505439(96.0851%)
+Q30 bases: 787559067(90.7885%)
+
+Read1 after filtering:
+total reads: 9004677
+total bases: 846122001
+Q20 bases: 825900737(97.6101%)
+Q30 bases: 792825189(93.701%)
+
+Read2 aftering filtering:
+total reads: 9004677
+total bases: 845392575
+Q20 bases: 821710122(97.1986%)
+Q30 bases: 779408948(92.1949%)
+
+Filtering result:
+reads passed filter: 18009354
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 194356
+reads with adapter trimmed: 293498
+bases trimmed due to adapters: 815796
+reads corrected by overlap analysis: 2346906
+bases corrected by overlap analysis: 4259569
+
+Duplication rate: 11.9011%
+
+Insert size peak (evaluated by paired-end reads): 83
+
+JSON report: fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 183 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 10656099
+total bases: 1026097833
+Q20 bases: 988421725(96.3282%)
+Q30 bases: 943202940(91.9213%)
+
+Read2 before filtering:
+total reads: 10656099
+total bases: 1027783915
+Q20 bases: 983938366(95.734%)
+Q30 bases: 926977017(90.1918%)
+
+Read1 after filtering:
+total reads: 10537783
+total bases: 998278299
+Q20 bases: 972875508(97.4553%)
+Q30 bases: 931871262(93.3478%)
+
+Read2 aftering filtering:
+total reads: 10537783
+total bases: 997583166
+Q20 bases: 968189699(97.0535%)
+Q30 bases: 916232995(91.8453%)
+
+Filtering result:
+reads passed filter: 21075566
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 236632
+reads with adapter trimmed: 333764
+bases trimmed due to adapters: 998133
+reads corrected by overlap analysis: 3044486
+bases corrected by overlap analysis: 5751479
+
+Duplication rate: 14.1145%
+
+Insert size peak (evaluated by paired-end reads): 85
+
+JSON report: fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 184 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 601239
+total bases: 58668635
+Q20 bases: 57235526(97.5573%)
+Q30 bases: 55036724(93.8095%)
+
+Read2 before filtering:
+total reads: 601239
+total bases: 58728992
+Q20 bases: 57054054(97.148%)
+Q30 bases: 54312214(92.4794%)
+
+Read1 after filtering:
+total reads: 596919
+total bases: 57782425
+Q20 bases: 56727521(98.1744%)
+Q30 bases: 54662280(94.6002%)
+
+Read2 aftering filtering:
+total reads: 596919
+total bases: 57743372
+Q20 bases: 56526280(97.8922%)
+Q30 bases: 53949704(93.4301%)
+
+Filtering result:
+reads passed filter: 1193838
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 8640
+reads with adapter trimmed: 16104
+bases trimmed due to adapters: 37829
+reads corrected by overlap analysis: 104254
+bases corrected by overlap analysis: 185750
+
+Duplication rate: 4.84932%
+
+Insert size peak (evaluated by paired-end reads): 85
+
+JSON report: fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 34 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 329017
+total bases: 31849400
+Q20 bases: 30978289(97.2649%)
+Q30 bases: 29741070(93.3803%)
+
+Read2 before filtering:
+total reads: 329017
+total bases: 31890001
+Q20 bases: 30860354(96.7713%)
+Q30 bases: 29297897(91.8717%)
+
+Read1 after filtering:
+total reads: 326203
+total bases: 31269694
+Q20 bases: 30642307(97.9936%)
+Q30 bases: 29492570(94.3168%)
+
+Read2 aftering filtering:
+total reads: 326203
+total bases: 31241279
+Q20 bases: 30514058(97.6722%)
+Q30 bases: 29059305(93.0157%)
+
+Filtering result:
+reads passed filter: 652406
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 5628
+reads with adapter trimmed: 9378
+bases trimmed due to adapters: 24062
+reads corrected by overlap analysis: 65867
+bases corrected by overlap analysis: 118796
+
+Duplication rate: 6.99829%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 34 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 316165
+total bases: 32434719
+Q20 bases: 31689829(97.7034%)
+Q30 bases: 30501807(94.0406%)
+
+Read2 before filtering:
+total reads: 316165
+total bases: 32465772
+Q20 bases: 31570246(97.2416%)
+Q30 bases: 30040555(92.5299%)
+
+Read1 after filtering:
+total reads: 314119
+total bases: 31992433
+Q20 bases: 31432815(98.2508%)
+Q30 bases: 30310520(94.7428%)
+
+Read2 aftering filtering:
+total reads: 314119
+total bases: 31979980
+Q20 bases: 31312059(97.9114%)
+Q30 bases: 29862921(93.38%)
+
+Filtering result:
+reads passed filter: 628238
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 4092
+reads with adapter trimmed: 8096
+bases trimmed due to adapters: 18293
+reads corrected by overlap analysis: 53317
+bases corrected by overlap analysis: 94356
+
+Duplication rate: 3.84582%
+
+Insert size peak (evaluated by paired-end reads): 90
+
+JSON report: fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 35 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1301516
+total bases: 126187634
+Q20 bases: 122225688(96.8603%)
+Q30 bases: 117085839(92.7871%)
+
+Read2 before filtering:
+total reads: 1301516
+total bases: 126357440
+Q20 bases: 121761952(96.3631%)
+Q30 bases: 115312237(91.2588%)
+
+Read1 after filtering:
+total reads: 1289230
+total bases: 123411926
+Q20 bases: 120664579(97.7738%)
+Q30 bases: 115944721(93.9494%)
+
+Read2 aftering filtering:
+total reads: 1289230
+total bases: 123338850
+Q20 bases: 120176277(97.4359%)
+Q30 bases: 114228615(92.6137%)
+
+Filtering result:
+reads passed filter: 2578460
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 24572
+reads with adapter trimmed: 37568
+bases trimmed due to adapters: 106308
+reads corrected by overlap analysis: 313429
+bases corrected by overlap analysis: 585496
+
+Duplication rate: 10.7466%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 46 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 570091
+total bases: 57655418
+Q20 bases: 56053188(97.221%)
+Q30 bases: 53772059(93.2645%)
+
+Read2 before filtering:
+total reads: 570091
+total bases: 57750378
+Q20 bases: 55753344(96.542%)
+Q30 bases: 52806540(91.4393%)
+
+Read1 after filtering:
+total reads: 564167
+total bases: 56465444
+Q20 bases: 55338677(98.0045%)
+Q30 bases: 53239004(94.286%)
+
+Read2 aftering filtering:
+total reads: 564167
+total bases: 56390416
+Q20 bases: 55012082(97.5557%)
+Q30 bases: 52296948(92.7408%)
+
+Filtering result:
+reads passed filter: 1128334
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 11848
+reads with adapter trimmed: 15018
+bases trimmed due to adapters: 42092
+reads corrected by overlap analysis: 116557
+bases corrected by overlap analysis: 216759
+
+Duplication rate: 6.43107%
+
+Insert size peak (evaluated by paired-end reads): 88
+
+JSON report: fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 36 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 12583442
+total bases: 1224454828
+Q20 bases: 1183244465(96.6344%)
+Q30 bases: 1131258096(92.3887%)
+
+Read2 before filtering:
+total reads: 12583442
+total bases: 1226637838
+Q20 bases: 1175182046(95.8051%)
+Q30 bases: 1106952606(90.2428%)
+
+Read1 after filtering:
+total reads: 12433755
+total bases: 1193924114
+Q20 bases: 1164834370(97.5635%)
+Q30 bases: 1117290385(93.5814%)
+
+Read2 aftering filtering:
+total reads: 12433755
+total bases: 1192134411
+Q20 bases: 1156624585(97.0213%)
+Q30 bases: 1094163143(91.7819%)
+
+Filtering result:
+reads passed filter: 24867510
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 299374
+reads with adapter trimmed: 406156
+bases trimmed due to adapters: 1166609
+reads corrected by overlap analysis: 3411134
+bases corrected by overlap analysis: 6224638
+
+Duplication rate: 12.5913%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 205 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 9852210
+total bases: 1040501650
+Q20 bases: 1003274784(96.4222%)
+Q30 bases: 957266433(92.0005%)
+
+Read2 before filtering:
+total reads: 9852210
+total bases: 1042191868
+Q20 bases: 995187316(95.4898%)
+Q30 bases: 934934755(89.7085%)
+
+Read1 after filtering:
+total reads: 9716837
+total bases: 1011423939
+Q20 bases: 985322465(97.4193%)
+Q30 bases: 943527348(93.287%)
+
+Read2 aftering filtering:
+total reads: 9716837
+total bases: 1009441610
+Q20 bases: 977309631(96.8169%)
+Q30 bases: 922563973(91.3935%)
+
+Filtering result:
+reads passed filter: 19433674
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 270746
+reads with adapter trimmed: 323934
+bases trimmed due to adapters: 1043441
+reads corrected by overlap analysis: 3000922
+bases corrected by overlap analysis: 5589468
+
+Duplication rate: 15.5461%
+
+Insert size peak (evaluated by paired-end reads): 91
+
+JSON report: fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 205 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 6260027
+total bases: 599962187
+Q20 bases: 580628014(96.7774%)
+Q30 bases: 556249125(92.714%)
+
+Read2 before filtering:
+total reads: 6260027
+total bases: 600979952
+Q20 bases: 577569099(96.1046%)
+Q30 bases: 545844938(90.8258%)
+
+Read1 after filtering:
+total reads: 6190936
+total bases: 585909967
+Q20 bases: 572276787(97.6732%)
+Q30 bases: 549961806(93.8646%)
+
+Read2 aftering filtering:
+total reads: 6190936
+total bases: 585274266
+Q20 bases: 569081715(97.2333%)
+Q30 bases: 539984444(92.2618%)
+
+Filtering result:
+reads passed filter: 12381872
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 138182
+reads with adapter trimmed: 191230
+bases trimmed due to adapters: 551478
+reads corrected by overlap analysis: 1583746
+bases corrected by overlap analysis: 2877719
+
+Duplication rate: 11.8677%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 120 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 650226
+total bases: 61364955
+Q20 bases: 59664434(97.2288%)
+Q30 bases: 57302596(93.38%)
+
+Read2 before filtering:
+total reads: 650226
+total bases: 61446715
+Q20 bases: 59429962(96.7179%)
+Q30 bases: 56417712(91.8157%)
+
+Read1 after filtering:
+total reads: 644638
+total bases: 60209444
+Q20 bases: 59004767(97.9992%)
+Q30 bases: 56817695(94.3667%)
+
+Read2 aftering filtering:
+total reads: 644638
+total bases: 60155891
+Q20 bases: 58747838(97.6593%)
+Q30 bases: 55950826(93.0097%)
+
+Filtering result:
+reads passed filter: 1289276
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 11176
+reads with adapter trimmed: 17882
+bases trimmed due to adapters: 44269
+reads corrected by overlap analysis: 132547
+bases corrected by overlap analysis: 240312
+
+Duplication rate: 7.72308%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 33 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 2680514
+total bases: 259741777
+Q20 bases: 251507640(96.8299%)
+Q30 bases: 240978796(92.7763%)
+
+Read2 before filtering:
+total reads: 2680514
+total bases: 260154231
+Q20 bases: 249995074(96.0949%)
+Q30 bases: 236105886(90.7561%)
+
+Read1 after filtering:
+total reads: 2651263
+total bases: 253811384
+Q20 bases: 247985775(97.7047%)
+Q30 bases: 238335938(93.9028%)
+
+Read2 aftering filtering:
+total reads: 2651263
+total bases: 253451458
+Q20 bases: 246387148(97.2128%)
+Q30 bases: 233617422(92.1744%)
+
+Filtering result:
+reads passed filter: 5302526
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 58502
+reads with adapter trimmed: 80552
+bases trimmed due to adapters: 231611
+reads corrected by overlap analysis: 678922
+bases corrected by overlap analysis: 1229675
+
+Duplication rate: 11.3609%
+
+Insert size peak (evaluated by paired-end reads): 85
+
+JSON report: fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 62 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 709798
+total bases: 73067896
+Q20 bases: 71116147(97.3289%)
+Q30 bases: 68264985(93.4268%)
+
+Read2 before filtering:
+total reads: 709798
+total bases: 73141808
+Q20 bases: 70953181(97.0077%)
+Q30 bases: 67401543(92.1519%)
+
+Read1 after filtering:
+total reads: 704358
+total bases: 71911805
+Q20 bases: 70470244(97.9954%)
+Q30 bases: 67791263(94.27%)
+
+Read2 aftering filtering:
+total reads: 704358
+total bases: 71850804
+Q20 bases: 70255468(97.7797%)
+Q30 bases: 66920089(93.1376%)
+
+Filtering result:
+reads passed filter: 1408716
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 10880
+reads with adapter trimmed: 18706
+bases trimmed due to adapters: 48433
+reads corrected by overlap analysis: 171641
+bases corrected by overlap analysis: 278726
+
+Duplication rate: 5.28274%
+
+Insert size peak (evaluated by paired-end reads): 91
+
+JSON report: fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 44 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 373251
+total bases: 37674061
+Q20 bases: 36784107(97.6378%)
+Q30 bases: 35372637(93.8912%)
+
+Read2 before filtering:
+total reads: 373251
+total bases: 37700786
+Q20 bases: 36707311(97.3648%)
+Q30 bases: 35006377(92.8532%)
+
+Read1 after filtering:
+total reads: 370662
+total bases: 37127488
+Q20 bases: 36464666(98.2147%)
+Q30 bases: 35134654(94.6325%)
+
+Read2 aftering filtering:
+total reads: 370662
+total bases: 37120642
+Q20 bases: 36391099(98.0347%)
+Q30 bases: 34787083(93.7136%)
+
+Filtering result:
+reads passed filter: 741324
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 5178
+reads with adapter trimmed: 10888
+bases trimmed due to adapters: 23661
+reads corrected by overlap analysis: 60041
+bases corrected by overlap analysis: 106965
+
+Duplication rate: 3.57605%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 42 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 6708137
+total bases: 637031061
+Q20 bases: 616710149(96.8101%)
+Q30 bases: 590899165(92.7583%)
+
+Read2 before filtering:
+total reads: 6708137
+total bases: 638071065
+Q20 bases: 613504132(96.1498%)
+Q30 bases: 580091199(90.9133%)
+
+Read1 after filtering:
+total reads: 6634739
+total bases: 622434330
+Q20 bases: 608051772(97.6893%)
+Q30 bases: 584404806(93.8902%)
+
+Read2 aftering filtering:
+total reads: 6634739
+total bases: 621733945
+Q20 bases: 604679471(97.2569%)
+Q30 bases: 573993189(92.3214%)
+
+Filtering result:
+reads passed filter: 13269478
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 146796
+reads with adapter trimmed: 203570
+bases trimmed due to adapters: 581692
+reads corrected by overlap analysis: 1668332
+bases corrected by overlap analysis: 3027365
+
+Duplication rate: 11.4185%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 121 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 9064691
+total bases: 890163049
+Q20 bases: 863443878(96.9984%)
+Q30 bases: 828932843(93.1215%)
+
+Read2 before filtering:
+total reads: 9064691
+total bases: 891565529
+Q20 bases: 858620247(96.3048%)
+Q30 bases: 812405468(91.1212%)
+
+Read1 after filtering:
+total reads: 8970121
+total bases: 872016662
+Q20 bases: 852405623(97.7511%)
+Q30 bases: 820488222(94.0909%)
+
+Read2 aftering filtering:
+total reads: 8970121
+total bases: 871176548
+Q20 bases: 847617985(97.2958%)
+Q30 bases: 804806599(92.3816%)
+
+Filtering result:
+reads passed filter: 17940242
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 189140
+reads with adapter trimmed: 295408
+bases trimmed due to adapters: 822213
+reads corrected by overlap analysis: 2279297
+bases corrected by overlap analysis: 4050517
+
+Duplication rate: 11.4241%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 160 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 2929494
+total bases: 285354509
+Q20 bases: 275704047(96.6181%)
+Q30 bases: 263597078(92.3753%)
+
+Read2 before filtering:
+total reads: 2929494
+total bases: 285837553
+Q20 bases: 274861616(96.1601%)
+Q30 bases: 259647430(90.8374%)
+
+Read1 after filtering:
+total reads: 2899920
+total bases: 279070913
+Q20 bases: 272241132(97.5527%)
+Q30 bases: 261057776(93.5453%)
+
+Read2 aftering filtering:
+total reads: 2899920
+total bases: 278775454
+Q20 bases: 271127703(97.2567%)
+Q30 bases: 257086615(92.22%)
+
+Filtering result:
+reads passed filter: 5799840
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 59148
+reads with adapter trimmed: 87248
+bases trimmed due to adapters: 245108
+reads corrected by overlap analysis: 918611
+bases corrected by overlap analysis: 1546714
+
+Duplication rate: 11.7572%
+
+Insert size peak (evaluated by paired-end reads): 87
+
+JSON report: fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 76 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 3735380
+total bases: 360237654
+Q20 bases: 347483483(96.4595%)
+Q30 bases: 331759134(92.0945%)
+
+Read2 before filtering:
+total reads: 3735380
+total bases: 360837580
+Q20 bases: 346500013(96.0266%)
+Q30 bases: 327030300(90.6309%)
+
+Read1 after filtering:
+total reads: 3694693
+total bases: 351553695
+Q20 bases: 342713623(97.4854%)
+Q30 bases: 328290255(93.3827%)
+
+Read2 aftering filtering:
+total reads: 3694693
+total bases: 351137247
+Q20 bases: 341330863(97.2073%)
+Q30 bases: 323483442(92.1245%)
+
+Filtering result:
+reads passed filter: 7389386
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 81374
+reads with adapter trimmed: 112190
+bases trimmed due to adapters: 327258
+reads corrected by overlap analysis: 1189484
+bases corrected by overlap analysis: 2026420
+
+Duplication rate: 11.8034%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 81 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5620781
+total bases: 553914251
+Q20 bases: 535983054(96.7628%)
+Q30 bases: 513195566(92.6489%)
+
+Read2 before filtering:
+total reads: 5620781
+total bases: 554897838
+Q20 bases: 531942422(95.8631%)
+Q30 bases: 500830311(90.2563%)
+
+Read1 after filtering:
+total reads: 5561405
+total bases: 541257505
+Q20 bases: 528524633(97.6475%)
+Q30 bases: 507598857(93.7814%)
+
+Read2 aftering filtering:
+total reads: 5561405
+total bases: 540294069
+Q20 bases: 524282872(97.0366%)
+Q30 bases: 495600829(91.728%)
+
+Filtering result:
+reads passed filter: 11122810
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 118752
+reads with adapter trimmed: 170418
+bases trimmed due to adapters: 480185
+reads corrected by overlap analysis: 1539123
+bases corrected by overlap analysis: 2803883
+
+Duplication rate: 12.6793%
+
+Insert size peak (evaluated by paired-end reads): 89
+
+JSON report: fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 109 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1528890
+total bases: 146384341
+Q20 bases: 142355939(97.2481%)
+Q30 bases: 136819950(93.4662%)
+
+Read2 before filtering:
+total reads: 1528890
+total bases: 146593015
+Q20 bases: 141652959(96.6301%)
+Q30 bases: 134352125(91.6497%)
+
+Read1 after filtering:
+total reads: 1515543
+total bases: 143662438
+Q20 bases: 140755332(97.9764%)
+Q30 bases: 135615887(94.399%)
+
+Read2 aftering filtering:
+total reads: 1515543
+total bases: 143528006
+Q20 bases: 140026753(97.5606%)
+Q30 bases: 133236332(92.8295%)
+
+Filtering result:
+reads passed filter: 3031086
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 26694
+reads with adapter trimmed: 43248
+bases trimmed due to adapters: 107508
+reads corrected by overlap analysis: 321840
+bases corrected by overlap analysis: 583910
+
+Duplication rate: 8.52207%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 61 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 3130627
+total bases: 299248362
+Q20 bases: 289156963(96.6278%)
+Q30 bases: 276421522(92.3719%)
+
+Read2 before filtering:
+total reads: 3130627
+total bases: 299703473
+Q20 bases: 288494697(96.26%)
+Q30 bases: 272813796(91.0279%)
+
+Read1 after filtering:
+total reads: 3099576
+total bases: 292636477
+Q20 bases: 285583646(97.5899%)
+Q30 bases: 273849012(93.5799%)
+
+Read2 aftering filtering:
+total reads: 3099576
+total bases: 292438517
+Q20 bases: 284647060(97.3357%)
+Q30 bases: 270176875(92.3876%)
+
+Filtering result:
+reads passed filter: 6199152
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 62102
+reads with adapter trimmed: 88870
+bases trimmed due to adapters: 244390
+reads corrected by overlap analysis: 944004
+bases corrected by overlap analysis: 1618552
+
+Duplication rate: 11.2036%
+
+Insert size peak (evaluated by paired-end reads): 85
+
+JSON report: fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 77 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 693088
+total bases: 63806578
+Q20 bases: 62038871(97.2296%)
+Q30 bases: 59605373(93.4157%)
+
+Read2 before filtering:
+total reads: 693088
+total bases: 63937209
+Q20 bases: 61562550(96.286%)
+Q30 bases: 58107890(90.8827%)
+
+Read1 after filtering:
+total reads: 687249
+total bases: 62628741
+Q20 bases: 61361159(97.976%)
+Q30 bases: 59097595(94.3618%)
+
+Read2 aftering filtering:
+total reads: 687249
+total bases: 62534586
+Q20 bases: 60858512(97.3198%)
+Q30 bases: 57637014(92.1682%)
+
+Filtering result:
+reads passed filter: 1374498
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 11678
+reads with adapter trimmed: 18814
+bases trimmed due to adapters: 42287
+reads corrected by overlap analysis: 155164
+bases corrected by overlap analysis: 283296
+
+Duplication rate: 9.36563%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 43 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 6466596
+total bases: 603684351
+Q20 bases: 582837425(96.5467%)
+Q30 bases: 557227165(92.3044%)
+
+Read2 before filtering:
+total reads: 6466596
+total bases: 604583532
+Q20 bases: 582231535(96.3029%)
+Q30 bases: 551408955(91.2048%)
+
+Read1 after filtering:
+total reads: 6398070
+total bases: 589885442
+Q20 bases: 575224737(97.5147%)
+Q30 bases: 551667056(93.521%)
+
+Read2 aftering filtering:
+total reads: 6398070
+total bases: 589535535
+Q20 bases: 574042761(97.372%)
+Q30 bases: 545718368(92.5675%)
+
+Filtering result:
+reads passed filter: 12796140
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 137052
+reads with adapter trimmed: 196076
+bases trimmed due to adapters: 542384
+reads corrected by overlap analysis: 1966320
+bases corrected by overlap analysis: 3260292
+
+Duplication rate: 11.5531%
+
+Insert size peak (evaluated by paired-end reads): 80
+
+JSON report: fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 128 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 7496132
+total bases: 699687113
+Q20 bases: 676555244(96.694%)
+Q30 bases: 647495013(92.5407%)
+
+Read2 before filtering:
+total reads: 7496132
+total bases: 701232384
+Q20 bases: 673953477(96.1099%)
+Q30 bases: 636277777(90.7371%)
+
+Read1 after filtering:
+total reads: 7418716
+total bases: 684588777
+Q20 bases: 668115050(97.5936%)
+Q30 bases: 641219637(93.6649%)
+
+Read2 aftering filtering:
+total reads: 7418716
+total bases: 683663177
+Q20 bases: 664697373(97.2259%)
+Q30 bases: 629965463(92.1456%)
+
+Filtering result:
+reads passed filter: 14837432
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 154832
+reads with adapter trimmed: 222640
+bases trimmed due to adapters: 572858
+reads corrected by overlap analysis: 2326206
+bases corrected by overlap analysis: 3868763
+
+Duplication rate: 11.2226%
+
+Insert size peak (evaluated by paired-end reads): 83
+
+JSON report: fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 138 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1367691
+total bases: 162753223
+Q20 bases: 157036989(96.4878%)
+Q30 bases: 149679682(91.9673%)
+
+Read2 before filtering:
+total reads: 1367691
+total bases: 162929288
+Q20 bases: 154725678(94.9649%)
+Q30 bases: 144232732(88.5247%)
+
+Read1 after filtering:
+total reads: 1349482
+total bases: 158355490
+Q20 bases: 154266760(97.418%)
+Q30 bases: 147544449(93.1729%)
+
+Read2 aftering filtering:
+total reads: 1349482
+total bases: 157648033
+Q20 bases: 151900711(96.3543%)
+Q30 bases: 142291556(90.259%)
+
+Filtering result:
+reads passed filter: 2698964
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 36418
+reads with adapter trimmed: 36832
+bases trimmed due to adapters: 144074
+reads corrected by overlap analysis: 474220
+bases corrected by overlap analysis: 906480
+
+Duplication rate: 18.9526%
+
+Insert size peak (evaluated by paired-end reads): 105
+
+JSON report: fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 62 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 11949730
+total bases: 1169087677
+Q20 bases: 1129604287(96.6227%)
+Q30 bases: 1080849237(92.4524%)
+
+Read2 before filtering:
+total reads: 11949730
+total bases: 1171290304
+Q20 bases: 1123057654(95.8821%)
+Q30 bases: 1059173973(90.428%)
+
+Read1 after filtering:
+total reads: 11812392
+total bases: 1140417926
+Q20 bases: 1112596255(97.5604%)
+Q30 bases: 1068021570(93.6518%)
+
+Read2 aftering filtering:
+total reads: 11812392
+total bases: 1139123603
+Q20 bases: 1105872207(97.081%)
+Q30 bases: 1047351198(91.9436%)
+
+Filtering result:
+reads passed filter: 23624784
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 274676
+reads with adapter trimmed: 385400
+bases trimmed due to adapters: 1154326
+reads corrected by overlap analysis: 3282660
+bases corrected by overlap analysis: 5993173
+
+Duplication rate: 12.9208%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 198 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 9927240
+total bases: 983190299
+Q20 bases: 950934230(96.7192%)
+Q30 bases: 910609298(92.6178%)
+
+Read2 before filtering:
+total reads: 9927240
+total bases: 984895330
+Q20 bases: 944323452(95.8806%)
+Q30 bases: 890045117(90.3695%)
+
+Read1 after filtering:
+total reads: 9815576
+total bases: 960050167
+Q20 bases: 937157245(97.6154%)
+Q30 bases: 900229628(93.769%)
+
+Read2 aftering filtering:
+total reads: 9815576
+total bases: 958474033
+Q20 bases: 930263700(97.0567%)
+Q30 bases: 880386536(91.8529%)
+
+Filtering result:
+reads passed filter: 19631152
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 223328
+reads with adapter trimmed: 307514
+bases trimmed due to adapters: 909229
+reads corrected by overlap analysis: 2733967
+bases corrected by overlap analysis: 4971322
+
+Duplication rate: 12.8183%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 172 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 2299394
+total bases: 206998026
+Q20 bases: 200407820(96.8163%)
+Q30 bases: 192057160(92.7821%)
+
+Read2 before filtering:
+total reads: 2299394
+total bases: 207463329
+Q20 bases: 198943971(95.8936%)
+Q30 bases: 187492956(90.374%)
+
+Read1 after filtering:
+total reads: 2276402
+total bases: 202285515
+Q20 bases: 197709792(97.738%)
+Q30 bases: 190055250(93.954%)
+
+Read2 aftering filtering:
+total reads: 2276402
+total bases: 201969010
+Q20 bases: 196132180(97.11%)
+Q30 bases: 185597444(91.894%)
+
+Filtering result:
+reads passed filter: 4552804
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 45984
+reads with adapter trimmed: 65236
+bases trimmed due to adapters: 157442
+reads corrected by overlap analysis: 576340
+bases corrected by overlap analysis: 1061127
+
+Duplication rate: 11.923%
+
+Insert size peak (evaluated by paired-end reads): 80
+
+JSON report: fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 73 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 4468437
+total bases: 427365055
+Q20 bases: 413904502(96.8503%)
+Q30 bases: 396692182(92.8228%)
+
+Read2 before filtering:
+total reads: 4468437
+total bases: 428068116
+Q20 bases: 411708436(96.1783%)
+Q30 bases: 389231116(90.9274%)
+
+Read1 after filtering:
+total reads: 4421786
+total bases: 417626609
+Q20 bases: 408224297(97.7486%)
+Q30 bases: 392449300(93.9713%)
+
+Read2 aftering filtering:
+total reads: 4421786
+total bases: 417296667
+Q20 bases: 405983882(97.289%)
+Q30 bases: 385302164(92.3329%)
+
+Filtering result:
+reads passed filter: 8843572
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 93302
+reads with adapter trimmed: 134644
+bases trimmed due to adapters: 393464
+reads corrected by overlap analysis: 1093768
+bases corrected by overlap analysis: 2028277
+
+Duplication rate: 11.1985%
+
+Insert size peak (evaluated by paired-end reads): 85
+
+JSON report: fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 108 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5904042
+total bases: 616176044
+Q20 bases: 593653520(96.3448%)
+Q30 bases: 566299089(91.9054%)
+
+Read2 before filtering:
+total reads: 5904042
+total bases: 617025110
+Q20 bases: 591806501(95.9129%)
+Q30 bases: 558396698(90.4982%)
+
+Read1 after filtering:
+total reads: 5831024
+total bases: 600172875
+Q20 bases: 584393528(97.3709%)
+Q30 bases: 559397007(93.206%)
+
+Read2 aftering filtering:
+total reads: 5831024
+total bases: 599643235
+Q20 bases: 582239172(97.0976%)
+Q30 bases: 551733352(92.0103%)
+
+Filtering result:
+reads passed filter: 11662048
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 146036
+reads with adapter trimmed: 183400
+bases trimmed due to adapters: 585564
+reads corrected by overlap analysis: 2008936
+bases corrected by overlap analysis: 3457891
+
+Duplication rate: 15.0758%
+
+Insert size peak (evaluated by paired-end reads): 89
+
+JSON report: fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 138 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 9264555
+total bases: 896625255
+Q20 bases: 867353820(96.7354%)
+Q30 bases: 830630035(92.6396%)
+
+Read2 before filtering:
+total reads: 9264555
+total bases: 898224017
+Q20 bases: 861584339(95.9209%)
+Q30 bases: 812756983(90.4849%)
+
+Read1 after filtering:
+total reads: 9158894
+total bases: 875000783
+Q20 bases: 854450010(97.6513%)
+Q30 bases: 820887663(93.8156%)
+
+Read2 aftering filtering:
+total reads: 9158894
+total bases: 873685548
+Q20 bases: 848431113(97.1094%)
+Q30 bases: 803690440(91.9885%)
+
+Filtering result:
+reads passed filter: 18317788
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 211322
+reads with adapter trimmed: 278604
+bases trimmed due to adapters: 813109
+reads corrected by overlap analysis: 2421635
+bases corrected by overlap analysis: 4419016
+
+Duplication rate: 12.4645%
+
+Insert size peak (evaluated by paired-end reads): 84
+
+JSON report: fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 166 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 7473216
+total bases: 740115702
+Q20 bases: 714759964(96.5741%)
+Q30 bases: 683043051(92.2887%)
+
+Read2 before filtering:
+total reads: 7473216
+total bases: 741497865
+Q20 bases: 707932758(95.4733%)
+Q30 bases: 664265771(89.5843%)
+
+Read1 after filtering:
+total reads: 7387952
+total bases: 721959132
+Q20 bases: 703953763(97.506%)
+Q30 bases: 674905169(93.4825%)
+
+Read2 aftering filtering:
+total reads: 7387952
+total bases: 720300233
+Q20 bases: 696942865(96.7573%)
+Q30 bases: 656799305(91.1841%)
+
+Filtering result:
+reads passed filter: 14775904
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 170528
+reads with adapter trimmed: 237422
+bases trimmed due to adapters: 661966
+reads corrected by overlap analysis: 2236904
+bases corrected by overlap analysis: 4137753
+
+Duplication rate: 14.2987%
+
+Insert size peak (evaluated by paired-end reads): 86
+
+JSON report: fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r1.fq.gz --in2 fq_fp1_clmp/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r2.fq.gz --out1 fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_fail.fq.gz -h fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.html -j fq_fp1_clmp_fp2/AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_r1r2_fastp.json --detect_adapter_for_pe --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 157 seconds
