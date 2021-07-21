@@ -90,7 +90,7 @@ I made the config file by filling in the `runFQSCRN_5.xlsx` work sheet and copyi
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFQSCRN_6.bash <indir> <outdir> <tempdir> <number of nodes to run simultaneously>
 # do not use trailing / in paths
-bash runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn /scratch/cbird 20
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn /scratch/cbird 20
 ```
 
 [Report](), download and open in web browser
