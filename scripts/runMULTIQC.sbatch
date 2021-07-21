@@ -2,7 +2,7 @@
 
 #this script runs multiqc on specified dir
 
-#SBATCH --job-name=fastp
+#SBATCH --job-name=mqc
 #SBATCH -o fastp_2nd_-%j.out
 #SBATCH --time=00:00:00
 #SBATCH --cpus-per-task=40
