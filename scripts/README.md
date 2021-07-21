@@ -102,6 +102,7 @@ cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+#confirm that all files were successfully completed
 ```
 
 [Report](), download and open in web browser
