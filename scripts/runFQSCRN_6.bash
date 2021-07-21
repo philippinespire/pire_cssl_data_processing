@@ -6,8 +6,11 @@ INDIR=$1
 OUTDIR=$2
 #TMPDIR=$3
 NUMNODES=$3   # 5 to 10 on tamucc
-FQPATTERN=*.fq.gz
+FQPATTERN=$4
 
+if [[ -z "$FQPATTERN" ]]; then
+       FQPATTERN=*.fq.gz
+fi
 mkdir $OUTDIR
 
 all_samples=( $(ls $INDIR/$FQPATTERN) )
