@@ -109,7 +109,7 @@ mv *out logs
 
 ---
 
-## Step 5. repair fastq_screen paired end files
+## Step 5. Repair fastq_screen paired end files
 
 Waiting for step 4 to finish
 
@@ -123,9 +123,14 @@ rename .R2. .r2. fq_fp1_clmp_fp2_fqscrn_repaired/*gz
 
 ---
 
-## Step 6. Repair fastq_screen paired end files for mapping
+## Step 6. Rename files for dDocentHPC
 
-waiting for step 8 to finish
+files names must be formatted as follows:
+  * `population_individual.R1.fq.gz`
+    * only 1 `_`
+    * must end in `.R1.fq.gz` or `.R2.fq.gz`
+
+waiting for step 5 to finish
 
 ---
 
