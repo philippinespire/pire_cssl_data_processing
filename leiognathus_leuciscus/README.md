@@ -88,9 +88,14 @@ I edited runFQSCRN_6* to run on wahab.
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
 # do not use trailing / in paths
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+
+# check output for errors
+grep 'error' slurm-fqscrn.266713*out | less -S
+grep 'No reads in' slurm-fqscrn.266713*out | less -S
 ```
 
 [Report](), download and open in web browser
@@ -100,6 +105,18 @@ Potential issues:
   * [out file](./logs/LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz)
   * "No reads in LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz, skipping" 
   * I checked this file, there are plenty of reads
+
+
+Fix errors
+
+```
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
+# do not use trailing / in paths
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 L1A01010_r1.fq.gz
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 L1A01005_r2.fq.gz
+```
+
 
 Cleanup logs
 ```
