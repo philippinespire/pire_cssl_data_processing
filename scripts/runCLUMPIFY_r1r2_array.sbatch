@@ -40,7 +40,7 @@ all_samples=($all_samples)
 sample_name=${all_samples[${SLURM_ARRAY_TASK_ID}]}
 echo ${sample_name}
 
-echo crun env LD_PRELOAD= clumpify.sh \
+crun clumpify.sh \
 	in=$INDIR/${sample_name}r1.fq.gz \
 	in2=$INDIR/${sample_name}r2.fq.gz \
 	out=$OUTDIR/${sample_name}clmp.r1.fq.gz \
