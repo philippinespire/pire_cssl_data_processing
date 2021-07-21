@@ -156,9 +156,20 @@ waiting for step 5 to finish
 
 ### Step 8. Map reads to reference
 
-fill in
+Clone dDocentHPC repo
 
 ```
-fill in commands
+cd /home/cbird/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/dDocentHPC.git
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir mkBAM
+cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
+cd mkBAM
+
+#this has to be run from dir with fq.gz files to be mapped and the ref genome
+# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+
+# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
 ```
 
