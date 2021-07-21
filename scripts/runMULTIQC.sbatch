@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=40
 
 enable_lmod
-module load container_env pire_genome_assembly/2021.03.25
+module load container_env FQSCRN=fastq_screen   #tamucc
 
 export SINGULARITY_BIND=/home/e1garcia
 
