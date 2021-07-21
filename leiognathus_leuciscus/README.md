@@ -64,7 +64,7 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_1.html), download and open in web browser
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good  
