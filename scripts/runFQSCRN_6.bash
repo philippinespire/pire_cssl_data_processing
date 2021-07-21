@@ -16,7 +16,7 @@ JOBID=$(sbatch --array=0-$((${#all_samples[@]}-1))%${NUMNODES} \
        --output=slurm-fqscrn.%A.%a.out \
        --partition normal,gpu,cbirdq,main \
        -t 96:00:00 \
-       runFQSCRN_6.sbatch ${INDIR} ${OUTDIR} ${TMPDIR} ${FQPATTERN})
+       ../scripts/runFQSCRN_6.sbatch ${INDIR} ${OUTDIR} ${TMPDIR} ${FQPATTERN})
 NUMBER1=$(echo ${JOBID} | sed 's/[^0-9]*//g')
 
 #Run Multiqc after array finishes
