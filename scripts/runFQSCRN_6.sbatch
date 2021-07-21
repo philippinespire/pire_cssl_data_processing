@@ -22,6 +22,8 @@ FQPATTERN=$3       					#PATTERN="*.fq.gz"
 
 CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf      #tamucc
 CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf      #odu
+FQSCRN=fastq_screen   #tamucc
+FQSCRN=/home/e1garcia/shotgun_PIRE/fastq_screen/FastQ-Screen-0.14.1/fastq_screen #odu
 SUBSET=0
 FILTER=000000000000
 ALIGNER=bowtie2  #bwa or bowtie2
@@ -54,7 +56,7 @@ else
 	echo ""; echo `date` RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
 fi
 
-crun fastq_screen \
+crun $FQSCRN \
 	--aligner $ALIGNER \
 	--conf $CONFFILE \
 	--threads $THREADS \
