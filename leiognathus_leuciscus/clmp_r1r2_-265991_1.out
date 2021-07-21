@@ -23,3 +23,18 @@ Executing clump.KmerSplit [in1=fq_fp1/LlA01002_CKDL210012719-1a-AK6881-AK7558_HF
 
 Reset INTERLEAVED to false because paired input files were specified.
 Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+[21.291s][warning][os,thread] Failed to start thread - pthread_create failed (EAGAIN) for attributes: stacksize: 1024k, guardsize: 0k, detached.
+java.lang.OutOfMemoryError: unable to create native thread: possibly out of memory or process/resource limits reached
+	at java.base/java.lang.Thread.start0(Native Method)
+	at java.base/java.lang.Thread.start(Thread.java:803)
+	at stream.ConcurrentGenericReadOutputStream.start(ConcurrentGenericReadOutputStream.java:60)
+	at clump.KmerSplit.process(KmerSplit.java:302)
+	at clump.KmerSplit.main(KmerSplit.java:52)
+	at clump.Clumpify.runOnePass_v2(Clumpify.java:403)
+	at clump.Clumpify.process(Clumpify.java:275)
+	at clump.Clumpify.main(Clumpify.java:47)
+
+This program ran out of memory.
+Try increasing the -Xmx flag and using tool-specific memory-related parameters.
