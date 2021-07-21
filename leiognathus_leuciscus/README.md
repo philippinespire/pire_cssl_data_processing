@@ -84,7 +84,7 @@ Potential issues:
 
 ## Step 4. Run fastq_screen
 
-I made the config file by filling in the `runFQSCRN_5.xlsx` work sheet and copying column K into `runFQSCRN_5.config`, not including row 1.
+I edited runFQSCRN_6* to run on wahab.
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
