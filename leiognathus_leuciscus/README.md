@@ -11,6 +11,7 @@ Locate data location in slack channel for this species to get the indir.  The ou
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_1.sbatch <indir> <outdir>
+# do not use trailing / in paths
 sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
 
@@ -35,6 +36,7 @@ something odd happened here, so I'm running it again.
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
+# do not use trailing / in paths
 sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/cbird
 #when complete, search the *out file for `java.lang.OutOfMemoryError`.  If this occurs, then increase ram, set groups to 1 in script
 # no matches found
@@ -46,6 +48,7 @@ this runs clumpify in an array, but the script is running out of memory
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <num nodes>
+# do not use trailing / in paths
 bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/cbird 20
 ```
 ---
@@ -57,6 +60,7 @@ will need to run again with clumpify is done
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_2.sbatch <indir> <outdir> 
+# do not use trailing / in paths
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
@@ -83,11 +87,13 @@ Potential issues:
 I made the config file by filling in the `runFQSCRN_5.xlsx` work sheet and copying column K into `runFQSCRN_5.config`, not including row 1.
 
 ```
-# arguments are name of config file and number of nodes to run jobs on
-bash runFQSCRN_5.bash runFQSCRN_5.config 5
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+#runFQSCRN_6.bash <indir> <outdir> <tempdir> <number of nodes to run simultaneously>
+# do not use trailing / in paths
+bash runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn /scratch/cbird 20
 ```
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2_fqscrn/multiqc_report.html), download and open in web browser
+[Report](), download and open in web browser
 
 Potential issues:
 CPIC_01882 has low number of reads.  To salvage for mapping, will have to run fp2 and fqscrn again with more permissive length settings. Will use these for making ref genome
