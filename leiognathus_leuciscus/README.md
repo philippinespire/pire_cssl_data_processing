@@ -175,7 +175,7 @@ cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_c
 Update the config file with the ref genome info
 
 ```
-cd cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 nano config.5.cssl
 ```
 
@@ -200,6 +200,13 @@ Make sure the cutoffs above match the reference*fasta!
 5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------ 
 ```
+ 
+Move the `fq.gz` files to the `mkBAM` dir
+ 
+```bash
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+mv ../fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz . 
+```
 
 ---
 
@@ -208,13 +215,7 @@ Make sure the cutoffs above match the reference*fasta!
 Clone dDocentHPC repo
 
 ```
-cd /home/cbird/pire_cssl_data_processing/scripts
-git clone git@github.com:cbirdlab/dDocentHPC.git
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-mkdir mkBAM
-cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
-cd mkBAM
-
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 #this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
