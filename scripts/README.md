@@ -13,20 +13,23 @@ Locate data location in slack channel for this species to get the indir.  The ou
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 
 #runFASTP_1.sbatch <indir> <outdir>
+# do not use trailing / in paths
 sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/SPECIESDIR/fq_raw fq_fp1
 ```
 
 [Report](fill in url to multiqc report here), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
 
 Potential issues:  
-* % duplication - _______
-  * alb:XXs, contemp: YYs
+* % duplication - ____  
+  * alb:__s, contemp: __s
 * gc content - ______
-* passing filter - _____
-* % adapter - _________
-  * alb: XXs, contemp: YYs
-* number of reads - _____
-  * alb: XX mil, contemp: YY mil
+  * alb: __s, contemp: __s 
+* passing filter - ____
+  * alb: __s, contemp: __s 
+* % adapter - ______
+  * alb: __s, contemp: __s
+* number of reads - ________
+    * alb: __ mil, contemp: __ mil
 
 ---
 
@@ -34,22 +37,31 @@ Potential issues:
 
 Clumpify can use a lot of ram and if it runs out you will loose files.  [checkClumpify.R]() should be run after clumpify to make sure no files ran out of ram.  You can also use `sacct` to query how much ram was used to dial this in.
 
-There are two ways to run, either as a normal sbatch script on a turing himem node `runCLUMPIFY.sbatch` or as an array on multiple nodes simultaneously.
-
+There are two ways to run, either as a normal sbatch script on a turing himem node:
 ```
 # run clumpify as normal sbatch on turing
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
+# do not use trailing / in paths
 sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/YOURUSERNAME
 #when complete, search the *out file for `java.lang.OutOfMemoryError`.  If this occurs, then increase ram, set groups to 1 in script
 ```
+
+or as an array on multiple wahab nodes simultaneously:
 
 ```
 #note: this runs out of ram right now.  not sure why
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
+# do not use trailing / in paths
 bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOURUSERNAME 20
 #after completion, run checkClumpify.R to see if any files failed
+```
+
+Cleanup logs
+```
+mkdir logs
+mv *out logs
 ```
 
 ---
@@ -61,29 +73,41 @@ Insert notes here
 ```
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runFASTP_2.sbatch <indir> <outdir> 
+# do not use trailing / in paths
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
 [Report](insert url to report here), download and open in web browser
 
-Potential issues:
-* list issues here
+Potential issues:  
+* % duplication - ____  
+  * alb:__s, contemp: __s
+* gc content - ______
+  * alb: __s, contemp: __s 
+* passing filter - ____
+  * alb: __s, contemp: __s 
+* % adapter - ______
+  * alb: __s, contemp: __s
+* number of reads - ________
+    * alb: __ mil, contemp: __ mil
 
 ---
 
 ## Step 4. Run fastq_screen
 
-I made the config file by filling in the `runFQSCRN_5.xlsx` work sheet and copying column K into `runFQSCRN_5.config`, not including row 1.
+Insert notes here
 
 ```
-# arguments are name of config file and number of nodes to run jobs on
-bash runFQSCRN_5.bash runFQSCRN_5.config 5
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
+#runFASTP_2.sbatch <indir> <outdir> 
+# do not use trailing / in paths
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2_fqscrn/multiqc_report.html), download and open in web browser
+[Report](), download and open in web browser
 
 Potential issues:
-CPIC_01882 has low number of reads.  To salvage for mapping, will have to run fp2 and fqscrn again with more permissive length settings. Will use these for making ref genome
+
 
 Cleanup logs
 ```
