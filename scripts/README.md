@@ -104,8 +104,8 @@ cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 
 #confirm that all files were successfully completed
-# this will return any out files that had a problem
-grep 'error' slurm-fqscrn.266713*out
+# this will return any out files that had a problem, replace JOBID with your jobid
+grep 'error' slurm-fqscrn.JOBID*out
 # if you see missing indiviudals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
 ```
 
