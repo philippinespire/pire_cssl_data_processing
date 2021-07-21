@@ -35,7 +35,7 @@ Potential issues:
 
 ## Step 2. Clumpify
 
-Clumpify can use a lot of ram and if it runs out you will loose files.  [checkClumpify.R]() should be run after clumpify to make sure no files ran out of ram.  You can also use `sacct` to query how much ram was used to dial this in.
+Clumpify can use a lot of ram, and if it runs out, you will loose files. 
 
 There are two ways to run, either as a normal sbatch script on a turing himem node:
 ```
@@ -47,10 +47,9 @@ sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/YOU
 #when complete, search the *out file for `java.lang.OutOfMemoryError`.  If this occurs, then increase ram, set groups to 1 in script
 ```
 
-or as an array on multiple wahab nodes simultaneously:
+or as an array on multiple wahab nodes simultaneously (faster):
 
 ```
-#note: this runs out of ram right now.  not sure why
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir>
 # do not use trailing / in paths
