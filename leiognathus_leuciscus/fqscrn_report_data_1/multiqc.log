@@ -1,0 +1,623 @@
+[2021-07-21 15:50:51,775] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2021-07-21 15:50:51,777] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/cbird/.multiqc_config.yaml
+[2021-07-21 15:50:51,783] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2021-07-21 15:50:51,783] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc fq_fp1_clmp_fp2_fqscrn -n fq_fp1_clmp_fp2_fqscrn/fqscrn_report
+[2021-07-21 15:50:52,404] multiqc                                            [WARNING]  MultiQC Version v1.11 now available!
+[2021-07-21 15:50:52,406] multiqc                                            [INFO   ]  This is MultiQC v1.10
+[2021-07-21 15:50:52,406] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc fq_fp1_clmp_fp2_fqscrn -n fq_fp1_clmp_fp2_fqscrn/fqscrn_report
+[2021-07-21 15:50:52,406] multiqc                                            [DEBUG  ]  Working dir : /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+[2021-07-21 15:50:52,406] multiqc                                            [INFO   ]  Template    : default
+[2021-07-21 15:50:52,406] multiqc                                            [DEBUG  ]  Running Python 3.7.9 (default, Aug 31 2020, 12:42:55)  [GCC 7.3.0]
+[2021-07-21 15:50:52,407] multiqc                                            [INFO   ]  Searching   : /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn
+[2021-07-21 15:50:52,408] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ngsderive, purple, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, sentieon, prokka, qc3C, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean, optitype
+[2021-07-21 15:50:52,408] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpw1bx5n7v
+[2021-07-21 15:50:53,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01053_CKDL210012719-1a-5UDI312-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:53,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01044_CKDL210012719-1a-5UDI312-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01048_CKDL210012719-1a-AK6881-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:53,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01055_CKDL210012719-1a-5UDI312-AK33_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:53,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:53,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:53,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:53,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:53,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:53,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:53,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:54,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:54,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:54,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:54,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:54,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:54,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:54,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:54,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:54,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:54,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:54,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:54,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:55,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:55,273] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01050_CKDL210012719-1a-AK3905-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:55,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:55,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:55,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:55,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:55,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:55,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:55,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:55,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01048_CKDL210012719-1a-AK6881-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,329] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,339] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,340] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01042_CKDL210012719-1a-AK6260-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,342] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,344] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,358] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,359] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,367] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,371] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,372] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,382] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,395] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,399] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,404] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,409] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,412] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,430] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,440] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,443] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,445] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,452] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,453] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,461] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,465] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,484] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01042_CKDL210012719-1a-AK6260-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:56,486] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,487] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,900] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01052_CKDL210012719-1a-AK6260-AK892_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:56,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,903] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:56,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:56,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:56,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:56,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:56,997] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,005] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,266] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,268] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,270] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,292] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01021_CKDL210012719-1a-AK8410-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:57,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,599] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:57,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,602] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01044_CKDL210012719-1a-5UDI312-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:57,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:57,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:57,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:57,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:57,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:57,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:58,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:58,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:58,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01057_CKDL210012719-1a-AK8587-AK33_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:58,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:58,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:58,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:58,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:58,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:58,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:58,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:58,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:58,127] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:58,128] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:58,129] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:58,130] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:58,132] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:58,133] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:58,144] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:58,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01020_CKDL210012719-1a-AK7010-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:58,823] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,205] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,207] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:59,209] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,213] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:50:59,214] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:59,218] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01048_CKDL210012719-1a-AK6881-AK33_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:50:59,238] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,241] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,242] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,246] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,247] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,248] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,249] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,640] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:59,641] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,655] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,657] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,664] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,665] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:59,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:50:59,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:50:59,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:50:59,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:50:59,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01036_CKDL210012719-1a-AK7010-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:00,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01049_CKDL210012719-1a-AK7010-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:00,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:00,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:00,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01012_CKDL210012719-1a-5UDI312-GC12_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,137] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,146] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01026_CKDL210012719-1a-AK6881-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,157] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,161] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,166] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01011_CKDL210012719-1a-AK9141-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:00,172] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01057_CKDL210012719-1a-AK8587-AK33_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:00,177] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:00,186] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,188] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01042_CKDL210012719-1a-AK6260-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:00,190] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,193] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01052_CKDL210012719-1a-AK6260-AK892_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:00,201] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,203] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,204] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,205] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,209] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,552] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:00,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01013_CKDL210012719-1a-AK9141-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:00,862] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,863] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,865] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:00,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:00,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01025_CKDL210012719-1a-AK3905-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:00,879] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,228] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,230] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,232] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01054_CKDL210012719-1a-5UDI312-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,241] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,259] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,266] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,292] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,301] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01058_CKDL210012719-1a-AK8587-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,304] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:01,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01056_CKDL210012719-1a-AK8410-AK33_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:01,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:01,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:01,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:01,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:01,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01050_CKDL210012719-1a-AK3905-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:01,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01049_CKDL210012719-1a-AK7010-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:01,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:01,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:01,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01045_CKDL210012719-1a-AK8410-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:01,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01044_CKDL210012719-1a-5UDI312-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:02,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01023_CKDL210012719-1a-5UDI312-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:02,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:02,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:02,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01046_CKDL210012719-1a-AK8587-AK892_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:02,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:02,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:02,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01010_CKDL210012719-1a-5UDI312-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:02,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:02,407] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:02,412] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:02,413] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01033_CKDL210012719-1a-AK8410-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:02,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:02,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:02,422] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:02,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:02,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:03,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01055_CKDL210012719-1a-5UDI312-AK33_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:03,521] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:03,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:03,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01031_CKDL210012719-1a-AK7010-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:03,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01027_CKDL210012719-1a-AK7761-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:03,553] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,557] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01040_CKDL210012719-1a-5UDI312-AK892_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,882] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01013_CKDL210012719-1a-AK6881-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:03,883] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01041_CKDL210012719-1a-5UDI312-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:03,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:03,887] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:03,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:03,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01042_CKDL210012719-1a-AK6260-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:03,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01012_CKDL210012719-1a-AK7759-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:03,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01048_CKDL210012719-1a-AK6881-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:03,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01031_CKDL210012719-1a-AK7010-AK9148_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:03,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01054_CKDL210012719-1a-5UDI312-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:03,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:03,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01008_CKDL210012719-1a-AK7010-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:03,931] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01030_CKDL210012719-1a-AK7010-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:03,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01005_CKDL210012719-1a-AK9141-AK4997_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01021_CKDL210012719-1a-5UDI312-AK4971_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:03,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:03,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:03,947] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:03,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01016_CKDL210012719-1a-AK7761-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:03,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01006_CKDL210012719-1a-AK6260-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,292] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01006_CKDL210012719-1a-AK6260-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,341] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,346] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01004_CKDL210012719-1a-AK7761-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,362] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01016_CKDL210012719-1a-AK6260-AK1864_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,372] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01037_CKDL210012719-1a-AK6881-AK8544_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,377] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01046_CKDL210012719-1a-AK8587-AK892_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:04,381] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01011_CKDL210012719-1a-5UDI312-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,384] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01010_CKDL210012719-1a-AK7010-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01007_CKDL210012719-1a-AK9142-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,388] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,389] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,391] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01044_CKDL210012719-1a-5UDI312-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,394] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,407] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01023_CKDL210012719-1a-AK7759-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fqscrn_report.html
+[2021-07-21 15:51:04,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01018_CKDL210012719-1a-AK7010-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,421] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,422] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01022_CKDL210012719-1a-5UDI312-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,423] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,424] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01003_CKDL210012719-1a-AK6260-AK33_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01019_CKDL210012719-1a-AK9142-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01015_CKDL210012719-1a-AK6881-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,444] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01038_CKDL210012719-1a-AK6881-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01029_CKDL210012719-1a-5UDI298-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,449] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01026_CKDL210012719-1a-AK6881-AK9148_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01028_CKDL210012719-1a-AK7761-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,467] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01058_CKDL210012719-1a-AK8587-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:04,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01007_CKDL210012719-1a-AK7010-AK1864_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,478] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01001_CKDL210012719-1a-AK6881-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,484] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01022_CKDL210012719-1a-AK7010-AK33_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,494] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01053_CKDL210012719-1a-5UDI312-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:04,496] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01027_CKDL210012719-1a-AK6260-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,500] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01019_CKDL210012719-1a-AK7010-AK7558_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,509] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01030_CKDL210012719-1a-AK9142-AK33_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01008_CKDL210012719-1a-AK9141-AK8544_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,516] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01028_CKDL210012719-1a-AK6260-AK7558_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01002_CKDL210012719-1a-AK3905-AK892_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,520] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01017_CKDL210012719-1a-AK6260-AK2587_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,524] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01015_CKDL210012719-1a-AK6260-AK4997_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01001_CKDL210012719-1a-AK6881-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,826] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01029_CKDL210012719-1a-AK6260-GC12_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,830] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01003_CKDL210012719-1a-AK6881-GC12_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,837] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,840] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01018_CKDL210012719-1a-5UDI298-7UDI227_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01034_CKDL210012719-1a-5UDI312-7UDI243_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01014_CKDL210012719-1a-AK6881-7UDI308_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01032_CKDL210012719-1a-AK9142-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged.fastq.gz
+[2021-07-21 15:51:04,848] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01004_CKDL210012719-1a-AK6260-AK4971_HF5TCDSX2_L1_clmp_fp2_r2.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,849] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01056_CKDL210012719-1a-AK8410-AK33_HF5TCDSX2_L1_clmp_fp2_r1.fq.gz_temp_subset.fastq
+[2021-07-21 15:51:04,852] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,856] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01043_CKDL210012719-1a-AK7010-7UDI227_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01024_CKDL210012719-1a-5UDI312-7UDI246_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,863] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01002_CKDL210012719-1a-AK6881-AK7558_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,867] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01017_CKDL210012719-1a-AK6260-7UDI298_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01009_CKDL210012719-1a-AK8410-7UDI298_HF5TCDSX2_L1_clmp_fp2_r2_screen.html
+[2021-07-21 15:51:04,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01009_CKDL210012719-1a-5UDI312-7UDI214_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,882] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01039_CKDL210012719-1a-AK7761-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01032_CKDL210012719-1a-AK7010-7UDI246_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01014_CKDL210012719-1a-AK7010-AK8544_HF5TCDSX2_L1_clmp_fp2_r2.tagged.fastq.gz
+[2021-07-21 15:51:04,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlA01025_CKDL210012719-1a-AK6881-AK1864_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01020_CKDL210012719-1a-AK9142-AK9148_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01047_CKDL210012719-1a-AK7759-7UDI243_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:04,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01035_CKDL210012719-1a-AK7759-AK4997_HF5TCDSX2_L1_clmp_fp2_r1.tagged_filter.fastq.gz
+[2021-07-21 15:51:04,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: LlC01024_CKDL210012719-1a-AK7010-AK4997_HF5TCDSX2_L1_clmp_fp2_r1_screen.html
+[2021-07-21 15:51:05,033] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: multiqc_data.json
+[2021-07-21 15:51:05,091] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: multiqc_data.json
+[2021-07-21 15:51:05,615] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: mqc_fastq_screen_plot_1.txt
+[2021-07-21 15:51:05,689] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: mqc_fastq_screen_plot_1.txt
+[2021-07-21 15:51:05,988] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: multiqc_sources.txt
+[2021-07-21 15:51:06,050] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: multiqc_sources.txt
+[2021-07-21 15:51:06,315] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: multiqc.log
+[2021-07-21 15:51:06,413] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: multiqc.log
+[2021-07-21 15:51:07,620] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.3.4
+[2021-07-21 15:51:07,622] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.3.4
+[2021-07-21 15:51:07,623] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2021-07-21 15:51:07,631] multiqc                                            [DEBUG  ]  No samples found: ngsderive
+[2021-07-21 15:51:07,687] multiqc                                            [DEBUG  ]  No samples found: purple
+[2021-07-21 15:51:07,699] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2021-07-21 15:51:07,709] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2021-07-21 15:51:07,720] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2021-07-21 15:51:07,729] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2021-07-21 15:51:07,740] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2021-07-21 15:51:07,748] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2021-07-21 15:51:07,754] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2021-07-21 15:51:07,762] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2021-07-21 15:51:07,768] multiqc                                            [DEBUG  ]  No samples found: quast
+[2021-07-21 15:51:07,783] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2021-07-21 15:51:07,791] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2021-07-21 15:51:07,799] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2021-07-21 15:51:07,808] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2021-07-21 15:51:07,818] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2021-07-21 15:51:07,825] multiqc                                            [DEBUG  ]  No samples found: busco
+[2021-07-21 15:51:07,833] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2021-07-21 15:51:07,840] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2021-07-21 15:51:07,848] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2021-07-21 15:51:07,857] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2021-07-21 15:51:07,864] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2021-07-21 15:51:07,870] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2021-07-21 15:51:07,875] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2021-07-21 15:51:07,881] multiqc                                            [DEBUG  ]  No samples found: happy
+[2021-07-21 15:51:07,886] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2021-07-21 15:51:07,892] multiqc                                            [DEBUG  ]  No samples found: homer
+[2021-07-21 15:51:07,897] multiqc                                            [DEBUG  ]  No samples found: hops
+[2021-07-21 15:51:07,903] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2021-07-21 15:51:07,908] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2021-07-21 15:51:07,913] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2021-07-21 15:51:07,919] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2021-07-21 15:51:07,924] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2021-07-21 15:51:07,929] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2021-07-21 15:51:07,933] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2021-07-21 15:51:07,941] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2021-07-21 15:51:07,949] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2021-07-21 15:51:07,954] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2021-07-21 15:51:07,958] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2021-07-21 15:51:07,970] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2021-07-21 15:51:07,975] multiqc                                            [DEBUG  ]  No samples found: jcvi
+[2021-07-21 15:51:07,980] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2021-07-21 15:51:07,983] multiqc                                            [DEBUG  ]  No samples found: picard
+[2021-07-21 15:51:07,989] multiqc                                            [DEBUG  ]  No samples found: sentieon
+[2021-07-21 15:51:07,994] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2021-07-21 15:51:07,999] multiqc                                            [DEBUG  ]  No samples found: qc3C
+[2021-07-21 15:51:08,004] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2021-07-21 15:51:08,009] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2021-07-21 15:51:08,014] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2021-07-21 15:51:08,018] multiqc                                            [DEBUG  ]  No samples found: eigenstratdatabasetools
+[2021-07-21 15:51:08,024] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2021-07-21 15:51:08,029] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2021-07-21 15:51:08,035] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2021-07-21 15:51:08,040] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2021-07-21 15:51:08,044] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2021-07-21 15:51:08,048] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2021-07-21 15:51:08,055] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2021-07-21 15:51:08,060] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2021-07-21 15:51:08,066] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2021-07-21 15:51:08,071] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2021-07-21 15:51:08,075] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2021-07-21 15:51:08,079] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2021-07-21 15:51:08,084] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2021-07-21 15:51:08,090] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2021-07-21 15:51:08,095] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2021-07-21 15:51:08,100] multiqc                                            [DEBUG  ]  No samples found: star
+[2021-07-21 15:51:08,106] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2021-07-21 15:51:08,110] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2021-07-21 15:51:08,115] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2021-07-21 15:51:08,119] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2021-07-21 15:51:08,124] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2021-07-21 15:51:08,129] multiqc                                            [DEBUG  ]  No samples found: kat
+[2021-07-21 15:51:08,133] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2021-07-21 15:51:08,138] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2021-07-21 15:51:08,143] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2021-07-21 15:51:08,148] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2021-07-21 15:51:08,153] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2021-07-21 15:51:08,158] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2021-07-21 15:51:08,162] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2021-07-21 15:51:08,167] multiqc                                            [DEBUG  ]  No samples found: malt
+[2021-07-21 15:51:08,172] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2021-07-21 15:51:08,177] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2021-07-21 15:51:08,181] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2021-07-21 15:51:08,186] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2021-07-21 15:51:08,191] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2021-07-21 15:51:09,853] multiqc.modules.fastq_screen.fastq_screen          [INFO   ]  Found 156 reports
+[2021-07-21 15:51:22,602] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2021-07-21 15:51:22,607] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2021-07-21 15:51:22,613] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2021-07-21 15:51:22,618] multiqc                                            [DEBUG  ]  No samples found: pychopper
+[2021-07-21 15:51:22,623] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2021-07-21 15:51:22,628] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2021-07-21 15:51:22,632] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2021-07-21 15:51:22,637] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2021-07-21 15:51:22,642] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2021-07-21 15:51:22,647] multiqc                                            [DEBUG  ]  No samples found: interop
+[2021-07-21 15:51:22,651] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2021-07-21 15:51:22,656] multiqc                                            [DEBUG  ]  No samples found: flash
+[2021-07-21 15:51:22,661] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2021-07-21 15:51:22,666] multiqc                                            [DEBUG  ]  No samples found: optitype
+[2021-07-21 15:51:22,666] multiqc                                            [INFO   ]  Compressing plot data
+[2021-07-21 15:51:22,700] multiqc                                            [WARNING]  Previous MultiQC output found! Adjusting filenames..
+[2021-07-21 15:51:22,700] multiqc                                            [WARNING]  Use -f or --force to overwrite existing reports instead
+[2021-07-21 15:51:22,700] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html
+[2021-07-21 15:51:22,700] multiqc                                            [INFO   ]  Data        : fqscrn_report_data_1
+[2021-07-21 15:51:22,700] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpw1bx5n7v/multiqc_data' to '/home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/fqscrn_report_data_1'
+[2021-07-21 15:51:23,013] multiqc                                            [INFO   ]  MultiQC complete
