@@ -164,7 +164,7 @@ cp /home/cbird/pire_shotgun/...
 
 ---
 
-### Step 8. Map reads to reference
+## Step 8. Map reads to reference
 
 Clone dDocentHPC repo
 
