@@ -28,7 +28,8 @@ RAMPERTHREAD=180g   #have had to set as high as 233g with groups=1
 
 #ulimit -u 40960
 ulimit -n 40960 
-ulimit -s 81240 
+#ulimit -s unlimited
+
 ulimit -a
 
 mkdir -p $OUTDIR
@@ -39,6 +40,10 @@ all_samples=($all_samples)
 
 sample_name=${all_samples[${SLURM_ARRAY_TASK_ID}]}
 echo ${sample_name}
+
+#systemctl status  $PPID  
+#systemctl status  $PPID  | head -1 | awk '{print $2}' | xargs systemctl show -p TasksMax
+#cat /proc/sys/kernel/threads-max
 
 crun clumpify.sh \
 	in=$INDIR/${sample_name}r1.fq.gz \
