@@ -16,8 +16,7 @@ export SINGULARITY_BIND=/home/e1garcia
 
 INDIR=$1   #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp_fp2_fqscrnBt2
 OUTDIR=$2    #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp_fp2_fqscrnBt2_repaired
-TEMPDIR=$3   #/scratch/cbird
-THREADS=$4    #40
+THREADS=$3    #40
 EXTENSION=.tagged_filter.fastq.gz
 
 mkdir $OUTDIR $OUTDIR/orphans
