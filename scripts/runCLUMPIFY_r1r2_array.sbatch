@@ -8,7 +8,7 @@
 #SBATCH --exclusive=user
 
 enable_lmod
-module load container_env pire_genome_assembly/2021.03.25
+module load container_env pire_genome_assembly
 #module load java/1.8
 #module load bbmap/38.90
 #module load parallel
@@ -24,9 +24,9 @@ INDIR=${1}
 OUTDIR=${2}
 THREADS=1   #clumpify uses a ton of ram, be conservative
 GROUPS=auto   #controls how much ram is used, refer to manual
-RAMPERTHREAD=160g   #have had to set as high as 233g with groups=1
+RAMPERTHREAD=163840m   #have had to set as high as 233g with groups=1
 
-ulimit -u 40960
+#ulimit -u 40960
 ulimit -a
 
 mkdir -p $OUTDIR
