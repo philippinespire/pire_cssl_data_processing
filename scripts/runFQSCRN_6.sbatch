@@ -4,15 +4,20 @@
 # `mapdamage_log.xlsx` will create the arguments which should be copied into a config file
 
 #SBATCH --job-name=fqscr_array
+#SBATCH --exclusive
 
-module load parallel/gcc7/20190222
-module load fastq_screen/0.14.1
-module load bowtie2/gcc7/2.3.5.1
+#module load parallel/gcc7/20190222  #tamucc
+#module load fastq_screen/0.14.1  #tamucc
+#module load bowtie2/gcc7/2.3.5.1  #tamucc
 
-FQPATTERN=$1       					#PATTERN="*.fq.gz"
-INDIR=$2       					#INDIR=/work/hobi/cbird/pire_shotgunWGAvNoWGA/4sumstats_fq_fstp
-TMPDIR=/tmp/fastqscrn${SLURM_ARRAY_TASK_ID}      							#TMPDIR=/tmp/fastqscrn
-OUTDIR=$3     
+export SINGULARITY_BIND=/home/e1garcia  #odu
+enable_lmod  #odu
+module load container_env bismark/0.22.3       #odu
+
+INDIR=$1      					#INDIR=/work/hobi/cbird/pire_shotgunWGAvNoWGA/4sumstats_fq_fstp
+OUTDIR=$2     
+TMPDIR=$(echo ${3}/fastqscrn${SLURM_ARRAY_TASK_ID})
+FQPATTERN=$4       					#PATTERN="*.fq.gz"
 
 CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf      #tamucc
 CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf      #odu
