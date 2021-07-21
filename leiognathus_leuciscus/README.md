@@ -151,6 +151,9 @@ waiting for step 5 to finish
 
 ## Step 7.  Get reference genome
 
+Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco single copy complete, quast n50, and filtering by species 
+
+
 
 ---
 
