@@ -146,7 +146,7 @@ sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 4
 
 files names must be formatted as follows:
   * `population_individual.R1.fq.gz`
-    * only 1 `_`
+    * use of only 1 `_` is tolerated by dDocent/freebayes
     * must end in `.R1.fq.gz` or `.R2.fq.gz`
 
 ```
