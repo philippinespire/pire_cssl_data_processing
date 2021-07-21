@@ -4,8 +4,8 @@
 
 INDIR=$1
 OUTDIR=$2
-TMPDIR=$3
-NUMNODES=$4   # 5 to 10 on tamucc
+#TMPDIR=$3
+NUMNODES=$3   # 5 to 10 on tamucc
 FQPATTERN=*.fq.gz
 
 mkdir $OUTDIR
@@ -16,7 +16,7 @@ JOBID=$(sbatch --array=0-$((${#all_samples[@]}-1))%${NUMNODES} \
        --output=slurm-fqscrn.%A.%a.out \
        --partition main \
        -t 96:00:00 \
-       ../scripts/runFQSCRN_6.sbatch ${INDIR} ${OUTDIR} ${TMPDIR} ${FQPATTERN})
+       ../scripts/runFQSCRN_6.sbatch ${INDIR} ${OUTDIR} ${FQPATTERN})
 NUMBER1=$(echo ${JOBID} | sed 's/[^0-9]*//g')
 
 #Run Multiqc after array finishes
