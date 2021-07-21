@@ -1,36 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@cbird808
-philippinespire /
-denovo_genome_assembly
-Private
-
-3
-0
-
-    0
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-
-    Settings
-
-denovo_genome_assembly/pre-assembly_processing/runREPAIR2.sbatch
-e1garcia updated decontamination
-Latest commit ce48800 14 days ago
-History
-1 contributor
-executable file 38 lines (32 sloc) 941 Bytes
 #!/bin/bash -l
 
 #SBATCH --job-name=repr_fqscrn
@@ -69,19 +36,3 @@ for i in `seq 3`; do
         out2=$OUTDIR/{}repr_R2.fq \
         outs=$OUTDIR/{}repr_orph.fq \
         repair
-
-    © 2021 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-Loading complete
