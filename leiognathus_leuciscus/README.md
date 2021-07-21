@@ -210,7 +210,7 @@ mv ../fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz .
 
 ---
 
-## Step 8. Map reads to reference
+## Step 8. Map reads to reference - Filter Maps - Genotype Maps
 
 Clone dDocentHPC repo
 
