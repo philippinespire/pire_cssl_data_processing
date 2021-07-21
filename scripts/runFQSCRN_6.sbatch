@@ -13,7 +13,7 @@
 
 export SINGULARITY_BIND=/home/e1garcia  #odu
 enable_lmod  #odu
-module load container_env bismark/0.22.3       #odu
+module load container_env pire_genome_assembly/2021.07.01     #odu
 
 INDIR=$1      					#INDIR=/work/hobi/cbird/pire_shotgunWGAvNoWGA/4sumstats_fq_fstp
 OUTDIR=$2     
@@ -24,6 +24,7 @@ CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.
 CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf      #odu
 FQSCRN=fastq_screen   #tamucc
 FQSCRN=/home/e1garcia/shotgun_PIRE/fastq_screen/FastQ-Screen-0.14.1/fastq_screen #odu
+FQSCRN=fastq_screen   #odu new
 SUBSET=0
 FILTER=000000000000
 ALIGNER=bowtie2  #bwa or bowtie2
