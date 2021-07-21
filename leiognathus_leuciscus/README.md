@@ -151,7 +151,7 @@ waiting for step 5 to finish
 
 ## Step 7.  Set up mapping dir and get reference genome
 
-Clone dDocentHPC repo
+Clone dDocentHPC repo (this is on the .gitignore list, so nothing inside it will be added to the present repo)
 
 ```
 cd /home/cbird/pire_cssl_data_processing/scripts
