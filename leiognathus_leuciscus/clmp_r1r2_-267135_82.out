@@ -1,0 +1,829 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1542052
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 767877
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_
+java -ea -Xmx180g -Xms180g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r1.fq.gz in2=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r2.fq.gz out=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r1.fq.gz out2=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch/cbird dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+Executing clump.Clumpify [in=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r1.fq.gz, in2=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r2.fq.gz, out=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r1.fq.gz, out2=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch/cbird, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx180g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r1.fq.gz, in2=fq_fp1/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_r2.fq.gz, out=/scratch/cbird/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r1_clumpify_p1_temp%_2468c331f0bd6572.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Made a comparator with k=31, seed=1, border=1, hashes=4
+Time:                         	320.019 seconds.
+Reads Processed:       7766k 	24.27k reads/sec
+Bases Processed:       1047m 	3.27m bases/sec
+Executing clump.KmerSort3 [in1=/scratch/cbird/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r1_clumpify_p1_temp%_2468c331f0bd6572.fq.gz, in2=, out=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r1.fq.gz, out2=fq_fp1_clmparray/LlC01051_CKDL210012719-1a-AK6260-7UDI243_HF5TCDSX2_L1_clmp.r2.fq.gz, groups=14514, ecco=f, addname=false, shortname=f, unpair=f, repair=false, namesort=false, ow=true, dedupe=t, consensus=f]
+
+Making comparator.
+Made a comparator with k=31, seed=1, border=1, hashes=4
+Making 2 fetch threads.
+Starting threads.
+Fetching reads.
+Fetched 321 reads: 	0.072 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.026 seconds.
+Writing.
+Fetching reads.
+Fetched 140 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.011 seconds.
+Writing.
+Fetching reads.
+Fetched 275 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.010 seconds.
+Writing.
+Fetching reads.
+Fetched 155 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.001 seconds.
+Deduping.
+Dedupe time: 	0.009 seconds.
+Writing.
+Fetching reads.
+Fetched 236 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.001 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 359 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 128 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 198 reads: 	0.001 seconds.
+Making clumps.
+Clump time: 	0.001 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 266 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 290 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 155 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 147 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.008 seconds.
+Writing.
+Fetching reads.
+Fetched 396 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 129 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 141 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 252 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 291 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 491 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 249 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.008 seconds.
+Writing.
+Fetching reads.
+Fetched 268 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.008 seconds.
+Writing.
+Fetching reads.
+Fetched 172 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 122 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.001 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 151 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 182 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.015 seconds.
+Writing.
+Fetching reads.
+Fetched 391 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 85 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 292 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 173 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 121 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 504 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.030 seconds.
+Writing.
+Fetching reads.
+Fetched 186 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.008 seconds.
+Writing.
+Fetching reads.
+Fetched 134 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 144 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 242 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 236 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 201 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.011 seconds.
+Writing.
+Fetching reads.
+Fetched 162 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 152 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 490 reads: 	0.005 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 189 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 285 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 208 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 120 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 321 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 253 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 325 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 109 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 170 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 409 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 340 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 177 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 289 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 363 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.010 seconds.
+Writing.
+Fetching reads.
+Fetched 226 reads: 	0.001 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 133 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 252 reads: 	0.001 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 505 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 327 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.003 seconds.
+Writing.
+Fetching reads.
+Fetched 256 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.010 seconds.
+Writing.
+Fetching reads.
+Fetched 193 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.003 seconds.
+Writing.
+Fetching reads.
+Fetched 161 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.009 seconds.
+Writing.
+Fetching reads.
+Fetched 245 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.015 seconds.
+Writing.
+Fetching reads.
+Fetched 124 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 269 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 134 reads: 	0.009 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 212 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 158 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 157 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 111 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 275 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 948 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 309 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 288 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 145 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 227 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.009 seconds.
+Writing.
+Fetching reads.
+Fetched 163 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 168 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.014 seconds.
+Writing.
+Fetching reads.
+Fetched 406 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 234 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 301 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 291 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 288 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 204 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 137 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 349 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 175 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 121 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 263 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 224 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 278 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 265 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 98 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 642 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 497 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 162 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 200 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 242 reads: 	0.004 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 319 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 226 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 168 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.007 seconds.
+Writing.
+Fetching reads.
+Fetched 140 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 142 reads: 	0.002 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 142 reads: 	0.003 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 165 reads: 	0.016 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 1123 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 503 reads: 	0.014 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 448 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 326 reads: 	0.017 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.004 seconds.
+Writing.
+Fetching reads.
+Fetched 209 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 141 reads: 	0.016 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
+Fetched 1828 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.015 seconds.
+Writing.
+Fetching reads.
+Fetched 116 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.006 seconds.
+Writing.
+Fetching reads.
+Fetched 161 reads: 	0.000 seconds.
+Making clumps.
+Clump time: 	0.000 seconds.
+Deduping.
+Dedupe time: 	0.005 seconds.
+Writing.
+Fetching reads.
