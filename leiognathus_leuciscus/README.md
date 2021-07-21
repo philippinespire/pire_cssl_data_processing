@@ -149,18 +149,57 @@ waiting for step 5 to finish
 
 ---
 
-## Step 7.  Get reference genome
+## Step 7.  Set up mapping dir and get reference genome
 
-Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco single copy complete, quast n50, and filtering by species in Rstudio.
-
-Then copy best ref genome to your dir, most likely something like this:
-
-```bash
-cp /home/cbird/pire_shotgun/...
+Clone dDocentHPC repo
 
 ```
+cd /home/cbird/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/dDocentHPC.git
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir mkBAM
+cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
+```
 
+The best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco single copy complete, quast n50, and filtering by species in Rstudio.
 
+Then copy best ref genome to your dir.  The correct dir can be inferred from the busco tibbles.  For reference, the best assembly for Lle is as follows:
+
+```bash
+# the destination reference fasta should be named as follows reference.<assembly type>.<unique assembly info>.fasta
+# <assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovoe assembled rad library
+# this naming is a little messy, but it makes the ref 100% tracable back to the source
+cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off/scaffolds.fasta mkBAM/reference.ssl.Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.fasta
+```
+
+Update the config file with the ref genome info
+
+```
+cd cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+nano config.5.cssl
+```
+
+Insert <assembly type> into `Cutoff1` variable and <unique assembly info> into `Cutoff2` variable
+ 
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=$0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------ 
+```
 
 ---
 
