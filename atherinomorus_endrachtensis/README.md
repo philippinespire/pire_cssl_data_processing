@@ -73,22 +73,11 @@ Potential issues:
 
 ## Step 4. Run fastq_screen
 
-I made the config file by filling in the `runFQSCRN_5.xlsx` work sheet and copying column K into `runFQSCRN_5.config`, not including row 1.
-
 ```
-# arguments are name of config file and number of nodes to run jobs on
-bash runFQSCRN_5.bash runFQSCRN_5.config 5
-```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
-[Report](https://github.com/tamucc-gcl/prj_garcia_nudibranchs/blob/main/h_emurai/fq_fp1_clmp_fp2_fqscrn/multiqc_report.html), download and open in web browser
-
-Potential issues:
-CPIC_01882 has low number of reads.  To salvage for mapping, will have to run fp2 and fqscrn again with more permissive length settings. Will use these for making ref genome
-
-Cleanup logs
-```
-mkdir logs
-mv *out logs
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
 
 ---
