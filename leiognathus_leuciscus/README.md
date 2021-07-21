@@ -107,7 +107,7 @@ Potential issues:
   * I checked this file, there are plenty of reads
 
 
-Fix errors
+Fix errors: all I had to do was run the files again that returned the "No reads in" error and they worked fine
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
