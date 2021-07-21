@@ -12,8 +12,10 @@ module load bowtie2/gcc7/2.3.5.1
 FQPATTERN=$1       					#PATTERN="*.fq.gz"
 INDIR=$2       					#INDIR=/work/hobi/cbird/pire_shotgunWGAvNoWGA/4sumstats_fq_fstp
 TMPDIR=/tmp/fastqscrn${SLURM_ARRAY_TASK_ID}      							#TMPDIR=/tmp/fastqscrn
-OUTDIR=$3        	#OUTDIR=/work/hobi/cbird/pire_shotgunWGAvNoWGA/4sumstats_fq_fstp_fqscrn
-CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf      					#CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf
+OUTDIR=$3     
+
+CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf      #tamucc
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/fastq_screen_nofish_20210424.conf      #odu
 SUBSET=0
 FILTER=000000000000
 ALIGNER=bowtie2  #bwa or bowtie2
