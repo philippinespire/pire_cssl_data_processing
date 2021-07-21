@@ -4,6 +4,8 @@
 #SBATCH -o clmp_r1r2_-%A_%a.out
 #SBATCH -p main
 #SBATCH --time=24:00:00
+#SBATCH -c 20
+#SBATCH --exclusive=user
 
 enable_lmod
 module load container_env pire_genome_assembly/2021.03.25
