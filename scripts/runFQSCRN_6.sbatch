@@ -15,7 +15,7 @@ TMPDIR=/tmp/fastqscrn${SLURM_ARRAY_TASK_ID}      							#TMPDIR=/tmp/fastqscrn
 OUTDIR=$3     
 
 CONFFILE=/work/hobi/egarcia111/reference_databases/fastq_screen_nofish_20210424.conf      #tamucc
-CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/fastq_screen_nofish_20210424.conf      #odu
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf      #odu
 SUBSET=0
 FILTER=000000000000
 ALIGNER=bowtie2  #bwa or bowtie2
