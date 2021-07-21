@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=40
 
 enable_lmod
-module load container_env pire_genome_assembly/2021.03.25
+module load container_env pire_genome_assembly/2021.07.01
 #module load java/1.8
 #module load bbmap/38.90
 #module load parallel
