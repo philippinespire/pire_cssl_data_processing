@@ -111,10 +111,12 @@ mv *out logs
 
 ## Step 5. repair fastq_screen paired end files
 
-Edited script and ran.  Make output files have `r1` and `r2` rather than `R1` and `R2` for compatibility with dDocent `mkREF`
+Waiting for step 4 to finish
 
 ```
-sbatch runREPAIR.sbatch
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+# runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 rename .R1. .r1. fq_fp1_clmp_fp2_fqscrn_repaired/*gz
 rename .R2. .r2. fq_fp1_clmp_fp2_fqscrn_repaired/*gz
 ```
