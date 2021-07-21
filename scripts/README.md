@@ -55,6 +55,9 @@ cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 # do not use trailing / in paths
 bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/YOURUSERNAME 20
 #after completion, run checkClumpify.R to see if any files failed
+# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not e
+nough space' (errno=12)"
+# if some fail, try this: Then just raise "-c 20" to "-c 40".
 ```
 
 Cleanup logs
