@@ -198,7 +198,8 @@ Then copy best ref genome to your dir.  The correct dir can be inferred from the
 # the destination reference fasta should be named as follows reference.<assembly type>.<unique assembly info>.fasta
 # <assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovoe assembled rad library
 # this naming is a little messy, but it makes the ref 100% tracable back to the source
-cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off/scaffolds.fasta mkBAM/reference.ssl.Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.fasta
+# it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off/scaffolds.fasta mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.fasta
 ```
 
 Update the config file with the ref genome info
