@@ -164,6 +164,8 @@ bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv 
 ls fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz > decode_oldnames.txt
 
 # triple check that the old and new files are aligned
+module load parallel
+bash #need for odu
 parallel --no-notice --link -kj6 "echo {1}, {2}" :::: decode_oldnames.txt decode_newnames.txt > decode_translation.csv
 less -S decode_translation.csv
 
