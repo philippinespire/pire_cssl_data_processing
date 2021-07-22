@@ -138,7 +138,7 @@ sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn
 
 ---
 
-## Step 6. Rename files for dDocentHPC
+## Step 6. Rename files for dDocentHPC and put into mapping dir
 
 files names must be formatted as follows:
   * `population_individual.R1.fq.gz`
@@ -187,7 +187,6 @@ Clone dDocentHPC repo (this is on the .gitignore list, so nothing inside it will
 cd /home/cbird/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/dDocentHPC.git
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-mkdir mkBAM
 cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
 ```
 
