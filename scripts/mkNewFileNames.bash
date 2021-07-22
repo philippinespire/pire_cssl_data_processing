@@ -2,6 +2,7 @@
 
 # script to rename pire seq files
 
+enable_lmod
 module load parallel
 
 INFILE=$1    #Lle_CaptureLibraries_SequenceNameDecode.tsv
@@ -18,7 +19,7 @@ SAMPNAMES=($(cat <(tail -n +2 $INFILE | sort | uniq) <(tail -n +2 $INFILE | sort
 SEQINFO=($(ls $FQDIR/*.fq.gz | sed "s/^fq_fp1.*\(${SPCODE}[AC].....\)_.*_\(L[1-9][0-9]*\)_clmp_fp2_repr/\1-\2-fp1-clmp-fp2-fqscrn-repr/"))
 
 # construct new names
-NEWNAMES=($(parallel --no-notice --link -kj2 "echo {1}-{2}" ::: ${SAMPNAMES[@]} ::: ${SEQINFO[@]} ))
+NEWNAMES=($(parallel --no-notice --link -kj6 "echo {1}-{2}" ::: ${SAMPNAMES[@]} ::: ${SEQINFO[@]} ))
 
 # output new names
 printf ${NEWR1NAMES[@]} | tr " " "\n" > decode_newnames.txt
