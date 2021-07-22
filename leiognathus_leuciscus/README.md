@@ -133,7 +133,7 @@ Waiting for step 4 to finish
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 # runREPAIR.sbatch <indir> <outdir> <threads>
-sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
 ---
