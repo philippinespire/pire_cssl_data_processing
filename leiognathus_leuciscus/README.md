@@ -128,7 +128,7 @@ mv *out logs
 
 ## Step 5. Repair fastq_screen paired end files
 
-Waiting for step 4 to finish
+This went smoothly.
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
@@ -231,13 +231,6 @@ Make sure the cutoffs above match the reference*fasta!
 ------------------------------------------------------------------------------------------------------------------ 
 ```
  
-Move the `fq.gz` files to the `mkBAM` dir
- 
-```bash
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
-mv ../fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz . 
-```
-
 ---
 
 ## Step 8. Map reads to reference - Filter Maps - Genotype Maps
