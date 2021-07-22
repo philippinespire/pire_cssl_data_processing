@@ -22,4 +22,4 @@ SEQINFO=($(ls $FQDIR/*.fq.gz | sed "s/^fq_fp1.*\(${SPCODE}[AC].....\)_.*_\(L[1-9
 NEWNAMES=($(parallel --no-notice --link -kj2 "echo {1}-{2}" ::: ${SAMPNAMES[@]} ::: ${SEQINFO[@]} ))
 
 # output new names
-echo ${NEWR1NAMES[@]} | tr " " "\n" 
+printf ${NEWR1NAMES[@]} | tr " " "\n" 
