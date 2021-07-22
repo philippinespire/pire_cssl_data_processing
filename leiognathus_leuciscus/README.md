@@ -209,7 +209,7 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 nano config.5.cssl
 ```
 
-Insert <assembly type> into `Cutoff1` variable and <unique assembly info> into `Cutoff2` variable
+Insert `<assembly type>` into `Cutoff1` variable and `<unique assembly info>` into `Cutoff2` variable
  
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
