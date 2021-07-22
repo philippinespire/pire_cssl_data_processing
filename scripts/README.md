@@ -246,7 +246,35 @@ Make sure the cutoffs above match the reference*fasta!
 
 ## Step 8. Map reads to reference - Filter Maps - Genotype Maps
 
-Clone dDocentHPC repo
+Add notes here
+
+```
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
+# this has to be run from dir with fq.gz files to be mapped and the ref genome
+# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+
+# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
+```
+
+---
+
+## Step 9. Filter VCF Files
+
+Clone fltrVCF and rad_haplotyper repos
+
+```
+cd /home/YOURUSERNAME/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/fltrVCF.git
+git clone git@github.com:cbirdlab/rad_haplotyper.git
+
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/
+mkdir frVCF
+
+cp
+```
+
+
 
 ```
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
