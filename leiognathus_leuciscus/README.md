@@ -157,10 +157,22 @@ If you don't have the decode file, it shoudl be in with the raw fqgz files.  If 
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn_repaired
-#mkNewFileNames.bash <decode file name>
-bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired
+#mkNewFileNames.bash <decode file name> <fqdir>, does not include path
+bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
 
+#make old file names, will include path
+ls fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz > decode_oldnames.txt
 
+# triple check that the old and new files are aligned
+parallel --no-notice --link -kj6 "echo {1}, {2}" :::: decode_oldnames.txt decode_newnames.txt > decode_translation.csv
+less -S decode_translation.csv
+
+# rename files and move to mapping dir
+mkdir mkBAM
+parallel --no-notice --link -kj6 "mv {1} mkBAM/{2}" :::: decode_oldnames.txt decode_newnames.txt
+
+# confirm success
+ls mkBAM
 ```
 
 ---
