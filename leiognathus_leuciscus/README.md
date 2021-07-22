@@ -151,19 +151,15 @@ It is desireable to keep seq name info that could be useful later on, like lane,
 
 I am taking advantage of the fact that when the seq names are sorted, their samp names are also sorted (I'm using order rather than the match between col 1 and 2 in the decode file).  Don't forget to remove the carriage returns `\r`.
 
+I made a script to do all this, then we can replace old file names with new file names
+
+If you don't have the decode file, it shoudl be in with the raw fqgz files.  If not it can be obtained from Sharon Magnuson or Chris Bird
+
 ```
-INFILE=$1    #Lle_CaptureLibraries_SequenceNameDecode.tsv
-# get samp names from decode file, duplicate for r1 and r2 files, and put them in same sort order as sorted fq.gz files
-bash  #need this for odu
-SAMPNAMES=($(cat <(tail -n +2 $INFILE | sort | uniq) <(tail -n +2 $INFILE | sort | uniq) | sort | cut -f2 | sed -e 's/-\([0-9][0-9][0-9]\)/_\1/' -e 's/\r//'))
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn_repaired
+#mkNewFileNames.bash <decode file name>
+bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired
 
-# clean up present file names to remove extraneous info and restore missing info
-SEQINFO=($(ls fq_fp1_clmp_fp2_fqscrn_repaired/*.fq.gz | sed 's/^fq_fp1.*\(Ll[AC].....\)_.*_L1_clmp_fp2_repr/\1-L1-fp1-clmp-fp2-fqscrn-repr/'))
-
-module load parallel
-NEWNAMES=($(parallel --no-notice --link -kj2 "echo {1}-{2}" ::: ${SAMPNAMES[@]} ::: ${SEQINFO[@]} ))
-
-echo ${NEWR1NAMES[@]} ${NEWR2NAMES[@]} | tr " " "\n" | sort > decode_newnames.txt
 
 ```
 
