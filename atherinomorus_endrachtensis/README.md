@@ -78,18 +78,34 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+
+#check output for errors
+grep 'error' slurm-fqscrn.266930*out | less -S #nothing
+grep 'error' slurm-fqscrn.266930*out | less -S #nothing
 ```
 
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+
+Potential issues:
+* None. Not many hits to other genomes. What did hit was to bacteria/protist and Albatross generally slightly more contam than contemp.
+
+Cleanup logs
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+mkdir logs
+mv *out logs
+```
 ---
 
-## Step 5. repair fastq_screen paired end files
-
-Edited script and ran.  Make output files have `r1` and `r2` rather than `R1` and `R2` for compatibility with dDocent `mkREF`
+## Step 5. Repair fastq_screen paired end files
 
 ```
-sbatch runREPAIR.sbatch
-rename .R1. .r1. fq_fp1_clmp_fp2_fqscrn_repaired/*gz
-rename .R2. .r2. fq_fp1_clmp_fp2_fqscrn_repaired/*gz
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch ruNREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
 ---
