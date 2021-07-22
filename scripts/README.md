@@ -190,16 +190,17 @@ ls mkBAM
 
 ## Step 7.  Set up mapping dir and get reference genome
 
-Clone dDocentHPC repo (this is on the .gitignore list, so nothing inside it will be added to the present repo)
+Clone dDocentHPC repo (this is on the .gitignore list, so nothing inside it will be added to the present repo) and move the cssl config file to `mkBAM` dir
 
 ```
-cd /home/cbird/pire_cssl_data_processing/scripts
+cd /home/YOURUSERNAME/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/dDocentHPC.git
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
 cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
 ```
 
-The best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco single copy complete, quast n50, and filtering by species in Rstudio.
+If you have a shotgun ref genome, the best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco single copy complete, quast n50, and filtering by species in Rstudio.
 
 Then copy best ref genome to your dir.  The correct dir can be inferred from the busco tibbles.  For reference, the best assembly for Lle is as follows:
 
@@ -208,17 +209,18 @@ Then copy best ref genome to your dir.  The correct dir can be inferred from the
 # <assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovoe assembled rad library
 # this naming is a little messy, but it makes the ref 100% tracable back to the source
 # it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+# you will use cbird dir, but likely a different specific path
 cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off/scaffolds.fasta mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.fasta
 ```
 
 Update the config file with the ref genome info
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
 nano config.5.cssl
 ```
 
-Insert `<assembly type>` into `Cutoff1` variable and `<unique assembly info>` into `Cutoff2` variable
+Insert `<assembly type>` into `Cutoff1` variable and `<unique assembly info>` into `Cutoff2` variable.  Here I use Lle as an example, you need to insert the correct info based on your ref name (`reference.<assembly type>.<unique assembly info>.fasta`)
  
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
@@ -240,13 +242,6 @@ Make sure the cutoffs above match the reference*fasta!
 ------------------------------------------------------------------------------------------------------------------ 
 ```
  
-Move the `fq.gz` files to the `mkBAM` dir
- 
-```bash
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
-mv ../fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz . 
-```
-
 ---
 
 ## Step 8. Map reads to reference - Filter Maps - Genotype Maps
@@ -254,8 +249,8 @@ mv ../fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz .
 Clone dDocentHPC repo
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
-#this has to be run from dir with fq.gz files to be mapped and the ref genome
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
+# this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
