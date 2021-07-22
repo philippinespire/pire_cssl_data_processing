@@ -156,7 +156,7 @@ I made a script to do all this, then we can replace old file names with new file
 If you don't have the decode file, it shoudl be in with the raw fqgz files.  If not it can be obtained from Sharon Magnuson or Chris Bird
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn_repaired
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #mkNewFileNames.bash <decode file name> <fqdir>, does not include path
 bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
 
