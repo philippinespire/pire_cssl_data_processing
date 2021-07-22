@@ -101,7 +101,7 @@ Insert notes here
 
 ```
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR
-#runFASTP_2.sbatch <indir> <outdir> 
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 # do not use trailing / in paths
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 
