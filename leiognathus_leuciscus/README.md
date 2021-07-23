@@ -310,6 +310,11 @@ nano config.fltr.ind.cssl
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.b
 ```
 
+I examined output and filter 18 didn't work because I had a mistake in the popmap file name.  I updated the config file name, the vcf file to start with, and the popmap file name and rand filter 18 alone
+
+```
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.c
+```
 
 You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
 
