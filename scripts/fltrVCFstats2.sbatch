@@ -1,9 +1,12 @@
-#!/bin/bash 
+#!/bin/bash -l
 
 #SBATCH --job-name=fltrstats
 #SBATCH -o fltrVCFstats2-%j.out
-#SBATCH -p normal
-#SBATCH --time=96:00:00
+#SBATCH -p main
+#SBATCH -c 40
+
+enable_lmod
+module load container_env ddocent
 
 #This is a script to quantify the number of individuals, contigs, and variants in a filtering directory
 #Need to grab and sort the vcf files, then quantify each file, and output results to new file
@@ -14,13 +17,13 @@
 #both arguments are optional
 
 #enable_lmod
-module load parallel
-module load R/gcc7/3.5.3
+#module load parallel
+#module load R/gcc7/3.5.3
 
 THREADS=$1
 PREFIX=$2
 if [[ -z $THREADS ]]; then
-THREADS=20
+THREADS=40
 fi
 
 echo ""; echo `date` "Running fltrVCFstats2 with the following settings..."
@@ -35,13 +38,13 @@ function GET_CHROM_PREFIX(){
 		zcat $VcfFileName | \
 		cut -f1 | \
 		tail -n1 | \
-		sed 's/[-_\.]/\t/g' | \
+		sed 's/[\-_\.]/\t/g' | \
 		cut -f1
 	else
 		head -n100 $VcfFileName | \
 		cut -f1 | \
 		tail -n1 | \
-		sed 's/[-_\.]/\t/g' | \
+		sed 's/[\-_\.]/\t/g' | \
 		cut -f1
 	fi
 }
