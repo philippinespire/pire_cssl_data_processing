@@ -267,9 +267,6 @@ Prepare directory for filtering
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir filterVCF
 cp ../scripts/fltrVCF/fltrVCF* filterVCF
-cp ../scripts/fltrVCF/scripts/*R filterVCF
-cp ../scripts/rad_haplotyper/rad_haplotyper.pl filterVCF
-cp ../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl filterVCF
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 #edit config file to work with your dir structure
 nano filterVCF/config.fltr.ind.cssl
