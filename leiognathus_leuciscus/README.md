@@ -297,7 +297,21 @@ cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/filterVCF
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ```
 
-Evaluate the slurm output file.  You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
+Evaluate the slurm [output file]().  
+
+Adjust settings and run again
+
+```
+nano config.fltr.ind.cssl
+# i adjusted settings for filters 14, 05, 13 and 16, saved file as config.fltr.ind.cssl.b and 
+# updated the -o prefix in the config, and 
+# adjusted -f to start at filter 14 and changed -v accordingly to point at the vcf resulting from the first run of filter 04
+
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.b
+```
+
+
+You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
 
 ```
 sbatch ../../scripts/fltrVCFstats2.sbatch
