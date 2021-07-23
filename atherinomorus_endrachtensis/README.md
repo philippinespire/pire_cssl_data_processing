@@ -110,21 +110,95 @@ sbatch ruNREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 4
 
 ---
 
-## Step 6. Repair fastq_screen paired end files for mapping
+## Step 6. Rename files for dDocent HPC and put into mapping dir
 
-waiting for step 8 to finish
-
----
-
-## Step 7.  Get reference genome
-
-
----
-
-### Step 8. Map reads to reference
-
-fill in
+Used decode file from Sharon Magnuson & Chris Bird.
 
 ```
-fill in commands
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+#mkNewFileNames.bash <decode file name> <fqdir>
+bash ../scripts/mkNewFileNames.bash Aen_CaptureLibraries_SequenceNameDecode.txv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
+
+#make old file names
+ls fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz > decode_oldnames.txt
+
+#triple check that the old and new files are aligned
+module load parallel
+bash
+parallel --no-notice --link -kj6 "echo {1}, {2}" :::: decode_oldnames.txt decode_newnames.txt > decode_translation.csv
+less -S decode_translation.csv
+
+#rename files and move to mapping dir
+mkdir mkBAM
+parallel --no-notice --link -kj6 "mv {1} mkBAM/{2}" :::: decode_oldnames.txt decode_newnames.txt
+
+#confirm success
+ls mkBAM
+```
+
+---
+
+## Step 7.  Set up mapping dir and get reference genome
+
+Cloned dDocentHPC repo.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/dDocentHPC.git
+
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
+```
+
+Because there is no whole genome reference for *A. endrachtensis*, I am using the full "raw" reference fasta from the RAD data used to make probes.
+
+```
+#the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
+#<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
+#this naming is a little messy, but it makes the ref 100% tracable back to the source
+#it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+
+mv /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/PIRE_AtherinomorousEndrachtensis.A.6.6.probes4development.fasta reference.rad.RAW-6-6.fasta
+```
+
+Updated the config file with the ref genome info
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+nano config.5.cssl
+```
+
+Inserted `<assembly type>` into `Cutoff1` variable and `<unique assembly info>` into `Cutoff2` variable
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+RAW-6-6               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+### Step 8. Map reads to reference - Filter Maps - Genotype Maps
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+#this has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1  shot
+sbatch ../dDocentHPC.sbatch config.5.cssl
 ```
