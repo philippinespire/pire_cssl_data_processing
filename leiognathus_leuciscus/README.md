@@ -246,3 +246,71 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 # troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
 ```
 
+---
+
+## Step 9. Filter VCF Files
+
+Clone fltrVCF and rad_haplotyper repos
+
+```
+cd /home/cbird/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/fltrVCF.git
+git clone git@github.com:cbirdlab/rad_haplotyper.git
+```
+
+The fltrVCF repo has detailed operation instructions that you are encouraged to review. I have prepared a configuration file for filtering cssl data in the repo which is a good place to start, but it may need to be modified from species to species.  You are encouraged to also review O'Leary et al (2018) for basic filtering guidelines.  I don't agree with everything in there, but it's a good ref.  If I have removed a filter from the -f setting, I probably have determined that it removes more desirable than undesirable data.  If we use rad_haplotyper, we may need to use it directly because the version infltrVCF is older and may not handle scaffolds well.
+
+
+Prepare directory for filtering
+
+```
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir filterVCF
+cp ../scripts/fltrVCF/fltrVCF* filterVCF
+cp ../scripts/fltrVCF/scripts/*R filterVCF
+cp ../scripts/rad_haplotyper/rad_haplotyper.pl filterVCF
+cp ../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl filterVCF
+cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
+#edit config file to work with your dir structure
+nano filterVCF/config.fltr.ind.cssl
+```
+
+You are now in nano
+
+```
+
+```
+
+Load R dependencies
+
+```bash
+enable_lmod
+module load container_env ddocent
+module load R/4.0.3
+crun R
+```
+
+You are now in R terminal
+
+```R
+install.packages(c("tidyverse","gridExtra"))
+#say yes to prompts and choose a server
+# when complete, exit R (ctrl+d)
+```
+
+You are back to the shell terminal
+
+```
+
+
+```
+
+```
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
+# this has to be run from dir with fq.gz files to be mapped and the ref genome
+# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+
+# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
+```
+
