@@ -316,6 +316,12 @@ I examined output and filter 18 didn't work because I had a mistake in the popma
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.c
 ```
 
+And then I remembered that I should run filter 17, which is a missing data by pop sample filter
+
+```
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.d
+```
+
 You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
 
 ```
