@@ -296,3 +296,9 @@ You are back to the shell terminal.  Run fltrVCF
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/filterVCF
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ```
+
+Evaluate the output. 
+
+```
+
+```
