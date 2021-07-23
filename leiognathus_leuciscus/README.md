@@ -266,17 +266,12 @@ Prepare directory for filtering
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir filterVCF
-cp ../scripts/fltrVCF/fltrVCF* filterVCF
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 #edit config file to work with your dir structure
 nano filterVCF/config.fltr.ind.cssl
 ```
 
-You are now in nano
-
-```
-
-```
+You are now in nano.  Edit as necessary, then exit (ctrl+x)
 
 Load R dependencies
 
@@ -295,19 +290,9 @@ install.packages(c("tidyverse","gridExtra"))
 # when complete, exit R (ctrl+d)
 ```
 
-You are back to the shell terminal
+You are back to the shell terminal.  Run fltrVCF
 
 ```
-
-
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/filterVCF
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ```
-
-```
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
-# this has to be run from dir with fq.gz files to be mapped and the ref genome
-# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
-
-# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
-```
-
