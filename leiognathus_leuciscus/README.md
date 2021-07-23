@@ -98,7 +98,7 @@ grep 'error' slurm-fqscrn.266713*out | less -S
 grep 'No reads in' slurm-fqscrn.266713*out | less -S
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html), download and open in web browser
 
 Potential issues:
 * job 9 failed
