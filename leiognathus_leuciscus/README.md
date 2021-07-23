@@ -297,8 +297,8 @@ cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/filterVCF
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ```
 
-Evaluate the output. 
+Evaluate the slurm output file.  You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
 
 ```
-
+sbatch ../../scripts/fltrVCFstats2.sbatch
 ```
