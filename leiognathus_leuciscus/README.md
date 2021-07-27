@@ -327,3 +327,19 @@ You can also run the following script, which takes a while, but will make table 
 ```
 sbatch ../../scripts/fltrVCFstats2.sbatch
 ```
+
+
+## Final Step: Cleanup
+
+Tarzip your data directories and delete irrelevant files
+
+```bash
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+tar -cvzf fq_fp1.tar.gz --exclude='*fq.gz' fq_fp1
+tar -cvzf fq_fp1_clmp.tar.gz --exclude='*fq.gz' fq_fp1_clmp
+tar -cvzf fq_fp1_clmp_fp2.tar.gz --exclude='*fq.gz' fq_fp1_clmp_fp2
+tar -cvzf fq_fp1_clmp_fp2_fqscrn.tar.gz --exclude='*fq.gz' fq_fp1_clmp_fp2_fqscrn
+tar -cvzf fq_fp1_clmp_fp2_fqscrn_repaired.tar.gz --exclude='*fq' --exclude='*fq.gz' fq_fp1_clmp_fp2_fqscrn_repaired
+
+
+```
