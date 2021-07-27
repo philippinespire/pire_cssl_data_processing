@@ -343,4 +343,10 @@ tar -cvzf fq_fp1_clmp_fp2_fqscrn_repaired.tar.gz --exclude='*fq' --exclude='*fq.
 #tar -cvzf mkBAM -X ../scripts/tar_exclude.txt mkBAM
 #tar -cvzf filterVCF -X ../scripts/tar_exclude.txt mkBAM
 
+# MAKE SURE YOU WANT TO DO THIS
+rm -rf fq_fp1
+rm -rf fq_fp1_clmp
+rm -rf fq_fp1_clmp_fp2
+rm -rf fq_fp1_clmp_fp2_fqscrn
+rm -rf fq_fp1_clmp_fp2_fqscrn_repaired
 ```
