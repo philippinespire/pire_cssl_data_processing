@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=mkBAM-mkVCF
+#SBATCH --job-name=mkVCF
 #SBATCH -o mkBAM-fltrBAM-mkVCF-%j.out
 #SBATCH -p main
 #SBATCH -c 40
