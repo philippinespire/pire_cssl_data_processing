@@ -282,6 +282,7 @@ Move the files needed for genotyping from `mkBAM` to `mkVCF`
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir mkVCF_monomorphic
 mv mkBAM/*bam* mkVCF_monomorphic
+mv mkBAM/*fq.gz mkVCF_monomorphic
 cp mkBAM/*fasta mkVCF_monomorphic
 cp mkBAM/config.5.cssl mkVCF_monomorphic/
 ```
