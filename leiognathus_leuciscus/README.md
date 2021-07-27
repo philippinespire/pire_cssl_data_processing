@@ -296,5 +296,5 @@ Genotype
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
-sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl.monomorphic
+sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
