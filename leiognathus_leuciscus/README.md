@@ -340,6 +340,7 @@ tar -cvzf fq_fp1_clmp.tar.gz --exclude='*fq.gz' fq_fp1_clmp
 tar -cvzf fq_fp1_clmp_fp2.tar.gz --exclude='*fq.gz' fq_fp1_clmp_fp2
 tar -cvzf fq_fp1_clmp_fp2_fqscrn.tar.gz --exclude='*fq.gz' fq_fp1_clmp_fp2_fqscrn
 tar -cvzf fq_fp1_clmp_fp2_fqscrn_repaired.tar.gz --exclude='*fq' --exclude='*fq.gz' fq_fp1_clmp_fp2_fqscrn_repaired
-
+#tar -cvzf mkBAM -X ../scripts/tar_exclude.txt mkBAM
+#tar -cvzf filterVCF -X ../scripts/tar_exclude.txt mkBAM
 
 ```
