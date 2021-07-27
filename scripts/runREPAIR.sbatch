@@ -31,5 +31,5 @@ crun parallel --no-notice -j $THREADS \
         in2=$INDIR/{}r2$EXTENSION \
         out1=$OUTDIR/{}repr.R1.fq.gz \
         out2=$OUTDIR/{}repr.R2.fq.gz \
-        outs=$OUTDIR/orphans/{}repr.orph.fq \
+        outs=$OUTDIR/orphans/{}repr.orph.fq.gz \
         repair

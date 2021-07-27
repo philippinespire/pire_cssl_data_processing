@@ -1,0 +1,51 @@
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Fri Jul 23 15:55:45 EDT 2021 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl
+
+Fri Jul 23 15:55:45 EDT 2021 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl'
+	Filters are set to '01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18'
+	CutoffCode is set to '.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off'
+	BAM_PATH is set to '../mkBAM'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	VCF_FILE is set to '../mkBAM/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.vcf'
+	Bed file is set to '../mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.bed'
+	Reference genome is set to '../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.fasta'
+	PopMap is set to '../mkBAM/popmap.denovoSSL.Aur-C_500_R1R2ORPHMRGD_decontam_noisolate'
+	HWE_SCRIPT is set to '../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '../../scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'lle.A'
+	The number of threads is set to '1'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	../mkBAM/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.vcf will be used for serial processing.
+
+Fri Jul 23 15:55:45 EDT 2021 Getting universal chromosome/contig prefix ...
+          Querying ../mkBAM/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.vcf ...
+sed: -e expression #1, char 13: Invalid range end
+          Prefix: 
+          It is assumed that all values in the CHROM column of vcf begin with 
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Fri Jul 23 15:55:45 EDT 2021  reading variables into MAIN
+
+Fri Jul 23 15:55:45 EDT 2021 ---------------------------FILTER01: Remove sites with Y < alleles < X -----------------------------
+     vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.vcf --min-alleles 2 --max-alleles 2 --recode --recode-INFO-all --out lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr01.1.recode.vcf 2> /dev/null
+slurmstepd: error: *** JOB 268197 ON d6-w6420b-08 CANCELLED AT 2021-07-23T16:08:25 ***

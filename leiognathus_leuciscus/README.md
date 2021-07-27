@@ -253,77 +253,49 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 Clone fltrVCF and rad_haplotyper repos
 
 ```
-cd /home/cbird/pire_cssl_data_processing/scripts
+cd /home/YOURUSERNAME/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/fltrVCF.git
 git clone git@github.com:cbirdlab/rad_haplotyper.git
+
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/
+mkdir frVCF
+
+cp
 ```
 
-The fltrVCF repo has detailed operation instructions that you are encouraged to review. I have prepared a configuration file for filtering cssl data in the repo which is a good place to start, but it may need to be modified from species to species.  You are encouraged to also review O'Leary et al (2018) for basic filtering guidelines.  I don't agree with everything in there, but it's a good ref.  If I have removed a filter from the -f setting, I probably have determined that it removes more desirable than undesirable data.  If we use rad_haplotyper, we may need to use it directly because the version infltrVCF is older and may not handle scaffolds well.
 
-
-Prepare directory for filtering
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-mkdir filterVCF
-cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
-#edit config file to work with your dir structure
-nano filterVCF/config.fltr.ind.cssl
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
+# this has to be run from dir with fq.gz files to be mapped and the ref genome
+# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+
+# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
 ```
 
-You are now in nano.  Edit as necessary, then exit (ctrl+x)
+### STep 10. Make VCF With Monomorphic Loci
 
-Load R dependencies
+Move the files needed for genotyping from `mkBAM` to `mkVCF`
 
 ```bash
-enable_lmod
-module load container_env ddocent
-module load R/4.0.3
-crun R
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir mkVCF_monomorphic
+mv mkBAM/*bam* mkVCF_monomorphic
+mv mkBAM/*fq.gz mkVCF_monomorphic
+cp mkBAM/*fasta mkVCF_monomorphic
+cp mkBAM/config.5.cssl mkVCF_monomorphic/
 ```
 
-You are now in R terminal
-
-```R
-install.packages(c("tidyverse","gridExtra"))
-#say yes to prompts and choose a server
-# when complete, exit R (ctrl+d)
-```
-
-You are back to the shell terminal.  Run fltrVCF
+Change the config file so that the last setting is (monomorphic) is set to yes and rename it with the suffix `.monomorphic`
 
 ```
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/filterVCF
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
+yes     freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered 
 ```
 
-Evaluate the slurm [output file]().  
-
-Adjust settings and run again
+Genotype
 
 ```
-nano config.fltr.ind.cssl
-# i adjusted settings for filters 14, 05, 13 and 16, saved file as config.fltr.ind.cssl.b and 
-# updated the -o prefix in the config, and 
-# adjusted -f to start at filter 14 and changed -v accordingly to point at the vcf resulting from the first run of filter 04
-
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.b
-```
-
-I examined output and filter 18 didn't work because I had a mistake in the popmap file name.  I updated the config file name, the vcf file to start with, and the popmap file name and rand filter 18 alone
-
-```
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.c
-```
-
-And then I remembered that I should run filter 17, which is a missing data by pop sample filter
-
-```
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.d
-```
-
-You can also run the following script, which takes a while, but will make table of values that can be visualized easily 
-
-```
-sbatch ../../scripts/fltrVCFstats2.sbatch
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```

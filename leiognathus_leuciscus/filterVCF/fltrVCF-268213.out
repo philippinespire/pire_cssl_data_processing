@@ -1,0 +1,56 @@
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Fri Jul 23 18:24:34 EDT 2021 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl.d
+
+Fri Jul 23 18:24:34 EDT 2021 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl.d'
+	Filters are set to '17'
+	CutoffCode is set to '.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off'
+	BAM_PATH is set to '../mkBAM'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	VCF_FILE is set to 'lle.C.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr18.1.HWE.recode.vcf'
+	Bed file is set to '../mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.bed'
+	Reference genome is set to '../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.fasta'
+	PopMap is set to '../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off'
+	HWE_SCRIPT is set to '../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '../../scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'lle.D'
+	The number of threads is set to '40'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	lle.C.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr18.1.HWE.recode.vcf will be used for serial processing.
+
+Fri Jul 23 18:24:34 EDT 2021 Getting universal chromosome/contig prefix ...
+          Querying lle.C.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr18.1.HWE.recode.vcf ...
+          Prefix: NODE
+          It is assumed that all values in the CHROM column of vcf begin with NODE
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Fri Jul 23 18:24:34 EDT 2021  reading variables into MAIN
+
+Fri Jul 23 18:24:34 EDT 2021 ---------------------------FILTER17: Remove sites with data missing for too many individuals|libraries in a population -----------------------------
+     Using PopMap File: ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off
+     vcftools --vcf lle.C.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr18.1.HWE.recode.vcf --exclude-positions lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.badloci --recode --recode-INFO-all --out lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.vcf 2> /dev/null
+	Sites remaining:	40566
+	Contigs remaining:	5259
+
+
+Fri Jul 23 18:25:04 EDT 2021  --------------------------- Filtering complete! ---------------------------
+
