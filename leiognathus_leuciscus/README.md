@@ -276,5 +276,25 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 ### STep 10. Make VCF With Monomorphic Loci
 
+Move the files needed for genotyping from `mkBAM` to `mkVCF`
 
+```bash
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir mkVCF_monomorphic
+mv mkBAM/*bam* mkVCF_monomorphic
+cp mkBAM/*fasta mkVCF_monomorphic
+cp mkBAM/config.5.cssl mkVCF_monomorphic/
+```
 
+Change the config file so that the last setting is (monomorphic) is set to yes and rename it with the suffix `.monomorphic`
+
+```
+yes     freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered 
+```
+
+Genotype
+
+```
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl.monomorphic
+```
