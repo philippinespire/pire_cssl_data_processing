@@ -1,0 +1,144 @@
+Missing data from input file aen.rename.genepop.
+
+Possible four types of missing data at a locus:
+	1. Genotype contains only zeros or partially scored.
+	2. Genotype has less digits than normal one.
+	3. Genotype has more digits than normal one.
+	4. Genotype contains non-digit character.
+Types 3 and 4 stop the program.
+
+In the table, each row is for an individual with missing data
+(a) If column 'Locus' has only one number, then it is the first
+    locus with missing data and also of highest missing data type.
+(b) If column 'Locus' has 2 numbers, then the first number is
+    the first locus with data missing, and the second number is
+    the first locus that has highest missing data type.
+(c) Genotype column contains the genotype of the locus in case (a)
+    or the second locus in case (b).
+
+Population 1 [Aen-AHam_001]
+-----------------------------------------------------------
+Individual       Locus         Genotype     Number of Loci
+                                          with missing data
+       1            1             0000          5115
+       2            1             0000          4833
+       3            1             0000          5865
+       4            1             0000          4567
+       5            1             0000          6284
+       6            1             0000          5586
+       7            1             0000          4724
+       8            1             0000          4967
+       9            1             0000          5510
+      10            1             0000          6007
+      11            1             0000          4304
+      12            1             0000          4248
+      13            1             0000          4156
+      14            1             0000          4870
+      15            1             0000          4539
+      16            1             0000          5069
+      17            1             0000          5940
+-----------------------------------------------------------
+Total missing data for population    1:        86584
+
+Population 2 [Aen-Cbat_001]
+-----------------------------------------------------------
+Individual       Locus         Genotype     Number of Loci
+                                          with missing data
+       1          573             0000             4
+       2         2812             0000             6
+       3         3746             0000             3
+       4         2488             0000            12
+       5         1183             0000            10
+       6         9640             0000             3
+       7         2812             0000             7
+       8         1148             0000             5
+       9         5263             0000             2
+      10         2452             0000             7
+      11         3201             0000             9
+      12         1148             0000             6
+      13          678             0000            21
+      14            7             0000            41
+      15          419             0000            17
+      16           97             0000            40
+      17          100             0000            16
+      18          870             0000            20
+      19          264             0000            19
+      20         1441             0000            19
+      21          573             0000            10
+      22          573             0000             6
+      23         2609             0000            12
+      24         2488             0000            15
+      25         3201             0000             3
+      26         1536             0000             4
+      27         5880             0000             3
+      28         2488             0000            12
+      29          870             0000            18
+      30         1545             0000             6
+      31          100             0000            17
+      32         1545             0000            11
+      33          100             0000            11
+      34         1263             0000            34
+      35         3524             0000             4
+      36         5263             0000            11
+      37         2488             0000             6
+      38            3             0000          5486
+      39          371             0000           144
+      40         1427             0000            18
+      41          100             0000            20
+      42          264             0000            28
+      43          100             0000            30
+      44          573             0000            17
+      45         1725             0000            12
+      46         2452             0000             8
+      47         3201             0000             8
+      48          100             0000            12
+      49         5057             0000             3
+      50          870             0000            21
+      51          470             0000            18
+      52          100             0000             7
+      53          100             0000            34
+      54         1545             0000            23
+      55          450             0000            26
+      56         1488             0000            16
+      57          870             0000            15
+      58          420             0000             1
+      59         2178             0000            10
+      60         5537             0000             3
+      61         1577             0000            12
+      62         1545             0000            15
+      63            3             0000          5365
+      64         1545             0000            21
+      65          100             0000            44
+      66          272             0000            35
+      67         1577             0000            19
+      68         1441             0000            28
+      69         1441             0000            17
+      70         2452             0000            10
+      71         6982             0000             3
+      72         3524             0000             5
+      73          573             0000            30
+      74         3524             0000             3
+      75         3213             0000             5
+      76         2488             0000             6
+      77          870             0000             6
+      78         7925             0000             2
+      79         7925             0000             2
+      80         3201             0000             5
+      81         2812             0000             5
+      82          870             0000            25
+      83            3             0000          4822
+      84         3201             0000            12
+      85         9792             0000             2
+      86         2488             0000            12
+      87         1074             0000             9
+      88         2488             0000             4
+      89          100             0000            11
+      90         2238             0000             6
+      91         6406             0000             3
+      92         2684             0000             5
+      93         2684             0000             4
+      94         3213             0000             6
+      95          796             0000            16
+-----------------------------------------------------------
+Total missing data for population    2:        16985
+
