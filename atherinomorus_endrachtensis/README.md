@@ -228,3 +228,36 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl
 
 #troubleshooting will be necessary
 ```
+
+---
+
+### Step 10. Make VCF with Monomorphic Loci
+
+Moved the files needed for genotyping from `mkBAM` to `mkVCF`
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+mkdir mkVCF_monomorphic
+mv mkBAM/*bam* mkVCF_monomorphic
+mv mkBAM/namelist* mkVCF_monomorphic
+cp mkBAM/*fasta mkVCF_monomorphic
+cp mkBAM/config.5.cssl mkVCF_monomorphic/
+```
+
+Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
+
+```
+yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+```
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+mv config.5.cssl config.5.cssl.monomorphic
+```
+
+Genotyped
+
+```
+cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic #NOTE: ran on Turing bc Wahab queue was backed up
+```
