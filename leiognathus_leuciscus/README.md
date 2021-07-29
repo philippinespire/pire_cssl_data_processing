@@ -269,9 +269,9 @@ cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/fitlerVCF
 # this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../scripts/fltrVCF/dDocentHPC.sbatch config.5.cssl
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
-# troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
+# troubleshooting will be necessary).
 ```
 
 ### STep 10. Make VCF With Monomorphic Loci
