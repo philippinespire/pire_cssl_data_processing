@@ -3,7 +3,7 @@
 #SBATCH --job-name=fltrVCF
 #SBATCH -o fltrVCF-%j.out
 #SBATCH -p main
-#SBATCH -c 40
+#SBATCH -c 32
 ##SBATCH --time=96:00:00
 
 #to run use the following command:
