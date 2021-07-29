@@ -258,18 +258,18 @@ git clone git@github.com:cbirdlab/fltrVCF.git
 git clone git@github.com:cbirdlab/rad_haplotyper.git
 
 cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/
-mkdir frVCF
+mkdir filterVCF
 
-cp
+cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 ```
 
 
 
 ```
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/mkBAM
+cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/fitlerVCF
 # this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+sbatch ../../scripts/fltrVCF/dDocentHPC.sbatch config.5.cssl
 
 # troubleshooting may be necessary, don't rerun steps that worked previously (i.e. copy and paste sbatch to local dir and modify for troubleshooting).
 ```
