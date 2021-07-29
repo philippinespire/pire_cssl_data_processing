@@ -1,0 +1,460 @@
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkVCF...
+ 
+Tue Jul 27 21:48:00 EDT 2021 Files output to:  /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+Tue Jul 27 21:48:00 EDT 2021 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40              Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G    Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146             trimmomatic MINLEN (integer, mkREF only)                                                Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75              trimmomatic MINLEN (integer, mkBAM only)                                                Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20              trimmomatic LEADING:<quality> (integer, mkBAM only)                             Specifies the minimum quality required to keep a base.
+15              trimmomatic TRAILING:<quality> (integer, mkREF only)                    Specifies the minimum quality required to keep a base.
+20              trimmomatic TRAILING:<quality> (integer, mkBAM only)                    Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)                   Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2               trimmomatic ILLUMINACLIP:<seed mismatches> (integer)                    specifies the maximum mismatch count which will still allow a full match to be performed
+30              trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)             specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10              trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)                 specifies how accurate the match between any adapter etc. sequence must be against a read.
+20              trimmomatic SLIDINGWINDOW:<windowSize> (integer)                                specifies the number of bases to average across
+20              trimmomatic SLIDINGWINDOW:<windowQuality> (integer)                             specifies the average quality required.
+0               trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0               trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)   The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no              FixStacks (yes,no)                                                                                      Demultiplexing with stacks introduces anomolies.  This removes them.
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Lle-C-3NR-R1R2ORPH-contam-noisolate-off               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20              samtools view -q        Mapping_Min_Quality (integer)                   Remove reads with mapping qual less than this value
+yes             samtools view -F 4      Remove_unmapped_reads? (yes,no)                 Since the reads aren't mapped, we generally don't need to filter them
+no              samtools view -F 8      Remove_read_pair_if_one_is_unmapped? (yes,no)   If either read in a pair does not map, then the other is also removed
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)           Secondary alignments are reads that also map to other contigs in the reference genome
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)      You probably don't want to set this to yes
+no              samtools view -F 2048   Remove_supplementary_alignments? (yes,no)       We generally don't see any of these
+no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (yes,no)                         Set to no if OL mode
+0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
+0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
+30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+no                                      Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no      freebayes -J --pooled-discrete (yes|no)                         If yes, a pool of individuals is assumed to be the statistical unit of observation.
+no      freebayes -A --cnv-map (filename.bed or no)                     If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2       freebayes -p --ploidy (integer)                                 Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no      freebayes -r --region (filename.bed or no)                      Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0       only genotype read 1 (integer)                                  Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+0       Minimum Mean Depth of Coverage Per Individual                   Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0       freebayes -n --use-best-n-alleles (integer)                     reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30      freebayes -m --min-mapping-quality (integer)
+20      freebayes -q --min-base-quality (integer)
+-1      freebayes -E --haplotype-length (-1, 3, or integer)             Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0       freebayes    --min-repeat-entropy (0, 1, or integer)            Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp.
+10      freebayes    --min-coverage (integer)                           Require at least this coverage to process a site
+0.375   freebayes -F --min-alternate-fraction (decimal 0-1)             There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+2       freebayes -C --min-alternate-count (integer)                    Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+10      freebayes -G --min-alternate-total (integer)                    Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)         Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20      freebayes -Q --mismatch-base-quality-threshold (integer)        Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+50      freebayes -U --read-mismatch-limit (integer)                    Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+30      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes -e --read-indel-limit (integer)                       Exclude reads with more than N separate gaps. default: ~unbounded
+no      freebayes -w --hwe-priors-off (no|yes)                          Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no      freebayes -V --binomial-obs-priors-off (no|yes)                 Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no      freebayes -a --allele-balance-priors-off (no|yes)               Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no      freebayes    --no-partial-observations (no|yes)                 Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+yes     freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+Tue Jul 27 21:48:00 EDT 2021 Reading in variables from config file...
+
+Tue Jul 27 21:48:01 EDT 2021 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Tue Jul 27 21:48:02 EDT 2021  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Lle-AHam_001-LlA01001-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_002-LlA01002-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_003-LlA01003-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_004-LlA01004-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_005-LlA01005-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_006-LlA01006-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_007-LlA01007-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_008-LlA01008-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_009-LlA01009-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_010-LlA01010-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_011-LlA01011-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_012-LlA01012-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_013-LlA01013-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_014-LlA01014-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_015-LlA01015-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_016-LlA01016-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_017-LlA01017-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_018-LlA01018-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_019-LlA01019-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_020-LlA01020-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_021-LlA01021-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_022-LlA01022-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_023-LlA01023-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_024-LlA01024-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_025-LlA01025-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_026-LlA01026-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_027-LlA01027-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_028-LlA01028-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_029-LlA01029-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_030-LlA01030-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_031-LlA01031-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-AHam_032-LlA01032-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_001-LlC01001-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_002-LlC01002-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_003-LlC01003-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_004-LlC01004-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_005-LlC01005-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_006-LlC01006-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_007-LlC01007-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_008-LlC01008-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_009-LlC01009-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_010-LlC01010-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_011-LlC01011-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_012-LlC01012-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_013-LlC01013-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_014-LlC01014-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_015-LlC01015-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_016-LlC01016-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_017-LlC01017-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_018-LlC01018-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_019-LlC01019-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_020-LlC01020-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_021-LlC01021-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_022-LlC01022-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_023-LlC01023-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_024-LlC01024-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_025-LlC01025-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_026-LlC01026-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_027-LlC01027-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_028-LlC01028-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_029-LlC01029-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_030-LlC01030-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_031-LlC01031-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_032-LlC01032-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_033-LlC01033-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_034-LlC01034-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_035-LlC01035-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_036-LlC01036-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_037-LlC01037-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_038-LlC01038-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_039-LlC01039-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_040-LlC01040-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_041-LlC01041-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_042-LlC01042-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_043-LlC01043-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_044-LlC01044-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_045-LlC01045-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_046-LlC01046-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_047-LlC01047-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_048-LlC01048-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_049-LlC01049-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_050-LlC01050-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_051-LlC01051-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_052-LlC01052-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_053-LlC01053-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_054-LlC01054-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_055-LlC01055-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_056-LlC01056-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_057-LlC01057-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_058-LlC01058-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_059-LlC01059-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_060-LlC01060-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_061-LlC01061-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_062-LlC01062-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_063-LlC01063-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_064-LlC01064-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_065-LlC01065-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_066-LlC01066-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_067-LlC01067-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_068-LlC01068-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_069-LlC01069-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_070-LlC01070-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_071-LlC01071-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_072-LlC01072-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_073-LlC01073-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_074-LlC01074-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_075-LlC01075-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_076-LlC01076-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_077-LlC01077-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_078-LlC01078-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_079-LlC01079-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_080-LlC01080-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_081-LlC01081-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_082-LlC01082-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_083-LlC01083-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_084-LlC01084-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_085-LlC01085-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_086-LlC01086-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_087-LlC01087-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_088-LlC01088-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_089-LlC01089-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_090-LlC01090-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_091-LlC01091-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_092-LlC01092-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_093-LlC01093-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_094-LlC01094-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_095-LlC01095-L1-fp1-clmp-fp2-fqscrn-repr
+  Lle-CNas_096-LlC01096-L1-fp1-clmp-fp2-fqscrn-repr
+
+
+Tue Jul 27 21:48:03 EDT 2021 Genotyping initiated...
+
+ Tue Jul 27 21:48:03 EDT 2021  Preparing files for genotyping...
+
+  Tue Jul 27 21:48:03 EDT 2021 Filtered BAM files detected with -RG.bam.
+  Tue Jul 27 22:10:57 EDT 2021  Estimating coverage of ref intervals & remove extreme copy number loci...
+                                                                                                                        
+                             Scatter plot of total depth of coverage for each contig in cat*RRG.bam.                    
+                                                                                                                        
+             +------------------------------------------------------------------------------------------------------+   
+             |                     +                      +                     +                      +            |   
+             |                                                                                    'cov.dat'    *    |   
+     1.4e+06 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |                                                                                                      |   
+     1.2e+06 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+       1e+06 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |                                                                                                      |   
+      800000 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |                                                                                                      |   
+      600000 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |                                                                                                      |   
+      400000 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |                                                                                                      |   
+      200000 |-+                                                                                                  +-|   
+             |                                                                                                      |   
+             |*                    +                      +                     +                      +            |   
+           0 +------------------------------------------------------------------------------------------------------+   
+             0                   50000                  100000                150000                 200000             
+                                                             Contig                                                     
+                                                                                                                        
+  Tue Jul 27 22:39:20 EDT 2021  Filtering contigs with low coverage...
+  Tue Jul 27 22:39:26 EDT 2021  Making the bed files...
+  Tue Jul 27 22:39:27 EDT 2021  Creating popmap...
+
+Lle-AHam_001-LlA01001-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_002-LlA01002-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_003-LlA01003-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_004-LlA01004-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_005-LlA01005-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_006-LlA01006-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_007-LlA01007-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_008-LlA01008-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_009-LlA01009-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_010-LlA01010-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_011-LlA01011-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_012-LlA01012-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_013-LlA01013-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_014-LlA01014-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_015-LlA01015-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_016-LlA01016-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_017-LlA01017-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_018-LlA01018-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_019-LlA01019-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_020-LlA01020-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_021-LlA01021-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_022-LlA01022-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_023-LlA01023-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_024-LlA01024-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_025-LlA01025-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_026-LlA01026-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_027-LlA01027-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_028-LlA01028-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_029-LlA01029-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_030-LlA01030-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_031-LlA01031-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-AHam_032-LlA01032-L1-fp1-clmp-fp2-fqscrn-repr	Lle-AHam
+Lle-CNas_001-LlC01001-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_002-LlC01002-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_003-LlC01003-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_004-LlC01004-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_005-LlC01005-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_006-LlC01006-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_007-LlC01007-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_008-LlC01008-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_009-LlC01009-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_010-LlC01010-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_011-LlC01011-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_012-LlC01012-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_013-LlC01013-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_014-LlC01014-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_015-LlC01015-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_016-LlC01016-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_017-LlC01017-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_018-LlC01018-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_019-LlC01019-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_020-LlC01020-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_021-LlC01021-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_022-LlC01022-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_023-LlC01023-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_024-LlC01024-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_025-LlC01025-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_026-LlC01026-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_027-LlC01027-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_028-LlC01028-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_029-LlC01029-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_030-LlC01030-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_031-LlC01031-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_032-LlC01032-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_033-LlC01033-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_034-LlC01034-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_035-LlC01035-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_036-LlC01036-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_037-LlC01037-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_038-LlC01038-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_039-LlC01039-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_040-LlC01040-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_041-LlC01041-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_042-LlC01042-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_043-LlC01043-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_044-LlC01044-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_045-LlC01045-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_046-LlC01046-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_047-LlC01047-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_048-LlC01048-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_049-LlC01049-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_050-LlC01050-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_051-LlC01051-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_052-LlC01052-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_053-LlC01053-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_054-LlC01054-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_055-LlC01055-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_056-LlC01056-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_057-LlC01057-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_058-LlC01058-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_059-LlC01059-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_060-LlC01060-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_061-LlC01061-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_062-LlC01062-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_063-LlC01063-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_064-LlC01064-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_065-LlC01065-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_066-LlC01066-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_067-LlC01067-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_068-LlC01068-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_069-LlC01069-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_070-LlC01070-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_071-LlC01071-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_072-LlC01072-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_073-LlC01073-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_074-LlC01074-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_075-LlC01075-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_076-LlC01076-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_077-LlC01077-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_078-LlC01078-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_079-LlC01079-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_080-LlC01080-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_081-LlC01081-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_082-LlC01082-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_083-LlC01083-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_084-LlC01084-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_085-LlC01085-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_086-LlC01086-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_087-LlC01087-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_088-LlC01088-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_089-LlC01089-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_090-LlC01090-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_091-LlC01091-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_092-LlC01092-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_093-LlC01093-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_094-LlC01094-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_095-LlC01095-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+Lle-CNas_096-LlC01096-L1-fp1-clmp-fp2-fqscrn-repr	Lle-CNas
+
+ Tue Jul 27 22:39:30 EDT 2021  Genotyping individuals of ploidy 2 using freebayes...
