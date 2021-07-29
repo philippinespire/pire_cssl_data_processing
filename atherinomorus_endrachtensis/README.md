@@ -202,3 +202,29 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBA
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1  shot
 sbatch ../dDocentHPC.sbatch config.5.cssl
 ```
+
+---
+
+### Step 9. Filter VCF Files
+
+Cloned fltrVCF and rad_haplotyper repos.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+git clone git@github.com:cbirdlab/fltrVCF.git
+git clone git@github.com:cbirdlab/rad_haplotyper.git
+
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+mkdir filterVCF
+
+cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
+```
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl
+
+#troubleshooting will be necessary
+```
