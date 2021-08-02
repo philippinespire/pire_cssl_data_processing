@@ -1,4 +1,4 @@
-#### Code used for NeEstimator - species = Aen!
+#### Code used for NeEstimator - species = Lle!
 
 cp /projects/f_mlp195/brendanr/vcf2genepop.pl ./
 
