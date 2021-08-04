@@ -1,8 +1,8 @@
-
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 
 #### Initialize ####
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 library(tidyverse)
 library(magrittr)
 library(janitor)
@@ -171,7 +171,7 @@ all_data %>%
   filter(state_hetero == "hetero",
          era != "a") %>%
   mutate(id = str_remove(id,
-                         modIdPATTERN")) %>%
+                         modIdPATTERN)) %>%
   ggplot(aes(x=allele_balance,
              fill = era)) +
   geom_histogram(bins=100) +
