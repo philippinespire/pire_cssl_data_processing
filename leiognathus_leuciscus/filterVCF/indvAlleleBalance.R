@@ -56,7 +56,7 @@ genotypes <-
 #### COMBINE DATA ####
 all_data <-
   allele_depths %>%
-    left_join(geno_likes) %>%
+    # left_join(geno_likes) %>%
     left_join(genotypes) %>%
   mutate(qual = as.double(qual),
          across(contains(c("num_reads",
@@ -79,29 +79,43 @@ all_data <-
                   NA)),
            remove = FALSE)
 
-#### CONFIRM VALIDITY ####
+#### AB By Era ####
+
+# all_data %>%
+#   ggplot(aes(x=like_hetero)) +
+#   geom_histogram() +
+#   facet_grid(state_hetero ~ era)
 
 all_data %>%
-  ggplot(aes(x=like_hetero)) +
+  filter(state_hetero == "hetero") %>%
+  ggplot(aes(x=allele_balance,
+             fill = era)) +
   geom_histogram() +
-  facet_wrap(state_hetero ~ .)
+  facet_grid(era ~ .,
+             scales = "free")
 
 all_data %>%
-  ggplot(aes(x=allele_balance)) +
-  geom_histogram() +
-  facet_wrap(state_hetero ~ .)
-
-#### INDIV AB ####
-
-all_data %>%
-  group_by(id, era) %>%
-  summarize(median_allele_balance = median(allele_balance,
-                                           na.rm = TRUE)) %>%
+  filter(state_hetero == "hetero") %>%
+  group_by(chrom, pos,era) %>%
+  summarize(median_allele_balance = median(allele_balance)) %>%
   ggplot(aes(x=median_allele_balance,
              fill = era)) +
   geom_histogram() +
-  scale_x_continuous(limits = c(0, 1)) +
-  facet_wrap(era ~ .)
+  facet_grid(era ~ .,
+             scales = "free")
+
+#### INDIV AB ####
+
+# all_data %>%
+#   group_by(id, era) %>%
+#   summarize(median_allele_balance = median(allele_balance,
+#                                            na.rm = TRUE)) %>%
+#   ggplot(aes(x=median_allele_balance,
+#              fill = era)) +
+#   geom_histogram() +
+#   scale_x_continuous(limits = c(0, 1)) +
+#   facet_grid(era ~ .,
+#              scales = "free")
 
 all_data %>%
   ggplot(aes(x=id,
@@ -115,25 +129,25 @@ all_data %>%
              fill=era)) +
   geom_boxplot()
 
-all_data %>%
-  filter(state_hetero == "hetero") %>%
-  group_by(id, era) %>%
-  summarize(n_hetero_pos = n()) %>%
-  ggplot(aes(x=id,
-             y=n_hetero_pos,
-             fill = era)) +
-  theme(axis.text.x = element_text(angle = 90, hjust=1)) +
-  geom_col()
-
-all_data %>%
-  filter(is.na(state_hetero)) %>%
-  group_by(id, era) %>%
-  summarize(n_missdat_pos = n()) %>%
-  ggplot(aes(x=id,
-             y=n_missdat_pos,
-             fill = era)) +
-  theme(axis.text.x = element_text(angle = 90, hjust=1)) +
-  geom_col()
+# all_data %>%
+#   filter(state_hetero == "hetero") %>%
+#   group_by(id, era) %>%
+#   summarize(n_hetero_pos = n()) %>%
+#   ggplot(aes(x=id,
+#              y=n_hetero_pos,
+#              fill = era)) +
+#   theme(axis.text.x = element_text(angle = 90, hjust=1)) +
+#   geom_col()
+# 
+# all_data %>%
+#   filter(is.na(state_hetero)) %>%
+#   group_by(id, era) %>%
+#   summarize(n_missdat_pos = n()) %>%
+#   ggplot(aes(x=id,
+#              y=n_missdat_pos,
+#              fill = era)) +
+#   theme(axis.text.x = element_text(angle = 90, hjust=1)) +
+#   geom_col()
 
 all_data %>%
   ggplot(aes(x=id,
