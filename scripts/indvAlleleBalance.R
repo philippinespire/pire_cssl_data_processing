@@ -11,17 +11,20 @@ library(janitor)
 alleledepthFILE = '../leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.AD.tsv'
 # genolikelihoodFILE = 'leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GL.tsv'
 genoFILE = '../leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GT.tsv'
+indvPATTERN = "lle_"
+modIdPATTERN = "_ll_.*"
 
 alleledepthFILE = '../atherinomorus_endrachtensis/filterVCF_ceb/Aen.A3.rad.RAW-6-6.Fltr15.9.recode.AD.tsv'
 genoFILE = '../atherinomorus_endrachtensis/filterVCF_ceb/Aen.A3.rad.RAW-6-6.Fltr15.9.recode.GT.tsv'
-
+indvPATTERN = "aen_"
+modIdPATTERN = "_ae_.*"
 
 #### READ in DATA ####
 allele_depths <-
   read_tsv(alleledepthFILE,
            col_types=cols(.default = "c")) %>%
   clean_names() %>%
-  pivot_longer(cols=contains("lle_"),
+  pivot_longer(cols=contains(indvPATTERN),
                names_to="id") %>%
   separate(col=value,
            into=(c("num_reads_ref",
@@ -32,7 +35,7 @@ allele_depths <-
 #   read_tsv(genolikelihoodFILE,
 #            col_types=cols(.default = "c")) %>%
 #   clean_names() %>%
-#   pivot_longer(cols=contains("lle_"),
+#   pivot_longer(cols=contains(indvPATTERN),
 #                names_to="id") %>%
 #   separate(col=value,
 #            into=(c("like_homo_ref",
@@ -44,7 +47,7 @@ genotypes <-
   read_tsv(genoFILE,
            col_types=cols(.default = "c")) %>%
   clean_names() %>%
-  pivot_longer(cols=contains("lle_"),
+  pivot_longer(cols=contains(indvPATTERN),
                names_to="id") %>%
   # mutate(value = str_replace_all(value,
   #                            pattern = "\\.",
@@ -73,7 +76,9 @@ all_data <-
                                   state_1 == ref ~ "homo_ref",
                                   TRUE ~ "homo_alt"),
          allele_balance = case_when(state_hetero == "hetero" ~ num_reads_alt / num_reads,
-                                    TRUE ~ NA_real_)) %>%
+                                    TRUE ~ NA_real_),
+         id = str_remove(id,
+                         modIdPATTERN)) %>%
   separate(id,
            into=(c(NA,
                   "era",
@@ -94,7 +99,24 @@ all_data %>%
   filter(state_hetero == "hetero") %>%
   ggplot(aes(x=allele_balance,
              fill = era)) +
-  geom_histogram() +
+  geom_histogram(bins=100) +
+  geom_vline(xintercept = c(1/8,
+                            1/6,
+                            2/8,
+                            2/6,
+                            3/8,
+                            4/8,
+                            5/8,
+                            4/6,
+                            6/8,
+                            5/6,
+                            7/8),
+             color="grey",
+             linetype="dashed") +
+  scale_x_continuous(limits = c(0, 1)) +
+  theme_classic() +
+  labs(title = "Histograms of Allele Balance",
+       subtitle = "Individuals x Position, Most Granular") +
   facet_grid(era ~ .,
              scales = "free")
 
@@ -104,11 +126,64 @@ all_data %>%
   summarize(median_allele_balance = median(allele_balance)) %>%
   ggplot(aes(x=median_allele_balance,
              fill = era)) +
-  geom_histogram() +
+  geom_histogram(bins=100) +
+  geom_vline(xintercept = c(1/8,
+                            1/6,
+                            2/8,
+                            2/6,
+                            3/8,
+                            4/8,
+                            5/8,
+                            4/6,
+                            6/8,
+                            5/6,
+                            7/8),
+             color="grey",
+             linetype="dashed") +
+  scale_x_continuous(limits = c(0, 1)) +
+  theme_classic() +
+  labs(title = "Histograms of Allele Balance",
+       subtitle = "Medians by Position") +
   facet_grid(era ~ .,
              scales = "free")
 
 #### INDIV AB ####
+
+all_data %>%
+  filter(state_hetero == "hetero",
+         era == "a") %>%
+  mutate(id = str_remove(id,
+                         modIdPATTERN)) %>%
+  ggplot(aes(x=allele_balance,
+             fill = era)) +
+  geom_histogram(bins=100) +
+  geom_vline(xintercept = c(1/8),
+             color="black",
+             linetype="solid") +
+  scale_x_continuous(limits = c(0, 1)) +
+  theme_classic() +
+  labs(title = "Histograms of Allele Balance",
+       subtitle = "Individuals x Position, Most Granular, Vert Line = 1/8") +
+  facet_wrap(era ~ id,
+             scales = "free")
+
+all_data %>%
+  filter(state_hetero == "hetero",
+         era != "a") %>%
+  mutate(id = str_remove(id,
+                         modIdPATTERN")) %>%
+  ggplot(aes(x=allele_balance,
+             fill = era)) +
+  geom_histogram(bins=100) +
+  geom_vline(xintercept = c(1/8),
+             color="black",
+             linetype="solid") +
+  scale_x_continuous(limits = c(0, 1)) +
+  theme_classic() +
+  labs(title = "Histograms of Allele Balance",
+       subtitle = "Individuals x Position, Most Granular, Vert Line = 1/8") +
+  facet_wrap(era ~ id,
+             scales = "free")
 
 # all_data %>%
 #   group_by(id, era) %>%
@@ -125,13 +200,27 @@ all_data %>%
   ggplot(aes(x=id,
              y=allele_balance,
              fill=era)) +
-  geom_boxplot()
-
+  geom_boxplot() +
+  geom_hline(yintercept = c(1/8,
+                            1/6,
+                            1/5,
+                            1/4),
+             color="black",
+             linetype="solid") +
+  theme_classic() +
+  labs(title = "Boxplots of Allele Balance",
+       subtitle = "Individuals x Position, Most Granular, HLines at 1/8, 1/6, 1/5, 1/4",
+       x = "Indiviudal ID") 
+  
 all_data %>%
   ggplot(aes(x=id,
-             y=num_reads,
+             y=log10(num_reads),
              fill=era)) +
-  geom_boxplot()
+  geom_boxplot() +
+  theme_classic() +
+  labs(title = "Boxplots of Read Depth",
+       subtitle = "Individuals x Position, Most Granular",
+       x = "Indiviudal ID") 
 
 # all_data %>%
 #   filter(state_hetero == "hetero") %>%
@@ -157,5 +246,6 @@ all_data %>%
   ggplot(aes(x=id,
              fill = state_hetero)) +
   geom_bar() +
+  theme_classic() +
   theme(axis.text.x = element_text(angle = 90, hjust=1)) 
   
