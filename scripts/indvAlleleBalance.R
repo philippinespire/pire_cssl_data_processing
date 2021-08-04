@@ -208,6 +208,7 @@ all_data %>%
              color="black",
              linetype="solid") +
   theme_classic() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1)) +
   labs(title = "Boxplots of Allele Balance",
        subtitle = "Individuals x Position, Most Granular, HLines at 1/8, 1/6, 1/5, 1/4",
        x = "Indiviudal ID") 
@@ -218,6 +219,7 @@ all_data %>%
              fill=era)) +
   geom_boxplot() +
   theme_classic() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1)) +
   labs(title = "Boxplots of Read Depth",
        subtitle = "Individuals x Position, Most Granular",
        x = "Indiviudal ID") 
