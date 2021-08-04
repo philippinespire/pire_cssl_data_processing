@@ -8,9 +8,13 @@ library(magrittr)
 library(janitor)
 
 #### Set Variables ####
-alleledepthFILE = 'lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.AD.tsv'
-genolikelihoodFILE = 'lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GL.tsv'
-genoFILE = 'lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GT.tsv'
+alleledepthFILE = '../leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.AD.tsv'
+# genolikelihoodFILE = 'leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GL.tsv'
+genoFILE = '../leiognathus_leuciscus/filterVCF/lle.D.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.1.recode.100.GT.tsv'
+
+alleledepthFILE = '../atherinomorus_endrachtensis/filterVCF_ceb/Aen.A3.rad.RAW-6-6.Fltr15.9.recode.AD.tsv'
+genoFILE = '../atherinomorus_endrachtensis/filterVCF_ceb/Aen.A3.rad.RAW-6-6.Fltr15.9.recode.GT.tsv'
+
 
 #### READ in DATA ####
 allele_depths <-
@@ -24,17 +28,17 @@ allele_depths <-
                   "num_reads_alt")),
            convert=TRUE)
 
-geno_likes <-
-  read_tsv(genolikelihoodFILE,
-           col_types=cols(.default = "c")) %>%
-  clean_names() %>%
-  pivot_longer(cols=contains("lle_"),
-               names_to="id") %>%
-  separate(col=value,
-           into=(c("like_homo_ref",
-                   "like_hetero",
-                   "like_homo_alt")),
-           convert=TRUE)
+# geno_likes <-
+#   read_tsv(genolikelihoodFILE,
+#            col_types=cols(.default = "c")) %>%
+#   clean_names() %>%
+#   pivot_longer(cols=contains("lle_"),
+#                names_to="id") %>%
+#   separate(col=value,
+#            into=(c("like_homo_ref",
+#                    "like_hetero",
+#                    "like_homo_alt")),
+#            convert=TRUE)
 
 genotypes <-
   read_tsv(genoFILE,
