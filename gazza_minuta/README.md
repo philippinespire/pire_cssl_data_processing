@@ -58,13 +58,13 @@ sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 [Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
 
 Potential issues:  
-* % duplication - good
-  * Alb: ~10%, Contemp: ~10%
+* % duplication - Albatross good, contemporary okay
+  * Alb: ~5-10%, Contemp: ~30%
 * GC content - good
-*  Alb: 40%, Contemp: 45%
+*  Alb: 45%, Contemp: 50%
 * passing filter - good
-  * Alb: ~98%, Contemp: ~99%
+  * Alb: ~99%, Contemp: ~98%
 * % adapter - good
-  * Alb: <2%, Contemp: <1%
-* number of reads - took a hit, especially Albatross
-  * Alb: about half ~10-25 mil & about half ~1-7 mil, Contemp: 5-10 mil
+  * Alb: <2.5%, Contemp: <1%
+* number of reads - went down but Albatross still good, contemporary some are very low
+  * Alb: ~5-25 mil with a few >100 mil, Contemp: about half 5-15 mil & about half >1 mil (and likely in the thousands)
