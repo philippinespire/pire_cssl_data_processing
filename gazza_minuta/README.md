@@ -68,3 +68,14 @@ Potential issues:
   * Alb: <2.5%, Contemp: <1%
 * number of reads - went down but Albatross still good, contemporary some are very low
   * Alb: ~5-25 mil with a few >100 mil, Contemp: about half 5-15 mil & about half >1 mil (and likely in the thousands)
+
+---
+
+## Step 4. Run fastq_screen
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
