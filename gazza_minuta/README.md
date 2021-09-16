@@ -84,7 +84,7 @@ bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 
 Potential issues: 
 * job 13 failed 
-  * [out file](https://LINK)
+  * [out file](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/logs/slurm-fqscrn.405009.13.out)
   * "No reads in GmA01013..., skipping"
   * Checked file and there are definitely reads here
 * Also, looks like there is more contamination (20-40%) than with other species, esp. in Albatross.
