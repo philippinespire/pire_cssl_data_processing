@@ -99,3 +99,22 @@ bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 GmA010
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 GmA01013*r2.fq.gz
 ```
 
+Cleaned-up logs.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+
+mkdir logs
+mv *out logs
+```
+
+---
+
+## Step 5. Repair fastq_screen paired end files
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
