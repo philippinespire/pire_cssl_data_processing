@@ -79,3 +79,23 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
+
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+
+Potential issues: 
+* job 13 failed 
+  * [out file](https://LINK)
+  * "No reads in GmA01013..., skipping"
+  * Checked file and there are definitely reads here
+* Also, looks like there is more contamination (20-40%) than with other species, esp. in Albatross.
+
+Fixed errors: re-ran file that returned the "No reads in" error.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 GmA01013*r1.fq.gz
+bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 GmA01013*r2.fq.gz
+```
+
