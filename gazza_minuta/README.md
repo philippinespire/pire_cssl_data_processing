@@ -123,7 +123,7 @@ sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 4
 
 ## Step 6. Rename files for dDocent HPC and put into mapping dir
 
-Used decode file fro mSharon Magnuson & Chris Bird.
+Used decode file from Sharon Magnuson & Chris Bird.
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
