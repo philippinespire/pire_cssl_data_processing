@@ -118,3 +118,38 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
+
+---
+
+## Step 6. Rename files for dDocent HPC and put into mapping dir
+
+Used decode file fro mSharon Magnuson & Chris Bird.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+
+cp /home/e1garcia/shotgun_PIRE/Gmi/shotgun_PIRE/Gmi/raw_fq_capture/Gmi_CaptureLibraries_SequenceNameDecode.tsv .
+#removed _Ex1 extensions (kept in "original.tsv" copy)
+
+#mkNewFileNames.bash <decode file name> <fqdir>
+bash ../scripts/mkNewFileNames.bash Gmi_Capture_Libraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
+
+#make old file names
+cd fq_fp1_clmp_fp2_fqscrn_repaired
+ls *.fq.gz > ../decode_oldnames.txt
+
+#triple check that the old and new files are aligned
+cd ..
+module load parallel
+bash
+parallel --no-notice --link -kj6 "echo {1}, {2}" :::: decode_oldnames.txt decode_newnames.txt > decode_translation.csv
+less -S decode_translation.csv
+#names do NOT match --> some contemporary libraries that were in original decode file no longer present. Adjusted decode_newnames.txt file names so that everything matched.
+
+#rename files and move to mapping dir
+mkdir mkBAM
+cd fq_fp1_clmp_fp2_fqscrn_repaired
+parallel --no-notice --link -kj6 "mv {1} ../mkBAM/{2}" :::: ../decode_oldnames.txt ../decode_newnames.txt
+
+#confirm success
+ls ../mkBAM
