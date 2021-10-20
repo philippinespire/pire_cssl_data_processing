@@ -25,16 +25,21 @@ and Contemporary files [multiqc_report_Contem.html](https://github.com/philippin
 Download or copy and paste reports for viewing.
 
 SdA01 files are from Sde-AMat
+
 SdA02 files are from Sde-AMar
+
 SdC01 files are from Sde-CMat
+
 SdC02 files are from Sde-CHam
 
 **Highlights:**
 
 Sde-AMat Duplication 70-80%s, GC most 40%s few 50%s, Num of Reads 2-38 M (most in the 10-20s M)
+
 Sde-AMar Duplication 60-80%s, GC 50-60%s, Num of Reads 2-12 M (most <10 M)
 
 Sde-CMat Duplication 70-80%s, GC 40%s, Num of Reads 1.3-37 M (most in the 10-20s M)
+
 Sde-CHam Duplication 50-80%s, GC mostly 40%s, Num of Reads <1-10 M (most <1 M)
  
 ---
