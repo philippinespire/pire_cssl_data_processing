@@ -11,17 +11,26 @@ Running FASTQC
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/raw_fq_capture/"
 ```
 
+For some reason FASTQC was getting stuck. I modified the script to run only missing files.
+
+Looks like FASTQC could not process `SdC02092_CKDL210020579-1a-AK7010-7UDI246_HKGLMDSX2_L2_1.fq.gz` this time around. The script kept geting stuck at this file. The previous runs might had getting stuck at other files. Before noticing this, I was not keeping all the failed out files. Check the output for inconsistencies. 
+
+Ended up running FASTQC directly on current session (not with sbatch), and that ran fine.
+
+The initial MultiQC report with all the files [multiqc_report_fq.gz.html]() collapsed file statistic into a single plot so I re-run MultiQC for Albatross and Contemporary files separately to be able to see stats file per file.
+
+
+
 ---
 
 ## Step 1.  1st fastp
 
-Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
-
+Running the first trim (3'):
 ```
 cd /home/e1garica/pire_cssl_data_processing/spratelloides_delicatulus
 #runFASTP_1.sbatch <indir> <outdir>
 # do not use trailing / in paths
-sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/spratelloides_delicatulus/fq_raw fq_fp1
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "raw_fq_capture" "./fq_fp1"
 ```
 
 [Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
