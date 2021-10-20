@@ -17,10 +17,26 @@ Looks like FASTQC could not process `SdC02092_CKDL210020579-1a-AK7010-7UDI246_HK
 
 Ended up running FASTQC directly on current session (not with sbatch), and that ran fine.
 
-The initial MultiQC report with all the files [multiqc_report_fq.gz.html]() collapsed file statistic into a single plot so I re-run MultiQC for Albatross and Contemporary files separately to be able to see stats file per file.
+The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/multiqc_report_fq.gz.html) collapsed file statistic into a single plot
+ so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html) 
+and Contemporary files [multiqc_report_Contem.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html) separately to be able to see stats file per file.
 
 
+Download or copy and paste reports for viewing.
 
+SdA01 files are from Sde-AMat
+SdA02 files are from Sde-AMar
+SdC01 files are from Sde-CMat
+SdC02 files are from Sde-CHam
+
+**Highlights:**
+
+Sde-AMat Duplication 70-80%s, GC most 40%s few 50%s, Num of Reads 2-38 M (most in the 10-20s M)
+Sde-AMar Duplication 60-80%s, GC 50-60%s, Num of Reads 2-12 M (most <10 M)
+
+Sde-CMat Duplication 70-80%s, GC 40%s, Num of Reads 1.3-37 M (most in the 10-20s M)
+Sde-CHam Duplication 50-80%s, GC mostly 40%s, Num of Reads <1-10 M (most <1 M)
+ 
 ---
 
 ## Step 1.  1st fastp
