@@ -240,6 +240,20 @@ mkdir filterVCF
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 ```
 
+Because many *Gazza minuta* contemporary individuals had low numbers of reads, removed individuals with <100K sequences from VCF prior to running `fltrVCF.sbatch`. This removes individuals with the most amount of missing data beforehand, allowing us to retain more sites (losing fewer SNPs due to too much missing data, etc.).
+
+```
+#created list of individuals to remove (35 total, all contemporary)
+
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
+
+module load vcftools
+
+vcftools --vcf ../mkBAM/TotalRawSNPs.rad.RAW-10.10.vcf --remove indvfewsequences.txt --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq
+```
+
+Ran `fltrVCF.sbatch`.
+
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
 
