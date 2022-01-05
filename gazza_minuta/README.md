@@ -292,7 +292,6 @@ plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out
 
 awk '{$1=0;print $0}' PIRE.Gmi.Ham.preHWE.bim > PIRE.Gmi.Ham.preHWE.bim.tmp
 mv PIRE.Gmi.Ham.preHWE.bim.tmp PIRE.Gmi.Ham.preHWE.bim
-
 ```
 
 Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are here.
