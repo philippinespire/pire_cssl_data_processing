@@ -308,7 +308,7 @@ Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigen
 
 ## Step 11. Filter VCF file for HWE
 
-**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `config.fltr.ind.cssl.HWE`.
+**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
 
 PCA & ADMIXTURE showed cryptic structure. ABas & CBas all assigned to one deme ("A"). ~50% of AHam & CBat assigned to same deme ("A") as ABas & CBas and ~50% assigned to separate deme ("B"). Species IDs unknown at this point.
 
