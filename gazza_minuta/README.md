@@ -258,7 +258,112 @@ Ran `fltrVCF.sbatch`.
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
 sbatch ../fltrVCF.sbatch config.fltr.ind.cssl
 
 #troubleshooting will be necessary
+```
+
+---
+
+## Step 10. Check for cryptic species
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+mkdir pop_structure
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp filterVCF/*Fltr07.18.vcf pop_structure
+```
+
+Ran PCA w/PLINK. Instructions for installing PLINK with conda are here.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
+
+plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
+```
+
+Made input files for ADMIXTURE with PLINK.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
+plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Gmi.Ham.preHWE
+
+awk '{$1=0;print $0}' PIRE.Gmi.Ham.preHWE.bim > PIRE.Gmi.Ham.preHWE.bim.tmp
+mv PIRE.Gmi.Ham.preHWE.bim.tmp PIRE.Gmi.Ham.preHWE.bim
+
+```
+
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are here.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
+admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run from 1-5
+```
+
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/gaza_minuta/pop_structure`).
+
+---
+
+## Step 11. Filter VCF file for HWE
+
+**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `config.fltr.ind.cssl.HWE`.
+
+PCA & ADMIXTURE showed cryptic structure. ABas & CBas all assigned to one deme ("A"). ~50% of AHam & CBat assigned to same deme ("A") as ABas & CBas and ~50% assigned to separate deme ("B"). Species IDs unknown at this point.
+
+Adjusted popmap file to reflect new structure.
+
+```
+cd /home/PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
+cp ../mkBAM/popmap.rad.RAW-10-10 ./popmap.rad.RAW-10-10.HWEsplit
+
+#added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
+```
+
+Ran `fltrVCF.sbatch`.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
+cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
+#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
+#config file should ONLY run filters 18 & 17 (in that order)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
+
+#troubleshooting will be necessary
+```
+---
+
+## Step 12. Make VCF with Monomorphic Loci
+
+Moved the files needed for genotyping from `mkBAM` to `mkVCF`
+
+```
+#run in scratch if need more space
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
+mkdir mKVCF_monomorphic
+mv mkBAM/*bam* mkVCF_monomorphic
+cp mkBAM/*fasta mkVCF_monomorphic
+cp mkBAM/config.5.cssl mkVCF_monomorphic
+```
+
+Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
+
+```
+yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+```
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+mv config.5.cssl config.5.cssl.monomrphic
+```
+
+Genotyped
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
