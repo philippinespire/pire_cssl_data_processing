@@ -295,7 +295,9 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_struct
 module load anaconda
 conda activate popgen
 
-plink --vcf lle.B.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.14.vcf --allow-extra-chr --pca --out PIRE.Lle.Ham.preHWE
+#VCF file has split chromosome, so running PCA from bed file 
+plink --vcf lle.B.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.14.vcf --allow-extra-chr --make-bed --out PIRE.Lle.Ham.preHWE
+plink --pca --allow-extra-chr --bfile PIRE.Lle.Ham.preHWE --out PIRE.Lle.Ham.preHWE
 conda deactivate
 ```
 
@@ -304,12 +306,7 @@ Made input files for ADMIXTURE with PLINK.
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
-module load anaconda
-conda activate popgen
-
-plink --vcf lle.B.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.14.vcf --allow-extra-chr --make-bed --out PIRE.Lle.Ham.preHWE
-conda deactivate
-
+#bed & bim files already made (for PCA)
 awk '{$1=0;print $0}' PIRE.Lle.Ham.preHWE.bim > PIRE.Lle.Ham.preHWE.bim.tmp
 mv PIRE.Lle.Ham.preHWE.bim.tmp PIRE.Lle.Ham.preHWE.bim
 ```
