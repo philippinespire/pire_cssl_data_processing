@@ -276,32 +276,46 @@ mkdir pop_structure
 cp filterVCF/*Fltr07.18.vcf pop_structure
 ```
 
-Ran PCA w/PLINK. Instructions for installing PLINK with conda are here.
+Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
 
+module load anaconda
+conda activate popgen
+
 plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
+conda deactivate
 ```
 
 Made input files for ADMIXTURE with PLINK.
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
+
+module load anaconda
+conda activate popgen
+
 plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Gmi.Ham.preHWE
+conda deactivate
 
 awk '{$1=0;print $0}' PIRE.Gmi.Ham.preHWE.bim > PIRE.Gmi.Ham.preHWE.bim.tmp
 mv PIRE.Gmi.Ham.preHWE.bim.tmp PIRE.Gmi.Ham.preHWE.bim
 ```
 
-Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are here.
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
+
+module load anaconda
+conda activate popgen
+
 admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run from 1-5
+conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/gaza_minuta/pop_structure`).
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/gaza_minuta/pop_structure`).
 
 ---
 
