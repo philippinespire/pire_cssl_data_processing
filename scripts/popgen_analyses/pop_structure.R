@@ -1,0 +1,134 @@
+#################################################### Script for Creating PCA & ADMIXTURE Plots  ########################################################
+
+#adjust paths as needed
+#PCA eigenvec csv files should have following headers: Era, Location (if necessary), Population, Individual, PC1, .., PC20 (see gazza_minuta/pop_structure for an example)
+
+#################################################################################################################################################
+
+######## Set-up ########
+
+#set working directory
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#getwd()
+
+remove(list = ls())
+
+#load libraries
+#library(devtools)
+#devtools::install_github('royfrancis/pophelper') #to install pophelper the first time
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+library(gtable)
+library(pophelper)
+
+#read in PCA data
+data_PC <- read.csv("../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec.csv")
+
+#read in ADMIXTURE data
+afiles <- list.files(path = "../PIRE_Gmi_Ham/ADMIXTURE/preHWE/", full.names = TRUE)
+alist <- readQ(files = afiles) 
+lapply(alist, attributes) #check to make sure read in properly
+
+################################################################################################################################################
+
+######## PCA ########
+#calculate % variance each PC explains by adding up all eigenvalues in *.eigenval file
+#then divide 1st eigenvalue by that sum to get % variance explained by PC 1, etc.
+
+#with one location
+PCA_12 <- ggplot(data = data_PC, aes(x = PC1, y = PC2, color = Era, shape = Era)) + 
+  geom_point(size = 16, stroke = 5) + ggtitle("PC1 v. PC2") + 
+  scale_color_manual(values = c("#000000", "#999999"), labels = c("Historical", "Contemporary")) + 
+  scale_shape_manual(values = c(16, 17), labels = c("Historical", "Contemporary")) + 
+  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)")
+PCA_12_annotated <- PCA_12 + scale_size(guide = "none") + theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        axis.line = element_line(size = 1), plot.title = element_blank(), 
+        legend.position = "top", legend.text = element_text(size = 20), legend.title = element_blank(), 
+        axis.ticks = element_line(color = "black", size = 1), axis.text = element_text(size = 26, color = "black"), 
+        axis.title = element_text(size = 26)) + guides(color = guide_legend(override.aes = list(size = 12)), fill=guide_legend(override.aes=list(shape=21)))
+PCA_12_annotated
+
+#with multiple locations
+PCA_12 <- ggplot(data = data_PC, aes(x = PC1, y = PC2, color = Era, shape = Location)) + 
+  geom_point(size = 16, stroke = 5) + ggtitle("PC1 v. PC2") + 
+  scale_color_manual(values = c("#000000", "#999999"), labels = c("Historical", "Contemporary")) + 
+  scale_shape_manual(values = c(16, 17), labels = c("Basud River", "Hamilo Cove")) + 
+  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)")
+PCA_12_annotated <- PCA_12 + scale_size(guide = "none") + theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        axis.line = element_line(size = 1), plot.title = element_blank(), 
+        legend.position = "top", legend.text = element_text(size = 20), legend.title = element_blank(), 
+        axis.ticks = element_line(color = "black", size = 1), axis.text = element_text(size = 26, color = "black"), 
+        axis.title = element_text(size = 26)) + guides(color = guide_legend(override.aes = list(size = 12)), fill=guide_legend(override.aes=list(shape=21)))
+PCA_12_annotated
+
+################################################################################################################################################
+
+######## ADMIXTURE set-up ########
+
+#create group labels 
+#create group labels 
+grplab <- c(rep("Hist - Basud", 12), rep("Hist - Hamilo", 29), 
+            rep("Contemp - Basud", 20), rep("Contemp - Hamilo", 33)) #create group labels (# individuals in each population)
+meta.data <- data.frame(loc = grplab)
+meta.data$loc <- as.character(meta.data$loc)
+
+######## ADMIXTURE cross-validation scores ######
+#found in *log.out files
+#lowest CV error = best structure (most likely # of demes)
+
+#K1: 0.58307
+#K2: 0.22519
+#K3: 0.25069
+#K4: 0.27119
+#K5: 0.26734
+
+CVs <- c(0.58307, 0.22519, 0.25069, 0.27119, 0.26734)
+Ks <- c(1, 2, 3, 4, 5)
+
+CV_df <- as.data.frame(cbind(CVs, Ks))
+
+CV_plot <- ggplot(data = CV_df, aes(x=Ks, y = CVs)) + 
+  geom_line() + 
+  geom_point()
+CV_plot_annotated <- CV_plot + theme_bw() + 
+  labs(title = "Cross-validation error plot", y = "Cross-validation error", x = "K") + 
+  theme(axis.ticks = element_line(color = "black", size = 2), 
+        axis.text = element_text(size = 28, color = "black"), 
+        axis.title = element_text(size = 30), legend.position = "top",
+        plot.title = element_blank(), plot.margin = unit(c(.5,.5,.5,.5), "cm"),
+        legend.text = element_text(size = 30), legend.title = element_text(size = 30))
+CV_plot_annotated
+
+######## ADMIXTURE plots ########
+#Often only K2 is needed (to catch cryptic structure)
+
+K2 <- plotQ(alist[2], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+                     clustercol = c("#FF9329", "#2121D9"),
+                     showsp = TRUE, spbgcol = "white", splab = "K = 2", splabsize = 6, 
+                     showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
+                     grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
+                     showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
+
+K3 <- plotQ(alist[3], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+                     clustercol = c("#9999FF", "#2121D9", "#FF9329"),
+                     showsp = TRUE, spbgcol = "white", splab = "K = 3", splabsize = 6, 
+                     showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
+                     grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
+                     showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
+
+K4 <- plotQ(alist[4], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+                     clustercol = c("#2121D9", "#9999FF", "#FF9329", "#FFFB23"),
+                     showsp = TRUE, spbgcol = "white", splab = "K = 4", splabsize = 6, 
+                     showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
+                     grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
+                     showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
+
+K5 <- plotQ(alist[5], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+                     clustercol = c("#2121D9", "#9999FF", "#FF9329", "#FFFB23", "#610B5E"),
+                     showsp = TRUE, spbgcol = "white", splab = "K = 5", splabsize = 6, 
+                     showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
+                     grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
+                     showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
