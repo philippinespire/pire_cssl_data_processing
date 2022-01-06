@@ -8,8 +8,8 @@
 ######## Set-up ########
 
 #set working directory
-#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-#getwd()
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+getwd()
 
 remove(list = ls())
 
@@ -68,7 +68,6 @@ PCA_12_annotated
 
 ######## ADMIXTURE set-up ########
 
-#create group labels 
 #create group labels 
 grplab <- c(rep("Hist - Basud", 12), rep("Hist - Hamilo", 29), 
             rep("Contemp - Basud", 20), rep("Contemp - Hamilo", 33)) #create group labels (# individuals in each population)
