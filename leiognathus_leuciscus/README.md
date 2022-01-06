@@ -253,28 +253,116 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 Clone fltrVCF and rad_haplotyper repos
 
 ```
-cd /home/YOURUSERNAME/pire_cssl_data_processing/scripts
+cd /home/cbird/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/fltrVCF.git
 git clone git@github.com:cbirdlab/rad_haplotyper.git
 
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/
+cd /home/cbird/pire_cssl_data_processing/SPECIESDIR/
 mkdir filterVCF
 
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 ```
 
-
+Ran `fltrVCF.sbatch`.
 
 ```
-cd /home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR/fitlerVCF
-# this has to be run from dir with fq.gz files to be mapped and the ref genome
-# this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 # troubleshooting will be necessary).
 ```
 
-### STep 10. Make VCF With Monomorphic Loci
+---
+
+## Step 10. Check for cryptic species
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus
+mkdir pop_structure
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF/*Fltr07.14.vcf pop_structure
+```
+
+Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf lle.B.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.14.vcf --allow-extra-chr --pca --out PIRE.Lle.Ham.preHWE
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf lle.B.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.14.vcf --allow-extra-chr --make-bed --out PIRE.Lle.Ham.preHWE
+conda deactivate
+
+awk '{$1=0;print $0}' PIRE.Lle.Ham.preHWE.bim > PIRE.Lle.Ham.preHWE.bim.tmp
+mv PIRE.Lle.Ham.preHWE.bim.tmp PIRE.Lle.Ham.preHWE.bim
+```
+
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
+
+module load anaconda
+conda activate popgen
+
+admixture PIRE.Lle.Ham.preHWE.bed 1 --cv > PIRE.Lle.Ham.preHWE.log1.out #run from 1-5
+conda deactivate
+```
+
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure`).
+
+---
+
+## Step 11. Filter VCF file for HWE
+
+**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
+
+PCA & ADMIXTURE showed cryptic structure. ~33% of Albatross individuals assigned to species "A", along with all Contemporary individuals. Rest of Albatross individuals assigned to species "B". Looking at morphology, believe "A" is actually *Equulites laterofenestra* & "B" is *Leiognathus leuciscus*.
+
+Adjusted popmap file to reflect new structure.
+
+```
+cd /home/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
+cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off ./popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.HWEsplit
+
+#added Ela- or Lle- to start of pop assignment (second column) to assign individual to either species.
+```
+
+Ran `fltrVCF.sbatch`.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
+cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
+#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
+#config file should ONLY run filters 18 & 17 (in that order)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
+
+#troubleshooting will be necessary
+```
+
+---
+
+### Step 12. Make VCF With Monomorphic Loci
 
 Move the files needed for genotyping from `mkBAM` to `mkVCF`
 
