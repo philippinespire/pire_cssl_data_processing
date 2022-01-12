@@ -2,6 +2,14 @@
 
 This directory has useful scripts & code to run any "standard" population genetic analyses with VCF files created from CSSL data. README has instructions for installing/loading any required programs on Wahab. Directory contains stand-alone R & slurm scripts for downstream visualization/analyses.
 
+### Scripts:
+
+* **ADMIXTURE.md:** Code for running ADMIXTURE on Wahab. Instructions for installing ADMIXTURE are below.
+* **diversity.R:** Script for calculating Ho, He & Fst (pairwise & per locus), either on Wahab or local computer.
+* **LD_pruning.md:** Code for removing loci in linkage disequilibrium with PLINK. Instructions for installing PLINK are below.
+* **PCA.md:** Code for calculating eigenvectors & eigenvalues with PLINK. Instructions for installing PLINK are below.
+* **pop_structure.R:** Script for visualizing PCA & ADMIXTURE results. 
+
 ---
 
 ## Installing PLINK
