@@ -205,7 +205,9 @@ sbatch ../dDocentHPC.sbatch config.5.cssl
 
 ---
 
-### Step 9. Filter VCF Files
+### Step 9. Filter VCF Files (up to Allele Balance)
+
+Originally filtered usual way (applying all filters in order in `config.fltr.ind.cssl` file with default settings). However, results of some filters (particularly the filter for AB) indicated *A. endrachtensis* is likely polyploid (octoploid) and/or is currently undergoing rediploidization genome duplication events. To deal with this, we have decided to filter *A. endrachtensis* in a slightly different manner, to try and maximize the number of diploid loci and minimize the number of polyploid loci retained in the final VCF file. 
 
 Cloned fltrVCF and rad_haplotyper repos.
 
@@ -220,13 +222,53 @@ mkdir filterVCF
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 ```
 
+Ran `fltrVCF.sbatch`. Only running up to **Filter 15**.
+
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+mv config.fltr.ind.cssl config.fltr.ind.cssl.AB
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
-sbatch ../fltrVCF.sbatch config.fltr.ind.cssl
+#config file should ONLY run up to Filter 15 (remove rest of the filters from config file)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.AB
 
 #troubleshooting will be necessary
+```
+
+---
+
+### Step 10. Create Octoploid VCF
+
+Created so can compare genotype calls in homozygous sites. Will filter out sites where genotype calls differ between VCFs created with different ploidy levels (diploid v. octoploid) downstream.
+
+Moved the files need for genotyping from `mkBAM` to `mkBAM/mkVCF_octoploid`
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+mkdir mkVCF_octoploid
+
+mv *bam* mkVCF_octoploid
+mv namelist* mkVCF_octoploid
+cp *fasta mkVCF_octoploid
+cp config.5.cssl mkVCF_octoploid
+```
+
+Changed the config file so that the ploidy setting in the mkVCF section is set to 8 and renamed it with the suffix `.octo`
+
+```
+8      freebayes -p  --ploidy (integer)                      Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+```
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
+mv config.5.cssl conf.5.cssl.octo
+```
+
+Genotyped
+
+```
+cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
+sbatch ../../dDocentHPC_mkVCF.sbatch config.5.cssl.octo
 ```
 
 ---
@@ -238,8 +280,8 @@ Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 mkdir mkVCF_monomorphic
-mv mkBAM/*bam* mkVCF_monomorphic
-mv mkBAM/namelist* mkVCF_monomorphic
+mv mkBAM/mkVCF_octoploid/*bam* mkVCF_monomorphic
+mv mkBAM/mkVCF_octoploid/namelist* mkVCF_monomorphic
 cp mkBAM/*fasta mkVCF_monomorphic
 cp mkBAM/config.5.cssl mkVCF_monomorphic/
 ```
@@ -247,7 +289,7 @@ cp mkBAM/config.5.cssl mkVCF_monomorphic/
 Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
 
 ```
-yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
 ```
 
 ```
