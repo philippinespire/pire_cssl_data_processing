@@ -1,6 +1,6 @@
 ################################################### Script for Genetic Diversity Estimates  #######################################################
 
-#calculates Ho, He & pairwise Fst from VCF
+#calculates Ho, He & pairwise Fst from (ideally LD-pruned) VCF
 #adjust paths as needed
 
 #################################################################################################################################################
