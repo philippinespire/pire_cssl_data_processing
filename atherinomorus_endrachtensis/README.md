@@ -289,7 +289,7 @@ cp ../../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
 #grab interactive node
 cd PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
 
-module load container_env/0.1
+module load container_env
 module load bcftools
 
 #filter out indels
