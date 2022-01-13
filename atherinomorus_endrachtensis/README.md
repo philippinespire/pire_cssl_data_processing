@@ -282,7 +282,7 @@ cd /home/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 mkdir filterVCF_octoploid
 
 cd filterVCF_octoploid
-cp ../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
+cp ../../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
 ```
 
 ```
@@ -291,7 +291,6 @@ cd PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVC
 
 module load container_env/0.1
 module load bcftools
-
 
 #filter out indels
 crun bcftools filter -i 'TYPE="snp"' TotalRawSNPs.rad.RAW-6-6 > noindels.vcf
