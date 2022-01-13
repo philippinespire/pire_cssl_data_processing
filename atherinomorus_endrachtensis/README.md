@@ -273,6 +273,35 @@ sbatch ../../dDocentHPC_mkVCF.sbatch config.5.cssl.octo
 
 ---
 
+### Step 11. Filtered Octoploid VCF
+
+Need to remove non-biallelic SNPs and indels. Can't use VCFtools for filtering because it won't work with polyploidy data. Used BCFtools instead.
+
+```
+cd /home/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+mkdir filterVCF_octoploid
+
+cd filterVCF_octoploid
+cp ../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
+```
+
+```
+#grab interactive node
+cd PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+
+module load container_env/0.1
+module load bcftools
+
+
+#filter out indels
+crun bcftools filter -i 'TYPE="snp"' TotalRawSNPs.rad.RAW-6-6 > noindels.vcf
+
+#filter to only biallelic SNPs
+crun bcftools view -m2 -M2 noindels.vcf > noindels.biallelic.vcf
+```
+
+---
+
 ### Step 10. Make VCF with Monomorphic Loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
