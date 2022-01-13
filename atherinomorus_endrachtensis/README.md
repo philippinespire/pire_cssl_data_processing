@@ -267,18 +267,18 @@ mv config.5.cssl conf.5.cssl.octo
 Genotyped
 
 ```
-cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
 sbatch ../../dDocentHPC_mkVCF.sbatch config.5.cssl.octo
 ```
 
 ---
 
-### Step 11. Filtered Octoploid VCF
+### Step 11. Filter Octoploid VCF
 
 Need to remove non-biallelic SNPs and indels. Can't use VCFtools for filtering because it won't work with polyploidy data. Used BCFtools instead.
 
 ```
-cd /home/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 mkdir filterVCF_octoploid
 
 cd filterVCF_octoploid
@@ -287,7 +287,7 @@ cp ../../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
 
 ```
 #grab interactive node
-cd PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
 
 module load container_env
 module load bcftools
@@ -298,6 +298,77 @@ crun bcftools filter -i 'TYPE="snp"' TotalRawSNPs.rad.RAW-6-6 > noindels.vcf
 #filter to only biallelic SNPs
 crun bcftools view -m2 -M2 noindels.vcf > noindels.biallelic.vcf
 ```
+
+---
+
+### Step 12. Pull Genotype & Allele Depth Data From VCFs
+
+Followed `pire_cssl_data_processing/scripts/indvAlleleBalance.bash` script to create files.
+
+For diploid data:
+
+```
+#grab interactive node
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+
+salloc
+enable_lmod
+module load container_env ddocent
+bash
+
+#set variables
+VCFFILE=Aen.AB.rad.RAW-6-6.Fltr15.9.recode.vcf
+JUNK_PATTERN=_.*-..-.*-.*_.*_L1_clmp_fp2_repr
+NUM_CHR_ID=21
+FILE_PREFIX=$(echo $VCFFILE | sed 's/vcf//')
+
+#make header
+paste <(echo -e 'chrom\tpos\tref\talt\tqual') <(crun vcf-query $VCFFILE -l | cut -c1-$NUM_CHR_ID | tr "\n" "\t" ) > individuals.tsv
+
+#extract columns of info from VCF (test files first, limits records to 100 SNPs)
+#format of resulting files is: CHROM, POS, REF, ALT, QUAL, IND1 ...
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%AD]\n' | head -n 100 ) | sed 's/\t$//' > ${FILE_PREFIX}AD.tsv #allele depth info
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%GT]\n' | head -n 100 ) | sed 's/\t$//' > ${FILE_PREFIX}GT.tsv #genotype info
+
+#open one of the files up to make sure it looks okay
+
+#extract columns of info from VCF (no limits)
+#format of resulting files is: CHROM, POS, REF, ALT, QUAL, IND1 ...
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%AD]\n' | sed 's/\t$//' ) > ${FILE_PREFIX}AD.tsv #allele depth info
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%GT]\n' | sed 's/\t$//' ) > ${FILE_PREFIX}GT.tsv #genotype info
+```
+
+For octoploid data:
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+
+#set variables
+VCFFILE=noindels.biallelic.vcf
+JUNK_PATTERN=_.*-..-.*-.*_.*_L1_clmp_fp2_repr
+NUM_CHR_ID=21
+FILE_PREFIX=$(echo $VCFFILE | sed 's/vcf//')
+
+#make header
+paste <(echo -e 'chrom\tpos\tref\talt\tqual') <(crun vcf-query $VCFFILE -l | cut -c1-$NUM_CHR_ID | tr "\n" "\t" ) > individuals.tsv
+
+#extract columns of info from VCF (test files first, limits records to 100 SNPs)
+#format of resulting files is: CHROM, POS, REF, ALT, QUAL, IND1 ...
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%AD]\n' | head -n 100 ) | sed 's/\t$//' > ${FILE_PREFIX}AD.tsv #allele depth info
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%GT]\n' | head -n 100 ) | sed 's/\t$//' > ${FILE_PREFIX}GT.tsv #genotype info
+
+#open one of the files up to make sure it looks okay
+
+#extract columns of info from VCF (no limits)
+#format of resulting files is: CHROM, POS, REF, ALT, QUAL, IND1 ...
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%AD]\n' | sed 's/\t$//' ) > ${FILE_PREFIX}AD.tsv #allele depth info
+cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL[\t%GT]\n' | sed 's/\t$//' ) > ${FILE_PREFIX}GT.tsv #genotype info
+```
+
+---
+
+### Step 13. Filtered to Diploid Sites
+
 
 ---
 
