@@ -402,6 +402,67 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.postAB_HD
 
 ---
 
+###. Step 15. Check for cryptic species
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+mkdir pop_structure
+cd pop_structure
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp ../filterVCF/*Fltr07.9.vcf .
+
+#rename individuals (too many underscores in original names)
+module load container_env
+module load bcftools
+
+crun bctools reheader -s sample_names.txt -o Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.vcf
+```
+
+Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf --allow-extra-chr --pca --out PIRE.Aen.Ham.preHWE
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf --allow-extra-chr --make-bed --out PIRE.Aen.Ham.preHWE
+
+awk '{$1=0;print $0}' PIRE.Aen.Ham.preHWE.bim > PIRE.Aen.Ham.preHWE.bim.tmp
+mv PIRE.Aen.Ham.preHWE.bim.tmp PIRE.Aen.Ham.preHWE.bim
+conda deactivate
+```
+
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure
+
+module load anaconda
+conda activate popgen
+
+admixture PIRE.Aen.Ham.preHWE.bed 1 --cv > PIRE.Aen.Ham.preHWE.log1.out #run from 1-5
+conda deactivate
+```
+
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure`).
+
+
+---
+
 ### Step 10. Make VCF with Monomorphic Loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
