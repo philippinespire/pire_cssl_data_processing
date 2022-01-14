@@ -577,7 +577,7 @@ greenlist_toprint <- greenlist_full_split[, c("contig", "pos")]
 greenlist_full_contigs <- sort(unique(as.character(greenlist_toprint2$contig)))
   
 #write out list without header
-write.table(greenlist_toprint2, file = "greenlist_loci_full_HD_2.5.txt", 
+write.table(greenlist_toprint, file = "greenlist_loci_full_HD_2.5.txt", 
             col.names = FALSE, row.names = FALSE, 
             quote = FALSE, sep = "\t")
 
