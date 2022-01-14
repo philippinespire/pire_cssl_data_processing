@@ -394,7 +394,7 @@ mv config.fltr.ind.cssl config.fltr.ind.cssl.postAB_HD
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #vcf path should point to vcf made after removing loci not in greenlist (the file just created by vcftools)
-#config file should ONLY run filters 11 09 10 04 13 05 17 16 07 (in that order)
+#config file should ONLY run filters 11 09 10 04 13 05 16 07 (in that order)
 sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.postAB_HD
 
 #troubleshooting will be necessary
