@@ -390,7 +390,7 @@ Ran `fltrVCF.sbatch`. From original list of filters, only running those **after 
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
-mv config.fltr.ind.cssl config.fltr.ind.cssl.postAB_HD
+mv config.fltr.ind.cssl.AB config.fltr.ind.cssl.postAB_HD
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #vcf path should point to vcf made after removing loci not in greenlist (the file just created by vcftools)
@@ -459,6 +459,37 @@ conda deactivate
 ```
 
 Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure`).
+
+## Step 16. Filter VCF file for HWE
+
+**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
+
+PCA & ADMIXTURE showed a tiny bit of cryptic structure. AHam all assigned to one deme ("A"). Most of Cbat assigned to same except for 3 (assigned to "B"). Species IDs unknown at this point.
+
+Adjusted popmap file to reflect new structure.
+
+```
+cd /home/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+cp ../mkBAM/popmap.rad.RAW-6-6 ./popmap.rad.RAW-6-6.HWEsplit
+
+#added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B
+#had to change individual names to match vcf naming structure as well
+```
+
+Ran `fltrVCF.sbatch`.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+cp config.fltr.ind.cssl.AB ./config.fltr.ind.cssl.HWE
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
+#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
+#config file should ONLY run filters 18 & 17 (in that order)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
+
+#troubleshooting will be necessary
+```
 
 
 ---
