@@ -367,8 +367,38 @@ cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUA
 
 ---
 
-### Step 13. Filtered to Diploid Sites
+### Step 13. Filter to Diploid Sites
 
+Ran `pire_cssl_data_processing/scripts/diploid_filter.R` to create a "greenlist" of loci that meet diploid assumptions. Assumed loci that fell under a heterozygosity cut-of of 0.6 and had a z-score between -2.5 & 2.5 were diploid. Followed McKinney et al. (2017) [guidelines](https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.12613).
+
+Took created greenlist and filtered VCF to just those loci.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+
+module load vcftools
+
+vcftools --vcf Aen.AB.rad.RAW-6-6.Fltr15.9.recode.vcf --positions greenlist_loci_full_HD_2.5.txt --recode --recode-INFO-all --out Fltr15.9.greenlistHD2.5
+mv Fltr15.9.greenlistHD2.5.recode.vcf Fltr15.9.greenlistHD2.5.vcf
+```
+
+---
+
+###. Step 14. Filter VCF Files
+
+Ran `fltrVCF.sbatch`. From original list of filters, only running those **after Filter 06** and up to **second 07 filter**. Not running allele balance filter at all (essentially did that when applied z-score & heterozygosity cut-offs).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+mv config.fltr.ind.cssl config.fltr.ind.cssl.postAB_HD
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#vcf path should point to vcf made after removing loci not in greenlist (the file just created by vcftools)
+#config file should ONLY run filters 11 09 10 04 13 05 17 16 07 (in that order)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.postAB_HD
+
+#troubleshooting will be necessary
+```
 
 ---
 
