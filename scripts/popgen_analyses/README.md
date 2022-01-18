@@ -24,13 +24,15 @@ module load anaconda
 
 conda create -n popgen
 conda activate popgen
-conda config --add chanels conda-forge
+conda config --add channels conda-forge
 
 #install plink
 conda install -c bioconda plink
 
 conda deactivate
 ```
+
+---
 
 ## Installing ADMIXTURE
 
@@ -43,6 +45,26 @@ conda activate popgen
 
 #install admixture
 conda install -c bioconda admixture
+
+conda deactivate
+```
+
+---
+
+## Installing pixy
+
+Necessary to run pixy to calculate pi.
+
+```
+#assumes popgen conda environment has already been created
+module load container_env/0.1
+module load conda/3
+module load anaconda
+conda activate popgen
+
+#install pixy
+conda install -c conda-forge pixy
+conda install -c bioconda htslib
 
 conda deactivate
 ```
