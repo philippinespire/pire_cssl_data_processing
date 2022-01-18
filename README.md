@@ -63,9 +63,9 @@ ___
 
 6. Filter the `bam` files
     * Use [dDocentHPC fltrBAM](https://github.com/cbirdlab/dDocentHPC)
-    * visualize results with IGV or equivalent on a local computer to look for mapping artifacts
-      * look at both contemp and albatross (that goes for anything that follows)
-    * compare the filtered (`RG.bam`) to unfiltered (`RAW.bam`) files
+    * Visualize results with IGV or equivalent on a local computer to look for mapping artifacts
+      * Look at both contemp and albatross (that goes for anything that follows)
+    * Compare the filtered (`RG.bam`) to unfiltered (`RAW.bam`) files
       * were a lot of reads lost?
 
 7. Genotype the `bam` files
@@ -74,4 +74,14 @@ ___
 8. Filter the `vcf` files
     * Use [`fltrVCF`](https://github.com/cbirdlab/fltrVCF)
       * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
+      * Only run up to the second Filter 07
 
+9. Check for cryptic species
+   * Run PCA & ADMIXTURE to look for cryptic speciation
+   * Instructions in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
+
+10. Filter the `vcf` file for HWE
+   * Update popmap file based on results from Step 9
+   * Run Filters 18 & 17 in [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl)
+
+11. Make `vcf` with monomorphic loci
