@@ -47,11 +47,11 @@ ___
 1. Clone this repo to your working dir
 
 2. Run [`fastqc`]()
-    * review results with `multiqc` output
+    * Review results with `multiqc` output
   
 3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-    * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
+    * Review the outputs from `fastp` and `fastq_screen` with `multiqc` output
 
 4. Rename files to follow the `ddocent` naming convention
    * `population_indivdual.R1.fq.gz`
@@ -66,12 +66,12 @@ ___
     * Visualize results with IGV or equivalent on a local computer to look for mapping artifacts
       * Look at both contemp and albatross (that goes for anything that follows)
     * Compare the filtered (`RG.bam`) to unfiltered (`RAW.bam`) files
-      * were a lot of reads lost?
+      * Were a lot of reads lost?
 
 7. Genotype the `bam` files
     * Use [`dDocentHPC mkVCF`](https://github.com/cbirdlab/dDocentHPC) 
 
-8. Filter the `vcf` files
+8. Filter the `vcf` file
     * Use [`fltrVCF`](https://github.com/cbirdlab/fltrVCF)
       * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
       * Only run up to the second Filter 07
