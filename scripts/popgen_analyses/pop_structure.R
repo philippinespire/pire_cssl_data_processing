@@ -22,10 +22,33 @@ library(gridExtra)
 library(gtable)
 library(pophelper)
 
-#read in PCA data
-data_PC <- read.csv("../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec.csv")
+#import your eigenvec.csv file that does not have headings and separated by a space
+data <- read.csv("P../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec", header = FALSE, sep = " ")
 
-#read in ADMIXTURE data
+#double check if your data is read correctly
+head(data)
+
+#add column names
+colnames(data) <-c ('Population', 'Individual', 'PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 'PC11', 'PC12', 'PC13', 'PC14', 'PC15', 'PC16', 'PC17', 'PC18', 'PC19', 'PC20')
+
+#add column for Location & Era, fill out data for each column based on specific conditions, then rearrange the data to have Location & Era on the first 2 columns
+data_PC <- data %>%
+  mutate (Location =
+            case_when(endsWith(Population, "Bas") ~ "Basud",
+                      endsWith(Population, "Ham") ~ "Hamilo",
+                      endsWith(Population, "Bat") ~ "Hamilo")) %>%
+  mutate (Era =
+            case_when(endsWith(Population, "ABas") ~ "Albatross",
+                      endsWith(Population, "AHam") ~ "Albatross",
+                      endsWith(Population,"CBat") ~ "Contemporary",
+                      endsWith(Population, "CBas") ~ "Contemporary"
+            )) %>%
+  relocate(Location, .before = Population) %>%
+  relocate(Era, .before = Location)
+
+View(data_PC) #check if your data frame was created correctly, with correct values & w/o N/As
+
+#Make sure your .Q files are in one folder, then read in ADMIXTURE data
 afiles <- list.files(path = "../PIRE_Gmi_Ham/ADMIXTURE/preHWE/", full.names = TRUE)
 alist <- readQ(files = afiles) 
 lapply(alist, attributes) #check to make sure read in properly
@@ -33,15 +56,22 @@ lapply(alist, attributes) #check to make sure read in properly
 ################################################################################################################################################
 
 ######## PCA ########
+#input the eigenval file
+eigenval <- read.csv("PIRE.Aen.Ham.HWE.noLD.eigenval", header = FALSE, sep = " ")
+
 #calculate % variance each PC explains by adding up all eigenvalues in *.eigenval file
 #then divide 1st eigenvalue by that sum to get % variance explained by PC 1, etc.
+varPC1 <- (eigenval[1,1] / sum(eigenval$V1))*100
+varPC2 <- (eigenval[2,1] / sum(eigenval$V1))*100
+
+#values for varPC1 and varPC2 will be for your plot below!
 
 #with one location
 PCA_12 <- ggplot(data = data_PC, aes(x = PC1, y = PC2, color = Era, shape = Era)) + 
   geom_point(size = 16, stroke = 5) + ggtitle("PC1 v. PC2") + 
   scale_color_manual(values = c("#000000", "#999999"), labels = c("Historical", "Contemporary")) + 
   scale_shape_manual(values = c(16, 17), labels = c("Historical", "Contemporary")) + 
-  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)")
+  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)") #this is where varPC1 and varPC2 is needed
 PCA_12_annotated <- PCA_12 + scale_size(guide = "none") + theme_bw() + 
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         axis.line = element_line(size = 1), plot.title = element_blank(), 
@@ -68,7 +98,10 @@ PCA_12_annotated
 
 ######## ADMIXTURE set-up ########
 
-#create group labels 
+#find out how many individuals there are for each Location & Era
+table(data_PC$Location, data_PC$Era) #if you only have one site to compare, use table(data_PC$Era) only
+
+#create group labels based on the results of your table query above
 grplab <- c(rep("Hist - Basud", 12), rep("Hist - Hamilo", 29), 
             rep("Contemp - Basud", 20), rep("Contemp - Hamilo", 33)) #create group labels (# individuals in each population)
 meta.data <- data.frame(loc = grplab)
@@ -103,29 +136,30 @@ CV_plot_annotated
 
 ######## ADMIXTURE plots ########
 #Often only K2 is needed (to catch cryptic structure)
+#plots will be exported to your working directory
 
-K2 <- plotQ(alist[2], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+K2 <- plotQ(alist[2], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, exportpath=getwd(),
                      clustercol = c("#FF9329", "#2121D9"),
                      showsp = TRUE, spbgcol = "white", splab = "K = 2", splabsize = 6, 
                      showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
                      grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
                      showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
 
-K3 <- plotQ(alist[3], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+K3 <- plotQ(alist[3], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, exportpath=getwd(),
                      clustercol = c("#9999FF", "#2121D9", "#FF9329"),
                      showsp = TRUE, spbgcol = "white", splab = "K = 3", splabsize = 6, 
                      showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
                      grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
                      showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
 
-K4 <- plotQ(alist[4], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+K4 <- plotQ(alist[4], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, exportpath=getwd(),
                      clustercol = c("#2121D9", "#9999FF", "#FF9329", "#FFFB23"),
                      showsp = TRUE, spbgcol = "white", splab = "K = 4", splabsize = 6, 
                      showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
                      grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = TRUE, grplabspacer = 0.1, 
                      showtitle = TRUE, titlelab = "ADMIXTURE plot", showsubtitle = TRUE, subtitlelab = "preHWE SNPs")
 
-K5 <- plotQ(alist[5], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, 
+K5 <- plotQ(alist[5], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, exportpath=getwd(),
                      clustercol = c("#2121D9", "#9999FF", "#FF9329", "#FFFB23", "#610B5E"),
                      showsp = TRUE, spbgcol = "white", splab = "K = 5", splabsize = 6, 
                      showyaxis = TRUE, showticks = FALSE, indlabsize = 4, ticksize = 0.5, 
