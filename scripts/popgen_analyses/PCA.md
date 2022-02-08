@@ -15,4 +15,4 @@ plink --vcf <VCF_FILE> --allow-extra-chr --pca <PIRE.SPECIES.LOC>
 conda deactivate
 ```
 
-Copy `*.eigenvec` & `*.eigenval` files to local computer and open in Excel to create .csv files. Read those .csv files into R for downstream analysis/visualization (`popgen_analyses/pop_structure.R`).
+Copy `*.eigenvec` & `*.eigenval` files to local computer and read into R for downstream analysis/visualization (`popgen_analyses/pop_structure.R`).
