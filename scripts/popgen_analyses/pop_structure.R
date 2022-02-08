@@ -1,7 +1,6 @@
 #################################################### Script for Creating PCA & ADMIXTURE Plots  ########################################################
 
 #adjust paths as needed
-#PCA eigenvec csv files should have following headers: Era, Location (if necessary), Population, Individual, PC1, .., PC20 (see gazza_minuta/pop_structure for an example)
 
 #################################################################################################################################################
 
