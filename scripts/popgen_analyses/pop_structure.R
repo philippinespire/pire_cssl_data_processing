@@ -7,71 +7,69 @@
 
 ######## Set-up ########
 
-#set working directory
+##### set working directory ####
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 getwd()
 
-remove(list = ls())
+remove(list = ls()) #clear working env
 
-#load libraries
+##### load libraries ####
 #library(devtools)
 #devtools::install_github('royfrancis/pophelper') #to install pophelper the first time
 library(tidyverse)
-library(ggplot2)
 library(gridExtra)
-library(gtable)
 library(pophelper)
 
-#import your eigenvec.csv file that does not have headings and separated by a space
-data <- read.csv("P../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec", header = FALSE, sep = " ")
-
-#double check if your data is read correctly
-head(data)
+#### import PCA data ####
+#read in data
+eigenval <- read.csv("PIRE.Aen.Ham.HWE.noLD.eigenval", header = FALSE, sep = " ") #eigenvalues
+data_PC <- read.csv("../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec", header = FALSE, sep = " ") #eigenvectors
+  head(data_PC) #double check data is read in correctly 
 
 #add column names
-colnames(data) <-c ('Population', 'Individual', 'PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 'PC11', 'PC12', 'PC13', 'PC14', 'PC15', 'PC16', 'PC17', 'PC18', 'PC19', 'PC20')
+colnames(data_PC) <-c ('Population', 'Individual', 'PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 
+                    'PC11', 'PC12', 'PC13', 'PC14', 'PC15', 'PC16', 'PC17', 'PC18', 'PC19', 'PC20')
 
-#add column for Location & Era, fill out data for each column based on specific conditions, then rearrange the data to have Location & Era on the first 2 columns
-data_PC <- data %>%
+#add columns for Location & Era
+#fill out data for each column based on specific conditions, then rearrange the data to have Location & Era on the first 2 columns
+data_PC <- data_PC %>%
   mutate (Location =
             case_when(endsWith(Population, "Bas") ~ "Basud",
                       endsWith(Population, "Ham") ~ "Hamilo",
-                      endsWith(Population, "Bat") ~ "Hamilo")) %>%
+                      endsWith(Population, "Bat") ~ "Hamilo")) %>% #add lines as needed, depending on dataset
   mutate (Era =
             case_when(endsWith(Population, "ABas") ~ "Albatross",
                       endsWith(Population, "AHam") ~ "Albatross",
                       endsWith(Population,"CBat") ~ "Contemporary",
-                      endsWith(Population, "CBas") ~ "Contemporary"
+                      endsWith(Population, "CBas") ~ "Contemporary" #add lines as needed, depending on dataset
             )) %>%
   relocate(Location, .before = Population) %>%
   relocate(Era, .before = Location)
 
-View(data_PC) #check if your data frame was created correctly, with correct values & w/o N/As
+View(data_PC) #check if your data frame was created correctly, with correct values & without NAs
 
-#Make sure your .Q files are in one folder, then read in ADMIXTURE data
+#### import ADMIXTURE data ####
+#Make sure your .Q files are in one folder
 afiles <- list.files(path = "../PIRE_Gmi_Ham/ADMIXTURE/preHWE/", full.names = TRUE)
 alist <- readQ(files = afiles) 
-lapply(alist, attributes) #check to make sure read in properly
+  lapply(alist, attributes) #check to make sure read in properly
 
 ################################################################################################################################################
 
 ######## PCA ########
-#input the eigenval file
-eigenval <- read.csv("PIRE.Aen.Ham.HWE.noLD.eigenval", header = FALSE, sep = " ")
 
 #calculate % variance each PC explains by adding up all eigenvalues in *.eigenval file
 #then divide 1st eigenvalue by that sum to get % variance explained by PC 1, etc.
+#values for varPC1 and varPC2 will be for your plot below!
 varPC1 <- (eigenval[1,1] / sum(eigenval$V1))*100
 varPC2 <- (eigenval[2,1] / sum(eigenval$V1))*100
-
-#values for varPC1 and varPC2 will be for your plot below!
 
 #with one location
 PCA_12 <- ggplot(data = data_PC, aes(x = PC1, y = PC2, color = Era, shape = Era)) + 
   geom_point(size = 16, stroke = 5) + ggtitle("PC1 v. PC2") + 
   scale_color_manual(values = c("#000000", "#999999"), labels = c("Historical", "Contemporary")) + 
   scale_shape_manual(values = c(16, 17), labels = c("Historical", "Contemporary")) + 
-  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)") #this is where varPC1 and varPC2 is needed
+  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)") #this is where varPC1 and varPC2 go
 PCA_12_annotated <- PCA_12 + scale_size(guide = "none") + theme_bw() + 
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         axis.line = element_line(size = 1), plot.title = element_blank(), 
@@ -85,7 +83,7 @@ PCA_12 <- ggplot(data = data_PC, aes(x = PC1, y = PC2, color = Era, shape = Loca
   geom_point(size = 16, stroke = 5) + ggtitle("PC1 v. PC2") + 
   scale_color_manual(values = c("#000000", "#999999"), labels = c("Historical", "Contemporary")) + 
   scale_shape_manual(values = c(16, 17), labels = c("Basud River", "Hamilo Cove")) + 
-  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)")
+  labs(x = "PC1 (explains 70.78% of total variance)", y = "PC2 (explains 12.70% of total variance)") #this is where varPC1 and varPC2 go
 PCA_12_annotated <- PCA_12 + scale_size(guide = "none") + theme_bw() + 
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         axis.line = element_line(size = 1), plot.title = element_blank(), 
@@ -96,7 +94,7 @@ PCA_12_annotated
 
 ################################################################################################################################################
 
-######## ADMIXTURE set-up ########
+######## ADMIXTURE ########
 
 #find out how many individuals there are for each Location & Era
 table(data_PC$Location, data_PC$Era) #if you only have one site to compare, use table(data_PC$Era) only
@@ -104,10 +102,12 @@ table(data_PC$Location, data_PC$Era) #if you only have one site to compare, use 
 #create group labels based on the results of your table query above
 grplab <- c(rep("Hist - Basud", 12), rep("Hist - Hamilo", 29), 
             rep("Contemp - Basud", 20), rep("Contemp - Hamilo", 33)) #create group labels (# individuals in each population)
-meta.data <- data.frame(loc = grplab)
-meta.data$loc <- as.character(meta.data$loc)
 
-######## ADMIXTURE cross-validation scores ######
+#put group labels into meta.data for plots
+meta.data <- data.frame(loc = grplab)
+  meta.data$loc <- as.character(meta.data$loc)
+
+#### ADMIXTURE cross-validation scores #####
 #found in *log.out files
 #lowest CV error = best structure (most likely # of demes)
 
@@ -134,8 +134,8 @@ CV_plot_annotated <- CV_plot + theme_bw() +
         legend.text = element_text(size = 30), legend.title = element_text(size = 30))
 CV_plot_annotated
 
-######## ADMIXTURE plots ########
-#Often only K2 is needed (to catch cryptic structure)
+#### ADMIXTURE plots ####
+#Often only K2 is needed (to catch cryptic structure) --> should at least create plots up to the K with the lowest CV score
 #plots will be exported to your working directory
 
 K2 <- plotQ(alist[2], imgoutput = "sep", returnplot = TRUE, exportplot = TRUE, exportpath=getwd(),
