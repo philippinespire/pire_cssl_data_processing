@@ -10,7 +10,7 @@ module load anaconda
 
 conda activate popgen
 
-plink --vcf <VCF_FILE> --allow-extra-chr --pca <PIRE.SPECIES.LOC>
+plink --vcf <VCF_FILE> --allow-extra-chr --pca --out <PIRE.SPECIES.LOC>
 
 conda deactivate
 ```
