@@ -8,6 +8,7 @@ This directory has useful scripts & code to run any "standard" population geneti
 * **diversity.R:** Script for calculating Ho, He & Fst (pairwise & per locus), either on Wahab or local computer.
 * **LD_pruning.md:** Code for removing loci in linkage disequilibrium with PLINK. Instructions for installing PLINK are below.
 * **PCA.md:** Code for calculating eigenvectors & eigenvalues with PLINK. Instructions for installing PLINK are below.
+* **pixy.md:** Code for running pixy to calculate pi & Fst on Wahab.
 * **pop_structure.R:** Script for visualizing PCA & ADMIXTURE results. 
 
 ---
