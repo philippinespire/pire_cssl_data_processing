@@ -257,7 +257,7 @@ cd /home/cbird/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/fltrVCF.git
 git clone git@github.com:cbirdlab/rad_haplotyper.git
 
-cd /home/cbird/pire_cssl_data_processing/SPECIESDIR/
+cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/
 mkdir filterVCF
 
 cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
@@ -361,6 +361,8 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ### Step 12. Make VCF With Monomorphic Loci
 
+**NOTE:** This, along with downstream filtering steps, can generate large amounts of data. If you are limited in your home storage space, you may want to run this in scratch.
+
 Move the files needed for genotyping from `mkBAM` to `mkVCF`
 
 ```bash
@@ -383,4 +385,50 @@ Genotype
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+```
+
+---
+
+### Step 13. Filter VCF With Monomorphic Loci
+
+Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF.
+
+Set-up filtering for monomorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+cp ../scripts/config.fltr.ind.cssl.mono .
+```
+
+Ran `fltrVCF.sbatch` for monomorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
+
+#troubleshooting will be necessary
+```
+
+Set-up filtering for polymorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF/monomorphic
+mkdir polymorphic_filter
+cp ../../scripts/config.fltr.ind.cssl.poly .
+```
+
+Ran `fltrVCF.sbatch` for polymorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/polymorphic_filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap file should be file used in step 11, that accounts for any cryptic structure (*HWEsplit extension)
+#settings should match the settings used when filtering the original VCF file (step 9)
+sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
+
+#troubleshooting will be necessary
 ```
