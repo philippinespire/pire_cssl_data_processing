@@ -5,8 +5,10 @@ This directory has useful scripts & code to run any "standard" population geneti
 ### Scripts:
 
 * **ADMIXTURE.md:** Code for running ADMIXTURE on Wahab. Instructions for installing ADMIXTURE are below.
-* **diversity.R:** Script for calculating Ho, He & Fst (pairwise & per locus), either on Wahab or local computer.
+* **diversity.R:** Script for calculating Ho & He, either on Wahab or local computer.
+* **fst.R:** Script for visualizing fst results from pixy, and calculating fst (pairwise & per-locus) with the hierfstat R package.
 * **LD_pruning.md:** Code for removing loci in linkage disequilibrium with PLINK. Instructions for installing PLINK are below.
+* **pi.R:** Script for visualizing, averaging & bootstrapping pi from pixy.
 * **PCA.md:** Code for calculating eigenvectors & eigenvalues with PLINK. Instructions for installing PLINK are below.
 * **pixy.md:** Code for running pixy to calculate pi & Fst on Wahab. Instructions for installing pixy are below
 * **pixy.sbatch:** Sbatch script for running pixy on Wahab.
