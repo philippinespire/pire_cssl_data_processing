@@ -391,7 +391,7 @@ sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 
 ### Step 13. Filter VCF With Monomorphic Loci
 
-Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF.
+Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
 
 Set-up filtering for monomorphic sites only.
 
