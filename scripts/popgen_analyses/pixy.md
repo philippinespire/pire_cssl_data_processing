@@ -14,4 +14,4 @@ cp pire_cssl_data_processing/scripts/popgen_analyses/pixy.sbatch .
 sbatch pixy.sbatch
 ```
 
-Copy output files to local computer. Read into R for visualization (`popgen_analyses/pi.R` & `popgen_analyses/fst.R).
+Copy output files to local computer. Read into R for visualization (`popgen_analyses/pi.R` & `popgen_analyses/fst.R`).
