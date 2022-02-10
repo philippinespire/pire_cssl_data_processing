@@ -248,7 +248,7 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 ---
 
-## Step 9. Filter VCF Files
+## Step 9. Filter VCF files
 
 Clone fltrVCF and rad_haplotyper repos
 
@@ -359,7 +359,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ---
 
-### Step 12. Make VCF With Monomorphic Loci
+### Step 12. Make VCF With monomorphic loci
 
 **NOTE:** This, along with downstream filtering steps, can generate large amounts of data. If you are limited in your home storage space, you may want to run this in scratch.
 
@@ -389,7 +389,7 @@ sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 
 ---
 
-### Step 13. Filter VCF With Monomorphic Loci
+### Step 13. Filter VCF With monomorphic loci
 
 Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
 
@@ -431,4 +431,83 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_mono
 sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
 
 #troubleshooting will be necessary
+```
+
+---
+
+### Step 14. Merge monomorphic & polymorphic VCF files
+
+Check monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
+
+* mono.VCF: filtering removed AHam_008, AHam_013, AHam_016, AHam_020, AHam_025, AHam_028, CNas_043 & CNas_063.
+* poly.VCF: filtering removed AHam_008, AHam_013, AHam_016, AHam_020, AHam_025, CNas_043 & CNas_063. Need to remove AHam_028 as well to match monomorphic VCF.
+
+Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either file (total of 8 for Lle). Used this list to make sure number of individuals matched in both filtered VCFs.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+mv polymorphic_filter/lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.vcf .
+
+module load vcftools
+
+vcftools --vcf lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing
+mv lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.recode.vcf lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.vcf
+
+vcftools --vcf lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing
+mv lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.recode.vcf lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.vcf
+```
+
+Sorted each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+module load vcftools
+
+#sort monomorphic
+vcf-sort lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.vcf > lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf
+
+#sort polymorphic
+vcf-sort lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.vcf > lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf
+```
+
+Zipped each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#zip monomorphic
+bgzip -c lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf > lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf.gz
+
+#zip polymorphic
+bgzip -c lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf > lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+Indexed each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#index monomorphic
+tabix lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf.gz
+
+#index polymorphic
+tabix lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+Merged files.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+
+module load container_env bcftools
+module load samtools/1.9
+
+crun bcftools concat --allow-overlaps lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf.gz lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf.gz -O -z -o lle.all.recode.nomissing.sorted.vcf.gz
+
+tabix lle.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
