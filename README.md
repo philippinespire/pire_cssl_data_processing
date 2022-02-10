@@ -85,3 +85,5 @@ ___
    * Run Filters 18 & 17 in [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl)
 
 11. Make `vcf` with monomorphic loci
+
+12. Filter monomorphic `vcf`
