@@ -8,7 +8,7 @@ copy and paste this into a new species dir and fill in as steps are accomplished
 
 Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_1.sbatch <indir> <outdir>
 # do not use trailing / in paths
@@ -33,7 +33,8 @@ Potential issues:
 ## Step 2. Clumpify
 
 something odd happened here, so I'm running it again.
-```
+
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
 # do not use trailing / in paths
@@ -45,7 +46,7 @@ sbatch ../scripts/runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/cbi
 
 this runs clumpify in an array, but the script is running out of memory
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <num nodes>
 # do not use trailing / in paths
@@ -57,7 +58,7 @@ bash ../scripts/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/cbi
 
 will need to run again with clumpify is done
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
@@ -86,7 +87,7 @@ Potential issues:
 
 I edited runFQSCRN_6* to run on wahab.
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
@@ -109,7 +110,7 @@ Potential issues:
 
 Fix errors: all I had to do was run the files again that returned the "No reads in" error and they worked fine
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
 # do not use trailing / in paths
@@ -117,9 +118,9 @@ bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA010
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
 ```
 
-
 Cleanup logs
-```
+
+```bash
 mkdir logs
 mv *out logs
 ```
@@ -130,7 +131,7 @@ mv *out logs
 
 This went smoothly.
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 # runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
@@ -155,7 +156,7 @@ I made a script to do all this, then we can replace old file names with new file
 
 If you don't have the decode file, it shoudl be in with the raw fqgz files.  If not it can be obtained from Sharon Magnuson or Chris Bird
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #mkNewFileNames.bash <decode file name> <fqdir>, does not include path
 bash ../scripts/mkNewFileNames.bash Lle_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
@@ -183,7 +184,7 @@ ls mkBAM
 
 Clone dDocentHPC repo (this is on the .gitignore list, so nothing inside it will be added to the present repo)
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/dDocentHPC.git
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
@@ -204,7 +205,7 @@ cp /home/cbird/pire_shotgun/lle_spades/out_Lle-C_3NR_R1R2ORPH_contam_noisolate_c
 
 Update the config file with the ref genome info
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 nano config.5.cssl
 ```
@@ -237,7 +238,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 Clone dDocentHPC repo
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 #this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
@@ -252,7 +253,7 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 Clone fltrVCF and rad_haplotyper repos
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/scripts
 git clone git@github.com:cbirdlab/fltrVCF.git
 git clone git@github.com:cbirdlab/rad_haplotyper.git
@@ -265,7 +266,7 @@ cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
 
 Ran `fltrVCF.sbatch`.
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -279,7 +280,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 ## Step 10. Check for cryptic species
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir pop_structure
 
@@ -289,7 +290,7 @@ cp /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF/*Fltr07
 
 Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 module load anaconda
@@ -303,7 +304,7 @@ conda deactivate
 
 Made input files for ADMIXTURE with PLINK.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 #bed & bim files already made (for PCA)
@@ -313,7 +314,7 @@ mv PIRE.Lle.Ham.preHWE.bim.tmp PIRE.Lle.Ham.preHWE.bim
 
 Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 module load anaconda
@@ -335,7 +336,7 @@ PCA & ADMIXTURE showed cryptic structure. ~33% of Albatross individuals assigned
 
 Adjusted popmap file to reflect new structure.
 
-```
+```bash
 cd /home/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
 cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off ./popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.HWEsplit
 
@@ -344,7 +345,7 @@ cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off ./popmap.ssl.Lle-
 
 Ran `fltrVCF.sbatch`.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
 
@@ -382,7 +383,7 @@ yes     freebayes    --report-monomorphic (no|yes)                      Report e
 
 Genotype
 
-```
+```bash
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
@@ -395,14 +396,14 @@ Will filter for monomorphic & polymorphic loci separately, then merge the VCFs t
 
 Set-up filtering for monomorphic sites only.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 cp ../scripts/config.fltr.ind.cssl.mono .
 ```
 
 Ran `fltrVCF.sbatch` for monomorphic sites.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -414,7 +415,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
 
 Set-up filtering for polymorphic sites only.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF/monomorphic
 mkdir polymorphic_filter
 cp ../../scripts/config.fltr.ind.cssl.poly .
@@ -422,7 +423,7 @@ cp ../../scripts/config.fltr.ind.cssl.poly .
 
 Ran `fltrVCF.sbatch` for polymorphic sites.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/polymorphic_filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -444,7 +445,7 @@ Check monomorphic & polymorphic VCF files to make sure that filtering removed th
 
 Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either file (total of 8 for Lle). Used this list to make sure number of individuals matched in both filtered VCFs.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 mv polymorphic_filter/lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.vcf .
 
@@ -459,7 +460,7 @@ mv lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissi
 
 Sorted each VCF file.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load vcftools
@@ -473,7 +474,7 @@ vcf-sort lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.n
 
 Zipped each VCF file.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load samtools/1.9
@@ -487,7 +488,7 @@ bgzip -c lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.n
 
 Indexed each VCF file.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load samtools/1.9
@@ -501,7 +502,7 @@ tabix lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomi
 
 Merged files.
 
-```
+```bash
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load container_env bcftools
