@@ -407,6 +407,7 @@ Ran `fltrVCF.sbatch` for monomorphic sites.
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs file made during the "make monomorphic VCF" step
 #settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
 sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
 
@@ -427,6 +428,7 @@ Ran `fltrVCF.sbatch` for polymorphic sites.
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/polymorphic_filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs file made during the "make monomorphic VCF" step
 #popmap file should be file used in step 11, that accounts for any cryptic structure (*HWEsplit extension)
 #settings should match the settings used when filtering the original VCF file (step 9)
 sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
