@@ -510,7 +510,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_mono
 module load container_env bcftools
 module load samtools/1.9
 
-crun bcftools concat --allow-overlaps lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf.gz lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf.gz -O -z -o lle.all.recode.nomissing.sorted.vcf.gz
+crun bcftools concat --allow-overlaps lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.11.recode.nomissing.sorted.vcf.gz lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o lle.all.recode.nomissing.sorted.vcf.gz
 
 tabix lle.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
