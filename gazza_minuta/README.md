@@ -382,3 +382,143 @@ Genotyped
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
 sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
+
+---
+
+## Step 13. Filter VCF with monomorphic loci
+
+Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
+
+Like with the original filtering step, because many *Gazza minuta* contemporary individuals had low numbers of reads, removed individuals with <100K sequences from VCF prior to running `fltrVCF.sbatch`.
+
+```
+#used same list as before (35 total, all contemporary)
+
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load vcftools
+
+vcftools --vcf ../mkBAM/TotalRawSNPs.rad.RAW-10.10.vcf --remove ../filterVCF/indvfewsequences.txt --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq
+
+mv TotalRawSNPs.rad.RAW-10.10.noindvless100Kseq.recode.vcf TotalRawSNPs.rad.RAW-10.10.noindvless100Kseq.vcf
+```
+
+Set-up filtering for monomorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+cp ../scripts/config.fltr.ind.cssl.mono .
+```
+
+Ran `fltrVCF.sbatch` for monomorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs.noindvless100Kseq file made after the "make monomorphic VCF" step
+#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
+
+#troubleshooting will  be necessary
+```
+
+Set-up filtering for polymorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+mkdir polymorphic_filter
+cp ../../scripts/config.fltr.ind.cssl.poly .
+```
+
+Ran `fltrVCF.sbatch` for polymorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/polymorphic_filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs.noindvless100Kseq file made after the "make monomorphic VCF" step
+#popmap file should be file used in step 11, that accounts for any cryptic structure (*HWEsplit extension)
+#settings should match the settings used when filtering the original VCF file (step 9)
+sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
+
+#troubleshooting will be necessary
+```
+
+---
+
+## Step 14. Merge monomorphic & polymorphic VCF files
+
+Check monomorphic & polymorphic VCF file sto make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
+
+* mono.VCF: filtering removed ABas_001, ABas_004, ABas_008, ABas_028, ABas_030, ABas_033, ABas_034, ABas_035, ABas_045, ABas_047, ABas_049, ABas_055, ABas_058, ABas_059, ABas_060, AHam_001, AHam_015, AHam_074, CBas_013, CBas_015, CBas_017, CBas_019, CBas_034, CBas_038, CBas_041, CBas_068, CBas_069, CBas_082, CBas_092, CBas_095, CBat_002, CBat_013, CBat_036, CBat_047, CBat_058, CBat_062, CBat_070, CBat_071, CBat_093, CBat_094, CBat_095, ABas_017, AHam_002, CBas_014, CBas_049. Need to remove CBat_061 as well to match polymorphic VCF.
+* poly.VCF: filtering removed ABas_001, ABas_004, ABas_008, ABas_028, ABas_030, ABas_033, ABas_034, ABas_035, ABas_045, ABas_047, ABas_049, ABas_055, ABas_058, ABas_059, ABas_060, AHam_001, AHam_015, AHam_074, CBas_013, CBas_015, CBas_017, CBas_019, CBas_034, CBas_038, CBas_041, CBas_068, CBas_069, CBas_082, CBas_092, CBas_095, CBat_002, CBat_013, CBat_036, CBat_047, CBat_058, CBat_062, CBat_070, CBat_071, CBat_093, CBat_094, CBat_095, ABas_017, AHam_002, CBas_014, CBas_049, CBat_061
+
+Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either  file (total of 46 for Gmi). Used this list to make sure number of individuals matched in both filtered VCFs.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+mv polymorphic_filter/gmi.poly.rad.RAW-10.10.Fltr17.20.recode.vcf .
+
+module load vcftools
+
+vcftools --vcf gmi.mono.rad.RAW-10.10.Fltr17.11.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing
+mv gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.recode.vcf gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.vcf
+
+vcftools --vcf gmi.poly.rad.RAW-10.10.Fltr17.20.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing
+mv gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.recode.vcf gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.vcf
+```
+
+Sorted each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load vcftools
+
+#sort monomorphic
+vcf-sort gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.vcf > gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf
+
+#sort polymorphic
+vcf-sort gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.vcf > gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf
+```
+
+Zipped each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#zip monomorphic
+bgzip -c gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf > gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz
+
+#zip polymorphic
+bgzip -c  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf >  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+Indexed each VCF file.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#index monomorphic
+tabix  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz
+
+#index polymorphic
+tabix  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+Merged files.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load container_env bcftools
+module load samtools/1.9
+
+crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
+
+tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
