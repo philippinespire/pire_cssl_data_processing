@@ -193,7 +193,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-### Step 8. Map reads to reference - Filter Maps - Genotype Maps
+## Step 8. Map reads to reference - Filter Maps - Genotype Maps
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
@@ -205,7 +205,7 @@ sbatch ../dDocentHPC.sbatch config.5.cssl
 
 ---
 
-### Step 9. Filter VCF Files (up to Allele Balance)
+## Step 9. Filter VCF Files (up to Allele Balance)
 
 Originally filtered usual way (applying all filters in order in `config.fltr.ind.cssl` file with default settings). However, results of some filters (particularly the filter for AB) indicated *A. endrachtensis* is likely polyploid (octoploid) and/or is currently undergoing rediploidization genome duplication events. To deal with this, we have decided to filter *A. endrachtensis* in a slightly different manner, to try and maximize the number of diploid loci and minimize the number of polyploid loci retained in the final VCF file. 
 
@@ -237,7 +237,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.AB
 
 ---
 
-### Step 10. Create Octoploid VCF
+## Step 10. Create Octoploid VCF
 
 Created so can compare genotype calls in homozygous sites. Will filter out sites where genotype calls differ between VCFs created with different ploidy levels (diploid v. octoploid) downstream.
 
@@ -273,7 +273,7 @@ sbatch ../../dDocentHPC_mkVCF.sbatch config.5.cssl.octo
 
 ---
 
-### Step 11. Filter Octoploid VCF
+## Step 11. Filter Octoploid VCF
 
 Need to remove non-biallelic SNPs and indels. Can't use VCFtools for filtering because it won't work with polyploidy data. Used BCFtools instead.
 
@@ -301,7 +301,7 @@ crun bcftools view -m2 -M2 noindels.vcf > noindels.biallelic.vcf
 
 ---
 
-### Step 12. Pull Genotype & Allele Depth Data From VCFs
+## Step 12. Pull Genotype & Allele Depth Data From VCFs
 
 Followed `pire_cssl_data_processing/scripts/indvAlleleBalance.bash` script to create files.
 
@@ -367,7 +367,7 @@ cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUA
 
 ---
 
-### Step 13. Filter to Diploid Sites
+## Step 13. Filter to Diploid Sites
 
 Ran `pire_cssl_data_processing/scripts/diploid_filter.R` to create a "greenlist" of loci that meet diploid assumptions. Assumed loci that fell under a heterozygosity cut-of of 0.6 and had a z-score between -2.5 & 2.5 were diploid. Followed McKinney et al. (2017) [guidelines](https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.12613).
 
@@ -384,7 +384,7 @@ mv Fltr15.9.greenlistHD2.5.recode.vcf Fltr15.9.greenlistHD2.5.vcf
 
 ---
 
-###. Step 14. Filter VCF Files
+## Step 14. Filter VCF Files
 
 Ran `fltrVCF.sbatch`. From original list of filters, only running those **after Filter 06** and up to **second 07 filter**. Not running allele balance filter at all (essentially did that when applied z-score & heterozygosity cut-offs).
 
@@ -402,7 +402,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.postAB_HD
 
 ---
 
-###. Step 15. Check for cryptic species
+## Step 15. Check for cryptic species
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
@@ -491,10 +491,9 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 #troubleshooting will be necessary
 ```
 
-
 ---
 
-### Step 10. Make VCF with Monomorphic Loci
+### Step 17. Make VCF with Monomorphic Loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
