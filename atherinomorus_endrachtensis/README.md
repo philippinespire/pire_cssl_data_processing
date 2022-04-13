@@ -493,7 +493,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ---
 
-### Step 17. Make VCF with Monomorphic Loci
+## Step 17. Make VCF with Monomorphic Loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
