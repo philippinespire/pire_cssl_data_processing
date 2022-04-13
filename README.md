@@ -4,7 +4,7 @@
 
 The purpose of this repo is to document the processing and analysis of capture shotgun data for the Philippines PIRE Project. 
 
-For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  The Lle dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
+For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  **The Lle dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
 ---
 
