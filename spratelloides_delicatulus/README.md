@@ -22,9 +22,9 @@ The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https:
 and Contemporary files [multiqc_report_Contem.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html) separately to be able to see stats file per file.
 
 
-The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/p
- so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data
- and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_process
+The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/p)
+ so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data)
+ and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_process)
 
 
 Download or copy and paste reports for viewing.
