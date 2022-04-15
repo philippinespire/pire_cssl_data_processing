@@ -22,6 +22,11 @@ The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https:
 and Contemporary files [multiqc_report_Contem.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html) separately to be able to see stats file per file.
 
 
+The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/p
+ so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data
+ and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_process
+
+
 Download or copy and paste reports for viewing.
 
 SdA01 files are from Sde-AMat		Match ID:  MatB
@@ -83,4 +88,10 @@ Potential issues:
   * alb: 30mil, contemp: 8 mil
  
 ---
+
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 58
+
+mv spratelloides_delicatulus/*out spratelloides_delicatulus/logs/
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
 
