@@ -23,8 +23,9 @@ and Contemporary files [multiqc_report_Contem.html](https://github.com/philippin
 
 
 The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQH4M6JUOA4BQ3UK53FJJDWYSZ3HPA)
-  so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html?token=GHSAT0AAAAAABQH4M6IJULKVCIVINXRU4QKYSZ3IEA)
-  and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html?token=GHSAT0AAAAAABQH4M6J5LMG25ISNAX23FBUYSZ3FQQ)
+ so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html?token=GHSAT0AAAAAABQH4M6IJULKVCIVINXRU4QKYSZ3IEA)
+ and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html?token=GHSAT0AAAAAABQH4M6J5LMG25ISNAX23FBUYSZ3FQQ)
+
 
 Download or copy and paste reports for viewing.
 
