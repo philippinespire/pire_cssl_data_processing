@@ -20,6 +20,19 @@ The data will be processed and analyzed in the repo.  There is a `.gitignore` fi
 
 Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
 
+A list of ongoing CSSL projects can be found below. If you are working on an CSSL analysis project (or if you wish to claim a project), please indicate so in the table.
+
+|Species | Data availability | Analysis lead | Analysis status / notes |
+| --- | --- | --- | --- |
+|Aen | On ODU HPC | Rene | Pop gen (ongoing) |
+|Gmi | On ODU HPC | Rene | Pop gen (ongoing) |
+|Lle | On ODU HPC | Rene | Pop gen (ongoing) |
+|Sde | On ODU HPC | Eric | QC complete? |
+|Leq | On ODU HPC | John | Needs QC |
+|Tbi | On ODU HPC | George | Needs QC |
+|Tzo | On ODU HPC | Kyra | Needs QC |
+|Hte | On ODU HPC | Brendan | Data generated with incorrect probes, some pops missing |
+
 ---
 
 ## Maintaining Git Repo
