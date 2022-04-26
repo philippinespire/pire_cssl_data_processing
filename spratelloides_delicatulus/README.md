@@ -90,3 +90,24 @@ mv spratelloides_delicatulus/*out spratelloides_delicatulus/logs/
 
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
 
+## FASTQ SCREEN
+
+Running files that were dropped
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01007_CKDL210020579-1a-5UDI301-AK10343_HKGLMDSX2_L2_clmp.fp2_r2.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01016_CKDL210020579-1a-AK7758-AK4234_HKGLMDSX2_L2_clmp.fp2_r1.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01017_CKDL210020579-1a-AK7758-GD06_HKGLMDSX2_L2_clmp.fp2_r2.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01018_CKDL210020579-1a-AK7078-AK533_HKGLMDSX2_L2_clmp.fp2_r2.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01026_CKDL210020579-1a-AK9143-AK533_HKGLMDSX2_L2_clmp.fp2_r1.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmp_fp2_fqscrn 1 SdA01027_CKDL210020579-1a-AK9143-AK7557_HKGLMDSX2_L2_clmp.fp2_r1.fq.gz
+```
+
+MultiQC on screend files
+```
+sbatch ../scripts/runMULTIQC.sbatch fq_fp1_clmparray_fp2_fqscrn multiqc_fqscrn_Sde_capture
+```
+
+## Repaired
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
