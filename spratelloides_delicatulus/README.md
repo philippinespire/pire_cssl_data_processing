@@ -107,6 +107,11 @@ MultiQC on screend files
 sbatch ../scripts/runMULTIQC.sbatch fq_fp1_clmparray_fp2_fqscrn multiqc_fqscrn_Sde_capture
 ```
 
+Link to view report:
+[multiqc_fscrn_Sde_capture_report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/fq_fp1_clmparray_fp2_fqscrn/1st_multiqc_fqscrn_Sde_capture.html?token=GHSAT0AAAAAABQH4M6IECPNRYGKYBDK3WUEYTIBMSA)
+
+If the above link doesn't load succesfully download the report [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/fq_fp1_clmparray_fp2_fqscrn/1st_multiqc_fqscrn_Sde_capture.html) and open locally. 
+
 ## Repaired
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
