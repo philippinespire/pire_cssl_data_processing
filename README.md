@@ -60,7 +60,7 @@ ___
 1. Clone this repo to your working dir
 
 2. Complete fq.gz preprocessing
-    * goto the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here
+    * go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here
 
 3. Map processed reads against best reference genome
     * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
