@@ -59,15 +59,16 @@ ___
 
 1. Clone this repo to your working dir
 
-2. Run [`fastqc`]()
+2. Rename files to follow the `ddocent` naming convention
+    * `population_individual.R1.fq.gz`
+    * Run [`renameFQGZ`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/renameFQGZ.bash)
+
+3. Run [`fastqc`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh)
     * Review results with `multiqc` output
   
-3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
+4. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
     * Review the outputs from `fastp` and `fastq_screen` with `multiqc` output
-
-4. Rename files to follow the `ddocent` naming convention
-   * `population_indivdual.R1.fq.gz`
 
 5. Map processed reads against best reference genome
     * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
