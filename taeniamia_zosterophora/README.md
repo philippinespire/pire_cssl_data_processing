@@ -52,3 +52,13 @@ Potential issues:
   * Alb: 40%, Contemp: 40%
 * number of reads - mostly fine
   * Alb: generally higher # (15-30 mil), Contemp: ~5-20 mil, a few <1 mil
+
+## Step 3. 1st fastp
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora
+
+#runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture fq_fp1
