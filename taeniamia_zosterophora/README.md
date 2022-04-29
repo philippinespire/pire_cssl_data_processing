@@ -21,11 +21,11 @@ ls | wc -l #208 files (2 additional files for README & decode.tsv = 206/2 = 103 
 wc -l Tzo_CaptureLibraries_SequenceNameDecode.tsv #104 lines (1 additional line for header = 103 individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
-bash /home/r3clark/PIRE/pire_cssl_data_processing/scripts/renameFQGZ.bash Tzo_CaptureLibraries_SequenceNameDecode.tsv
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tzo_CaptureLibraries_SequenceNameDecode.tsv
 
 #run renameFQGZ.bash again to actually rename files
 #need to say "yes" 2X
-bash /home/r3clark/PIRE/pire_cssl_data_processing/scripts/renameFQGZ.bash Tzo_CaptureLibraries_SequenceNameDecode.tsv rename
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tzo_CaptureLibraries_SequenceNameDecode.tsv rename
 
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture
 ```
@@ -36,5 +36,5 @@ cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zostero
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
 
 #Multi_FastQC.sh "<file_extension>" "<indir>"
-sbatch /../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture"
 ```
