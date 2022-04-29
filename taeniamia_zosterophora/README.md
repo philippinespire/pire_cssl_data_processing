@@ -34,5 +34,7 @@ cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zostero
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
+
+#Multi_FastQC.sh "<file_extension>" "<indir>"
 sbatch /../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture"
 ```
