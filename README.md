@@ -59,45 +59,37 @@ ___
 
 1. Clone this repo to your working dir
 
-2. Rename files to follow the `ddocent` naming convention
-    * `population_individual.R1.fq.gz`
-    * Run [`renameFQGZ`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/renameFQGZ.bash)
+2. Complete fq.gz preprocessing
+    * goto the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here
 
-3. Run [`fastqc`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh)
-    * Review results with `multiqc` output
-  
-4. Trim, deduplicate, and decontaminate the raw `fq.gz` files
-    * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-    * Review the outputs from `fastp` and `fastq_screen` with `multiqc` output
-
-5. Map processed reads against best reference genome
+3. Map processed reads against best reference genome
     * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
     * Use [dDocentHPC mkBAM](https://github.com/cbirdlab/dDocentHPC) to map reads to ref
       * Use [`config.5.cssl`](https://github.com/cbirdlab/dDocentHPC/blob/master/configs/config.5.cssl) when running dDocentHPC as a starting point for the settings
 
-6. Filter the `bam` files
+4. Filter the `bam` files
     * Use [dDocentHPC fltrBAM](https://github.com/cbirdlab/dDocentHPC)
     * Visualize results with IGV or equivalent on a local computer to look for mapping artifacts
       * Look at both contemp and albatross (that goes for anything that follows)
     * Compare the filtered (`RG.bam`) to unfiltered (`RAW.bam`) files
       * Were a lot of reads lost?
 
-7. Genotype the `bam` files
+5. Genotype the `bam` files
     * Use [`dDocentHPC mkVCF`](https://github.com/cbirdlab/dDocentHPC) 
 
-8. Filter the `vcf` file
+6. Filter the `vcf` file
     * Use [`fltrVCF`](https://github.com/cbirdlab/fltrVCF)
       * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
       * Only run up to the second Filter 07
 
-9. Check for cryptic species
+7. Check for cryptic species
    * Run PCA & ADMIXTURE to look for cryptic speciation
    * Instructions in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
 
-10. Filter the `vcf` file for HWE
+8. Filter the `vcf` file for HWE
    * Update popmap file based on results from Step 9
    * Run Filters 18 & 17 in [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl)
 
-11. Make `vcf` with monomorphic loci
+9. Make `vcf` with monomorphic loci
 
-12. Filter monomorphic `vcf`
+10. Filter monomorphic `vcf`
