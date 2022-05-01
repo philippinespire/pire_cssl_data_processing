@@ -1,0 +1,627 @@
+[2022-05-01 15:13:02,278] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-05-01 15:13:02,279] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/r3clark/.multiqc_config.yaml
+[2022-05-01 15:13:02,280] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-05-01 15:13:02,280] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc fq_fp1_clmp_fp2 -n fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-05-01 15:13:03,032] multiqc                                            [WARNING]  MultiQC Version v1.12 now available!
+[2022-05-01 15:13:03,032] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-05-01 15:13:03,032] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc fq_fp1_clmp_fp2 -n fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-05-01 15:13:03,032] multiqc                                            [DEBUG  ]  Working dir : /scratch/r3clark/taeniamia_zosterophora
+[2022-05-01 15:13:03,033] multiqc                                            [INFO   ]  Template    : default
+[2022-05-01 15:13:03,033] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-05-01 15:13:03,033] multiqc                                            [INFO   ]  Searching   : /scratch/r3clark/taeniamia_zosterophora/fq_fp1_clmp_fp2
+[2022-05-01 15:13:03,034] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-05-01 15:13:03,034] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpdybgkkf1
+[2022-05-01 15:13:03,289] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_013-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,290] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_070-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,291] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_009_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,291] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_051-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_068-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_011-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_075-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_013-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_088-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_057-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_061-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_027-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,314] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_008_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_077-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_007_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_032_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_048_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_018-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,320] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_042-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_010_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_032_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_036_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_018_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_054-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_031-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_041_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_023_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_049-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_006_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_053-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,328] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_064-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,330] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_047_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_022_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_018-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,333] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_011-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,336] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_044-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,336] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_034_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,337] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_035_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,337] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_019_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,337] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_019_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,338] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_036_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,338] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_076-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,339] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_031_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,340] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_040_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,343] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_070-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,343] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_027-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,344] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_048-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_015_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_027_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_067-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_011-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_061-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,349] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_041-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,349] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_034_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_036_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_040_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_090-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_067-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_052-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_078-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_022_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_091-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_063-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_029_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_046-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_032_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_081-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_003_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_025_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,358] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_048_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,358] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_087-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,362] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_041-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,363] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_039_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,363] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_005_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,364] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_013-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,365] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_014_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,367] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_028_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,369] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_044_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,369] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_012_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_027-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_030-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_016_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,371] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_046-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,371] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_031_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,372] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_058-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,375] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_067-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,376] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_016-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,378] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_014_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,379] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_033-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,380] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_009_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,380] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_079-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,380] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_035-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,381] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_015-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,381] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_091-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,383] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_068-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_016_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_081-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_001_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_082-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_083-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,388] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_069-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,392] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_011_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,392] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_039_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,393] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_002_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,396] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_024_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_007_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,398] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_040-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_037_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,401] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_035_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,401] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_033_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_052-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_052-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,403] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_018_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,403] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_044-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,403] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_047-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_042-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_030_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_038_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_033-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,407] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_053-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,407] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_094-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,407] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_049-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,409] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_029-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,411] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_068-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,414] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_094-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_063-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,416] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_006_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_045-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,418] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_030_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,418] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_019_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,420] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_044-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,421] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_035-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,422] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_050-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,425] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_015_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,425] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_042_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,427] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_077-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,427] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_079-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,428] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_012-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,428] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_007_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_028_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_078-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_044_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,430] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_031-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,431] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_006-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_069-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_037_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,434] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_038-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,434] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_030-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,436] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_033_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,436] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_047_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_046_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_041_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_038-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_045-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_076-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,439] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_010_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,439] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_029-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,439] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_017_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,440] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_010_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,440] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_066-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_007-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_013_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,443] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_088-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,443] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_021_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,444] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_089-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,444] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_066-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_083-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_021_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,448] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_051-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,448] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_083-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,448] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_040-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,449] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_006_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,449] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_018_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_020-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_090-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_029-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,452] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_021_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,453] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_049-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,453] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_054-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,454] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_030_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,454] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_043_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_012-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_007-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_037_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_047-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,459] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_007-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_042_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,462] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_064-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,463] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_026_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,465] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_013_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,467] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_003_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_033_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,469] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_075-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,471] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_054-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,471] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_025_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_014_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_031_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_002_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,473] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_040-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,473] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_087-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_066-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_091-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_038-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_027_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,478] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_088-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_026_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_076-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_004_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,485] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_035_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,486] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_017_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,488] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_044_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,488] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_043_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,490] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_045_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,490] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_023_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,490] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_012-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,491] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_069-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,491] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_002_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_004_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_081-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_046_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,493] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_033-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,493] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_029_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,494] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_058-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,495] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_035-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,496] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_034_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,496] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_047-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,496] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_046_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,498] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_063-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,499] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_082-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,499] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_050-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,499] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_046-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,504] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_015-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,505] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_079-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_070-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_089-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_043_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_028_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,509] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_050-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,511] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_029_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,513] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_006-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,513] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_077-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_016-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_042-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_039_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_020_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,516] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_045-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,517] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_020-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,517] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_065-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_005_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_048-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_058-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,519] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_087-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,519] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_045_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_082-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_065-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,523] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_003_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,523] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_038_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,524] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_012_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,524] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_075-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,524] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_038_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,527] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_025_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,528] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_041_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,528] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_001_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,528] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_048_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_008_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_040_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_053-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_001_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_005_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_008_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_017_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_018-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_011_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_048-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_031-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_016_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_064-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_015_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_004_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_041-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_009_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_024_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,540] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_061-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,540] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_030-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_057-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_012_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,543] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_089-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_057-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,545] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_026_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,545] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_078-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_047_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_045_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_042_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,548] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_023_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,548] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_006-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_065-Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_015-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,550] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_020_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-01 15:13:03,550] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_051-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,551] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_094-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,552] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_011_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,553] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_013_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,553] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_027_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,553] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_020-Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_024_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_022_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_090-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_016-Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-01 15:13:03,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_020_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-01 15:13:03,556] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_079-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,556] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_078-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,557] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_051-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,557] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_001_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,558] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_036_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,558] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_007_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,558] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_045-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,559] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_047-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,559] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_078-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,560] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_020_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,560] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_020-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_050-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_089-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_006_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,562] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_040-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,562] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_044-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,563] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_037_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,563] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_045-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,563] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_058-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,564] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_047-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,564] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_034_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_006_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_021_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_090-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,566] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_016_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,566] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_067-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_028_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_035-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_076-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_012_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_010_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_094-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_014_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_001_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_046_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_027-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_035_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,571] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_068-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,571] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_018_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,572] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_003_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,572] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_029_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,572] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_094-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,573] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_019_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,573] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_038_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,574] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_082-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,574] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_088-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,574] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_076-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,575] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_083-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,575] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_018-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,576] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_061-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,576] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_044-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,576] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_013-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,577] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_038_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,577] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_031-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_026_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_053-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_002_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,579] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_089-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,579] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_031-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,580] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_064-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,580] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_011-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,580] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_043_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,581] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_024_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,581] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_019_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,582] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_057-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,582] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_013_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,582] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_048-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,583] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_025_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,583] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_030_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,584] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_020-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,584] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_015_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,584] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_033-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_017_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_041-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,586] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_037_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,586] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_036_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,586] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_046_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_035_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_050-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_027_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_021_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_008_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_031_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_009_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,590] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_045_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,590] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_022_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,590] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_046-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,591] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_081-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,591] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_039_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_005_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_042-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_075-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_010_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_007-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_034_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,594] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_016-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,594] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_013-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,595] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_023_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,595] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_016-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,595] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_044_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,596] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_015_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,596] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_042_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_057-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_070-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_049-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_016_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_081-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,599] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_029-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,599] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_068-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,599] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_051-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_004_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_011-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_005_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_004_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_070-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,602] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_052-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,602] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_087-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_033-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_066-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_045_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,604] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_042-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,604] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_015-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_014_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_012-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_075-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,606] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_091-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,606] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_027_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_052-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_025_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_012-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,608] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_009_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,608] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_043_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,609] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_048_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,609] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_022_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,609] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_018-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,610] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_063-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,610] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_069-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,610] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_007-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,611] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_006-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,611] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_008_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,612] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_053-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,612] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_033_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,612] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_038-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,613] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_083-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,613] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_047_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_028_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_029-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_002_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_012_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_046-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_030-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_054-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_066-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,617] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_041_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,617] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_040-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,618] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_058-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,618] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_069-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,618] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_011_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,619] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_077-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,619] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_067-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,620] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_048_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,620] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_063-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,620] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_082-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,621] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_077-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,621] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_054-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,622] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_011_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,622] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_042_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,622] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_031_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,623] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_023_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,623] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_040_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,624] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_079-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,624] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_018_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,624] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_091-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_030_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_030-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_020_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,626] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_026_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,626] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_038-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,627] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_015-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,627] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_006-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,627] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_032_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_047_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_065-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,629] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_027-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,629] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_007_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,629] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_039_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,630] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_040_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,630] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_032_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,631] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_049-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,631] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_041-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,631] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_003_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,632] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_061-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,632] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_041_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_087-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_029_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_017_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,634] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_044_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,634] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_024_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,635] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_048-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,635] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_090-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,635] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_065-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_088-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_064-Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_033_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-01 15:13:03,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-CMvi_035-Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:03,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tzo-AMvi_013_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-01 15:13:04,419] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-05-01 15:13:04,420] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-05-01 15:13:04,421] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-05-01 15:13:04,426] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-05-01 15:13:04,431] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-05-01 15:13:04,436] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-05-01 15:13:04,440] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-05-01 15:13:04,447] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-05-01 15:13:04,451] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-05-01 15:13:04,454] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-05-01 15:13:04,458] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-05-01 15:13:04,462] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-05-01 15:13:04,467] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-05-01 15:13:04,470] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-05-01 15:13:04,474] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-05-01 15:13:04,477] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-05-01 15:13:04,482] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-05-01 15:13:04,487] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-05-01 15:13:04,491] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-05-01 15:13:04,496] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-05-01 15:13:04,500] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-05-01 15:13:04,507] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-05-01 15:13:04,511] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-05-01 15:13:04,515] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-05-01 15:13:04,519] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-05-01 15:13:04,524] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-05-01 15:13:04,529] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-05-01 15:13:04,534] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-05-01 15:13:04,537] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-05-01 15:13:04,541] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-05-01 15:13:04,545] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-05-01 15:13:04,550] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-05-01 15:13:04,554] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-05-01 15:13:04,558] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-05-01 15:13:04,563] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-05-01 15:13:04,566] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-05-01 15:13:04,574] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-05-01 15:13:04,577] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-05-01 15:13:04,581] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-05-01 15:13:04,592] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-05-01 15:13:04,596] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-05-01 15:13:04,598] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-05-01 15:13:04,602] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-05-01 15:13:04,606] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-05-01 15:13:04,610] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-05-01 15:13:04,614] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-05-01 15:13:04,619] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-05-01 15:13:04,623] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-05-01 15:13:04,628] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-05-01 15:13:04,632] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-05-01 15:13:04,637] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-05-01 15:13:04,641] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-05-01 15:13:04,647] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-05-01 15:13:04,652] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-05-01 15:13:04,656] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-05-01 15:13:04,660] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-05-01 15:13:04,664] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-05-01 15:13:04,667] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-05-01 15:13:04,672] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-05-01 15:13:04,675] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-05-01 15:13:04,679] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-05-01 15:13:04,683] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-05-01 15:13:04,687] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-05-01 15:13:04,691] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-05-01 15:13:04,695] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-05-01 15:13:04,699] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-05-01 15:13:04,703] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-05-01 15:13:04,707] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-05-01 15:13:04,710] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-05-01 15:13:04,714] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-05-01 15:13:04,718] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-05-01 15:13:04,723] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-05-01 15:13:04,727] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-05-01 15:13:04,732] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-05-01 15:13:04,735] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-05-01 15:13:04,739] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-05-01 15:13:04,743] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-05-01 15:13:04,747] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-05-01 15:13:04,750] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-05-01 15:13:04,754] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-05-01 15:13:04,758] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-05-01 15:13:04,762] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-05-01 15:13:04,767] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-05-01 15:13:05,433] multiqc.modules.fastp.fastp                        [INFO   ]  Found 103 reports
+[2022-05-01 15:13:25,158] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2022-05-01 15:13:25,162] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-05-01 15:13:25,166] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-05-01 15:13:25,171] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-05-01 15:13:25,176] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-05-01 15:13:25,180] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-05-01 15:13:25,184] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-05-01 15:13:25,187] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-05-01 15:13:25,191] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-05-01 15:13:25,195] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-05-01 15:13:25,366] multiqc                                            [INFO   ]  Compressing plot data
+[2022-05-01 15:13:27,856] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2022-05-01 15:13:27,856] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2022-05-01 15:13:27,856] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpdybgkkf1/multiqc_data' to '/scratch/r3clark/taeniamia_zosterophora/fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2022-05-01 15:13:37,782] multiqc                                            [INFO   ]  MultiQC complete
