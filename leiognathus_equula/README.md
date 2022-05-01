@@ -25,8 +25,9 @@ Looks like missing sequencing data for two individuals:
   1. LEC01034 --> (Leq-CMig_034-Ex1)
   2. LEC01061 --> (Leq-CMig_061-Ex1)
 
-Also noticed we have the same individual (ABas_013) twice (sequencing data from two different extractions)
-  * LeA01131 (Leq-ABas_013_Ex1-1) & LeA01132 (Leq-ABas_013-Ex1-2)
+Also noticed we have the same individual (ABas_013) twice (sequencing data from two different extractions): LeA01131 (Leq-ABas_013_Ex1-1) & LeA01132 (Leq-ABas_013-Ex1-2)
+
+Moving forward with renaming.
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture
@@ -44,33 +45,33 @@ cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equul
 ## Step 2.  Check data quality with fastqc
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata
+cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula
 
 #Multi_FastQC.sh "<file_extension>" "<indir>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture"
 
 #once finished
-mkdir /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FASTQC
-mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FASTQC
+mkdir /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC
+mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSLOQKIPCM3IRBSXOSYTO52BQ).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSPD7WMZ7Q5ECII67SYTO6YWQ).
 
 Potential issues:  
-* % duplication - high acros the board, especially in Albatross
-  * Alb: ~90%, Contemp: ~70%
+* % duplication - fine
+  * Alb: ~40%, Contemp: ~50%
 * GC content - okay
-  * Alb: 45%, Contemp: 40%
+  * Alb: 50%, Contemp: 45%
 * number of reads - concerning
-  * Alb: most <6 mil (very few 10-20 mil), Contemp: ~15-30 mil
+  * Alb: ~half <10 mil & ~half 15-30 mil, Contemp: ~5-10 mil
 
 ## Step 3. 1st fastp
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
 ```
-cd /scratch/r3clark/taeniamia_biguttata
+cd /scratch/r3clark/leiognathus_equula
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture fq_fp1
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture fq_fp1
 ```
