@@ -105,3 +105,32 @@ install.packages("tidyverse") #said yes when prompted, when finished, exited & d
 crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 #all files ran successfully
 ```
+
+---
+
+## Step 5. 2nd fastp
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora
+
+#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
+
+[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+
+Potential issues:  
+* % duplication - good
+  * Alb: ~10%, Contemp: ~10%
+* GC content - good
+*  Alb: 40%, Contemp: 45%
+* passing filter - good
+  * Alb: ~98%, Contemp: ~99%
+* % adapter - good
+  * Alb: <2%, Contemp: <1%
+* number of reads - took a hit, especially Albatross
+  * Alb: about half ~10-25 mil & about half ~1-7 mil, Contemp: 5-10 mil
+
+---
