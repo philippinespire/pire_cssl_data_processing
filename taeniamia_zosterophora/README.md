@@ -82,15 +82,11 @@ Potential issues:
 
 ## Step 4. Clumpify
 
+Ran in `scratch` because don't have enough space in `home` directory.
+
 ```
-#on Turing
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+cd /scratch/r3clark/taeniamia_zosterophora
 
-enable_lmod
-#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
-sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
+#runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/r3clark 10
 ```
-
-Checked that all files ran with `checkCLUMPIFY.R`. All ran (no RAM issues).
-
----
