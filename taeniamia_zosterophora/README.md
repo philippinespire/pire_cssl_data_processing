@@ -90,3 +90,18 @@ cd /scratch/r3clark/taeniamia_zosterophora
 #runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/r3clark 10
 ```
+
+Ran `checkClumpify.R` to see if any failed.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora
+
+module load container_env mapdamage2
+
+#had to install tidyverse package first
+crun R
+install.packages("tidyverse") #said yes when prompted, when finished, exited & didn't save env
+
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+#all files ran successfully
+```
