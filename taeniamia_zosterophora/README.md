@@ -119,18 +119,18 @@ cd /scratch/r3clark/taeniamia_zosterophora
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSAI2BRBQKQHYOM554YTO5NRQ).
 
 Potential issues:  
-* % duplication - good
-  * Alb: ~10%, Contemp: ~10%
+* % duplication - still high?
+  * Alb: ~50%, Contemp: ~40%
 * GC content - good
-*  Alb: 40%, Contemp: 45%
+*  Alb: 35-40%, Contemp: 45%
 * passing filter - good
   * Alb: ~98%, Contemp: ~99%
 * % adapter - good
   * Alb: <2%, Contemp: <1%
-* number of reads - took a hit, especially Albatross
-  * Alb: about half ~10-25 mil & about half ~1-7 mil, Contemp: 5-10 mil
+* number of reads - took a big hit, especially Albatross
+  * Alb: 5-10 mil, Contemp: 1-8 mil
 
 ---
