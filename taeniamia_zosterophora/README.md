@@ -43,7 +43,7 @@ mkdir /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/Multi_
 mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/Multi_FASTQC
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSG5SLW2K6TTV7RSJQYTMIX2Q).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSTA26FMBALNRJ2XZ2YYTOX6GQ).
 
 Potential issues:  
 * % duplication - high acros the board, especially in Albatross
@@ -51,7 +51,7 @@ Potential issues:
 * GC content - good
   * Alb: 40%, Contemp: 40%
 * number of reads - mostly fine
-  * Alb: generally higher # (15-30 mil), Contemp: ~5-20 mil, a few <1 mil
+  * Alb: generally higher # (>30 mil), Contemp: ~10-20 mil, a few <10 mil
 
 ## Step 3. 1st fastp
 
@@ -64,19 +64,19 @@ cd /scratch/r3clark/taeniamia_zosterophora
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture fq_fp1
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSSYLECC3FJ6ZTXKKQKYTOXVCQ
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSSYLECC3FJ6ZTXKKQKYTOXVCQ)
 
 Potential issues:  
-* % duplication - high for most but not all Albatross, lower for contemporary
-  * Alb: ~60% (some in the 40s), Contemp: ~45%
+* % duplication - still very high acros the board
+  * Alb: ~90%, Contemp: ~75-80%
 * GC content - good
-  * Alb: 40%, Contemp: 45%
-* passing filter - most reads passed filters for both Albatross & contemporary
-  * Alb: >90% (some closer to 50-60% and those tend to be ones with lower % dup), Contemp: ~95%
-* % adapter - high, esp. for Albatross
-  * Alb: 80%, Contemp: 30-40%
+  * Alb: 38-40%, Contemp: 45%
+* passing filter - great
+  * Alb: >99%, Contemp: >98%
+* % adapter - high for Albatross, low for Contemp
+  * Alb: >70%, Contemp: 10-20%
 * number of reads - seems to be okay
-  * Alb: generally much higher # (>40 mil) BUT some are very low (1-2 mil), Contemp: ~10-20 mil
+  * Alb: generally much higher # (>30 mil), Contemp: ~10-20 mil w/some pretty low
 
 ---
 
