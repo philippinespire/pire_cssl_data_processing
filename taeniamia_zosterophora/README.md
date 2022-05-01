@@ -62,3 +62,35 @@ cd /scratch/r3clark/taeniamia_zosterophora
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture fq_fp1
+```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSSYLECC3FJ6ZTXKKQKYTOXVCQ
+
+Potential issues:  
+* % duplication - high for most but not all Albatross, lower for contemporary
+  * Alb: ~60% (some in the 40s), Contemp: ~45%
+* GC content - good
+  * Alb: 40%, Contemp: 45%
+* passing filter - most reads passed filters for both Albatross & contemporary
+  * Alb: >90% (some closer to 50-60% and those tend to be ones with lower % dup), Contemp: ~95%
+* % adapter - high, esp. for Albatross
+  * Alb: 80%, Contemp: 30-40%
+* number of reads - seems to be okay
+  * Alb: generally much higher # (>40 mil) BUT some are very low (1-2 mil), Contemp: ~10-20 mil
+
+---
+
+## Step 4. Clumpify
+
+```
+#on Turing
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+enable_lmod
+#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
+sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
+```
+
+Checked that all files ran with `checkCLUMPIFY.R`. All ran (no RAM issues).
+
+---
