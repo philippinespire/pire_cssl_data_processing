@@ -4,7 +4,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-## Step 1.  Rename files for dDocent HPC
+## Step 0.  Rename files for dDocent HPC
 
 Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture` (check Leiognathus-equula channel on Slack).  Starting analyses in  `/home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula`.
 
@@ -42,7 +42,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Leq_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture
 ```
 
-## Step 2.  Check data quality with fastqc
+## Step 1.  Check data quality with fastqc
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula
