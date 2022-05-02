@@ -1,0 +1,582 @@
+[2022-05-02 14:49:10,740] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-05-02 14:49:10,741] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/r3clark/.multiqc_config.yaml
+[2022-05-02 14:49:10,741] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-05-02 14:49:10,741] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc fq_fp1_clmp_fp2 -n fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-05-02 14:49:11,448] multiqc                                            [WARNING]  MultiQC Version v1.12 now available!
+[2022-05-02 14:49:11,448] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-05-02 14:49:11,448] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc fq_fp1_clmp_fp2 -n fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-05-02 14:49:11,448] multiqc                                            [DEBUG  ]  Working dir : /scratch/r3clark/taeniamia_biguttata
+[2022-05-02 14:49:11,448] multiqc                                            [INFO   ]  Template    : default
+[2022-05-02 14:49:11,448] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-05-02 14:49:11,448] multiqc                                            [INFO   ]  Searching   : /scratch/r3clark/taeniamia_biguttata/fq_fp1_clmp_fp2
+[2022-05-02 14:49:11,450] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-05-02 14:49:11,450] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp3ttdi5h3
+[2022-05-02 14:49:11,677] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,677] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,679] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,679] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,679] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,679] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,680] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,680] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,689] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,705] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,706] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,759] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,773] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,785] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,786] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,790] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,791] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,791] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,792] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,796] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,797] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,802] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,803] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,806] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,806] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,806] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,808] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,814] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,814] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,814] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,815] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,815] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,815] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,816] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,816] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,817] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,817] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,821] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,823] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,823] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,823] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,824] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,824] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,827] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,831] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,831] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,835] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,837] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,840] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,840] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,848] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,849] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,849] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,850] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,850] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,850] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,851] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,851] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,852] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,853] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,858] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,858] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,862] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,862] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,862] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,867] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,867] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,867] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,869] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,878] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,878] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,881] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,881] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,882] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,882] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,883] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,883] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_clmp.fp2_r1.fq.gz
+[2022-05-02 14:49:11,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,886] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_clmp.r1r2_fastp.html
+[2022-05-02 14:49:11,887] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_clmp.fp2_r2.fq.gz
+[2022-05-02 14:49:11,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,894] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,894] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,894] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,900] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,900] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,903] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,903] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,930] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,930] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,930] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,931] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,931] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,947] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,947] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,955] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,955] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_clmp.fp2_fail.fq.gz
+[2022-05-02 14:49:11,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:11,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_clmp.fp2_unprd.fq.gz
+[2022-05-02 14:49:12,683] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-05-02 14:49:12,685] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-05-02 14:49:12,686] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-05-02 14:49:12,691] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-05-02 14:49:12,696] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-05-02 14:49:12,700] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-05-02 14:49:12,705] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-05-02 14:49:12,712] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-05-02 14:49:12,715] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-05-02 14:49:12,718] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-05-02 14:49:12,723] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-05-02 14:49:12,727] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-05-02 14:49:12,731] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-05-02 14:49:12,734] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-05-02 14:49:12,738] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-05-02 14:49:12,741] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-05-02 14:49:12,746] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-05-02 14:49:12,751] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-05-02 14:49:12,755] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-05-02 14:49:12,760] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-05-02 14:49:12,764] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-05-02 14:49:12,771] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-05-02 14:49:12,775] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-05-02 14:49:12,779] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-05-02 14:49:12,783] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-05-02 14:49:12,788] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-05-02 14:49:12,793] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-05-02 14:49:12,797] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-05-02 14:49:12,801] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-05-02 14:49:12,805] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-05-02 14:49:12,809] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-05-02 14:49:12,814] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-05-02 14:49:12,818] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-05-02 14:49:12,822] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-05-02 14:49:12,827] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-05-02 14:49:12,830] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-05-02 14:49:12,837] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-05-02 14:49:12,841] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-05-02 14:49:12,844] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-05-02 14:49:12,855] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-05-02 14:49:12,859] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-05-02 14:49:12,862] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-05-02 14:49:12,866] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-05-02 14:49:12,870] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-05-02 14:49:12,874] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-05-02 14:49:12,878] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-05-02 14:49:12,882] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-05-02 14:49:12,886] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-05-02 14:49:12,891] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-05-02 14:49:12,895] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-05-02 14:49:12,900] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-05-02 14:49:12,904] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-05-02 14:49:12,911] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-05-02 14:49:12,915] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-05-02 14:49:12,920] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-05-02 14:49:12,924] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-05-02 14:49:12,927] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-05-02 14:49:12,931] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-05-02 14:49:12,935] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-05-02 14:49:12,939] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-05-02 14:49:12,943] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-05-02 14:49:12,947] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-05-02 14:49:12,950] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-05-02 14:49:12,954] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-05-02 14:49:12,959] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-05-02 14:49:12,962] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-05-02 14:49:12,966] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-05-02 14:49:12,970] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-05-02 14:49:12,973] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-05-02 14:49:12,977] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-05-02 14:49:12,981] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-05-02 14:49:12,986] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-05-02 14:49:12,990] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-05-02 14:49:12,995] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-05-02 14:49:12,998] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-05-02 14:49:13,002] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-05-02 14:49:13,006] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-05-02 14:49:13,010] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-05-02 14:49:13,013] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-05-02 14:49:13,017] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-05-02 14:49:13,021] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-05-02 14:49:13,025] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-05-02 14:49:13,030] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-05-02 14:49:13,466] multiqc.modules.fastp.fastp                        [INFO   ]  Found 94 reports
+[2022-05-02 14:49:13,922] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2022-05-02 14:49:13,926] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-05-02 14:49:13,930] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-05-02 14:49:13,935] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-05-02 14:49:13,940] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-05-02 14:49:13,944] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-05-02 14:49:13,948] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-05-02 14:49:13,951] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-05-02 14:49:13,955] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-05-02 14:49:13,959] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-05-02 14:49:14,117] multiqc                                            [INFO   ]  Compressing plot data
+[2022-05-02 14:49:22,570] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2022-05-02 14:49:22,571] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2022-05-02 14:49:22,571] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp3ttdi5h3/multiqc_data' to '/scratch/r3clark/taeniamia_biguttata/fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2022-05-02 14:49:22,911] multiqc                                            [INFO   ]  MultiQC complete
