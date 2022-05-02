@@ -65,7 +65,7 @@ Potential issues:
 * number of reads - okay, not great
   * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
 
-## Step 3. 1st fastp
+## Step 2. 1st fastp
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -76,7 +76,7 @@ cd /scratch/r3clark/leiognathus_equula
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture fq_fp1
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGST3EK63ADFLSTJE55UYTP6LRQ)
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGST3EK63ADFLSTJE55UYTP6LRQ).
 
 Potential issues:  
 * % duplication - fine
