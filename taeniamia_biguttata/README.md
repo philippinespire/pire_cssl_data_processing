@@ -115,3 +115,19 @@ cd /scratch/r3clark/taeniamia_biguttata
 #runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSBHR62HFBBYZK46R4YTQHTJA).
+
+Potential issues:  
+* % duplication - still high? Esp for Albatross
+  * Alb: ~40-50%, Contemp: ~25%
+* GC content - good
+*  Alb: 40-50%, Contemp: 40%
+* passing filter - good
+  * Alb: >97%, Contemp: >99%
+* % adapter - good
+  * Alb: <2%, Contemp: <1%
+* number of reads - Albatross took a big hit, Contemp ~okay
+  * Alb: 1-5 mil, Contemp: 10-20 mil
+
+---
