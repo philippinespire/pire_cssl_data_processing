@@ -62,8 +62,8 @@ Potential issues:
   * Alb: ~40%, Contemp: ~50%
 * GC content - okay
   * Alb: 50%, Contemp: 45%
-* number of reads - concerning
-  * Alb: ~half <10 mil & ~half 15-30 mil, Contemp: ~5-10 mil
+* number of reads - okay, not great
+  * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
 
 ## Step 3. 1st fastp
 
@@ -75,3 +75,17 @@ cd /scratch/r3clark/leiognathus_equula
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture fq_fp1
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGST3EK63ADFLSTJE55UYTP6LRQ)
+
+Potential issues:  
+* % duplication - fine
+  * Alb: ~30-40%, Contemp: ~40-50%
+* GC content - okay
+  * Alb: 50%, Contemp: 45%
+* passing filter - good
+  * Alb: >95%, Contemp: >98%
+* % adapter - higher for Albatross, low for Contemp
+  * Alb: 30-50%, Contemp: ~20%
+* number of reads - okay, not great
+  * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
