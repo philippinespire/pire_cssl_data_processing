@@ -116,3 +116,135 @@ If the above link doesn't load succesfully download the report [here](https://gi
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
 ```
+
+## Renaming Files to dDocentHPC format
+
+Moving decode files into Species dir:
+```
+mv raw_fq_files/Sde_CaptureLibraries_SequenceNameDecode.tsv . 
+```
+
+Creating decode_newnames files:
+```
+bash ../scripts/mkNewFileNames.bash Sde_CaptureLibraries_SequenceNameDecode.tsv fq_fp1_clmparray_fp2_fqscrn_repaired > decode_newnames.txt
+```
+
+This resulting file contained an empty line at the top and was mixing directories with file names creating the old and new names not to align in the decode file (in subsequent code). Ex:
+less -S decode_newnames.txt 
+```
+
+Sde-AMat_001_Ex1-fq_fp1_clmparray_fp2_fqscrn_repaired/SdA01001_CKDL210020579-1a-5UDI301-AK533_HKGLMDSX2_L2_clmp.fp2_repr.R1.fq.gz
+Sde-AMat_001_Ex1-fq_fp1_clmparray_fp2_fqscrn_repaired/SdA01001_CKDL210020579-1a-5UDI301-AK533_HKGLMDSX2_L2_clmp.fp2_repr.R2.fq.gz
+```
+
+We might have to change the mkNewFileNames script but for now, I needed to move forward with Sde so I fixed this for my file manually:
+```
+less -S decode_newnames.txt | tail -n +2 | sed 's/_Ex.*\//-/' | cut -d "_" -f 1-2,5-7 | sed -e 's/_c/-c/' -e 's/_r/-r/' -e 's/_L/-L/' -e 's/\.f/-f/' > decode_newnames_fixed.txt
+
+less -S decode_newnames_fixed.txt
+Sde-AMat_001-SdA01001-L2-clmp-fp2-repr.R1.fq.gz
+Sde-AMat_001-SdA01001-L2-clmp-fp2-repr.R2.fq.gz
+Sde-AMat_002-SdA01002-L2-clmp-fp2-repr.R1.fq.gz
+Sde-AMat_002-SdA01002-L2-clmp-fp2-repr.R2.fq.g
+...
+```
+
+and continue with current code 
+```
+ls fq_fp1_clmparray_fp2_fqscrn_repaired/*fq.gz > decode_oldnames.txt
+module load parallel
+bash
+parallel --no-notice --link -kj6 "echo {1}, {2}" :::: decode_oldnames.txt decode_newnames_fixed.txt > decode_translation.csv
+less -S decode_translation.csv
+mkdir mkBAM
+parallel --no-notice --link -kj6 "mv {1} mkBAM/{2}" :::: decode_oldnames.txt decode_newnames_fixed.txt
+```
+
+## Maping mkBAM
+
+Permission denided when clonig dDocentHPC repo. Thus, using that already in Lle.
+
+**Reference:** Normally this will be the "best" assembly from the SSL pipeline but Sde goes back to the RAD.
+
+Thus, I am using the reference that was sent to Arbor Bio, transferred from TAMUCC to ODU:
+```
+scp /work/hobi/webshare/PIRE_ProbeTargets/03_Spratelloides_delicatulus/PIRE_SpratelloidesDelicatulus.D.3.3.probes4development.noMSATS.noNNNN.224-519bp.0-8TGCAGG.lessthan2in$
+cp PIRE_SpratelloidesDelicatulus.D.3.3.probes4development.noMSATS.noNNNN.224-519bp.0-8TGCAGG.lessthan2indelsof3nt.fasta ~/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM/reference.rad.D-3-3-probes4development-noMSATS-noNNNN-224-519bp-0-8TGCAGG-lessthan2indelsof3nt.fasta
+```
+
+Copying Config from species dir:
+```
+cp /home/cbird/pire_cssl_data_processing/scripts/dDocentHPC/configs/config.5.cssl mkBAM
+```
+
+Renamed reference and changed cutoff settings in config but leave other settings as is:
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=dd$
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much co$
+D-3-3-probes4development-noMSATS-noNNNN-224-519bp-0-8TGCAGG-lessthan2indelsof3nt               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20              samtools view -q        Mapping_Min_Quality (integer)                   Remove reads with mapping qual less than this value
+yes             samtools view -F 4      Remove_unmapped_reads? (yes,no)                 Since the reads aren't mapped, we generally don't need to filter them
+no              samtools view -F 8      Remove_read_pair_if_one_is_unmapped? (yes,no)   If either read in a pair does not map, then the other is also removed
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)           Secondary alignments are reads that also map to other contigs in the reference$
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)      You probably don't want to set this to yes
+no              samtools view -F 2048   Remove_supplementary_alignments? (yes,no)       We generally don't see any of these
+no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (yes,no)                         Set to no if OL mode
+0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools $
+0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools $
+30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is$
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+no                                      Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+```
+
+ Then copied scripts bc lack of permissions.
+```
+cp /home/cbird/pire_cssl_data_processing/scripts/dDocentHPC.sbatch .
+cp /home/cbird/pire_cssl_data_processing/scripts/dDocentHPC/dDocentHPC.bash .
+```
+
+and change the paths in the sbatch:
+```
+#!/bin/bash -l
+
+#SBATCH --job-name=mkBAM-mkVCF
+#SBATCH -o mkBAM-fltrBAM-mkVCF-%j.out
+#SBATCH -p main
+#SBATCH -c 40
+
+enable_lmod
+module load container_env ddocent
+
+CONFIG=$1
+
+crun bash dDocentHPC.bash mkBAM $CONFIG
+
+#this will use dDocent fltrBAM to filter the BAM files
+crun bash dDocentHPC.bash fltrBAM $CONFIG
+
+#this will use freebayes to genotype the bam files and make a VCF
+crun bash dDocentHPC.bash mkVCF $CONFIG
+```
+
+Running
+```
+sbatch dDocentHPC.sbatch config.5.cssl
+```
