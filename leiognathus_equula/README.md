@@ -55,7 +55,7 @@ mkdir /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FAST
 mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGST2L4H6TIOTDLZRPYAYTP5QRQ).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSHCJU54IOC2LOK2UIYTP7Q2Q).
 
 Potential issues:  
 * % duplication - fine
