@@ -90,7 +90,7 @@ grep 'error' slurm-fqscrn.266930*out | less -S #nothing
 grep 'error' slurm-fqscrn.266930*out | less -S #nothing
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html?token=GHSAT0AAAAAABTWHRFCEVVW4LHBB6FOGTKUYTP5WXA), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
 
 Potential issues:
 * None. Not many hits to other genomes. What did hit was to bacteria/protist and Albatross generally slightly more contam than contemp.
