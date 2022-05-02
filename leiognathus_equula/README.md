@@ -55,7 +55,7 @@ mkdir /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FAST
 mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/Multi_FASTQC
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSHCJU54IOC2LOK2UIYTP7Q2Q).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSFUNVKROXFDBGYYWGYTQB2MA).
 
 Potential issues:  
 * % duplication - fine
@@ -76,7 +76,7 @@ cd /scratch/r3clark/leiognathus_equula
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture fq_fp1
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGST3EK63ADFLSTJE55UYTP6LRQ).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_equula/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSTAW4WDXZ4BGRNGTR4YTQB2ZQ).
 
 Potential issues:  
 * % duplication - fine
