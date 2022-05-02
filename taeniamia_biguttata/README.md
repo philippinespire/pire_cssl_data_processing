@@ -43,13 +43,13 @@ mkdir /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FAS
 mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FASTQC/* /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/Multi_FASTQC
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSFSH6YR5HNTWL7NL2YTP5RNA).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSTL3FL7PLEG5NMQOMOYTP7MWQ).
 
 Potential issues:  
 * % duplication - high acros the board, especially in Albatross
   * Alb: ~90%, Contemp: ~70%
 * GC content - okay
-  * Alb: 45%, Contemp: 40%
+  * Alb: 45-50%, Contemp: 40%
 * number of reads - concerning
   * Alb: most <6 mil (very few 10-20 mil), Contemp: ~15-30 mil
 
@@ -63,3 +63,17 @@ cd /scratch/r3clark/taeniamia_biguttata
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture fq_fp1
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSS2ZXCJPQ5CRYO2ZVYYTP7KNA).
+
+Potential issues:  
+* % duplication - still very high acros the board
+  * Alb: ~90%, Contemp: ~70%
+* GC content - okay
+  * Alb: 45-50%, Contemp: 40%
+* passing filter - good
+  * Alb: >95%, Contemp: >98%
+* % adapter - high for Albatross, low for Contemp
+  * Alb: >60% (a few 40-50%), Contemp: 20-30%
+* number of reads - still low, esp for Albatross
+  * Alb: most <10 mil (very few >10 mil), Contemp: ~15-30 mil
