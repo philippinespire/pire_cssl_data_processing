@@ -4,7 +4,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-## Step 1.  Rename files for dDocent HPC
+## Step 0.  Rename files for dDocent HPC
 
 Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture` (check Taeniamia-zosterophora channel on Slack).  Starting analyses in  `/home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora`.
 
@@ -30,7 +30,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tzo_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture
 ```
 
-## Step 2.  Check data quality with fastqc
+## Step 1.  Check data quality with fastqc
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
@@ -53,7 +53,7 @@ Potential issues:
 * number of reads - mostly fine
   * Alb: generally higher # (>30 mil), Contemp: ~10-20 mil, a few <10 mil
 
-## Step 3. 1st fastp
+## Step 2. 1st fastp
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -80,7 +80,7 @@ Potential issues:
 
 ---
 
-## Step 4. Clumpify
+## Step 3. Clumpify
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -108,7 +108,7 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 
 ---
 
-## Step 5. 2nd fastp
+## Step 4. 2nd fastp
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
