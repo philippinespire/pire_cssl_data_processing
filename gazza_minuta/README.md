@@ -15,7 +15,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Gmi/raw_fq_capture fq_fp1
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/gazza_minuta/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSTOR2F6QLQTSOR6EBQYTP7Z7A).
 
 Potential issues:  
 * % duplication - low for most Albatross, higher for contemporary
@@ -55,7 +55,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/fq_fp1_clmp_fp2/2nd_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/gazza_minuta/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSVPH5E54MK42MSIKMYTP72SQ).
 
 Potential issues:  
 * % duplication - Albatross good, contemporary okay
@@ -80,7 +80,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/gazza_minuta/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/gazza_minuta/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html?token=GHSAT0AAAAAABQHSGSS6DXKLMN24OV6ZHZQYTP727Q).
 
 Potential issues: 
 * job 13 failed 
@@ -118,6 +118,8 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/gazza_minuta/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_postrepair.html?token=GHSAT0AAAAAABQHSGSS2UDCAZCIIUMJ7VRWYTP73VQ).
 
 ---
 
