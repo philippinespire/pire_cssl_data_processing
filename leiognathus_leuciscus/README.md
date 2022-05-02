@@ -15,7 +15,7 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSS2QWVKS3C3KNKJH7IYTP746Q).
 
 Potential issues:  
 * % duplication - high for albatross, 
@@ -65,7 +65,7 @@ cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html), download and open in web browser
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html?token=GHSAT0AAAAAABQHSGSSILAWYECPG7PRFGPWYTP75XQ).
 
 Potential issues:  
 * % duplication - good  
@@ -79,7 +79,6 @@ Potential issues:
 * number of reads - lost alot for albatross
   * generally more for albatross than contemp, as we attempted to do
   * alb: 7 mil, contemp: YY mil
-
 
 ---
 
@@ -99,7 +98,7 @@ grep 'error' slurm-fqscrn.266713*out | less -S
 grep 'No reads in' slurm-fqscrn.266713*out | less -S
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html), download and open in web browser
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html?token=GHSAT0AAAAAABQHSGSTYHZVDOGNTPC6FN4QYTP76LQ).
 
 Potential issues:
 * job 9 failed
