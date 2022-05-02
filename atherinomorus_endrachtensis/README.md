@@ -21,7 +21,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABTWHRFCPCYZPFKFO4CML2AUYTP5N5A), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
 
 Potential issues:  
 * % duplication - high for most but not all Albatross, lower for contemporary
