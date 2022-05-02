@@ -6,7 +6,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ## Step 0. FastQC
 
-[Results](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/Multi_FASTQC/multiqc_report_.fq.gz.html?token=GHSAT0AAAAAABTWHRFDYXZCSUADL25N2C4SYTP5IGA)
+[Results](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/Multi_FASTQC/multiqc_report_.fq.gz.html?token=GHSAT0AAAAAABQHSGST2ASEM43PW2Z3AQQ6YTP7WRQ).
 
 ---
 
@@ -21,7 +21,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABTWHRFCPCYZPFKFO4CML2AUYTP5N5A), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSTSHR4JEHKOS6UKC4IYTP7W7A).
 
 Potential issues:  
 * % duplication - high for most but not all Albatross, lower for contemporary
@@ -61,7 +61,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABTWHRFDUTKNHVT7Q453EKRYYTP5O4A), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSTG7SNTJBX24XILSOYYTP7XRQ).
 
 Potential issues:  
 * % duplication - good
@@ -90,7 +90,7 @@ grep 'error' slurm-fqscrn.266930*out | less -S #nothing
 grep 'error' slurm-fqscrn.266930*out | less -S #nothing
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html?token=GHSAT0AAAAAABTWHRFCEVVW4LHBB6FOGTKUYTP5WXA), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html?token=GHSAT0AAAAAABQHSGSS6XONYRGZXFAX5C7GYTP7YDA).
 
 Potential issues:
 * None. Not many hits to other genomes. What did hit was to bacteria/protist and Albatross generally slightly more contam than contemp.
@@ -113,6 +113,8 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch ruNREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_postrepair.html?token=GHSAT0AAAAAABQHSGSTMGGUSYOWKAWHJ3JGYTP7YVQ).
 
 ---
 
