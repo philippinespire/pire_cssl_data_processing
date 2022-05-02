@@ -4,7 +4,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-## Step 1.  Rename files for dDocent HPC
+## Step 0.  Rename files for dDocent HPC
 
 Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture` (check Taeniamia-biguttata channel on Slack).  Starting analyses in  `/home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata`.
 
@@ -30,7 +30,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tbi_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture
 ```
 
-## Step 2.  Check data quality with fastqc
+## Step 1.  Check data quality with fastqc
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata
@@ -53,7 +53,7 @@ Potential issues:
 * number of reads - concerning
   * Alb: most <6 mil (very few 10-20 mil), Contemp: ~15-30 mil
 
-## Step 3. 1st fastp
+## Step 2. 1st fastp
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
