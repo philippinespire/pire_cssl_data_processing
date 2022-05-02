@@ -96,6 +96,7 @@ Ran `checkClumpify.R` to see if any failed.
 ```
 cd /scratch/r3clark/taeniamia_zosterophora
 
+salloc
 module load container_env mapdamage2
 
 #had to install tidyverse package first
