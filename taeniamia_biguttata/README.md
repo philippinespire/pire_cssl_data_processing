@@ -77,3 +77,41 @@ Potential issues:
   * Alb: >60% (a few 40-50%), Contemp: 20-30%
 * number of reads - still low, esp for Albatross
   * Alb: most <10 mil (very few >10 mil), Contemp: ~15-30 mil
+
+---
+
+## Step 3. Clumpify
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/r3clark 10
+```
+
+Ran `checkClumpify.R` to see if any failed.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+salloc
+module load container_env mapdamage2
+
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+#all files ran successfully
+```
+
+---
+
+## Step 4. 2nd fastp
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
