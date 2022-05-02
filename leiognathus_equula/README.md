@@ -89,3 +89,7 @@ Potential issues:
   * Alb: 30-50%, Contemp: ~20%
 * number of reads - okay, not great
   * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
+
+Handing off to John Whalen for further processing.
+
+---
