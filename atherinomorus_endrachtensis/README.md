@@ -4,6 +4,12 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
+## Step 0. FastQC
+
+[Results](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/Multi_FASTQC/multiqc_report_.fq.gz.html?token=GHSAT0AAAAAABTWHRFDYXZCSUADL25N2C4SYTP5IGA)
+
+---
+
 ## Step 1.  1st fastp
 
 Raw data in `/home/e1garcia/shotgun_PIRE/Aen/raw_fq` (check Atherinomorus-endrachtensis channel on Slack).  The root outdir for all analyses will be  `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus-endrachtensis`. Both on Wahab/Turing (ODU HPCs).
