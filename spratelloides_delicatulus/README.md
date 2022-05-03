@@ -17,12 +17,12 @@ Looks like FASTQC could not process `SdC02092_CKDL210020579-1a-AK7010-7UDI246_HK
 
 Ended up running FASTQC directly on current session (not with sbatch), and that ran fine.
 
-The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQH4M6JUOA4BQ3UK53FJJDWYSZ3HPA)
- so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html?token=GHSAT0AAAAAABQH4M6IJULKVCIVINXRU4QKYSZ3IEA)
- and Contemporary files [multiqc_report_Contem.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html?token=GHSAT0AAAAAABQH4M6J5LMG25ISNAX23FBUYSZ3FQQ)
+The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/multiqc_report_fq.gz.html) was merging files in some graphic making it hard to read (maybe because there were too many?)
+,  so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html)
+and Contemporary files [multiqc_report_Contem.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html) separately.
 
+Viewing options: (1) Download files from the above links, (2) copy and paste raw code of reports, (3) copy and paste the URL that shows the raw code and enter it in the  [GitHub & BitBucket HTML Preview webpage](https://htmlpreview.github.io/?).
 
-Download or copy and paste reports for viewing.
 
 SdA01 files are from Sde-AMat		Match ID:  MatB
 
@@ -52,7 +52,7 @@ Matnog Bay (Southern Luzon); MatB=SdA01:Sde-AMat,  SdC01:Sde-CMat; normal GC con
 Port Maricaban (Northern Luzon); PMar=SdA02:Sde-AMar, SdC02:Sde-CHam; higer GC content and subtantially less sequences than MatB
 
 
-Potential reasons could be library effects (need to check how populations were prepare) or lot effects. Also need to check extraction records.
+Potential reasons could be library effects (need to check how populations were prepare) or lot effects.
 
 
 ---
