@@ -21,7 +21,7 @@ The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https:
 ,  so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html)
 and Contemporary files [multiqc_report_Contem.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Con_fastqc/multiqc_report_Contem.html) separately.
 
-Viewing options: (1) Download files from the above links, (2) copy and paste raw code of reports, (3) copy and paste the URL that shows the raw code and enter it in the  [GitHub & BitBucket HTML Preview webpage](https://htmlpreview.github.io/?).
+Viewing options: (1) Download files from the above links, (2) copy and paste raw code of reports (click "View raw" from the links above), (3) copy the URL that shows the raw code and enter it in the  [GitHub & BitBucket HTML Preview webpage](https://htmlpreview.github.io/?).
 
 
 SdA01 files are from Sde-AMat		Match ID:  MatB
