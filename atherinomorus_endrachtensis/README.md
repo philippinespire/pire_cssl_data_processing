@@ -501,7 +501,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ---
 
-## Step 17. Make VCF with Monomorphic Loci
+## Step 17. Make VCF with monomorphic loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
@@ -530,4 +530,65 @@ Genotyped
 ```
 cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
 sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic #NOTE: ran on Turing bc Wahab queue was backed up
+```
+
+---
+
+## Step 18. Filter VCF with monomorphic loci
+
+Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
+
+Because of polyploidy issues, first filtered to a list of contigs that are "diploid" (those found in `greenlist_loci_full_HD_2.5.txt`).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+
+salloc
+module load vcftools
+
+#diploid_contigs.bed is tab-delimited (bed) file with contig names, starting and ending positions each in a column (here, start = 1 and end = 100000 for all)
+vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed diploid_contigs.bed --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-6-6.diploid.vcf
+```
+
+Set-up filtering for monomorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cp ../scripts/config.fltr.ind.cssl.mono .
+```
+
+Ran `fltrVCF.sbatch` for monomorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs.diploid file made after the "make monomorphic VCF" step
+#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
+sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
+
+#troubleshooting will  be necessary
+```
+
+
+Set-up filtering for polymorphic sites only.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+mkdir polymorphic_filter
+cp ../../scripts/config.fltr.ind.cssl.poly .
+```
+
+Ran `fltrVCF.sbatch` for polymorphic sites.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic/polymorphic_filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the TotalRawSNPs.diploid file made after the "make monomorphic VCF" step
+#popmap file should be file used in step 16, that accounts for any cryptic structure (*HWEsplit extension)
+#settings should match the settings used when filtering the original VCF file (step 9) AND ones used when filtering after AB step (step 14)
+sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
+
+#troubleshooting will be necessary
 ```
