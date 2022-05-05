@@ -111,26 +111,26 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 
 ## Step 4. 2nd fastp
 
-Ran in `scratch` because don't have enough space in `home` directory.
+Ran in `scratch` because don't have enough space in `home` directory. Hard trimming the first 15 nucleotides to get rid of the `CTNAAATTT` motif we are seeing at the beginning of reads.
 
 ```
 cd /scratch/r3clark/taeniamia_zosterophora
 
-#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir> <OPTIONAL #bp to trim from left>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 15
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSE4RFHLODFRP3FBDYYTP7SNA).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSNT7QILKLGXHHMT6SYTUBWDQ).
 
 Potential issues:  
 * % duplication - still high?
   * Alb: ~50%, Contemp: ~40%
 * GC content - good
-*  Alb: 35-40%, Contemp: 45%
+*  Alb: 35-40%, Contemp: 40%
 * passing filter - good
-  * Alb: ~98%, Contemp: ~99%
-* % adapter - good
-  * Alb: <2%, Contemp: <1%
+  * Alb: >95%, Contemp: >97%
+* % adapter - bad
+  * Alb: 60-70%, Contemp: 20-30%
 * number of reads - took a big hit, especially Albatross
   * Alb: 5-10 mil, Contemp: 1-8 mil
 
