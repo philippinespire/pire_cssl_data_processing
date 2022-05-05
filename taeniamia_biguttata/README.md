@@ -107,7 +107,7 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 
 ## Step 4. 2nd fastp
 
-Ran in `scratch` because don't have enough space in `home` directory. Hard trimming the first 15 nucleotides to get rid of the `CNNAAANNT` motif we are seeing at the beginning of reads.
+Ran in `scratch` because don't have enough space in `home` directory. Hard trimming the first 15 nucleotides to get rid of the `CTNAAATTT` motif we are seeing at the beginning of reads.
 
 ```
 cd /scratch/r3clark/taeniamia_biguttata
@@ -125,8 +125,8 @@ Potential issues:
 *  Alb: 40-50%, Contemp: 40%
 * passing filter - good
   * Alb: >95%, Contemp: >98%
-* % adapter - good
-  * Alb: <2%, Contemp: <1%
+* % adapter - terrible
+  * Alb: 50-70%, Contemp: ~25%
 * number of reads - Albatross took a big hit, Contemp ~okay
   * Alb: 1-5 mil, Contemp: 10-20 mil
 
