@@ -135,3 +135,12 @@ Potential issues:
   * Alb: 5-10 mil, Contemp: 1-8 mil
 
 ---
+
+## Step 5. Run fastqscreen
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
