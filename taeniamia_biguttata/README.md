@@ -107,16 +107,16 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 
 ## Step 4. 2nd fastp
 
-Ran in `scratch` because don't have enough space in `home` directory.
+Ran in `scratch` because don't have enough space in `home` directory. Hard trimming the first 15 nucleotides to get rid of the `CNNAAANNT` motif we are seeing at the beginning of reads.
 
 ```
 cd /scratch/r3clark/taeniamia_biguttata
 
 #runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 15
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSSBHR62HFBBYZK46R4YTQHTJA).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSTASYT4PWPLCRAIKOSYTT6A3A).
 
 Potential issues:  
 * % duplication - still high? Esp for Albatross
@@ -124,7 +124,7 @@ Potential issues:
 * GC content - good
 *  Alb: 40-50%, Contemp: 40%
 * passing filter - good
-  * Alb: >97%, Contemp: >99%
+  * Alb: >95%, Contemp: >98%
 * % adapter - good
   * Alb: <2%, Contemp: <1%
 * number of reads - Albatross took a big hit, Contemp ~okay
