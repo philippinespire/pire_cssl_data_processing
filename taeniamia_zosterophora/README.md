@@ -136,7 +136,7 @@ Potential issues:
 
 ---
 
-## Step 5. Run fastqscreen
+## Step 5. Run fastq_screen
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
