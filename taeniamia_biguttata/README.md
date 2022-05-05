@@ -112,7 +112,7 @@ Ran in `scratch` because don't have enough space in `home` directory. Hard trimm
 ```
 cd /scratch/r3clark/taeniamia_biguttata
 
-#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
+#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir> <OPTIONAL #bp to trim from left>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 15
 ```
 
