@@ -141,6 +141,40 @@ Potential issues:
 Ran in `scratch` because don't have enough space in `home` directory.
 
 ```
+cd /scratch/r3clark/taeniamia_zosterophora
+
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
+
+Checked that all files were successfully completed.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora
+
+#checked that all 5 output files from fastqc screen were created for each file (should be 206 for each = 103 R1 & 103 R2)
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #206
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #206 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #206
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #206
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #206
+
+#checked all out files for any errors
+grep 'error' slurm-fqscrn.*out #nothing
+grep 'No reads in' slurm-fqscrn.*out #nothing
+```
+
+Everything looks good, no errors/missing files.
+
+Looked at fastqc screen results and looks fine. Albatross has more contamination than Contemporary, but most reads come back as 'No hits' or 'Hits on multiple genomes'. Albatross have a few single hits to bacteria/protists, but not many.
+
+---
+
+## Step 7. Repair fastq_screen paired end files
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
