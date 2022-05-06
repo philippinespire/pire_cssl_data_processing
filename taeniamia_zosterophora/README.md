@@ -175,6 +175,8 @@ Looked at fastqc screen results and looks fine. Albatross has more contamination
 Ran in `scratch` because don't have enough space in `home` directory.
 
 ```
+cd /scratch/r3clark/taeniamia_zosterophora
+
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
