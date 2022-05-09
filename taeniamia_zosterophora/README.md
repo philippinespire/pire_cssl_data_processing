@@ -262,7 +262,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-## Step 8. Map reads to reference - Filter Maps - Genotype Maps
+## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
 ```
 cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
