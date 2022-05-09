@@ -189,3 +189,87 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
 #Multi_FastQC.sh "<file_extension>" "<indir>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/scratch/r3clark/taeniamia_zosterophora/fq_fp1_clmp_fp2_fqscrn_repaired"
 ```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSTX2TLIZVNQBSPH7XWYTZG3WA).
+
+---
+
+## Step 8. Set up mapping dir and get reference genome
+
+Make mapping directory and move `*fq.gz` files over. Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora/
+mkdir mkBAM
+
+mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+```
+
+Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC
+git pull
+
+cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+cp /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC/configs/config.5.cssl .
+```
+
+Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *Taeniamia zosterophora* is: **Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta** in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design`. Copied this to `mkBAM`.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design/Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta .
+
+#the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
+#<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
+#this naming is a little messy, but it makes the ref 100% tracable back to the source
+#it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+
+mv Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta ./reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta
+```
+
+Updated the config file with the ref genome info.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+nano config.5.cssl
+```
+
+Inserted `<assembly type>` into the `Cutoff1` variable and `<unique assembly info>` into the `Cutoff2` variable.
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+## Step 8. Map reads to reference - Filter Maps - Genotype Maps
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../dDocentHPC.sbatch config.5.cssl
+```
+
+---
