@@ -184,7 +184,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_
 Once finished, ran multiqc to assess quality.
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
+cd /scratch/r3clark/taeniamia_zosterophora
 
 #Multi_FastQC.sh "<file_extension>" "<indir>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/scratch/r3clark/taeniamia_zosterophora/fq_fp1_clmp_fp2_fqscrn_repaired"
