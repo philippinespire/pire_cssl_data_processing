@@ -42,6 +42,20 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Leq_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture
 ```
 
+Copied raw (renamed) `*fq.gz` files to the longterm Carpenter RC directory.
+
+```
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing
+mkdir leiognathus_equula
+
+cd leiognathus_equula
+mkdir fq_raw_cssl
+
+cp /home/e1garica/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture/* fq_raw_cssl/
+```
+
+---
+
 ## Step 1.  Check data quality with fastqc
 
 ```
@@ -64,6 +78,8 @@ Potential issues:
   * Alb: 50%, Contemp: 45%
 * number of reads - okay, not great
   * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
+
+---
 
 ## Step 2. 1st fastp
 
