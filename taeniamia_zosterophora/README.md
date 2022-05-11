@@ -186,7 +186,7 @@ Looked at fastqc screen results and looks fine. Albatross has more contamination
 
 ---
 
-## Step 7. Repair fastq_screen paired end files
+## Step 6. Repair fastq_screen paired end files
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -210,7 +210,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz"
 
 ---
 
-## Step 8. Set up mapping dir and get reference genome
+## Step 7. Set up mapping dir and get reference genome
 
 Make mapping directory and move `*fq.gz` files over. Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -278,7 +278,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-## Step 9. Map reads to reference - Filter Maps - Genotype Maps
+## Step 8. Map reads to reference - Filter Maps - Genotype Maps
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
