@@ -30,6 +30,8 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tbi_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture
 ```
 
+---
+
 ## Step 1.  Check data quality with fastqc
 
 ```
@@ -52,6 +54,8 @@ Potential issues:
   * Alb: 45-50%, Contemp: 40%
 * number of reads - concerning
   * Alb: most <6 mil (very few 10-20 mil), Contemp: ~15-30 mil
+
+---
 
 ## Step 2. 1st fastp
 
@@ -142,3 +146,26 @@ cd /scratch/r3clark/taeniamia_biguttata
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
+
+Checked that all files were successfully completed.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#checked that all 5 output files from fastqc screen were created for each file (should be 188 for each = 94 R1 & 94 R2)
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #188
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #188 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #188
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #188
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #188
+
+#checked all out files for any errors
+grep 'error' slurm-fqscrn.*out #nothing
+grep 'No reads in' slurm-fqscrn.*out #nothing
+```
+
+Everything looks good, no errors/missing files.
+
+Looked at fastqc screen results and looks fine. Albatross has more contamination than Contemporary, but most reads come back as 'No hits' or 'Hits on multiple genomes'. Albatross have a few single hits to bacteria/protists, but not many.
+
+---
