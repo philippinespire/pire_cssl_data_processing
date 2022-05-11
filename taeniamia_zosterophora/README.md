@@ -210,7 +210,22 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz"
 
 ---
 
-## Step 7. Set up mapping dir and get reference genome
+## Step 7. Calculate the percent of reads lost in each step
+
+Executed `read_calculator_cssl.sh`. Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_zosterophora
+
+#read_calculator_cssl.sh <Path to species home dir> <Path to dir with species raw files>
+sbatch read_calculator_cssl.sh "/scratch/r3clark/taeniamia_zosterophora" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora"
+```
+
+Inspected these tables to see where most of the data was lost.
+
+---
+
+## Step 8. Set up mapping dir and get reference genome
 
 Make mapping directory and move `*fq.gz` files over. Ran in `scratch` because don't have enough space in `home` directory.
 
@@ -278,7 +293,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-## Step 8. Map reads to reference - Filter Maps - Genotype Maps
+## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
 Ran in `scratch` because don't have enough space in `home` directory.
 
