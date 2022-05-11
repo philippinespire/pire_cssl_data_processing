@@ -1,0 +1,1162 @@
+
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkBAM...
+ 
+Mon May 9 11:15:18 EDT 2022 Files output to:  /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+Mon May 9 11:15:18 EDT 2022 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40              Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G    Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146             trimmomatic MINLEN (integer, mkREF only)                                                Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75              trimmomatic MINLEN (integer, mkBAM only)                                                Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20              trimmomatic LEADING:<quality> (integer, mkBAM only)                             Specifies the minimum quality required to keep a base.
+15              trimmomatic TRAILING:<quality> (integer, mkREF only)                    Specifies the minimum quality required to keep a base.
+20              trimmomatic TRAILING:<quality> (integer, mkBAM only)                    Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)                   Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2               trimmomatic ILLUMINACLIP:<seed mismatches> (integer)                    specifies the maximum mismatch count which will still allow a full match to be performed
+30              trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)             specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10              trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)                 specifies how accurate the match between any adapter etc. sequence must be against a read.
+20              trimmomatic SLIDINGWINDOW:<windowSize> (integer)                                specifies the number of bases to average across
+20              trimmomatic SLIDINGWINDOW:<windowQuality> (integer)                             specifies the average quality required.
+0               trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0               trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)   The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no              FixStacks (yes,no)                                                                                      Demultiplexing with stacks introduces anomolies.  This removes them.
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20              samtools view -q        Mapping_Min_Quality (integer)                   Remove reads with mapping qual less than this value
+yes             samtools view -F 4      Remove_unmapped_reads? (yes,no)                 Since the reads aren't mapped, we generally don't need to filter them
+no              samtools view -F 8      Remove_read_pair_if_one_is_unmapped? (yes,no)   If either read in a pair does not map, then the other is also removed
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)           Secondary alignments are reads that also map to other contigs in the reference genome
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)      You probably don't want to set this to yes
+no              samtools view -F 2048   Remove_supplementary_alignments? (yes,no)       We generally don't see any of these
+no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (yes,no)                         Set to no if OL mode
+0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
+0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
+30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+no                                      Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no      freebayes -J --pooled-discrete (yes|no)                         If yes, a pool of individuals is assumed to be the statistical unit of observation.
+no      freebayes -A --cnv-map (filename.bed or no)                     If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2       freebayes -p --ploidy (integer)                                 Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no      freebayes -r --region (filename.bed or no)                      Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0       only genotype read 1 (integer)                                  Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+0       Minimum Mean Depth of Coverage Per Individual                   Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0       freebayes -n --use-best-n-alleles (integer)                     reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30      freebayes -m --min-mapping-quality (integer)
+20      freebayes -q --min-base-quality (integer)
+-1      freebayes -E --haplotype-length (-1, 3, or integer)             Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0       freebayes    --min-repeat-entropy (0, 1, or integer)            Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp.
+10      freebayes    --min-coverage (integer)                           Require at least this coverage to process a site
+0.375   freebayes -F --min-alternate-fraction (decimal 0-1)             There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+2       freebayes -C --min-alternate-count (integer)                    Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+10      freebayes -G --min-alternate-total (integer)                    Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)         Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20      freebayes -Q --mismatch-base-quality-threshold (integer)        Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+50      freebayes -U --read-mismatch-limit (integer)                    Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+50      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes -e --read-indel-limit (integer)                       Exclude reads with more than N separate gaps. default: ~unbounded
+no      freebayes -w --hwe-priors-off (no|yes)                          Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no      freebayes -V --binomial-obs-priors-off (no|yes)                 Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no      freebayes -a --allele-balance-priors-off (no|yes)               Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no      freebayes    --no-partial-observations (no|yes)                 Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+Mon May 9 11:15:18 EDT 2022 Reading in variables from config file...
+
+Mon May 9 11:15:18 EDT 2022 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Mon May 9 11:15:18 EDT 2022  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Tzo-AMvi_001_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_002_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_003_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_004_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_005_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_006_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_007_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_008_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_009_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_010_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_011_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_012_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_013_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_014_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_015_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_016_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_017_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_019_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_021_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_022_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_023_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_024_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_025_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_026_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_027_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_028_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_029_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_030_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_031_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_032_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_033_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_034_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_035_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_036_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_037_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_038_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_039_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_040_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_041_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_042_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_043_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_044_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_045_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_046_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_047_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_048_Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_006-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_007-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_011-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_012-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_013-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_015-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_016-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_018-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_020-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_027-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_029-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_030-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_031-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_033-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_035-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_038-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_040-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_041-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_042-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_044-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_045-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_046-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_047-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_048-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_049-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_050-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_051-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_052-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_053-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_054-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_057-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_058-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_061-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_063-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_064-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_065-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_066-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_067-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_068-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_069-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_070-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_075-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_076-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_077-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_078-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_079-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_081-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_082-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_083-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_087-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_088-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_089-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_090-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_091-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_094-Ex1_L4_clmp.fp2_repr
+
+ 
+Mon May 9 11:15:19 EDT 2022  Using BWA to map reads.
+
+Mon May 9 11:37:22 EDT 2022  was ref assembled by dDocent? No. Expected insert length not modified for BWA
+
+Mon May 9 11:37:22 EDT 2022  Run bwa mem on non-dDocent files
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+
+Mon May 9 14:45:46 EDT 2022 mkBAM completed!
+
+Compress large filesMon May  9 14:45:46 EDT 2022
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM...
+ 
+Mon May 9 14:45:48 EDT 2022 Files output to:  /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+Mon May 9 14:45:48 EDT 2022 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40              Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G    Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146             trimmomatic MINLEN (integer, mkREF only)                                                Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75              trimmomatic MINLEN (integer, mkBAM only)                                                Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20              trimmomatic LEADING:<quality> (integer, mkBAM only)                             Specifies the minimum quality required to keep a base.
+15              trimmomatic TRAILING:<quality> (integer, mkREF only)                    Specifies the minimum quality required to keep a base.
+20              trimmomatic TRAILING:<quality> (integer, mkBAM only)                    Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)                   Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2               trimmomatic ILLUMINACLIP:<seed mismatches> (integer)                    specifies the maximum mismatch count which will still allow a full match to be performed
+30              trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)             specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10              trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)                 specifies how accurate the match between any adapter etc. sequence must be against a read.
+20              trimmomatic SLIDINGWINDOW:<windowSize> (integer)                                specifies the number of bases to average across
+20              trimmomatic SLIDINGWINDOW:<windowQuality> (integer)                             specifies the average quality required.
+0               trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0               trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)   The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no              FixStacks (yes,no)                                                                                      Demultiplexing with stacks introduces anomolies.  This removes them.
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20              samtools view -q        Mapping_Min_Quality (integer)                   Remove reads with mapping qual less than this value
+yes             samtools view -F 4      Remove_unmapped_reads? (yes,no)                 Since the reads aren't mapped, we generally don't need to filter them
+no              samtools view -F 8      Remove_read_pair_if_one_is_unmapped? (yes,no)   If either read in a pair does not map, then the other is also removed
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)           Secondary alignments are reads that also map to other contigs in the reference genome
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)      You probably don't want to set this to yes
+no              samtools view -F 2048   Remove_supplementary_alignments? (yes,no)       We generally don't see any of these
+no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (yes,no)                         Set to no if OL mode
+0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
+0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
+30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+no                                      Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no      freebayes -J --pooled-discrete (yes|no)                         If yes, a pool of individuals is assumed to be the statistical unit of observation.
+no      freebayes -A --cnv-map (filename.bed or no)                     If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2       freebayes -p --ploidy (integer)                                 Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no      freebayes -r --region (filename.bed or no)                      Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0       only genotype read 1 (integer)                                  Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+0       Minimum Mean Depth of Coverage Per Individual                   Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0       freebayes -n --use-best-n-alleles (integer)                     reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30      freebayes -m --min-mapping-quality (integer)
+20      freebayes -q --min-base-quality (integer)
+-1      freebayes -E --haplotype-length (-1, 3, or integer)             Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0       freebayes    --min-repeat-entropy (0, 1, or integer)            Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp.
+10      freebayes    --min-coverage (integer)                           Require at least this coverage to process a site
+0.375   freebayes -F --min-alternate-fraction (decimal 0-1)             There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+2       freebayes -C --min-alternate-count (integer)                    Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+10      freebayes -G --min-alternate-total (integer)                    Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)         Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20      freebayes -Q --mismatch-base-quality-threshold (integer)        Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+50      freebayes -U --read-mismatch-limit (integer)                    Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+50      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes -e --read-indel-limit (integer)                       Exclude reads with more than N separate gaps. default: ~unbounded
+no      freebayes -w --hwe-priors-off (no|yes)                          Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no      freebayes -V --binomial-obs-priors-off (no|yes)                 Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no      freebayes -a --allele-balance-priors-off (no|yes)               Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no      freebayes    --no-partial-observations (no|yes)                 Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+Mon May 9 14:45:48 EDT 2022 Reading in variables from config file...
+
+Mon May 9 14:45:49 EDT 2022 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Mon May 9 14:45:49 EDT 2022  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+
+ The namelist file already exists and was not recreated. 
+  If you experience errors, you should delete the namelist file.
+ 
+ The samples being processed are:
+  Tzo-AMvi_001_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_002_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_003_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_004_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_005_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_006_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_007_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_008_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_009_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_010_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_011_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_012_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_013_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_014_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_015_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_016_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_017_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_019_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_021_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_022_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_023_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_024_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_025_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_026_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_027_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_028_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_029_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_030_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_031_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_032_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_033_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_034_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_035_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_036_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_037_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_038_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_039_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_040_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_041_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_042_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_043_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_044_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_045_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_046_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_047_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_048_Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_006-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_007-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_011-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_012-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_013-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_015-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_016-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_018-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_020-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_027-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_029-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_030-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_031-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_033-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_035-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_038-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_040-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_041-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_042-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_044-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_045-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_046-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_047-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_048-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_049-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_050-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_051-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_052-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_053-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_054-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_057-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_058-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_061-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_063-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_064-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_065-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_066-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_067-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_068-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_069-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_070-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_075-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_076-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_077-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_078-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_079-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_081-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_082-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_083-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_087-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_088-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_089-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_090-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_091-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_094-Ex1_L4_clmp.fp2_repr
+
+
+ Mon May 9 14:45:50 EDT 2022 Filtering raw BAM Files
+
+  Mon May 9 14:45:50 EDT 2022  Applying Filter 1: removing paired reads mapping to different contigs, secondary, and supplementary alignments
+
+  Mon May 9 14:47:11 EDT 2022  Applying Filter 2: removing excessively soft clipped reads (and their mates)
+
+   Mon May 9 14:47:11 EDT 2022  SOFT_CLIP_CUTOFF is 3 * 10
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+
+  Mon May 9 14:53:23 EDT 2022  Indexing the filtered BAM files
+
+Compress large filesMon May  9 14:53:34 EDT 2022
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkVCF...
+ 
+Mon May 9 14:53:36 EDT 2022 Files output to:  /scratch/r3clark/taeniamia_zosterophora/mkBAM
+
+Mon May 9 14:53:36 EDT 2022 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40              Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G    Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146             trimmomatic MINLEN (integer, mkREF only)                                                Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75              trimmomatic MINLEN (integer, mkBAM only)                                                Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20              trimmomatic LEADING:<quality> (integer, mkBAM only)                             Specifies the minimum quality required to keep a base.
+15              trimmomatic TRAILING:<quality> (integer, mkREF only)                    Specifies the minimum quality required to keep a base.
+20              trimmomatic TRAILING:<quality> (integer, mkBAM only)                    Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)                   Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2               trimmomatic ILLUMINACLIP:<seed mismatches> (integer)                    specifies the maximum mismatch count which will still allow a full match to be performed
+30              trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)             specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10              trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)                 specifies how accurate the match between any adapter etc. sequence must be against a read.
+20              trimmomatic SLIDINGWINDOW:<windowSize> (integer)                                specifies the number of bases to average across
+20              trimmomatic SLIDINGWINDOW:<windowQuality> (integer)                             specifies the average quality required.
+0               trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0               trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)   The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no              FixStacks (yes,no)                                                                                      Demultiplexing with stacks introduces anomolies.  This removes them.
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20              samtools view -q        Mapping_Min_Quality (integer)                   Remove reads with mapping qual less than this value
+yes             samtools view -F 4      Remove_unmapped_reads? (yes,no)                 Since the reads aren't mapped, we generally don't need to filter them
+no              samtools view -F 8      Remove_read_pair_if_one_is_unmapped? (yes,no)   If either read in a pair does not map, then the other is also removed
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)           Secondary alignments are reads that also map to other contigs in the reference genome
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)      You probably don't want to set this to yes
+no              samtools view -F 2048   Remove_supplementary_alignments? (yes,no)       We generally don't see any of these
+no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (yes,no)                         Set to no if OL mode
+0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
+0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
+30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+no                                      Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no      freebayes -J --pooled-discrete (yes|no)                         If yes, a pool of individuals is assumed to be the statistical unit of observation.
+no      freebayes -A --cnv-map (filename.bed or no)                     If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2       freebayes -p --ploidy (integer)                                 Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no      freebayes -r --region (filename.bed or no)                      Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0       only genotype read 1 (integer)                                  Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+0       Minimum Mean Depth of Coverage Per Individual                   Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0       freebayes -n --use-best-n-alleles (integer)                     reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30      freebayes -m --min-mapping-quality (integer)
+20      freebayes -q --min-base-quality (integer)
+-1      freebayes -E --haplotype-length (-1, 3, or integer)             Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0       freebayes    --min-repeat-entropy (0, 1, or integer)            Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp.
+10      freebayes    --min-coverage (integer)                           Require at least this coverage to process a site
+0.375   freebayes -F --min-alternate-fraction (decimal 0-1)             There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+2       freebayes -C --min-alternate-count (integer)                    Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+10      freebayes -G --min-alternate-total (integer)                    Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)         Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20      freebayes -Q --mismatch-base-quality-threshold (integer)        Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+50      freebayes -U --read-mismatch-limit (integer)                    Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+50      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes -e --read-indel-limit (integer)                       Exclude reads with more than N separate gaps. default: ~unbounded
+no      freebayes -w --hwe-priors-off (no|yes)                          Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no      freebayes -V --binomial-obs-priors-off (no|yes)                 Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no      freebayes -a --allele-balance-priors-off (no|yes)               Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no      freebayes    --no-partial-observations (no|yes)                 Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+Mon May 9 14:53:36 EDT 2022 Reading in variables from config file...
+
+Mon May 9 14:53:37 EDT 2022 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Mon May 9 14:53:37 EDT 2022  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+
+ The namelist file already exists and was not recreated. 
+  If you experience errors, you should delete the namelist file.
+ 
+ The samples being processed are:
+  Tzo-AMvi_001_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_002_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_003_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_004_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_005_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_006_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_007_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_008_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_009_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_010_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_011_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_012_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_013_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_014_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_015_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_016_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_017_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_019_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_021_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_022_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_023_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_024_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_025_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_026_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_027_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_028_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_029_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_030_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_031_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_032_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_033_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_034_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_035_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_036_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_037_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_038_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_039_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_040_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_041_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_042_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_043_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_044_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_045_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_046_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_047_Ex1_L4_clmp.fp2_repr
+  Tzo-AMvi_048_Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_006-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_007-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_011-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_012-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_013-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_015-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_016-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_018-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_020-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_027-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_029-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_030-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_031-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_033-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_035-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_038-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_040-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_041-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_042-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_044-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_045-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_046-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_047-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_048-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_049-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_050-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_051-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_052-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_053-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_054-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_057-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_058-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_061-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_063-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_064-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_065-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_066-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_067-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_068-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_069-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_070-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_075-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_076-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_077-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_078-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_079-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_081-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_082-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_083-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_087-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_088-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_089-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_090-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_091-Ex1_L4_clmp.fp2_repr
+  Tzo-CMvi_094-Ex1_L4_clmp.fp2_repr
+
+
+Mon May 9 14:53:38 EDT 2022 Genotyping initiated...
+
+ Mon May 9 14:53:38 EDT 2022  Preparing files for genotyping...
+
+  Mon May 9 14:53:38 EDT 2022 Filtered BAM files detected with -RG.bam.
+
+  Mon May 9 14:53:38 EDT 2022 -RRG.bam file not detected, the individual bam files will be merged
+  Mon May 9 14:53:38 EDT 2022  samtools merge
+  Mon May 9 15:01:53 EDT 2022  samtools index
+  Mon May 9 15:21:40 EDT 2022  Estimating coverage of ref intervals & remove extreme copy number loci...
+                                                                                                                        
+                             Scatter plot of total depth of coverage for each contig in cat*RRG.bam.                    
+                                                                                                                        
+            +-------------------------------------------------------------------------------------------------------+   
+     700000 |-+              +               +                +                +                +               + +-|   
+            |                                                                                     'cov.dat'    *    |   
+            |                                                                                                       |   
+     600000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |                                                                                                       |   
+     500000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |                                                                                                       |   
+     400000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |                                                                                                       |   
+            |                                                                                                       |   
+     300000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |                                                                                                       |   
+     200000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |                                                                                                       |   
+     100000 |-+                                                                                                   +-|   
+            |                                                                                                       |   
+            |*               +               +                +                +                +               +   |   
+          0 +-------------------------------------------------------------------------------------------------------+   
+            0              50000           100000           150000           200000           250000          300000    
+                                                             Contig                                                     
+                                                                                                                        
+  Mon May 9 15:41:17 EDT 2022  Filtering contigs with low coverage...
+  Mon May 9 15:41:19 EDT 2022  Making the bed files...
+  Mon May 9 15:41:20 EDT 2022  Creating popmap...
+
+Tzo-AMvi_001_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_002_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_003_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_004_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_005_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_006_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_007_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_008_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_009_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_010_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_011_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_012_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_013_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_014_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_015_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_016_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_017_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_019_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_021_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_022_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_023_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_024_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_025_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_026_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_027_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_028_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_029_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_030_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_031_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_032_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_033_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_034_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_035_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_036_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_037_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_038_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_039_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_040_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_041_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_042_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_043_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_044_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_045_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_046_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_047_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-AMvi_048_Ex1_L4_clmp.fp2_repr	Tzo-AMvi
+Tzo-CMvi_006-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_007-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_011-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_012-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_013-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_015-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_016-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_018-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_020-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_027-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_029-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_030-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_031-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_033-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_035-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_038-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_040-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_041-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_042-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_044-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_045-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_046-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_047-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_048-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_049-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_050-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_051-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_052-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_053-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_054-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_057-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_058-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_061-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_063-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_064-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_065-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_066-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_067-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_068-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_069-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_070-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_075-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_076-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_077-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_078-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_079-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_081-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_082-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_083-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_087-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_088-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_089-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_090-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_091-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+Tzo-CMvi_094-Ex1_L4_clmp.fp2_repr	Tzo-CMvi
+
+ Mon May 9 15:41:25 EDT 2022  Genotyping individuals of ploidy 2 using freebayes...
+
+  Mon May 9 16:39:58 EDT 2022 Cleaning up files...
+
+ Mon May 9 16:40:01 EDT 2022 Assembling final VCF file...
+[E::hts_idx_push] Chromosome blocks not continuous
+tbx_index_build failed: TotalRawSNPs.ssl.Tzo-C-0402G-R1R2-contam-noisolate.vcf.gz
+
+Compress large filesMon May  9 18:34:15 EDT 2022
