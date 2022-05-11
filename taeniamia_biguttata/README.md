@@ -30,6 +30,18 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Tbi_Captu
 cp *FileNames.txt /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture
 ```
 
+Copied raw (renamed) `*fq.gz` files to the longterm Carpenter RC directory.
+
+```
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing
+mkdir taeniamia_biguttata
+
+cd taeniamia_biguttata
+mkdir fq_raw_cssl
+
+cp /home/e1garica/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture/* fq_raw_cssl/
+```
+
 ---
 
 ## Step 1.  Check data quality with fastqc
