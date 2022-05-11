@@ -169,3 +169,27 @@ Everything looks good, no errors/missing files.
 Looked at fastqc screen results and looks fine. Albatross has more contamination than Contemporary, but most reads come back as 'No hits' or 'Hits on multiple genomes'. Albatross have a few single hits to bacteria/protists, but not many.
 
 ---
+
+## Step 6. Repair fastq_screen paired end files
+
+Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
+
+Once finished, ran multiqc to assess quality.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#Multi_FastQC.sh "<file_extension>" "<indir>"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/scratch/r3clark/taeniamia_biguttata/fq_fp1_clmp_fp2_fqscrn_repaired"
+```
+
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSS6MZCN5GJ4SA2FOT6YT3ZI7Q).
+
+---
