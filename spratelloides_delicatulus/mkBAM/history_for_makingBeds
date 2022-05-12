@@ -1,0 +1,57 @@
+     1	13:49	cd shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/
+     2	13:49	cd ../lethrinus_variegatus/
+     3	13:49	cd lethrinus_variegatus/shotgun_raw_fq/
+     4	13:49	cd ../
+     5	13:50	chmod -R 770 lethrinus_variegatus/
+     6	13:50	cd lethrinus_variegatus/
+     7	13:50	l
+     8	13:50	l shotgun_raw_fq/
+     9	13:50	cd ..
+    10	13:51	cd ,,
+    11	9:35	cd shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM/
+    12	9:35	l
+    13	9:35	less length_contiges
+    14	9:35	less sorted_contigs
+    15	9:35	less sorted_contigs | wc -l
+    16	9:35	less length_contiges | wc -l
+    17	9:36	less sortedContigs_length
+    18	9:36	less sortedContigs_length | wc -l
+    19	9:36	less *bed
+    20	9:36	less *bed | wc -l
+    21	9:36	less s*bed | wc -l
+    22	9:37	l *bed
+    23	9:37	less c*bed | wc -l
+    24	9:38	l
+    25	9:39	less | sortedContigs_length
+    26	9:39	lesssortedContigs_length
+    27	9:39	less sortedContigs_length
+    28	9:39	less sortedContigs_length | wc -l
+    29	9:39	less sortedContigs_length
+    30	9:40	less c*bed | wc -l
+    31	9:40	less c*bed
+    32	9:40	less sortedContigs_length
+    33	9:42	awk 'FNR==NR{a[$0]++};FNR!=NR{if($1 in a){print}}' contigs_forProbes_Sde.bed sortedContigs_length | less -S
+    34	9:42	awk 'FNR==NR{a[$0]++};FNR!=NR{if($1 in a){print}}' contigs_forProbes_Sde.bed sortedContigs_length | less -S
+    35	9:47	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length contigs_forProbes_Sde.bed | less
+    36	9:47	l *contigs*
+    37	9:47	less sorted_contigs
+    38	9:48	sed 's/>//' sorted_contigs | less
+    39	9:48	sed -i 's/>//' sorted_contigs
+    40	9:48	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length sorted_contigs | less
+    41	9:48	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length sorted_contigs | less | wc -l
+    42	9:49	wc -l
+    43	9:49	cat contigs_forProbes_Sde.bed | cut -f1 | less
+    44	9:49	cat contigs_forProbes_Sde.bed | cut -f1 | less | wc -l
+    45	9:50	cat contigs_forProbes_Sde.bed | cut -f1 > contigs_forProbes
+    46	9:50	less contigs_forProbes
+    47	9:50	less contigs_forProbes | wc -l
+    48	9:50	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length contigs_forProbes | less
+    49	9:51	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length contigs_forProbes | wc -l
+    50	9:52	awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' sortedContigs_length contigs_forProbes > contigs_forProbes_contigL.bed
+    51	9:52	nano *sh
+    52	9:53	awk '{print $1"\t0\t$2"}' contigs_forProbes_contigL.bed | less
+    53	9:53	awk '{print $1"\t0\t"$2}' contigs_forProbes_contigL.bed | less
+    54	9:54	awk '{print $1"\t0\t"$2}' contigs_forProbes_contigL.bed > 2contigs_forProbes_contigL.bed
+    55	9:54	rm contigs_forProbes_contigL.bed
+    56	9:54	mv 2contigs_forProbes_contigL.bed contigs_forProbes_contigL.bed
+    57	9:55	history > history_for_makingBeds
