@@ -182,7 +182,9 @@ grep 'No reads in' slurm-fqscrn.*out #nothing
 
 Everything looks good, no errors/missing files.
 
-Looked at fastqc screen results and looks fine. Albatross has more contamination than Contemporary, but most reads come back as 'No hits' or 'Hits on multiple genomes'. Albatross have a few single hits to bacteria/protists, but not many.
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_zosterophora/fq_fp1_clmp_fp2_fqscrn/fqscrn_mqc.html?token=GHSAT0AAAAAABQHSGSTUXQMX7HVKDXLHYQOYT6O7IA).
+
+Albatross has more contamination than Contemporary, but most reads come back as 'No hits' or 'Hits on multiple genomes'. Albatross have a few single hits to bacteria/protists, but not many.
 
 ---
 
