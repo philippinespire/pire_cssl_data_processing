@@ -204,6 +204,21 @@ cd /scratch/r3clark/taeniamia_biguttata
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/scratch/r3clark/taeniamia_biguttata/fq_fp1_clmp_fp2_fqscrn_repaired"
 ```
 
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSS6MZCN5GJ4SA2FOT6YT3ZI7Q).
+[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/taeniamia_biguttata/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABQHSGSSYDGQMYMKQ7EB6TECYT6SIOQ).
+
+---
+
+## Step 7. Calculate the percent of reads lost in each step
+
+Executed `read_calculator_cssl.sh`. Ran in `scratch` because don't have enough space in `home` directory.
+
+```
+cd /scratch/r3clark/taeniamia_biguttata
+
+#read_calculator_cssl.sh <Path to species home dir> <Path to dir with species raw files>
+sbatch ../taeniamia_zosterophora/read_calculator_cssl.sh "/scratch/r3clark/taeniamia_biguttata" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata"
+```
+
+Inspected these tables to see where most of the data was lost.
 
 ---
