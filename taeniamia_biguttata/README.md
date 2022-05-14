@@ -219,6 +219,6 @@ cd /scratch/r3clark/taeniamia_biguttata
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/scratch/r3clark/taeniamia_biguttata" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata"
 ```
 
-Inspected these tables to see where most of the data was lost. Most data (~70-80%) lost during clumpify step, which makes sense (expect high level of duplication).
+Inspected these tables to see where most of the data was lost. Most data (~70-90%) lost during clumpify step, which makes sense (expect high level of duplication).
 
 ---
