@@ -220,10 +220,10 @@ Executed `read_calculator_cssl.sh`. Ran in `scratch` because don't have enough s
 cd /scratch/r3clark/taeniamia_zosterophora
 
 #read_calculator_cssl.sh <Path to species home dir> <Path to dir with species raw files>
-sbatch read_calculator_cssl.sh "/scratch/r3clark/taeniamia_zosterophora" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/scratch/r3clark/taeniamia_zosterophora" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora"
 ```
 
-Inspected these tables to see where most of the data was lost.
+Inspected these tables to see where most of the data was lost. Most data (~70-90%) lost during clumpify step, which makes sense (expect high level of duplication).
 
 ---
 
