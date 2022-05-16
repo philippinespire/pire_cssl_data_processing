@@ -1,30 +1,41 @@
 [M::bwa_idx_load_from_disk] read 0 ALT contigs
-[M::process] read 3614782 sequences (379157348 bp)...
-[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (118, 1225480, 208, 61)
+[M::process] read 3359228 sequences (400000119 bp)...
+[M::process] read 332800 sequences (39706291 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (98, 1171514, 29, 50)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
-[M::mem_pestat] (25, 50, 75) percentile: (41, 46, 48)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (27, 62)
-[M::mem_pestat] mean and std.dev: (47.09, 8.04)
-[M::mem_pestat] low and high boundaries for proper pairs: (15, 79)
+[M::mem_pestat] (25, 50, 75) percentile: (46, 54, 61)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (16, 91)
+[M::mem_pestat] mean and std.dev: (53.66, 10.11)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 106)
 [M::mem_pestat] analyzing insert size distribution for orientation FR...
-[M::mem_pestat] (25, 50, 75) percentile: (72, 99, 128)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 240)
-[M::mem_pestat] mean and std.dev: (101.61, 41.11)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 296)
+[M::mem_pestat] (25, 50, 75) percentile: (101, 127, 156)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 266)
+[M::mem_pestat] mean and std.dev: (129.77, 41.66)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 321)
 [M::mem_pestat] analyzing insert size distribution for orientation RF...
-[M::mem_pestat] (25, 50, 75) percentile: (22, 50, 139)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 373)
-[M::mem_pestat] mean and std.dev: (80.88, 83.87)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 490)
+[M::mem_pestat] (25, 50, 75) percentile: (62, 164, 164)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 368)
+[M::mem_pestat] mean and std.dev: (130.08, 60.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 470)
 [M::mem_pestat] analyzing insert size distribution for orientation RR...
-[M::mem_pestat] (25, 50, 75) percentile: (28, 59, 89)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 211)
-[M::mem_pestat] mean and std.dev: (58.67, 35.48)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 272)
+[M::mem_pestat] (25, 50, 75) percentile: (59, 71, 103)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 191)
+[M::mem_pestat] mean and std.dev: (80.66, 29.90)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 235)
 [M::mem_pestat] skip orientation FF
 [M::mem_pestat] skip orientation RF
 [M::mem_pestat] skip orientation RR
-[M::mem_process_seqs] Processed 3614782 reads in 1563.502 CPU sec, 40.926 real sec
+[M::mem_process_seqs] Processed 3359228 reads in 2865.601 CPU sec, 110.993 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 116749, 2, 8)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (101, 128, 157)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 269)
+[M::mem_pestat] mean and std.dev: (129.86, 41.75)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 325)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 332800 reads in 169.251 CPU sec, 5.329 real sec
 [main] Version: 0.7.17-r1188
 [main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr\tSM:Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr\tPL:Illumina reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr.R1.fq.gz Tzo-AMvi_020_Ex1_L4_clmp.fp2_repr.R2.fq.gz
-[main] Real time: 58.394 sec; CPU: 1579.974 sec
+[main] Real time: 134.658 sec; CPU: 3052.849 sec

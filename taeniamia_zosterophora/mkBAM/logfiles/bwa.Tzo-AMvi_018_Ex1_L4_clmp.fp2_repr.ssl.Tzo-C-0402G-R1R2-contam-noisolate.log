@@ -1,30 +1,41 @@
 [M::bwa_idx_load_from_disk] read 0 ALT contigs
-[M::process] read 3574374 sequences (371345802 bp)...
-[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (148, 1096899, 106, 173)
+[M::process] read 3390952 sequences (400000096 bp)...
+[M::process] read 266570 sequences (31590876 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (120, 1075495, 8, 244)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
-[M::mem_pestat] (25, 50, 75) percentile: (27, 45, 101)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 249)
-[M::mem_pestat] mean and std.dev: (69.33, 54.98)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 323)
+[M::mem_pestat] (25, 50, 75) percentile: (72, 100, 142)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 282)
+[M::mem_pestat] mean and std.dev: (101.44, 44.74)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 352)
 [M::mem_pestat] analyzing insert size distribution for orientation FR...
-[M::mem_pestat] (25, 50, 75) percentile: (71, 97, 125)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 233)
-[M::mem_pestat] mean and std.dev: (99.11, 40.22)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 287)
-[M::mem_pestat] analyzing insert size distribution for orientation RF...
-[M::mem_pestat] (25, 50, 75) percentile: (17, 44, 111)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 299)
-[M::mem_pestat] mean and std.dev: (53.45, 55.24)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 393)
+[M::mem_pestat] (25, 50, 75) percentile: (99, 125, 154)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 264)
+[M::mem_pestat] mean and std.dev: (127.15, 41.11)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 319)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] analyzing insert size distribution for orientation RR...
-[M::mem_pestat] (25, 50, 75) percentile: (36, 48, 75)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 153)
-[M::mem_pestat] mean and std.dev: (58.10, 35.56)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 200)
+[M::mem_pestat] (25, 50, 75) percentile: (46, 75, 102)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 214)
+[M::mem_pestat] mean and std.dev: (75.93, 32.74)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 270)
 [M::mem_pestat] skip orientation FF
-[M::mem_pestat] skip orientation RF
 [M::mem_pestat] skip orientation RR
-[M::mem_process_seqs] Processed 3574374 reads in 1676.869 CPU sec, 44.323 real sec
+[M::mem_process_seqs] Processed 3390952 reads in 3103.672 CPU sec, 119.731 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 83511, 0, 21)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (99, 126, 154)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 264)
+[M::mem_pestat] mean and std.dev: (127.67, 41.41)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 319)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (75, 102, 102)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (21, 156)
+[M::mem_pestat] mean and std.dev: (96.95, 23.85)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 192)
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 266570 reads in 144.942 CPU sec, 4.644 real sec
 [main] Version: 0.7.17-r1188
 [main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr\tSM:Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr\tPL:Illumina reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr.R1.fq.gz Tzo-AMvi_018_Ex1_L4_clmp.fp2_repr.R2.fq.gz
-[main] Real time: 61.494 sec; CPU: 1692.605 sec
+[main] Real time: 142.895 sec; CPU: 3266.746 sec
