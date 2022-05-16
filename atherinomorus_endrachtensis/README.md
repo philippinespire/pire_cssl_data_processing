@@ -550,6 +550,17 @@ module load vcftools
 vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed diploid_contigs.bed --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-6-6.diploid.vcf
 ```
 
+Also, need to rename individuals in vcf (shorten names to match downstream `popmap` files).
+
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+
+module load container_env/0.1
+module load bcftools
+
+crun bcftools reheader -s rename_samples.txt TotalRawSNPs.rad.RAW-6-6.diploid.vcf > TotalRawSNPs.rad.RAW-6-6.diploid.rename.vcf
+```
+
 Set-up filtering for monomorphic sites only.
 
 ```
@@ -563,7 +574,7 @@ Ran `fltrVCF.sbatch` for monomorphic sites.
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
-#VCF file should be the TotalRawSNPs.diploid file made after the "make monomorphic VCF" step
+#VCF file should be the TotalRawSNPs.diploid.rename file made after the "make monomorphic VCF" step
 #settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
 sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
 
@@ -585,7 +596,7 @@ Ran `fltrVCF.sbatch` for polymorphic sites.
 cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic/polymorphic_filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
-#VCF file should be the TotalRawSNPs.diploid file made after the "make monomorphic VCF" step
+#VCF file should be the TotalRawSNPs.diploid.rename file made after the "make monomorphic VCF" step
 #popmap file should be file used in step 16, that accounts for any cryptic structure (*HWEsplit extension)
 #settings should match the settings used when filtering the original VCF file (step 9) AND ones used when filtering after AB step (step 14)
 sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
