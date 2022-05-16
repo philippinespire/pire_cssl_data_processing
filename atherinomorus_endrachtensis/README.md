@@ -503,13 +503,13 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ## Step 17. Make VCF with monomorphic loci
 
-Moved the files needed for genotyping from `mkBAM` to `mkVCF`
+Moved the files needed for genotyping from `mkBAM` to `mkVCF_monomorphic`. Did this in `scratch` because don't have enough room in `home`.
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+cd /scratch/r3clark/PIRE-Aen-Ham
 mkdir mkVCF_monomorphic
 mv mkBAM/mkVCF_octoploid/*bam* mkVCF_monomorphic
-mv mkBAM/mkVCF_octoploid/namelist* mkVCF_monomorphic
+cp mkBAM/mkVCF_octoploid/namelist* mkVCF_monomorphic
 cp mkBAM/*fasta mkVCF_monomorphic
 cp mkBAM/config.5.cssl mkVCF_monomorphic/
 ```
@@ -521,15 +521,15 @@ yes      freebayes    --report-monomorphic (no|yes)                      Report 
 ```
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 mv config.5.cssl config.5.cssl.monomorphic
 ```
 
-Genotyped
+Genotyped.
 
 ```
-cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
-sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic #NOTE: ran on Turing bc Wahab queue was backed up
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+sbatch /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic #NOTE: ran on Turing bc Wahab queue was backed up
 ```
 
 ---
@@ -541,7 +541,7 @@ Will filter for monomorphic & polymorphic loci separately, then merge the VCFs t
 Because of polyploidy issues, first filtered to a list of contigs that are "diploid" (those found in `greenlist_loci_full_HD_2.5.txt`).
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 
 salloc
 module load vcftools
@@ -553,7 +553,7 @@ vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed diploid_contigs.bed --recode -
 Also, need to rename individuals in vcf (shorten names to match downstream `popmap` files).
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 
 module load container_env/0.1
 module load bcftools
@@ -564,19 +564,19 @@ crun bcftools reheader -s rename_samples.txt TotalRawSNPs.rad.RAW-6-6.diploid.vc
 Set-up filtering for monomorphic sites only.
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
-cp ../scripts/config.fltr.ind.cssl.mono .
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+cp /home/r3clark/PIRE/pire_cssl_data_processing/scripts/config.fltr.ind.cssl.mono .
 ```
 
 Ran `fltrVCF.sbatch` for monomorphic sites.
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #VCF file should be the TotalRawSNPs.diploid.rename file made after the "make monomorphic VCF" step
 #settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 9)
-sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
+sbatch /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/fltrVCF.sbatch config.fltr.ind.cssl.mono
 
 #troubleshooting will  be necessary
 ```
@@ -585,9 +585,9 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.mono
 Set-up filtering for polymorphic sites only.
 
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVCF_monomorphic
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 mkdir polymorphic_filter
-cp ../../scripts/config.fltr.ind.cssl.poly .
+cp /home/r3clark/PIRE/pire_cssl_data_processing/scripts/config.fltr.ind.cssl.poly .
 ```
 
 Ran `fltrVCF.sbatch` for polymorphic sites.
@@ -599,7 +599,73 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkVC
 #VCF file should be the TotalRawSNPs.diploid.rename file made after the "make monomorphic VCF" step
 #popmap file should be file used in step 16, that accounts for any cryptic structure (*HWEsplit extension)
 #settings should match the settings used when filtering the original VCF file (step 9) AND ones used when filtering after AB step (step 14)
-sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
+sbatch /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/fltrVCF.sbatch config.fltr.ind.cssl.poly
 
 #troubleshooting will be necessary
+```
+
+---
+
+## Step 19. Merge monomorphic & polymorphic VCF files
+
+Check monomorphic & polymorphic VCF file sto make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
+
+* mono.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_032, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_018, AHam_024, AHam_027, AHam_046, AHam_052, AHam_058, AHam_059.
+* poly.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_032, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_018, AHam_024, AHam_027, AHam_046, AHam_052, AHam_058, AHam_059. 
+
+All match. No need to remove more individuals from either VCF file.
+
+Sorted each VCF file.
+
+```
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+
+module load vcftools
+
+#sort monomorphic
+vcf-sort aen.mono.rad.RAW-6-6.Fltr17.11.recode.vcf > aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf
+
+#sort polymorphic
+vcf-sort aen.poly.rad.RAW-6-6.Fltr17.19.recode.vcf > gaen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf
+```
+
+Zipped each VCF file.
+
+```
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#zip monomorphic
+bgzip -c aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf > aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz
+
+#zip polymorphic
+bgzip -c  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf >  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz
+```
+
+Indexed each VCF file.
+
+```
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#index monomorphic
+tabix  aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz
+
+#index polymorphic
+tabix  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz
+```
+
+Merged files.
+
+```
+cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+
+module load container_env bcftools
+module load samtools/1.9
+
+crun bcftools concat --allow-overlaps  aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz -O z -o aen.all.recode.nomissing.sorted.vcf.gz
+
+tabix aen.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
