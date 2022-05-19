@@ -418,13 +418,13 @@ mkdir pop_structure
 cd pop_structure
 
 #copy final VCF file made from fltrVCF step to `pop_structure` directory
-cp ../filterVCF/*Fltr07.9.vcf .
+cp ../filterVCF/*Fltr07.8.vcf .
 
 #rename individuals (too many underscores in original names)
 module load container_env
 module load bcftools
 
-crun bctools reheader -s sample_names.txt -o Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.vcf
+crun bctools reheader -s sample_names.txt -o Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.8.rename.vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.8.vcf
 ```
 
 Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
@@ -435,7 +435,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_
 module load anaconda
 conda activate popgen
 
-plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf --allow-extra-chr --pca --out PIRE.Aen.Ham.preHWE
+plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.8.rename.vcf --allow-extra-chr --pca --out PIRE.Aen.Ham.preHWE
 conda deactivate
 ```
 
@@ -447,7 +447,7 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_
 module load anaconda
 conda activate popgen
 
-plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.9.rename.vcf --allow-extra-chr --make-bed --out PIRE.Aen.Ham.preHWE
+plink --vcf Aen.postAB_HD2.5.rad.RAW-6-6.Fltr07.8.rename.vcf --allow-extra-chr --make-bed --out PIRE.Aen.Ham.preHWE
 
 awk '{$1=0;print $0}' PIRE.Aen.Ham.preHWE.bim > PIRE.Aen.Ham.preHWE.bim.tmp
 mv PIRE.Aen.Ham.preHWE.bim.tmp PIRE.Aen.Ham.preHWE.bim
@@ -466,7 +466,7 @@ admixture PIRE.Aen.Ham.preHWE.bed 1 --cv > PIRE.Aen.Ham.preHWE.log1.out #run fro
 conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure`).
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/pop_structure`).
 
 ## Step 16. Filter VCF file for HWE
 
