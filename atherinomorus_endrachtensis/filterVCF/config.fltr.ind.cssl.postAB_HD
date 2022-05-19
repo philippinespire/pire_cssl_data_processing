@@ -11,7 +11,7 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -b /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM                                                                  # path to *.bam files
         fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
         fltrVCF -d /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mapped.rad.RAW-6-6.bed           # bed file used in genotyping
-        fltrVCF -v /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCFFltr15.9.greenlistHD2.5.vcf  # vcf file to filter
+        fltrVCF -v /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/Fltr15.9.greenlist.vcf  # vcf file to filter
         fltrVCF -g /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/reference.rad.RAW-6-6.fasta      # reference genome
         fltrVCF -p /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/popmap.rad.RAW-6-6                # popmap file
         fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
