@@ -605,7 +605,8 @@ module load vcftools
 vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed diploid_contigs.bed --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-6-6.diploid.vcf
 
 cd polymorphic_filter
-vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed ../diploid_contigs.bed --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-6-6.diploid.vcf
+vcftools --vcf aen.poly.rad.RAW-6-6.Fltr15.9.recode.vcf --bed ../diploid_contigs.bed --recode --recode-INFO-all --out aen.poly.rad.RAW-6-6.Fltr15.9.recode.diploid.vcf
+mv aen.poly.rad.RAW-6-6.Fltr15.9.recode.diploid.vcf.recode.vcf aen.poly.rad.RAW-6-6.Fltr15.9.recode.diploid.vcf
 ```
 
 Finally, finished the rest of the filtering pipeline.
@@ -633,10 +634,11 @@ cp /home/r3clark/PIRE/pire_cssl_data_processing/scripts/config.fltr.ind.cssl.pol
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #vcf path should point to vcf made after removing contigs not in greenlist (the file just created by vcftools)
 #popmap file should be file used in step 16, that accounts for any cryptic structure (*HWEsplit extension)
-#ONLY running filters 11 09 10 04 13 05 16 07 18 17 (in that order) -- settngs should match the settings used when filtering the original VCF file (steps 14 & 16)
+#ONLY running filters 11 09 10 04 13 05 16 07 18 (in that order) -- settngs should match the settings used when filtering the original VCF file (steps 14 & 16)
 sbatch /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/fltrVCF.sbatch config.fltr.ind.cssl.poly.AB
 
 #troubleshooting will be necessary
+#here, not running 17 at end because removes sites due to one (small) pop (AHam-B) having a lot of missing sites
 ```
 
 ---
