@@ -602,7 +602,8 @@ salloc
 module load vcftools
 
 #diploid_contigs.bed is tab-delimited (bed) file with contig names, starting and ending positions each in a column (here, start = 1 and end = 100000 for al
-vcftools --vcf TotalRawSNPs.rad.RAW-6-6.vcf --bed diploid_contigs.bed --recode --recode-INFO-all --out TotalRawSNPs.rad.RAW-6-6.diploid.vcf
+vcftools --vcf aen.mono.rad.RAW-6-6.Fltr16.6.recode.vcf --bed diploid_contigs.bed --recode --recode-INFO-all --out aen.mono.rad.RAW-6-6.Fltr16.6.recode.diploid.vcf
+mv aen.mono.rad.RAW-6-6.Fltr16.6.recode.diploid.vcf.recode.vcf aen.mono.rad.RAW-6-6.Fltr16.6.recode.diploid.vcf
 
 cd polymorphic_filter
 vcftools --vcf aen.poly.rad.RAW-6-6.Fltr15.9.recode.vcf --bed ../diploid_contigs.bed --recode --recode-INFO-all --out aen.poly.rad.RAW-6-6.Fltr15.9.recode.diploid.vcf
@@ -647,8 +648,8 @@ sbatch /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/
 
 Check monomorphic & polymorphic VCF file sto make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
 
-* mono.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_032, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_018, AHam_024, AHam_027, AHam_046, AHam_052, AHam_058, AHam_059.
-* poly.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_032, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_018, AHam_024, AHam_027, AHam_046, AHam_052, AHam_058, AHam_059. 
+* mono.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_024, AHam_032, AHam_046, AHam_052, AHam_058, AHam_059.
+* poly.VCF: filtering removed AHam_004, AHam_005, AHam_010, AHam_016, AHam_020, AHam_021, AHam_023, AHam_029, AHam_031, AHam_036, AHam_037, AHam_038, AHam_040, AHam_043, AHam_053, AHam_057, AHam_011, AHam_024, AHam_032, AHam_046, AHam_052, AHam_058, AHam_059. 
 
 All match. No need to remove more individuals from either VCF file.
 
@@ -660,10 +661,10 @@ cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 module load vcftools
 
 #sort monomorphic
-vcf-sort aen.mono.rad.RAW-6-6.Fltr17.11.recode.vcf > aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf
+vcf-sort aen.mono.rad.RAW-6-6.Fltr17.5.recode.vcf > aen.mono.rad.RAW-6-6.Fltr17.5.recode.sorted.vcf 
 
 #sort polymorphic
-vcf-sort aen.poly.rad.RAW-6-6.Fltr17.19.recode.vcf > gaen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf
+vcf-sort aen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.vcf > aen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.sorted.vcf
 ```
 
 Zipped each VCF file.
@@ -674,10 +675,10 @@ cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 module load samtools/1.9
 
 #zip monomorphic
-bgzip -c aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf > aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz
+bgzip -c aen.mono.rad.RAW-6-6.Fltr17.5.recode.sorted.vcf > aen.mono.rad.RAW-6-6.Fltr17.5.recode.sorted.vcf.gz
 
 #zip polymorphic
-bgzip -c  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf >  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz
+bgzip -c  aen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.sorted.vcf > aen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.sorted.vcf.gz
 ```
 
 Indexed each VCF file.
@@ -688,10 +689,10 @@ cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 module load samtools/1.9
 
 #index monomorphic
-tabix  aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz
+tabix  aen.mono.rad.RAW-6-6.Fltr17.5.recode.sorted.vcf.gz
 
 #index polymorphic
-tabix  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz
+tabix  aaen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.sorted.vcf.gz
 ```
 
 Merged files.
@@ -702,7 +703,7 @@ cd /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
 module load container_env bcftools
 module load samtools/1.9
 
-crun bcftools concat --allow-overlaps  aen.mono.rad.RAW-6-6.Fltr17.11.recode.sorted.vcf.gz  aen.poly.rad.RAW-6-6.Fltr17.19.recode.sorted.vcf.gz -O z -o aen.all.recode.nomissing.sorted.vcf.gz
+crun bcftools concat --allow-overlaps  aen.mono.rad.RAW-6-6.Fltr17.5.recode.sorted.vcf.gz  aen.poly.rad.RAW-6-6.Fltr18.9.HWE.recode.sorted.vcf.gz -O z -o aen.all.recode.sorted.vcf.gz
 
-tabix aen.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+tabix aen.all.recode.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
