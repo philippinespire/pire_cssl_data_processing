@@ -581,25 +581,129 @@ write.table(greenlist_toprint, file = "greenlist_loci_full_HD_2.5.txt",
             col.names = FALSE, row.names = FALSE, 
             quote = FALSE, sep = "\t")
 
+###############################################################################################
+
+######## Check distribution of diploid loci across contigs ########
+#do these "diploid" loci cluster on the same contigs?
+#want only loci on contigs with mostly diploid-passing loci (<80%) --> these most likely to be truly diploid
+
+#read in if running separately
+#hetero_data_chrom_pos_era <- read.csv("diploid_filtering/meanAB_data_era_pos.csv", header = TRUE)
+#pass_diploid <- read.table("diploid_filtering/greenlist_loci_full_HD_2.5.txt", header = FALSE) #9251
+pass_diploid <- greenlist_toprint
+  colnames(pass_diploid) <- c("chrom", "pos")
+  pass_diploid$chrom_pos <- paste0(pass_diploid$chrom, "_", pass_diploid$pos) #add unique chrom_pos column
+    pass_diploid <- pass_diploid[order(pass_diploid$chrom_pos), ]
+  pass_diploid$status <- "pass" #add status (these loci passed HD diploid filters)
+
+#subset het dataset to just loci on contigs with at least one passing locus
+chrom_pass <- hetero_data_chrom_pos_era[hetero_data_chrom_pos_era$chrom %in% 
+                                          pass_diploid$chrom, ]
+
+#get just unique chrom_pos (not duplicates)
+chrom_pass_unique <- as.data.frame(unique(chrom_pass$chrom_pos))
+  colnames(chrom_pass_unique) <- c("chrom_pos")
+  chrom_pass_unique <- separate(chrom_pass_unique, chrom_pos, 
+                                c("CHROM", "contig", "num", "pos"), 
+                                sep = "_", remove = FALSE)
+  chrom_pass_unique$chrom <- paste0(chrom_pass_unique$CHROM, "_", 
+                                    chrom_pass_unique$contig, "_", chrom_pass_unique$num)
+  chrom_pass_unique <- subset(chrom_pass_unique, select = c("chrom_pos", "chrom", "pos"))
+
+#### get list of loci on "diploid" chrom that failed HD filters ####
+fail_diploid <- as.data.frame(setdiff(chrom_pass_unique$chrom_pos, 
+                                      pass_diploid$chrom_pos)) #23552
+  colnames(fail_diploid) <- c("chrom_pos")
+  fail_diploid <- separate(fail_diploid, chrom_pos, 
+                           c("CHROM", "contig", "num", "pos"), 
+                           sep = "_", remove = FALSE)
+  fail_diploid$chrom <- paste0(fail_diploid$CHROM, "_", 
+                               fail_diploid$contig, "_", fail_diploid$num)
+  fail_diploid <- subset(fail_diploid, select = c("chrom_pos", "chrom", "pos"))
+  fail_diploid$status <- "fail" #add status (these loci failed HD diploid filters)
+
+#### build full dataset of loci on contigs with at leaast one passing locus ####
+full_loci_list <- as.data.table(rbind(pass_diploid, fail_diploid))
+  full_loci_list <- full_loci_list[order(full_loci_list$chrom),] #32803
+
+##### count status by contig ####
+status_by_chrom <- full_loci_list[, .N, by = .(chrom, status)]
+
+#converting to wide to get % loci that pass/contig
+status_by_chrom_wide <- as.data.table(pivot_wider(data = status_by_chrom, 
+                                                  names_from = status,
+                                                  values_from = N))
+status_by_chrom_wide[is.na(status_by_chrom_wide)] <- 0 #change NAs to 0
+
+#calculate % loci that pass HD filters/contig
+status_by_chrom_wide$perc_pass <- status_by_chrom_wide$pass/(status_by_chrom_wide$pass + 
+                                                               status_by_chrom_wide$fail)
+
+#### bin contigs by # total loci ####
+#want to see, if contig is 100% passing, how many loci are actually on it (1 or 20?)
+#calculate total num loci found on each contig
+status_by_chrom_wide$numloci <- status_by_chrom_wide$pass + status_by_chrom_wide$fail
+
+#create column to populate by # of loci bins (e.g. 1 locus, 2-5, 6-10, etc.)
+status_by_chrom_wide$numloci_range <- "first" #create empty column to populate 
+status_by_chrom_wide$numloci_range[status_by_chrom_wide$numloci == 1] <- "1"
+status_by_chrom_wide$numloci_range[status_by_chrom_wide$numloci  >=2 & 
+                                     status_by_chrom_wide$numloci <=5] <- "2-5"
+status_by_chrom_wide$numloci_range[status_by_chrom_wide$numloci >= 6 & 
+                                     status_by_chrom_wide$numloci <= 10] <- "6-10"
+status_by_chrom_wide$numloci_range[status_by_chrom_wide$numloci >= 11 & 
+                                     status_by_chrom_wide$numloci <= 20] <- "11-20"
+status_by_chrom_wide$numloci_range[status_by_chrom_wide$numloci >20] <- ">20"
+
+#histogram plot by % pass
+perc_pass_plot <- ggplot(data = status_by_chrom_wide, 
+                         aes(x = perc_pass, fill = numloci_range)) + 
+  geom_histogram(binwidth = 0.1) + 
+  theme_minimal()
+perc_pass_plot #somewhat bimodal, makes sense
+
+#get list of passing contigs (those with at least 80% of SNPs that pass original HD filters)
+status_by_chrom_wide_0.8 <- subset(status_by_chrom_wide, 
+                                   status_by_chrom_wide$perc_pass > 0.79000000000) #554 contigs
+  sum(status_by_chrom_wide_0.8$numloci) #2264 loci
+  
+#print out list of diploid contigs
+#printing out as bed file, will subset VCF to this list of contigs
+greenlist_contigs <- status_by_chrom_wide_0.8[, "chrom"]
+  greenlist_contigs$chromStart <- 1 #adding pseudo-chromStart column
+  greenlist_contigs$chromEnd <- 1000000 #adding pseudo-chromEnd column (needs to be large enough to include all loci)
+
+#write out list with header
+write.table(greenlist_contigs, file = "diploid_filtering/diploid_contigs.bed", 
+            col.names = TRUE, row.names = FALSE, 
+            quote = FALSE, sep = "\t")
+
 ####################################################################################################################
 
 ######## Visualize results ########
-#pull out het, AB, etc data for all loci in green list (those with at least one het)
-Alb_Contemp_greenlist <- hetero_data_chrom_pos_era[hetero_data_chrom_pos_era$chrom_pos %in% 
-                                                     greenlist_full_split$chrom_pos, ]
+#subset original het_by_era to only chrom w/ >80% passing loci
+chrom_pass_0.8 <- chrom_pass[chrom_pass$chrom %in% 
+                               greenlist_contigs$chrom, ] #smaller --> prob bc alot of these loci that pass filters are homozygous across eras
 
-#visualize HDplot
-Alb_Contemp_greenlist %>%
-  ggplot(aes(x=mean_allele_balance,
+#add diploid filter status
+chrom_pass_0.8 <- merge(chrom_pass_0.8, 
+                         full_loci_list[, c('chrom_pos', 'status')], all.x = TRUE)
+
+#add SD column
+chrom_pass_0.8$read_SD <- sqrt(0.5*(1-0.5)*chrom_pass_0.8$total_num_reads)
+
+#add z-score (equivalent to D from McKinney et al. 2017)
+chrom_pass_0.8$z_score <- 
+  ((chrom_pass_0.8$total_num_reads/2) - 
+     chrom_pass_0.8$total_num_altreads)/chrom_pass_0.8$read_SD
+
+#HD plot
+chrom_pass_0.8 %>%
+  ggplot(aes(x=z_score,
              y = mean_heterozygosity_obs_locus,
-             color = era)) +
+             color = status)) +
   geom_point() +
-  scale_x_continuous(limits = c(0, 1)) +
+  scale_x_continuous(limits = c(-25, 25)) +
   labs(y = "percent heterozygotes") +
   facet_grid(era ~ .,
              scales="free_y")
-
-ggsave(paste('HDplot_zscore2.5_het0.6.png', 
-             sep = ""), 
-       height = 8, 
-       width = 9)
