@@ -96,4 +96,4 @@ ___
 10. OPTIONAL: Filter monomorphic `vcf`
 
 11. OPTIONAL: Assess changes in diversity, population structure, etc. through time.
-   * Follow scripts/code in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
+    * Follow scripts/code in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
