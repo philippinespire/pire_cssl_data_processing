@@ -307,4 +307,6 @@ cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
 sbatch ../dDocentHPC.sbatch config.5.cssl
 ```
 
+Handing off to Kyra Fitz for further processing.
+
 ---
