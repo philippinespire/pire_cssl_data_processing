@@ -4,7 +4,7 @@
 
 The purpose of this repo is to document the processing and analysis of capture shotgun data for the Philippines PIRE Project. 
 
-For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  **The Gmi dir & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
+For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  **The Gmi dir (all steps) & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
 ---
 
@@ -32,7 +32,7 @@ A list of ongoing CSSL projects can be found below. If you are working on an CSS
 |Tbi | On ODU HPC | George | QC finished (reads repaired as of 5/10) |
 |Tzo | On ODU HPC | Kyra | unfiltered VCF created as of 5/10 |
 |Hte | On ODU HPC | Brendan | Data generated with incorrect probes, some pops missing |
-|Hmi | On ODU HPC | Unassigned | QC needs to be done |
+|Hmi | On ODU HPC | Brendan | QC needs to be done |
 
 ---
 
