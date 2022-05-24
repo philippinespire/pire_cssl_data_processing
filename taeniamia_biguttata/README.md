@@ -221,4 +221,6 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh
 
 Inspected these tables to see where most of the data was lost. Most data (~70-90%) lost during clumpify step, which makes sense (expect high level of duplication).
 
+Handing off to George Bonsall for further processing.
+
 ---
