@@ -91,6 +91,9 @@ ___
    * Update popmap file based on results from Step 9
    * Run Filters 18 & 17 in [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl)
 
-9. Make `vcf` with monomorphic loci
+9. OPTIONAL: Make `vcf` with monomorphic loci
 
-10. Filter monomorphic `vcf`
+10. OPTIONAL: Filter monomorphic `vcf`
+
+11. OPTIONAL: Assess changes in diversity, population structure, etc. through time.
+   * Follow scripts/code in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
