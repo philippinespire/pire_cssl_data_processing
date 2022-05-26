@@ -237,6 +237,10 @@ mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
 
 ```
+#if you haven't already, you first need to clone the dDocentHPC.git repo
+#cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+#git clone https://github.com/cbirdlab/dDocentHPC.git
+
 cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC
 git pull
 
