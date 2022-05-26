@@ -1,0 +1,29 @@
+
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Thu May 26 11:45:08 EDT 2022 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl
+
+Thu May 26 11:45:08 EDT 2022 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl'
+	Filters are set to '01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07'
+	CutoffCode is set to '.ssl.Tzo-C-0402G-R1R2-contam-noisolate'
+	BAM_PATH is set to '../mkBAM'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	ERROR:-<	../mkBAM/TotalRawSNPs.ssl.Tzo-C-0402G-R1R2-contam-noisolate-off.vcf.gz does not exist
