@@ -21,22 +21,23 @@ library(pophelper)
 
 #### import PCA data ####
 #read in data
-eigenval <- read.csv("PIRE.Aen.Ham.HWE.noLD.eigenval", header = FALSE, sep = " ") #eigenvalues
-data_PC <- read.csv("../PIRE_Gmi_Ham/PCAs/PIRE.Gmi.Ham.preHWE_eigenvec", header = FALSE, sep = " ") #eigenvectors
+eigenval <- read.csv("PIRE.Aen.Ham.HWE.eigenval", header = FALSE, sep = " ") #eigenvalues
+data_PC <- read.csv("PIRE.Aen.Ham.HWE.eigenvec", header = FALSE, sep = " ") #eigenvectors
   head(data_PC) #double check data is read in correctly 
 
 #add column names
 colnames(data_PC) <-c ('Population', 'Individual', 'PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 
                     'PC11', 'PC12', 'PC13', 'PC14', 'PC15', 'PC16', 'PC17', 'PC18', 'PC19', 'PC20')
+  data_PC$Population <- as.character(data_PC$Population) #make sure values in population column are characters
 
 #add columns for Location & Era
 #fill out data for each column based on specific conditions, then rearrange the data to have Location & Era on the first 2 columns
 data_PC <- data_PC %>%
-  mutate (Location =
+  mutate(Location =
             case_when(endsWith(Population, "Bas") ~ "Basud",
                       endsWith(Population, "Ham") ~ "Hamilo",
                       endsWith(Population, "Bat") ~ "Hamilo")) %>% #add lines as needed, depending on dataset
-  mutate (Era =
+  mutate(Era =
             case_when(endsWith(Population, "ABas") ~ "Albatross",
                       endsWith(Population, "AHam") ~ "Albatross",
                       endsWith(Population,"CBat") ~ "Contemporary",
