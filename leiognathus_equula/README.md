@@ -106,6 +106,6 @@ Potential issues:
 * number of reads - okay, not great
   * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
 
-Handing off to John Whalen for further processing.
+Handing off to Brendan Reid for further processing.
 
 ---
