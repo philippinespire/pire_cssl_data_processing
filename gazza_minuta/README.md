@@ -327,7 +327,7 @@ admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run fro
 conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Read `*.eigenvec` file into Excel to create a .csv file. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure`).
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure`).
 
 ---
 
