@@ -67,7 +67,7 @@ ___
     * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
 
 4. Map reads, filter `bam` files and genotype
-    * Use [dDocentHPC.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch)
+    * Use [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC)
       * Use [`config.5.cssl`](https://github.com/cbirdlab/dDocentHPC/blob/master/configs/config.5.cssl) when running dDocentHPC as a starting point for the settings
 
 5. Filter the `vcf` file
