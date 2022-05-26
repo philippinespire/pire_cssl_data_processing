@@ -164,6 +164,10 @@ ls ../mkBAM
 Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
 
 ```
+#if you haven't already, you first need to clone the dDocentHPC.git repo
+#cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+#git clone https://github.com/cbirdlab/dDocentHPC.git
+
 cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC
 git pull
 
@@ -230,6 +234,11 @@ sbatch ../dDocentHPC.sbatch config.5.cssl
 Pulled latest changes from fltrVCF and rad_haplotyper repos
 
 ```
+#if you haven't already, you first need to clone the fltrVCF.git repo & the rad_haplotyper.git repo
+#cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+#git clone https://github.com/cbirdlab/fltrVCF.git
+#git clone https://github.com/cbirdlab/rad_haplotyper.git
+
 cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF
 git pull
 
