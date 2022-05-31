@@ -305,6 +305,7 @@ all_data %>%
              scales = "free")
 
 ggsave(paste(outDIR, 
+             "/", 
              outFilePREFIX,
              'HIST-AB-INDxPOS.png', 
              sep = ""), 
@@ -409,6 +410,14 @@ hetero_data_chrom_pos_era %>%
   facet_grid(era ~ .,
              scales="free_y")
 
+ggsave(paste(outDIR, 
+             "/",
+             outFilePREFIX,
+             'SCAT-PROP_HETxABxERA.png', 
+             sep = ""), 
+       height = 9, 
+       width = 6.5)
+
 hetero_data_chrom_pos_era %>%
   filter(mean_heterozygosity_obs_locus < 0.6,
          mean_allele_balance > 0.375 & mean_allele_balance < 0.625) %>%
@@ -485,6 +494,7 @@ all_data %>%
              scales = "free")
 
 ggsave(paste(outDIR, 
+             "/",
              outFilePREFIX,
              'HIST-AB-INDxPOS-ALB.png', 
              sep = ""), 
@@ -511,6 +521,7 @@ all_data %>%
              scales = "free")
 
 ggsave(paste(outDIR, 
+             "/", 
              outFilePREFIX,
              'HIST-AB-INDxPOS-CONT.png', 
              sep = ""), 
@@ -546,6 +557,7 @@ all_data %>%
        x = "Indiviudal ID") 
 
 ggsave(paste(outDIR, 
+             "/", 
              outFilePREFIX,
              'BOXPL-AB-INDxPOS.png', 
              sep = ""), 
@@ -564,6 +576,7 @@ all_data %>%
        x = "Indiviudal ID") 
 
 ggsave(paste(outDIR, 
+             "/", 
              outFilePREFIX,
              'BOXP-DP-INDxPOS.png', 
              sep = ""), 
@@ -599,6 +612,7 @@ all_data %>%
   
 
 ggsave(paste(outDIR, 
+             "/", 
              outFilePREFIX,
              'BARPL-GT-INDxPOS.png', 
              sep = ""), 

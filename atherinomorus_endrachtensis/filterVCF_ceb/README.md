@@ -22,7 +22,7 @@ cp ../../scripts/fltrVCF.sbatch .
 added `export SINGULARITY_BIND=/home/r3clark` to fltrVCF.sbatch so that I'd be able to read from Rene's dir on compute node
 
 ```
-cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/fitlerVCF
+cd /home/cbird/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 # this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch fltrVCF.sbatch config.fltr.ind.cssl
