@@ -1,3 +1,5 @@
+# DNA files
+*.gfa
 *.fq
 *.fq.*
 *.fastq
@@ -16,9 +18,24 @@
 *depth*
 *lmiss*
 *before*
-dDocentHPC/
-fltrVCF/
-rad_haplotyper/
 *zip
 *.json
 *.json.*
+hmmsearch_out.log
+
+
+# Directories
+dDocentHPC/
+fltrVCF/
+rad_haplotyper/
+SPA*/
+SPAdes*/
+SPAdes_R1R2_noIsolate_decontam/
+busco_c*/
+busco_s*/
+busco_d*/
+*/logs/probes_ann*out
+probes_ann*
+pire_*_processing/
+augustus_config_dir/
+*busco_c*/
