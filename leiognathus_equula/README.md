@@ -106,6 +106,238 @@ Potential issues:
 * number of reads - okay, not great
   * Alb: ~half <20 mil & ~half >20 mil, Contemp: ~10-20 mil
 
-Handing off to Brendan Reid for further processing.
-
+Handing off to Brendan Reid for further processing - moved files to /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula for subsequent work.
+ 
 ---
+
+## Step 3. Clumpify
+
+I am copying the runCLUMPIFY bash and sbatch scripts to the Leq dir and modifying the sbatch script to avoid the bad node on Wahab.
+
+Adding this line to the sbatch script:
+
+```
+#SBATCH --exclude=e1-w6420b-[01-24]
+```
+
+Ran clumpify with the following code:
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+mkdir fq_fp1_clmp
+bash runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/breid 10
+```
+
+Checking clumpify (copy checkClumpify_EG.R to fq_fp1_clmp dir first):
+
+```
+enable_lmod
+module load container_env mapdamage2
+crun R < checkClumpify_EG.R --no-save
+```
+
+Clumpify Successfully worked on all samples
+
+## Step 4. Second trim
+
+Again copying script and modifying to avoid the bad node on Wahab.
+
+```
+sbatch runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
+
+Still more variation in read number for Albatross than contemporary samples. Otherwise looks surprisingly good - low duplication & % adapter, >99% passed filter across the board. I do see an adapter motif in the first 15 bp and a sawtooth pattern in GC content but I think we had decided to retain the first 15 bp, so not doing any additional trimming now.
+
+## Step 5. Run fastq_screen
+
+Again copying script and modifying to avoid the bad node on Wahab.
+
+```
+sbatch runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn
+```
+ 
+Checking output - should have 228 output files, looks like one failed: 
+
+```
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #227
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #227 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #228
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #227
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #227
+```
+
+Checking logs for errors:
+
+```
+grep 'error' slurm-fqscrn.*out
+slurm-fqscrn.691484.42.out:Can't write temp subset file: Input/output error at /opt/conda/bin/fastq_screen line 1630, <IN_SUBSET> line 58228412.
+grep 'No reads in' slurm-fqscrn.*out
+slurm-fqscrn.691484.42.out:No reads in Leq-ABas_021_Ex1_L3_clmp.fp2_r1.fq.gz, skipping
+```
+
+Checked the offending file but it looks fine? Trying to run again individually...
+
+```
+salloc
+
+bash
+
+export SINGULARITY_BIND=/home/e1garcia
+module load container_env pire_genome_assembly/2021.07.01
+
+FQSCRN=fastq_screen
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+ALIGNER=bowtie2
+FILTER=000000000000
+SUBSET=0
+OUTDIR=fq_fp1_clmp_fp2_fqscrn
+
+crun $FQSCRN \
+	--aligner $ALIGNER \
+	--conf $CONFFILE \
+	--threads 20 \
+	--tag \
+	--force \
+	--filter $FILTER \
+	--subset $SUBSET \
+	--outdir $OUTDIR \
+	fq_fp1_clmp_fp2/Leq-ABas_021_Ex1_L3_clmp.fp2_r1.fq.gz
+```
+
+All looks good now - 228 files!
+
+## Step 6. Repair
+
+Running from Leq directory:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
+
+And running MultiQC:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/fq_fp1_clmp_fp2_fqscrn_repaired"
+```
+
+Check and perhaps rerun the QC steps - I don't think we got multiQC output after the fqscrn step. But we can draw some conclusions from the read loss calculations.
+
+## Step 7. Reads lost
+
+Running read loss calculator script (note the folder naming conventions for the raw data was different than in the original script, so I copied to here and changed before running):
+
+```
+sbatch read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/leiognathus_equula"
+```
+
+Reads remaining lowest at clumify step - more variable for Albatross (~50-80%) than for contemporary (~55-60%).
+
+Also a decent number of reads lost in fqscrn - again reads remaining lower/more variable in Albatross (40-85% of reads remaining) compared to contemporary (most >90%) suggesting more contamination in Albatross.
+
+Still quite a lot of reads remaining for most libraries - almost all >1M.
+
+## Step 8. Set up mapping dir, get reference genome
+
+Make mapping dir and move `*fq.gz` files over.
+
+```
+mkdir mkBAM
+
+mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+```
+
+I got an error message when I tried to pull most recent changes to the scripts folder in Eric's pire_cssl. Cloning the dDocent repo to the species folder as a workaround. Then copied `config.5.cssl` over.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC
+
+git pull
+
+#error: cannot update the ref 'refs/remotes/origin/main': unable to append to '.git/logs/refs/remotes/origin/main': Permission denied
+
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+
+git clone https://github.com/cbirdlab/dDocentHPC.git
+
+git pull
+
+#works!
+
+cp dDocentHPC/configs/config.5.cssl mkBAM
+
+```
+
+Because there is no whole genome reference for A. endrachtensis, I am using the full "raw" reference fasta from the RAD data used to make probes.
+
+```
+#the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
+#<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
+#this naming is a little messy, but it makes the ref 100% tracable back to the source
+#it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+
+cp /home/e1garcia/PIRE_ProbeTargets/05_Leiognathus_equula/PIRE_LeiognathusEquula.2.2.probes4development.fasta mkBAM/reference.rad.RAW-2-2.fasta
+```
+
+Update the config file with reference genome info
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAM
+
+vi config.5.cssl
+``` 
+
+Inserted the appropriate reference genome values into the Cutoff 1 and 2 fields. Also changed the minimum mapping quality to 30 (value in the config file was originally 80) since that seems to be what was used in other cssl pipelines and 80 seems quite high! 
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
+rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+RAW-2-2               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)
+4               bwa mem -B Mapping_MisMatch_Value (integer)
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+------------------------------------------------------------------------------------------------------------------
+```
+
+## Step 9. Map reads to reference - Filter Maps - Genotype Maps
+
+Giving this a try
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAM
+
+sbatch ../dDocentHPC/dDocentHPC.sbatch config.5.cssl
+```
+
+This didn't work with the sbatch script in the cloned dDocent repo! Checking the script in Rene's Tbi repo it looks quite different.
+
+I think the repo cloned from cbird's github is not configured correctly for wahab? I don't know why we are directed to clone this repo.
+
+I am now trying with the existing script in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbatch config.5.cssl
+```
+
+This did not work either! Because it tries to direct to a dDocent folder in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/ which does not exist.
+
+So I think I see why we - we clone dDocent to the cssl /scripts directory and it finds the dDocent scripts there? But there is no dDocent folder in the that folder now and I'm not sure if I can pull. So going to try to customize a script that finds the right files in the folder I've cloned to Leq folder. Need to add singularity bind command too?
+
+```
+cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/dDocentHPC.sbatch config.5.cssl
+```
+
+Working!
