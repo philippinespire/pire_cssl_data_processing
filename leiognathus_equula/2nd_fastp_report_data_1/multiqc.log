@@ -1,0 +1,685 @@
+[2022-06-03 20:00:02,940] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-06-03 20:00:02,940] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/cbird/.multiqc_config.yaml
+[2022-06-03 20:00:02,940] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-06-03 20:00:02,940] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc ./fq_fp1_clmp_fp2 -n ./fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-06-03 20:00:03,729] multiqc                                            [WARNING]  MultiQC Version v1.12 now available!
+[2022-06-03 20:00:03,730] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-06-03 20:00:03,730] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc ./fq_fp1_clmp_fp2 -n ./fq_fp1_clmp_fp2/2nd_fastp_report
+[2022-06-03 20:00:03,730] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+[2022-06-03 20:00:03,730] multiqc                                            [INFO   ]  Template    : default
+[2022-06-03 20:00:03,730] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-06-03 20:00:03,730] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fq_fp1_clmp_fp2
+[2022-06-03 20:00:03,731] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-06-03 20:00:03,732] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpv0aikp1e
+[2022-06-03 20:00:03,982] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_077-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:03,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_045-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_036_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_010_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_084-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_076-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_017-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_081-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_091-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_021-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_085-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_045-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_079-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_004-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_063-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_096-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_030-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_084-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_026-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_042_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_032-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_021-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_002_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_054_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_043_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_050-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_062-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_006-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-2_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_046-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_041_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,011] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_001_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,011] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_038-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_081-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_051-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_051-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_064-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_042_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_075-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_032_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_035_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_047_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_005_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_054-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_074-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_092-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_016_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_086-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_053_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_087-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_058-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_020-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_043_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,016] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_086-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_040_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_036-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_018_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_081-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_023_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_007-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_015-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_073-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_014_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_026_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,021] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_006_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,021] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_058_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_054_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_033_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,023] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_035_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,023] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_062-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,023] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_046-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_066-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_053_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_048_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_031_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_073-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_029-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_040-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_025_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_022_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_009-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_033-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_049-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_047-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_018_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_047_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_022_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_026_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_016-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_044_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_015-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_037-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_085-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_028_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_029_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_068-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_045_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,033] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_041-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,033] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_047_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_027_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_042-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_008-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_015_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_065-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_063-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_012_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-2_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_034_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_016_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_023_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_021_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_008_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_033-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_046-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_070-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_028_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_092-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_054-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_075-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_066-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_008_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_038-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_033_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_006-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_026_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_039_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_030_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_002_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_059-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_036-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_014_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_015_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_009_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_069-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_017_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_020_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_005_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_025-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_001_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_077-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_041_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_012-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_042-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_055-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_068-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_047-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_093-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_056_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_018_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_077-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_011_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_029_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_079-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_065-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_029-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_035_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_058-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_055_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_056_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_091-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_030-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_044_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_009-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_025_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_096-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_004_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_040_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_054-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_084-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_021_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_070-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_030_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_009_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_034_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_034_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_074-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_059-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_012-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_006-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_012_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_053_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_036_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_091-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_050-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_055-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_059-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_093-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_030_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_008-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_011_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_087-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_089-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_045-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_017-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_052_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_029-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_001_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_042-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_063-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_026-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_064-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_005-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_005-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_016-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_052_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_005_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_016_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_033-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_032_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_022_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_022-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_020_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-2_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_007-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_042_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_007_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_089-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_050-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_066-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_007_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_051-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_017_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_054_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_012_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_095-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_014_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_046_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_022-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_055_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_069-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_085-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_089-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_025-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_004-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_008-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_003_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_007-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_068-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_002_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_027_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_095-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_008_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_076-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_023_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_032-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_056_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_017-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_022-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_073-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_037-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_040-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_086-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_007_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_074-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_093-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_070-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_047-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_040-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_017_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_027_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_040_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_028-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_016-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_055-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_079-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_045_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_012-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2nd_fastp_report.html
+[2022-06-03 20:00:04,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_003_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_044_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_015_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_015-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_036-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_029_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_020-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_021_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_062-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_087-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_069-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_028-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_049-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_036_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_011_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,089] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_006_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,089] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_046_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_075-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_026-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_019_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_041_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_004_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_046_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_009-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_019_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_095-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_025_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_010_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_043_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_021-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_096-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_030-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_058_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_033_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_064-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_031_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_003_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_010_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_005-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_028_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_028-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_048_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_058-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_039_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_049-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_031_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_014-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_048_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_058_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_006_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_032-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_065-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_041-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_020_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_039_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_014-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_014-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_004-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_092-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_004_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_052_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_038-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_020-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_009_Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_045_Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_055_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_032_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_076-Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_025-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_037-Ex1_L3_clmp.fp2_r2.fq.gz
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_019_Ex1_L3_clmp.r1r2_fastp.html
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_041-Ex1_L3_clmp.fp2_r1.fq.gz
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_022-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_021-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_044_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_068-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_012-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_029_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_017_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_050-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_040_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_021-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_020-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_059-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_045_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_002_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_037-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_014-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_025-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_041-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_029-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_033-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_010_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_016-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_054-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_077-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_048_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_041-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_026-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_070-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_092-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_034_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_058_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_036-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_029_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_026-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_032-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_039_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_002_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_008_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_028-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_062-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_025-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_006_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_052_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_068-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_042-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_012_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_041_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_056_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_023_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_027_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_009_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_079-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_030-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_033_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_051-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_022-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_062-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_073-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_035_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_018_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_054_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_084-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_048_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_007-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_008_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_004_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_031_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_039_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_022_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_036_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-2_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_006-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_095-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_084-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_065-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_046-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_086-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_091-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_059-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_015-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_046_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_047_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,110] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_045_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_004_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_033-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_047_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_001_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_055_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_014_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_076-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_085-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_053_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_035_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_005-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_089-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_040-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_032_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_009-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_055_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_056_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_046-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_005-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_085-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_055-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_087-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_051-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_075-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_047-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_096-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_004-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_032_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_081-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_018_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_028_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_037-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_019_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_040-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_076-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_023_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_041_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_007_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_079-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_063-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_042-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_006-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_015-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_040_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_089-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_025_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_047-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_016_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_014-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_066-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_050-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_017_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_003_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_030-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_011_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_063-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_026_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_006_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_075-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_021_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_003_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_054_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_030_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_092-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_052_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_008-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_074-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_055-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_030_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_017-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_005_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_031_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_020-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_008-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_049-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_058-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_038-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_009-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_073-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_012_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_070-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_091-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_036-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_007-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_044_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_034_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_093-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_054-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_004-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_095-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_042_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_020_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_010_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_045-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_065-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_001_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_022_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_005_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_014_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_043_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_011_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_013_Ex1-2_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_064-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_053_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_081-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_028_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_077-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_016_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_012-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_038-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_066-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_074-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_058-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_064-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_016-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_032-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_015_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_033_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_029-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_049-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_020_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_015_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_096-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_069-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_045-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_009_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_026_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_086-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_046_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_027_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_042_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_019_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_058_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_025_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_036_Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_007_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_028-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_093-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_021_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-ABas_043_Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_069-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_087-Ex1_L3_clmp.fp2_fail.fq.gz
+[2022-06-03 20:00:04,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Leq-CMig_017-Ex1_L3_clmp.fp2_unprd.fq.gz
+[2022-06-03 20:00:04,527] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-06-03 20:00:04,528] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-06-03 20:00:04,529] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-06-03 20:00:04,534] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-06-03 20:00:04,539] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-06-03 20:00:04,543] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-06-03 20:00:04,548] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-06-03 20:00:04,555] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-06-03 20:00:04,559] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-06-03 20:00:04,562] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-06-03 20:00:04,566] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-06-03 20:00:04,570] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-06-03 20:00:04,574] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-06-03 20:00:04,578] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-06-03 20:00:04,582] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-06-03 20:00:04,585] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-06-03 20:00:04,590] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-06-03 20:00:04,595] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-06-03 20:00:04,601] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-06-03 20:00:04,612] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-06-03 20:00:04,622] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-06-03 20:00:04,636] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-06-03 20:00:04,644] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-06-03 20:00:04,651] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-06-03 20:00:04,658] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-06-03 20:00:04,666] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-06-03 20:00:04,673] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-06-03 20:00:04,680] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-06-03 20:00:04,684] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-06-03 20:00:04,690] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-06-03 20:00:04,696] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-06-03 20:00:04,702] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-06-03 20:00:04,707] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-06-03 20:00:04,713] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-06-03 20:00:04,718] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-06-03 20:00:04,722] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-06-03 20:00:04,730] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-06-03 20:00:04,735] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-06-03 20:00:04,738] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-06-03 20:00:04,750] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-06-03 20:00:04,754] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-06-03 20:00:04,757] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-06-03 20:00:04,761] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-06-03 20:00:04,765] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-06-03 20:00:04,769] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-06-03 20:00:04,773] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-06-03 20:00:04,778] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-06-03 20:00:04,782] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-06-03 20:00:04,787] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-06-03 20:00:04,791] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-06-03 20:00:04,796] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-06-03 20:00:04,800] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-06-03 20:00:04,807] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-06-03 20:00:04,811] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-06-03 20:00:04,816] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-06-03 20:00:04,820] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-06-03 20:00:04,824] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-06-03 20:00:04,827] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-06-03 20:00:04,831] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-06-03 20:00:04,835] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-06-03 20:00:04,839] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-06-03 20:00:04,843] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-06-03 20:00:04,847] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-06-03 20:00:04,859] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-06-03 20:00:04,864] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-06-03 20:00:04,867] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-06-03 20:00:04,872] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-06-03 20:00:04,876] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-06-03 20:00:04,879] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-06-03 20:00:04,883] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-06-03 20:00:04,887] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-06-03 20:00:04,892] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-06-03 20:00:04,897] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-06-03 20:00:04,901] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-06-03 20:00:04,905] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-06-03 20:00:04,909] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-06-03 20:00:04,913] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-06-03 20:00:04,917] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-06-03 20:00:04,920] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-06-03 20:00:04,924] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-06-03 20:00:04,928] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-06-03 20:00:04,933] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-06-03 20:00:04,937] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-06-03 20:00:06,435] multiqc.modules.fastp.fastp                        [INFO   ]  Found 114 reports
+[2022-06-03 20:00:27,394] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2022-06-03 20:00:27,398] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-06-03 20:00:27,403] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-06-03 20:00:27,407] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-06-03 20:00:27,413] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-06-03 20:00:27,417] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-06-03 20:00:27,421] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-06-03 20:00:27,425] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-06-03 20:00:27,429] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-06-03 20:00:27,433] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-06-03 20:00:27,619] multiqc                                            [INFO   ]  Compressing plot data
+[2022-06-03 20:00:30,422] multiqc                                            [WARNING]  Previous MultiQC output found! Adjusting filenames..
+[2022-06-03 20:00:30,423] multiqc                                            [WARNING]  Use -f or --force to overwrite existing reports instead
+[2022-06-03 20:00:30,423] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report_1.html
+[2022-06-03 20:00:30,423] multiqc                                            [INFO   ]  Data        : 2nd_fastp_report_data_1
+[2022-06-03 20:00:30,423] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpv0aikp1e/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_fastp_report_data_1'
+[2022-06-03 20:00:31,304] multiqc                                            [INFO   ]  MultiQC complete
