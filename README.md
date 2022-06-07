@@ -28,11 +28,11 @@ A list of ongoing CSSL projects can be found below. If you are working on an CSS
 |Gmi | On ODU HPC | Rene | Pop gen (ongoing) |
 |Lle | On ODU HPC | Rene | Pop gen (ongoing) |
 |Sde | On ODU HPC | Eric | QC complete? |
-|Leq | On ODU HPC | John | QC started (fastp1 done as of 5/2) |
+|Leq | On ODU HPC | John + Brendan | QC started (fastp1 done as of 5/2) |
 |Tbi | On ODU HPC | George | unfiltered VCF created (as of 5/27) |
 |Tzo | On ODU HPC | Kyra | unfiltered VCF created (as of 5/10) |
 |Hte | On ODU HPC | Brendan | Data generated with incorrect probes, some pops missing |
-|Hmi | On ODU HPC | Brendan | QC needs to be done |
+|Hmi | On ODU HPC | Ivan | QC needs to be done |
 
 ---
 
