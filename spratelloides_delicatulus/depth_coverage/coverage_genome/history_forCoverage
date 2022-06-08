@@ -1,0 +1,55 @@
+     1	13:49	cd shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/
+     2	13:49	cd ../lethrinus_variegatus/
+     3	13:49	cd lethrinus_variegatus/shotgun_raw_fq/
+     4	13:49	cd ../
+     5	13:50	chmod -R 770 lethrinus_variegatus/
+     6	13:50	cd lethrinus_variegatus/
+     7	13:50	l
+     8	13:50	l shotgun_raw_fq/
+     9	13:50	cd ..
+    10	13:51	cd ,,
+    11	14:41	cd shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM/coverage/
+    12	14:42	less -S out_Sde_ReadStats.tsv
+    13	14:42	less -S out_Sde_ReadStats.tsv
+    14	14:43	less -S out_Sde_ReadStats.tsv | paste - - - - | less -S
+    15	14:44	less -S out_Sde_ReadStats.tsv | paste - - - | less -S
+    16	14:44	less -S out_Sde_ReadStats.tsv | paste - - - - - | less -S
+    17	14:51	less -S out_Sde_ReadStats.tsv | paste - - - - - | less -S
+    18	14:51	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f2,4 | less -S
+    19	14:52	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | less -S
+    20	14:53	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-SdA.*\t/\t/' | less -S
+    21	14:53	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-SdA.*\t/\t/' | less -S
+    22	14:55	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-SdA.*\t/\t/' | less -S
+    23	14:56	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-SdA.*\t/\t/' | sort -k1 | less -S
+    24	14:56	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-Sd.*\t/\t/' | sort -k1 -k2 | less -S
+    25	14:57	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed 's/-Sd.*\t/\t/' | sort -k1 -k2 | less -S
+    26	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1 -k2 | less -S
+    27	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1 -k2 | less -S
+    28	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1,1 -k2,2 | less -S
+    29	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2 | less -S
+    30	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -kr2 | less -S
+    31	14:58	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2r | less -S
+    32	14:59	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1,1 -k2,2 | less -S
+    33	15:01	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1 -k2 | less -S
+    34	15:01	man sort
+    35	15:03	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2 -k1 | less -S
+    36	15:04	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1 -k2,2n | less -S
+    37	15:05	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k1 -k2n | less -S
+    38	15:06	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -t"\t" -k1 -k2n | less -S
+    39	15:06	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -t'\t' -k1 -k2n | less -S
+    40	15:07	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -n | less -S
+    41	15:08	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2n | less -S
+    42	15:08	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2n | sort -k1 | less -S
+    43	15:08	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2n -k1 | less -S
+    44	15:09	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | sort -k2n -k1 | less -S
+    45	15:09	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '-A' | sort -k2n | less -S
+    46	15:09	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-A' | sort -k2n | less -S
+    47	15:10	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-AMat' | sort -k2n | less -S
+    48	15:10	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-CMat' | sort -k2n | less -S
+    49	15:11	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-CMat' | sort -k2n | awk '{ print $2>20 }' | less -S
+    50	15:11	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-CMat' | sort -k2n | awk '{ print if $2>20 }' | less -S
+    51	15:11	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-CMat' | sort -k2n | less -S
+    52	15:12	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-AMar' | sort -k2n | less -S
+    53	15:12	less -S out_Sde_ReadStats.tsv | paste - - - - - | cut -f1,4 | sed -e 's/-Sd.*\t/\t/' -e 's/_.*\t/\t/' | grep '\-CHam' | sort -k2n | less -S
+    54	15:13	history > history_for coverage
+    55	15:13	history > history_forCoverage
