@@ -385,9 +385,17 @@ This did not work - I think this sbatch will work with the TAMUCC computer only?
 
 Grabbed the sbathc from pire_cssl_data_processing/scripts, modified with singularity bind and correct file path for bash
 
-Running:
+Running (lle.A output prefix):
 
 ```
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
 ```
+
+This worked - almost all of the Albatross individuals were filtered out due to missingness. Check allele balance as well!
+
+I ran another filtering iteration with more permissive settings for missingness (0.75). Still lost multiple Albatross individuals but retained >20. These are the "lle.B" files. 
+
+```
+sbatch fltrVCF.sbatch config.fltr.ind.cssl.2
+``` 
 
