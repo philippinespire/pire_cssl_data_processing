@@ -385,7 +385,7 @@ This did not work - I think this sbatch will work with the TAMUCC computer only?
 
 Grabbed the sbathc from pire_cssl_data_processing/scripts, modified with singularity bind and correct file path for bash
 
-Running (lle.A output prefix):
+Running (leq.A output prefix):
 
 ```
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
@@ -393,9 +393,44 @@ sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
 
 This worked - almost all of the Albatross individuals were filtered out due to missingness. Check allele balance as well!
 
-I ran another filtering iteration with more permissive settings for missingness (0.75). Still lost multiple Albatross individuals but retained >20. These are the "lle.B" files. 
+I ran another filtering iteration with more permissive settings for missingness (0.75). Still lost multiple Albatross individuals but retained >20. These are the "leq.B" files. 
 
 ```
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.2
 ``` 
 
+## Step 11. Initial popgen / checking for population structure / cryptic species.
+
+Make a directory to work in:
+
+``` 
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+mkdir pop_structure
+cd pop_structure
+```
+
+Copy final VCF file made from fltrVCF step to `pop_structure` directory.
+```
+cp ../fltrVCF/*Fltr07.18.vcf .
+```
+
+Run PCA and prepare files for Admixture in PLINK.
+
+```
+conda activate popgen
+plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --pca --out PIRE.leq.B.preHWE
+plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --make-bed --out PIRE.leq.B.preHWE
+awk '{$1=0;print $0}' PIRE.leq.B.preHWE.bim > PIRE.leq.B.preHWE.bim.tmp
+mv PIRE.leq.B.preHWE.bim.tmp PIRE.leq.B.preHWE.bim
+```
+
+Run Admixture for k={1-5].
+```
+bash
+for K in 1 2 3 4 5; \
+do admixture --cv PIRE.leq.B.preHWE.bed $K | tee log${K}.out; done
+exit
+conda deactivate
+```
+
+Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure).
