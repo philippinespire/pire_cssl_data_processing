@@ -341,3 +341,53 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/
 ```
 
 Working!
+
+## Step X. Preliminary filter (pre-HWE, before we check for structure/cryptic species) 
+
+Clone Chris's fltrVCF and rad_haplotyper repos to species dir first 
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula 
+git clone https://github.com/cbirdlab/fltrVCF.git
+git clone https://github.com/cbirdlab/rad_haplotyper.git 
+
+```
+
+Move to fltrVCF dir, copy and modify config file (change name to indicate this is the first filter).
+
+```
+cd fltrVCF
+cp config_files/config.fltr.ind.cssl ./
+mv mv config.fltr.ind.cssl config.fltr.ind.cssl.1
+```
+
+See config file for changed settings - omitting the last 2 steps
+
+Also modifying sbatch file to remove partition, email settings
+
+Prior to running filter I'm going to check and see if any individuals have a huge amount of missing data
+
+```
+module load vcftools
+cd mkBAM
+vcftools --vcf TotalRawSNPs.rad.RAW-2-2.vcf --missing-indv
+```
+
+Contemporaries have generally <20% missing data, some up to 40%. Albatross are generally >40%, some as high as 90%. I don't see any clear cutoff though so I will filter everything.
+
+Filtering with:
+
+```
+sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
+```
+
+This did not work - I think this sbatch will work with the TAMUCC computer only?
+
+Grabbed the sbathc from pire_cssl_data_processing/scripts, modified with singularity bind and correct file path for bash
+
+Running:
+
+```
+sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
+```
+
