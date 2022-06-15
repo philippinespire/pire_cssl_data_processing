@@ -433,4 +433,4 @@ exit
 conda deactivate
 ```
 
-Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure).
+Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder). K=1 has the lowest CV error, which supports a single population. No strong substructuring/clustering within eras. There are differences between Albatross and contemporary apparent in PCA + Admixture k=2 plot. This could just be capturing variation in levels of missing data though. There are some outlier individuals for both contemp and Albatross, look into these later (could be correlated with missing data as well). 
