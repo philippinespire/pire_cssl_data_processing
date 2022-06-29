@@ -28,16 +28,27 @@ git init
 git remote add origin https://github.com/philippinespire/pire_cssl_data_processing
 git config --add core.sparseCheckout true
 git sparse-checkout set halichoeres_miniatus
-git pull origin master
+git pull origin main
 ```
 
-The halichores\_miniatus subdir pulled to my dir on HPC /home/ilpoe002/pire_cssl_data_processing/halichoeres_miniatus/
+The halichores\_miniatus subdir pulled to my dir on HPC /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/
 
 I typed the following commands:
 
 ```sh
 git add ./*
 git commit -m "updated README with Preliminary"
+git push -u origin main
+```
+
+Further git commands will be executed with the following script /home/ilope002/scripts/Gitpushinator.sh:
+
+```sh
+#!/bin/bash -l
+
+git pull
+git add ./* 
+git commit -m "$1"
 git push -u origin main
 ```
 
