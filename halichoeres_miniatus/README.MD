@@ -1,6 +1,6 @@
 # Log for Halichoeres Miniatus
 
-The purpose of this log is to create replicable steps for the processing and analysis of capture shotgun data for *H. miniatus* as outlined by Dr. Eric Garcia in the [PIRE CAPTURE SHOTGUN DATA PROCESSING & ANALYSIS Page](https://github.com/philippinespire/pire_cssl_data_processing) of the [PhilippinesPIRE](https://github.com/philippinespire) repository.  All scripts and software used are explained on the PIRE Shotgun repository.  All bioinformatic work was performed on the Old Dominion University (ODU) High Performance Computing Cluster (HPC).  The log and worked performed here was completed by Ivan Lopez, MS, ODU.  I received assitance with scripting from Mr. Min Dong, MS, ODU.
+The purpose of this log is to create replicable steps for the processing and analysis of capture shotgun sequencing library data (cssl) for *H. miniatus* as outlined by Dr. Eric Garcia in the [PIRE CAPTURE SHOTGUN DATA PROCESSING & ANALYSIS Page](https://github.com/philippinespire/pire_cssl_data_processing) of the [PhilippinesPIRE](https://github.com/philippinespire) repository.  All scripts and software used are explained on the PIRE Shotgun repository.  All bioinformatic work was performed on the Old Dominion University (ODU) High Performance Computing Cluster (HPC).  The log and worked performed here was completed by Ivan Lopez, MS, ODU.  I received assitance with scripting from Mr. Min Dong, MS, ODU.
 
 The documents in this repository are written in [Markdown](https://www.markdownguide.org/basic-syntax/#links).
 
@@ -55,3 +55,43 @@ git push -u origin main
 ***
 
 ## fq.gz Preprocessing
+
+I began the protocol outlined by Rene Clark to process raw fq files for cssl which can be found in the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo.  These scripts will trim, deduplicate, decontaminate, and repair the raw fq.gz files.
+
+I ran the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/
+cp -r /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/ .
+mkdir logs
+cd halichoeres_miniatus
+```
+
+I will run scripts as follows:
+
+```sh
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/
+``
+
+Since these scripts are not cloned from the remote and are copied from Dr. Garcia's repo, I will edit them locally without affecting the originals.
+
+I edited the renamFQGZ.bash script by inserting lines as follows:
+
+```sh
+#SBATCH --exclusive
+#SBATCH --mail-user=ilope002@odu.edu
+#SBATCH --mail-type=END
+#SBATCH --job-name=RenameFQGZ
+#SBATCH --output=/home/ilope002/pire_cssl_data_processing/logs/RenameFQGZbash.out
+#SBATCH --open-mode=append
+
+echo "SLURM_JOB_ID=$SLURM_JOB_ID"
+
+```
+
+The file for renaming is Hmi_CaptureLibraries_SequenceNameDecode.tsv
+
+After following the repo's instructions to cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/fq_raw_cssl to my working dir, I received an error message.  I observed this dir did not exist.  Checking and email with the pathway for the raw files, I obeserved there were no files at /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/.
+
+I will have to confer with my collegues for the location of the raw files.
+
