@@ -91,7 +91,30 @@ echo "SLURM_JOB_ID=$SLURM_JOB_ID"
 
 The file for renaming is Hmi_CaptureLibraries_SequenceNameDecode.tsv
 
-After following the repo's instructions to cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/fq_raw_cssl to my working dir, I received an error message.  I observed this dir did not exist.  Checking and email with the pathway for the raw files, I obeserved there were no files at /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/.
+After following the repo's instructions to cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/fq_raw_cssl to my working dir, I received an error message.  I observed this dir did not exist.  Checking and email with the pathway for the raw files, I observed there were no files at /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/.
 
 I will have to confer with my collegues for the location of the raw files.
+
+While I received no answer to emails since all staff is in the filed, on the 5th of July I discovered the 374 raw data files for *H. miniatus* and copied them.  I verified the files were copied to the correct directory.  The instructions recommend copying the raw files to the /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/fq_raw_cssl.  This dir is very small.  I will skip this step since the raw files are already at /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture and also at /home/ilope002/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+salloc
+bash ../../../fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
+y
+y
+```
+It is not apparent to me that this script did anything.  While 2 .txt files were generated, if the script was supposed to rename the libraries, that does not appear to have happened.  SLURM did not send an email when the script completed, or create a log.  I wonder if adding SLURM commands created a conflict with bash.  I deleted the SLURM commands and ran the script again.  The file names remained unchanged.
+
+I confered with my colleagues who reported a recent Perl error in Wahab that was preventing the scripts from executing properly.  A solution was found but was not yet pushed to the repo.  This error will affect the performance of several scripts.  I will continue this work once the problem is resolved.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "renameFQGZ.bash failed"
+```
+
 
