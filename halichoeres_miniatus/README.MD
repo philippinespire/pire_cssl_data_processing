@@ -108,7 +108,7 @@ y
 ```
 It is not apparent to me that this script did anything.  While 2 .txt files were generated, if the script was supposed to rename the libraries, that does not appear to have happened.  SLURM did not send an email when the script completed, or create a log.  I wonder if adding SLURM commands created a conflict with bash.  I deleted the SLURM commands and ran the script again.  The file names remained unchanged.
 
-I confered with my colleagues who reported a recent Perl error in Wahab that was preventing the scripts from executing properly.  A solution was found but was not yet pushed to the repo.  This error will affect the performance of several scripts.  I will continue this work once the problem is resolved.
+I confered with my colleagues who reported a recent Perl binary error in Wahab that was preventing the scripts from executing properly.  A solution was found but was not yet pushed to the repo.  This error will affect the performance of several scripts.  I will continue this work once the problem is resolved.
 
 I typed the following commands:
 
@@ -117,4 +117,10 @@ cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "renameFQGZ.bash failed"
 ```
 
+Rene Clark explained that likely I was preloading a module my `~/.wahab_tcshrc` profile that was creating a Perl binary conflict as older modules will call older versions of Perl.  I was preloading the following modules: git, slurm, parallel, agrep, tre, python, bedtools2/2.27.1, vcftools/0.1.14.  I edited the file to only load git and slurm.
 
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "Trouble shooting Perl binary error"
