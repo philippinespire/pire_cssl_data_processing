@@ -174,6 +174,38 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
 ---
 
 ## Set up mapping directory and get reference genome
+
+Make a mapping directory and move the re-paired `*fq.gz` files over. 
+
+```
+cd YOUR_SPECIES_DIR
+
+mkdir mkBAM
+mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+```
+
+Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `config.5.cssl` over to `mkBAM`.
+
+  * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
+
+```
+cd pire_cssl_data_processing/scripts
+
+git clone https://github.com/cbirdlab/dDocentHPC
+
+cd YOUR_SPECIES_DIR/mkBAM
+cp ../../scripts/dDocentHPC/configs/config.5.cssl .
+```
+
+Find the best genome by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+
+Copy the best genome to `mkBAM`. Rename in the process.
+
+
+
+
+
+
     * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
 
 4. Map reads, filter `bam` files and genotype
