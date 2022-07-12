@@ -124,3 +124,27 @@ I typed the following commands:
 ```sh
 cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "Trouble shooting Perl binary error"
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+salloc
+bash ../../../fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
+y
+y
+```
+
+The script did not change the file names as expected.  The original names were retained.  I reported the error to my colleagues and requested guidance.  It seems to me that understanding the purpose of the script is crucial.  The script should rename the library file from the original sequencing facility library name to a PIRE readable name that fits with our current sample naming scheme.  It is not explained what elements, if any of the sequencer name should be retained (although it seems logical that understanding which are forward reads and which are reverse reads is critical to proper assembly).  It is my opinion that it would be better to explain to the researcher what the new file names should look like first.  I would start by explaining a standardized replicable naming scheme to be used for all libraries.  I would the explain the elements of the new name and how to create each element.  I would then explain the elements of the old name and which of those elements should be retained.  Then I would give a hypothetical example and a real example of a file that was renamed.  The reason that I would do this is that researchers creating these scripts will move on to other opportunities or graduate.  Wahab and Turing are dynamic HPCs.  A script that runs smoothly today, may fail tomorrow.  Leaving out clear explicit descriptions of function makes scripts esoteric and hinders replicability.  It seems to me that if I clearly understood how the files should be renamed and which elements should be inserted, retained and removed, that I could easily do this with the mv command executed on a script.  for example:
+
+```sh
+#!/bin/bash
+mv Old_Name_RetainableElement.fq.gz PIRE_NAME_RetainableElement.fq.gz
+```
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "renameFQGZ.bash failed to rename"
+```
