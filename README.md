@@ -449,7 +449,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
 
-***Congratulations!!** *You have now finished the CSSL pipeline. Analyze your data to your heart's content.*
+***Congratulations!!*** *You have now finished the CSSL pipeline. Analyze your data to your heart's content.*
 
 ---
 
