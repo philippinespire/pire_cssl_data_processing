@@ -197,12 +197,60 @@ cd YOUR_SPECIES_DIR/mkBAM
 cp ../../scripts/dDocentHPC/configs/config.5.cssl .
 ```
 
-Find the best genome by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+**IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+
+**IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME:** *(species where probes came from RAD data)* Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location.
+
+  * Should only apply to the following species: *Atherinomorus endrachtensis*, *Gazza minuta*, *Leiognathus equula*,  and *Spratelloides delicatulus*
+    * *Ambassis urotaenia*, *Leiognathus leuciscus*, and *Siganus spinus* also had probes made from RAD data but have a whole genome assembly to map to
 
 Copy the best genome to `mkBAM`. Rename in the process.
 
+Example for Tzo:
 
+```
+cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/mkBAM
 
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design/Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta .
+
+#the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
+#<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
+#this naming is a little messy, but it makes the ref 100% tracable back to the source
+#it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
+
+mv Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta ./reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta
+```
+
+Update `config.5.cssl` with the reference genome assembly information. You only need to udpdate the `mkREF` section.
+
+Insert `<assembly type>` into the `Cutoff1` variable and `<unique assembly info>` into the `Cutoff2` variable. *Hint: this will match how you renamed the reference assembly fasta.*
+
+Example for Tzo:
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+                Use unique reads that occur in at least this many individuals for making the reference genome
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+## Map reads to reference - Filter maps - Genotype maps
+
+Run `dDocentHPC.sbatch` to map, filter the resulting bam files, and call variable sites.
+
+```
+cd YOUR_SPECIES_DIR/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+```
 
 
 
