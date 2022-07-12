@@ -173,6 +173,8 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
   
 ---
 
+## B. MAPPING & FILTERING DATA
+
 ## Set up mapping directory and get reference genome
 
 Make a mapping directory and move the re-paired `*fq.gz` files over. 
@@ -447,15 +449,200 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
 
+***Congratulations!!** *You have now finished the CSSL pipeline. Analyze your data to your heart's content.*
+
 ---
 
-7. Filter the `vcf` file for HWE
-   * Update popmap file based on results from Step 9
-   * Run Filters 18 & 17 in [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl)
+## C. OPTIONAL STEPS
 
-8. OPTIONAL: Make `vcf` with monomorphic loci
+The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) and/or calculate pi (nucleotide diversity).
 
-9. OPTIONAL: Filter monomorphic `vcf`
+## Make a `VCF` file with monomorphic loci
 
-10. OPTIONAL: Assess changes in diversity, population structure, etc. through time
-    * Follow scripts/code in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
+Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and move necessary files over.
+
+**NOTE:** You may want to run these steps in `scratch`, as the "all sites" VCF and intermediate files can be fairly large in size (sometimes close to 1 TB!!).
+
+```
+cd YOUR_SPECIES_DIR
+
+mkdir mkVCF_monomorphic
+
+mv mkBAM/*bam* mkVCF_monomorphic
+mv mkBAM/*fasta mkVCF_monomorphic
+mv mkBAM/config.5.cssl mkVCF_monomorphic/config.5.cssl.monomorphic
+```
+
+Change the `config.5.cssl.monomorphic` file so that the last setting (monomorphic) is set to yes.
+
+Example:
+
+```
+yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+```
+
+Genotype.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+```
+
+---
+
+## Filter the VCF with monomorphic loci
+
+Set-up filtering the monomorphic and polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, it is probably best to do this in `scratch`.
+
+First, set-up filtering for monomorphic sites only. Copy the `config.fltr.ind.cssl.mono` file over.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+cp ../../scripts/config.fltr.ind.cssl.mono .
+```
+
+Update the `config.fltr.ind.cssl.mono` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made. **The settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file.**
+
+Example of `config.fltr.ind.cssl.mono` for Gmi:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+	fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                  # order to run filters in
+	fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
+	fltrVCF -b /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM                                                                  # path to *.bam files
+	fltrVCF -R /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+	fltrVCF -d /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
+	fltrVCF -v /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq.vcf          # vcf file to filter
+        fltrVCF -g /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
+	fltrVCF -p /scratch/r3clark/PIRE-Gmi-Ham/mkVCF_monomorphic/popmap.rad.RAW-10-10.HWEsplit               # popmap file
+	fltrVCF -w /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+	fltrVCF -r /home/r3clark/PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+	fltrVCF -o gmi.mono                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+
+Run `fltrVCF.sbatch` for monomorphic sites.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the VCF file made after the "make monomorphic VCF" step
+#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
+```
+
+Next, set-up filtering for polymorphic sites only. Make a `polymorphic_filter` directory in `mkVCF_monomorphic` and copy the `config.fltr.ind.cssl.poly` file over.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+mkdir polymorphic_filter
+cd polymorphic_filter
+
+cp ../../scripts/config.fltr.ind.cssl.poly .
+```
+
+Update the `config.fltr.ind.cssl.poly` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made AND the HWEsplit popmap you made if you had any cryptic population structure. **The settings for all your filters should match the settings used when filtering the original VCF file.**
+
+Example of `config.fltr.ind.cssl.poly` for Gmi:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+	fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17                  # order to run filters in
+	fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
+	fltrVCF -b /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM                                                                  # path to *.bam files
+	fltrVCF -R /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+	fltrVCF -d /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
+	fltrVCF -v /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq.vcf          # vcf file to filter
+        fltrVCF -g /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
+	fltrVCF -p /scratch/r3clark/PIRE-Gmi-Ham/mkVCF_monomorphic/popmap.rad.RAW-10-10.HWEsplit               # popmap file
+	fltrVCF -w /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+	fltrVCF -r /home/r3clark/PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+	fltrVCF -o gmi.poly                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+
+Run `fltrVCF.sbatch` for polymorphic sites.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the VCF file made after the "make monomorphic VCF" step
+#popmap file should be the one that accounts for any cryptic structure, if it exists (*HWEsplit extension)
+#settings should match the settings used when filtering the original VCF file
+sbatch ../../../fltrVCF.sbatch config.fltr.ind.cssl.poly
+```
+
+## Merge monomorphic & polymorphic VCF files
+
+Check the *filtered* monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove the necessary individuals from the relevant files. *Your monomorphic and polymorphic VCFs should have the EXACT same individuals present. If not, merging will not work!*
+
+  * To see which individuals have been removed, you can look at the `*.out` files created during filtering.
+  * For an example of how to remove these individuals, look at the Gmi README.md file (Step 14).
+
+Next, sort each VCF file.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load vcftools
+
+vcf-sort <MONOMORPHIC VCF> > <MONOMORPHIC VCF EXT>.sorted.vcf
+vcf-sort <POLYMORPHIC VCF> > <POLYMORPHIC VCF EXT>.sorted.vcf
+
+#Example for Gmi:
+vcf-sort gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.vcf > gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf
+vcf-sort gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.vcf > gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf
+```
+
+Zip each VCF file.
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load samtools/1.9
+
+bgzip -c <MONOMORPHIC SORTED VCF> > <MONOMORPHIC SORTED VCF>.gz
+bgzip -c <POLYMORPHIC SORTED VCF> > <POLYMORPHIC SORTED VCF>.gz
+
+#Example for Gmi
+bgzip -c gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf > gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz
+bgzip -c gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf > gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+Index each VCF file.
+
+```
+cd YOUR_SPECIESS_DIR/mkVCF_monomorphic
+
+module load samtools/1.9
+
+tabix <MONOMORPHIC SORTED VCF.GZ>
+tabix <POLYMORPHIC SORTED VCF.GZ>
+
+#Example for Gmi
+tabix  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz
+tabix  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz
+```
+
+```
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load container_env bcftools
+module load samtools/1.9
+
+crun bcftools concat --allow-overlaps  <MONOMORPHIC SORTED VCF.GZ>  <POLYMORPHIC SORTED VCF.GZ> -O z -o <spp 3 letter code>.all.recode.sorted.vcf.gz
+tabix <spp 3 letter code>.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+
+#Example for Gmi
+crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
+tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+```
+
+That's it!
