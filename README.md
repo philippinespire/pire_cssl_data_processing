@@ -191,7 +191,7 @@ Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `
 ```
 cd pire_cssl_data_processing/scripts
 
-git clone https://github.com/cbirdlab/dDocentHPC
+git clone https://github.com/cbirdlab/dDocentHPC.git
 
 cd YOUR_SPECIES_DIR/mkBAM
 cp ../../scripts/dDocentHPC/configs/config.5.cssl .
@@ -252,22 +252,202 @@ cd YOUR_SPECIES_DIR/mkBAM
 sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 ```
 
+---
+
+## Filter the `VCF` file
 
 
-    * Best genome can be found by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/compare_assemblers), sorting tibble by busco or n50, and filtering by species 
+Make a filtering directory. 
 
-4. Map reads, filter `bam` files and genotype
-    * Use [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC)
-      * Use [`config.5.cssl`](https://github.com/cbirdlab/dDocentHPC/blob/master/configs/config.5.cssl) when running dDocentHPC as a starting point for the settings
+```
+cd YOUR_SPECIES_DIR
 
-5. Filter the `vcf` file
-    * Use [`fltrVCF`](https://github.com/cbirdlab/fltrVCF)
-      * Use [`config.fltr.ind.cssl`](https://github.com/cbirdlab/fltrVCF/blob/master/config_files/config.fltr.ind.cssl) as a starting point for filter settings
-      * Only run up to the second Filter 07
+mkdir filterVCF
+```
 
-6. Check for cryptic species
-   * Run PCA & ADMIXTURE to look for cryptic speciation
-   * Instructions in [`pire_cssl_data_processing/scripts/popgen_analyses/`](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/scripts/popgen_analyses)
+Clone the [`fltrVCF`](https://github.com/cbirdlab/fltrVCF) and [`rad_haplotyper`](https://github.com/cbirdlab/rad_haplotyper) repos and copy `config.fltr.ind.cssl` over to `filterVCF`.
+
+  * If you have previously cloned either of these repos, just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, they are already cloned.
+
+```
+cd pire_cssl_data_processing/scripts
+
+git clone https://github.com/cbirdlab/fltrVCF.git
+git clone https://github.com/cbirdlab/rad_haplotyper.git
+
+
+cd YOUR_SPECIES_DIR/filterVCF
+cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
+```
+
+Update the `config.fltr.ind.cssl` file with file paths and file extensions based on your species. Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run up to the second 07 filter (remove filters 18 & 17 from the list of filters to run).**
+
+Example of `config.fltr.ind.cssl` for Gmi:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07               # order to run filters in
+        fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
+        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
+        fltrVCF -v TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq.vcf  # vcf file to filter
+        fltrVCF -g ../mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
+        fltrVCF -p ../mkBAM/popmap.rad.RAW-10-10                # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Gmi.A                                                                    # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+
+You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
+
+Run `fltrVCF.sbatch`.
+
+```
+cd YOUR_SPECIES_DIR/filterVCF
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
+
+#troubleshooting will be necessary
+ ```
+ 
+ ---
+ 
+ ## Check for cryptic species
+ 
+ Run PCA and ADMIXTURE to identify any cryptic species/population structure in your data. More information on what PCA & ADMIXTURE are, and how to run them (along with other population genetic analyses) can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/).
+ 
+ Make a `population_structure` directory and copy your filtered VCF file there.
+ 
+ ```
+ cd YOUR_SPECIES_DIR
+ 
+ mkdir pop_structure
+ cd pop_structure
+ 
+ #copy final VCF file made from fltrVCF step to `pop_structure` directory
+ cp ../filterVCF/<FINAL VCF> .
+ ```
+ 
+ Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+ 
+ ```
+ cd YOUR_SPECIES_DIR/pop_structure
+ 
+ #create your conda popgen environment and install PLINK
+ 
+ module load anaconda
+ conda activate popgen
+ 
+ plink --vcf <YOUR VCF> --allow-extra-chr --pca --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
+ 
+ #example for Gmi
+ plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
+ 
+ conda deactivate
+ ```
+ 
+ Make input files for ADMIXTURE with PLINK.
+ 
+ ```
+ cd YOUR_SPECIES_DIR/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf <YOUR VCF> --allow-extra-chr --make-bed --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
+awk '{$1=0;print $0}' PIRE.<SP 3 letter code>.<LOC>.preHWE.bim > PIRE.<SP 3 letter code>.<LOC>.preHWE.bim.tmp
+mv PIRE.<SP 3 letter code>.<LOC>.preHWE.bim.tmp PIRE.<SP 3 letter code>.<LOC>.preHWE.bim
+
+#Example for Gmi
+plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Gmi.Ham.preHWE
+awk '{$1=0;print $0}' PIRE.Gmi.Ham.preHWE.bim > PIRE.Gmi.Ham.preHWE.bim.tmp
+mv PIRE.Gmi.Ham.preHWE.bim.tmp PIRE.Gmi.Ham.preHWE.bim
+
+conda deactivate
+```
+
+Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```
+cd YOUR_SPECIES_DIR/pop_structure
+
+module load anaconda
+conda activate popgen
+
+admixture PIRE.<SP 3 letter code>.<LOC>.preHWE.bed 1 --cv > PIRE.<SP 3 letter code>.<LOC>.preHWE.log1.out #run from 1-5
+
+#Example for Gmi
+admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run from 1-5
+
+conda deactivate
+```
+
+Copy your `*.eigenval`, `*.eigenvec` & `*Q` files to your local computer. Run [`pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/pop_structure.R) on your local computer to visualize your PCA & ADMIXTURE results and identify any cryptic population structure.
+
+---
+
+## Filter the `VCF` file for HWE
+
+IF PCA & ADMIXTURE show cryptic structure, then you need to adjust the `popmap` file to reflect this.
+
+```
+cd YOUR_SPECIES_DIR/filterVCF
+
+cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
+
+#change the second column (pop assignment) to match any cryptic structure that is present
+#one easy way to do this is to add -A or -B to the end of the population assignment to assign individuals to group A or B
+```
+
+Make a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with file paths and file extensions based on your species AND the new HWEsplit popmap (if applicable). The VCF path should point to the VCF made at the end of the previous filtering run (the file PCA & ADMIXTURE was run with). Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run filters 18 & 17 (in that order).**
+
+```
+cd YOUR_SPECIES_DIR/filterVCF
+
+cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+```
+
+Example of `config.fltr.ind.cssl.HWE` for Gmi:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 18 17               # order to run filters in
+        fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
+        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
+        fltrVCF -v Gmi.A.rad.RAW-10-10.Fltr07.18.vcf  # vcf file to filter
+        fltrVCF -g ../mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
+        fltrVCF -p popmap.rad.RAW-10-10.HWEsplit                # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Gmi.A.HWE                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+
+Run `fltrVCF.sbatch`.
+
+```
+cd YOUR_SPECIES_DIR/filterVCF
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
+#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
+#config file should ONLY run filters 18 & 17 (in that order)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+
+#troubleshooting will be necessary
+```
+
+You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
+
+---
 
 7. Filter the `vcf` file for HWE
    * Update popmap file based on results from Step 9
