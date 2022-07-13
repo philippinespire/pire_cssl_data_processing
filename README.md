@@ -8,6 +8,8 @@ For now, each species will get it's own directory in the repo.  Try to avoing pu
 
 **The Gmi dir (all steps) & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
+  * A template version of can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md).
+
 Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu).
 
 ---
