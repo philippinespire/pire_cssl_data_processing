@@ -595,8 +595,8 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load vcftools
 
-vcf-sort <MONOMORPHIC VCF> > <MONOMORPHIC VCF EXT>.sorted.vcf
-vcf-sort <POLYMORPHIC VCF> > <POLYMORPHIC VCF EXT>.sorted.vcf
+vcf-sort <NOMISSING MONOMORPHIC VCF> > <NOMISSING MONOMORPHIC VCF>.sorted.vcf
+vcf-sort <NOMISSING POLYMORPHIC VCF> > <NOMISSING POLYMORPHIC VCF>.sorted.vcf
 
 #Example for Gmi:
 vcf-sort gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.vcf > gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf
