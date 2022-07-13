@@ -6,7 +6,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ## Step 0. Rename files for dDocent HPC
 
-Raw data in <full path to raw data on Wahab> (check <spp> channel on Slack). Starting analyses in <full path to species dir>.
+Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack). Starting analyses in `<full path to species dir>`.
 
 Used decode file from Sharon Magnuson & Chris Bird.
 
