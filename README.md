@@ -52,9 +52,9 @@ A list of ongoing CSSL projects can be found below. If you are working on a CSSL
 
 You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
 
-From your species directory, execute these commands manually or run the `runGit.sh` script (see below).
+From your species directory, execute these commands manually or run the `runGit.bash` script (see below).
 
-```
+```sh
 git pull
 git add --all
 git commit -m "insert message"
@@ -63,7 +63,7 @@ git push
 
 This code has been compiled into the script [`runGIT.bash`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/runGIT.bash) thus you can just run this script BEFORE and AFTER you do anything in your species repo. You will need to provide the message of your commit in the command line. Example:
 
-```
+```bash
 bash ../runGIT.bash "initiated Sgr repo"
 ```
 
@@ -81,7 +81,7 @@ If you are in this situation, run these git commands manually, AFTER running the
 
 Run this from the directory where you deleted files:
 
-```
+```sh
 git add -u .
 git commit -m "update deletions"
 git push -u origin main
@@ -98,7 +98,7 @@ First, create your `species dir` and subdirs `logs` and `raw_fq_capture`. You sh
 
 Example for Tzo:
 
-```
+```sh
 cd YOUR_WORKING_DIR
 #example: /home/r3clark/PIRE/pire_cssl_data_processing
 
@@ -116,7 +116,7 @@ If you aren't sure where your raw species sequencing data is stored on the HPC, 
 
 Example for Tzo:
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture
 
 #check got back sequencing data for all individuals in decode file
@@ -130,7 +130,7 @@ Next, copy these raw files to your species dir (if you are working somewhere oth
 
 Example for Tzo:
 
-```
+```sh
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
 
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/* raw_fq_capture/
@@ -140,7 +140,7 @@ Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one d
 
 Example:
 
-```
+```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing #you MUST be on the log-in node to access the RC storage
 
 mkdir taeniamia_zosterophora #this is your species dir
@@ -149,11 +149,11 @@ mkdir taeniamia_zosterophora/raw_fq_capture
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/* taeniamia_zosterophora/raw_fq_capture/
 ```
 
-Create a `README` in the `raw_fq_capture` dir with the full path to the original raw files and necessary decoding info to find out which individuals these sequence files came from. This information is usually provided by Sharon Magnuson & Eric Garcia in the species slack channel.
+Create a `README.md` in the `raw_fq_capture` dir with the full path to the original raw files and necessary decoding info to find out which individuals these sequence files came from. This information is usually provided by Sharon Magnuson & Eric Garcia in the species slack channel.
 
 Example for Tzo:
 
-```
+```sh
 Transfer from TAMUCC to ODU
 scp /work/hobi/GCL/20220323_PIRE_Tzo-Capture/* e1garcia@turing.hpc.odu.edu:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/
 
@@ -179,7 +179,7 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
 
 Make a mapping directory and move the re-paired `*fq.gz` files over. 
 
-```
+```sh
 cd YOUR_SPECIES_DIR
 
 mkdir mkBAM
@@ -190,7 +190,7 @@ Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `
 
   * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
 
-```
+```sh
 cd pire_cssl_data_processing/scripts
 
 git clone https://github.com/cbirdlab/dDocentHPC.git
@@ -210,7 +210,7 @@ Copy the best genome to `mkBAM`. Rename in the process.
 
 Example for Tzo:
 
-```
+```sh
 cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/mkBAM
 
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design/Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta .
@@ -244,9 +244,9 @@ Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
 
 ## Map reads to reference - Filter maps - Genotype maps
 
-Run `dDocentHPC.sbatch` to map, filter the resulting bam files, and call variable sites.
+Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
@@ -261,7 +261,7 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 Make a filtering directory. 
 
-```
+```sh
 cd YOUR_SPECIES_DIR
 
 mkdir filterVCF
@@ -271,7 +271,7 @@ Clone the [`fltrVCF`](https://github.com/cbirdlab/fltrVCF) and [`rad_haplotyper`
 
   * If you have previously cloned either of these repos, just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, they are already cloned.
 
-```
+```sh
 cd pire_cssl_data_processing/scripts
 
 git clone https://github.com/cbirdlab/fltrVCF.git
@@ -305,9 +305,9 @@ fltrVCF Settings, run fltrVCF -h for description of settings
 
 You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
 
-Run `fltrVCF.sbatch`.
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
-```
+```sh
 cd YOUR_SPECIES_DIR/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -325,7 +325,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  
  Make a `population_structure` directory and copy your filtered VCF file there.
  
- ```
+ ```sh
  cd YOUR_SPECIES_DIR
  
  mkdir pop_structure
@@ -337,7 +337,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  
  Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
  
- ```
+ ```sh
  cd YOUR_SPECIES_DIR/pop_structure
  
  #create your conda popgen environment and install PLINK
@@ -355,7 +355,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  
  Make input files for ADMIXTURE with PLINK.
  
- ```
+ ```sh
  cd YOUR_SPECIES_DIR/pop_structure
 
 module load anaconda
@@ -375,7 +375,7 @@ conda deactivate
 
 Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
-```
+```sh
 cd YOUR_SPECIES_DIR/pop_structure
 
 module load anaconda
@@ -397,7 +397,7 @@ Copy your `*.eigenval`, `*.eigenvec` & `*Q` files to your local computer. Run [`
 
 IF PCA & ADMIXTURE show cryptic structure, then you need to adjust the `popmap` file to reflect this.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/filterVCF
 
 cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
@@ -408,7 +408,7 @@ cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
 
 Make a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with file paths and file extensions based on your species AND the new HWEsplit popmap (if applicable). The VCF path should point to the VCF made at the end of the previous filtering run (the file PCA & ADMIXTURE was run with). Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run filters 18 & 17 (in that order).**
 
-```
+```sh
 cd YOUR_SPECIES_DIR/filterVCF
 
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
@@ -433,9 +433,9 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -t 40                                                                        # number of threads [1]
 ```
 
-Run `fltrVCF.sbatch`.
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
-```
+```sh
 cd YOUR_SPECIES_DIR/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -463,7 +463,7 @@ Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic lo
 
 **NOTE:** You may want to run these steps in `scratch`, as the "all sites" VCF and intermediate files can be fairly large in size (sometimes close to 1 TB!!).
 
-```
+```sh
 cd YOUR_SPECIES_DIR
 
 mkdir mkVCF_monomorphic
@@ -481,9 +481,9 @@ Example:
 yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
 ```
 
-Genotype.
+Genotype with [dDocentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
@@ -497,7 +497,7 @@ Set-up filtering the monomorphic and polymorphic loci separately, then merge the
 
 First, set-up filtering for monomorphic sites only. Copy the `config.fltr.ind.cssl.mono` file over.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 cp ../../scripts/config.fltr.ind.cssl.mono .
@@ -524,9 +524,9 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -t 40                                                                        # number of threads [1]
 ```
 
-Run `fltrVCF.sbatch` for monomorphic sites.
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -537,7 +537,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
 
 Next, set-up filtering for polymorphic sites only. Make a `polymorphic_filter` directory in `mkVCF_monomorphic` and copy the `config.fltr.ind.cssl.poly` file over.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 mkdir polymorphic_filter
@@ -567,9 +567,9 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -t 40                                                                        # number of threads [1]
 ```
 
-Run `fltrVCF.sbatch` for polymorphic sites.
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -588,7 +588,7 @@ Check the *filtered* monomorphic & polymorphic VCF files to make sure that filte
 
 Next, sort each VCF file.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load vcftools
@@ -603,7 +603,7 @@ vcf-sort gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.vcf > gmi.poly.rad.RA
 
 Zip each VCF file.
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load samtools/1.9
@@ -618,7 +618,7 @@ bgzip -c gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf > gmi.poly
 
 Index each VCF file.
 
-```
+```sh
 cd YOUR_SPECIESS_DIR/mkVCF_monomorphic
 
 module load samtools/1.9
@@ -631,7 +631,7 @@ tabix  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz
 tabix  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz
 ```
 
-```
+```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load container_env bcftools
