@@ -317,3 +317,293 @@ sbatch ../../dDocentHPC.sbatch config.5.cssl
 ```
 
 ---
+
+## Step 10. Filter VCF File
+
+Pulled latest changes from fltrVCF and rad_haplotyper repos.
+
+```sh
+#if you haven't already, you first need to clone the fltrVCF.git repo & the rad_haplotyper.git repo
+#cd pire_cssl_data_processing/scripts
+#git clone https://github.com/cbirdlab/fltrVCF.git
+#git clone https://github.com/cbirdlab/rad_haplotyper.git
+
+cd pire_cssl_data_processing/scripts/fltrVCF
+git pull
+
+cd pire_cssl_data_processing/scripts/rad_haplotyper
+git pull
+
+cd pire_cssl_data_processing/gazza_minuta
+mkdir filterVCF
+cd filterVCF
+
+cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
+```
+
+Ran `fltrVCF.sbatch`.
+
+```sh
+cd YOUR_SPECIES_DIR/filterVCF
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
+
+#troubleshooting will be necessary
+```
+
+---
+
+## Step 11. Check for cryptic species
+
+```sh
+cd YOUR_SPECIES_DIR
+
+mkdir pop_structure
+cd pop_structure
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+#will be from the SECOND 07 filter
+cp ../filterVCF/<FINAL FILTERED VCF> .
+```
+
+Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf <VCF FILE> --allow-extra-chr --pca --out PIRE.<spp>.<loc>.preHWE
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
+
+module load anaconda
+conda activate popgen
+
+plink --vcf <VCF FILE> --allow-extra-chr --make-bed --out PIRE.<spp>.<loc>.preHWE
+
+awk '{$1=0;print $0}' PIRE.<spp>.<loc>.preHWE.bim > PIRE.<spp>.<loc>.preHWE.bim.tmp
+mv PIRE.<spp>.<loc>.preHWE.bim.tmp PIRE.<spp>.<loc>.preHWE.bim
+conda deactivate
+```
+
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
+
+module load anaconda
+conda activate popgen
+
+admixture PIRE.<spp>.<loc>.preHWE.bed 1 --cv > PIRE.<spp>.<loc>.preHWE.log1.out #run from 1-5
+conda deactivate
+```
+
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `YOUR_SPECIES_DIR/pop_structure`).
+
+---
+
+## Step 12. Filter VCF file for HWE
+
+**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
+
+PCA & ADMIXTURE showed cryptic structure. ABas & CBas all assigned to one deme ("A"). ~50% of AHam & CBat assigned to same deme ("A") as ABas & CBas and ~50% assigned to separate deme ("B"). Species IDs unknown at this point.
+
+Adjusted popmap file to reflect new structure.
+
+```sh
+cd YOUR_SPECIES_DIR/filterVCF
+cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
+
+#added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
+```
+
+Ran `fltrVCF.sbatch`.
+
+```sh
+cd YOUR_SPECIES_DIR/filterVCF
+cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
+#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
+#config file should ONLY run filters 18 & 17 (in that order)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+
+#troubleshooting will be necessary
+```
+
+---
+
+## Step 13. Make VCF with Monomorphic Loci
+
+Moved the files needed for genotyping from `mkBAM` to `mkVCF`
+
+```sh
+#run in scratch if need more space
+cd YOUR_SPECIES_DIR
+
+mkdir mKVCF_monomorphic
+mv mkBAM/*bam* mkVCF_monomorphic
+cp mkBAM/*fasta mkVCF_monomorphic
+cp mkBAM/config.5.cssl mkVCF_monomorphic
+```
+
+Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
+
+```
+yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+```
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+mv config.5.cssl config.5.cssl.monomrphic
+```
+
+Genotyped
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+```
+
+---
+
+## Step 14. Filter VCF with monomorphic loci
+
+Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
+
+Set-up filtering for monomorphic sites only.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+cp ../../scripts/config.fltr.ind.cssl.mono .
+```
+
+Ran `fltrVCF.sbatch` for monomorphic sites.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the VCF file made after the "make monomorphic VCF" step
+#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 10)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
+
+#troubleshooting will  be necessary
+```
+
+Set-up filtering for polymorphic sites only.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+mkdir polymorphic_filter
+cd polymorphic_filter
+
+cp ../../../scripts/config.fltr.ind.cssl.poly .
+```
+
+Ran `fltrVCF.sbatch` for polymorphic sites.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#VCF file should be the VCF file made after the "make monomorphic VCF" step
+#popmap file should be file used in step 12, that accounts for any cryptic structure (*HWEsplit extension)
+#settings should match the settings used when filtering the original VCF file (step 10)
+sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
+
+#troubleshooting will be necessary
+```
+
+---
+
+## Step 15. Merge monomorphic & polymorphic VCF files
+
+Check monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
+
+* mono.VCF: filtering removed XX, XX, XX, ... Need to remove XX individuals as well to match polymorphic VCF.
+* poly.VCF: filtering removed XX,XX, XX, ...
+
+Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either  file (total of XX for *spp*). Used this list to make sure number of individuals matched in both filtered VCFs.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+mv polymorphic_filter/<FINAL POLY FILTERED VCF> . #will be from the 17 filter
+
+module load vcftools
+
+vcftools --vcf <FINAL POLY FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL POLY FILTERED VCF>.nomissing
+mv <FINAL POLY FILTERED VCF>.nomissing.recode.vcf <FINAL POLY FILTERED VCF>nomissing.vcf
+
+vcftools --vcf <FINAL MONO FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL MONO FILTERED VCF>.nomissing
+mv <FINAL MONO FILTERED VCF>.nomissing.recode.vcf <FINAL MONO FILTERED VCF>nomissing.vcf
+```
+
+Sorted each VCF file.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load vcftools
+
+#sort monomorphic (nomissing VCF)
+vcf-sort <NOMISSING MONO VCF> > <NOMISING MONO VCF>.sorted.vcf
+
+#sort polymorphic (nomissing VCF)
+vcf-sort <NOMISSING POLY VCF> > <NOMISING POLY VCF>.sorted.vcf
+```
+
+Zipped each VCF file.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#zip monomorphic
+bgzip -c <SORTED MONO VCF> > <SORTED MONO VCF>.gz
+
+#zip polymorphic
+bgzip -c <SORTED POLY VCF> > <SORTED POLY VCF>.gz
+```
+
+Indexed each VCF file.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load samtools/1.9
+
+#index monomorphic
+tabix  <GZIPPED MONO VCF>
+
+#index polymorphic
+tabix <GZIPPED POLY VCF>
+```
+
+Merged files.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load container_env bcftools
+module load samtools/1.9
+
+crun bcftools concat --allow-overlaps  <GZIPPED MONO VCF>  <GZIPPED POLY VCF> -O z -o <spp>.all.recode.nomissing.sorted.vcf.gz
+
+tabix <spp>.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+```
