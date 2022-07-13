@@ -234,10 +234,10 @@ Total reads remaining: XX%
 
 ## Step 8. Set up mapping dir and get reference genome
 
-Make mapping directory and move `*fq.gz` files over. Ran in `scratch` because don't have enough space in `home` directory.
+Make mapping directory and move `*fq.gz` files over.
 
-```
-cd /scratch/r3clark/taeniamia_zosterophora/
+```sh
+cd YOUR_SPECIES_DIR
 mkdir mkBAM
 
 mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
@@ -245,38 +245,40 @@ mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 
 Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
 
-```
+```sh
 #if you haven't already, you first need to clone the dDocentHPC.git repo
-#cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
+#cd pire_cssl_data_processing/scripts
 #git clone https://github.com/cbirdlab/dDocentHPC.git
 
-cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC
+#if you have cloned, just pull the latest changes
+cd /pire_cssl_data_procesing/scripts/dDocentHPC
 git pull
 
-cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+cd YOUR_SPECIES_DIR/mkBAM
 
-cp /home/r3clark/PIRE/pire_cssl_data_processing/scripts/dDocentHPC/configs/config.5.cssl .
+cp ../../scripts/dDocentHPC/configs/config.5.cssl .
 ```
 
-Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *Taeniamia zosterophora* is: **Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta** in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design`. Copied this to `mkBAM`.
+Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`.
 
-```
-cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
 
-cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design/Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta .
+cp PATH TO DIR WITH BEST GENOME ASSEMBLY/<BEST_ASSEMBLY.fasta> .
 
 #the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
 #<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
 #this naming is a little messy, but it makes the ref 100% tracable back to the source
 #it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
 
-mv Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta ./reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta
+mv BEST_ASSEMBLY.fasta ./PIRE-FORMATTED_NAME.fasta
 ```
 
 Updated the config file with the ref genome info.
 
-```
-cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
+
 nano config.5.cssl
 ```
 
@@ -306,16 +308,12 @@ Make sure the cutoffs above match the reference*fasta!
 
 ## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
-Ran in `scratch` because don't have enough space in `home` directory.
-
-```
-cd /scratch/r3clark/taeniamia_zosterophora/mkBAM
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../dDocentHPC.sbatch config.5.cssl
+sbatch ../../dDocentHPC.sbatch config.5.cssl
 ```
-
-Handing off to Kyra Fitz for further processing.
 
 ---
