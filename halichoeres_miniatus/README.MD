@@ -148,3 +148,30 @@ I typed the following commands:
 cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "renameFQGZ.bash failed to rename"
 ```
+
+Rene had success rename the files with the script found at /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/.  She recommended that I delete the dir I cp'd with the script for convenience and that I work out of /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/.  I deleted the directory at /home/ilope002/shotgun_PIRE/ that I cp'd from Eric's as above.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv
+```
+
+The script returned the following error: enable_lmod: command not found.  The script generated two files bearing the same errors as before.
+
+I typed the following commands:
+
+```sh
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
+y
+y
+```
+
+It was not possible to press return after typing y as the script moves very fast.  Rene advised me that pressing return would abort the script.  I recommended that another person try to rename the files in my home dir or that I devise another script for renaming.  I requested guidance on what the new names should look like.
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash failed to rename"
+```
+
