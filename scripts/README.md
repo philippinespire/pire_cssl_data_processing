@@ -32,6 +32,8 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDEC
 
 ## Step 1.  Check data quality with fastqc
 
+Ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).
+
 ```sh
 cd YOUR_SPECIES_DIR/raw_fq_capture
 
@@ -52,6 +54,8 @@ Potential issues:
 ---
 
 ## Step 2. 1st fastp
+
+Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -78,6 +82,8 @@ Potential issues:
 
 ## Step 3. Clumpify
 
+Ran [`runCLUMPIFY_r1r2_array.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash).
+
 ```sh
 cd YOUR_SPECIES_DIR
 
@@ -85,7 +91,7 @@ cd YOUR_SPECIES_DIR
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/USERNAME 10
 ```
 
-Ran `checkClumpify_EG.R` to see if any failed.
+Ran [`checkClumpify_EG.R`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any failed.
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -104,6 +110,8 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 ---
 
 ## Step 4. 2nd fastp
+
+Ran [`runFASTP_2_cssl.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_cssl.sbatch).
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -129,6 +137,8 @@ Potential issues:
 ---
 
 ## Step 5. Run fastq_screen
+
+Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -156,7 +166,7 @@ grep 'No reads in' slurm-fqscrn.*out #nothing
 
 Everything looks good, no errors/missing files.
 
-Ran `MultiQC` separately.
+Ran [`runMultiQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch) separately.
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -179,6 +189,8 @@ Potential issues:
 
 ## Step 6. Repair fastq_screen paired end files
 
+Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
+
 ```sh
 cd YOUR_SPECIES_DIR
 
@@ -186,7 +198,7 @@ cd YOUR_SPECIES_DIR
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
-Once finished, ran `FastQC-MultiQC` to assess quality.
+Once finished, ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) to assess quality.
 
 ```sh
 cd YOUR_SPECIES_DIR
@@ -209,7 +221,7 @@ Potential issues:
 
 ## Step 7. Calculate the percent of reads lost in each step
 
-Executed `read_calculator_cssl.sh`.
+Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
 ```
 cd YOUR_SPECIES_DIR
@@ -308,6 +320,8 @@ Make sure the cutoffs above match the reference*fasta!
 
 ## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
+Ran [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch).
+
 ```sh
 cd YOUR_SPECIES_DIR/mkBAM
 
@@ -341,7 +355,7 @@ cd filterVCF
 cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 ```
 
-Ran `fltrVCF.sbatch`.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
 cd YOUR_SPECIES_DIR/filterVCF
@@ -426,7 +440,7 @@ cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
 #added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
 
-Ran `fltrVCF.sbatch`.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
 cd YOUR_SPECIES_DIR/filterVCF
@@ -469,7 +483,7 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 mv config.5.cssl config.5.cssl.monomrphic
 ```
 
-Genotyped
+Genotyped with [dDoceentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
@@ -491,7 +505,7 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 cp ../../scripts/config.fltr.ind.cssl.mono .
 ```
 
-Ran `fltrVCF.sbatch` for monomorphic sites.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
@@ -515,7 +529,7 @@ cd polymorphic_filter
 cp ../../../scripts/config.fltr.ind.cssl.poly .
 ```
 
-Ran `fltrVCF.sbatch` for polymorphic sites.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
