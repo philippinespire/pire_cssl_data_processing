@@ -126,7 +126,7 @@ ls | wc -l #208 files (2 additional files for README & decode.tsv = 206/2 = 103 
 wc -l Tzo_CaptureLibraries_SequenceNameDecode.tsv #104 lines (1 additional line for header = 103 individuals), checks out
 ```
 
-Next, copy these raw files to your species dir (if you are working somewhere other than Eric's shotgun_pire dir). *This can take several hours.*
+Next, copy these raw files to your species dir (if you are working somewhere other than Eric's `shotgun_PIRE` dir). *This can take several hours.*
 
 Example for Tzo:
 
@@ -149,7 +149,7 @@ mkdir taeniamia_zosterophora/raw_fq_capture
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/* taeniamia_zosterophora/raw_fq_capture/
 ```
 
-Create a `README` in the `fq_raw_cssl` dir with the full path to the original raw files and necessary decoding info to find out which individuals these sequence files came from. This information is usually provided by Sharon Magnuson & Eric Garcia in the species slack channel.
+Create a `README` in the `raw_fq_capture` dir with the full path to the original raw files and necessary decoding info to find out which individuals these sequence files came from. This information is usually provided by Sharon Magnuson & Eric Garcia in the species slack channel.
 
 Example for Tzo:
 
