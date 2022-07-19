@@ -106,7 +106,7 @@ bash ../../../fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceName
 y
 y
 ```
-It is not apparent to me that this script did anything.  While 2 .txt files were generated, if the script was supposed to rename the libraries, that does not appear to have happened.  SLURM did not send an email when the script completed, or create a log.  I wonder if adding SLURM commands created a conflict with bash.  I deleted the SLURM commands and ran the script again.  The file names remained unchanged.
+It is not apparent to me that this script did anything.  While two .txt files were generated, if the script was supposed to rename the libraries, that does not appear to have happened.  SLURM did not send an email when the script completed, or create a log.  I wonder if adding SLURM commands created a conflict with bash.  I deleted the SLURM commands and ran the script again.  The file names remained unchanged.
 
 I confered with my colleagues who reported a recent Perl binary error in Wahab that was preventing the scripts from executing properly.  A solution was found but was not yet pushed to the repo.  This error will affect the performance of several scripts.  I will continue this work once the problem is resolved.
 
@@ -175,3 +175,41 @@ cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash failed to rename"
 ```
 
+After conferring with Rene, she discovered that the problem with the *H. miniatus* data set is that there are multiple extractions for the same individual, for most of the specimens.  This was done at ODU after conferring with Sharon Magnuson and Dr. Bird at TAMU-CC.  In some species the original \[DNA\] after extraction was very low.  At ODU we resampled a higher mass of tissue from specimens to obtain a higher \[DNA\].  Because there are multiple libraries with nearly the same name, the script is unable to parse the renaming properly and the script fails.  Rene agreed with my suggestion to create a specific script to rename these files.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+touch filelist.txt
+ls > filelist.txt
+```
+
+ An example for how the files should be renamed is 'mv HmC010011A_CKDL220009543-1a-AK9141-7UDI214_HN325DSX3_L3_1.fq.gz Hmi-CBas_001-Ex1-01A_L3_1.fq.gz`. However there are two libraries for this specimen with forward and reverse reads as follows:
+HmC010011A_CKDL220009543-1a-AK9141-7UDI214_HN325DSX3_L3_1.fq.gz
+HmC010011A_CKDL220009543-1a-AK9141-7UDI214_HN325DSX3_L3_2.fq.gz
+HmC010011D_CKDL220009543-1a-AK9141-AK7558_HN325DSX3_L3_1.fq.gz
+HmC010011D_CKDL220009543-1a-AK9141-AK7558_HN325DSX3_L3_2.fq.gz
+Which according to the decode file would be renamed to Hmi-CBas_001-Ex1-01A_L3_1|2.fq.gz. Two libraries would be overwritten.  I have to confer with my colleages to come up with a proper naming scheme that will not create problems further down the pipeline.  Once we have established a naming scheme I will create a script as follows:
+
+```sh
+#!/bin/bash
+
+#SBATCH --exclusive
+#SBATCH --mail-user=ilope002@odu.edu
+#SBATCH --mail-type=END
+#SBATCH --job-name=RenameFQGZ
+#SBATCH --output=/home/ilope002/pire_cssl_data_processing/logs/RenameFQGZbash.out
+#SBATCH --open-mode=append
+
+echo "SLURM_JOB_ID=$SLURM_JOB_ID"
+
+mv Old_Name_RetainableElement.fq.gz PIRE_NAME_RetainableElement.fq.gz
+```
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "potential file overwrite problem with renaming"
+```
