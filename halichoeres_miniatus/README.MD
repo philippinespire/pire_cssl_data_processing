@@ -110,6 +110,8 @@ It is not apparent to me that this script did anything.  While two .txt files we
 
 I confered with my colleagues who reported a recent Perl binary error in Wahab that was preventing the scripts from executing properly.  A solution was found but was not yet pushed to the repo.  This error will affect the performance of several scripts.  I will continue this work once the problem is resolved.
 
+### Rename
+
 I typed the following commands:
 
 ```sh
@@ -606,5 +608,37 @@ cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "files renamed"
 ```
 
+### Quality Check
 
+I checked the quality of the data by running the script [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).  The instructions are unclear here.
+
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/
+mkdir shotgun_raw_fq
+cd shotgun_raw_fq
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" "fq.gz"
+squeue -u ilope002
+```
+
+The job produced an outfile:
+
+```sh
+Fcntl.c: loadable library and perl binaries are mismatched (got handshake key 0xcd00080, needed 0xde00080)
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+[WARNING]         multiqc : No analysis results found. Cleaning up..
+[INFO   ]         multiqc : MultiQC complete
+```
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "Multi_FASTQC.sh failed"
+```
 
