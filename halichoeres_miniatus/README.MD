@@ -610,8 +610,12 @@ cd /home/ilope002/pire_cssl_data_processing
 
 ### Quality Check
 
-I checked the quality of the data by running the script [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).  The instructions are unclear here.
+I checked the quality of the data by running the script [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).  The instructions are unclear here.  The instructions lean on referencing shotgun_raw_fq making this part confusing.  I would remove direct references to shotgun_raw_fq and present it stricly as an option such as:
 
+```sh
+cd YOUR_SPECIES_DIR/YOUR_LIBRARY_DIR
+#for ssl YOUR_LIBRARY_DIR is shotgun_raw_fq
+#for cssl YOUR_LIBRARY_DIR is raw_fq_capture
 
 I typed the following commands:
 
@@ -642,3 +646,23 @@ cd /home/ilope002/pire_cssl_data_processing
 ../scripts/Gitpushinator.sh "Multi_FASTQC.sh failed"
 ```
 
+The script failed because I became confused by the instructions.  In a cssl pipeline I do not need the shotgun_raw_fq dir.  It seemed to me that output must go there, thus the authors emphasis on this dir.  In steps like these, even if it took a little more typing, cutting and pasting, I would segregate cssl and ssl portions of the pipeline.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus
+rmdir shotgun_raw_fq
+cd raw_fq_capture
+salloc
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" "fq.gz"
+squeue -u ilope002
+```
+
+The script ran as job #810731.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing
+../scripts/Gitpushinator.sh "running Multi_FASTQC.sh"
