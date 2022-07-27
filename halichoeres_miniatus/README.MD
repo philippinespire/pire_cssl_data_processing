@@ -661,8 +661,12 @@ squeue -u ilope002
 
 The script ran as job #810731.
 
+While they script seemed to run for nearly six hours, there was no output and no logs were generated.  While it was suggested that I run these scripts strictly from the source directory, they are not constructed in a way that gives me control over trouble shooting or in a way that helps me to understand what went wrong.  I am going to cp the /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/ so I can add slurm commands and work more directly with Mr. Min Dong to trouble shoot problems.
+
 I typed the following commands:
 
 ```sh
-cd /home/ilope002/pire_cssl_data_processing
-../scripts/Gitpushinator.sh "running Multi_FASTQC.sh"
+cd /home/ilope002/
+cp -r /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/ .
+cd /home/ilope002/pire_cssl_data_processing/
+../scripts/Gitpushinator.sh "Multi_FASTQC.sh failed"
