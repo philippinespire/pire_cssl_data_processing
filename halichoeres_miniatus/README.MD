@@ -659,7 +659,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/
 squeue -u ilope002
 ```
 
-The script ran as job #810731.
+The script ran as job #810732.
 
 While they script seemed to run for nearly six hours, there was no output and no logs were generated.  While it was suggested that I run these scripts strictly from the source directory, they are not constructed in a way that gives me control over trouble shooting or in a way that helps me to understand what went wrong.  I am going to cp the /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/ so I can add slurm commands and work more directly with Mr. Min Dong to trouble shoot problems.
 
@@ -667,6 +667,29 @@ I typed the following commands:
 
 ```sh
 cd /home/ilope002/
-cp -r /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/ .
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/* ./scripts
 cd /home/ilope002/pire_cssl_data_processing/
 ../scripts/Gitpushinator.sh "Multi_FASTQC.sh failed"
+nano ~/.wahab_tcshrc
+```
+
+I edited my nano `.wahab_tcshrc` file by adding the line unsetenv PERL5LIB to resolve the Perl binary conflict with programs such as parallel as recommended by Min.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+salloc
+sbatch /home/ilope002/scripts/Multi_FASTQC.sh "/home/ilope002/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" "fq.gz"
+squeue -u ilope002
+```
+
+The script ran as job #816287.
+
+I typed the following commands:
+
+```sh
+cd /home/ilope002/pire_cssl_data_processing/
+../scripts/Gitpushinator.sh "Multi_FASTQC.sh running"
+```
+
