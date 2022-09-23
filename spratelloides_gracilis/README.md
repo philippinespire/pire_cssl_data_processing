@@ -1,9 +1,11 @@
-# Sde Data Processing Log
+# Sgr Data Processing Log
 
-Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus`
+Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis`
 
-September 2022,  we have received the 2nd sequencing run for Sde. Progress for the 2nd run can be followed at
+Transfer completed september 2022 using wget in  parallel (40 files at the time) from TAMUCC webshare Sgr directory
+ 
 ---
+
 
 **Checking quality of reads**
 

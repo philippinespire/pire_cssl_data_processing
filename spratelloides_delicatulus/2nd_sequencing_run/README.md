@@ -1,8 +1,18 @@
-# Sde Data Processing Log
+# Sde 2nd Sequencing Run Processing Log
 
-Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus`
+Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run`
 
-September 2022,  we have received the 2nd sequencing run for Sde. Progress for the 2nd run can be followed at
+---
+
+**Transfering data**
+Normally i use `scp` to transfer files from TAMUCC to  ODU (scp transfer one by one file) but for the 2nd Sde run, we generated over 1k data files so scp was not suited. 
+I also could not set up a transfer using parallel bc my password was required for each file.
+
+Solution:
+Sharon put the files in the TAMUCC webshare which doesn't require a password. I then made the []() to download 40 files in parallel, substancially increasing the spead of transfer.
+ 
+September 2022,  transfer completed
+
 ---
 
 **Checking quality of reads**
