@@ -61,10 +61,9 @@ SdC0207706G	Sde-CHam_077_Ex1-cssl2
 SdC0105510G	Sde-CMat_055_Ex1-cssl2
 SdC0106112A	Sde-CMat_061_Ex1-cssl2
 ```
+I also manually changed one individual from  Sde-AMar_061_Ex1_b-cssl2 to Sde-AMar_061_Ex1b-cssl2 to maintain consistency.
 
-# I also manually changed one individual from  Sde-AMar_061_Ex1_b-cssl2 to Sde-AMar_061_Ex1b-cssl2 to maintain consistency.
-
-NOTE: 
+NOTEs: 
 * "cssl2" individuals denote individuals that have been sequenced in multiple runs to control for lane effects. 
 * "Ex1b" are individuals that half of the  extraction  was  originally kept at ODU (this  was later sent  to TAMUCC)
 
@@ -100,15 +99,7 @@ will assess success of new script soon
 # script prints out a log with what it has done. Lets check it out:
 less cat*out
 ```
-
-Note: Brendan modified renameFQGZ.bash so that it generates names with a single "_" given that the decode file has a single "_" in the new names, which is not the case normally.
-
-Easy fix is to modify the decode file:
-```
-sed -i 's/_E/-E/' Sde_CaptureLibraries2_SequenceNameDecode.tsv
-```
-
-Checking that I didn't lose data with du
+Also, checking that I didn't lose data with du
 ```
 # overall size of concatenated files
 cd concatenated_names
@@ -123,11 +114,20 @@ du -sh
 
 Everything looks good! Have a single 1.fq.gz and a single 2.fq.gz file for each of the 354 individuals.
 
+Note: Brendan modified renameFQGZ.bash so that it generates names with a single underscore given that the decode file has a single underscore in the new names too, which is not the case normally.
+
+The easy fix is to modify the decode file:
+```
+sed -i 's/_E/-E/' Sde_CaptureLibraries2_SequenceNameDecode.tsv
+```
+
 Checking the new names again
 ```
+cp renameFQGZ.bash concatenated_files
+cp Sde_CaptureLibraries2_SequenceNameDecode.tsv concatenated_files
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sde_CaptureLibraries2_SequenceNameDecode.tsv
 ```
-ok looks good. Renaming
+ok looks good! Renaming
 ```
 #run renameFQGZ.bash again to actually rename files
 #need to say "yes" 2X
