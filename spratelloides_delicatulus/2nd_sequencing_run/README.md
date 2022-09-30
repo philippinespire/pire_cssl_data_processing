@@ -2,6 +2,8 @@
 
 Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run`
 
+[Sde slack channel](https://app.slack.com/client/TMJJ06SH0/CN65Y0WAJ/thread/CP0CYUUEN-1663780346.770149?cdn_fallback=1)
+
 ---
 
 **Transfering data**
@@ -12,6 +14,125 @@ Solution:
 Sharon put the files in the TAMUCC webshare which doesn't require a password. I then made the []() to download 40 files in parallel, substancially increasing the spead of transfer.
  
 September 2022,  transfer completed
+
+---
+
+## Step 0. Rename files for dDocent HPC
+
+Raw data in
+ `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/raw_fq_capture` 
+
+
+Used decode file from Sharon Magnuson & Chris Bird.
+
+```bash
+cd spratelloides_delicatulus/2nd_sequencing_run/raw_fq_capture
+
+salloc
+bash
+
+#check got back sequencing data for all individuals in decode file
+ls *gz | wc -l     # 1420
+wc -l Sde_CaptureLibraries2_SequenceNameDecode.tsv  #355
+# in this case,  individuals were sequenced in 2 diff  lanes so I have 4  files per sample.
+
+#run renameFQGZ.bash first to make sure new names make sense
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sde_CaptureLibraries2_SequenceNameDecode.tsv
+```
+
+I noticed some files had extra characters in the new names  and it turns out that the decode files was missing this characters from the old names, causing the  problem
+
+```
+#  original
+tail -n6 Sde_CaptureLibraries2_SequenceNameDecode.tsv
+SdC0509505A	Sde-CVal_095_Ex1-cssl
+SdC0509603E	Sde-CVal_096_Ex1-cssl
+SdC02014	Sde-CHam_014_Ex1-cssl2
+SdC02077	Sde-CHam_077_Ex1-cssl2
+SdC01055	Sde-CMat_055_Ex1-cssl2
+SdC01061	Sde-CMat_061_Ex1-cssl2
+
+# fixed to
+tail -n6 Sde_CaptureLibraries2_SequenceNameDecode.tsv
+SdC0509505A     Sde-CVal_095_Ex1-cssl
+SdC0509603E     Sde-CVal_096_Ex1-cssl
+SdC0201405G	Sde-CHam_014_Ex1-cssl2
+SdC0207706G	Sde-CHam_077_Ex1-cssl2
+SdC0105510G	Sde-CMat_055_Ex1-cssl2
+SdC0106112A	Sde-CMat_061_Ex1-cssl2
+```
+
+# I also manually changed one individual from  Sde-AMar_061_Ex1_b-cssl2 to Sde-AMar_061_Ex1b-cssl2 to maintain consistency.
+
+NOTE: 
+* "cssl2" individuals denote individuals that have been sequenced in multiple runs to control for lane effects. 
+* "Ex1b" are individuals that half of the  extraction  was  originally kept at ODU (this  was later sent  to TAMUCC)
+
+1 individual had 8 files
+```
+SdC0601502G_1_CKDL220019623-1A_H7TTHDSX5_L3_1.fq.gz
+SdC0601502G_1_CKDL220019623-1A_H7TTHDSX5_L3_2.fq.gz
+SdC0601502G_1_CKDL220019623-1A_H7TTHDSX5_L4_1.fq.gz
+SdC0601502G_1_CKDL220019623-1A_H7TTHDSX5_L4_2.fq.gz
+SdC0601502G_2_CKDL220019623-1A_H7TTHDSX5_L3_1.fq.gz
+SdC0601502G_2_CKDL220019623-1A_H7TTHDSX5_L3_2.fq.gz
+SdC0601502G_2_CKDL220019623-1A_H7TTHDSX5_L4_1.fq.gz
+SdC0601502G_2_CKDL220019623-1A_H7TTHDSX5_L4_2.fq.gz
+```
+
+Check new nanmes
+```
+# Re-running renameFQGZ.bash first to make sure new names make sense
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sde_CaptureLibraries2_SequenceNameDecode.tsv
+```
+
+**Problem:** I have noticed that the script overlooks the lane info meaning that it will overwrite files of the same individual but different lanes.
+
+**Solution:** I wrote the script [concat_diff_lanes.sh](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/concat_diff_lanes.sh) to concatenate the multiple files of one individual into a single file denoted by "LA" (all lanes) instead of L1, L2, L3, L4 etc
+
+I am sending new concatenated files into a new directory just incase
+```
+sbatch concat_diff_lanes.sh concatenated_files
+```
+
+will assess success of new script soon
+```
+# script prints out a log with what it has done. Lets check it out:
+less cat*out
+```
+
+Note: Brendan modified renameFQGZ.bash so that it generates names with a single "_" given that the decode file has a single "_" in the new names, which is not the case normally.
+
+Easy fix is to modify the decode file:
+```
+sed -i 's/_E/-E/' Sde_CaptureLibraries2_SequenceNameDecode.tsv
+```
+
+Checking that I didn't lose data with du
+```
+# overall size of concatenated files
+cd concatenated_names
+du -sh
+
+# overall size of original files
+mkdir origiFiles
+mv S*gz origiFiles
+cd origiFiles
+du -sh
+```
+
+Everything looks good! Have a single 1.fq.gz and a single 2.fq.gz file for each of the 354 individuals.
+
+Checking the new names again
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sde_CaptureLibraries2_SequenceNameDecode.tsv
+```
+ok looks good. Renaming
+```
+#run renameFQGZ.bash again to actually rename files
+#need to say "yes" 2X
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv rename
+```
 
 ---
 
