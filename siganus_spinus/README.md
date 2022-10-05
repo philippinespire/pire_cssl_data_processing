@@ -89,7 +89,7 @@ Run MultiQC.
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" fastqc_report
 ```
 
-MultiQC summary:
+MultiQC [report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/raw_fq_capture/fastqc_report.html) summary:
 * Highly variable # of sequences. 100k - 104.8M. Most Albatross between 500k-1M.
 * Quality looks OK.
 * GC content warnings for some Albatross samples - bimodal distribution of GC content (target + contamination? Maybe this will be fixed in fqscreen) 
@@ -105,4 +105,20 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
 #sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
 #do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
+```
+
+MultiQC [report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/fq_fp1/1st_fastp_report.html) summary:
+* Most reads for Albatross + contemporary pass filter
+* High duplication + % adapter still for a lot of Albatross.
+* GC content variable for Albatross
+* Lower insert size on average for Albatross
+
+### 4. Clumpify / remove duplicates
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
+
+#runCLUMPIFY_r1r2_array.bash <indir; fast1 files> <outdir> <tempdir> <max # of nodes to use at once>
+#do not use trailing / in paths
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/breid 20
 ```
