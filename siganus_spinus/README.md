@@ -37,12 +37,56 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-C*fq.gz"
 ```
 
-Did not work for: Ssp-AAtu_021-Ex1-cssl.1.fq.gz, Ssp-AAtu_043-Ex1-cssl.1.fq.gz, Ssp-AAtu_046-Ex1-cssl.1.fq.gz
+Still stalls - does not work for: 
+Ssp-AAtu_021, Ssp-AAtu_043, Ssp-AAtu_046
+Ssp-CGub_004, Ssp-CGub_011, Ssp-CGub_040, Ssp-CGub_049, Ssp-CGub_056, Ssp-CGub_059, Ssp-CGub_091
 
-Re-trying with modified SingleQC script.
+For some reason these are all of the files with sizes in the range 7-25 Mb. All files smaller or larger worked. No indication that anything is particularly weird - .1 and .2 files are same # of lines (so probably nothing went wrong in file transfer) and look like regular fq.gz files.
+
+Re-trying Albatross failures with modified SingleQC script. These are stalling too.
 ```
 sbatch Single_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_021-Ex1-cssl.1.fq.gz"
 sbatch Single_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_043-Ex1-cssl.1.fq.gz"
 sbatch Single_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_046-Ex1-cssl.1.fq.gz"
 ```
 
+Re-trying failures with SingleQC script - no parallel. It works!!
+```
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_021-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_021-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_043-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_043-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_046-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-AAtu_046-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_004-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_004-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_011-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_011-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_040-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_040-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_049-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_049-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_056-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_056-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_059-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_059-Ex1-cssl.2.fq.gz"
+
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_091-Ex1-cssl.1.fq.gz"
+sbatch Single_FASTQC_noparallel.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" "Ssp-CGub_091-Ex1-cssl.2.fq.gz"
+```
+
+Run MultiQC.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" fastqc_report
+```
+
+MultiQC complete!
