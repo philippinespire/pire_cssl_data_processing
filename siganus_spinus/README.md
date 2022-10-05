@@ -145,3 +145,11 @@ Clumpify Successfully worked on all samples!
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
+
+MultiQC [report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/fq_fp1_clmp_fp2/2nd_fastp_report.html). Duplication and % adapter way down for Albatross samples (now ~20% + 1% respectively). Still some high GC samples.
+
+### 6. Decontaminate
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
