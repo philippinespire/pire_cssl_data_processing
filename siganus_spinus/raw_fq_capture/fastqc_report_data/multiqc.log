@@ -1,0 +1,710 @@
+[2022-10-05 14:05:14,719] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-10-05 14:05:14,720] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/breid/.multiqc_config.yaml
+[2022-10-05 14:05:14,720] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-10-05 14:05:14,720] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/fastqc_report
+[2022-10-05 14:05:15,309] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-10-05 14:05:15,310] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-10-05 14:05:15,310] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/fastqc_report
+[2022-10-05 14:05:15,311] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture
+[2022-10-05 14:05:15,311] multiqc                                            [INFO   ]  Template    : default
+[2022-10-05 14:05:15,311] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-10-05 14:05:15,311] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture
+[2022-10-05 14:05:15,312] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-10-05 14:05:15,313] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpe68o8a7t
+[2022-10-05 14:05:15,616] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_005-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:15,627] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_005-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:15,754] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:15,762] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:15,874] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:15,882] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:15,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_066-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:15,997] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_058-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:16,005] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_058-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:16,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_008-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:16,116] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_052-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,124] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_052-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,213] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_040-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:16,239] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_011-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,246] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_011-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,362] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,370] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,484] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_045-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,492] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_045-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,586] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_025-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:16,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_053-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:16,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_009-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:16,610] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_089-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,618] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_089-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,729] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_058-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,737] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_058-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,848] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:16,856] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:16,965] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:16,973] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,085] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_070-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,093] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_070-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,208] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_042-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,216] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_042-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,328] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,336] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,446] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_056-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,454] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_056-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,547] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_009-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:17,572] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_047-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,579] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_047-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,695] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,702] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_095-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:17,813] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,821] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:17,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_094-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:17,933] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_050-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:17,941] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_050-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,057] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_082-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,064] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_082-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,177] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,185] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_049-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_041-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,303] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_040-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,311] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_040-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,404] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_039-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,404] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_047-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_047-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_017-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_058-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,430] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,438] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,555] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_018-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,563] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_018-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_077-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,682] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_070-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,690] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_070-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_036-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_033-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_019-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_050-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_038-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_027-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:18,791] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_049-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:18,814] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,822] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:18,932] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_049-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:18,940] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_049-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,056] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_090-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:19,064] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_090-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:19,175] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_037-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,183] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_037-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_008-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,299] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,307] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_019-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,401] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_051-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,426] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,434] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,527] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_085-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_020-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_035-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_034-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_061-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_052-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:19,557] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,565] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,657] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_080-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_042-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,682] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:19,689] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:19,804] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,813] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:19,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_067-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:19,924] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_059-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:19,932] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_059-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_073-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:20,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_048-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:20,044] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: origFileNames.txt
+[2022-10-05 14:05:20,051] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: origFileNames.txt
+[2022-10-05 14:05:20,092] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_077-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:20,099] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_077-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:20,186] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_006-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:20,210] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,218] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_082-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:20,344] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_034-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,352] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_034-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,471] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,479] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_021-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:20,598] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Single_FASTQC_noparallel.sh
+[2022-10-05 14:05:20,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_054-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:20,638] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:20,646] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:20,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_016-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:20,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_037-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:20,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_005-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:20,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_034-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:20,770] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,778] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,900] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:20,908] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_055-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:21,027] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,035] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,124] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_059-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:21,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_039-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:21,150] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,157] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,286] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,293] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,384] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_049-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:21,408] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,416] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,533] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_042-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,541] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_042-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,630] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_035-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:21,654] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_051-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,662] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_051-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:21,777] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_038-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,785] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_038-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,871] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_043-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:21,897] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:21,905] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,016] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,024] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_036-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:22,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_056-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:22,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_090-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:22,144] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,152] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,245] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_025-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:22,245] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_030-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:22,246] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_013-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:22,270] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_085-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,278] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_085-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,367] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_008-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:22,390] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,398] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,509] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_040-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,517] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_040-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,635] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Single_FASTQC.sh
+[2022-10-05 14:05:22,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,803] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_092-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,811] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_092-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:22,920] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:22,928] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_073-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,044] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,052] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_033-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_043-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,171] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_091-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:23,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_091-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:23,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_013-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,280] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_041-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_013-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_008-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_020-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_080-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,314] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:23,322] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:23,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_007-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,439] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_004-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,447] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_004-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,560] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_055-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,568] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_055-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_065-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,682] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,690] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_018-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_090-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,782] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_092-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:23,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_091-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,814] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_091-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_015-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:23,933] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:23,941] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_027-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:24,059] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_054-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,066] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_054-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,178] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:24,186] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:24,273] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_091-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:24,299] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_040-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,306] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_040-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_077-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:24,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_039-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:24,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_076-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:24,428] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,436] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_050-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:24,556] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_012-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,564] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_012-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:24,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_026-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:24,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_039-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:24,773] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_030-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:24,796] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_061-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:24,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_061-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:24,917] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:24,925] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_029-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:25,044] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,051] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_030-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:25,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_031-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:25,171] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: renameFQGZb.bash
+[2022-10-05 14:05:25,213] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:25,221] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:25,340] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_065-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,347] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_065-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_061-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:25,463] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_011-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,471] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_011-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,566] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_036-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:25,589] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_096-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,597] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_096-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_051-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:25,707] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_080-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:25,714] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_080-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:25,825] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_052-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,833] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_052-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,942] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_067-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:25,950] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_067-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,061] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_073-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,068] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_073-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,180] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,188] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,300] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: newFileNames.txt
+[2022-10-05 14:05:26,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_024-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:26,322] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_029-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:26,345] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_089-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,353] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_089-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,442] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_045-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:26,466] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,474] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_085-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:26,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_014-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:26,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_009-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:26,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_009-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:26,592] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_085-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:26,600] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_085-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:26,711] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,830] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,838] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,959] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_005-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:26,966] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_005-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:27,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_018-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,083] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,091] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,178] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_014-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,178] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_041-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,217] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_050-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,240] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,248] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,335] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_006-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,358] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_050-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,366] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_050-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_030-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_040-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_067-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_082-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,458] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_016-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_032-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_033-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_007-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,462] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_043-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,462] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_036-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,463] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_016-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,490] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,498] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,614] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:27,622] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:27,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_035-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_011-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,744] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_057-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,752] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_057-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_006-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_038-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:27,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_021-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_024-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_053-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:27,909] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_065-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:27,917] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_065-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,028] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: renameFQGZc.bash
+[2022-10-05 14:05:28,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_032-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:28,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_012-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:28,070] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,078] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,192] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,200] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,310] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_046-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,318] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_046-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,411] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_052-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:28,434] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,442] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_095-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:28,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_015-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:28,561] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_095-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,568] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_095-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,678] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_038-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,686] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_038-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:28,797] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_038-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_038-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,921] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:28,929] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,046] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:29,053] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:29,170] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_049-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_049-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,303] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,423] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_073-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,431] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_073-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,543] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,551] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,664] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_050-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:29,672] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_050-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:29,789] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,796] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,916] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_051-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:29,924] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_051-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,035] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_094-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:30,043] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_094-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:30,157] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:30,164] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:30,278] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,286] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,401] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,409] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,521] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp_CaptureLibraries_SequenceNameDecode.tsv
+[2022-10-05 14:05:30,561] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,569] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,656] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_043-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:30,679] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,687] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,776] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_011-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:30,801] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_037-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,809] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_037-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:30,925] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_059-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:30,933] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_059-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_004-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_022-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,052] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_049-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,060] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_049-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,153] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_038-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,154] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_055-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,178] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_048-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,186] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_048-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,280] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_094-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_024-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_026-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_015-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_052-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,289] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_013-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,313] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,320] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_095-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,443] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_095-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_033-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,532] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_052-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_050-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_070-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:31,559] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_092-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:31,567] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_092-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:31,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_061-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:31,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_061-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:31,776] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_006-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,799] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_055-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,807] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_055-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_066-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:31,923] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:31,931] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_031-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:32,053] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_076-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,060] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_076-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,176] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,184] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_040-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,304] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_040-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,420] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,427] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_027-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:32,516] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_021-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:32,540] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_011-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,548] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_011-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,664] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_018-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,672] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_018-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,789] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,796] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:32,913] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_052-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:32,921] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_052-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_091-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,038] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_057-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,046] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_057-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,165] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_090-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,173] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_090-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,261] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_045-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,263] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_011-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,286] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,294] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,405] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,413] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_024-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,533] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,541] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,634] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_041-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,635] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_014-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:33,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_051-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:33,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_035-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:33,661] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_011-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,669] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_011-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_065-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:33,786] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,793] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:33,911] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_078-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:33,919] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_078-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_057-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:34,034] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,042] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,157] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,165] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,274] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_066-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,282] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_066-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,373] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_059-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:34,373] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_042-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:34,396] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_094-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,404] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_094-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_051-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:34,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_004-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:34,516] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_056-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,523] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_056-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,639] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,646] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:34,764] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,772] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,864] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_040-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:34,888] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,896] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:34,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_076-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:34,991] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_016-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:35,016] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_052-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,024] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_052-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,143] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,151] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,243] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_031-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:35,269] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,276] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,393] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,401] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_015-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:35,494] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_017-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:35,495] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_046-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:35,519] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_012-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,527] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_012-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,621] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_058-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:35,622] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_011-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:35,647] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_053-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,655] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_053-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_057-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:35,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_027-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:35,767] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_045-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,775] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_045-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:35,893] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_048-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:35,901] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_048-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,017] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_082-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,025] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_082-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_048-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:36,141] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_050-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,149] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_050-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,239] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_022-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:36,241] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_040-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:36,264] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,272] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,359] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_037-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:36,382] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_078-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,390] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_078-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,505] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2022-10-05 14:05:36,546] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_046-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,553] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_046-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:36,669] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,676] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,787] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_076-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,795] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_076-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_005-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:36,913] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:36,920] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_046-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:37,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_023-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:37,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_012-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:37,039] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,047] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,156] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_004-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,164] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_004-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,256] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_089-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:37,281] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,289] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,381] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_022-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:37,405] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_080-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,412] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_080-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,523] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_038-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,531] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_038-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,648] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,656] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,766] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,774] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:37,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,897] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:37,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_078-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,016] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_051-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,024] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_051-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,139] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_096-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,147] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_096-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,257] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_067-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,265] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_067-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_031-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:38,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_096-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_049-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:38,377] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,384] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,477] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_021-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,479] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_070-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:38,506] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,513] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_023-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:38,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_022-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,632] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_047-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,640] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_047-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_092-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,759] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_051-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,767] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_051-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:38,877] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_066-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,885] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_066-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:38,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_056-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:38,998] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,005] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-AAtu_038-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:39,128] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_077-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,136] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_077-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,246] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,254] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,364] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_054-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,372] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_054-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_096-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:39,484] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_049-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,492] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_049-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_078-Ex1-cssl.2.fq.gz
+[2022-10-05 14:05:39,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_014-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:39,615] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,623] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 14:05:39,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_054-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:39,742] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,749] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,865] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,873] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Ssp-CGub_089-Ex1-cssl.1.fq.gz
+[2022-10-05 14:05:39,989] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-CGub_053-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:39,997] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-CGub_053-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:40,111] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Ssp-AAtu_034-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:40,119] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Ssp-AAtu_034-Ex1-cssl.2_fastqc.html
+[2022-10-05 14:05:40,237] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: renameFQGZ.bash
+[2022-10-05 14:05:40,788] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-05 14:05:40,789] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-05 14:05:40,790] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-10-05 14:05:40,795] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-10-05 14:05:40,800] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-10-05 14:05:40,804] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-10-05 14:05:40,809] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-10-05 14:05:40,815] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-10-05 14:05:40,819] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-10-05 14:05:40,822] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-10-05 14:05:40,826] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-10-05 14:05:40,830] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-10-05 14:05:40,835] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-10-05 14:05:40,838] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-10-05 14:05:40,842] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-10-05 14:05:40,845] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-10-05 14:05:40,850] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-10-05 14:05:40,854] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-10-05 14:05:40,859] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-10-05 14:05:40,864] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-10-05 14:05:40,868] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-10-05 14:05:40,875] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-10-05 14:05:40,879] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-10-05 14:05:40,883] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-10-05 14:05:40,887] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-10-05 14:05:40,892] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-10-05 14:05:40,897] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-10-05 14:05:40,902] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-10-05 14:05:40,905] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-10-05 14:05:40,909] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-10-05 14:05:40,913] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-10-05 14:05:40,918] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-10-05 14:05:40,922] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-10-05 14:05:40,926] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-10-05 14:05:40,931] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-10-05 14:05:40,934] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-10-05 14:05:40,941] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-10-05 14:05:40,945] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-10-05 14:05:40,949] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-10-05 14:05:40,960] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-10-05 14:05:40,964] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-10-05 14:05:40,966] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-10-05 14:05:40,970] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-10-05 14:05:40,974] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-10-05 14:05:40,978] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-10-05 14:05:40,982] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-10-05 14:05:40,987] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-10-05 14:05:40,991] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-10-05 14:05:40,996] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-10-05 14:05:41,000] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-10-05 14:05:41,005] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-10-05 14:05:41,009] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-10-05 14:05:41,015] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-10-05 14:05:41,020] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-10-05 14:05:41,024] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-10-05 14:05:41,028] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-10-05 14:05:41,032] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-10-05 14:05:41,035] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-10-05 14:05:41,039] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-10-05 14:05:41,043] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-10-05 14:05:41,047] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-10-05 14:05:41,051] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-10-05 14:05:41,055] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-10-05 14:05:41,059] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-10-05 14:05:41,063] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-10-05 14:05:41,066] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-10-05 14:05:41,070] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-10-05 14:05:41,074] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-10-05 14:05:41,077] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-10-05 14:05:41,081] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-10-05 14:05:41,085] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-10-05 14:05:41,090] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-10-05 14:05:41,094] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-10-05 14:05:41,099] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-10-05 14:05:41,102] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-10-05 14:05:41,106] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-10-05 14:05:41,110] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-10-05 14:05:41,114] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-10-05 14:05:41,117] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-10-05 14:05:41,121] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-10-05 14:05:41,125] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-10-05 14:05:41,129] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-10-05 14:05:41,133] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-10-05 14:05:41,137] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-10-05 14:06:16,664] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 196 reports
+[2022-10-05 14:06:38,415] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-10-05 14:06:38,419] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-10-05 14:06:38,424] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-10-05 14:06:38,429] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-10-05 14:06:38,433] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-10-05 14:06:38,437] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-10-05 14:06:38,440] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-10-05 14:06:38,444] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-10-05 14:06:38,448] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-10-05 14:06:38,717] multiqc                                            [INFO   ]  Compressing plot data
+[2022-10-05 14:06:38,792] multiqc                                            [INFO   ]  Report      : fastqc_report.html
+[2022-10-05 14:06:38,792] multiqc                                            [INFO   ]  Data        : fastqc_report_data
+[2022-10-05 14:06:38,792] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpe68o8a7t/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/fastqc_report_data'
+[2022-10-05 14:06:39,130] multiqc                                            [INFO   ]  MultiQC complete
