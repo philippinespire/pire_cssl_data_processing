@@ -89,4 +89,20 @@ Run MultiQC.
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture" fastqc_report
 ```
 
-MultiQC complete!
+MultiQC summary:
+* Highly variable # of sequences. 100k - 104.8M. Most Albatross between 500k-1M.
+* Quality looks OK.
+* GC content warnings for some Albatross samples - bimodal distribution of GC content (target + contamination? Maybe this will be fixed in fqscreen) 
+* Low N content, good sequence lengths
+* High duplication for Albatross + some contemps (to be expected for capture?)
+* High adapter content, some overrepresented sequence warnings.
+
+### 3. First trim.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
+
+#sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
+#do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
+```
