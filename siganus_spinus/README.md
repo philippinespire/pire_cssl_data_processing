@@ -122,3 +122,26 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
 #do not use trailing / in paths
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/breid 20
 ```
+
+Check clumpify.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
+
+salloc #because R is interactive and takes a decent amount of memory, we want to grab an interactive node to run this
+enable_lmod
+module load container_env mapdamage2
+
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R .
+
+crun R < checkClumpify_EG.R --no-save
+exit #to relinquish the interactive node
+```
+
+Clumpify Successfully worked on all samples!
+
+### 5. Second fastp trim.
+
+```
+sbatch r/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/unFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
