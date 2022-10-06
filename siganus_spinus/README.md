@@ -153,3 +153,40 @@ MultiQC [report](https://github.com/philippinespire/pire_cssl_data_processing/bl
 ```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
+
+Checking that all went well.
+
+```
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l
+
+# all 196!!
+
+grep 'error' logs/slurm-fqscrn.*out
+grep 'No reads in' logs/slurm-fqscrn.*out
+
+# nothing!
+```
+
+Run MultiQC.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastqc_screen_report
+```
+
+MultiQC [summary](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report.html).
+* Most sequences "no-hit"
+* Bacteria or multiple genomes are significant secondary components, more common in Albatross samps (and a few contemp samples)
+* Three Albatross specimens have substantial amounts of human DNA.
+
+### 7. Run re-pair
+
+```
+cd YOUR_SPECIES_DIR
+
+#runREPAIR.sbatch <indir; fqscreen files> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
