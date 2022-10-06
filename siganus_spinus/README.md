@@ -185,8 +185,31 @@ MultiQC [summary](https://github.com/philippinespire/pire_cssl_data_processing/b
 ### 7. Run re-pair
 
 ```
-cd YOUR_SPECIES_DIR
-
 #runREPAIR.sbatch <indir; fqscreen files> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
+
+Run Multi_FASTQC!
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz"
+```
+
+MultiQC [summary](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report.html).
+
+* GC content still an issue after fqscreen (although peak at 50% for some is gone).
+* Per tile quality is an issue now - should that be a concern? 
+
+### 8. Calculate % reads lost
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus"
+```
+
+Tables for [readLoss](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/preprocess_read_change/readLoss_table.tsv) and [readsRemaining](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/siganus_spinus/preprocess_read_change/readsRemaining_table.tsv).
+
+* Lots of reads lost at clumpify step (de-duplication, makes sense).
+* More reads lost for Albatross at decontamination.
+* Still >100k reads for most Albatross, although there still may be contamination based on GC content.
+
+Moving on to CSSL pipeline!
