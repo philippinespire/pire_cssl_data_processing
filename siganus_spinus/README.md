@@ -264,3 +264,11 @@ Ssp-10NR-R1R2ORPH-decontam-noisolate               Cutoff2 (integer)
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM
 sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 ```
+
+This did not work since it is trying to reference a bash script in ../../scripts/dDocentHPC, which doesn't exist! I am copying the script back from the REU directory and trying it with a modified dDocentHPC.sbatch script.
+
+```
+sbatch dDocentHPC.sbatch config.5.cssl
+```
+```
+```
