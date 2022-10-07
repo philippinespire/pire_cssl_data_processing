@@ -260,15 +260,10 @@ Ssp-10NR-R1R2ORPH-decontam-noisolate               Cutoff2 (integer)
 
 ## Run dDocent - map reads to reference, filter, call variable sites
 
-```
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM
-sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
-```
-
-This did not work since it is trying to reference a bash script in ../../scripts/dDocentHPC, which doesn't exist! I am copying the script back from the REU directory and trying it with a modified dDocentHPC.sbatch script.
+Try running dDocent wth the modified scripts as done for Leq.
 
 ```
+cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM/
+# add export SINGULARITY_BIND=/home/e1garcia + correct pathways
 sbatch dDocentHPC.sbatch config.5.cssl
-```
-```
 ```
