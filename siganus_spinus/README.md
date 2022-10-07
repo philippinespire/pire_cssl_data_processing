@@ -213,3 +213,54 @@ Tables for [readLoss](https://github.com/philippinespire/pire_cssl_data_processi
 * Still >100k reads for most Albatross, although there still may be contamination based on GC content.
 
 Moving on to CSSL pipeline!
+
+## Mapping and Filtering Data
+
+### Setting up mapping directory and reference genome
+
+Make mapping directory and move files to map.
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus
+mkdir mkBAM
+mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+```
+
+Clone dDocent, copy config file.
+```
+git clone https://github.com/cbirdlab/dDocentHPC.git
+cd mkBAM
+cp ../dDocentHPC/configs/config.5.cssl .
+```
+
+Careful with the reference genome! Ssp libraries were mislabelled as Sob in the original denovo genome assembly project.
+Should use a _decontam_ assembly since I am worried about bacterial contamination in the Albatross cssl data.
+Assembly labeled "Sob_10NR_decontam" looks lke it is best (highest BUSCO + N50).
+
+```
+#un-tar the assembly
+cp ../../../sob_spades/out_Sob-C_10NR_R1R2ORPH_decontam_noisolate_covcutoff-off.tar.gz ../
+cd ..
+tar -xvzf out_Sob-C_10NR_R1R2ORPH_decontam_noisolate_covcutoff-off.tar.gz
+#output ended up in a dir called "home/cbird/pire_shotgun/sob_spades/out_Sob-C_10NR_R1R2ORPH_decontam_noisolate_covcutoff-off" in siganus_spinus folder
+cp home/cbird/pire_shotgun/sob_spades/out_Sob-C_10NR_R1R2ORPH_decontam_noisolate_covcutoff-off/scaffolds.fasta mkBAM/
+#rename reference
+mv scaffolds.fasta reference.ssl.Ssp-10NR-R1R2ORPH-decontam-noisolate.fasta
+#removing assembly dir
+cd ..
+rm -r home/cbird/pire_shotgun/sob_spades/out_Sob-C_10NR_R1R2ORPH_decontam_noisolate_covcutoff-off
+cd mkBAM
+```
+
+Update config5.cssl.
+
+```
+ssl               Cutoff1 (integer) 
+Ssp-10NR-R1R2ORPH-decontam-noisolate               Cutoff2 (integer)
+```
+
+## Run dDocent - map reads to reference, filter, call variable sites
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM
+sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+```
