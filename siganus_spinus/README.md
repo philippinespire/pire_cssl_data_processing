@@ -267,3 +267,21 @@ cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbat
 # add export SINGULARITY_BIND=/home/e1garcia + correct pathways
 sbatch dDocentHPC.sbatch config.5.cssl
 ```
+
+dDocent ran mkBAM and fltrBAM successfully but there was an error with mkVCF: `[E::hts_idx_push] Chromosome blocks not continuous`
+
+I am going to try again using the original reference used for probe development (3NR_contam) to see if that fixes the error.
+
+```
+mkdir /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM_probedevref/
+cp ../../../sob_spades/out_Sob-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz ../
+tar -xzvf out_Sob-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz
+cp home/cbird/pire_shotgun/sob_spades/out_Sob-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM_probedevref/
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM_probedevref/
+mv scaffolds.fasta reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta
+cp ../mkBAM/config.5.cssl ./
+vi config.5.cssl
+## change ref name
+cp ../mkBAM/dDocentHPC.sbatch ./
+sbatch dDocentHPC.sbatch config.5.cssl
+```
