@@ -285,3 +285,18 @@ vi config.5.cssl
 cp ../mkBAM/dDocentHPC.sbatch ./
 sbatch dDocentHPC.sbatch config.5.cssl
 ```
+
+Received the same error message mapping to reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta !
+
+Running Roy + Chris's scripts to calculate mapping efficiency.
+
+```
+cp -r /home/cbird/roy/rroberts_thesis/scripts/bam_processing/ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/bam_processing
+sbatch getCVG.sbatch ../mkBAM out_cvg_Ssp10NRdecontam/
+sbatch getCVG.sbatch ../mkBAM_probedevref out_cvg_Ssp3NRcontam/
+sbatch getSTATS.sbatch ../mkBAM out_stats_Ssp10NRdecontam/
+sbatch getSTATS.sbatch ../mkBAM_probedevref out_stats_Ssp3NRcontam/
+sbatch mappedReadStats.sbatch ../mkBAM out_ReadStats_Ssp10NRdecontam/ Ssp
+sbatch mappedReadStats.sbatch ../mkBAM_probedevref out_ReadStats_Ssp3NRcontam/ Ssp
+```
