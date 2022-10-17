@@ -294,7 +294,7 @@ I resolved this error by sorting again using vcf-sort and running tabix.
 salloc
 module load vcftools
 module load htslib
-vcf-sort vcf-sort TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.vcf > TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf
+vcf-sort TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.vcf > TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf
 bgzip TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf
 tabix TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf.gz
 ```
@@ -355,6 +355,7 @@ cd pop_structure
 ```
 
 Copy final VCF file made from fltrVCF step to `pop_structure` directory.
+
 ```
 cp ../fltrVCF/*Fltr07.18.vcf .
 ```
@@ -362,20 +363,25 @@ cp ../fltrVCF/*Fltr07.18.vcf .
 Run PCA and prepare files for Admixture in PLINK.
 
 ```
+module load anaconda
 conda activate popgen
-plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --pca --out PIRE.leq.B.preHWE
-plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --make-bed --out PIRE.leq.B.preHWE
-awk '{$1=0;print $0}' PIRE.leq.B.preHWE.bim > PIRE.leq.B.preHWE.bim.tmp
-mv PIRE.leq.B.preHWE.bim.tmp PIRE.leq.B.preHWE.bim
+#problem with vcf ordering appeared again... re-sorting!
+module load vcftools
+module load htslib
+vcf-sort ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18.vcf > ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18-resort.vcf
+plink --vcf ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18-resort.vcf --const-fid 0 --allow-extra-chr --pca --out PIRE.ssp.A.preHWE
+plink --vcf ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18-resort.vcf --const-fid 0 --allow-extra-chr --make-bed --out PIRE.ssp.A.preHWE
+awk '{$1=0;print $0}' PIRE.ssp.A.preHWE.bim > PIRE.ssp.A.preHWE.bim.tmp
+mv PIRE.ssp.A.preHWE.bim.tmp PIRE.ssp.A.preHWE.bim
 ```
 
 Run Admixture for k={1-5].
 ```
 bash
 for K in 1 2 3 4 5; \
-do admixture --cv PIRE.leq.B.preHWE.bed $K | tee log${K}.out; done
+do admixture --cv PIRE.ssp.A.preHWE.bed $K | tee log${K}.out; done
 exit
 conda deactivate
 ```
 
-Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder). K=1 has the lowest CV error, which supports a single population. No strong substructuring/clustering within eras. There are differences between Albatross and contemporary apparent in PCA + Admixture k=2 plot. This could just be capturing variation in levels of missing data though. There are some outlier individuals for both contemp and Albatross, look into these later (could be correlated with missing data as well). 
+Copy *.eigenval, *.eigenvec & *.Q files to local computer and run pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder).
