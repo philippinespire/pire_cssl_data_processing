@@ -1,0 +1,15 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 277202 sequences (31088738 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 22427, 3, 5)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (56, 83, 113)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 227)
+[M::mem_pestat] mean and std.dev: (86.82, 41.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 284)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 277202 reads in 83.243 CPU sec, 2.361 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 80 -A 1 -B 4 -O 6 -R @RG\tID:Ssp-AAtu_006-Ex1-cssl.clmp.fp2_repr\tSM:Ssp-AAtu_006-Ex1-cssl.clmp.fp2_repr\tPL:Illumina reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta Ssp-AAtu_006-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Ssp-AAtu_006-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 4.657 sec; CPU: 85.274 sec

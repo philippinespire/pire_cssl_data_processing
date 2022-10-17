@@ -1,0 +1,20 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 183504 sequences (22237298 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 13130, 9, 11)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (66, 100, 146)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 306)
+[M::mem_pestat] mean and std.dev: (109.47, 60.13)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 386)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (95, 161, 201)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 413)
+[M::mem_pestat] mean and std.dev: (141.36, 60.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 519)
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 183504 reads in 43.681 CPU sec, 1.154 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 80 -A 1 -B 4 -O 6 -R @RG\tID:Ssp-AAtu_016-Ex1-cssl.clmp.fp2_repr\tSM:Ssp-AAtu_016-Ex1-cssl.clmp.fp2_repr\tPL:Illumina reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta Ssp-AAtu_016-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Ssp-AAtu_016-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 2.991 sec; CPU: 45.290 sec
