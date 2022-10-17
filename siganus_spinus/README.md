@@ -339,3 +339,43 @@ Grabbing the sbatch from `pire_cssl_data_processing/leiognathus_equula/fltrVCF` 
 cp ../../leiognathus_equula/fltrVCF/fltrVCF.sbatch .
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
 ```
+
+Lost a decent number of Albatross individuals in filtering (15 Albatross individuals left vs 45 contemporary) and 1714 sites. Lots of sites lost in "remove sites called in <X proportion of individuals" step.
+
+Still a decent number of Albatross individuals so trying an initial popgen analysis.
+
+## Initial popgen
+
+Make a directory to work in:
+
+``` 
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus
+mkdir pop_structure
+cd pop_structure
+```
+
+Copy final VCF file made from fltrVCF step to `pop_structure` directory.
+```
+cp ../fltrVCF/*Fltr07.18.vcf .
+```
+
+Run PCA and prepare files for Admixture in PLINK.
+
+```
+conda activate popgen
+plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --pca --out PIRE.leq.B.preHWE
+plink --vcf leq.B.rad.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --make-bed --out PIRE.leq.B.preHWE
+awk '{$1=0;print $0}' PIRE.leq.B.preHWE.bim > PIRE.leq.B.preHWE.bim.tmp
+mv PIRE.leq.B.preHWE.bim.tmp PIRE.leq.B.preHWE.bim
+```
+
+Run Admixture for k={1-5].
+```
+bash
+for K in 1 2 3 4 5; \
+do admixture --cv PIRE.leq.B.preHWE.bed $K | tee log${K}.out; done
+exit
+conda deactivate
+```
+
+Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder). K=1 has the lowest CV error, which supports a single population. No strong substructuring/clustering within eras. There are differences between Albatross and contemporary apparent in PCA + Admixture k=2 plot. This could just be capturing variation in levels of missing data though. There are some outlier individuals for both contemp and Albatross, look into these later (could be correlated with missing data as well). 
