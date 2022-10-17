@@ -288,6 +288,17 @@ sbatch dDocentHPC.sbatch config.5.cssl
 
 Received the same error message mapping to reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta !
 
+I resolved this error by sorting again using vcf-sort and running tabix.
+
+```
+salloc
+module load vcftools
+module load htslib
+vcf-sort vcf-sort TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.vcf > TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf
+bgzip TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf
+tabix TotalRawSNPs.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate-resort.vcf.gz
+```
+
 Running Roy + Chris's scripts to calculate mapping efficiency.
 
 ```
@@ -300,3 +311,4 @@ sbatch getSTATS.sbatch ../mkBAM_probedevref out_stats_Ssp3NRcontam/
 sbatch mappedReadStats.sbatch ../mkBAM out_ReadStats_Ssp10NRdecontam/ Ssp
 sbatch mappedReadStats.sbatch ../mkBAM_probedevref out_ReadStats_Ssp3NRcontam/ Ssp
 ```
+
