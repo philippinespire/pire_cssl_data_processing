@@ -1,0 +1,81 @@
+
+INDIR=fq_fp1_clmp_fp2
+OUTDIR=fq_fp1_clmp_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*fq.gz
+PARALLELISM=
+THREADS=40
+SUBSET=0
+FILTER=000000000000
+INFILES:
+fq_fp1_clmp_fp2/Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz
+
+Mon Oct 17 14:07:25 EDT 2022 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
+Using fastq_screen v0.14.0
+Reading configuration from '/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf'
+Adding database Human
+Adding database Ecoli
+Adding database PhiX
+Adding database Contamnts_Adaptrs
+Adding database Vectors
+Adding database Bacteria_24k
+Adding database Protists_1k
+Adding database Viruses
+Adding database Fungi_RefSeq_release
+Adding database Coral
+Adding database Bird
+Adding database Plant
+Using 40 threads for searches
+Option --subset set to 0: processing all reads in FASTQ files
+Processing Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz
+Not making data subset
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Human
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Ecoli
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against PhiX
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Contamnts_Adaptrs
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Vectors
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Bacteria_24k
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Protists_1k
+Aligner warning: Error: Read  has more read characters than quality values.
+Aligner warning: Error: Read 25657630.A00261:613:H7MFVDSX5:3:2428:14452:4507 1:N:0:CTGTGTTG+TGGCGAAG has more read characters than quality values.
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GAGATGTACAGATGCACGCACATACATACATACACACATACACACACACACACACACACACACACACACACACACACACACGCACGCACACACGCACACATACACCCGCACACAGAGGCTACACACATACACACGCACACACACACACA; setting to 0 instead
+Aligner warning: Warning: skipping read 'GAGATGTACAGATGCACGCACATACATACATACACACATACACACACACACACACACACACACACACACACACACACACACGCACGCACACACGCACACATACACCCGCACACAGAGGCTACACACATACACACGCACACACACACACA' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GAGATGTACAGATGCACGCACATACATACATACACACATACACACACACACACACACACACACACACACACACACACACACGCACGCACACACGCACACATACACCCGCACACAGAGGCTACACACATACACACGCACACACACACACA' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GAGTACTTCCATGCACGTTCATCAGGATGCGGAACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAAAAACACACAAAAACACACACACACACACAC; setting to 0 instead
+Aligner warning: Warning: skipping read 'GAGTACTTCCATGCACGTTCATCAGGATGCGGAACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAAAAACACACAAAAACACACACACACACACAC' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GAGTACTTCCATGCACGTTCATCAGGATGCGGAACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAAAAACACACAAAAACACACACACACACACAC' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GATCCCTCCACACACGCATACACATGCACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATACACACAC; setting to 0 instead
+Aligner warning: Warning: skipping read 'GATCCCTCCACACACGCATACACATGCACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATACACACAC' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GATCCCTCCACACACGCATACACATGCACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATACACACAC' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA; setting to 0 instead
+Aligner warning: Warning: skipping read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA; setting to 0 instead
+Aligner warning: Warning: skipping read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GATGCACACATACAAATGTAAACAAACAGATGGACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACA' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GCACGCCACACATTTGCTTACGTACAGACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAATC; setting to 0 instead
+Aligner warning: Warning: skipping read 'GCACGCCACACATTTGCTTACGTACAGACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAATC' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GCACGCCACACATTTGCTTACGTACAGACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAATC' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GCCAACTGCGCCCATGCACACACACACACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACTCACACACACACACACACACACACACACACCCACACACACACACACACAC; setting to 0 instead
+Aligner warning: Warning: skipping read 'GCCAACTGCGCCCATGCACACACACACACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACTCACACACACACACACACACACACACACACCCACACACACACACACACAC' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GCCAACTGCGCCCATGCACACACACACACACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACTCACACACACACACACACACACACACACACCCACACACACACACACACAC' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GGCACACACACACACACACACACACACATACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC; setting to 0 instead
+Aligner warning: Warning: skipping read 'GGCACACACACACACACACACACACACATACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GGCACACACACACACACACACACACACATACACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACAC' because it was < 2 characters long
+Aligner warning: Warning: minimum score function gave negative number in --local mode for read 'GGCTACGCTTGGCGGCAGATAAATCACTGCCACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATAAGA; setting to 0 instead
+Aligner warning: Warning: skipping read 'GGCTACGCTTGGCGGCAGATAAATCACTGCCACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATAAGA' because length (0) <= # seed mismatches (0)
+Aligner warning: Warning: skipping read 'GGCTACGCTTGGCGGCAGATAAATCACTGCCACACACATACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACACATAAGA' because it was < 2 characters long
+Aligner warning: Error: Read FFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFF:FFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:F:FFFFFFFF,,,F has more quality values than read characters.
+Aligner warning: terminate called recursively
+Aligner warning: terminate called after throwing an instance of 'int'
+Aligner warning: terminate called recursively
+Aligner warning: (ERR): bowtie2-align died with signal 6 (ABRT) 
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Viruses
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Fungi_RefSeq_release
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Coral
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Bird
+Searching Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.fq.gz_temp_subset.fastq against Plant
+Filtering Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.tagged.fastq.gz
+Filtering files with filter '000000000000'
+Filtering Sgr-AMvi_002-Ex1-cssl.clmp.fp2_r1.tagged.fastq.gz
+Processing complete

@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 1458486 sequences (182182621 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (91, 197033, 143, 127)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (147, 261, 430)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 996)
+[M::mem_pestat] mean and std.dev: (267.77, 142.44)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1279)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (86, 132, 193)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 407)
+[M::mem_pestat] mean and std.dev: (145.69, 81.85)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 514)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (86, 86, 623)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1697)
+[M::mem_pestat] mean and std.dev: (165.34, 191.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2234)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (521, 1986, 1986)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 4916)
+[M::mem_pestat] mean and std.dev: (1254.18, 809.87)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 6381)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 1458486 reads in 868.220 CPU sec, 23.129 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 30,5 -t 40 -a -M -T 50 -A 1 -B 6 -O 10 -R @RG\tID:Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr\tSM:Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr\tPL:Illumina reference.ssl.SgC0072C_decontam_R1R2_noIsolate.fasta Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 33.334 sec; CPU: 876.912 sec

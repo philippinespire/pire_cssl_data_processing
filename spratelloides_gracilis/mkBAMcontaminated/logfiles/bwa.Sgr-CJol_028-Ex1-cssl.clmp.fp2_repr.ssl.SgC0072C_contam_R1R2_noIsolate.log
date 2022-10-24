@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 1257458 sequences (157628512 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (14, 186745, 196, 32)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (54, 78, 295)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 777)
+[M::mem_pestat] mean and std.dev: (151.21, 139.16)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1018)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (85, 122, 167)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 331)
+[M::mem_pestat] mean and std.dev: (127.40, 61.46)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 413)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (305, 305, 833)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1889)
+[M::mem_pestat] mean and std.dev: (337.17, 290.63)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2417)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (42, 49, 472)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1332)
+[M::mem_pestat] mean and std.dev: (213.56, 253.43)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1762)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 1257458 reads in 802.306 CPU sec, 21.719 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 30,5 -t 40 -a -M -T 50 -A 1 -B 6 -O 10 -R @RG\tID:Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr\tSM:Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr\tPL:Illumina reference.ssl.SgC0072C_contam_R1R2_noIsolate.fasta Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 31.249 sec; CPU: 810.229 sec

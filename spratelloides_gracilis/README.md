@@ -1,11 +1,55 @@
 # Sgr Data Processing Log
 
-Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis`
+Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary **Spratelloides gracilis** samples.
 
-Transfer completed september 2022 using wget in  parallel (40 files at the time) from TAMUCC webshare Sgr directory
+Species dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis`
+
+Transfer completed september 2022 using wget in  parallel (40 files at the time) from `/work/hobi/webshare/20220913_PIRE-Sgr-capture`. Data also available at the
+[TAMUCC webshare Sgr directory](https://gridftp.tamucc.edu/genomics/20220913_PIRE-Sgr-capture/) 
  
+Sgr slack channel [her](https://app.slack.com/client/TMJJ06SH0/CQ92U6GRJ/thread/CP0CYUUEN-1663780346.770149?cdn_fallback=1)
+
 ---
 
+
+## Step 0. Rename files for dDocent HPC
+
+Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture`
+
+**Checking number of individuals in decode file and data files**
+
+From species dir:
+```
+# decode file has 219
+less raw_fq_capture/Sg*tsv |  grep '^SgA' |  wc -l
+219
+# but there are only 215 indvi. with files
+ ls raw_fq_capture/ | grep 'gz$' | cut -d "_" -f1 | sort | uniq | grep '^SgA' | wc -l
+215
+```
+
+
+Used decode file from Sharon Magnuson & Chris Bird.
+
+```bash
+cd YOUR_SPECIES_DIR/raw_fq_capture
+
+salloc
+bash
+
+#check got back sequencing data for all individuals in decode file
+ls | wc -l #XX files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
+wc -l NAMEOFDECODEFILE.tsv #XX lines (1 additional line for header = XX individuals), checks out
+
+#run renameFQGZ.bash first to make sure new names make sense
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv
+
+#run renameFQGZ.bash again to actually rename files
+#need to say "yes" 2X
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv rename
+```
+
+---
 
 **Checking quality of reads**
 

@@ -1,0 +1,1582 @@
+
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkBAM...
+ 
+Wed Oct 19 10:38:35 EDT 2022 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture/concatenated_files/mkBAM
+
+Wed Oct 19 10:38:35 EDT 2022 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40		Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G	Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+SgC0072C_decontam_R1R2_noIsolate		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 
+6		bwa mem -B Mapping_MisMatch_Value (integer) 
+10		bwa mem -O Mapping_GapOpen_Penalty (integer) 
+50		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			Remove reads that have an alignment score less than this. 
+30,5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+no		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+20								Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)	minimum number of soft clipped bases in a read that is unacceptable
+50								Remove_reads_with_alignment_score_below (integer)    		Should match bwa mem -T, which sometimes doesn't work
+yes								Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+
+Wed Oct 19 10:38:35 EDT 2022 Reading in variables from config file...
+
+Wed Oct 19 10:38:35 EDT 2022 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Wed Oct 19 10:38:36 EDT 2022  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Sgr-AJol_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_095-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_095-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_040-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_092-Ex1-cssl.clmp.fp2_repr
+
+ 
+Wed Oct 19 10:38:40 EDT 2022  Using BWA to map reads.
+
+Wed Oct 19 10:57:39 EDT 2022  was ref assembled by dDocent? No. Expected insert length not modified for BWA
+
+Wed Oct 19 10:57:40 EDT 2022  Run bwa mem on non-dDocent files
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+
+Wed Oct 19 21:45:24 EDT 2022 mkBAM completed!
+
+Compress large filesWed Oct 19 21:45:26 EDT 2022
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM...
+ 
+Wed Oct 19 21:45:28 EDT 2022 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture/concatenated_files/mkBAM
+
+Wed Oct 19 21:45:28 EDT 2022 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+40		Number of Processors (Auto, 1, 2, 3, ..., n threads) cbirdq=40 normal=20
+230G	Maximum Memory (1G,2G,..., 256G)  G=gigabytes
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+SgC0072C_decontam_R1R2_noIsolate		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 
+6		bwa mem -B Mapping_MisMatch_Value (integer) 
+10		bwa mem -O Mapping_GapOpen_Penalty (integer) 
+50		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			Remove reads that have an alignment score less than this. 
+30,5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+no		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+20								Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)	minimum number of soft clipped bases in a read that is unacceptable
+50								Remove_reads_with_alignment_score_below (integer)    		Should match bwa mem -T, which sometimes doesn't work
+yes								Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+
+Wed Oct 19 21:45:28 EDT 2022 Reading in variables from config file...
+
+Wed Oct 19 21:45:29 EDT 2022 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Wed Oct 19 21:45:29 EDT 2022  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+
+ The namelist file already exists and was not recreated. 
+  If you experience errors, you should delete the namelist file.
+ 
+ The samples being processed are:
+  Sgr-AJol_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_095-Ex1-cssl.clmp.fp2_repr
+  Sgr-AJol_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_095-Ex1-cssl.clmp.fp2_repr
+  Sgr-AMvi_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_029-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_039-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-APal_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_037-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_041-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_068-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_073-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_075-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_078-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_079-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_080-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_081-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_082-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_093-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_094-Ex1-cssl.clmp.fp2_repr
+  Sgr-CJol_096-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_002-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_006-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_011-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_014-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_021-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_022-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_026-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_031-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_035-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_040-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_045-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_048-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_050-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_056-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_059-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_062-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_069-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_090-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_091-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMas_092-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_001-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_003-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_004-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_005-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_007-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_008-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_009-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_010-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_012-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_013-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_015-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_016-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_017-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_018-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_019-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_020-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_023-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_024-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_025-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_027-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_028-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_030-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_032-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_033-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_034-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_036-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_038-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_042-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_043-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_044-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_046-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_047-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_049-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_051-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_052-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_053-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_054-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_055-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_057-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_058-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_060-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_061-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_063-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_064-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_065-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_066-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_067-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_070-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_071-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_072-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_074-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_076-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_077-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_083-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_084-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_085-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_086-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_087-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_088-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_089-Ex1-cssl.clmp.fp2_repr
+  Sgr-CMvi_092-Ex1-cssl.clmp.fp2_repr
+
+
+ Wed Oct 19 21:45:32 EDT 2022 Filtering raw BAM Files
+
+  Wed Oct 19 21:45:32 EDT 2022  Applying Filter 1: removing paired reads mapping to different contigs, secondary, and supplementary alignments
+
+  Wed Oct 19 21:55:54 EDT 2022  Applying Filter 2: removing excessively soft clipped reads (and their mates)
+
+   Wed Oct 19 21:55:54 EDT 2022  SOFT_CLIP_CUTOFF is 2 * 10
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+
+  Wed Oct 19 22:06:55 EDT 2022  Indexing the filtered BAM files
+
+Compress large filesWed Oct 19 22:07:32 EDT 2022

@@ -1,0 +1,1042 @@
+[2022-10-06 13:24:11,721] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-10-06 13:24:11,722] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/e1garcia/.multiqc_config.yaml
+[2022-10-06 13:24:11,722] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-10-06 13:24:11,723] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc fq_fp1 -n fq_fp1/1st_fastp_report
+[2022-10-06 13:24:12,400] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-10-06 13:24:12,400] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-10-06 13:24:12,400] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc fq_fp1 -n fq_fp1/1st_fastp_report
+[2022-10-06 13:24:12,400] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture/concatenated_files
+[2022-10-06 13:24:12,400] multiqc                                            [INFO   ]  Template    : default
+[2022-10-06 13:24:12,400] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-10-06 13:24:12,400] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture/concatenated_files/fq_fp1
+[2022-10-06 13:24:12,401] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-10-06 13:24:12,402] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp511pk2z6
+[2022-10-06 13:24:12,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_024-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_003-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_012-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_059-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_034-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_025-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_034-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_056-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_058-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_003-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_065-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_091-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_094-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_059-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_071-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_014-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_096-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_034-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_002-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_018-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_061-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_044-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_006-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_077-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_084-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_002-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_057-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_052-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_008-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,910] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_094-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_075-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_075-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_045-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_048-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_087-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_009-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_026-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_055-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_069-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,913] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_003-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_091-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_010-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_051-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_086-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_046-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_088-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_085-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_035-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_068-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_072-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_044-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_017-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_062-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_016-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_009-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_005-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_036-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_016-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_064-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_017-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_057-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_024-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_005-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_010-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,925] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_069-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_084-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_053-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_085-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_008-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_090-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_080-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_041-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_007-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_020-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_089-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_046-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,931] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_010-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_020-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_089-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_066-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_090-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_059-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_066-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_092-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_010-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_058-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_015-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_030-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_020-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_021-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_013-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_080-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_066-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_009-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_083-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_057-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_023-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_046-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_033-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_079-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_033-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_058-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_023-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_008-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_034-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_076-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_058-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_059-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_085-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_020-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_090-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,939] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_084-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_032-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_071-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_061-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_081-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_033-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_001-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_025-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_044-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_032-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_084-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_025-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_067-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_035-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_057-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_005-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_026-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_090-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_012-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_021-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_083-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_048-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_043-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_024-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_052-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_028-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_042-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_030-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,947] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_044-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_062-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_015-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_068-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_023-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_085-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_061-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_083-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_014-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_020-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_046-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_003-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_082-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_088-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_042-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_036-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_038-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_077-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_007-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_031-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_053-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_006-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,955] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_024-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_027-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_086-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_057-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_054-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_007-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_092-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_079-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_052-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_002-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_067-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_033-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_018-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_003-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_035-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_067-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_019-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_011-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_071-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_078-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_061-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_035-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_073-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_018-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_045-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_076-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_019-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_025-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_051-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_007-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_093-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_032-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_074-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_052-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_016-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_001-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_066-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_037-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_076-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_026-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_008-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_001-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_057-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_047-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_024-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_062-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_091-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_064-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_049-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_083-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_051-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_049-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,969] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_034-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,969] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_003-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,969] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_056-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,969] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_057-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,969] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_054-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,970] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_028-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_058-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_023-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_010-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_070-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_077-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_043-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_030-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_050-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_004-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_063-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_002-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_054-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_075-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_070-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_009-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_067-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_038-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_015-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_044-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,977] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_009-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,977] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_088-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_058-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_028-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_047-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_017-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_051-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_046-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_092-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_033-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_005-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_083-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_020-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_072-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,980] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_066-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,980] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_013-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,980] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_023-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,981] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_083-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,981] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_017-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,982] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_015-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_012-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_001-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_070-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,984] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_054-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,984] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_087-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,984] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_047-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,985] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_045-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_048-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_004-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_012-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_044-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_054-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_053-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_052-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_021-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_037-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_090-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_092-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_073-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_078-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_005-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_096-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_004-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,990] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_087-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,991] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_092-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,991] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_094-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_003-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_043-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_007-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_093-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_044-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_081-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_041-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_055-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_043-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_074-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_006-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_079-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_047-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_078-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_063-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_033-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_064-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_034-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_088-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_022-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_025-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_003-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_008-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_027-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_063-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_070-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_070-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_043-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_071-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_028-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_032-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_074-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_058-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_056-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_038-Ex1-cssl.fastp.html
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_047-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_065-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_001-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:12,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_034-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_065-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_024-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_065-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_053-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_036-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_067-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_001-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_018-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_081-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_086-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_041-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_057-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_072-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_036-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_036-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,005] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_065-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_017-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_023-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_072-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_089-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_051-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_042-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_012-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_046-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_002-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_061-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_049-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_059-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_048-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,009] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_012-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_019-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_007-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,010] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_084-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,011] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_085-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_009-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_001-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_004-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,012] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_042-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_008-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_071-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_091-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_046-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_055-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,015] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_087-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,016] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_063-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_004-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_053-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_028-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_030-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_043-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_065-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_040-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_069-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_082-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_019-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_010-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_021-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_036-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_042-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_013-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,021] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_009-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_060-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_010-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_012-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_003-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_049-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_009-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_038-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,023] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_016-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_052-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_063-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_044-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_060-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_048-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_056-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_060-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_072-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_086-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_008-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_030-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_042-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_018-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_077-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_022-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_042-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_070-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_088-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_014-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_004-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_074-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_054-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_020-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_011-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_018-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_024-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_012-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_061-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_073-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_034-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_011-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_021-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_056-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_020-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_076-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_054-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_080-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_086-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_072-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_038-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_035-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_055-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_038-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_036-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_005-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_054-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_031-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_016-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_061-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_013-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,033] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_006-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_092-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_093-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_064-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_063-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_089-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_022-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_047-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_042-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_092-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_013-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_019-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_067-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_049-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_031-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_024-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_032-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_077-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_040-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_028-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_058-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_089-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_086-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_015-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,037] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_049-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_004-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_009-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_058-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_010-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_077-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_028-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_061-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_096-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_049-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_071-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_019-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_035-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_032-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_037-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_021-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_017-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_087-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_056-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_055-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_025-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_007-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_028-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_023-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_017-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_091-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_054-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_036-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_053-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_051-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_040-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_007-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_030-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_023-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_050-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_087-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_010-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_076-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_001-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_092-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_082-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_004-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_049-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_091-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_059-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_034-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_048-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_036-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_023-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_024-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_074-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_085-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_066-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_092-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_050-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_088-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_007-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_042-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_068-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_089-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_013-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_017-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_032-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_004-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_008-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_044-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_064-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_049-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_032-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_006-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_084-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_061-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_046-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_076-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_032-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_017-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_002-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_012-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_064-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_015-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_074-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_027-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_020-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_008-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_001-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_006-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_057-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_016-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_028-Ex1-cssl.r1.fq.gz
+[2022-10-06 13:24:13,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_046-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_090-Ex1-cssl.r2.fq.gz
+[2022-10-06 13:24:13,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_055-Ex1-cssl.fastp.html
+[2022-10-06 13:24:13,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_047-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_024-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_079-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_061-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_087-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_055-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_023-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_046-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_059-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_032-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_021-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_090-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_082-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_020-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_058-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_011-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_043-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_066-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_068-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_016-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_028-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_049-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_035-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_005-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_002-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_085-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_036-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_049-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_085-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_059-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_019-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_086-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_007-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_062-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_008-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_010-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_005-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_025-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,058] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_022-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_040-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_057-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_063-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_040-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_064-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_083-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_027-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_017-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_008-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_077-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_048-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_035-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_061-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_077-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_026-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_084-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_064-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_010-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_013-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_046-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_042-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_024-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_015-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_073-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_006-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_056-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_010-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_034-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_091-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_083-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_008-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_007-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_027-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_018-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_067-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_073-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_052-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_046-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_008-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_021-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_057-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_012-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_061-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_067-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_019-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_061-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_030-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_044-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_092-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_031-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_047-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_056-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_023-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_065-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_055-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_009-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_052-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_069-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_011-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_092-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_076-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_004-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_034-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_033-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_049-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_070-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_036-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_085-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_067-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_076-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_032-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_088-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_020-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_074-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_042-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_071-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_004-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_047-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_030-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_014-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_028-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_017-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_042-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_086-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_024-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_055-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_043-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_037-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_092-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_053-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_012-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_075-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_009-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_088-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_076-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_035-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_083-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_001-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_036-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_001-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_023-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_065-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_087-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_044-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_037-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_038-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_050-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_049-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_024-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_059-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_020-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_096-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_020-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_054-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_008-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_058-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_052-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_018-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_066-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_080-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_042-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_001-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_035-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_026-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_074-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_063-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_084-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_060-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_054-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_034-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_054-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_078-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_003-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_057-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_052-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_028-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_061-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_084-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_021-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_083-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_064-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_020-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_043-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_041-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_013-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_012-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_001-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_056-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_005-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_007-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_006-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_009-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_054-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_016-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_042-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_010-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_013-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_010-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_089-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_013-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_022-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_032-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_077-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_091-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_046-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_034-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_028-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_009-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_058-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_059-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_044-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_032-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_024-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_018-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_014-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_010-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_054-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_009-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_051-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_053-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_004-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_069-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_034-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_055-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_075-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_016-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_032-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_089-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_066-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_094-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_005-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_046-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_020-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_025-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_081-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_067-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_004-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_033-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_088-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_012-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_047-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_017-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_038-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_031-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_003-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_085-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_050-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_032-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_019-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_006-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_089-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_016-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_057-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_017-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_034-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_096-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_066-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_056-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_074-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_093-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_090-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_003-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_004-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_053-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_001-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_076-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_051-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_077-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_063-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_074-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_048-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_041-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_038-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_053-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_044-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_086-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_054-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_012-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_036-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_044-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_004-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_043-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_051-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_002-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_046-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_025-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_017-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_087-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_042-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_007-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_030-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_072-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_090-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_003-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_089-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_068-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_036-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_094-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_086-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_033-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_009-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_058-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_091-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_003-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_001-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_090-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_023-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_087-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_007-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_082-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_021-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_002-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_091-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_048-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_065-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_072-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_057-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_062-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_057-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_028-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,080] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_018-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_012-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_044-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_015-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_028-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_023-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_092-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_015-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_048-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_084-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_092-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_049-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_051-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_063-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_017-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_093-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_025-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_045-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_072-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_058-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_079-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_078-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_006-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_024-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_070-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_023-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_071-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_033-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_081-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_060-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_008-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_080-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_030-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_045-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_049-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_038-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_071-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_019-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_015-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_036-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_070-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_070-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_072-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_058-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_002-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_092-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_065-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMas_061-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_064-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CJol_003-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_071-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_007-Ex1-cssl.fail.fq.gz
+[2022-10-06 13:24:13,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sgr-CMvi_088-Ex1-cssl.unprd.fq.gz
+[2022-10-06 13:24:14,008] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-06 13:24:14,010] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-06 13:24:14,011] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-10-06 13:24:14,017] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-10-06 13:24:14,022] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-10-06 13:24:14,028] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-10-06 13:24:14,033] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-10-06 13:24:14,040] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-10-06 13:24:14,045] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-10-06 13:24:14,048] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-10-06 13:24:14,053] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-10-06 13:24:14,057] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-10-06 13:24:14,061] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-10-06 13:24:14,064] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-10-06 13:24:14,069] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-10-06 13:24:14,072] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-10-06 13:24:14,077] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-10-06 13:24:14,081] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-10-06 13:24:14,086] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-10-06 13:24:14,091] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-10-06 13:24:14,095] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-10-06 13:24:14,102] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-10-06 13:24:14,106] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-10-06 13:24:14,110] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-10-06 13:24:14,115] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-10-06 13:24:14,120] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-10-06 13:24:14,124] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-10-06 13:24:14,129] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-10-06 13:24:14,132] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-10-06 13:24:14,136] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-10-06 13:24:14,141] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-10-06 13:24:14,146] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-10-06 13:24:14,150] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-10-06 13:24:14,154] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-10-06 13:24:14,159] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-10-06 13:24:14,162] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-10-06 13:24:14,170] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-10-06 13:24:14,174] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-10-06 13:24:14,177] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-10-06 13:24:14,188] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-10-06 13:24:14,192] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-10-06 13:24:14,195] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-10-06 13:24:14,199] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-10-06 13:24:14,203] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-10-06 13:24:14,207] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-10-06 13:24:14,211] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-10-06 13:24:14,216] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-10-06 13:24:14,220] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-10-06 13:24:14,225] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-10-06 13:24:14,229] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-10-06 13:24:14,234] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-10-06 13:24:14,238] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-10-06 13:24:14,245] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-10-06 13:24:14,249] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-10-06 13:24:14,254] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-10-06 13:24:14,258] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-10-06 13:24:14,262] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-10-06 13:24:14,270] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-10-06 13:24:14,274] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-10-06 13:24:14,278] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-10-06 13:24:14,282] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-10-06 13:24:14,286] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-10-06 13:24:14,290] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-10-06 13:24:14,294] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-10-06 13:24:14,299] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-10-06 13:24:14,302] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-10-06 13:24:14,306] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-10-06 13:24:14,310] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-10-06 13:24:14,313] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-10-06 13:24:14,318] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-10-06 13:24:14,322] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-10-06 13:24:14,327] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-10-06 13:24:14,331] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-10-06 13:24:14,336] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-10-06 13:24:14,339] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-10-06 13:24:14,343] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-10-06 13:24:14,347] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-10-06 13:24:14,351] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-10-06 13:24:14,354] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-10-06 13:24:14,358] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-10-06 13:24:14,362] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-10-06 13:24:14,367] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-10-06 13:24:14,371] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-10-06 13:24:16,518] multiqc.modules.fastp.fastp                        [INFO   ]  Found 186 reports
+[2022-10-06 13:24:42,464] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2022-10-06 13:24:42,468] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-10-06 13:24:42,473] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-10-06 13:24:42,477] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-10-06 13:24:42,482] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-10-06 13:24:42,486] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-10-06 13:24:42,491] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-10-06 13:24:42,494] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-10-06 13:24:42,498] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-10-06 13:24:42,502] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-10-06 13:24:42,802] multiqc                                            [INFO   ]  Compressing plot data
+[2022-10-06 13:24:47,451] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2022-10-06 13:24:47,451] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2022-10-06 13:24:47,451] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp511pk2z6/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis/raw_fq_capture/concatenated_files/fq_fp1/1st_fastp_report_data'
+[2022-10-06 13:24:48,708] multiqc                                            [INFO   ]  MultiQC complete
