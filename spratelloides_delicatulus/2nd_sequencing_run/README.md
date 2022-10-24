@@ -7,11 +7,12 @@ Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides
 ---
 
 **Transfering data**
-Normally i use `scp` to transfer files from TAMUCC to  ODU (scp transfer one by one file) but for the 2nd Sde run, we generated over 1k data files so scp was not suited. 
+
+Normally, I use `scp` to transfer files from TAMUCC to  ODU (scp transfer one by one file) but for the 2nd Sde run, we generated over 1k data files so scp was not suited. 
 I also could not set up a transfer using parallel bc my password was required for each file.
 
 Solution:
-Sharon put the files in the TAMUCC webshare which doesn't require a password. I then made the []() to download 40 files in parallel, substancially increasing the spead of transfer.
+Sharon put the files in the TAMUCC webshare which doesn't require a password. I then made the [gridDownloader.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/gridDownloader.sh) to download 40 files in parallel, substancially increasing the spead of transfer.
  
 September 2022,  transfer completed
 
@@ -94,7 +95,7 @@ I am sending new concatenated files into a new directory just incase
 sbatch concat_diff_lanes.sh concatenated_files
 ```
 
-will assess success of new script soon
+Checking that the concat script worked:
 ```
 # script prints out a log with what it has done. Lets check it out:
 less cat*out
@@ -140,14 +141,8 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDEC
 
 Running FASTQC
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/raw_fq_capture/"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/raw_fq_capture"
 ```
-
-For some reason FASTQC was getting stuck. I modified the script to run only missing files.
-
-Looks like FASTQC could not process `SdC02092_CKDL210020579-1a-AK7010-7UDI246_HKGLMDSX2_L2_1.fq.gz` this time around. The script kept geting stuck at this file. The previous runs might had getting stuck at other files. Before noticing this, I was not keeping all the failed out files. Check the output for inconsistencies. 
-
-Ended up running FASTQC directly on current session (not with sbatch), and that ran fine.
 
 The initial MultiQC report with all the files [multiqc_report_fq.gz.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/multiqc_report_fq.gz.html) was merging files in some graphic making it hard to read (maybe because there were too many?)
 ,  so I re-run MultiQC for Albatross [multiqc_report_Alb.html](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/spratelloides_delicatulus/Multi_FASTQC/Alb_fastqc/multiqc_report_Alb.html)

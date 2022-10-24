@@ -1,0 +1,21 @@
+#!/bin/bash
+
+module load parallel
+
+#ls *.gz | cut -f1 -d_ | uniq | parallel --no-notice -kj20 "cat {}*1.fq.gz > {}_LAnew.1.gz"
+#ls *.gz | cut -f1 -d_ | uniq | parallel --no-notice -kj20 "cat {}*2.fq.gz > {}_LAnew.2.gz"
+
+ls *gz | sed 's/_L.*//' | uniq | parallel --no-notice -kj20 "echo concatenating {}*1.fq.gz into test/{}_LA_1.fq.gz"
+
+
+#ls *gz | sed 's/_L.*//' | uniq | parallel --no-notice -kj20 "cat {}*1.fq.gz > test/{}_LA_1.fq.gz"
+#ls *gz | sed 's/_L.*//' | uniq | parallel --no-notice -kj20 "cat {}*2.fq.gz > test/{}_LA_2.fq.gz"
+
+
+#for file in $(ls *.gz | cut -f1 -d_ | uniq)
+#do
+#    cat "$file"*1.fq.gz > "$file"_LA.gz
+#done
+
+#_LA.1.fq.gz"
+#done
