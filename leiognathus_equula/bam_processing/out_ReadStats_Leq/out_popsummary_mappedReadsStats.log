@@ -1,0 +1,23 @@
+This scrips provides population summaries from the output of mappedReadStats.sbatch into 3 tables:
+1.- aveReadStats_perPOP.tsv, which gives the average of each stat per population
+2.- samples_perMappedReads.tsv, which gives the number of individuals according to the number of mapped reads
+3.- samples_perCVG.tsv, which gives the number of individuals according to the meandepth_wcvg per population
+
+Contact:Dr. Eric Garcia, e1garcia@odu.edu
+
+INFILE=out_Leq_ReadStats.tsv
+
+Printing aveReadStats_perPOP.tsv:
+Population  n_samples  AVG_numreads  AVG_meanreadlength  AVG_meandepth_wcvg  AVG_numpos  AVG_numpos_wcvg  AVG_meandepth  AVG_pctpos_wcvg
+Leq-ABas    52         141913        132.542             15.6178             2009762     666123           6.70227        33.1443
+Leq-CMig    62         399886        143.909             31.2487             2009762     1.45564e+06      23.2095        72.4284
+
+Printing samples_perMappedReads.tsv
+Population  total_n_samples  n_mappedReads<100k  n_100-250k  n_250-500k  n_500k-1M  n_1-2M  n_>2M
+Leq-ABas    52               29                  13          7           3          0       0
+Leq-CMig    62               1                   10          34          17         0       0
+
+Printing samples_perCVG.tsv:
+Population  total_n_samples  n_meandepth_wcvg<10x  n_10x-20x  n_20x-30x  n_30x-40x  n_40x-50x  n_>50x
+Leq-ABas    52               18                    16         17         1          0          0
+Leq-CMig    62               0                     6          20         22         13         1
