@@ -434,3 +434,35 @@ conda deactivate
 ```
 
 Copied *.eigenval, *.eigenvec & *.Q files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder). K=1 has the lowest CV error, which supports a single population. No strong substructuring/clustering within eras. There are differences between Albatross and contemporary apparent in PCA + Admixture k=2 plot. This could just be capturing variation in levels of missing data though. There are some outlier individuals for both contemp and Albatross, look into these later (could be correlated with missing data as well). 
+
+Running Roy + Chris + Eric's scripts to calculate mapping efficiency.
+
+```
+cp -r /home/cbird/roy/rroberts_thesis/scripts/bam_processing/ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/bam_processing
+sbatch getCVG.sbatch ../mkBAM out_cvg_Leq/
+sbatch getSTATS.sbatch ../mkBAM out_stats_Leq/
+sbatch mappedReadStats.sbatch ../mkBAM out_ReadStats_Leq/ Leq
+cd out_ReadStats_Leq
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/popsummary_mappedReadStats.sh . out_Leq_ReadStats.tsv .
+```
+
+Outputs:
+```
+Printing aveReadStats_perPOP.tsv:
+Population  n_samples  AVG_numreads  AVG_meanreadlength  AVG_meandepth_wcvg  AVG_numpos  AVG_numpos_wcvg  AVG_meandepth  AVG_pctpos_wcvg
+Leq-ABas    52         141913        132.542             15.6178             2009762     666123           6.70227        33.1443
+Leq-CMig    62         399886        143.909             31.2487             2009762     1.45564e+06      23.2095        72.4284
+
+Printing samples_perMappedReads.tsv
+Population  total_n_samples  n_mappedReads<100k  n_100-250k  n_250-500k  n_500k-1M  n_1-2M  n_>2M
+Leq-ABas    52               29                  13          7           3          0       0
+Leq-CMig    62               1                   10          34          17         0       0
+
+Printing samples_perCVG.tsv:
+Population  total_n_samples  n_meandepth_wcvg<10x  n_10x-20x  n_20x-30x  n_30x-40x  n_40x-50x  n_>50x
+Leq-ABas    52               18                    16         17         1          0          0
+Leq-CMig    62               0                     6          20         22         13         1
+```
+
+Fewer reads per sample and low-depth sites for Albatross. This jibes with a lot of Albatross (and some contemporary) individuals filtered out for missing data when running population structure. Suggest that we sequence the libraries to greater depth?
