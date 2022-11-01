@@ -6,7 +6,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ## Step 0. Rename files for dDocent HPC
 
-Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack). Starting analyses in `<full path to species dir>`.
+Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture` (check `Gazza-minuta` channel on Slack). Starting analyses in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture`.
 
 Used decode file from Sharon Magnuson & Chris Bird.
 
