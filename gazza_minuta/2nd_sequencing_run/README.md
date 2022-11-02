@@ -46,11 +46,11 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 71%, Contemp: 60%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 43%, Contemp: 47%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~1.5 mil, Contemp: ~1.0-1.2 mil
 
 ---
 
