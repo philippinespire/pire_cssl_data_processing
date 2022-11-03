@@ -46,11 +46,11 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/
 
 Potential issues:  
   * % duplication - 
-    * Alb: 71%, Contemp: 60%
+    * Alb: 71.13%, Contemp: 59.79%
   * GC content - 
     * Alb: 43%, Contemp: 47%
   * number of reads - 
-    * Alb: ~1.5 mil, Contemp: ~1.0-1.2 mil
+    * Alb: ~15 mil, Contemp: ~10-12 mil
 
 ---
 
@@ -59,25 +59,25 @@ Potential issues:
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/ fq_fp1
 ```
 
 [Report](URL for your report)
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 37.40%, Contemp: 56.61%
   * GC content -
-    * Alb: XX%, Contemp: XX%
+    * Alb: 41.84%, Contemp: 47.24%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 97.94%, Contemp: 97.41%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 67.56%, Contemp: 25.02%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~25 mil, Contemp: ~20-25 mil
 
 ---
 
