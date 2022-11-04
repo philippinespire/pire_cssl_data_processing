@@ -13,6 +13,7 @@
 # example: "sbatch concat_diff_lanes.sh concatenated_files"
 
 module load parallel
+export SINGULARITY_BIND=/home/e1garcia 
 
 date
 

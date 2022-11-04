@@ -4,6 +4,7 @@
 
 enable_lmod
 module load parallel
+export SINGULARITY_BIND=/home/e1garcia
 
 if [[ -z "$1" ]]; then
         echo "please specify the name of the decode file"
