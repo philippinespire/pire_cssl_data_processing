@@ -1,0 +1,35 @@
+This scrips provides population summaries from the output of mappedReadStats.sbatch into 3 tables:
+1.- aveReadStats_perPOP.tsv, which gives the average of each stat per population
+2.- samples_perMappedReads.tsv, which gives the number of individuals according to the number of mapped reads
+3.- samples_perCVG.tsv, which gives the number of individuals according to the meandepth_wcvg per population
+
+Contact:Dr. Eric Garcia, e1garcia@odu.edu
+
+INFILE=out_Sgr_ReadStats.tsv
+
+Printing aveReadStats_perPOP.tsv:
+Population  n_samples  AVG_numreads  AVG_meanreadlength  AVG_meandepth_wcvg  AVG_numpos  AVG_numpos_wcvg  AVG_meandepth  AVG_pctpos_wcvg
+Sgr-AJol    92         2.13389e+06   89.2724             2.11536             919991268   5.75865e+07      0.131023       6.25946
+Sgr-AMvi    86         678546        90.3213             1.74768             919991268   1.86758e+07      0.0435964      2.02999
+Sgr-APal    37         749037        88.7069             1.71809             919991268   1.96042e+07      0.0470664      2.13091
+Sgr-CJol    61         242224        122.372             4.73933             919991268   4.26601e+06      0.0222557      0.463702
+Sgr-CMas    64         380361        126.408             5.06035             919991268   6.37937e+06      0.0374687      0.693417
+Sgr-CMvi    61         583417        128.865             5.30004             919991268   8.99174e+06      0.0613903      0.977372
+
+Printing samples_perMappedReads.tsv
+Population  total_n_samples  n_mappedReads<100k  n_100-250k  n_250-500k  n_500k-1M  n_1-2M  n_>2M
+Sgr-AJol    92               0                   0           1           10         40      41
+Sgr-AMvi    86               31                  5           4           18         25      3
+Sgr-APal    37               9                   5           10          5          4       4
+Sgr-CJol    61               3                   33          25          0          0       0
+Sgr-CMas    64               2                   20          33          8          0       1
+Sgr-CMvi    61               8                   13          11          18         10      1
+
+Printing samples_perCVG.tsv:
+Population  total_n_samples  n_meandepth_wcvg<10x  n_10x-20x  n_20x-30x  n_30x-40x  n_40x-50x  n_>50x
+Sgr-AJol    92               92                    0          0          0          0          0
+Sgr-AMvi    86               86                    0          0          0          0          0
+Sgr-APal    37               37                    0          0          0          0          0
+Sgr-CJol    61               61                    0          0          0          0          0
+Sgr-CMas    64               64                    0          0          0          0          0
+Sgr-CMvi    61               61                    0          0          0          0          0
