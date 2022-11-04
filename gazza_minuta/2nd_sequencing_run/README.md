@@ -127,15 +127,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch 
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 10.98%, Contemp: 21.88%
   * GC content - 
-    *  Alb: XX%, Contemp: XX%
+    *  Alb: 42%, Contemp: 47.47%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 98.79%, Contemp: 98.64%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 1.18%, Contemp: 0.51%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~20 mil, Contemp: ~15-19 mil
 
 ---
 
@@ -144,7 +144,7 @@ Potential issues:
 Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/
 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
