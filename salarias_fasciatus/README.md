@@ -13,7 +13,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq
 ## FQ GZ Processing - MultiQC ###
 
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_csl_data_processing/salarias_fasciatus/raw_fq_capture" "fq.gz"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture" "fq.gz"
 ```
 
 ## Step 1. Fastqc
