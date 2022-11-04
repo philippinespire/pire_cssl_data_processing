@@ -2,7 +2,8 @@
 
 Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus`
 
-September 2022,  we have received the 2nd sequencing run for Sde. Progress for the 2nd run can be followed at
+September 2022,  we have received the 2nd sequencing run for Sde. Progress for the 2nd run can be followed [here](https://github.com/philippinespire/pire_cssl_data_processing/tree/main/spratelloides_delicatulus/2nd_sequencing_run)
+
 ---
 
 **Checking quality of reads**
