@@ -11,21 +11,21 @@ Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack).
 Used decode file from Sharon Magnuson & Chris Bird.
 
 ```bash
-cd YOUR_SPECIES_DIR/raw_fq_capture
+cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
 
 salloc
 bash
 
 #check got back sequencing data for all individuals in decode file
-ls | wc -l #XX files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
-wc -l NAMEOFDECODEFILE.tsv #XX lines (1 additional line for header = XX individuals), checks out
+ls | wc -l #379 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
+wc -l Hmi_CaptureLibraries_SequenceNameDecode.tsv #188 lines (1 additional line for header = XX individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv
 
 #run renameFQGZ.bash again to actually rename files
 #need to say "yes" 2X
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv rename
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
 ```
 
 ---
@@ -35,10 +35,10 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDEC
 Ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).
 
 ```sh
-cd YOUR_SPECIES_DIR/raw_fq_capture
+cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
 
 #Multi_FastQC.sh "<indir>" "<file_extension>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "YOUR_SPECIES_DIR/raw_fq_capture" "fq.gz"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" "fq.gz"
 ```
 
 [Report](URL for your report).
