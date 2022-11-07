@@ -156,11 +156,11 @@ Checked that all files were successfully completed.
 cd YOUR_SPECIES_DIR
 
 #checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
-ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #XX 
-ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #XX
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #488
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #488 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #490
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #488
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #488
 
 #checked all out files for any errors
 grep 'error' slurm-fqscrn.*out #nothing
