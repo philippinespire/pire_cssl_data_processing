@@ -40,16 +40,29 @@ cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw
 #Multi_FastQC.sh "<indir>" "<file_extension>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" "fq.gz"
 ```
+Some samples stalled using the above code. Had to rerun the samples using the Single_FASTQC_noparallel script. Nearly all were able to successful run apart from Hmi_CPar_035. 
+Ran Multiqc again using the runMultiQC script
+
+```sh
+cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+
+#sbatch runMULTIQC.sbatch <indir; fqscreen files> <report name>
+#do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture" multiqc_report
+```
+
 
 [Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 93.81%, Contemp: 93.03%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 47%, Contemp: 45%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~20 mil, Contemp: ~1 mil
+
+Hardly any reads for the Contemp samples as compared to Alb.
 
 ---
 
