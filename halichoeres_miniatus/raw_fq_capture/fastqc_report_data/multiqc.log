@@ -1,0 +1,1169 @@
+[2022-11-07 11:02:52,294] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-11-07 11:02:52,295] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/mmalabag/.multiqc_config.yaml
+[2022-11-07 11:02:52,295] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-11-07 11:02:52,295] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture/fastqc_report
+[2022-11-07 11:02:52,924] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-11-07 11:02:52,925] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-11-07 11:02:52,925] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture/fastqc_report
+[2022-11-07 11:02:52,925] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+[2022-11-07 11:02:52,925] multiqc                                            [INFO   ]  Template    : default
+[2022-11-07 11:02:52,925] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-11-07 11:02:52,925] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture
+[2022-11-07 11:02:52,927] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-11-07 11:02:52,927] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpegw60pzf
+[2022-11-07 11:02:53,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_006-Ex1-06A.1.fq.gz
+[2022-11-07 11:02:53,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_041-Ex1-11A3D.1.fq.gz
+[2022-11-07 11:02:53,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_029-Ex1-03C3G.1.fq.gz
+[2022-11-07 11:02:53,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_026-Ex1-02C2C.1.fq.gz
+[2022-11-07 11:02:53,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_044-Ex1-07F.1.fq.gz
+[2022-11-07 11:02:53,362] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_010-Ex1-10A.2_fastqc.html
+[2022-11-07 11:02:53,373] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_010-Ex1-10A.2_fastqc.html
+[2022-11-07 11:02:53,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_020-Ex1-07H.2.fq.gz
+[2022-11-07 11:02:53,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_046-Ex1-09F.1.fq.gz
+[2022-11-07 11:02:53,493] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Multi_fastqc-1155915.out
+[2022-11-07 11:02:53,501] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Multi_fastqc-1155915.out
+[2022-11-07 11:02:53,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_005-Ex1-05A.2.fq.gz
+[2022-11-07 11:02:53,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_032-Ex1-08C.1.fq.gz
+[2022-11-07 11:02:53,536] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_024-Ex1-11H.1.fq.gz
+[2022-11-07 11:02:53,539] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_040-Ex1-03A10F.1.fq.gz
+[2022-11-07 11:02:53,565] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_038-Ex1-01F.2_fastqc.html
+[2022-11-07 11:02:53,574] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_038-Ex1-01F.2_fastqc.html
+[2022-11-07 11:02:53,667] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_048-Ex1-08D8D.2.fq.gz
+[2022-11-07 11:02:53,694] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_033-Ex1-08E.1_fastqc.html
+[2022-11-07 11:02:53,702] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_033-Ex1-08E.1_fastqc.html
+[2022-11-07 11:02:53,821] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_014-Ex1-01H.1_fastqc.html
+[2022-11-07 11:02:53,829] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_014-Ex1-01H.1_fastqc.html
+[2022-11-07 11:02:53,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_008-Ex1-08A.2.fq.gz
+[2022-11-07 11:02:53,950] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_019-Ex1-07B.1_fastqc.html
+[2022-11-07 11:02:53,958] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_019-Ex1-07B.1_fastqc.html
+[2022-11-07 11:02:54,073] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_038-Ex1-02D.2_fastqc.html
+[2022-11-07 11:02:54,081] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_038-Ex1-02D.2_fastqc.html
+[2022-11-07 11:02:54,196] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_006-Ex1-06A.1_fastqc.html
+[2022-11-07 11:02:54,204] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_006-Ex1-06A.1_fastqc.html
+[2022-11-07 11:02:54,320] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_023-Ex1-10H.2_fastqc.html
+[2022-11-07 11:02:54,328] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_023-Ex1-10H.2_fastqc.html
+[2022-11-07 11:02:54,444] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_043-Ex1-06F.1_fastqc.html
+[2022-11-07 11:02:54,452] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_043-Ex1-06F.1_fastqc.html
+[2022-11-07 11:02:54,567] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_020-Ex1-08B.1_fastqc.html
+[2022-11-07 11:02:54,575] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_020-Ex1-08B.1_fastqc.html
+[2022-11-07 11:02:54,667] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_028-Ex1-04C.2.fq.gz
+[2022-11-07 11:02:54,692] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_030-Ex1-06C.1_fastqc.html
+[2022-11-07 11:02:54,700] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_030-Ex1-06C.1_fastqc.html
+[2022-11-07 11:02:54,818] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_002-Ex1-01G.1_fastqc.html
+[2022-11-07 11:02:54,826] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_002-Ex1-01G.1_fastqc.html
+[2022-11-07 11:02:54,918] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_002-Ex1-02A2A.1.fq.gz
+[2022-11-07 11:02:54,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_024-Ex1-12B.1.fq.gz
+[2022-11-07 11:02:54,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_001-Ex1-01A1A.2.fq.gz
+[2022-11-07 11:02:54,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_043-Ex1-06F.1.fq.gz
+[2022-11-07 11:02:54,946] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_024-Ex1-11H.1_fastqc.html
+[2022-11-07 11:02:54,954] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_024-Ex1-11H.1_fastqc.html
+[2022-11-07 11:02:55,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_031-Ex1-05B4H.1.fq.gz
+[2022-11-07 11:02:55,073] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_030-Ex1-05E.1_fastqc.html
+[2022-11-07 11:02:55,081] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_030-Ex1-05E.1_fastqc.html
+[2022-11-07 11:02:55,172] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_008-Ex1-05C5C.2.fq.gz
+[2022-11-07 11:02:55,172] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_012-Ex1-12A.1.fq.gz
+[2022-11-07 11:02:55,173] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_008-Ex1-07G.2.fq.gz
+[2022-11-07 11:02:55,173] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_038-Ex1-09E1H.2.fq.gz
+[2022-11-07 11:02:55,198] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_007-Ex1-11D4F.1_fastqc.html
+[2022-11-07 11:02:55,206] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_007-Ex1-11D4F.1_fastqc.html
+[2022-11-07 11:02:55,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_003-Ex1-03A.1.fq.gz
+[2022-11-07 11:02:55,327] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8H.1_fastqc.html
+[2022-11-07 11:02:55,336] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8H.1_fastqc.html
+[2022-11-07 11:02:55,428] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_033-Ex1-06C5H.1.fq.gz
+[2022-11-07 11:02:55,453] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_037-Ex1-01D.1_fastqc.html
+[2022-11-07 11:02:55,461] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_037-Ex1-01D.1_fastqc.html
+[2022-11-07 11:02:55,552] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_023-Ex1-11B.2.fq.gz
+[2022-11-07 11:02:55,578] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F7H.2_fastqc.html
+[2022-11-07 11:02:55,586] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F7H.2_fastqc.html
+[2022-11-07 11:02:55,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_034-Ex1-10C.1.fq.gz
+[2022-11-07 11:02:55,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_020-Ex1-12A11G.1.fq.gz
+[2022-11-07 11:02:55,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_027-Ex1-10A10A.1.fq.gz
+[2022-11-07 11:02:55,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_002-Ex1-02A.2.fq.gz
+[2022-11-07 11:02:55,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_020-Ex1-08B.1.fq.gz
+[2022-11-07 11:02:55,716] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_011-Ex1-10G.2_fastqc.html
+[2022-11-07 11:02:55,724] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_011-Ex1-10G.2_fastqc.html
+[2022-11-07 11:02:55,815] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_012-Ex1-11G.2.fq.gz
+[2022-11-07 11:02:55,840] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_044-Ex1-08D.2_fastqc.html
+[2022-11-07 11:02:55,848] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_044-Ex1-08D.2_fastqc.html
+[2022-11-07 11:02:55,963] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_038-Ex1-01F.1_fastqc.html
+[2022-11-07 11:02:55,971] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_038-Ex1-01F.1_fastqc.html
+[2022-11-07 11:02:56,061] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_041-Ex1-11A3D.2.fq.gz
+[2022-11-07 11:02:56,086] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_020-Ex1-07H.1_fastqc.html
+[2022-11-07 11:02:56,094] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_020-Ex1-07H.1_fastqc.html
+[2022-11-07 11:02:56,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_007-Ex1-07A.2.fq.gz
+[2022-11-07 11:02:56,210] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_013-Ex1-12G.2_fastqc.html
+[2022-11-07 11:02:56,218] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_013-Ex1-12G.2_fastqc.html
+[2022-11-07 11:02:56,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_046-Ex1-09F.2.fq.gz
+[2022-11-07 11:02:56,333] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_042-Ex1-06D.1_fastqc.html
+[2022-11-07 11:02:56,341] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_042-Ex1-06D.1_fastqc.html
+[2022-11-07 11:02:56,458] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_044-Ex1-07F.2_fastqc.html
+[2022-11-07 11:02:56,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_044-Ex1-07F.2_fastqc.html
+[2022-11-07 11:02:56,582] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_034-Ex1-10C.2_fastqc.html
+[2022-11-07 11:02:56,590] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_034-Ex1-10C.2_fastqc.html
+[2022-11-07 11:02:56,681] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_045-Ex1-09D.2.fq.gz
+[2022-11-07 11:02:56,683] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_043-Ex1-05A11F.2.fq.gz
+[2022-11-07 11:02:56,683] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_034-Ex1-09E.1.fq.gz
+[2022-11-07 11:02:56,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_003-Ex1-02G.1.fq.gz
+[2022-11-07 11:02:56,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_046-Ex1-07D7D.2.fq.gz
+[2022-11-07 11:02:56,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_040-Ex1-03A3A.2.fq.gz
+[2022-11-07 11:02:56,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_036-Ex1-11E.1.fq.gz
+[2022-11-07 11:02:56,710] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_046-Ex1-10D.2_fastqc.html
+[2022-11-07 11:02:56,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_046-Ex1-10D.2_fastqc.html
+[2022-11-07 11:02:56,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_003-Ex1-02E2E.1.fq.gz
+[2022-11-07 11:02:56,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_001-Ex1-12D.2.fq.gz
+[2022-11-07 11:02:56,835] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_044-Ex1-07F.1_fastqc.html
+[2022-11-07 11:02:56,843] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_044-Ex1-07F.1_fastqc.html
+[2022-11-07 11:02:56,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_003-Ex1-02E9F.1.fq.gz
+[2022-11-07 11:02:56,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_042-Ex1-05F.1.fq.gz
+[2022-11-07 11:02:56,961] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_013-Ex1-12G.1_fastqc.html
+[2022-11-07 11:02:56,969] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_013-Ex1-12G.1_fastqc.html
+[2022-11-07 11:02:57,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_016-Ex1-04B.1.fq.gz
+[2022-11-07 11:02:57,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_032-Ex1-12B12B.2.fq.gz
+[2022-11-07 11:02:57,088] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_005-Ex1-05A.1_fastqc.html
+[2022-11-07 11:02:57,096] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_005-Ex1-05A.1_fastqc.html
+[2022-11-07 11:02:57,211] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_005-Ex1-04G.2_fastqc.html
+[2022-11-07 11:02:57,219] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_005-Ex1-04G.2_fastqc.html
+[2022-11-07 11:02:57,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_030-Ex1-06C.1.fq.gz
+[2022-11-07 11:02:57,335] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_035-Ex1-10E.1_fastqc.html
+[2022-11-07 11:02:57,342] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_035-Ex1-10E.1_fastqc.html
+[2022-11-07 11:02:57,432] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_038-Ex1-02D.2.fq.gz
+[2022-11-07 11:02:57,457] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_007-Ex1-06G.2_fastqc.html
+[2022-11-07 11:02:57,465] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_007-Ex1-06G.2_fastqc.html
+[2022-11-07 11:02:57,557] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_028-Ex1-03E.2.fq.gz
+[2022-11-07 11:02:57,558] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_016-Ex1-10C10C.1.fq.gz
+[2022-11-07 11:02:57,559] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_014-Ex1-02B9D.1.fq.gz
+[2022-11-07 11:02:57,584] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_041-Ex1-04F.1_fastqc.html
+[2022-11-07 11:02:57,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_041-Ex1-04F.1_fastqc.html
+[2022-11-07 11:02:57,708] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A11C.1_fastqc.html
+[2022-11-07 11:02:57,716] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A11C.1_fastqc.html
+[2022-11-07 11:02:57,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_032-Ex1-12B12B.1.fq.gz
+[2022-11-07 11:02:57,845] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8D.1_fastqc.html
+[2022-11-07 11:02:57,853] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8D.1_fastqc.html
+[2022-11-07 11:02:57,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_047-Ex1-11D.1.fq.gz
+[2022-11-07 11:02:57,983] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_039-Ex1-02F.2_fastqc.html
+[2022-11-07 11:02:57,990] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_039-Ex1-02F.2_fastqc.html
+[2022-11-07 11:02:58,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_049-Ex1-12F.2.fq.gz
+[2022-11-07 11:02:58,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_046-Ex1-10D.1.fq.gz
+[2022-11-07 11:02:58,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_044-Ex1-07F.2.fq.gz
+[2022-11-07 11:02:58,109] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_017-Ex1-03F3F.2_fastqc.html
+[2022-11-07 11:02:58,117] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_017-Ex1-03F3F.2_fastqc.html
+[2022-11-07 11:02:58,210] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_043-Ex1-05A5A.2.fq.gz
+[2022-11-07 11:02:58,237] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_018-Ex1-11B11B.2_fastqc.html
+[2022-11-07 11:02:58,245] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_018-Ex1-11B11B.2_fastqc.html
+[2022-11-07 11:02:58,345] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_019-Ex1-06H.1.fq.gz
+[2022-11-07 11:02:58,370] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_021-Ex1-08H.1_fastqc.html
+[2022-11-07 11:02:58,378] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_021-Ex1-08H.1_fastqc.html
+[2022-11-07 11:02:58,487] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: origFileNames.txt
+[2022-11-07 11:02:58,495] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: origFileNames.txt
+[2022-11-07 11:02:58,521] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_005-Ex1-03E10G.2.fq.gz
+[2022-11-07 11:02:58,547] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F12F.1_fastqc.html
+[2022-11-07 11:02:58,555] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F12F.1_fastqc.html
+[2022-11-07 11:02:58,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_004-Ex1-04A.2_fastqc.html
+[2022-11-07 11:02:58,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_004-Ex1-04A.2_fastqc.html
+[2022-11-07 11:02:58,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_015-Ex1-02F9G.1.fq.gz
+[2022-11-07 11:02:58,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_023-Ex1-10H.2.fq.gz
+[2022-11-07 11:02:58,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_004-Ex1-04A.1.fq.gz
+[2022-11-07 11:02:58,776] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_038-Ex1-02D.1.fq.gz
+[2022-11-07 11:02:58,802] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_049-Ex1-12F.1_fastqc.html
+[2022-11-07 11:02:58,810] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_049-Ex1-12F.1_fastqc.html
+[2022-11-07 11:02:58,900] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_015-Ex1-02F9G.2.fq.gz
+[2022-11-07 11:02:58,925] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_023-Ex1-10H.1_fastqc.html
+[2022-11-07 11:02:58,933] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_023-Ex1-10H.1_fastqc.html
+[2022-11-07 11:02:59,023] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_019-Ex1-11E11E.1.fq.gz
+[2022-11-07 11:02:59,049] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_040-Ex1-03A3A.2_fastqc.html
+[2022-11-07 11:02:59,057] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_040-Ex1-03A3A.2_fastqc.html
+[2022-11-07 11:02:59,192] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1C.2_fastqc.html
+[2022-11-07 11:02:59,200] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1C.2_fastqc.html
+[2022-11-07 11:02:59,322] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_040-Ex1-04D.2_fastqc.html
+[2022-11-07 11:02:59,330] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_040-Ex1-04D.2_fastqc.html
+[2022-11-07 11:02:59,423] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_019-Ex1-11E11E.2.fq.gz
+[2022-11-07 11:02:59,424] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_026-Ex1-02C2C.2.fq.gz
+[2022-11-07 11:02:59,425] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_018-Ex1-05H.2.fq.gz
+[2022-11-07 11:02:59,452] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_047-Ex1-11D.1_fastqc.html
+[2022-11-07 11:02:59,460] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_047-Ex1-11D.1_fastqc.html
+[2022-11-07 11:02:59,575] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_012-Ex1-11G.2_fastqc.html
+[2022-11-07 11:02:59,583] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_012-Ex1-11G.2_fastqc.html
+[2022-11-07 11:02:59,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_004-Ex1-10B10D.1.fq.gz
+[2022-11-07 11:02:59,701] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8C.1_fastqc.html
+[2022-11-07 11:02:59,709] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8C.1_fastqc.html
+[2022-11-07 11:02:59,833] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F9G.1_fastqc.html
+[2022-11-07 11:02:59,841] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F9G.1_fastqc.html
+[2022-11-07 11:02:59,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_001-Ex1-01A1A.1.fq.gz
+[2022-11-07 11:02:59,975] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_037-Ex1-09A1F.1_fastqc.html
+[2022-11-07 11:02:59,983] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_037-Ex1-09A1F.1_fastqc.html
+[2022-11-07 11:03:00,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_035-Ex1-08A8A.1.fq.gz
+[2022-11-07 11:03:00,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_029-Ex1-04E.1.fq.gz
+[2022-11-07 11:03:00,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_023-Ex1-12F7H.1.fq.gz
+[2022-11-07 11:03:00,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_039-Ex1-02G9H.1.fq.gz
+[2022-11-07 11:03:00,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_006-Ex1-04C3H.1.fq.gz
+[2022-11-07 11:03:00,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_038-Ex1-01F.1.fq.gz
+[2022-11-07 11:03:00,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_041-Ex1-04F.2.fq.gz
+[2022-11-07 11:03:00,125] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_031-Ex1-06E.2_fastqc.html
+[2022-11-07 11:03:00,133] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_031-Ex1-06E.2_fastqc.html
+[2022-11-07 11:03:00,248] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_046-Ex1-09F.2_fastqc.html
+[2022-11-07 11:03:00,256] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_046-Ex1-09F.2_fastqc.html
+[2022-11-07 11:03:00,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_021-Ex1-12C12D.1.fq.gz
+[2022-11-07 11:03:00,372] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_032-Ex1-08C.1_fastqc.html
+[2022-11-07 11:03:00,380] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_032-Ex1-08C.1_fastqc.html
+[2022-11-07 11:03:00,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_013-Ex1-01B9B.1.fq.gz
+[2022-11-07 11:03:00,495] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_007-Ex1-07A.1_fastqc.html
+[2022-11-07 11:03:00,503] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_007-Ex1-07A.1_fastqc.html
+[2022-11-07 11:03:00,595] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_036-Ex1-08C8C.2.fq.gz
+[2022-11-07 11:03:00,620] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_033-Ex1-09C.1_fastqc.html
+[2022-11-07 11:03:00,628] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_033-Ex1-09C.1_fastqc.html
+[2022-11-07 11:03:00,743] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_021-Ex1-09B.1_fastqc.html
+[2022-11-07 11:03:00,751] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_021-Ex1-09B.1_fastqc.html
+[2022-11-07 11:03:00,842] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_017-Ex1-03F3F.1.fq.gz
+[2022-11-07 11:03:00,842] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_043-Ex1-06F.2.fq.gz
+[2022-11-07 11:03:00,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_017-Ex1-04H.1.fq.gz
+[2022-11-07 11:03:00,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_015-Ex1-03B.1.fq.gz
+[2022-11-07 11:03:00,849] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_011-Ex1-12E7G.2.fq.gz
+[2022-11-07 11:03:00,850] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_009-Ex1-06B6B.1.fq.gz
+[2022-11-07 11:03:00,851] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_005-Ex1-03E3E.1.fq.gz
+[2022-11-07 11:03:00,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_009-Ex1-09A.1.fq.gz
+[2022-11-07 11:03:00,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_048-Ex1-11F.1.fq.gz
+[2022-11-07 11:03:00,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_020-Ex1-12A12A.2.fq.gz
+[2022-11-07 11:03:00,858] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_009-Ex1-06B5G.2.fq.gz
+[2022-11-07 11:03:00,883] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_037-Ex1-01D.2_fastqc.html
+[2022-11-07 11:03:00,891] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_037-Ex1-01D.2_fastqc.html
+[2022-11-07 11:03:01,008] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_012-Ex1-11G.1_fastqc.html
+[2022-11-07 11:03:01,016] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_012-Ex1-11G.1_fastqc.html
+[2022-11-07 11:03:01,106] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_027-Ex1-10A2D.1.fq.gz
+[2022-11-07 11:03:01,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_031-Ex1-06E.1.fq.gz
+[2022-11-07 11:03:01,132] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_037-Ex1-12E.2_fastqc.html
+[2022-11-07 11:03:01,140] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_037-Ex1-12E.2_fastqc.html
+[2022-11-07 11:03:01,231] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_015-Ex1-02F2F.1.fq.gz
+[2022-11-07 11:03:01,231] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_014-Ex1-01H.2.fq.gz
+[2022-11-07 11:03:01,233] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_022-Ex1-09H.2.fq.gz
+[2022-11-07 11:03:01,258] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_019-Ex1-07B.2_fastqc.html
+[2022-11-07 11:03:01,266] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_019-Ex1-07B.2_fastqc.html
+[2022-11-07 11:03:01,382] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_030-Ex1-06C.2_fastqc.html
+[2022-11-07 11:03:01,390] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_030-Ex1-06C.2_fastqc.html
+[2022-11-07 11:03:01,481] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_010-Ex1-07A7A.2.fq.gz
+[2022-11-07 11:03:01,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_015-Ex1-02F2F.2.fq.gz
+[2022-11-07 11:03:01,507] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_036-Ex1-11E.2_fastqc.html
+[2022-11-07 11:03:01,514] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_036-Ex1-11E.2_fastqc.html
+[2022-11-07 11:03:01,629] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_045-Ex1-06A6D.1_fastqc.html
+[2022-11-07 11:03:01,638] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_045-Ex1-06A6D.1_fastqc.html
+[2022-11-07 11:03:01,770] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_028-Ex1-03E.1_fastqc.html
+[2022-11-07 11:03:01,778] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_028-Ex1-03E.1_fastqc.html
+[2022-11-07 11:03:01,871] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_008-Ex1-05C5C.1.fq.gz
+[2022-11-07 11:03:01,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_039-Ex1-03D.1.fq.gz
+[2022-11-07 11:03:01,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_038-Ex1-01F.2.fq.gz
+[2022-11-07 11:03:01,874] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_033-Ex1-08E.2.fq.gz
+[2022-11-07 11:03:01,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_009-Ex1-09A.2.fq.gz
+[2022-11-07 11:03:01,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_009-Ex1-08G.2.fq.gz
+[2022-11-07 11:03:01,900] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_009-Ex1-09A.2_fastqc.html
+[2022-11-07 11:03:01,908] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_009-Ex1-09A.2_fastqc.html
+[2022-11-07 11:03:01,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_013-Ex1-01B.1.fq.gz
+[2022-11-07 11:03:02,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_010-Ex1-07A6E.2.fq.gz
+[2022-11-07 11:03:02,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_023-Ex1-12F12F.2.fq.gz
+[2022-11-07 11:03:02,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_025-Ex1-12H.2.fq.gz
+[2022-11-07 11:03:02,030] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_010-Ex1-09G.1_fastqc.html
+[2022-11-07 11:03:02,038] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_010-Ex1-09G.1_fastqc.html
+[2022-11-07 11:03:02,153] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_026-Ex1-01E.2_fastqc.html
+[2022-11-07 11:03:02,162] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_026-Ex1-01E.2_fastqc.html
+[2022-11-07 11:03:02,277] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_047-Ex1-10F.2_fastqc.html
+[2022-11-07 11:03:02,285] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_047-Ex1-10F.2_fastqc.html
+[2022-11-07 11:03:02,400] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_031-Ex1-07C.2_fastqc.html
+[2022-11-07 11:03:02,408] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_031-Ex1-07C.2_fastqc.html
+[2022-11-07 11:03:02,524] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_008-Ex1-07G.1_fastqc.html
+[2022-11-07 11:03:02,533] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_008-Ex1-07G.1_fastqc.html
+[2022-11-07 11:03:02,623] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_019-Ex1-11E4G.1.fq.gz
+[2022-11-07 11:03:02,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_031-Ex1-07C.1.fq.gz
+[2022-11-07 11:03:02,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_016-Ex1-03H.2.fq.gz
+[2022-11-07 11:03:02,653] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_015-Ex1-02H.2_fastqc.html
+[2022-11-07 11:03:02,661] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_015-Ex1-02H.2_fastqc.html
+[2022-11-07 11:03:02,776] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_029-Ex1-04E.1_fastqc.html
+[2022-11-07 11:03:02,784] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_029-Ex1-04E.1_fastqc.html
+[2022-11-07 11:03:02,901] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_049-Ex1-12F.2_fastqc.html
+[2022-11-07 11:03:02,909] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_049-Ex1-12F.2_fastqc.html
+[2022-11-07 11:03:03,025] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A4A.2_fastqc.html
+[2022-11-07 11:03:03,033] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A4A.2_fastqc.html
+[2022-11-07 11:03:03,145] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi_CaptureLibraries_SequenceNameDecode.tsv
+[2022-11-07 11:03:03,153] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi_CaptureLibraries_SequenceNameDecode.tsv
+[2022-11-07 11:03:03,177] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_009-Ex1-08G.1.fq.gz
+[2022-11-07 11:03:03,203] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_002-Ex1-02A9C.2_fastqc.html
+[2022-11-07 11:03:03,211] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_002-Ex1-02A9C.2_fastqc.html
+[2022-11-07 11:03:03,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_032-Ex1-07E.2.fq.gz
+[2022-11-07 11:03:03,334] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_015-Ex1-02H.1_fastqc.html
+[2022-11-07 11:03:03,342] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_015-Ex1-02H.1_fastqc.html
+[2022-11-07 11:03:03,457] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3C.1_fastqc.html
+[2022-11-07 11:03:03,465] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3C.1_fastqc.html
+[2022-11-07 11:03:03,577] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_041-Ex1-05D.1.fq.gz
+[2022-11-07 11:03:03,602] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_033-Ex1-08E.2_fastqc.html
+[2022-11-07 11:03:03,611] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_033-Ex1-08E.2_fastqc.html
+[2022-11-07 11:03:03,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_001-Ex1-12D.1.fq.gz
+[2022-11-07 11:03:03,726] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_009-Ex1-06B6B.2_fastqc.html
+[2022-11-07 11:03:03,734] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_009-Ex1-06B6B.2_fastqc.html
+[2022-11-07 11:03:03,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_016-Ex1-10C10E.2.fq.gz
+[2022-11-07 11:03:03,839] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_045-Ex1-06A6D.1.fq.gz
+[2022-11-07 11:03:03,863] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_035-Ex1-10E.2_fastqc.html
+[2022-11-07 11:03:03,871] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_035-Ex1-10E.2_fastqc.html
+[2022-11-07 11:03:03,988] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_013-Ex1-01B1B.2_fastqc.html
+[2022-11-07 11:03:03,996] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_013-Ex1-01B1B.2_fastqc.html
+[2022-11-07 11:03:04,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_042-Ex1-06D.1.fq.gz
+[2022-11-07 11:03:04,100] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_013-Ex1-12G.1.fq.gz
+[2022-11-07 11:03:04,122] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8H.2_fastqc.html
+[2022-11-07 11:03:04,130] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8H.2_fastqc.html
+[2022-11-07 11:03:04,224] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_019-Ex1-06H.2.fq.gz
+[2022-11-07 11:03:04,249] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_031-Ex1-06E.1_fastqc.html
+[2022-11-07 11:03:04,257] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_031-Ex1-06E.1_fastqc.html
+[2022-11-07 11:03:04,349] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_042-Ex1-06D.2.fq.gz
+[2022-11-07 11:03:04,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_037-Ex1-12E.2.fq.gz
+[2022-11-07 11:03:04,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_004-Ex1-03G.2.fq.gz
+[2022-11-07 11:03:04,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_039-Ex1-02G2G.2.fq.gz
+[2022-11-07 11:03:04,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_019-Ex1-07B.2.fq.gz
+[2022-11-07 11:03:04,381] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_023-Ex1-11B.2_fastqc.html
+[2022-11-07 11:03:04,389] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_023-Ex1-11B.2_fastqc.html
+[2022-11-07 11:03:04,480] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_045-Ex1-06A6D.2.fq.gz
+[2022-11-07 11:03:04,506] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_015-Ex1-03B.1_fastqc.html
+[2022-11-07 11:03:04,514] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_015-Ex1-03B.1_fastqc.html
+[2022-11-07 11:03:04,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_023-Ex1-12F12F.1.fq.gz
+[2022-11-07 11:03:04,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_026-Ex1-01E.1.fq.gz
+[2022-11-07 11:03:04,608] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_040-Ex1-03A3A.1.fq.gz
+[2022-11-07 11:03:04,634] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_039-Ex1-03D.2_fastqc.html
+[2022-11-07 11:03:04,642] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_039-Ex1-03D.2_fastqc.html
+[2022-11-07 11:03:04,758] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_008-Ex1-07G.2_fastqc.html
+[2022-11-07 11:03:04,766] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_008-Ex1-07G.2_fastqc.html
+[2022-11-07 11:03:04,883] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_016-Ex1-04B.1_fastqc.html
+[2022-11-07 11:03:04,892] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_016-Ex1-04B.1_fastqc.html
+[2022-11-07 11:03:04,982] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_033-Ex1-08E.1.fq.gz
+[2022-11-07 11:03:04,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_014-Ex1-02B2B.2.fq.gz
+[2022-11-07 11:03:04,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_039-Ex1-02F.2.fq.gz
+[2022-11-07 11:03:05,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_034-Ex1-09E.1_fastqc.html
+[2022-11-07 11:03:05,017] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_034-Ex1-09E.1_fastqc.html
+[2022-11-07 11:03:05,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_013-Ex1-01B.2.fq.gz
+[2022-11-07 11:03:05,107] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_011-Ex1-12E12E.2.fq.gz
+[2022-11-07 11:03:05,134] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_018-Ex1-06B.1_fastqc.html
+[2022-11-07 11:03:05,142] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_018-Ex1-06B.1_fastqc.html
+[2022-11-07 11:03:05,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_043-Ex1-07D.2.fq.gz
+[2022-11-07 11:03:05,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_005-Ex1-04G.1.fq.gz
+[2022-11-07 11:03:05,236] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_013-Ex1-01B9B.2.fq.gz
+[2022-11-07 11:03:05,260] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_040-Ex1-04D.1_fastqc.html
+[2022-11-07 11:03:05,268] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_040-Ex1-04D.1_fastqc.html
+[2022-11-07 11:03:05,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_042-Ex1-04E4E.1.fq.gz
+[2022-11-07 11:03:05,362] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_048-Ex1-08D8H.2.fq.gz
+[2022-11-07 11:03:05,387] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_021-Ex1-08H.2_fastqc.html
+[2022-11-07 11:03:05,395] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_021-Ex1-08H.2_fastqc.html
+[2022-11-07 11:03:05,486] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_025-Ex1-01C1C.1.fq.gz
+[2022-11-07 11:03:05,515] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_023-Ex1-11B.1_fastqc.html
+[2022-11-07 11:03:05,523] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_023-Ex1-11B.1_fastqc.html
+[2022-11-07 11:03:05,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_017-Ex1-04H.2.fq.gz
+[2022-11-07 11:03:05,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_042-Ex1-04E4E.2.fq.gz
+[2022-11-07 11:03:05,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_036-Ex1-08C8G.2.fq.gz
+[2022-11-07 11:03:05,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_022-Ex1-09H.1.fq.gz
+[2022-11-07 11:03:05,643] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_006-Ex1-06A.2_fastqc.html
+[2022-11-07 11:03:05,651] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_006-Ex1-06A.2_fastqc.html
+[2022-11-07 11:03:05,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_045-Ex1-09D.1.fq.gz
+[2022-11-07 11:03:05,771] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_048-Ex1-11F.2_fastqc.html
+[2022-11-07 11:03:05,779] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_048-Ex1-11F.2_fastqc.html
+[2022-11-07 11:03:05,895] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_016-Ex1-04B.2_fastqc.html
+[2022-11-07 11:03:05,903] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_016-Ex1-04B.2_fastqc.html
+[2022-11-07 11:03:06,023] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_002-Ex1-02A.2_fastqc.html
+[2022-11-07 11:03:06,032] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_002-Ex1-02A.2_fastqc.html
+[2022-11-07 11:03:06,124] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_032-Ex1-12B5D.2.fq.gz
+[2022-11-07 11:03:06,124] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_012-Ex1-11G.1.fq.gz
+[2022-11-07 11:03:06,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_011-Ex1-11A.1.fq.gz
+[2022-11-07 11:03:06,128] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_031-Ex1-05B5B.1.fq.gz
+[2022-11-07 11:03:06,153] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_009-Ex1-08G.1_fastqc.html
+[2022-11-07 11:03:06,161] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_009-Ex1-08G.1_fastqc.html
+[2022-11-07 11:03:06,275] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_010-Ex1-07A7A.2_fastqc.html
+[2022-11-07 11:03:06,283] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_010-Ex1-07A7A.2_fastqc.html
+[2022-11-07 11:03:06,377] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_033-Ex1-06C5H.2.fq.gz
+[2022-11-07 11:03:06,377] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_007-Ex1-11D11D.2.fq.gz
+[2022-11-07 11:03:06,379] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_018-Ex1-11B4D.1.fq.gz
+[2022-11-07 11:03:06,404] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_025-Ex1-12H.2_fastqc.html
+[2022-11-07 11:03:06,412] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_025-Ex1-12H.2_fastqc.html
+[2022-11-07 11:03:06,503] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_026-Ex1-02C1G.2.fq.gz
+[2022-11-07 11:03:06,505] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_012-Ex1-08E12G.1.fq.gz
+[2022-11-07 11:03:06,530] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_008-Ex1-08A.1_fastqc.html
+[2022-11-07 11:03:06,539] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_008-Ex1-08A.1_fastqc.html
+[2022-11-07 11:03:06,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_011-Ex1-10G.1.fq.gz
+[2022-11-07 11:03:06,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_017-Ex1-05B.2.fq.gz
+[2022-11-07 11:03:06,660] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3C.2_fastqc.html
+[2022-11-07 11:03:06,669] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3C.2_fastqc.html
+[2022-11-07 11:03:06,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_048-Ex1-11F.2.fq.gz
+[2022-11-07 11:03:06,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_033-Ex1-09C.2_fastqc.html
+[2022-11-07 11:03:06,814] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_033-Ex1-09C.2_fastqc.html
+[2022-11-07 11:03:06,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_027-Ex1-02E.2.fq.gz
+[2022-11-07 11:03:06,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_021-Ex1-12C12C.1.fq.gz
+[2022-11-07 11:03:06,933] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_001-Ex1-12D.1_fastqc.html
+[2022-11-07 11:03:06,941] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_001-Ex1-12D.1_fastqc.html
+[2022-11-07 11:03:07,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_014-Ex1-02B.1.fq.gz
+[2022-11-07 11:03:07,061] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_041-Ex1-04F.2_fastqc.html
+[2022-11-07 11:03:07,069] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_041-Ex1-04F.2_fastqc.html
+[2022-11-07 11:03:07,184] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_027-Ex1-02E.1_fastqc.html
+[2022-11-07 11:03:07,192] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_027-Ex1-02E.1_fastqc.html
+[2022-11-07 11:03:07,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_030-Ex1-06C.2.fq.gz
+[2022-11-07 11:03:07,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_023-Ex1-12F7H.2.fq.gz
+[2022-11-07 11:03:07,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_014-Ex1-02B2B.1.fq.gz
+[2022-11-07 11:03:07,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_010-Ex1-09G.2.fq.gz
+[2022-11-07 11:03:07,310] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_026-Ex1-01E.1_fastqc.html
+[2022-11-07 11:03:07,318] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_026-Ex1-01E.1_fastqc.html
+[2022-11-07 11:03:07,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_030-Ex1-05E.1.fq.gz
+[2022-11-07 11:03:07,429] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: newFileNames.txt
+[2022-11-07 11:03:07,436] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: newFileNames.txt
+[2022-11-07 11:03:07,484] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1E.1_fastqc.html
+[2022-11-07 11:03:07,492] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1E.1_fastqc.html
+[2022-11-07 11:03:07,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_016-Ex1-10C10C.2.fq.gz
+[2022-11-07 11:03:07,626] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A4A.1_fastqc.html
+[2022-11-07 11:03:07,634] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A4A.1_fastqc.html
+[2022-11-07 11:03:07,754] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1C.1_fastqc.html
+[2022-11-07 11:03:07,762] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1C.1_fastqc.html
+[2022-11-07 11:03:07,883] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_045-Ex1-08F.1_fastqc.html
+[2022-11-07 11:03:07,891] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_045-Ex1-08F.1_fastqc.html
+[2022-11-07 11:03:08,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_003-Ex1-03A.1_fastqc.html
+[2022-11-07 11:03:08,017] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_003-Ex1-03A.1_fastqc.html
+[2022-11-07 11:03:08,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_018-Ex1-05H.1.fq.gz
+[2022-11-07 11:03:08,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_012-Ex1-08E12G.2.fq.gz
+[2022-11-07 11:03:08,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_018-Ex1-11B4D.2.fq.gz
+[2022-11-07 11:03:08,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_001-Ex1-01A1D.2.fq.gz
+[2022-11-07 11:03:08,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_021-Ex1-12C12C.2.fq.gz
+[2022-11-07 11:03:08,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_002-Ex1-01G.1.fq.gz
+[2022-11-07 11:03:08,144] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_014-Ex1-01H.2_fastqc.html
+[2022-11-07 11:03:08,152] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_014-Ex1-01H.2_fastqc.html
+[2022-11-07 11:03:08,270] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_041-Ex1-05D.2_fastqc.html
+[2022-11-07 11:03:08,279] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_041-Ex1-05D.2_fastqc.html
+[2022-11-07 11:03:08,373] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_028-Ex1-03B3B.2.fq.gz
+[2022-11-07 11:03:08,373] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_009-Ex1-06B5G.1.fq.gz
+[2022-11-07 11:03:08,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_046-Ex1-07D7D.1.fq.gz
+[2022-11-07 11:03:08,401] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_005-Ex1-04G.1_fastqc.html
+[2022-11-07 11:03:08,409] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_005-Ex1-04G.1_fastqc.html
+[2022-11-07 11:03:08,502] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_039-Ex1-02G2G.1.fq.gz
+[2022-11-07 11:03:08,503] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_028-Ex1-03B2H.2.fq.gz
+[2022-11-07 11:03:08,505] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_040-Ex1-04D.2.fq.gz
+[2022-11-07 11:03:08,505] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_040-Ex1-04D.1.fq.gz
+[2022-11-07 11:03:08,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_015-Ex1-02H.2.fq.gz
+[2022-11-07 11:03:08,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_007-Ex1-11D4F.2.fq.gz
+[2022-11-07 11:03:08,532] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_017-Ex1-03F3F.1_fastqc.html
+[2022-11-07 11:03:08,540] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_017-Ex1-03F3F.1_fastqc.html
+[2022-11-07 11:03:08,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_045-Ex1-06A6A.2.fq.gz
+[2022-11-07 11:03:08,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_007-Ex1-11D4F.1.fq.gz
+[2022-11-07 11:03:08,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_010-Ex1-09G.1.fq.gz
+[2022-11-07 11:03:08,702] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_001-Ex1-01A.1_fastqc.html
+[2022-11-07 11:03:08,710] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_001-Ex1-01A.1_fastqc.html
+[2022-11-07 11:03:08,801] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_003-Ex1-03A.2.fq.gz
+[2022-11-07 11:03:08,802] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_011-Ex1-10G.2.fq.gz
+[2022-11-07 11:03:08,829] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_006-Ex1-04C4C.2_fastqc.html
+[2022-11-07 11:03:08,838] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_006-Ex1-04C4C.2_fastqc.html
+[2022-11-07 11:03:08,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_031-Ex1-05B4H.2.fq.gz
+[2022-11-07 11:03:08,959] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_025-Ex1-12H.1_fastqc.html
+[2022-11-07 11:03:08,967] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_025-Ex1-12H.1_fastqc.html
+[2022-11-07 11:03:09,087] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_013-Ex1-01B1B.1_fastqc.html
+[2022-11-07 11:03:09,095] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_013-Ex1-01B1B.1_fastqc.html
+[2022-11-07 11:03:09,221] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_045-Ex1-06A6D.2_fastqc.html
+[2022-11-07 11:03:09,229] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_045-Ex1-06A6D.2_fastqc.html
+[2022-11-07 11:03:09,360] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_006-Ex1-04C4C.1_fastqc.html
+[2022-11-07 11:03:09,368] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_006-Ex1-04C4C.1_fastqc.html
+[2022-11-07 11:03:09,461] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_005-Ex1-05A.1.fq.gz
+[2022-11-07 11:03:09,489] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A11F.2_fastqc.html
+[2022-11-07 11:03:09,497] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A11F.2_fastqc.html
+[2022-11-07 11:03:09,595] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_028-Ex1-04C.1.fq.gz
+[2022-11-07 11:03:09,620] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_003-Ex1-03A.2_fastqc.html
+[2022-11-07 11:03:09,628] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_003-Ex1-03A.2_fastqc.html
+[2022-11-07 11:03:09,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_046-Ex1-10D.2.fq.gz
+[2022-11-07 11:03:09,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_029-Ex1-03C3C.1.fq.gz
+[2022-11-07 11:03:09,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_020-Ex1-12A12A.1.fq.gz
+[2022-11-07 11:03:09,747] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_014-Ex1-02B.1_fastqc.html
+[2022-11-07 11:03:09,755] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_014-Ex1-02B.1_fastqc.html
+[2022-11-07 11:03:09,845] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_039-Ex1-02G9H.2.fq.gz
+[2022-11-07 11:03:09,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_030-Ex1-05E.2.fq.gz
+[2022-11-07 11:03:09,872] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_024-Ex1-12B.1_fastqc.html
+[2022-11-07 11:03:09,881] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_024-Ex1-12B.1_fastqc.html
+[2022-11-07 11:03:09,995] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_001-Ex1-12D.2_fastqc.html
+[2022-11-07 11:03:10,003] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_001-Ex1-12D.2_fastqc.html
+[2022-11-07 11:03:10,118] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_011-Ex1-10G.1_fastqc.html
+[2022-11-07 11:03:10,126] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_011-Ex1-10G.1_fastqc.html
+[2022-11-07 11:03:10,242] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_032-Ex1-07E.1_fastqc.html
+[2022-11-07 11:03:10,251] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_032-Ex1-07E.1_fastqc.html
+[2022-11-07 11:03:10,342] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_001-Ex1-01A1D.1.fq.gz
+[2022-11-07 11:03:10,343] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_035-Ex1-08A7E.1.fq.gz
+[2022-11-07 11:03:10,343] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_012-Ex1-12A.2.fq.gz
+[2022-11-07 11:03:10,346] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_017-Ex1-05B.1.fq.gz
+[2022-11-07 11:03:10,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_036-Ex1-08C8G.1.fq.gz
+[2022-11-07 11:03:10,373] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_027-Ex1-02E.2_fastqc.html
+[2022-11-07 11:03:10,381] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_027-Ex1-02E.2_fastqc.html
+[2022-11-07 11:03:10,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_035-Ex1-08A7E.2.fq.gz
+[2022-11-07 11:03:10,498] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_021-Ex1-09B.2_fastqc.html
+[2022-11-07 11:03:10,506] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_021-Ex1-09B.2_fastqc.html
+[2022-11-07 11:03:10,622] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_022-Ex1-10B.2_fastqc.html
+[2022-11-07 11:03:10,630] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_022-Ex1-10B.2_fastqc.html
+[2022-11-07 11:03:10,745] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_046-Ex1-09F.1_fastqc.html
+[2022-11-07 11:03:10,753] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_046-Ex1-09F.1_fastqc.html
+[2022-11-07 11:03:10,867] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_019-Ex1-06H.2_fastqc.html
+[2022-11-07 11:03:10,875] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_019-Ex1-06H.2_fastqc.html
+[2022-11-07 11:03:10,990] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_007-Ex1-06G.1_fastqc.html
+[2022-11-07 11:03:10,998] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_007-Ex1-06G.1_fastqc.html
+[2022-11-07 11:03:11,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_044-Ex1-08D.1.fq.gz
+[2022-11-07 11:03:11,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_029-Ex1-03C3G.2.fq.gz
+[2022-11-07 11:03:11,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_007-Ex1-06G.2.fq.gz
+[2022-11-07 11:03:11,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_014-Ex1-01H.1.fq.gz
+[2022-11-07 11:03:11,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_008-Ex1-05C11H.2.fq.gz
+[2022-11-07 11:03:11,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_043-Ex1-07D.1.fq.gz
+[2022-11-07 11:03:11,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_020-Ex1-12A11G.2.fq.gz
+[2022-11-07 11:03:11,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_014-Ex1-02B.2.fq.gz
+[2022-11-07 11:03:11,121] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_012-Ex1-12A.2_fastqc.html
+[2022-11-07 11:03:11,129] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_012-Ex1-12A.2_fastqc.html
+[2022-11-07 11:03:11,245] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_017-Ex1-05B.1_fastqc.html
+[2022-11-07 11:03:11,253] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_017-Ex1-05B.1_fastqc.html
+[2022-11-07 11:03:11,346] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_044-Ex1-05E5E.1.fq.gz
+[2022-11-07 11:03:11,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_003-Ex1-02E2E.2.fq.gz
+[2022-11-07 11:03:11,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_022-Ex1-07B7B.1.fq.gz
+[2022-11-07 11:03:11,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_047-Ex1-10F.2.fq.gz
+[2022-11-07 11:03:11,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_010-Ex1-07A6E.1.fq.gz
+[2022-11-07 11:03:11,358] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_046-Ex1-07D6H.2.fq.gz
+[2022-11-07 11:03:11,359] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_027-Ex1-02E.1.fq.gz
+[2022-11-07 11:03:11,359] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_036-Ex1-11E.2.fq.gz
+[2022-11-07 11:03:11,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_002-Ex1-02A9C.2.fq.gz
+[2022-11-07 11:03:11,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_024-Ex1-11H.2.fq.gz
+[2022-11-07 11:03:11,362] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_021-Ex1-08H.2.fq.gz
+[2022-11-07 11:03:11,365] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_025-Ex1-01C1C.2.fq.gz
+[2022-11-07 11:03:11,366] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_036-Ex1-08C8C.1.fq.gz
+[2022-11-07 11:03:11,391] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_046-Ex1-10D.1_fastqc.html
+[2022-11-07 11:03:11,399] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_046-Ex1-10D.1_fastqc.html
+[2022-11-07 11:03:11,513] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_005-Ex1-05A.2_fastqc.html
+[2022-11-07 11:03:11,521] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_005-Ex1-05A.2_fastqc.html
+[2022-11-07 11:03:11,640] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_040-Ex1-03F.1_fastqc.html
+[2022-11-07 11:03:11,649] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_040-Ex1-03F.1_fastqc.html
+[2022-11-07 11:03:11,763] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_006-Ex1-05G.2_fastqc.html
+[2022-11-07 11:03:11,771] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_006-Ex1-05G.2_fastqc.html
+[2022-11-07 11:03:11,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A5A.2_fastqc.html
+[2022-11-07 11:03:11,897] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A5A.2_fastqc.html
+[2022-11-07 11:03:12,029] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_008-Ex1-05C5C.1_fastqc.html
+[2022-11-07 11:03:12,037] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_008-Ex1-05C5C.1_fastqc.html
+[2022-11-07 11:03:12,165] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_036-Ex1-12C.1_fastqc.html
+[2022-11-07 11:03:12,173] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_036-Ex1-12C.1_fastqc.html
+[2022-11-07 11:03:12,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_032-Ex1-07E.1.fq.gz
+[2022-11-07 11:03:12,265] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_038-Ex1-09E9E.2.fq.gz
+[2022-11-07 11:03:12,285] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8D.2_fastqc.html
+[2022-11-07 11:03:12,293] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_048-Ex1-08D8D.2_fastqc.html
+[2022-11-07 11:03:12,424] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_042-Ex1-05F.2_fastqc.html
+[2022-11-07 11:03:12,432] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_042-Ex1-05F.2_fastqc.html
+[2022-11-07 11:03:12,546] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_041-Ex1-05D.1_fastqc.html
+[2022-11-07 11:03:12,554] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_041-Ex1-05D.1_fastqc.html
+[2022-11-07 11:03:12,644] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_018-Ex1-06B.2.fq.gz
+[2022-11-07 11:03:12,645] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_020-Ex1-07H.1.fq.gz
+[2022-11-07 11:03:12,648] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_037-Ex1-09A9A.1.fq.gz
+[2022-11-07 11:03:12,673] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_037-Ex1-12E.1_fastqc.html
+[2022-11-07 11:03:12,681] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_037-Ex1-12E.1_fastqc.html
+[2022-11-07 11:03:12,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_006-Ex1-05G.1.fq.gz
+[2022-11-07 11:03:12,796] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F9G.2_fastqc.html
+[2022-11-07 11:03:12,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F9G.2_fastqc.html
+[2022-11-07 11:03:12,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_045-Ex1-08F.1.fq.gz
+[2022-11-07 11:03:12,914] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_026-Ex1-02C.2.fq.gz
+[2022-11-07 11:03:12,939] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_036-Ex1-12C.2_fastqc.html
+[2022-11-07 11:03:12,946] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_036-Ex1-12C.2_fastqc.html
+[2022-11-07 11:03:13,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_009-Ex1-06B6B.2.fq.gz
+[2022-11-07 11:03:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_022-Ex1-07B6F.2.fq.gz
+[2022-11-07 11:03:13,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_045-Ex1-08F.2.fq.gz
+[2022-11-07 11:03:13,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_043-Ex1-05A11F.1.fq.gz
+[2022-11-07 11:03:13,066] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_024-Ex1-11H.2_fastqc.html
+[2022-11-07 11:03:13,074] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_024-Ex1-11H.2_fastqc.html
+[2022-11-07 11:03:13,166] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_004-Ex1-04A.2.fq.gz
+[2022-11-07 11:03:13,168] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_017-Ex1-03F10H.2.fq.gz
+[2022-11-07 11:03:13,172] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_041-Ex1-04F.1.fq.gz
+[2022-11-07 11:03:13,174] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_048-Ex1-08D8D.1.fq.gz
+[2022-11-07 11:03:13,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_039-Ex1-03D.2.fq.gz
+[2022-11-07 11:03:13,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_019-Ex1-07B.1.fq.gz
+[2022-11-07 11:03:13,176] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_044-Ex1-08D.2.fq.gz
+[2022-11-07 11:03:13,203] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_004-Ex1-03G.2_fastqc.html
+[2022-11-07 11:03:13,211] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_004-Ex1-03G.2_fastqc.html
+[2022-11-07 11:03:13,304] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_041-Ex1-05D.2.fq.gz
+[2022-11-07 11:03:13,304] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_034-Ex1-10C.2.fq.gz
+[2022-11-07 11:03:13,330] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_047-Ex1-10F.1_fastqc.html
+[2022-11-07 11:03:13,338] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_047-Ex1-10F.1_fastqc.html
+[2022-11-07 11:03:13,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_010-Ex1-07A7A.1.fq.gz
+[2022-11-07 11:03:13,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_006-Ex1-04C4C.1.fq.gz
+[2022-11-07 11:03:13,430] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_013-Ex1-12G.2.fq.gz
+[2022-11-07 11:03:13,430] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_024-Ex1-08F8F.1.fq.gz
+[2022-11-07 11:03:13,455] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_002-Ex1-01G.2_fastqc.html
+[2022-11-07 11:03:13,463] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_002-Ex1-01G.2_fastqc.html
+[2022-11-07 11:03:13,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_028-Ex1-03B2H.1.fq.gz
+[2022-11-07 11:03:13,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_040-Ex1-03A10F.2.fq.gz
+[2022-11-07 11:03:13,580] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_018-Ex1-05H.2_fastqc.html
+[2022-11-07 11:03:13,588] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_018-Ex1-05H.2_fastqc.html
+[2022-11-07 11:03:13,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_018-Ex1-11B11B.1.fq.gz
+[2022-11-07 11:03:13,703] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_020-Ex1-08B.2_fastqc.html
+[2022-11-07 11:03:13,712] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_020-Ex1-08B.2_fastqc.html
+[2022-11-07 11:03:13,826] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_001-Ex1-01A1A.2_fastqc.html
+[2022-11-07 11:03:13,834] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_001-Ex1-01A1A.2_fastqc.html
+[2022-11-07 11:03:13,952] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_045-Ex1-09D.2_fastqc.html
+[2022-11-07 11:03:13,960] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_045-Ex1-09D.2_fastqc.html
+[2022-11-07 11:03:14,076] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_008-Ex1-05C5C.2_fastqc.html
+[2022-11-07 11:03:14,085] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_008-Ex1-05C5C.2_fastqc.html
+[2022-11-07 11:03:14,195] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_024-Ex1-08F8F.2.fq.gz
+[2022-11-07 11:03:14,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_044-Ex1-05E5E.2.fq.gz
+[2022-11-07 11:03:14,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_047-Ex1-11D.2.fq.gz
+[2022-11-07 11:03:14,202] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_025-Ex1-12H.1.fq.gz
+[2022-11-07 11:03:14,204] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_022-Ex1-07B7B.2.fq.gz
+[2022-11-07 11:03:14,228] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_018-Ex1-05H.1_fastqc.html
+[2022-11-07 11:03:14,237] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_018-Ex1-05H.1_fastqc.html
+[2022-11-07 11:03:14,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_021-Ex1-12C12D.2.fq.gz
+[2022-11-07 11:03:14,350] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_010-Ex1-07A7A.1_fastqc.html
+[2022-11-07 11:03:14,358] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_010-Ex1-07A7A.1_fastqc.html
+[2022-11-07 11:03:14,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_047-Ex1-08B7F.2.fq.gz
+[2022-11-07 11:03:14,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_034-Ex1-09E.2.fq.gz
+[2022-11-07 11:03:14,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_022-Ex1-10B.1.fq.gz
+[2022-11-07 11:03:14,483] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8C.2_fastqc.html
+[2022-11-07 11:03:14,491] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8C.2_fastqc.html
+[2022-11-07 11:03:14,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_038-Ex1-09E1H.1.fq.gz
+[2022-11-07 11:03:14,617] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_031-Ex1-07C.1_fastqc.html
+[2022-11-07 11:03:14,625] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_031-Ex1-07C.1_fastqc.html
+[2022-11-07 11:03:14,741] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_016-Ex1-03H.1_fastqc.html
+[2022-11-07 11:03:14,749] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_016-Ex1-03H.1_fastqc.html
+[2022-11-07 11:03:14,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_010-Ex1-10A.1.fq.gz
+[2022-11-07 11:03:14,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_031-Ex1-05B5B.2.fq.gz
+[2022-11-07 11:03:14,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_034-Ex1-07C7C.1.fq.gz
+[2022-11-07 11:03:14,873] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A5A.1_fastqc.html
+[2022-11-07 11:03:14,881] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A5A.1_fastqc.html
+[2022-11-07 11:03:14,987] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_018-Ex1-06B.1.fq.gz
+[2022-11-07 11:03:14,989] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_002-Ex1-01G.2.fq.gz
+[2022-11-07 11:03:15,014] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_016-Ex1-03H.2_fastqc.html
+[2022-11-07 11:03:15,022] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_016-Ex1-03H.2_fastqc.html
+[2022-11-07 11:03:15,113] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_024-Ex1-08F12H.1.fq.gz
+[2022-11-07 11:03:15,139] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_001-Ex1-01A1A.1_fastqc.html
+[2022-11-07 11:03:15,147] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_001-Ex1-01A1A.1_fastqc.html
+[2022-11-07 11:03:15,264] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A11F.1_fastqc.html
+[2022-11-07 11:03:15,273] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_043-Ex1-05A11F.1_fastqc.html
+[2022-11-07 11:03:15,396] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_013-Ex1-01B.1_fastqc.html
+[2022-11-07 11:03:15,404] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_013-Ex1-01B.1_fastqc.html
+[2022-11-07 11:03:15,498] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_005-Ex1-04G.2.fq.gz
+[2022-11-07 11:03:15,525] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_004-Ex1-10B10D.2_fastqc.html
+[2022-11-07 11:03:15,533] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_004-Ex1-10B10D.2_fastqc.html
+[2022-11-07 11:03:15,662] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_017-Ex1-04H.1_fastqc.html
+[2022-11-07 11:03:15,670] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_017-Ex1-04H.1_fastqc.html
+[2022-11-07 11:03:15,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_042-Ex1-05F.2.fq.gz
+[2022-11-07 11:03:15,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_002-Ex1-02A2A.2.fq.gz
+[2022-11-07 11:03:15,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_046-Ex1-07D6H.1.fq.gz
+[2022-11-07 11:03:15,790] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_043-Ex1-07D.1_fastqc.html
+[2022-11-07 11:03:15,798] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_043-Ex1-07D.1_fastqc.html
+[2022-11-07 11:03:15,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_025-Ex1-01C1E.2.fq.gz
+[2022-11-07 11:03:15,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_014-Ex1-02B9D.2.fq.gz
+[2022-11-07 11:03:15,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_020-Ex1-08B.2.fq.gz
+[2022-11-07 11:03:15,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_044-Ex1-05E5F.1.fq.gz
+[2022-11-07 11:03:15,923] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_002-Ex1-02A9C.1_fastqc.html
+[2022-11-07 11:03:15,932] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_002-Ex1-02A9C.1_fastqc.html
+[2022-11-07 11:03:16,051] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_039-Ex1-02F.1_fastqc.html
+[2022-11-07 11:03:16,059] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_039-Ex1-02F.1_fastqc.html
+[2022-11-07 11:03:16,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_006-Ex1-05G.2.fq.gz
+[2022-11-07 11:03:16,152] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_005-Ex1-03E3E.2.fq.gz
+[2022-11-07 11:03:16,152] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_048-Ex1-08D8H.1.fq.gz
+[2022-11-07 11:03:16,180] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_032-Ex1-07E.2_fastqc.html
+[2022-11-07 11:03:16,189] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_032-Ex1-07E.2_fastqc.html
+[2022-11-07 11:03:16,305] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_009-Ex1-09A.1_fastqc.html
+[2022-11-07 11:03:16,314] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_009-Ex1-09A.1_fastqc.html
+[2022-11-07 11:03:16,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_013-Ex1-01B1B.2.fq.gz
+[2022-11-07 11:03:16,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_017-Ex1-03F10H.1.fq.gz
+[2022-11-07 11:03:16,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_037-Ex1-09A1F.2.fq.gz
+[2022-11-07 11:03:16,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_023-Ex1-11B.1.fq.gz
+[2022-11-07 11:03:16,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_038-Ex1-02D.1_fastqc.html
+[2022-11-07 11:03:16,444] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_038-Ex1-02D.1_fastqc.html
+[2022-11-07 11:03:16,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_004-Ex1-10B10D.2.fq.gz
+[2022-11-07 11:03:16,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_022-Ex1-07B6F.1.fq.gz
+[2022-11-07 11:03:16,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_047-Ex1-10F.1.fq.gz
+[2022-11-07 11:03:16,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_011-Ex1-12E7G.1.fq.gz
+[2022-11-07 11:03:16,542] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_036-Ex1-12C.2.fq.gz
+[2022-11-07 11:03:16,542] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_015-Ex1-02H.1.fq.gz
+[2022-11-07 11:03:16,571] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3G.1_fastqc.html
+[2022-11-07 11:03:16,579] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3G.1_fastqc.html
+[2022-11-07 11:03:16,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_015-Ex1-03B.2.fq.gz
+[2022-11-07 11:03:16,705] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_001-Ex1-01A.2_fastqc.html
+[2022-11-07 11:03:16,713] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_001-Ex1-01A.2_fastqc.html
+[2022-11-07 11:03:16,835] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_017-Ex1-04H.2_fastqc.html
+[2022-11-07 11:03:16,843] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_017-Ex1-04H.2_fastqc.html
+[2022-11-07 11:03:16,935] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_010-Ex1-10A.2.fq.gz
+[2022-11-07 11:03:16,960] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_047-Ex1-11D.2_fastqc.html
+[2022-11-07 11:03:16,969] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_047-Ex1-11D.2_fastqc.html
+[2022-11-07 11:03:17,087] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_020-Ex1-07H.2_fastqc.html
+[2022-11-07 11:03:17,096] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_020-Ex1-07H.2_fastqc.html
+[2022-11-07 11:03:17,216] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_036-Ex1-11E.1_fastqc.html
+[2022-11-07 11:03:17,224] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_036-Ex1-11E.1_fastqc.html
+[2022-11-07 11:03:17,341] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F7H.1_fastqc.html
+[2022-11-07 11:03:17,349] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F7H.1_fastqc.html
+[2022-11-07 11:03:17,454] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_043-Ex1-05A5A.1.fq.gz
+[2022-11-07 11:03:17,455] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_029-Ex1-04E.2.fq.gz
+[2022-11-07 11:03:17,480] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_043-Ex1-06F.2_fastqc.html
+[2022-11-07 11:03:17,489] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_043-Ex1-06F.2_fastqc.html
+[2022-11-07 11:03:17,607] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_022-Ex1-09H.2_fastqc.html
+[2022-11-07 11:03:17,615] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_022-Ex1-09H.2_fastqc.html
+[2022-11-07 11:03:17,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_033-Ex1-06C6C.2.fq.gz
+[2022-11-07 11:03:17,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_026-Ex1-02C1G.1.fq.gz
+[2022-11-07 11:03:17,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_008-Ex1-05C11H.1.fq.gz
+[2022-11-07 11:03:17,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_033-Ex1-09C.1.fq.gz
+[2022-11-07 11:03:17,737] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_018-Ex1-06B.2_fastqc.html
+[2022-11-07 11:03:17,746] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_018-Ex1-06B.2_fastqc.html
+[2022-11-07 11:03:17,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_016-Ex1-04B.2.fq.gz
+[2022-11-07 11:03:17,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_035-Ex1-10E.1.fq.gz
+[2022-11-07 11:03:17,868] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_018-Ex1-11B11B.1_fastqc.html
+[2022-11-07 11:03:17,876] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_018-Ex1-11B11B.1_fastqc.html
+[2022-11-07 11:03:17,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_021-Ex1-09B.2.fq.gz
+[2022-11-07 11:03:18,000] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_003-Ex1-02G.2_fastqc.html
+[2022-11-07 11:03:18,009] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_003-Ex1-02G.2_fastqc.html
+[2022-11-07 11:03:18,124] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_022-Ex1-10B.1_fastqc.html
+[2022-11-07 11:03:18,132] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_022-Ex1-10B.1_fastqc.html
+[2022-11-07 11:03:18,247] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_009-Ex1-08G.2_fastqc.html
+[2022-11-07 11:03:18,255] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_009-Ex1-08G.2_fastqc.html
+[2022-11-07 11:03:18,371] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_011-Ex1-11A.2_fastqc.html
+[2022-11-07 11:03:18,380] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_011-Ex1-11A.2_fastqc.html
+[2022-11-07 11:03:18,495] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_019-Ex1-06H.1_fastqc.html
+[2022-11-07 11:03:18,502] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_019-Ex1-06H.1_fastqc.html
+[2022-11-07 11:03:18,617] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_010-Ex1-09G.2_fastqc.html
+[2022-11-07 11:03:18,625] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_010-Ex1-09G.2_fastqc.html
+[2022-11-07 11:03:18,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_006-Ex1-04C4C.2.fq.gz
+[2022-11-07 11:03:18,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_028-Ex1-03E.1.fq.gz
+[2022-11-07 11:03:18,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_037-Ex1-01D.1.fq.gz
+[2022-11-07 11:03:18,746] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_030-Ex1-05E.2_fastqc.html
+[2022-11-07 11:03:18,754] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_030-Ex1-05E.2_fastqc.html
+[2022-11-07 11:03:18,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_040-Ex1-03F.2.fq.gz
+[2022-11-07 11:03:18,870] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_044-Ex1-08D.1_fastqc.html
+[2022-11-07 11:03:18,878] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_044-Ex1-08D.1_fastqc.html
+[2022-11-07 11:03:18,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_018-Ex1-11B11B.2.fq.gz
+[2022-11-07 11:03:18,994] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_007-Ex1-11D4F.2_fastqc.html
+[2022-11-07 11:03:19,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_007-Ex1-11D4F.2_fastqc.html
+[2022-11-07 11:03:19,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_028-Ex1-03B3B.1.fq.gz
+[2022-11-07 11:03:19,129] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_043-Ex1-07D.2_fastqc.html
+[2022-11-07 11:03:19,137] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_043-Ex1-07D.2_fastqc.html
+[2022-11-07 11:03:19,231] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_006-Ex1-04C3H.2.fq.gz
+[2022-11-07 11:03:19,231] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_037-Ex1-01D.2.fq.gz
+[2022-11-07 11:03:19,256] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Multi_fastqc-1155919.out
+[2022-11-07 11:03:19,298] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F12F.2_fastqc.html
+[2022-11-07 11:03:19,306] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_023-Ex1-12F12F.2_fastqc.html
+[2022-11-07 11:03:19,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_022-Ex1-10B.2.fq.gz
+[2022-11-07 11:03:19,430] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_040-Ex1-03F.2_fastqc.html
+[2022-11-07 11:03:19,439] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_040-Ex1-03F.2_fastqc.html
+[2022-11-07 11:03:19,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_047-Ex1-08B8B.1.fq.gz
+[2022-11-07 11:03:19,536] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_027-Ex1-10A2D.2.fq.gz
+[2022-11-07 11:03:19,599] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_028-Ex1-04C.1_fastqc.html
+[2022-11-07 11:03:19,607] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_028-Ex1-04C.1_fastqc.html
+[2022-11-07 11:03:19,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_005-Ex1-03E10G.1.fq.gz
+[2022-11-07 11:03:19,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_007-Ex1-11D11D.1.fq.gz
+[2022-11-07 11:03:19,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_012-Ex1-08E8E.1.fq.gz
+[2022-11-07 11:03:19,726] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_014-Ex1-02B.2_fastqc.html
+[2022-11-07 11:03:19,735] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_014-Ex1-02B.2_fastqc.html
+[2022-11-07 11:03:19,826] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_036-Ex1-12C.1.fq.gz
+[2022-11-07 11:03:19,826] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_026-Ex1-01E.2.fq.gz
+[2022-11-07 11:03:19,852] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_045-Ex1-09D.1_fastqc.html
+[2022-11-07 11:03:19,860] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_045-Ex1-09D.1_fastqc.html
+[2022-11-07 11:03:19,977] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_039-Ex1-03D.1_fastqc.html
+[2022-11-07 11:03:19,985] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_039-Ex1-03D.1_fastqc.html
+[2022-11-07 11:03:20,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_008-Ex1-08A.1.fq.gz
+[2022-11-07 11:03:20,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_032-Ex1-12B5D.1.fq.gz
+[2022-11-07 11:03:20,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_030-Ex1-04A4A.2.fq.gz
+[2022-11-07 11:03:20,103] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8G.2_fastqc.html
+[2022-11-07 11:03:20,111] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8G.2_fastqc.html
+[2022-11-07 11:03:20,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_033-Ex1-06C6C.1.fq.gz
+[2022-11-07 11:03:20,233] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_002-Ex1-02A.1_fastqc.html
+[2022-11-07 11:03:20,241] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_002-Ex1-02A.1_fastqc.html
+[2022-11-07 11:03:20,358] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F2F.1_fastqc.html
+[2022-11-07 11:03:20,366] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F2F.1_fastqc.html
+[2022-11-07 11:03:20,473] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_016-Ex1-03H.1.fq.gz
+[2022-11-07 11:03:20,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_047-Ex1-08B8B.2.fq.gz
+[2022-11-07 11:03:20,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_007-Ex1-06G.1.fq.gz
+[2022-11-07 11:03:20,499] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_008-Ex1-08A.2_fastqc.html
+[2022-11-07 11:03:20,507] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_008-Ex1-08A.2_fastqc.html
+[2022-11-07 11:03:20,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_013-Ex1-01B1B.1.fq.gz
+[2022-11-07 11:03:20,623] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_003-Ex1-02G.1_fastqc.html
+[2022-11-07 11:03:20,631] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_003-Ex1-02G.1_fastqc.html
+[2022-11-07 11:03:20,736] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Multi_fastqc-1155920.out
+[2022-11-07 11:03:20,743] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Multi_fastqc-1155920.out
+[2022-11-07 11:03:20,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_025-Ex1-01C1E.1.fq.gz
+[2022-11-07 11:03:20,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_027-Ex1-10A10A.2.fq.gz
+[2022-11-07 11:03:20,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_032-Ex1-08C.2.fq.gz
+[2022-11-07 11:03:20,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_038-Ex1-09E9E.1.fq.gz
+[2022-11-07 11:03:20,787] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_010-Ex1-10A.1_fastqc.html
+[2022-11-07 11:03:20,795] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_010-Ex1-10A.1_fastqc.html
+[2022-11-07 11:03:20,886] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_034-Ex1-07C6G.2.fq.gz
+[2022-11-07 11:03:20,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_019-Ex1-11E4G.2.fq.gz
+[2022-11-07 11:03:20,914] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_048-Ex1-11F.1_fastqc.html
+[2022-11-07 11:03:20,922] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_048-Ex1-11F.1_fastqc.html
+[2022-11-07 11:03:21,032] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2022-11-07 11:03:21,039] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2022-11-07 11:03:21,086] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_022-Ex1-09H.1_fastqc.html
+[2022-11-07 11:03:21,094] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_022-Ex1-09H.1_fastqc.html
+[2022-11-07 11:03:21,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_037-Ex1-12E.1.fq.gz
+[2022-11-07 11:03:21,186] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_031-Ex1-07C.2.fq.gz
+[2022-11-07 11:03:21,212] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_040-Ex1-03A3A.1_fastqc.html
+[2022-11-07 11:03:21,220] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_040-Ex1-03A3A.1_fastqc.html
+[2022-11-07 11:03:21,333] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_034-Ex1-07C6G.1.fq.gz
+[2022-11-07 11:03:21,333] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_040-Ex1-03F.1.fq.gz
+[2022-11-07 11:03:21,360] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1E.2_fastqc.html
+[2022-11-07 11:03:21,368] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_025-Ex1-01C1E.2_fastqc.html
+[2022-11-07 11:03:21,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_041-Ex1-11A11A.1.fq.gz
+[2022-11-07 11:03:21,477] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_002-Ex1-02A9C.1.fq.gz
+[2022-11-07 11:03:21,478] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_024-Ex1-08F12H.2.fq.gz
+[2022-11-07 11:03:21,481] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_024-Ex1-12B.2.fq.gz
+[2022-11-07 11:03:21,481] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_011-Ex1-11A.2.fq.gz
+[2022-11-07 11:03:21,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_004-Ex1-10B10B.2.fq.gz
+[2022-11-07 11:03:21,507] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_012-Ex1-12A.1_fastqc.html
+[2022-11-07 11:03:21,515] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_012-Ex1-12A.1_fastqc.html
+[2022-11-07 11:03:21,606] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_004-Ex1-10B10B.1.fq.gz
+[2022-11-07 11:03:21,631] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3G.2_fastqc.html
+[2022-11-07 11:03:21,639] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_029-Ex1-03C3G.2_fastqc.html
+[2022-11-07 11:03:21,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_045-Ex1-06A6A.1.fq.gz
+[2022-11-07 11:03:21,763] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_028-Ex1-03E.2_fastqc.html
+[2022-11-07 11:03:21,771] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_028-Ex1-03E.2_fastqc.html
+[2022-11-07 11:03:21,887] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_004-Ex1-10B10D.1_fastqc.html
+[2022-11-07 11:03:21,895] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_004-Ex1-10B10D.1_fastqc.html
+[2022-11-07 11:03:21,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_001-Ex1-01A.1.fq.gz
+[2022-11-07 11:03:22,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_008-Ex1-07G.1.fq.gz
+[2022-11-07 11:03:22,026] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_032-Ex1-08C.2_fastqc.html
+[2022-11-07 11:03:22,034] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_032-Ex1-08C.2_fastqc.html
+[2022-11-07 11:03:22,152] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_004-Ex1-04A.1_fastqc.html
+[2022-11-07 11:03:22,160] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_004-Ex1-04A.1_fastqc.html
+[2022-11-07 11:03:22,279] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_042-Ex1-05F.1_fastqc.html
+[2022-11-07 11:03:22,287] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_042-Ex1-05F.1_fastqc.html
+[2022-11-07 11:03:22,403] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_037-Ex1-09A1F.2_fastqc.html
+[2022-11-07 11:03:22,410] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_037-Ex1-09A1F.2_fastqc.html
+[2022-11-07 11:03:22,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_021-Ex1-09B.1.fq.gz
+[2022-11-07 11:03:22,517] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_030-Ex1-04A11C.1.fq.gz
+[2022-11-07 11:03:22,543] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_028-Ex1-04C.2_fastqc.html
+[2022-11-07 11:03:22,551] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_028-Ex1-04C.2_fastqc.html
+[2022-11-07 11:03:22,641] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_034-Ex1-07C7C.2.fq.gz
+[2022-11-07 11:03:22,644] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_016-Ex1-10C10E.1.fq.gz
+[2022-11-07 11:03:22,669] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_034-Ex1-10C.1_fastqc.html
+[2022-11-07 11:03:22,678] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_034-Ex1-10C.1_fastqc.html
+[2022-11-07 11:03:22,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_030-Ex1-04A4A.1.fq.gz
+[2022-11-07 11:03:22,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_037-Ex1-09A1F.1.fq.gz
+[2022-11-07 11:03:22,792] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_034-Ex1-09E.2_fastqc.html
+[2022-11-07 11:03:22,800] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_034-Ex1-09E.2_fastqc.html
+[2022-11-07 11:03:22,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_026-Ex1-02C.1.fq.gz
+[2022-11-07 11:03:22,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_007-Ex1-07A.1.fq.gz
+[2022-11-07 11:03:22,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_044-Ex1-05E5F.2.fq.gz
+[2022-11-07 11:03:22,917] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_009-Ex1-06B6B.1_fastqc.html
+[2022-11-07 11:03:22,925] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_009-Ex1-06B6B.1_fastqc.html
+[2022-11-07 11:03:23,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_017-Ex1-03F3F.2.fq.gz
+[2022-11-07 11:03:23,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_049-Ex1-12F.1.fq.gz
+[2022-11-07 11:03:23,054] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_004-Ex1-03G.1_fastqc.html
+[2022-11-07 11:03:23,062] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_004-Ex1-03G.1_fastqc.html
+[2022-11-07 11:03:23,154] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_001-Ex1-01A.2.fq.gz
+[2022-11-07 11:03:23,155] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_003-Ex1-02G.2.fq.gz
+[2022-11-07 11:03:23,181] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_042-Ex1-06D.2_fastqc.html
+[2022-11-07 11:03:23,189] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_042-Ex1-06D.2_fastqc.html
+[2022-11-07 11:03:23,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_029-Ex1-03C3C.2.fq.gz
+[2022-11-07 11:03:23,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_035-Ex1-08A8A.2.fq.gz
+[2022-11-07 11:03:23,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_011-Ex1-12E12E.1.fq.gz
+[2022-11-07 11:03:23,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_012-Ex1-08E8E.2.fq.gz
+[2022-11-07 11:03:23,310] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_017-Ex1-05B.2_fastqc.html
+[2022-11-07 11:03:23,318] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_017-Ex1-05B.2_fastqc.html
+[2022-11-07 11:03:23,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_015-Ex1-03B.2_fastqc.html
+[2022-11-07 11:03:23,444] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_015-Ex1-03B.2_fastqc.html
+[2022-11-07 11:03:23,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_035-Ex1-10E.2.fq.gz
+[2022-11-07 11:03:23,562] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A11C.2_fastqc.html
+[2022-11-07 11:03:23,570] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_030-Ex1-04A11C.2_fastqc.html
+[2022-11-07 11:03:23,711] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_013-Ex1-01B.2_fastqc.html
+[2022-11-07 11:03:23,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_013-Ex1-01B.2_fastqc.html
+[2022-11-07 11:03:23,835] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_006-Ex1-05G.1_fastqc.html
+[2022-11-07 11:03:23,843] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_006-Ex1-05G.1_fastqc.html
+[2022-11-07 11:03:23,960] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F2F.2_fastqc.html
+[2022-11-07 11:03:23,968] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CPar_015-Ex1-02F2F.2_fastqc.html
+[2022-11-07 11:03:24,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_021-Ex1-08H.1.fq.gz
+[2022-11-07 11:03:24,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_031-Ex1-06E.2.fq.gz
+[2022-11-07 11:03:24,104] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_011-Ex1-11A.1_fastqc.html
+[2022-11-07 11:03:24,113] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_011-Ex1-11A.1_fastqc.html
+[2022-11-07 11:03:24,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_041-Ex1-11A11A.2.fq.gz
+[2022-11-07 11:03:24,210] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_002-Ex1-02A.1.fq.gz
+[2022-11-07 11:03:24,210] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_003-Ex1-02E9F.2.fq.gz
+[2022-11-07 11:03:24,212] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_037-Ex1-09A9A.2.fq.gz
+[2022-11-07 11:03:24,240] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8G.1_fastqc.html
+[2022-11-07 11:03:24,248] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-CBas_036-Ex1-08C8G.1_fastqc.html
+[2022-11-07 11:03:24,345] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_039-Ex1-02F.1.fq.gz
+[2022-11-07 11:03:24,371] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_024-Ex1-12B.2_fastqc.html
+[2022-11-07 11:03:24,379] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_024-Ex1-12B.2_fastqc.html
+[2022-11-07 11:03:24,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_023-Ex1-10H.1.fq.gz
+[2022-11-07 11:03:24,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_033-Ex1-09C.2.fq.gz
+[2022-11-07 11:03:24,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-AMac_004-Ex1-03G.1.fq.gz
+[2022-11-07 11:03:24,500] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_045-Ex1-08F.2_fastqc.html
+[2022-11-07 11:03:24,509] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_045-Ex1-08F.2_fastqc.html
+[2022-11-07 11:03:24,627] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-AMac_029-Ex1-04E.2_fastqc.html
+[2022-11-07 11:03:24,635] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-AMac_029-Ex1-04E.2_fastqc.html
+[2022-11-07 11:03:24,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CPar_047-Ex1-08B7F.1.fq.gz
+[2022-11-07 11:03:24,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-CBas_030-Ex1-04A11C.2.fq.gz
+[2022-11-07 11:03:24,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Hmi-ABas_006-Ex1-06A.2.fq.gz
+[2022-11-07 11:03:24,758] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Hmi-ABas_007-Ex1-07A.2_fastqc.html
+[2022-11-07 11:03:24,766] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Hmi-ABas_007-Ex1-07A.2_fastqc.html
+[2022-11-07 11:03:25,649] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-11-07 11:03:25,651] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-11-07 11:03:25,652] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-11-07 11:03:25,657] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-11-07 11:03:25,662] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-11-07 11:03:25,667] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-11-07 11:03:25,671] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-11-07 11:03:25,678] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-11-07 11:03:25,682] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-11-07 11:03:25,685] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-11-07 11:03:25,689] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-11-07 11:03:25,693] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-11-07 11:03:25,697] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-11-07 11:03:25,701] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-11-07 11:03:25,705] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-11-07 11:03:25,708] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-11-07 11:03:25,713] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-11-07 11:03:25,717] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-11-07 11:03:25,722] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-11-07 11:03:25,727] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-11-07 11:03:25,731] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-11-07 11:03:25,738] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-11-07 11:03:25,742] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-11-07 11:03:25,746] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-11-07 11:03:25,750] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-11-07 11:03:25,755] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-11-07 11:03:25,760] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-11-07 11:03:25,765] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-11-07 11:03:25,768] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-11-07 11:03:25,772] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-11-07 11:03:25,776] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-11-07 11:03:25,781] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-11-07 11:03:25,785] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-11-07 11:03:25,790] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-11-07 11:03:25,794] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-11-07 11:03:25,798] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-11-07 11:03:25,805] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-11-07 11:03:25,809] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-11-07 11:03:25,812] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-11-07 11:03:25,823] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-11-07 11:03:25,827] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-11-07 11:03:25,830] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-11-07 11:03:25,834] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-11-07 11:03:25,838] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-11-07 11:03:25,842] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-11-07 11:03:25,846] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-11-07 11:03:25,851] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-11-07 11:03:25,855] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-11-07 11:03:25,860] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-11-07 11:03:25,864] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-11-07 11:03:25,869] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-11-07 11:03:25,872] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-11-07 11:03:25,879] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-11-07 11:03:25,883] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-11-07 11:03:25,888] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-11-07 11:03:25,892] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-11-07 11:03:25,896] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-11-07 11:03:25,899] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-11-07 11:03:25,903] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-11-07 11:03:25,907] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-11-07 11:03:25,911] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-11-07 11:03:25,915] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-11-07 11:03:25,919] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-11-07 11:03:25,923] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-11-07 11:03:25,927] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-11-07 11:03:25,930] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-11-07 11:03:25,934] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-11-07 11:03:25,938] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-11-07 11:03:25,941] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-11-07 11:03:25,945] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-11-07 11:03:25,949] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-11-07 11:03:25,954] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-11-07 11:03:25,958] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-11-07 11:03:25,963] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-11-07 11:03:25,966] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-11-07 11:03:25,970] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-11-07 11:03:25,974] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-11-07 11:03:25,978] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-11-07 11:03:25,981] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-11-07 11:03:25,985] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-11-07 11:03:25,989] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-11-07 11:03:25,994] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-11-07 11:03:25,998] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-11-07 11:03:26,002] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-11-07 11:03:26,555] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_001-Ex1-01A1D.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:26,556] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:27,920] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_009-Ex1-06B5G.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:27,920] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:29,755] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_044-Ex1-05E5F.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:29,755] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:30,552] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_012-Ex1-08E12G.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:30,552] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:31,115] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_044-Ex1-05E5E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:31,116] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:31,318] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_044-Ex1-05E5E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:31,318] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:32,416] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_037-Ex1-09A9A.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:32,416] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:34,872] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_017-Ex1-03F10H.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:34,873] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:35,673] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_013-Ex1-01B9B.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:35,673] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:35,874] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_005-Ex1-03E3E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:35,875] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:35,877] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_012-Ex1-08E8E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:35,877] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:36,082] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_021-Ex1-12C12D.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:36,083] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:36,286] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_014-Ex1-02B9D.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:36,287] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:37,991] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_044-Ex1-05E5F.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:37,992] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:38,193] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_004-Ex1-10B10B.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:38,193] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:40,877] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_007-Ex1-11D11D.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:40,877] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:41,079] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_003-Ex1-02E2E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:41,079] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:41,082] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_014-Ex1-02B2B.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:41,082] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:43,841] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_014-Ex1-02B2B.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:43,841] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:44,813] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_012-Ex1-08E12G.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:44,814] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:45,016] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_018-Ex1-11B4D.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:45,016] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:45,019] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_021-Ex1-12C12C.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:45,019] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:45,955] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_007-Ex1-11D11D.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:45,955] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:46,161] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_016-Ex1-10C10C.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:46,162] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:47,757] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_003-Ex1-02E9F.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:47,758] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:48,169] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_021-Ex1-12C12D.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:48,170] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:49,358] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_006-Ex1-04C3H.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:49,358] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:49,361] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_037-Ex1-09A9A.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:49,361] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:49,934] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_016-Ex1-10C10E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:49,935] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:51,669] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_008-Ex1-05C11H.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:51,669] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:51,672] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_010-Ex1-07A6E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:51,672] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:53,476] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_019-Ex1-11E4G.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:53,476] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:53,479] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_010-Ex1-07A6E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:53,479] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:54,495] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_006-Ex1-04C3H.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:54,496] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:55,076] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_005-Ex1-03E3E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:55,076] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:56,008] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_019-Ex1-11E11E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:56,008] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:56,614] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_003-Ex1-02E9F.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:56,615] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:57,221] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_019-Ex1-11E11E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:57,221] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:57,225] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_003-Ex1-02E2E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:57,225] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:57,433] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_005-Ex1-03E10G.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:57,433] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:58,037] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_005-Ex1-03E10G.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:58,037] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:58,239] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_017-Ex1-03F10H.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:58,239] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:58,242] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_011-Ex1-12E7G.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:58,242] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:59,772] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_014-Ex1-02B9D.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:59,772] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:03:59,955] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_040-Ex1-03A10F.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:03:59,955] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:00,295] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_016-Ex1-10C10E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:00,296] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:00,298] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_021-Ex1-12C12C.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:00,299] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:00,301] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_009-Ex1-06B5G.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:00,301] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:00,800] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_008-Ex1-05C11H.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:00,800] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:02,923] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_045-Ex1-06A6A.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:02,923] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:04,156] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_045-Ex1-06A6A.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:04,157] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:04,159] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_013-Ex1-01B9B.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:04,159] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:04,820] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_004-Ex1-10B10B.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:04,821] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:05,163] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_018-Ex1-11B4D.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:05,164] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:06,099] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_016-Ex1-10C10C.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:06,099] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:06,824] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_011-Ex1-12E12E.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:06,825] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:07,232] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_011-Ex1-12E12E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:07,232] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:07,634] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_019-Ex1-11E4G.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:07,634] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:08,872] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CPar_012-Ex1-08E8E.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:08,873] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:09,272] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_040-Ex1-03A10F.1_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:09,272] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:10,077] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_011-Ex1-12E7G.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:10,077] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:10,839] multiqc.modules.fastqc.fastqc                      [WARNING]  Couldn't read 'Hmi-CBas_001-Ex1-01A1D.2_fastqc.zip' - Bad zip file
+[2022-11-07 11:04:10,840] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Bad zip file error:
+File is not a zip file
+[2022-11-07 11:04:11,202] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 242 reports
+[2022-11-07 11:04:39,280] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-11-07 11:04:39,284] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-11-07 11:04:39,289] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-11-07 11:04:39,294] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-11-07 11:04:39,298] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-11-07 11:04:39,303] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-11-07 11:04:39,306] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-11-07 11:04:39,310] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-11-07 11:04:39,314] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-11-07 11:04:39,661] multiqc                                            [INFO   ]  Compressing plot data
+[2022-11-07 11:04:39,755] multiqc                                            [INFO   ]  Report      : fastqc_report.html
+[2022-11-07 11:04:39,755] multiqc                                            [INFO   ]  Data        : fastqc_report_data
+[2022-11-07 11:04:39,755] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpegw60pzf/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture/fastqc_report_data'
+[2022-11-07 11:04:40,102] multiqc                                            [INFO   ]  MultiQC complete
