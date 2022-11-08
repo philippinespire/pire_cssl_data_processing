@@ -153,7 +153,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_cl
 Checked that all files were successfully completed.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
 ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #488
@@ -172,7 +172,7 @@ Everything looks good, no errors/missing files.
 Ran [`runMultiQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch) separately.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #runMULTIQC.sbatch <indir> <report name>
 #do not use trailing / in paths
@@ -184,10 +184,10 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp
 Potential issues:
 
   * one hit, one genome, no ID - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 85%, Contemp: 90%
   * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
-    * Alb: XX%, Contemp: XX%
-
+    * Alb: 15%, Contemp: 10%
+    
 ---
 
 ## Step 6. Repair fastq_screen paired end files
@@ -195,7 +195,7 @@ Potential issues:
 Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
@@ -204,21 +204,21 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_
 Once finished, ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) to assess quality.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #Multi_FastQC.sh "<indir>" "<file_extension>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "YOUR_SPECIES_DIR/fq_fp1_clmp_fp2_fqscrn_repaired"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz"
 ```
 
 [Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 39.93%, Contemp: 19.69%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 40%, Contemp: 46%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~9 mil, Contemp: ~6-8.5 mil
 
 ---
 
@@ -230,7 +230,7 @@ Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_
 cd YOUR_SPECIES_DIR
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "YOUR_SPECIES_DIR" "PATH_TO_DIR_WITH_RAW_FILES"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture/"
 ```
 
 Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
