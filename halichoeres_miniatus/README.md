@@ -60,7 +60,7 @@ Potential issues:
   * GC content - 
     * Alb: 47%, Contemp: 45%
   * number of reads - 
-    * Alb: ~20 mil, Contemp: ~1 mil
+    * Alb: ~20 mil, Contemp: ~1 mil (hard to tell due to scaling)
 
 Hardly any reads for the Contemp samples as compared to Alb.
 
@@ -71,7 +71,7 @@ Hardly any reads for the Contemp samples as compared to Alb.
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
@@ -81,15 +81,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatc
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 92.90%, Contemp: 87.62%
   * GC content -
-    * Alb: XX%, Contemp: XX%
+    * Alb: 45.94%, Contemp: 43.76%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 98.50%, Contemp: 98.12%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 60.47%, Contemp: 52.44%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~47 mil, Contemp: ~1 mil (hard to tell due to scaling)
 
 ---
 
@@ -98,10 +98,10 @@ Potential issues:
 Ran [`runCLUMPIFY_r1r2_array.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/USERNAME 10
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/mmalabag 10
 ```
 
 Ran [`checkClumpify_EG.R`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any failed.
