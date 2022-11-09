@@ -1,0 +1,679 @@
+[2022-10-12 22:34:45,857] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-10-12 22:34:45,857] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/jbald004/.multiqc_config.yaml
+[2022-10-12 22:34:45,858] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-10-12 22:34:45,858] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report
+[2022-10-12 22:34:46,394] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-10-12 22:34:46,395] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-10-12 22:34:46,396] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report
+[2022-10-12 22:34:46,396] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus
+[2022-10-12 22:34:46,396] multiqc                                            [INFO   ]  Template    : default
+[2022-10-12 22:34:46,396] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-10-12 22:34:46,396] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired
+[2022-10-12 22:34:46,397] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-10-12 22:34:46,397] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp9stujh1i
+[2022-10-12 22:34:46,762] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:46,774] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:46,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:46,898] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,017] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,127] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,135] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,223] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,225] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:47,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,247] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,256] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,363] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:47,371] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:47,479] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,487] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,579] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:47,601] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:47,609] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:47,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,721] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,730] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,839] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,848] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:47,956] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:47,965] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:48,071] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:48,080] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:48,189] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,198] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,307] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,315] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,404] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:48,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:48,426] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,434] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,544] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,553] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,641] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:48,661] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:48,669] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:48,777] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,786] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:48,893] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,902] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:48,991] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:48,992] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:48,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,013] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,021] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,132] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,141] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,248] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,257] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,368] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,376] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,464] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,464] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:49,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:49,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:49,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,493] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,502] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,608] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,617] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:49,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:49,731] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,740] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:49,850] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,859] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,947] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:49,968] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:49,976] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:50,085] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,094] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,183] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:50,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:50,209] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,218] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,325] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,334] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,441] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,449] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,558] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,566] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,681] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:50,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:50,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:50,791] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,799] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:50,907] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:50,916] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,030] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,039] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,148] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,157] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,247] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:51,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,272] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,281] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,391] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,399] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,496] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,517] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,525] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,634] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,642] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,750] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,758] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:51,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,845] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:51,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:51,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:51,865] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,874] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:51,979] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:51,987] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,092] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,101] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,206] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:52,214] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:52,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:52,322] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,330] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,434] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,442] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:52,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:52,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:52,553] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:52,562] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:52,667] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,675] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:52,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:52,784] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,792] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,880] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:52,903] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:52,911] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,018] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,026] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,111] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:53,133] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,141] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,231] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,258] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,266] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:53,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,377] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,385] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,493] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,501] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,607] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,615] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:53,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,725] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:53,733] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:53,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,846] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,854] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:53,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:53,972] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:53,980] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:54,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:54,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:54,092] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,101] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,207] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,215] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,323] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,331] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,437] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,445] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,552] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,561] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:54,649] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:54,650] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:54,651] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:54,652] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:54,652] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:54,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,680] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:54,786] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,794] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,901] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:54,909] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,021] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,029] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,139] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,147] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,256] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,264] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,354] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,375] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,383] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,471] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,491] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,499] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,586] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:55,608] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,616] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:55,723] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,731] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,840] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,848] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:55,953] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:55,962] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,070] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,078] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,186] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,195] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:56,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:56,305] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,313] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,424] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,432] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,539] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,547] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,655] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,663] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,771] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,779] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:56,868] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:56,869] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:56,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,897] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:56,985] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:56,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:56,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:56,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:56,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,008] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,016] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,124] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,133] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,224] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,244] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,252] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,343] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:57,364] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,372] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,457] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:57,477] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,485] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,592] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,600] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,710] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,718] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:57,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,830] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,838] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:57,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:57,951] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:57,959] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,068] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,076] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,163] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,183] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,191] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,301] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,310] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,419] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,427] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,536] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,544] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,640] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,661] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,670] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:58,777] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,786] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:58,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:34:58,892] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:58,900] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,011] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,019] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,128] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,136] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,243] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,251] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,362] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,370] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,476] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,484] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:59,589] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,597] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:59,703] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,712] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:34:59,821] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,829] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:34:59,937] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:34:59,945] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,054] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,062] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,170] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:00,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:00,287] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,295] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,403] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,411] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,517] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,525] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,634] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,642] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,748] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,756] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:00,865] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:00,873] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:00,981] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:00,989] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,097] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:01,105] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:01,193] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:01,196] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:01,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:01,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:01,217] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:01,225] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:01,340] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,348] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,455] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,463] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,569] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,577] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,664] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:01,664] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:01,684] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,692] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,800] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,808] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:01,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:01,922] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:01,930] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:02,041] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,049] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,155] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,163] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,273] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,282] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:02,390] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,398] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,506] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,514] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,602] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:02,604] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:02,604] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:02,624] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,632] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:02,738] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,746] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,855] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,863] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,972] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:02,980] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,087] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,095] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,202] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,210] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,318] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,326] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,432] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,440] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:03,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:03,553] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,561] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,650] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:03,670] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,678] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,783] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,791] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:03,896] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,904] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:03,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:03,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:04,016] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,024] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,136] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,144] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,230] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:04,233] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:04,233] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:04,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,255] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,263] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,370] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,378] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,469] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.R1.fq.gz
+[2022-10-12 22:35:04,490] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,498] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,584] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:04,605] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:04,613] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:04,720] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,728] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:04,836] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:04,844] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:04,953] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:04,961] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:05,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:05,066] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:05,074] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:05,179] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,187] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,298] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:05,306] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.R1_fastqc.html
+[2022-10-12 22:35:05,412] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,420] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,528] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,537] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,644] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,652] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.R2_fastqc.html
+[2022-10-12 22:35:05,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[2022-10-12 22:35:05,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_042-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_023-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_028-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_003-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_090-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_024-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_025-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_002-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_086-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_029-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_003-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_048-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_092-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_013-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_076-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_067-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_032-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_044-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_030-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_002-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_022-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_021-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_008-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_019-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_014-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_062-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_078-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_033-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_018-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_096-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_006-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_017-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_009-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_035-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_010-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_020-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_036-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_084-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_088-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_066-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_007-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_001-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_014-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,759] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_059-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,759] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_005-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_017-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_008-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_046-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_091-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_025-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_073-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_028-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_027-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_023-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_026-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_016-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_033-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_039-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,764] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_004-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_010-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_007-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_027-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_020-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_015-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_031-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_061-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_016-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_056-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_041-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_021-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_032-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_019-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_009-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_006-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_034-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_030-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_026-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_001-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_029-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:05,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_031-Ex1-cssl.clmp.fp2_repr.orph.fq
+[2022-10-12 22:35:06,400] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-12 22:35:06,402] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-12 22:35:06,403] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-10-12 22:35:06,407] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-10-12 22:35:06,412] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-10-12 22:35:06,417] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-10-12 22:35:06,421] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-10-12 22:35:06,428] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-10-12 22:35:06,432] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-10-12 22:35:06,435] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-10-12 22:35:06,440] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-10-12 22:35:06,444] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-10-12 22:35:06,448] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-10-12 22:35:06,451] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-10-12 22:35:06,456] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-10-12 22:35:06,459] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-10-12 22:35:06,464] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-10-12 22:35:06,469] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-10-12 22:35:06,473] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-10-12 22:35:06,478] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-10-12 22:35:06,483] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-10-12 22:35:06,490] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-10-12 22:35:06,494] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-10-12 22:35:06,498] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-10-12 22:35:06,502] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-10-12 22:35:06,507] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-10-12 22:35:06,512] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-10-12 22:35:06,517] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-10-12 22:35:06,520] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-10-12 22:35:06,524] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-10-12 22:35:06,529] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-10-12 22:35:06,533] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-10-12 22:35:06,538] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-10-12 22:35:06,542] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-10-12 22:35:06,547] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-10-12 22:35:06,550] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-10-12 22:35:06,558] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-10-12 22:35:06,562] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-10-12 22:35:06,565] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-10-12 22:35:06,576] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-10-12 22:35:06,580] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-10-12 22:35:06,583] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-10-12 22:35:06,587] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-10-12 22:35:06,591] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-10-12 22:35:06,595] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-10-12 22:35:06,600] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-10-12 22:35:06,604] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-10-12 22:35:06,608] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-10-12 22:35:06,613] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-10-12 22:35:06,618] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-10-12 22:35:06,622] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-10-12 22:35:06,626] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-10-12 22:35:06,633] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-10-12 22:35:06,638] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-10-12 22:35:06,642] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-10-12 22:35:06,646] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-10-12 22:35:06,650] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-10-12 22:35:06,654] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-10-12 22:35:06,658] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-10-12 22:35:06,662] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-10-12 22:35:06,666] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-10-12 22:35:06,670] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-10-12 22:35:06,674] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-10-12 22:35:06,678] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-10-12 22:35:06,682] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-10-12 22:35:06,685] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-10-12 22:35:06,689] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-10-12 22:35:06,693] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-10-12 22:35:06,697] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-10-12 22:35:06,701] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-10-12 22:35:06,705] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-10-12 22:35:06,710] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-10-12 22:35:06,714] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-10-12 22:35:06,719] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-10-12 22:35:06,722] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-10-12 22:35:06,726] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-10-12 22:35:06,730] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-10-12 22:35:06,734] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-10-12 22:35:06,738] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-10-12 22:35:06,742] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-10-12 22:35:06,746] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-10-12 22:35:06,750] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-10-12 22:35:06,755] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-10-12 22:35:06,759] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-10-12 22:35:30,444] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 162 reports
+[2022-10-12 22:35:47,612] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-10-12 22:35:47,617] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-10-12 22:35:47,621] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-10-12 22:35:47,626] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-10-12 22:35:47,630] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-10-12 22:35:47,634] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-10-12 22:35:47,638] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-10-12 22:35:47,642] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-10-12 22:35:47,646] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-10-12 22:35:47,865] multiqc                                            [INFO   ]  Compressing plot data
+[2022-10-12 22:35:47,969] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report.html
+[2022-10-12 22:35:47,970] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report_data
+[2022-10-12 22:35:47,970] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp9stujh1i/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1_clmp_fp2_fqscrn_repaired/fastqc_report_data'
+[2022-10-12 22:35:48,276] multiqc                                            [INFO   ]  MultiQC complete
