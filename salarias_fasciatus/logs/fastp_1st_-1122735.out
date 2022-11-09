@@ -1,0 +1,3576 @@
+
+mkdir: cannot create directory ‘fq_fp1’: File exists
+mkdir: cannot create directory ‘fq_fp1/failed’: File exists
+Read1 before filtering:
+total reads: 5878691
+total bases: 881803650
+Q20 bases: 850363532(96.4346%)
+Q30 bases: 811634187(92.0425%)
+
+Read2 before filtering:
+total reads: 5878691
+total bases: 881803650
+Q20 bases: 855196434(96.9826%)
+Q30 bases: 815007364(92.425%)
+
+Read1 after filtering:
+total reads: 5802962
+total bases: 721382998
+Q20 bases: 703913254(97.5783%)
+Q30 bases: 675953081(93.7024%)
+
+Read2 aftering filtering:
+total reads: 5802962
+total bases: 721515878
+Q20 bases: 706631398(97.9371%)
+Q30 bases: 677822152(93.9442%)
+
+Filtering result:
+reads passed filter: 11605924
+reads failed due to low quality: 133742
+reads failed due to too many N: 204
+reads failed due to too short: 11028
+reads failed due to low complexity: 6484
+reads with adapter trimmed: 8592163
+bases trimmed due to adapters: 292467083
+reads with polyX in 3' end: 118426
+bases trimmed in polyX tail: 1715730
+
+Duplication rate: 78.7533%
+
+Insert size peak (evaluated by paired-end reads): 113
+
+JSON report: fq_fp1/Sfa-ABas_021-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_021-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_021-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_021-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_021-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_021-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_021-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_021-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_021-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_021-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_021-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 191 seconds
+Read1 before filtering:
+total reads: 9791651
+total bases: 1468747650
+Q20 bases: 1422425118(96.8461%)
+Q30 bases: 1361136633(92.6733%)
+
+Read2 before filtering:
+total reads: 9791651
+total bases: 1468747650
+Q20 bases: 1425484217(97.0544%)
+Q30 bases: 1362411827(92.7601%)
+
+Read1 after filtering:
+total reads: 9663925
+total bases: 1207310084
+Q20 bases: 1181031553(97.8234%)
+Q30 bases: 1137247465(94.1968%)
+
+Read2 aftering filtering:
+total reads: 9663925
+total bases: 1207448577
+Q20 bases: 1184985352(98.1396%)
+Q30 bases: 1140871175(94.4861%)
+
+Filtering result:
+reads passed filter: 19327850
+reads failed due to low quality: 227520
+reads failed due to too many N: 312
+reads failed due to too short: 18950
+reads failed due to low complexity: 8670
+reads with adapter trimmed: 13811065
+bases trimmed due to adapters: 474647424
+reads with polyX in 3' end: 162552
+bases trimmed in polyX tail: 2492952
+
+Duplication rate: 78.7845%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_014-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_014-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_014-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_014-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_014-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_014-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_014-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_014-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_014-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_014-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_014-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 251 seconds
+Read1 before filtering:
+total reads: 9585581
+total bases: 1437837150
+Q20 bases: 1389612252(96.646%)
+Q30 bases: 1330850832(92.5592%)
+
+Read2 before filtering:
+total reads: 9585581
+total bases: 1437837150
+Q20 bases: 1395397055(97.0483%)
+Q30 bases: 1331222818(92.5851%)
+
+Read1 after filtering:
+total reads: 9468463
+total bases: 1209837570
+Q20 bases: 1183562912(97.8282%)
+Q30 bases: 1139038705(94.1481%)
+
+Read2 aftering filtering:
+total reads: 9468463
+total bases: 1209922406
+Q20 bases: 1186231594(98.042%)
+Q30 bases: 1139172105(94.1525%)
+
+Filtering result:
+reads passed filter: 18936926
+reads failed due to low quality: 209030
+reads failed due to too many N: 260
+reads failed due to too short: 16576
+reads failed due to low complexity: 8370
+reads with adapter trimmed: 12412471
+bases trimmed due to adapters: 412823491
+reads with polyX in 3' end: 153584
+bases trimmed in polyX tail: 2277972
+
+Duplication rate: 79.9098%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_020-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_020-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_020-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_020-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_020-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_020-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_020-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_020-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_020-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_020-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_020-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 278 seconds
+Read1 before filtering:
+total reads: 12103085
+total bases: 1815462750
+Q20 bases: 1745865731(96.1664%)
+Q30 bases: 1665672656(91.7492%)
+
+Read2 before filtering:
+total reads: 12103085
+total bases: 1815462750
+Q20 bases: 1759838124(96.9361%)
+Q30 bases: 1677898676(92.4226%)
+
+Read1 after filtering:
+total reads: 11953467
+total bases: 1465728948
+Q20 bases: 1430930251(97.6258%)
+Q30 bases: 1374980638(93.8087%)
+
+Read2 aftering filtering:
+total reads: 11953467
+total bases: 1465987581
+Q20 bases: 1437285111(98.0421%)
+Q30 bases: 1381051398(94.2062%)
+
+Filtering result:
+reads passed filter: 23906934
+reads failed due to low quality: 264156
+reads failed due to too many N: 336
+reads failed due to too short: 24004
+reads failed due to low complexity: 10740
+reads with adapter trimmed: 17718338
+bases trimmed due to adapters: 636009204
+reads with polyX in 3' end: 230825
+bases trimmed in polyX tail: 3368277
+
+Duplication rate: 78.4523%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_023-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_023-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_023-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_023-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_023-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_023-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_023-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_023-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_023-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_023-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_023-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 315 seconds
+Read1 before filtering:
+total reads: 12142806
+total bases: 1821420900
+Q20 bases: 1751256806(96.1478%)
+Q30 bases: 1669945547(91.6837%)
+
+Read2 before filtering:
+total reads: 12142806
+total bases: 1821420900
+Q20 bases: 1762668888(96.7744%)
+Q30 bases: 1677087218(92.0758%)
+
+Read1 after filtering:
+total reads: 11995452
+total bases: 1441810497
+Q20 bases: 1410447604(97.8248%)
+Q30 bases: 1357611791(94.1602%)
+
+Read2 aftering filtering:
+total reads: 11995452
+total bases: 1441997667
+Q20 bases: 1412879190(97.9807%)
+Q30 bases: 1356116413(94.0443%)
+
+Filtering result:
+reads passed filter: 23990904
+reads failed due to low quality: 261662
+reads failed due to too many N: 348
+reads failed due to too short: 22258
+reads failed due to low complexity: 10440
+reads with adapter trimmed: 18401914
+bases trimmed due to adapters: 691494161
+reads with polyX in 3' end: 235391
+bases trimmed in polyX tail: 3405064
+
+Duplication rate: 78.6129%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_006-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_006-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_006-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_006-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_006-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_006-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_006-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_006-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_006-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_006-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_006-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 338 seconds
+Read1 before filtering:
+total reads: 14371553
+total bases: 2155732950
+Q20 bases: 2084575984(96.6992%)
+Q30 bases: 1991485152(92.3809%)
+
+Read2 before filtering:
+total reads: 14371553
+total bases: 2155732950
+Q20 bases: 2090445959(96.9715%)
+Q30 bases: 1993925569(92.4941%)
+
+Read1 after filtering:
+total reads: 14202808
+total bases: 1741999432
+Q20 bases: 1703354553(97.7816%)
+Q30 bases: 1639029360(94.089%)
+
+Read2 aftering filtering:
+total reads: 14202808
+total bases: 1742297314
+Q20 bases: 1708672635(98.0701%)
+Q30 bases: 1642732350(94.2854%)
+
+Filtering result:
+reads passed filter: 28405616
+reads failed due to low quality: 299558
+reads failed due to too many N: 406
+reads failed due to too short: 25010
+reads failed due to low complexity: 12516
+reads with adapter trimmed: 21200965
+bases trimmed due to adapters: 756833534
+reads with polyX in 3' end: 303892
+bases trimmed in polyX tail: 4333500
+
+Duplication rate: 78.4956%
+
+Insert size peak (evaluated by paired-end reads): 113
+
+JSON report: fq_fp1/Sfa-ABas_003-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_003-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_003-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_003-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_003-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_003-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_003-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_003-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_003-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_003-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_003-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 370 seconds
+Read1 before filtering:
+total reads: 13615477
+total bases: 2042321550
+Q20 bases: 1962309651(96.0823%)
+Q30 bases: 1875824316(91.8476%)
+
+Read2 before filtering:
+total reads: 13615477
+total bases: 2042321550
+Q20 bases: 1975756610(96.7407%)
+Q30 bases: 1880443383(92.0738%)
+
+Read1 after filtering:
+total reads: 13431892
+total bases: 1657874361
+Q20 bases: 1620734358(97.7598%)
+Q30 bases: 1559364723(94.0581%)
+
+Read2 aftering filtering:
+total reads: 13431892
+total bases: 1658186793
+Q20 bases: 1625111783(98.0054%)
+Q30 bases: 1561170340(94.1492%)
+
+Filtering result:
+reads passed filter: 26863784
+reads failed due to low quality: 326916
+reads failed due to too many N: 398
+reads failed due to too short: 26534
+reads failed due to low complexity: 13322
+reads with adapter trimmed: 19512538
+bases trimmed due to adapters: 692489199
+reads with polyX in 3' end: 257759
+bases trimmed in polyX tail: 3827444
+
+Duplication rate: 78.928%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_019-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_019-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_019-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_019-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_019-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_019-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_019-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_019-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_019-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_019-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_019-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 370 seconds
+Read1 before filtering:
+total reads: 15338945
+total bases: 2300841750
+Q20 bases: 2221243963(96.5405%)
+Q30 bases: 2122139047(92.2332%)
+
+Read2 before filtering:
+total reads: 15338945
+total bases: 2300841750
+Q20 bases: 2227880235(96.8289%)
+Q30 bases: 2119452797(92.1164%)
+
+Read1 after filtering:
+total reads: 15145630
+total bases: 1871471998
+Q20 bases: 1830293589(97.7997%)
+Q30 bases: 1761316606(94.114%)
+
+Read2 aftering filtering:
+total reads: 15145630
+total bases: 1871746553
+Q20 bases: 1832483884(97.9024%)
+Q30 bases: 1756435342(93.8394%)
+
+Filtering result:
+reads passed filter: 30291260
+reads failed due to low quality: 347320
+reads failed due to too many N: 482
+reads failed due to too short: 26260
+reads failed due to low complexity: 12568
+reads with adapter trimmed: 22526893
+bases trimmed due to adapters: 783121264
+reads with polyX in 3' end: 275510
+bases trimmed in polyX tail: 4027612
+
+Duplication rate: 79.8899%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Sfa-ABas_017-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_017-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_017-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_017-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_017-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_017-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_017-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_017-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_017-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_017-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_017-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 399 seconds
+Read1 before filtering:
+total reads: 15425972
+total bases: 2313895800
+Q20 bases: 2236979949(96.6759%)
+Q30 bases: 2138387910(92.415%)
+
+Read2 before filtering:
+total reads: 15425972
+total bases: 2313895800
+Q20 bases: 2239755939(96.7959%)
+Q30 bases: 2134253493(92.2364%)
+
+Read1 after filtering:
+total reads: 15213145
+total bases: 1876969021
+Q20 bases: 1835882205(97.811%)
+Q30 bases: 1767743402(94.1807%)
+
+Read2 aftering filtering:
+total reads: 15213145
+total bases: 1877244990
+Q20 bases: 1841030637(98.0709%)
+Q30 bases: 1770439819(94.3105%)
+
+Filtering result:
+reads passed filter: 30426290
+reads failed due to low quality: 375748
+reads failed due to too many N: 472
+reads failed due to too short: 33554
+reads failed due to low complexity: 15880
+reads with adapter trimmed: 21880078
+bases trimmed due to adapters: 787621572
+reads with polyX in 3' end: 282798
+bases trimmed in polyX tail: 4248962
+
+Duplication rate: 79.0592%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Sfa-ABas_002-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_002-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_002-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_002-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_002-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_002-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_002-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_002-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_002-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_002-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_002-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 400 seconds
+Read1 before filtering:
+total reads: 14113653
+total bases: 2117047950
+Q20 bases: 2042966790(96.5007%)
+Q30 bases: 1950856390(92.1498%)
+
+Read2 before filtering:
+total reads: 14113653
+total bases: 2117047950
+Q20 bases: 2052571548(96.9544%)
+Q30 bases: 1955300528(92.3598%)
+
+Read1 after filtering:
+total reads: 13941901
+total bases: 1760643339
+Q20 bases: 1718453099(97.6037%)
+Q30 bases: 1650140810(93.7237%)
+
+Read2 aftering filtering:
+total reads: 13941901
+total bases: 1760863678
+Q20 bases: 1725303917(97.9806%)
+Q30 bases: 1655505422(94.0167%)
+
+Filtering result:
+reads passed filter: 27883802
+reads failed due to low quality: 304952
+reads failed due to too many N: 418
+reads failed due to too short: 22836
+reads failed due to low complexity: 15298
+reads with adapter trimmed: 19356227
+bases trimmed due to adapters: 647281427
+reads with polyX in 3' end: 290264
+bases trimmed in polyX tail: 4371914
+
+Duplication rate: 78.4135%
+
+Insert size peak (evaluated by paired-end reads): 118
+
+JSON report: fq_fp1/Sfa-ABas_022-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_022-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_022-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_022-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_022-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_022-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_022-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_022-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_022-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_022-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_022-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 401 seconds
+Read1 before filtering:
+total reads: 15118999
+total bases: 2267849850
+Q20 bases: 2188808978(96.5147%)
+Q30 bases: 2095681123(92.4083%)
+
+Read2 before filtering:
+total reads: 15118999
+total bases: 2267849850
+Q20 bases: 2195061958(96.7904%)
+Q30 bases: 2087776488(92.0597%)
+
+Read1 after filtering:
+total reads: 14928172
+total bases: 1890853060
+Q20 bases: 1849093504(97.7915%)
+Q30 bases: 1779573575(94.1149%)
+
+Read2 aftering filtering:
+total reads: 14928172
+total bases: 1891032023
+Q20 bases: 1851902013(97.9308%)
+Q30 bases: 1776271775(93.9313%)
+
+Filtering result:
+reads passed filter: 29856344
+reads failed due to low quality: 340662
+reads failed due to too many N: 470
+reads failed due to too short: 25884
+reads failed due to low complexity: 14638
+reads with adapter trimmed: 20681326
+bases trimmed due to adapters: 679857042
+reads with polyX in 3' end: 300421
+bases trimmed in polyX tail: 4399595
+
+Duplication rate: 79.7864%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Sfa-ABas_018-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_018-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_018-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_018-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_018-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_018-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_018-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_018-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_018-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_018-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_018-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 412 seconds
+Read1 before filtering:
+total reads: 15415014
+total bases: 2312252100
+Q20 bases: 2225856771(96.2636%)
+Q30 bases: 2122171124(91.7794%)
+
+Read2 before filtering:
+total reads: 15415014
+total bases: 2312252100
+Q20 bases: 2236826216(96.738%)
+Q30 bases: 2125148440(91.9082%)
+
+Read1 after filtering:
+total reads: 15229368
+total bases: 1846937092
+Q20 bases: 1805625810(97.7633%)
+Q30 bases: 1736640992(94.0282%)
+
+Read2 aftering filtering:
+total reads: 15229368
+total bases: 1847360764
+Q20 bases: 1806813457(97.8051%)
+Q30 bases: 1729738516(93.633%)
+
+Filtering result:
+reads passed filter: 30458736
+reads failed due to low quality: 330160
+reads failed due to too many N: 394
+reads failed due to too short: 26918
+reads failed due to low complexity: 13820
+reads with adapter trimmed: 23174822
+bases trimmed due to adapters: 848744878
+reads with polyX in 3' end: 348800
+bases trimmed in polyX tail: 4829783
+
+Duplication rate: 79.0469%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Sfa-ABas_004-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_004-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_004-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_004-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_004-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_004-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_004-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_004-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_004-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_004-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_004-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 424 seconds
+Read1 before filtering:
+total reads: 14881400
+total bases: 2232210000
+Q20 bases: 2146022602(96.1389%)
+Q30 bases: 2051800519(91.9179%)
+
+Read2 before filtering:
+total reads: 14881400
+total bases: 2232210000
+Q20 bases: 2160267434(96.7771%)
+Q30 bases: 2056552772(92.1308%)
+
+Read1 after filtering:
+total reads: 14686751
+total bases: 1802412148
+Q20 bases: 1762251547(97.7718%)
+Q30 bases: 1695907884(94.091%)
+
+Read2 aftering filtering:
+total reads: 14686751
+total bases: 1802618758
+Q20 bases: 1767452304(98.0491%)
+Q30 bases: 1699002467(94.2519%)
+
+Filtering result:
+reads passed filter: 29373502
+reads failed due to low quality: 346004
+reads failed due to too many N: 404
+reads failed due to too short: 27896
+reads failed due to low complexity: 14994
+reads with adapter trimmed: 22067313
+bases trimmed due to adapters: 779178374
+reads with polyX in 3' end: 281530
+bases trimmed in polyX tail: 4155202
+
+Duplication rate: 78.5521%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_007-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_007-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_007-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_007-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_007-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_007-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_007-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_007-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_007-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_007-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_007-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 424 seconds
+Read1 before filtering:
+total reads: 15006327
+total bases: 2250949050
+Q20 bases: 2160060343(95.9622%)
+Q30 bases: 2057396546(91.4013%)
+
+Read2 before filtering:
+total reads: 15006327
+total bases: 2250949050
+Q20 bases: 2173109952(96.5419%)
+Q30 bases: 2063086332(91.6541%)
+
+Read1 after filtering:
+total reads: 14818000
+total bases: 1768745553
+Q20 bases: 1729492599(97.7807%)
+Q30 bases: 1663943449(94.0748%)
+
+Read2 aftering filtering:
+total reads: 14818000
+total bases: 1769026424
+Q20 bases: 1732289535(97.9233%)
+Q30 bases: 1661434933(93.918%)
+
+Filtering result:
+reads passed filter: 29636000
+reads failed due to low quality: 334444
+reads failed due to too many N: 410
+reads failed due to too short: 27998
+reads failed due to low complexity: 13802
+reads with adapter trimmed: 22653648
+bases trimmed due to adapters: 874386455
+reads with polyX in 3' end: 306868
+bases trimmed in polyX tail: 4475203
+
+Duplication rate: 77.4889%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Sfa-ABas_005-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_005-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_005-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_005-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_005-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_005-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_005-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_005-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_005-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_005-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_005-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 424 seconds
+Read1 before filtering:
+total reads: 15442150
+total bases: 2316322500
+Q20 bases: 2232265400(96.3711%)
+Q30 bases: 2135033441(92.1734%)
+
+Read2 before filtering:
+total reads: 15442150
+total bases: 2316322500
+Q20 bases: 2244885982(96.916%)
+Q30 bases: 2140697304(92.4179%)
+
+Read1 after filtering:
+total reads: 15233001
+total bases: 1926616352
+Q20 bases: 1883010354(97.7367%)
+Q30 bases: 1810853308(93.9914%)
+
+Read2 aftering filtering:
+total reads: 15233001
+total bases: 1926742020
+Q20 bases: 1887827490(97.9803%)
+Q30 bases: 1812769441(94.0847%)
+
+Filtering result:
+reads passed filter: 30466002
+reads failed due to low quality: 371816
+reads failed due to too many N: 516
+reads failed due to too short: 31152
+reads failed due to low complexity: 14814
+reads with adapter trimmed: 20857497
+bases trimmed due to adapters: 699124619
+reads with polyX in 3' end: 279519
+bases trimmed in polyX tail: 4218760
+
+Duplication rate: 79.8406%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Sfa-ABas_008-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_008-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_008-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_008-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_008-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_008-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_008-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_008-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_008-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_008-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_008-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 426 seconds
+Read1 before filtering:
+total reads: 15793190
+total bases: 2368978500
+Q20 bases: 2280628635(96.2706%)
+Q30 bases: 2175379426(91.8277%)
+
+Read2 before filtering:
+total reads: 15793190
+total bases: 2368978500
+Q20 bases: 2292322249(96.7642%)
+Q30 bases: 2178183911(91.9461%)
+
+Read1 after filtering:
+total reads: 15608505
+total bases: 1938445515
+Q20 bases: 1891414672(97.5738%)
+Q30 bases: 1816030620(93.6849%)
+
+Read2 aftering filtering:
+total reads: 15608505
+total bases: 1938893658
+Q20 bases: 1898380875(97.9105%)
+Q30 bases: 1819783127(93.8568%)
+
+Filtering result:
+reads passed filter: 31217010
+reads failed due to low quality: 328426
+reads failed due to too many N: 406
+reads failed due to too short: 23476
+reads failed due to low complexity: 17062
+reads with adapter trimmed: 22514591
+bases trimmed due to adapters: 784775353
+reads with polyX in 3' end: 360987
+bases trimmed in polyX tail: 5130665
+
+Duplication rate: 78.8148%
+
+Insert size peak (evaluated by paired-end reads): 116
+
+JSON report: fq_fp1/Sfa-ABas_010-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_010-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_010-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_010-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_010-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_010-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_010-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_010-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_010-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_010-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_010-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 446 seconds
+Read1 before filtering:
+total reads: 16380434
+total bases: 2457065100
+Q20 bases: 2372297584(96.5501%)
+Q30 bases: 2268180184(92.3126%)
+
+Read2 before filtering:
+total reads: 16380434
+total bases: 2457065100
+Q20 bases: 2373230577(96.588%)
+Q30 bases: 2253587217(91.7187%)
+
+Read1 after filtering:
+total reads: 16148058
+total bases: 2017757208
+Q20 bases: 1973462778(97.8048%)
+Q30 bases: 1900171134(94.1724%)
+
+Read2 aftering filtering:
+total reads: 16148058
+total bases: 2017995957
+Q20 bases: 1974490139(97.8441%)
+Q30 bases: 1891622556(93.7377%)
+
+Filtering result:
+reads passed filter: 32296116
+reads failed due to low quality: 416334
+reads failed due to too many N: 444
+reads failed due to too short: 31690
+reads failed due to low complexity: 16284
+reads with adapter trimmed: 22872772
+bases trimmed due to adapters: 789386455
+reads with polyX in 3' end: 290744
+bases trimmed in polyX tail: 4370779
+
+Duplication rate: 79.5636%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Sfa-ABas_016-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_016-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_016-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_016-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_016-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_016-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_016-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_016-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_016-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_016-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_016-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 455 seconds
+Read1 before filtering:
+total reads: 16439034
+total bases: 2465855100
+Q20 bases: 2388924856(96.8802%)
+Q30 bases: 2285968239(92.7049%)
+
+Read2 before filtering:
+total reads: 16439034
+total bases: 2465855100
+Q20 bases: 2395686934(97.1544%)
+Q30 bases: 2290064444(92.871%)
+
+Read1 after filtering:
+total reads: 16227948
+total bases: 2046602198
+Q20 bases: 2001624516(97.8023%)
+Q30 bases: 1926925257(94.1524%)
+
+Read2 aftering filtering:
+total reads: 16227948
+total bases: 2046851835
+Q20 bases: 2007289288(98.0672%)
+Q30 bases: 1929956132(94.289%)
+
+Filtering result:
+reads passed filter: 32455896
+reads failed due to low quality: 376306
+reads failed due to too many N: 596
+reads failed due to too short: 31150
+reads failed due to low complexity: 14120
+reads with adapter trimmed: 22474147
+bases trimmed due to adapters: 757688548
+reads with polyX in 3' end: 308836
+bases trimmed in polyX tail: 4492992
+
+Duplication rate: 79.8973%
+
+Insert size peak (evaluated by paired-end reads): 115
+
+JSON report: fq_fp1/Sfa-ABas_013-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_013-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_013-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_013-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_013-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_013-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_013-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_013-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_013-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_013-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_013-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 456 seconds
+Read1 before filtering:
+total reads: 17702260
+total bases: 2655339000
+Q20 bases: 2561481565(96.4653%)
+Q30 bases: 2448205410(92.1994%)
+
+Read2 before filtering:
+total reads: 17702260
+total bases: 2655339000
+Q20 bases: 2566660225(96.6604%)
+Q30 bases: 2438754043(91.8434%)
+
+Read1 after filtering:
+total reads: 17463024
+total bases: 2186214925
+Q20 bases: 2134367258(97.6284%)
+Q30 bases: 2052125930(93.8666%)
+
+Read2 aftering filtering:
+total reads: 17463024
+total bases: 2186536926
+Q20 bases: 2140574359(97.8979%)
+Q30 bases: 2052342928(93.8627%)
+
+Filtering result:
+reads passed filter: 34926048
+reads failed due to low quality: 427516
+reads failed due to too many N: 482
+reads failed due to too short: 34738
+reads failed due to low complexity: 15736
+reads with adapter trimmed: 25460176
+bases trimmed due to adapters: 848626767
+reads with polyX in 3' end: 301934
+bases trimmed in polyX tail: 4384551
+
+Duplication rate: 79.4258%
+
+Insert size peak (evaluated by paired-end reads): 116
+
+JSON report: fq_fp1/Sfa-ABas_009-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_009-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_009-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_009-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_009-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_009-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_009-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_009-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_009-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_009-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_009-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 470 seconds
+Read1 before filtering:
+total reads: 12529737
+total bases: 1879460550
+Q20 bases: 1820833638(96.8807%)
+Q30 bases: 1742115549(92.6923%)
+
+Read2 before filtering:
+total reads: 12529737
+total bases: 1879460550
+Q20 bases: 1824615914(97.0819%)
+Q30 bases: 1743408519(92.7611%)
+
+Read1 after filtering:
+total reads: 12372326
+total bases: 1566385239
+Q20 bases: 1531274232(97.7585%)
+Q30 bases: 1472939293(94.0343%)
+
+Read2 aftering filtering:
+total reads: 12372326
+total bases: 1566516299
+Q20 bases: 1537744497(98.1633%)
+Q30 bases: 1480984947(94.54%)
+
+Filtering result:
+reads passed filter: 24744652
+reads failed due to low quality: 279852
+reads failed due to too many N: 382
+reads failed due to too short: 23036
+reads failed due to low complexity: 11552
+reads with adapter trimmed: 17156545
+bases trimmed due to adapters: 567286167
+reads with polyX in 3' end: 228418
+bases trimmed in polyX tail: 3377384
+
+Duplication rate: 80.0082%
+
+Insert size peak (evaluated by paired-end reads): 116
+
+JSON report: fq_fp1/Sfa-ABas_024-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_024-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_024-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_024-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_024-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_024-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_024-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_024-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_024-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_024-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_024-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 347 seconds
+Read1 before filtering:
+total reads: 19826857
+total bases: 2974028550
+Q20 bases: 2878607844(96.7915%)
+Q30 bases: 2753575843(92.5874%)
+
+Read2 before filtering:
+total reads: 19826857
+total bases: 2974028550
+Q20 bases: 2880479136(96.8545%)
+Q30 bases: 2741982441(92.1976%)
+
+Read1 after filtering:
+total reads: 19602551
+total bases: 2375101460
+Q20 bases: 2324808667(97.8825%)
+Q30 bases: 2240276005(94.3234%)
+
+Read2 aftering filtering:
+total reads: 19602551
+total bases: 2375619300
+Q20 bases: 2330558989(98.1032%)
+Q30 bases: 2240999660(94.3333%)
+
+Filtering result:
+reads passed filter: 39205102
+reads failed due to low quality: 398754
+reads failed due to too many N: 640
+reads failed due to too short: 30232
+reads failed due to low complexity: 18986
+reads with adapter trimmed: 30436790
+bases trimmed due to adapters: 1103259387
+reads with polyX in 3' end: 385422
+bases trimmed in polyX tail: 5475565
+
+Duplication rate: 79.514%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_001-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_001-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_001-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_001-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_001-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_001-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_001-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_001-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_001-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_001-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_001-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 550 seconds
+Read1 before filtering:
+total reads: 14985375
+total bases: 2247806250
+Q20 bases: 2160495017(96.1157%)
+Q30 bases: 2058845603(91.5936%)
+
+Read2 before filtering:
+total reads: 14985375
+total bases: 2247806250
+Q20 bases: 2170178480(96.5465%)
+Q30 bases: 2064612928(91.8501%)
+
+Read1 after filtering:
+total reads: 14785575
+total bases: 1683999204
+Q20 bases: 1648224371(97.8756%)
+Q30 bases: 1588786218(94.346%)
+
+Read2 aftering filtering:
+total reads: 14785575
+total bases: 1684314077
+Q20 bases: 1654212957(98.2129%)
+Q30 bases: 1594488162(94.6669%)
+
+Filtering result:
+reads passed filter: 29571150
+reads failed due to low quality: 343456
+reads failed due to too many N: 374
+reads failed due to too short: 42890
+reads failed due to low complexity: 12880
+reads with adapter trimmed: 24212804
+bases trimmed due to adapters: 1019035314
+reads with polyX in 3' end: 251469
+bases trimmed in polyX tail: 3636916
+
+Duplication rate: 76.5124%
+
+Insert size peak (evaluated by paired-end reads): 108
+
+JSON report: fq_fp1/Sfa-ABas_025-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_025-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_025-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_025-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_025-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_025-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_025-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_025-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_025-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_025-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_025-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 422 seconds
+Read1 before filtering:
+total reads: 8319412
+total bases: 1247911800
+Q20 bases: 1214897729(97.3545%)
+Q30 bases: 1166730286(93.4946%)
+
+Read2 before filtering:
+total reads: 8319412
+total bases: 1247911800
+Q20 bases: 1202931290(96.3955%)
+Q30 bases: 1135835883(91.0189%)
+
+Read1 after filtering:
+total reads: 8179616
+total bases: 1188120438
+Q20 bases: 1162607173(97.8526%)
+Q30 bases: 1118748502(94.1612%)
+
+Read2 aftering filtering:
+total reads: 8179616
+total bases: 1188175091
+Q20 bases: 1154388245(97.1564%)
+Q30 bases: 1092735313(91.9675%)
+
+Filtering result:
+reads passed filter: 16359232
+reads failed due to low quality: 262734
+reads failed due to too many N: 300
+reads failed due to too short: 11148
+reads failed due to low complexity: 5410
+reads with adapter trimmed: 2812524
+bases trimmed due to adapters: 72839152
+reads with polyX in 3' end: 157387
+bases trimmed in polyX tail: 2276113
+
+Duplication rate: 91.504%
+
+Insert size peak (evaluated by paired-end reads): 183
+
+JSON report: fq_fp1/Sfa-CBas_006-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_006-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_006-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_006-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_006-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_006-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_006-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_006-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_006-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_006-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_006-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 250 seconds
+Read1 before filtering:
+total reads: 12207271
+total bases: 1831090650
+Q20 bases: 1763609148(96.3147%)
+Q30 bases: 1683160141(91.9212%)
+
+Read2 before filtering:
+total reads: 12207271
+total bases: 1831090650
+Q20 bases: 1769495081(96.6361%)
+Q30 bases: 1680618723(91.7824%)
+
+Read1 after filtering:
+total reads: 12051619
+total bases: 1480943045
+Q20 bases: 1448430959(97.8046%)
+Q30 bases: 1393818843(94.117%)
+
+Read2 aftering filtering:
+total reads: 12051619
+total bases: 1481134518
+Q20 bases: 1449225686(97.8456%)
+Q30 bases: 1387922693(93.7067%)
+
+Filtering result:
+reads passed filter: 24103238
+reads failed due to low quality: 277072
+reads failed due to too many N: 354
+reads failed due to too short: 23638
+reads failed due to low complexity: 10240
+reads with adapter trimmed: 17443595
+bases trimmed due to adapters: 633090959
+reads with polyX in 3' end: 221631
+bases trimmed in polyX tail: 3175549
+
+Duplication rate: 78.4952%
+
+Insert size peak (evaluated by paired-end reads): 113
+
+JSON report: fq_fp1/Sfa-ABas_029-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_029-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_029-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_029-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_029-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_029-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_029-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_029-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_029-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_029-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_029-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 349 seconds
+Read1 before filtering:
+total reads: 13624201
+total bases: 2043630150
+Q20 bases: 1976541018(96.7172%)
+Q30 bases: 1890433119(92.5037%)
+
+Read2 before filtering:
+total reads: 13624201
+total bases: 2043630150
+Q20 bases: 1975077223(96.6455%)
+Q30 bases: 1874665040(91.7321%)
+
+Read1 after filtering:
+total reads: 13445553
+total bases: 1712157777
+Q20 bases: 1674242404(97.7855%)
+Q30 bases: 1611051553(94.0948%)
+
+Read2 aftering filtering:
+total reads: 13445553
+total bases: 1712298370
+Q20 bases: 1674079591(97.768%)
+Q30 bases: 1601544233(93.5318%)
+
+Filtering result:
+reads passed filter: 26891106
+reads failed due to low quality: 319800
+reads failed due to too many N: 506
+reads failed due to too short: 23306
+reads failed due to low complexity: 13684
+reads with adapter trimmed: 18075237
+bases trimmed due to adapters: 596662388
+reads with polyX in 3' end: 265101
+bases trimmed in polyX tail: 3903366
+
+Duplication rate: 80.1301%
+
+Insert size peak (evaluated by paired-end reads): 115
+
+JSON report: fq_fp1/Sfa-ABas_028-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_028-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_028-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_028-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_028-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_028-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_028-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_028-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_028-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_028-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_028-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 381 seconds
+Read1 before filtering:
+total reads: 12801627
+total bases: 1920244050
+Q20 bases: 1841664609(95.9078%)
+Q30 bases: 1759409249(91.6243%)
+
+Read2 before filtering:
+total reads: 12801627
+total bases: 1920244050
+Q20 bases: 1861939040(96.9637%)
+Q30 bases: 1776890341(92.5346%)
+
+Read1 after filtering:
+total reads: 12642948
+total bases: 1544381722
+Q20 bases: 1509890378(97.7667%)
+Q30 bases: 1452493456(94.0502%)
+
+Read2 aftering filtering:
+total reads: 12642948
+total bases: 1544578062
+Q20 bases: 1515168244(98.0959%)
+Q30 bases: 1457643680(94.3716%)
+
+Filtering result:
+reads passed filter: 25285896
+reads failed due to low quality: 280510
+reads failed due to too many N: 340
+reads failed due to too short: 24908
+reads failed due to low complexity: 11600
+reads with adapter trimmed: 18654582
+bases trimmed due to adapters: 679821415
+reads with polyX in 3' end: 253303
+bases trimmed in polyX tail: 3725518
+
+Duplication rate: 78.4791%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Sfa-ABas_032-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_032-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_032-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_032-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_032-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_032-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_032-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_032-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_032-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_032-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_032-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 362 seconds
+Read1 before filtering:
+total reads: 13177218
+total bases: 1976582700
+Q20 bases: 1904064075(96.3311%)
+Q30 bases: 1822877062(92.2237%)
+
+Read2 before filtering:
+total reads: 13177218
+total bases: 1976582700
+Q20 bases: 1918878564(97.0806%)
+Q30 bases: 1830120545(92.5901%)
+
+Read1 after filtering:
+total reads: 13024416
+total bases: 1656128973
+Q20 bases: 1622653428(97.9787%)
+Q30 bases: 1562728949(94.3603%)
+
+Read2 aftering filtering:
+total reads: 13024416
+total bases: 1656217552
+Q20 bases: 1625410026(98.1399%)
+Q30 bases: 1561456304(94.2785%)
+
+Filtering result:
+reads passed filter: 26048832
+reads failed due to low quality: 272060
+reads failed due to too many N: 414
+reads failed due to too short: 21558
+reads failed due to low complexity: 11572
+reads with adapter trimmed: 15876317
+bases trimmed due to adapters: 572299123
+reads with polyX in 3' end: 250168
+bases trimmed in polyX tail: 3758847
+
+Duplication rate: 78.2258%
+
+Insert size peak (evaluated by paired-end reads): 120
+
+JSON report: fq_fp1/Sfa-ABas_031-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_031-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_031-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_031-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_031-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_031-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_031-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_031-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_031-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_031-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_031-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 363 seconds
+Read1 before filtering:
+total reads: 14469727
+total bases: 2170459050
+Q20 bases: 2051850247(94.5353%)
+Q30 bases: 1952052515(89.9373%)
+
+Read2 before filtering:
+total reads: 14469727
+total bases: 2170459050
+Q20 bases: 2085042796(96.0646%)
+Q30 bases: 1982494979(91.3399%)
+
+Read1 after filtering:
+total reads: 14087453
+total bases: 1584026672
+Q20 bases: 1548617835(97.7646%)
+Q30 bases: 1490129566(94.0723%)
+
+Read2 aftering filtering:
+total reads: 14087453
+total bases: 1584510985
+Q20 bases: 1554144921(98.0836%)
+Q30 bases: 1495414656(94.377%)
+
+Filtering result:
+reads passed filter: 28174906
+reads failed due to low quality: 665202
+reads failed due to too many N: 378
+reads failed due to too short: 69574
+reads failed due to low complexity: 29394
+reads with adapter trimmed: 23794488
+bases trimmed due to adapters: 1012551912
+reads with polyX in 3' end: 319373
+bases trimmed in polyX tail: 4814750
+
+Duplication rate: 76.6067%
+
+Insert size peak (evaluated by paired-end reads): 108
+
+JSON report: fq_fp1/Sfa-ABas_030-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_030-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_030-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_030-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_030-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_030-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_030-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_030-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_030-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_030-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_030-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 397 seconds
+Read1 before filtering:
+total reads: 16640479
+total bases: 2496071850
+Q20 bases: 2406261528(96.4019%)
+Q30 bases: 2298132124(92.07%)
+
+Read2 before filtering:
+total reads: 16640479
+total bases: 2496071850
+Q20 bases: 2405818431(96.3842%)
+Q30 bases: 2277012319(91.2238%)
+
+Read1 after filtering:
+total reads: 16421451
+total bases: 2045542738
+Q20 bases: 2000466393(97.7964%)
+Q30 bases: 1925388026(94.126%)
+
+Read2 aftering filtering:
+total reads: 16421451
+total bases: 2045888295
+Q20 bases: 1998599457(97.6886%)
+Q30 bases: 1909532033(93.3351%)
+
+Filtering result:
+reads passed filter: 32842902
+reads failed due to low quality: 389836
+reads failed due to too many N: 570
+reads failed due to too short: 29350
+reads failed due to low complexity: 18300
+reads with adapter trimmed: 22762874
+bases trimmed due to adapters: 807966893
+reads with polyX in 3' end: 365933
+bases trimmed in polyX tail: 5252390
+
+Duplication rate: 79.5343%
+
+Insert size peak (evaluated by paired-end reads): 118
+
+JSON report: fq_fp1/Sfa-ABas_027-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_027-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_027-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_027-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_027-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_027-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_027-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_027-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_027-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_027-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_027-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 467 seconds
+Read1 before filtering:
+total reads: 12709792
+total bases: 1906468800
+Q20 bases: 1849086888(96.9901%)
+Q30 bases: 1771312424(92.9106%)
+
+Read2 before filtering:
+total reads: 12709792
+total bases: 1906468800
+Q20 bases: 1840150155(96.5214%)
+Q30 bases: 1748765719(91.728%)
+
+Read1 after filtering:
+total reads: 12455001
+total bases: 1782501361
+Q20 bases: 1741186406(97.6822%)
+Q30 bases: 1672597146(93.8343%)
+
+Read2 aftering filtering:
+total reads: 12455001
+total bases: 1782370136
+Q20 bases: 1738512988(97.5394%)
+Q30 bases: 1658294730(93.0387%)
+
+Filtering result:
+reads passed filter: 24910002
+reads failed due to low quality: 464272
+reads failed due to too many N: 430
+reads failed due to too short: 34922
+reads failed due to low complexity: 9958
+reads with adapter trimmed: 5690792
+bases trimmed due to adapters: 162556129
+reads with polyX in 3' end: 186986
+bases trimmed in polyX tail: 2934325
+
+Duplication rate: 51.9762%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_001-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_001-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_001-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_001-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_001-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_001-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_001-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_001-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_001-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_001-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_001-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 369 seconds
+Read1 before filtering:
+total reads: 11828307
+total bases: 1774246050
+Q20 bases: 1718421869(96.8536%)
+Q30 bases: 1645264865(92.7304%)
+
+Read2 before filtering:
+total reads: 11828307
+total bases: 1774246050
+Q20 bases: 1704011877(96.0415%)
+Q30 bases: 1607904320(90.6247%)
+
+Read1 after filtering:
+total reads: 11577139
+total bases: 1651924684
+Q20 bases: 1613682635(97.685%)
+Q30 bases: 1549660831(93.8094%)
+
+Read2 aftering filtering:
+total reads: 11577139
+total bases: 1651581004
+Q20 bases: 1603944544(97.1157%)
+Q30 bases: 1519325422(91.9922%)
+
+Filtering result:
+reads passed filter: 23154278
+reads failed due to low quality: 461662
+reads failed due to too many N: 380
+reads failed due to too short: 29888
+reads failed due to low complexity: 10406
+reads with adapter trimmed: 5565831
+bases trimmed due to adapters: 160221067
+reads with polyX in 3' end: 213233
+bases trimmed in polyX tail: 3228852
+
+Duplication rate: 58.3153%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_007-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_007-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_007-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_007-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_007-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_007-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_007-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_007-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_007-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_007-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_007-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 338 seconds
+Read1 before filtering:
+total reads: 14115464
+total bases: 2117319600
+Q20 bases: 2051197768(96.8771%)
+Q30 bases: 1961529787(92.6421%)
+
+Read2 before filtering:
+total reads: 14115464
+total bases: 2117319600
+Q20 bases: 2055768333(97.093%)
+Q30 bases: 1960999226(92.6171%)
+
+Read1 after filtering:
+total reads: 13973030
+total bases: 1719332656
+Q20 bases: 1681390638(97.7932%)
+Q30 bases: 1617556936(94.0805%)
+
+Read2 aftering filtering:
+total reads: 13973030
+total bases: 1719656215
+Q20 bases: 1688175749(98.1694%)
+Q30 bases: 1624968829(94.4938%)
+
+Filtering result:
+reads passed filter: 27946060
+reads failed due to low quality: 255108
+reads failed due to too many N: 420
+reads failed due to too short: 19084
+reads failed due to low complexity: 10256
+reads with adapter trimmed: 21306852
+bases trimmed due to adapters: 737386183
+reads with polyX in 3' end: 296061
+bases trimmed in polyX tail: 4031978
+
+Duplication rate: 80.3055%
+
+Insert size peak (evaluated by paired-end reads): 113
+
+JSON report: fq_fp1/Sfa-ABas_035-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_035-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_035-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_035-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_035-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_035-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_035-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_035-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_035-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_035-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_035-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 389 seconds
+Read1 before filtering:
+total reads: 19586782
+total bases: 2938017300
+Q20 bases: 2843610651(96.7867%)
+Q30 bases: 2718583031(92.5312%)
+
+Read2 before filtering:
+total reads: 19586782
+total bases: 2938017300
+Q20 bases: 2852335719(97.0837%)
+Q30 bases: 2724207858(92.7227%)
+
+Read1 after filtering:
+total reads: 19351184
+total bases: 2395602631
+Q20 bases: 2342533926(97.7847%)
+Q30 bases: 2254303457(94.1017%)
+
+Read2 aftering filtering:
+total reads: 19351184
+total bases: 2395908383
+Q20 bases: 2350234217(98.0937%)
+Q30 bases: 2260602243(94.3526%)
+
+Filtering result:
+reads passed filter: 38702368
+reads failed due to low quality: 419712
+reads failed due to too many N: 590
+reads failed due to too short: 33204
+reads failed due to low complexity: 17690
+reads with adapter trimmed: 28604916
+bases trimmed due to adapters: 991447031
+reads with polyX in 3' end: 402479
+bases trimmed in polyX tail: 5777014
+
+Duplication rate: 79.8943%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Sfa-ABas_026-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_026-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_026-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_026-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_026-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_026-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_026-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_026-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_026-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_026-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_026-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 535 seconds
+Read1 before filtering:
+total reads: 14905456
+total bases: 2235818400
+Q20 bases: 2164628224(96.8159%)
+Q30 bases: 2072635241(92.7014%)
+
+Read2 before filtering:
+total reads: 14905456
+total bases: 2235818400
+Q20 bases: 2141651216(95.7882%)
+Q30 bases: 2014161943(90.0861%)
+
+Read1 after filtering:
+total reads: 14582172
+total bases: 2076961956
+Q20 bases: 2028694371(97.676%)
+Q30 bases: 1948717413(93.8254%)
+
+Read2 aftering filtering:
+total reads: 14582172
+total bases: 2076456995
+Q20 bases: 2011833223(96.8878%)
+Q30 bases: 1899492614(91.4776%)
+
+Filtering result:
+reads passed filter: 29164344
+reads failed due to low quality: 594240
+reads failed due to too many N: 468
+reads failed due to too short: 39638
+reads failed due to low complexity: 12222
+reads with adapter trimmed: 7119069
+bases trimmed due to adapters: 209292744
+reads with polyX in 3' end: 278540
+bases trimmed in polyX tail: 4214733
+
+Duplication rate: 56.3116%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_003-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_003-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_003-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_003-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_003-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_003-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_003-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_003-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_003-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_003-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_003-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 443 seconds
+Read1 before filtering:
+total reads: 14172957
+total bases: 2125943550
+Q20 bases: 2058122532(96.8098%)
+Q30 bases: 1971277710(92.7248%)
+
+Read2 before filtering:
+total reads: 14172957
+total bases: 2125943550
+Q20 bases: 2049514820(96.405%)
+Q30 bases: 1945258955(91.501%)
+
+Read1 after filtering:
+total reads: 13882164
+total bases: 1968242326
+Q20 bases: 1923066341(97.7048%)
+Q30 bases: 1847704513(93.8759%)
+
+Read2 aftering filtering:
+total reads: 13882164
+total bases: 1967750810
+Q20 bases: 1918096396(97.4766%)
+Q30 bases: 1828028939(92.8994%)
+
+Filtering result:
+reads passed filter: 27764328
+reads failed due to low quality: 527218
+reads failed due to too many N: 470
+reads failed due to too short: 41040
+reads failed due to low complexity: 12858
+reads with adapter trimmed: 7295503
+bases trimmed due to adapters: 216618430
+reads with polyX in 3' end: 250162
+bases trimmed in polyX tail: 3941711
+
+Duplication rate: 52.5505%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_008-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_008-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_008-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_008-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_008-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_008-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_008-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_008-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_008-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_008-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_008-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 418 seconds
+Read1 before filtering:
+total reads: 18479677
+total bases: 2771951550
+Q20 bases: 2655690389(95.8058%)
+Q30 bases: 2529667003(91.2594%)
+
+Read2 before filtering:
+total reads: 18479677
+total bases: 2771951550
+Q20 bases: 2679652529(96.6703%)
+Q30 bases: 2546262249(91.8581%)
+
+Read1 after filtering:
+total reads: 18259563
+total bases: 2189783503
+Q20 bases: 2136757397(97.5785%)
+Q30 bases: 2053067116(93.7566%)
+
+Read2 aftering filtering:
+total reads: 18259563
+total bases: 2190195869
+Q20 bases: 2146133184(97.9882%)
+Q30 bases: 2060231033(94.0661%)
+
+Filtering result:
+reads passed filter: 36519126
+reads failed due to low quality: 392782
+reads failed due to too many N: 586
+reads failed due to too short: 31036
+reads failed due to low complexity: 15824
+reads with adapter trimmed: 27938360
+bases trimmed due to adapters: 1057360362
+reads with polyX in 3' end: 376126
+bases trimmed in polyX tail: 5313500
+
+Duplication rate: 77.0338%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Sfa-ABas_033-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_033-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_033-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_033-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_033-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_033-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_033-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_033-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_033-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_033-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_033-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 506 seconds
+Read1 before filtering:
+total reads: 19290383
+total bases: 2893557450
+Q20 bases: 2778020645(96.0071%)
+Q30 bases: 2647250655(91.4878%)
+
+Read2 before filtering:
+total reads: 19290383
+total bases: 2893557450
+Q20 bases: 2801978829(96.8351%)
+Q30 bases: 2667393789(92.1839%)
+
+Read1 after filtering:
+total reads: 19053573
+total bases: 2351396783
+Q20 bases: 2294244371(97.5694%)
+Q30 bases: 2202745302(93.6782%)
+
+Read2 aftering filtering:
+total reads: 19053573
+total bases: 2351717022
+Q20 bases: 2303461389(97.9481%)
+Q30 bases: 2209720723(93.962%)
+
+Filtering result:
+reads passed filter: 38107146
+reads failed due to low quality: 421462
+reads failed due to too many N: 556
+reads failed due to too short: 35138
+reads failed due to low complexity: 16464
+reads with adapter trimmed: 26804179
+bases trimmed due to adapters: 979451834
+reads with polyX in 3' end: 388053
+bases trimmed in polyX tail: 5549779
+
+Duplication rate: 78.2352%
+
+Insert size peak (evaluated by paired-end reads): 114
+
+JSON report: fq_fp1/Sfa-ABas_034-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-ABas_034-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_034-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-ABas_034-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-ABas_034-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-ABas_034-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-ABas_034-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-ABas_034-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-ABas_034-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-ABas_034-Ex1-cssl.fastp.html -j fq_fp1/Sfa-ABas_034-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 543 seconds
+Read1 before filtering:
+total reads: 15151910
+total bases: 2272786500
+Q20 bases: 2203258481(96.9408%)
+Q30 bases: 2112864667(92.9636%)
+
+Read2 before filtering:
+total reads: 15151910
+total bases: 2272786500
+Q20 bases: 2188885780(96.3085%)
+Q30 bases: 2071763384(91.1552%)
+
+Read1 after filtering:
+total reads: 14857537
+total bases: 2124269222
+Q20 bases: 2077062963(97.7778%)
+Q30 bases: 1997481282(94.0315%)
+
+Read2 aftering filtering:
+total reads: 14857537
+total bases: 2123656956
+Q20 bases: 2066843664(97.3247%)
+Q30 bases: 1963814560(92.4732%)
+
+Filtering result:
+reads passed filter: 29715074
+reads failed due to low quality: 540052
+reads failed due to too many N: 476
+reads failed due to too short: 36826
+reads failed due to low complexity: 11392
+reads with adapter trimmed: 6804346
+bases trimmed due to adapters: 197151359
+reads with polyX in 3' end: 247585
+bases trimmed in polyX tail: 3868264
+
+Duplication rate: 44.8198%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_014-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_014-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_014-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_014-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_014-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_014-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_014-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_014-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_014-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_014-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_014-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 464 seconds
+Read1 before filtering:
+total reads: 12898484
+total bases: 1934772600
+Q20 bases: 1876925539(97.0101%)
+Q30 bases: 1799781097(93.0229%)
+
+Read2 before filtering:
+total reads: 12898484
+total bases: 1934772600
+Q20 bases: 1863293378(96.3055%)
+Q30 bases: 1761574741(91.0482%)
+
+Read1 after filtering:
+total reads: 12652523
+total bases: 1803718152
+Q20 bases: 1763772254(97.7854%)
+Q30 bases: 1696031005(94.0297%)
+
+Read2 aftering filtering:
+total reads: 12652523
+total bases: 1803401106
+Q20 bases: 1754541318(97.2907%)
+Q30 bases: 1665143908(92.3335%)
+
+Filtering result:
+reads passed filter: 25305046
+reads failed due to low quality: 452658
+reads failed due to too many N: 472
+reads failed due to too short: 28982
+reads failed due to low complexity: 9810
+reads with adapter trimmed: 6590498
+bases trimmed due to adapters: 179279084
+reads with polyX in 3' end: 215451
+bases trimmed in polyX tail: 3245871
+
+Duplication rate: 55.4048%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Sfa-CBas_015-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_015-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_015-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_015-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_015-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_015-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_015-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_015-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_015-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_015-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_015-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 377 seconds
+Read1 before filtering:
+total reads: 18971771
+total bases: 2845765650
+Q20 bases: 2760111217(96.9901%)
+Q30 bases: 2644627770(92.932%)
+
+Read2 before filtering:
+total reads: 18971771
+total bases: 2845765650
+Q20 bases: 2734289098(96.0827%)
+Q30 bases: 2581200910(90.7032%)
+
+Read1 after filtering:
+total reads: 18579272
+total bases: 2641292928
+Q20 bases: 2580861029(97.712%)
+Q30 bases: 2480659781(93.9184%)
+
+Read2 aftering filtering:
+total reads: 18579272
+total bases: 2641061145
+Q20 bases: 2565487145(97.1385%)
+Q30 bases: 2431533902(92.0666%)
+
+Filtering result:
+reads passed filter: 37158544
+reads failed due to low quality: 721012
+reads failed due to too many N: 748
+reads failed due to too short: 47260
+reads failed due to low complexity: 15978
+reads with adapter trimmed: 9559590
+bases trimmed due to adapters: 276759986
+reads with polyX in 3' end: 342365
+bases trimmed in polyX tail: 5260766
+
+Duplication rate: 53.9304%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_009-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_009-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_009-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_009-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_009-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_009-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_009-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_009-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_009-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_009-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_009-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 581 seconds
+Read1 before filtering:
+total reads: 18020736
+total bases: 2703110400
+Q20 bases: 2622743537(97.0269%)
+Q30 bases: 2513710996(92.9933%)
+
+Read2 before filtering:
+total reads: 18020736
+total bases: 2703110400
+Q20 bases: 2600637043(96.2091%)
+Q30 bases: 2458288188(90.9429%)
+
+Read1 after filtering:
+total reads: 17667024
+total bases: 2510876885
+Q20 bases: 2453579623(97.718%)
+Q30 bases: 2358649357(93.9373%)
+
+Read2 aftering filtering:
+total reads: 17667024
+total bases: 2510514913
+Q20 bases: 2440839550(97.2247%)
+Q30 bases: 2316296531(92.2638%)
+
+Filtering result:
+reads passed filter: 35334048
+reads failed due to low quality: 652324
+reads failed due to too many N: 684
+reads failed due to too short: 40618
+reads failed due to low complexity: 13798
+reads with adapter trimmed: 9353109
+bases trimmed due to adapters: 265374810
+reads with polyX in 3' end: 322646
+bases trimmed in polyX tail: 4901961
+
+Duplication rate: 56.5652%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_010-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_010-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_010-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_010-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_010-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_010-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_010-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_010-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_010-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_010-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_010-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 527 seconds
+Read1 before filtering:
+total reads: 10272880
+total bases: 1540932000
+Q20 bases: 1491982592(96.8234%)
+Q30 bases: 1428883378(92.7285%)
+
+Read2 before filtering:
+total reads: 10272880
+total bases: 1540932000
+Q20 bases: 1480546847(96.0813%)
+Q30 bases: 1400096923(90.8604%)
+
+Read1 after filtering:
+total reads: 10044195
+total bases: 1448473821
+Q20 bases: 1414722207(97.6698%)
+Q30 bases: 1358791625(93.8085%)
+
+Read2 aftering filtering:
+total reads: 10044195
+total bases: 1448169287
+Q20 bases: 1407659795(97.2027%)
+Q30 bases: 1336304963(92.2755%)
+
+Filtering result:
+reads passed filter: 20088390
+reads failed due to low quality: 417748
+reads failed due to too many N: 368
+reads failed due to too short: 29592
+reads failed due to low complexity: 9662
+reads with adapter trimmed: 3789445
+bases trimmed due to adapters: 108685191
+reads with polyX in 3' end: 193147
+bases trimmed in polyX tail: 3020762
+
+Duplication rate: 62.8505%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_025-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_025-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_025-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_025-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_025-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_025-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_025-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_025-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_025-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_025-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_025-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 307 seconds
+Read1 before filtering:
+total reads: 13560540
+total bases: 2034081000
+Q20 bases: 1973287483(97.0113%)
+Q30 bases: 1891467090(92.9888%)
+
+Read2 before filtering:
+total reads: 13560540
+total bases: 2034081000
+Q20 bases: 1950792381(95.9053%)
+Q30 bases: 1837341028(90.3278%)
+
+Read1 after filtering:
+total reads: 13263376
+total bases: 1923241992
+Q20 bases: 1880156210(97.7597%)
+Q30 bases: 1806946420(93.9531%)
+
+Read2 aftering filtering:
+total reads: 13263376
+total bases: 1922664916
+Q20 bases: 1865034438(97.0026%)
+Q30 bases: 1763017979(91.6966%)
+
+Filtering result:
+reads passed filter: 26526752
+reads failed due to low quality: 544992
+reads failed due to too many N: 482
+reads failed due to too short: 37314
+reads failed due to low complexity: 11540
+reads with adapter trimmed: 4375008
+bases trimmed due to adapters: 123314249
+reads with polyX in 3' end: 249865
+bases trimmed in polyX tail: 3772869
+
+Duplication rate: 61.2282%
+
+Insert size peak (evaluated by paired-end reads): 176
+
+JSON report: fq_fp1/Sfa-CBas_016-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_016-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_016-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_016-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_016-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_016-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_016-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_016-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_016-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_016-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_016-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 398 seconds
+Read1 before filtering:
+total reads: 22567276
+total bases: 3385091400
+Q20 bases: 3277492156(96.8214%)
+Q30 bases: 3140948982(92.7877%)
+
+Read2 before filtering:
+total reads: 22567276
+total bases: 3385091400
+Q20 bases: 3247384622(95.932%)
+Q30 bases: 3060567717(90.4131%)
+
+Read1 after filtering:
+total reads: 22092064
+total bases: 3109953275
+Q20 bases: 3039682495(97.7405%)
+Q30 bases: 2923021805(93.9893%)
+
+Read2 aftering filtering:
+total reads: 22092064
+total bases: 3108923240
+Q20 bases: 3018334151(97.0862%)
+Q30 bases: 2857856356(91.9243%)
+
+Filtering result:
+reads passed filter: 44184128
+reads failed due to low quality: 862330
+reads failed due to too many N: 802
+reads failed due to too short: 64368
+reads failed due to low complexity: 22924
+reads with adapter trimmed: 13150492
+bases trimmed due to adapters: 390752255
+reads with polyX in 3' end: 369008
+bases trimmed in polyX tail: 5931298
+
+Duplication rate: 41.9516%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_002-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_002-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_002-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_002-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_002-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_002-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_002-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_002-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_002-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_002-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_002-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 694 seconds
+Read1 before filtering:
+total reads: 14048884
+total bases: 2107332600
+Q20 bases: 2040769618(96.8414%)
+Q30 bases: 1952926312(92.6729%)
+
+Read2 before filtering:
+total reads: 14048884
+total bases: 2107332600
+Q20 bases: 2028262046(96.2478%)
+Q30 bases: 1922909049(91.2485%)
+
+Read1 after filtering:
+total reads: 13732821
+total bases: 1954291191
+Q20 bases: 1907903247(97.6264%)
+Q30 bases: 1831668363(93.7255%)
+
+Read2 aftering filtering:
+total reads: 13732821
+total bases: 1954050722
+Q20 bases: 1902838506(97.3792%)
+Q30 bases: 1811460948(92.7029%)
+
+Filtering result:
+reads passed filter: 27465642
+reads failed due to low quality: 575252
+reads failed due to too many N: 542
+reads failed due to too short: 44646
+reads failed due to low complexity: 11686
+reads with adapter trimmed: 6537993
+bases trimmed due to adapters: 198826417
+reads with polyX in 3' end: 246232
+bases trimmed in polyX tail: 3854973
+
+Duplication rate: 48.2679%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_019-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_019-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_019-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_019-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_019-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_019-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_019-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_019-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_019-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_019-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_019-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 420 seconds
+Read1 before filtering:
+total reads: 12350320
+total bases: 1852548000
+Q20 bases: 1795582106(96.925%)
+Q30 bases: 1720366311(92.8649%)
+
+Read2 before filtering:
+total reads: 12350320
+total bases: 1852548000
+Q20 bases: 1783784444(96.2882%)
+Q30 bases: 1687459441(91.0886%)
+
+Read1 after filtering:
+total reads: 12104030
+total bases: 1737031025
+Q20 bases: 1697437496(97.7206%)
+Q30 bases: 1630805040(93.8846%)
+
+Read2 aftering filtering:
+total reads: 12104030
+total bases: 1736736358
+Q20 bases: 1689207312(97.2633%)
+Q30 bases: 1603558309(92.3317%)
+
+Filtering result:
+reads passed filter: 24208060
+reads failed due to low quality: 453258
+reads failed due to too many N: 374
+reads failed due to too short: 29904
+reads failed due to low complexity: 9044
+reads with adapter trimmed: 5228861
+bases trimmed due to adapters: 148095814
+reads with polyX in 3' end: 222443
+bases trimmed in polyX tail: 3361918
+
+Duplication rate: 54.7429%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Sfa-CBas_021-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_021-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_021-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_021-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_021-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_021-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_021-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_021-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_021-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_021-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_021-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 383 seconds
+Read1 before filtering:
+total reads: 12908232
+total bases: 1936234800
+Q20 bases: 1877168736(96.9494%)
+Q30 bases: 1798553107(92.8892%)
+
+Read2 before filtering:
+total reads: 12908232
+total bases: 1936234800
+Q20 bases: 1864697471(96.3053%)
+Q30 bases: 1764625473(91.137%)
+
+Read1 after filtering:
+total reads: 12643564
+total bases: 1798798393
+Q20 bases: 1758108169(97.7379%)
+Q30 bases: 1689359702(93.916%)
+
+Read2 aftering filtering:
+total reads: 12643564
+total bases: 1798763087
+Q20 bases: 1750658609(97.3257%)
+Q30 bases: 1662957158(92.45%)
+
+Filtering result:
+reads passed filter: 25287128
+reads failed due to low quality: 480294
+reads failed due to too many N: 496
+reads failed due to too short: 36266
+reads failed due to low complexity: 12280
+reads with adapter trimmed: 6706854
+bases trimmed due to adapters: 186380647
+reads with polyX in 3' end: 229903
+bases trimmed in polyX tail: 3533614
+
+Duplication rate: 64.6053%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_020-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_020-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_020-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_020-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_020-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_020-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_020-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_020-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_020-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_020-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_020-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 386 seconds
+Read1 before filtering:
+total reads: 13968351
+total bases: 2095252650
+Q20 bases: 2028931607(96.8347%)
+Q30 bases: 1941605309(92.6669%)
+
+Read2 before filtering:
+total reads: 13968351
+total bases: 2095252650
+Q20 bases: 2008856465(95.8766%)
+Q30 bases: 1894702420(90.4284%)
+
+Read1 after filtering:
+total reads: 13639520
+total bases: 1950841810
+Q20 bases: 1904189825(97.6086%)
+Q30 bases: 1828125988(93.7096%)
+
+Read2 aftering filtering:
+total reads: 13639520
+total bases: 1950610659
+Q20 bases: 1893029811(97.0481%)
+Q30 bases: 1792853151(91.9124%)
+
+Filtering result:
+reads passed filter: 27279040
+reads failed due to low quality: 606510
+reads failed due to too many N: 414
+reads failed due to too short: 38214
+reads failed due to low complexity: 12524
+reads with adapter trimmed: 6345054
+bases trimmed due to adapters: 179197718
+reads with polyX in 3' end: 258161
+bases trimmed in polyX tail: 3967264
+
+Duplication rate: 59.0249%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_026-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_026-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_026-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_026-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_026-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_026-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_026-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_026-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_026-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_026-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_026-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 413 seconds
+Read1 before filtering:
+total reads: 12540445
+total bases: 1881066750
+Q20 bases: 1821745840(96.8464%)
+Q30 bases: 1745513746(92.7938%)
+
+Read2 before filtering:
+total reads: 12540445
+total bases: 1881066750
+Q20 bases: 1812062765(96.3317%)
+Q30 bases: 1716557720(91.2545%)
+
+Read1 after filtering:
+total reads: 12288517
+total bases: 1753530399
+Q20 bases: 1713483728(97.7162%)
+Q30 bases: 1646645811(93.9046%)
+
+Read2 aftering filtering:
+total reads: 12288517
+total bases: 1753318495
+Q20 bases: 1706633393(97.3373%)
+Q30 bases: 1622617629(92.5455%)
+
+Filtering result:
+reads passed filter: 24577034
+reads failed due to low quality: 460384
+reads failed due to too many N: 442
+reads failed due to too short: 33874
+reads failed due to low complexity: 9156
+reads with adapter trimmed: 5855527
+bases trimmed due to adapters: 169059853
+reads with polyX in 3' end: 216166
+bases trimmed in polyX tail: 3284063
+
+Duplication rate: 41.7226%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_030-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_030-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_030-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_030-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_030-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_030-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_030-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_030-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_030-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_030-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_030-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 360 seconds
+Read1 before filtering:
+total reads: 14927090
+total bases: 2239063500
+Q20 bases: 2167148087(96.7881%)
+Q30 bases: 2074654821(92.6573%)
+
+Read2 before filtering:
+total reads: 14927090
+total bases: 2239063500
+Q20 bases: 2155760622(96.2796%)
+Q30 bases: 2046256868(91.389%)
+
+Read1 after filtering:
+total reads: 14589862
+total bases: 2057023725
+Q20 bases: 2008155584(97.6243%)
+Q30 bases: 1929041958(93.7783%)
+
+Read2 aftering filtering:
+total reads: 14589862
+total bases: 2056765414
+Q20 bases: 2004747236(97.4709%)
+Q30 bases: 1911901823(92.9567%)
+
+Filtering result:
+reads passed filter: 29179724
+reads failed due to low quality: 614218
+reads failed due to too many N: 576
+reads failed due to too short: 47162
+reads failed due to low complexity: 12500
+reads with adapter trimmed: 8322371
+bases trimmed due to adapters: 250660127
+reads with polyX in 3' end: 229731
+bases trimmed in polyX tail: 3676032
+
+Duplication rate: 45.1396%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_029-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_029-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_029-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_029-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_029-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_029-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_029-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_029-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_029-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_029-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_029-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 417 seconds
+Read1 before filtering:
+total reads: 3991630
+total bases: 598744500
+Q20 bases: 582578571(97.3%)
+Q30 bases: 559154408(93.3878%)
+
+Read2 before filtering:
+total reads: 3991630
+total bases: 598744500
+Q20 bases: 574576331(95.9635%)
+Q30 bases: 539551690(90.1138%)
+
+Read1 after filtering:
+total reads: 3918236
+total bases: 574004381
+Q20 bases: 561430819(97.8095%)
+Q30 bases: 539890430(94.0568%)
+
+Read2 aftering filtering:
+total reads: 3918236
+total bases: 573908358
+Q20 bases: 555589206(96.808%)
+Q30 bases: 523104789(91.1478%)
+
+Filtering result:
+reads passed filter: 7836472
+reads failed due to low quality: 137550
+reads failed due to too many N: 138
+reads failed due to too short: 6340
+reads failed due to low complexity: 2760
+reads with adapter trimmed: 988821
+bases trimmed due to adapters: 25330492
+reads with polyX in 3' end: 70986
+bases trimmed in polyX tail: 1039146
+
+Duplication rate: 90.5251%
+
+Insert size peak (evaluated by paired-end reads): 203
+
+JSON report: fq_fp1/Sfa-CBas_046-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_046-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_046-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_046-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_046-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_046-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_046-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_046-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_046-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_046-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_046-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 116 seconds
+Read1 before filtering:
+total reads: 6249234
+total bases: 937385100
+Q20 bases: 912161923(97.3092%)
+Q30 bases: 876066836(93.4586%)
+
+Read2 before filtering:
+total reads: 6249234
+total bases: 937385100
+Q20 bases: 901893109(96.2137%)
+Q30 bases: 849653251(90.6408%)
+
+Read1 after filtering:
+total reads: 6142995
+total bases: 896438519
+Q20 bases: 876987290(97.8302%)
+Q30 bases: 843957496(94.1456%)
+
+Read2 aftering filtering:
+total reads: 6142995
+total bases: 896325405
+Q20 bases: 869694209(97.0288%)
+Q30 bases: 821577762(91.6607%)
+
+Filtering result:
+reads passed filter: 12285990
+reads failed due to low quality: 200388
+reads failed due to too many N: 230
+reads failed due to too short: 8586
+reads failed due to low complexity: 3274
+reads with adapter trimmed: 1830328
+bases trimmed due to adapters: 46385708
+reads with polyX in 3' end: 116808
+bases trimmed in polyX tail: 1662225
+
+Duplication rate: 90.971%
+
+Insert size peak (evaluated by paired-end reads): 200
+
+JSON report: fq_fp1/Sfa-CBas_039-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_039-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_039-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_039-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_039-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_039-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_039-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_039-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_039-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_039-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_039-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 186 seconds
+Read1 before filtering:
+total reads: 12123402
+total bases: 1818510300
+Q20 bases: 1757767611(96.6598%)
+Q30 bases: 1682177009(92.503%)
+
+Read2 before filtering:
+total reads: 12123402
+total bases: 1818510300
+Q20 bases: 1743593277(95.8803%)
+Q30 bases: 1645522681(90.4874%)
+
+Read1 after filtering:
+total reads: 11832214
+total bases: 1680044010
+Q20 bases: 1640998902(97.6759%)
+Q30 bases: 1576149054(93.8159%)
+
+Read2 aftering filtering:
+total reads: 11832214
+total bases: 1679808362
+Q20 bases: 1631385092(97.1173%)
+Q30 bases: 1546288006(92.0515%)
+
+Filtering result:
+reads passed filter: 23664428
+reads failed due to low quality: 532502
+reads failed due to too many N: 380
+reads failed due to too short: 38358
+reads failed due to low complexity: 11136
+reads with adapter trimmed: 5824487
+bases trimmed due to adapters: 177985750
+reads with polyX in 3' end: 195810
+bases trimmed in polyX tail: 3142834
+
+Duplication rate: 39.8302%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_031-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_031-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_031-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_031-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_031-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_031-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_031-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_031-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_031-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_031-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_031-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 377 seconds
+Read1 before filtering:
+total reads: 15248495
+total bases: 2287274250
+Q20 bases: 2215855391(96.8776%)
+Q30 bases: 2122291623(92.7869%)
+
+Read2 before filtering:
+total reads: 15248495
+total bases: 2287274250
+Q20 bases: 2208779016(96.5682%)
+Q30 bases: 2102261034(91.9112%)
+
+Read1 after filtering:
+total reads: 14934925
+total bases: 2090447510
+Q20 bases: 2041434617(97.6554%)
+Q30 bases: 1961743110(93.8432%)
+
+Read2 aftering filtering:
+total reads: 14934925
+total bases: 2090260146
+Q20 bases: 2041591499(97.6716%)
+Q30 bases: 1952208806(93.3955%)
+
+Filtering result:
+reads passed filter: 29869850
+reads failed due to low quality: 567798
+reads failed due to too many N: 558
+reads failed due to too short: 43896
+reads failed due to low complexity: 14888
+reads with adapter trimmed: 9636308
+bases trimmed due to adapters: 287757180
+reads with polyX in 3' end: 238199
+bases trimmed in polyX tail: 3921652
+
+Duplication rate: 41.1296%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_027-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_027-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_027-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_027-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_027-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_027-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_027-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_027-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_027-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_027-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_027-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 468 seconds
+Read1 before filtering:
+total reads: 18640260
+total bases: 2796039000
+Q20 bases: 2700320589(96.5766%)
+Q30 bases: 2584118727(92.4207%)
+
+Read2 before filtering:
+total reads: 18640260
+total bases: 2796039000
+Q20 bases: 2675399263(95.6853%)
+Q30 bases: 2517891556(90.0521%)
+
+Read1 after filtering:
+total reads: 18182565
+total bases: 2587684241
+Q20 bases: 2525217367(97.586%)
+Q30 bases: 2425070551(93.7159%)
+
+Read2 aftering filtering:
+total reads: 18182565
+total bases: 2587370360
+Q20 bases: 2508273001(96.9429%)
+Q30 bases: 2371478040(91.6559%)
+
+Filtering result:
+reads passed filter: 36365130
+reads failed due to low quality: 834254
+reads failed due to too many N: 692
+reads failed due to too short: 61986
+reads failed due to low complexity: 18458
+reads with adapter trimmed: 8674126
+bases trimmed due to adapters: 262263027
+reads with polyX in 3' end: 325891
+bases trimmed in polyX tail: 5264090
+
+Duplication rate: 41.76%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_017-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_017-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_017-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_017-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_017-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_017-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_017-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_017-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_017-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_017-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_017-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 557 seconds
+Read1 before filtering:
+total reads: 15578368
+total bases: 2336755200
+Q20 bases: 2262320646(96.8146%)
+Q30 bases: 2167215413(92.7446%)
+
+Read2 before filtering:
+total reads: 15578368
+total bases: 2336755200
+Q20 bases: 2247576440(96.1836%)
+Q30 bases: 2127996290(91.0663%)
+
+Read1 after filtering:
+total reads: 15237327
+total bases: 2188378354
+Q20 bases: 2138181384(97.7062%)
+Q30 bases: 2054588486(93.8863%)
+
+Read2 aftering filtering:
+total reads: 15237327
+total bases: 2188134347
+Q20 bases: 2128850156(97.2907%)
+Q30 bases: 2023286045(92.4663%)
+
+Filtering result:
+reads passed filter: 30474654
+reads failed due to low quality: 631218
+reads failed due to too many N: 536
+reads failed due to too short: 39660
+reads failed due to low complexity: 10668
+reads with adapter trimmed: 6352349
+bases trimmed due to adapters: 181826707
+reads with polyX in 3' end: 269452
+bases trimmed in polyX tail: 4169366
+
+Duplication rate: 49.3362%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_028-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_028-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_028-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_028-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_028-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_028-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_028-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_028-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_028-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_028-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_028-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 464 seconds
+Read1 before filtering:
+total reads: 6131636
+total bases: 919745400
+Q20 bases: 895190701(97.3303%)
+Q30 bases: 859496362(93.4494%)
+
+Read2 before filtering:
+total reads: 6131636
+total bases: 919745400
+Q20 bases: 881901361(95.8854%)
+Q30 bases: 827059651(89.9227%)
+
+Read1 after filtering:
+total reads: 6021729
+total bases: 883623004
+Q20 bases: 864595330(97.8466%)
+Q30 bases: 831678135(94.1214%)
+
+Read2 aftering filtering:
+total reads: 6021729
+total bases: 883437128
+Q20 bases: 854526439(96.7275%)
+Q30 bases: 803517363(90.9535%)
+
+Filtering result:
+reads passed filter: 12043458
+reads failed due to low quality: 205066
+reads failed due to too many N: 216
+reads failed due to too short: 10564
+reads failed due to low complexity: 3968
+reads with adapter trimmed: 1449505
+bases trimmed due to adapters: 35782808
+reads with polyX in 3' end: 125113
+bases trimmed in polyX tail: 1802099
+
+Duplication rate: 90.5115%
+
+Insert size peak (evaluated by paired-end reads): 185
+
+JSON report: fq_fp1/Sfa-CBas_044-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_044-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_044-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_044-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_044-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_044-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_044-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_044-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_044-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_044-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_044-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 194 seconds
+Read1 before filtering:
+total reads: 7931451
+total bases: 1189717650
+Q20 bases: 1153824376(96.983%)
+Q30 bases: 1105714765(92.9393%)
+
+Read2 before filtering:
+total reads: 7931451
+total bases: 1189717650
+Q20 bases: 1148025096(96.4956%)
+Q30 bases: 1088190971(91.4663%)
+
+Read1 after filtering:
+total reads: 7788000
+total bases: 1107530574
+Q20 bases: 1082314765(97.7232%)
+Q30 bases: 1040070382(93.909%)
+
+Read2 aftering filtering:
+total reads: 7788000
+total bases: 1107532094
+Q20 bases: 1078731450(97.3996%)
+Q30 bases: 1026087505(92.6463%)
+
+Filtering result:
+reads passed filter: 15576000
+reads failed due to low quality: 263956
+reads failed due to too many N: 268
+reads failed due to too short: 17104
+reads failed due to low complexity: 5574
+reads with adapter trimmed: 4343921
+bases trimmed due to adapters: 115720907
+reads with polyX in 3' end: 143116
+bases trimmed in polyX tail: 2078044
+
+Duplication rate: 68.1155%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_042-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_042-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_042-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_042-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_042-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_042-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_042-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_042-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_042-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_042-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_042-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 234 seconds
+Read1 before filtering:
+total reads: 21001026
+total bases: 3150153900
+Q20 bases: 3044515604(96.6466%)
+Q30 bases: 2915009753(92.5355%)
+
+Read2 before filtering:
+total reads: 21001026
+total bases: 3150153900
+Q20 bases: 3031000368(96.2175%)
+Q30 bases: 2874690562(91.2556%)
+
+Read1 after filtering:
+total reads: 20532659
+total bases: 2890944443
+Q20 bases: 2823810759(97.6778%)
+Q30 bases: 2713361828(93.8573%)
+
+Read2 aftering filtering:
+total reads: 20532659
+total bases: 2890302696
+Q20 bases: 2816263475(97.4384%)
+Q30 bases: 2683924076(92.8596%)
+
+Filtering result:
+reads passed filter: 41065318
+reads failed due to low quality: 839502
+reads failed due to too many N: 770
+reads failed due to too short: 77294
+reads failed due to low complexity: 19168
+reads with adapter trimmed: 11611839
+bases trimmed due to adapters: 357257757
+reads with polyX in 3' end: 328003
+bases trimmed in polyX tail: 5332656
+
+Duplication rate: 37.0661%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_023-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_023-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_023-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_023-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_023-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_023-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_023-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_023-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_023-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_023-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_023-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 614 seconds
+Read1 before filtering:
+total reads: 16590751
+total bases: 2488612650
+Q20 bases: 2413228708(96.9708%)
+Q30 bases: 2313549507(92.9654%)
+
+Read2 before filtering:
+total reads: 16590751
+total bases: 2488612650
+Q20 bases: 2394261451(96.2087%)
+Q30 bases: 2261663162(90.8805%)
+
+Read1 after filtering:
+total reads: 16264857
+total bases: 2307160460
+Q20 bases: 2255972218(97.7813%)
+Q30 bases: 2169136443(94.0176%)
+
+Read2 aftering filtering:
+total reads: 16264857
+total bases: 2306974693
+Q20 bases: 2243267937(97.2385%)
+Q30 bases: 2127395398(92.2158%)
+
+Filtering result:
+reads passed filter: 32529714
+reads failed due to low quality: 585474
+reads failed due to too many N: 580
+reads failed due to too short: 48434
+reads failed due to low complexity: 17300
+reads with adapter trimmed: 8766708
+bases trimmed due to adapters: 253021532
+reads with polyX in 3' end: 286905
+bases trimmed in polyX tail: 4511737
+
+Duplication rate: 52.3659%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_032-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_032-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_032-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_032-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_032-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_032-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_032-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_032-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_032-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_032-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_032-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 480 seconds
+Read1 before filtering:
+total reads: 7691500
+total bases: 1153725000
+Q20 bases: 1119912470(97.0693%)
+Q30 bases: 1073551212(93.0509%)
+
+Read2 before filtering:
+total reads: 7691500
+total bases: 1153725000
+Q20 bases: 1108519947(96.0818%)
+Q30 bases: 1045047238(90.5803%)
+
+Read1 after filtering:
+total reads: 7540394
+total bases: 1090901625
+Q20 bases: 1066726659(97.7839%)
+Q30 bases: 1025197723(93.9771%)
+
+Read2 aftering filtering:
+total reads: 7540394
+total bases: 1090785721
+Q20 bases: 1058478123(97.0381%)
+Q30 bases: 1001038345(91.7722%)
+
+Filtering result:
+reads passed filter: 15080788
+reads failed due to low quality: 276824
+reads failed due to too many N: 272
+reads failed due to too short: 19706
+reads failed due to low complexity: 5410
+reads with adapter trimmed: 2698856
+bases trimmed due to adapters: 74819971
+reads with polyX in 3' end: 142774
+bases trimmed in polyX tail: 2093651
+
+Duplication rate: 61.9007%
+
+Insert size peak (evaluated by paired-end reads): 163
+
+JSON report: fq_fp1/Sfa-CBas_059-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_059-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_059-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_059-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_059-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_059-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_059-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_059-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_059-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_059-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_059-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 243 seconds
+Read1 before filtering:
+total reads: 6720106
+total bases: 1008015900
+Q20 bases: 980535370(97.2738%)
+Q30 bases: 941464368(93.3978%)
+
+Read2 before filtering:
+total reads: 6720106
+total bases: 1008015900
+Q20 bases: 972440677(96.4708%)
+Q30 bases: 919873630(91.2559%)
+
+Read1 after filtering:
+total reads: 6603117
+total bases: 953538970
+Q20 bases: 932690995(97.8136%)
+Q30 bases: 897473718(94.1203%)
+
+Read2 aftering filtering:
+total reads: 6603117
+total bases: 953572828
+Q20 bases: 927490924(97.2648%)
+Q30 bases: 879820259(92.2657%)
+
+Filtering result:
+reads passed filter: 13206234
+reads failed due to low quality: 219828
+reads failed due to too many N: 236
+reads failed due to too short: 9712
+reads failed due to low complexity: 4202
+reads with adapter trimmed: 2755551
+bases trimmed due to adapters: 69914579
+reads with polyX in 3' end: 117061
+bases trimmed in polyX tail: 1692520
+
+Duplication rate: 91.6223%
+
+Insert size peak (evaluated by paired-end reads): 170
+
+JSON report: fq_fp1/Sfa-CBas_073-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_073-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_073-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_073-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_073-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_073-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_073-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_073-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_073-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_073-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_073-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 188 seconds
+Read1 before filtering:
+total reads: 4346434
+total bases: 651965100
+Q20 bases: 634319544(97.2935%)
+Q30 bases: 608885860(93.3924%)
+
+Read2 before filtering:
+total reads: 4346434
+total bases: 651965100
+Q20 bases: 625018846(95.8669%)
+Q30 bases: 586344897(89.935%)
+
+Read1 after filtering:
+total reads: 4267349
+total bases: 628905550
+Q20 bases: 615148058(97.8125%)
+Q30 bases: 591606102(94.0691%)
+
+Read2 aftering filtering:
+total reads: 4267349
+total bases: 628745769
+Q20 bases: 608051408(96.7086%)
+Q30 bases: 571924256(90.9627%)
+
+Filtering result:
+reads passed filter: 8534698
+reads failed due to low quality: 149720
+reads failed due to too many N: 198
+reads failed due to too short: 6670
+reads failed due to low complexity: 1582
+reads with adapter trimmed: 810120
+bases trimmed due to adapters: 19742072
+reads with polyX in 3' end: 84012
+bases trimmed in polyX tail: 1154559
+
+Duplication rate: 90.3791%
+
+Insert size peak (evaluated by paired-end reads): 196
+
+JSON report: fq_fp1/Sfa-CBas_090-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_090-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_090-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_090-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_090-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_090-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_090-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_090-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_090-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_090-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_090-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 137 seconds
+Read1 before filtering:
+total reads: 14040967
+total bases: 2106145050
+Q20 bases: 2041330863(96.9226%)
+Q30 bases: 1956154846(92.8784%)
+
+Read2 before filtering:
+total reads: 14040967
+total bases: 2106145050
+Q20 bases: 2030244479(96.3962%)
+Q30 bases: 1924652320(91.3827%)
+
+Read1 after filtering:
+total reads: 13763098
+total bases: 1966772485
+Q20 bases: 1922110307(97.7292%)
+Q30 bases: 1847139857(93.9173%)
+
+Read2 aftering filtering:
+total reads: 13763098
+total bases: 1966522174
+Q20 bases: 1915394985(97.4001%)
+Q30 bases: 1822432283(92.6729%)
+
+Filtering result:
+reads passed filter: 27526196
+reads failed due to low quality: 508206
+reads failed due to too many N: 468
+reads failed due to too short: 36432
+reads failed due to low complexity: 10632
+reads with adapter trimmed: 6450240
+bases trimmed due to adapters: 184580262
+reads with polyX in 3' end: 233083
+bases trimmed in polyX tail: 3524891
+
+Duplication rate: 49.1114%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_036-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_036-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_036-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_036-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_036-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_036-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_036-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_036-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_036-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_036-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_036-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 430 seconds
+Read1 before filtering:
+total reads: 17791483
+total bases: 2668722450
+Q20 bases: 2574171458(96.4571%)
+Q30 bases: 2461580250(92.2382%)
+
+Read2 before filtering:
+total reads: 17791483
+total bases: 2668722450
+Q20 bases: 2560335649(95.9386%)
+Q30 bases: 2420203068(90.6877%)
+
+Read1 after filtering:
+total reads: 17353578
+total bases: 2439061247
+Q20 bases: 2379695747(97.5661%)
+Q30 bases: 2284524677(93.6641%)
+
+Read2 aftering filtering:
+total reads: 17353578
+total bases: 2439018560
+Q20 bases: 2370840825(97.2047%)
+Q30 bases: 2251499389(92.3117%)
+
+Filtering result:
+reads passed filter: 34707156
+reads failed due to low quality: 795438
+reads failed due to too many N: 636
+reads failed due to too short: 60240
+reads failed due to low complexity: 19496
+reads with adapter trimmed: 10055636
+bases trimmed due to adapters: 310434036
+reads with polyX in 3' end: 303842
+bases trimmed in polyX tail: 5071512
+
+Duplication rate: 38.1078%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_033-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_033-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_033-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_033-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_033-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_033-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_033-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_033-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_033-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_033-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_033-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 525 seconds
+Read1 before filtering:
+total reads: 15283018
+total bases: 2292452700
+Q20 bases: 2219344658(96.8109%)
+Q30 bases: 2123230441(92.6183%)
+
+Read2 before filtering:
+total reads: 15283018
+total bases: 2292452700
+Q20 bases: 2200856887(96.0045%)
+Q30 bases: 2080990126(90.7757%)
+
+Read1 after filtering:
+total reads: 14908716
+total bases: 2097906996
+Q20 bases: 2048124085(97.627%)
+Q30 bases: 1966620826(93.742%)
+
+Read2 aftering filtering:
+total reads: 14908716
+total bases: 2097720934
+Q20 bases: 2039944401(97.2457%)
+Q30 bases: 1937760388(92.3746%)
+
+Filtering result:
+reads passed filter: 29817432
+reads failed due to low quality: 674684
+reads failed due to too many N: 594
+reads failed due to too short: 54820
+reads failed due to low complexity: 18506
+reads with adapter trimmed: 8975557
+bases trimmed due to adapters: 264635840
+reads with polyX in 3' end: 291326
+bases trimmed in polyX tail: 4590600
+
+Duplication rate: 55.8343%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_041-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_041-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_041-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_041-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_041-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_041-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_041-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_041-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_041-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_041-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_041-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 435 seconds
+Read1 before filtering:
+total reads: 12283147
+total bases: 1842472050
+Q20 bases: 1780343512(96.628%)
+Q30 bases: 1703034375(92.432%)
+
+Read2 before filtering:
+total reads: 12283147
+total bases: 1842472050
+Q20 bases: 1760683209(95.5609%)
+Q30 bases: 1656656622(89.9149%)
+
+Read1 after filtering:
+total reads: 11948397
+total bases: 1719840141
+Q20 bases: 1677540379(97.5405%)
+Q30 bases: 1609867437(93.6056%)
+
+Read2 aftering filtering:
+total reads: 11948397
+total bases: 1719478158
+Q20 bases: 1666000279(96.8899%)
+Q30 bases: 1574519376(91.5696%)
+
+Filtering result:
+reads passed filter: 23896794
+reads failed due to low quality: 605588
+reads failed due to too many N: 408
+reads failed due to too short: 49260
+reads failed due to low complexity: 14244
+reads with adapter trimmed: 4841668
+bases trimmed due to adapters: 135237847
+reads with polyX in 3' end: 238305
+bases trimmed in polyX tail: 3840521
+
+Duplication rate: 56.6842%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_061-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_061-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_061-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_061-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_061-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_061-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_061-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_061-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_061-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_061-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_061-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 352 seconds
+Read1 before filtering:
+total reads: 15330139
+total bases: 2299520850
+Q20 bases: 2225749517(96.7919%)
+Q30 bases: 2132555782(92.7391%)
+
+Read2 before filtering:
+total reads: 15330139
+total bases: 2299520850
+Q20 bases: 2214191159(96.2892%)
+Q30 bases: 2098863485(91.2739%)
+
+Read1 after filtering:
+total reads: 15007290
+total bases: 2130478509
+Q20 bases: 2081484778(97.7003%)
+Q30 bases: 2000699377(93.9085%)
+
+Read2 aftering filtering:
+total reads: 15007290
+total bases: 2129969458
+Q20 bases: 2074918381(97.4154%)
+Q30 bases: 1975573217(92.7512%)
+
+Filtering result:
+reads passed filter: 30014580
+reads failed due to low quality: 591520
+reads failed due to too many N: 576
+reads failed due to too short: 41448
+reads failed due to low complexity: 12154
+reads with adapter trimmed: 7754536
+bases trimmed due to adapters: 228513410
+reads with polyX in 3' end: 257635
+bases trimmed in polyX tail: 4067364
+
+Duplication rate: 46.8548%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_048-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_048-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_048-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_048-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_048-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_048-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_048-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_048-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_048-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_048-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_048-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 441 seconds
+Read1 before filtering:
+total reads: 6975158
+total bases: 1046273700
+Q20 bases: 1017830423(97.2815%)
+Q30 bases: 976946287(93.3739%)
+
+Read2 before filtering:
+total reads: 6975158
+total bases: 1046273700
+Q20 bases: 1002921180(95.8565%)
+Q30 bases: 940903207(89.929%)
+
+Read1 after filtering:
+total reads: 6842105
+total bases: 1001944809
+Q20 bases: 979965220(97.8063%)
+Q30 bases: 942508403(94.0679%)
+
+Read2 aftering filtering:
+total reads: 6842105
+total bases: 1001826135
+Q20 bases: 969229647(96.7463%)
+Q30 bases: 911893932(91.0232%)
+
+Filtering result:
+reads passed filter: 13684210
+reads failed due to low quality: 248662
+reads failed due to too many N: 266
+reads failed due to too short: 11950
+reads failed due to low complexity: 5228
+reads with adapter trimmed: 1755256
+bases trimmed due to adapters: 44459605
+reads with polyX in 3' end: 136101
+bases trimmed in polyX tail: 1990098
+
+Duplication rate: 90.6803%
+
+Insert size peak (evaluated by paired-end reads): 182
+
+JSON report: fq_fp1/Sfa-CBas_092-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_092-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_092-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_092-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_092-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_092-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_092-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_092-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_092-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_092-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_092-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 203 seconds
+Read1 before filtering:
+total reads: 13191144
+total bases: 1978671600
+Q20 bases: 1915194620(96.7919%)
+Q30 bases: 1834861782(92.732%)
+
+Read2 before filtering:
+total reads: 13191144
+total bases: 1978671600
+Q20 bases: 1899440707(95.9958%)
+Q30 bases: 1791738152(90.5526%)
+
+Read1 after filtering:
+total reads: 12901537
+total bases: 1842737087
+Q20 bases: 1799852769(97.6728%)
+Q30 bases: 1729730207(93.8674%)
+
+Read2 aftering filtering:
+total reads: 12901537
+total bases: 1842315495
+Q20 bases: 1789428102(97.1293%)
+Q30 bases: 1695132081(92.011%)
+
+Filtering result:
+reads passed filter: 25803074
+reads failed due to low quality: 531874
+reads failed due to too many N: 464
+reads failed due to too short: 36110
+reads failed due to low complexity: 10766
+reads with adapter trimmed: 5983162
+bases trimmed due to adapters: 174521358
+reads with polyX in 3' end: 233067
+bases trimmed in polyX tail: 3615593
+
+Duplication rate: 53.9478%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_066-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_066-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_066-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_066-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_066-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_066-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_066-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_066-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_066-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_066-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_066-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 366 seconds
+Read1 before filtering:
+total reads: 12128162
+total bases: 1819224300
+Q20 bases: 1760804292(96.7887%)
+Q30 bases: 1685892674(92.671%)
+
+Read2 before filtering:
+total reads: 12128162
+total bases: 1819224300
+Q20 bases: 1747298407(96.0463%)
+Q30 bases: 1649881113(90.6915%)
+
+Read1 after filtering:
+total reads: 11862759
+total bases: 1698545948
+Q20 bases: 1658443428(97.639%)
+Q30 bases: 1592655513(93.7658%)
+
+Read2 aftering filtering:
+total reads: 11862759
+total bases: 1698256829
+Q20 bases: 1649872622(97.1509%)
+Q30 bases: 1564051054(92.0974%)
+
+Filtering result:
+reads passed filter: 23725518
+reads failed due to low quality: 487654
+reads failed due to too many N: 428
+reads failed due to too short: 32284
+reads failed due to low complexity: 10440
+reads with adapter trimmed: 5322216
+bases trimmed due to adapters: 151762560
+reads with polyX in 3' end: 218552
+bases trimmed in polyX tail: 3428336
+
+Duplication rate: 55.0162%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_078-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_078-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_078-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_078-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_078-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_078-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_078-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_078-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_078-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_078-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_078-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 334 seconds
+Read1 before filtering:
+total reads: 8668147
+total bases: 1300222050
+Q20 bases: 1265810811(97.3534%)
+Q30 bases: 1215862603(93.5119%)
+
+Read2 before filtering:
+total reads: 8668147
+total bases: 1300222050
+Q20 bases: 1256180607(96.6128%)
+Q30 bases: 1190445034(91.5571%)
+
+Read1 after filtering:
+total reads: 8520129
+total bases: 1232785250
+Q20 bases: 1206460934(97.8646%)
+Q30 bases: 1161247041(94.197%)
+
+Read2 aftering filtering:
+total reads: 8520129
+total bases: 1232665186
+Q20 bases: 1200877496(97.4212%)
+Q30 bases: 1141376407(92.5942%)
+
+Filtering result:
+reads passed filter: 17040258
+reads failed due to low quality: 275582
+reads failed due to too many N: 368
+reads failed due to too short: 14448
+reads failed due to low complexity: 5638
+reads with adapter trimmed: 3409310
+bases trimmed due to adapters: 85538094
+reads with polyX in 3' end: 154109
+bases trimmed in polyX tail: 2264540
+
+Duplication rate: 92.4813%
+
+Insert size peak (evaluated by paired-end reads): 175
+
+JSON report: fq_fp1/Sfa-CBas_096-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_096-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_096-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_096-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_096-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_096-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_096-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_096-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_096-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_096-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_096-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 229 seconds
+Read1 before filtering:
+total reads: 13169028
+total bases: 1975354200
+Q20 bases: 1911560362(96.7705%)
+Q30 bases: 1830225209(92.653%)
+
+Read2 before filtering:
+total reads: 13169028
+total bases: 1975354200
+Q20 bases: 1897900148(96.079%)
+Q30 bases: 1796097509(90.9253%)
+
+Read1 after filtering:
+total reads: 12845114
+total bases: 1833152559
+Q20 bases: 1790549476(97.676%)
+Q30 bases: 1719795175(93.8163%)
+
+Read2 aftering filtering:
+total reads: 12845114
+total bases: 1832816630
+Q20 bases: 1783348254(97.301%)
+Q30 bases: 1694930329(92.4768%)
+
+Filtering result:
+reads passed filter: 25690228
+reads failed due to low quality: 575498
+reads failed due to too many N: 408
+reads failed due to too short: 57294
+reads failed due to low complexity: 14628
+reads with adapter trimmed: 5997809
+bases trimmed due to adapters: 176715882
+reads with polyX in 3' end: 225009
+bases trimmed in polyX tail: 3718291
+
+Duplication rate: 44.8178%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_086-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_086-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_086-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_086-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_086-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_086-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_086-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_086-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_086-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_086-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_086-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 372 seconds
+Read1 before filtering:
+total reads: 13965783
+total bases: 2094867450
+Q20 bases: 2024245711(96.6288%)
+Q30 bases: 1937326524(92.4797%)
+
+Read2 before filtering:
+total reads: 13965783
+total bases: 2094867450
+Q20 bases: 2010484287(95.9719%)
+Q30 bases: 1897651840(90.5858%)
+
+Read1 after filtering:
+total reads: 13658493
+total bases: 1902964297
+Q20 bases: 1858397862(97.6581%)
+Q30 bases: 1785563378(93.8306%)
+
+Read2 aftering filtering:
+total reads: 13658493
+total bases: 1902671603
+Q20 bases: 1847981931(97.1256%)
+Q30 bases: 1752337828(92.0988%)
+
+Filtering result:
+reads passed filter: 27316986
+reads failed due to low quality: 565014
+reads failed due to too many N: 484
+reads failed due to too short: 37966
+reads failed due to low complexity: 11116
+reads with adapter trimmed: 9219120
+bases trimmed due to adapters: 279420790
+reads with polyX in 3' end: 248899
+bases trimmed in polyX tail: 3816047
+
+Duplication rate: 51.0357%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_067-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_067-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_067-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_067-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_067-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_067-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_067-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_067-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_067-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_067-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_067-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 413 seconds
+Read1 before filtering:
+total reads: 13642371
+total bases: 2046355650
+Q20 bases: 1975088426(96.5174%)
+Q30 bases: 1889232078(92.3218%)
+
+Read2 before filtering:
+total reads: 13642371
+total bases: 2046355650
+Q20 bases: 1963762799(95.9639%)
+Q30 bases: 1856267523(90.7109%)
+
+Read1 after filtering:
+total reads: 13311972
+total bases: 1881212780
+Q20 bases: 1835053147(97.5463%)
+Q30 bases: 1761713175(93.6477%)
+
+Read2 aftering filtering:
+total reads: 13311972
+total bases: 1881125354
+Q20 bases: 1828382732(97.1962%)
+Q30 bases: 1736127511(92.292%)
+
+Filtering result:
+reads passed filter: 26623944
+reads failed due to low quality: 598754
+reads failed due to too many N: 518
+reads failed due to too short: 47800
+reads failed due to low complexity: 13726
+reads with adapter trimmed: 7355231
+bases trimmed due to adapters: 218808071
+reads with polyX in 3' end: 253523
+bases trimmed in polyX tail: 4031475
+
+Duplication rate: 52.8243%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_088-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_088-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_088-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_088-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_088-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_088-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_088-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_088-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_088-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_088-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_088-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 365 seconds
+Read1 before filtering:
+total reads: 14163786
+total bases: 2124567900
+Q20 bases: 2056179871(96.7811%)
+Q30 bases: 1968996671(92.6775%)
+
+Read2 before filtering:
+total reads: 14163786
+total bases: 2124567900
+Q20 bases: 2035748761(95.8194%)
+Q30 bases: 1919094626(90.3287%)
+
+Read1 after filtering:
+total reads: 13826090
+total bases: 1961799360
+Q20 bases: 1915988261(97.6648%)
+Q30 bases: 1840874639(93.836%)
+
+Read2 aftering filtering:
+total reads: 13826090
+total bases: 1961383559
+Q20 bases: 1903216276(97.0344%)
+Q30 bases: 1802017557(91.8748%)
+
+Filtering result:
+reads passed filter: 27652180
+reads failed due to low quality: 613946
+reads failed due to too many N: 428
+reads failed due to too short: 46516
+reads failed due to low complexity: 14502
+reads with adapter trimmed: 7626156
+bases trimmed due to adapters: 214607792
+reads with polyX in 3' end: 229380
+bases trimmed in polyX tail: 3657961
+
+Duplication rate: 52.6292%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_076-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_076-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_076-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_076-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_076-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_076-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_076-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_076-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_076-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_076-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_076-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 407 seconds
+Read1 before filtering:
+total reads: 22080647
+total bases: 3312097050
+Q20 bases: 3210762539(96.9405%)
+Q30 bases: 3074870194(92.8376%)
+
+Read2 before filtering:
+total reads: 22080647
+total bases: 3312097050
+Q20 bases: 3185035505(96.1637%)
+Q30 bases: 3015771375(91.0532%)
+
+Read1 after filtering:
+total reads: 21569655
+total bases: 3057334910
+Q20 bases: 2987192349(97.7058%)
+Q30 bases: 2870376119(93.8849%)
+
+Read2 aftering filtering:
+total reads: 21569655
+total bases: 3057002843
+Q20 bases: 2975195364(97.3239%)
+Q30 bases: 2828689710(92.5315%)
+
+Filtering result:
+reads passed filter: 43139310
+reads failed due to low quality: 922142
+reads failed due to too many N: 832
+reads failed due to too short: 77620
+reads failed due to low complexity: 21390
+reads with adapter trimmed: 11553732
+bases trimmed due to adapters: 339419658
+reads with polyX in 3' end: 382304
+bases trimmed in polyX tail: 6158494
+
+Duplication rate: 54.6781%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_043-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_043-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_043-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_043-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_043-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_043-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_043-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_043-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_043-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_043-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_043-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 596 seconds
+Read1 before filtering:
+total reads: 17071063
+total bases: 2560659450
+Q20 bases: 2480755275(96.8795%)
+Q30 bases: 2374574221(92.7329%)
+
+Read2 before filtering:
+total reads: 17071063
+total bases: 2560659450
+Q20 bases: 2459607904(96.0537%)
+Q30 bases: 2324980990(90.7962%)
+
+Read1 after filtering:
+total reads: 16684650
+total bases: 2373388435
+Q20 bases: 2317802427(97.6579%)
+Q30 bases: 2225946778(93.7877%)
+
+Read2 aftering filtering:
+total reads: 16684650
+total bases: 2373152427
+Q20 bases: 2306760422(97.2024%)
+Q30 bases: 2189618768(92.2663%)
+
+Filtering result:
+reads passed filter: 33369300
+reads failed due to low quality: 709322
+reads failed due to too many N: 594
+reads failed due to too short: 48236
+reads failed due to low complexity: 14674
+reads with adapter trimmed: 8674925
+bases trimmed due to adapters: 245716012
+reads with polyX in 3' end: 299712
+bases trimmed in polyX tail: 4715694
+
+Duplication rate: 51.3053%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Sfa-CBas_062-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_062-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_062-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_062-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_062-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_062-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_062-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_062-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_062-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_062-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_062-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 456 seconds
+Read1 before filtering:
+total reads: 19272896
+total bases: 2890934400
+Q20 bases: 2801185092(96.8955%)
+Q30 bases: 2684670559(92.8651%)
+
+Read2 before filtering:
+total reads: 19272896
+total bases: 2890934400
+Q20 bases: 2779786023(96.1553%)
+Q30 bases: 2629466453(90.9556%)
+
+Read1 after filtering:
+total reads: 18855008
+total bases: 2716599304
+Q20 bases: 2655002047(97.7326%)
+Q30 bases: 2551776656(93.9328%)
+
+Read2 aftering filtering:
+total reads: 18855008
+total bases: 2716092189
+Q20 bases: 2641550808(97.2556%)
+Q30 bases: 2508456948(92.3554%)
+
+Filtering result:
+reads passed filter: 37710016
+reads failed due to low quality: 761436
+reads failed due to too many N: 774
+reads failed due to too short: 58014
+reads failed due to low complexity: 15552
+reads with adapter trimmed: 7280538
+bases trimmed due to adapters: 208806273
+reads with polyX in 3' end: 321884
+bases trimmed in polyX tail: 5042264
+
+Duplication rate: 46.1542%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Sfa-CBas_056-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_056-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_056-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_056-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_056-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_056-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_056-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_056-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_056-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_056-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_056-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 550 seconds
+Read1 before filtering:
+total reads: 12866312
+total bases: 1929946800
+Q20 bases: 1870943067(96.9427%)
+Q30 bases: 1792136573(92.8594%)
+
+Read2 before filtering:
+total reads: 12866312
+total bases: 1929946800
+Q20 bases: 1860835315(96.419%)
+Q30 bases: 1768589536(91.6393%)
+
+Read1 after filtering:
+total reads: 12567994
+total bases: 1805567574
+Q20 bases: 1762948543(97.6396%)
+Q30 bases: 1693288615(93.7815%)
+
+Read2 aftering filtering:
+total reads: 12567994
+total bases: 1805409527
+Q20 bases: 1760611303(97.5187%)
+Q30 bases: 1679707202(93.0375%)
+
+Filtering result:
+reads passed filter: 25135988
+reads failed due to low quality: 534022
+reads failed due to too many N: 492
+reads failed due to too short: 47558
+reads failed due to low complexity: 14564
+reads with adapter trimmed: 5579830
+bases trimmed due to adapters: 150186933
+reads with polyX in 3' end: 237763
+bases trimmed in polyX tail: 3791427
+
+Duplication rate: 61.5872%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Sfa-CBas_091-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_091-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_091-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_091-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_091-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_091-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_091-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_091-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_091-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_091-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_091-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 324 seconds
+Read1 before filtering:
+total reads: 24053219
+total bases: 3607982850
+Q20 bases: 3477886189(96.3942%)
+Q30 bases: 3326442098(92.1967%)
+
+Read2 before filtering:
+total reads: 24053219
+total bases: 3607982850
+Q20 bases: 3456166280(95.7922%)
+Q30 bases: 3259501642(90.3414%)
+
+Read1 after filtering:
+total reads: 23493050
+total bases: 3211098907
+Q20 bases: 3135245252(97.6378%)
+Q30 bases: 3012791495(93.8243%)
+
+Read2 aftering filtering:
+total reads: 23493050
+total bases: 3210613498
+Q20 bases: 3118875203(97.1427%)
+Q30 bases: 2958857881(92.1586%)
+
+Filtering result:
+reads passed filter: 46986100
+reads failed due to low quality: 1009706
+reads failed due to too many N: 816
+reads failed due to too short: 87524
+reads failed due to low complexity: 22292
+reads with adapter trimmed: 18891714
+bases trimmed due to adapters: 600310105
+reads with polyX in 3' end: 367667
+bases trimmed in polyX tail: 5932159
+
+Duplication rate: 31.0399%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sfa-CBas_084-Ex1-cssl.fastp.json
+HTML report: fq_fp1/Sfa-CBas_084-Ex1-cssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_084-Ex1-cssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/Sfa-CBas_084-Ex1-cssl.2.fq.gz --out1 fq_fp1/Sfa-CBas_084-Ex1-cssl.r1.fq.gz --out2 fq_fp1/Sfa-CBas_084-Ex1-cssl.r2.fq.gz --unpaired1 fq_fp1/failed/Sfa-CBas_084-Ex1-cssl.unprd.fq.gz --unpaired2 fq_fp1/failed/Sfa-CBas_084-Ex1-cssl.unprd.fq.gz --failed_out fq_fp1/failed/Sfa-CBas_084-Ex1-cssl.fail.fq.gz -h fq_fp1/Sfa-CBas_084-Ex1-cssl.fastp.html -j fq_fp1/Sfa-CBas_084-Ex1-cssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 542 seconds
+[WARNING]         multiqc : MultiQC Version v1.13 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/fq_fp1
+Searching   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 486/486  [INFO   ]           fastp : Found 81 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
