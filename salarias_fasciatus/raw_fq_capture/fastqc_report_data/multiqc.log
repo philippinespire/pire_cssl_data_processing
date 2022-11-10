@@ -1,0 +1,605 @@
+[2022-10-05 13:04:54,739] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-10-05 13:04:54,739] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/jbald004/.multiqc_config.yaml
+[2022-10-05 13:04:54,740] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-10-05 13:04:54,740] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/fastqc_report
+[2022-10-05 13:04:55,438] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-10-05 13:04:55,439] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-10-05 13:04:55,439] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture -n /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/fastqc_report
+[2022-10-05 13:04:55,439] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture
+[2022-10-05 13:04:55,439] multiqc                                            [INFO   ]  Template    : default
+[2022-10-05 13:04:55,439] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-10-05 13:04:55,440] multiqc                                            [INFO   ]  Searching   : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture
+[2022-10-05 13:04:55,441] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-10-05 13:04:55,441] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpc_ts01ia
+[2022-10-05 13:04:55,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_073-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:55,800] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:55,811] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:55,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_008-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:55,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_020-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:55,929] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:55,937] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,048] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,057] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,171] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,179] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_024-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:56,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_007-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:56,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_017-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:56,291] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,300] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,391] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_017-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:56,411] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,419] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:56,509] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_025-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:56,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_017-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:56,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_013-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:56,513] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_032-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:56,533] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,541] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,651] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,659] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,768] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,776] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,887] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:56,895] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,005] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,013] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,122] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,130] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,219] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_067-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:57,219] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_014-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:57,220] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_092-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:57,240] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,248] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,359] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,367] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,458] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_059-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:57,483] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa_cssl_SequenceNameDecode_fixed2.tsv
+[2022-10-05 13:04:57,520] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,529] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,619] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_029-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:57,638] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,646] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:57,757] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,765] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,876] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,884] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_002-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:57,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_009-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:57,993] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_002-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_030-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_056-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,112] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,121] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,211] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_002-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:58,211] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_031-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,231] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,239] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,330] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_006-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,330] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_046-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:58,350] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,359] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,468] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:58,479] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:58,590] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:58,598] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:58,708] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,717] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,827] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,835] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:58,948] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:58,957] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_066-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:59,067] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,076] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,167] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_076-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,168] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_056-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:59,168] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_025-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,188] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,197] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_029-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,307] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,316] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,431] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: origFileNames.txt
+[2022-10-05 13:04:59,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_048-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_067-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_008-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,470] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,479] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_086-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:59,590] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,598] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,707] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,716] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_044-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_027-Ex1-cssl.2.fq.gz
+[2022-10-05 13:04:59,809] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_010-Ex1-cssl.1.fq.gz
+[2022-10-05 13:04:59,830] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,838] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:04:59,949] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:04:59,957] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,067] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,075] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,186] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,194] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,293] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_033-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_059-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,317] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,326] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_073-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_020-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:00,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_010-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:00,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,444] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,552] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,560] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,649] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_027-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,669] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,677] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:00,768] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_090-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,790] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,798] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_006-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_014-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:00,909] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:00,917] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,027] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,036] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_016-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,125] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_009-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,147] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,155] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,266] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,274] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,385] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,393] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,502] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,510] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_007-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_018-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,621] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,629] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_092-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_043-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,744] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,752] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_066-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_032-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_003-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_006-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_013-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:01,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_023-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,865] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,873] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:01,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_028-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:01,986] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:01,995] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_096-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_044-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,106] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,115] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_018-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,205] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_001-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,225] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,234] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,346] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,354] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,470] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,478] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,590] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,598] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_078-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_029-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_043-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,707] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,715] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,806] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_009-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:02,806] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_025-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,829] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,837] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_091-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:02,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_010-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:02,948] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:02,956] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:03,065] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:03,073] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:03,163] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_088-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:03,164] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_015-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:03,166] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_015-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:03,186] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,194] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_014-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:03,304] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,312] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_002-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_035-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:03,422] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,430] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_032-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_027-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:03,544] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,552] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,662] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,670] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,759] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_016-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:03,780] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,788] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:03,899] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:03,908] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,019] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,027] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,139] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,147] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,238] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_008-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:04,262] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,270] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_067-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,360] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_078-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:04,380] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,388] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,500] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,509] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,620] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,628] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:04,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_008-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:04,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_030-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:04,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_007-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:04,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_009-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:04,743] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,751] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_088-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,860] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,868] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_010-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:04,959] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_096-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:04,960] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_026-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:04,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_016-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:04,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_032-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:05,028] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,037] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_017-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,147] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:05,156] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:05,244] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_010-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:05,265] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,273] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,385] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,393] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_035-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,505] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,513] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_084-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_017-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:05,620] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Multi_fastqc-1121913.out
+[2022-10-05 13:05:05,628] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Multi_fastqc-1121913.out
+[2022-10-05 13:05:05,803] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_007-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:05,823] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,831] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_029-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:05,943] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:05,951] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_043-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_031-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,099] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,107] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_020-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,219] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,227] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,337] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,346] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,461] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa_cssl_SequenceNameDecode.tsv
+[2022-10-05 13:05:06,481] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_046-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,500] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,509] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_004-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_061-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,621] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,630] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,739] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,748] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_062-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,836] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_062-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,858] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,867] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:06,955] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_002-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:06,955] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_084-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,957] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_042-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:06,977] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:06,985] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_022-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,095] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,104] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_061-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,195] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_019-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:07,216] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,224] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,336] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,345] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_091-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:07,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_061-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:07,458] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,584] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: renameFQGZc.bash
+[2022-10-05 13:05:07,623] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,631] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_031-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_034-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:07,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_096-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:07,745] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,753] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,868] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,876] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_031-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:07,984] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:07,992] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_032-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,101] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,109] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_021-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,200] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_026-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,220] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,228] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,340] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,348] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_014-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,458] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_030-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,576] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,584] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,672] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_042-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,673] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_021-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,673] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_023-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,674] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_020-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,674] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_026-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,675] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_033-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:08,675] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_076-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_006-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,695] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,703] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_008-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:08,814] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,822] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_033-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_019-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:08,933] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:08,941] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,051] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,060] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,170] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_090-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,289] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,297] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_001-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,388] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_039-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:09,390] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_001-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:09,390] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_062-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:09,410] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,418] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_036-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:09,529] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,537] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_019-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_004-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:09,626] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_020-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:09,646] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,654] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_048-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,763] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,771] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_014-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,860] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_006-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:09,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_091-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:09,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_090-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:09,887] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:09,895] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_028-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,005] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,013] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_076-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,126] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,135] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_041-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,245] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,254] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,347] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_004-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:10,367] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,375] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_044-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,485] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,493] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_039-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,605] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,613] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_025-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:10,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_031-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:10,726] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,734] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,824] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_001-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:10,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_003-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:10,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_001-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:10,847] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,855] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_086-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,966] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:10,974] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_021-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_023-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:11,086] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,094] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_020-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_005-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:11,205] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:11,213] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_009-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:11,327] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,335] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_009-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,444] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:11,452] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:11,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_086-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:11,542] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_088-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:11,565] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,573] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,685] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,694] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,803] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,811] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_003-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_034-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:11,905] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_078-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:11,926] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:11,934] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_014-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_021-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:12,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_026-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:12,050] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,058] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_005-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,171] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,179] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_003-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,287] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,295] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_039-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:12,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_092-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:12,389] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_028-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:12,410] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,418] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_003-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:12,530] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,538] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_059-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:12,649] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,657] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_021-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:12,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_028-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:12,774] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,782] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_007-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,900] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:12,908] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_026-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:13,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_031-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_041-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_019-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,002] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_041-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,026] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,034] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_034-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,126] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_022-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,128] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_019-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,128] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_002-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,129] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_003-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,151] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,159] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_010-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,277] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2022-10-05 13:05:13,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_036-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,317] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:13,325] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_001-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:13,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,443] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,533] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_035-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_016-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_027-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,556] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,564] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,681] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_023-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_028-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,795] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,803] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_025-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:13,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_084-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:13,894] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_033-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:13,914] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:13,922] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_056-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,031] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,040] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_029-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,152] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,161] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_030-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,252] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_025-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:14,253] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_005-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:14,274] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:14,282] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:14,390] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,399] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_006-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,510] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,519] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_024-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,629] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,638] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_042-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_032-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:14,749] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,757] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_016-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,849] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_030-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:14,869] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,877] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_015-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:14,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_022-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:14,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_023-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:14,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_021-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:14,970] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_048-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:14,994] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:15,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_073-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:15,114] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,123] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_028-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,232] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:15,240] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_066-Ex1-cssl.2_fastqc.html
+[2022-10-05 13:05:15,348] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,356] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_046-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,470] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,478] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-ABas_013-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_033-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:15,590] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,599] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sfa-CBas_027-Ex1-cssl.1_fastqc.html
+[2022-10-05 13:05:15,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_018-Ex1-cssl.2.fq.gz
+[2022-10-05 13:05:15,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-CBas_036-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:15,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sfa-ABas_024-Ex1-cssl.1.fq.gz
+[2022-10-05 13:05:16,275] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-05 13:05:16,276] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-10-05 13:05:16,277] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-10-05 13:05:16,282] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-10-05 13:05:16,287] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-10-05 13:05:16,291] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-10-05 13:05:16,296] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-10-05 13:05:16,303] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-10-05 13:05:16,307] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-10-05 13:05:16,310] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-10-05 13:05:16,314] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-10-05 13:05:16,318] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-10-05 13:05:16,322] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-10-05 13:05:16,326] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-10-05 13:05:16,330] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-10-05 13:05:16,334] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-10-05 13:05:16,339] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-10-05 13:05:16,343] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-10-05 13:05:16,348] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-10-05 13:05:16,352] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-10-05 13:05:16,357] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-10-05 13:05:16,364] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-10-05 13:05:16,368] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-10-05 13:05:16,373] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-10-05 13:05:16,377] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-10-05 13:05:16,382] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-10-05 13:05:16,387] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-10-05 13:05:16,391] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-10-05 13:05:16,395] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-10-05 13:05:16,399] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-10-05 13:05:16,403] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-10-05 13:05:16,408] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-10-05 13:05:16,412] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-10-05 13:05:16,417] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-10-05 13:05:16,421] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-10-05 13:05:16,425] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-10-05 13:05:16,432] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-10-05 13:05:16,436] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-10-05 13:05:16,440] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-10-05 13:05:16,451] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-10-05 13:05:16,455] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-10-05 13:05:16,458] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-10-05 13:05:16,462] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-10-05 13:05:16,466] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-10-05 13:05:16,470] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-10-05 13:05:16,474] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-10-05 13:05:16,479] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-10-05 13:05:16,483] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-10-05 13:05:16,488] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-10-05 13:05:16,492] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-10-05 13:05:16,497] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-10-05 13:05:16,501] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-10-05 13:05:16,508] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-10-05 13:05:16,513] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-10-05 13:05:16,517] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-10-05 13:05:16,521] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-10-05 13:05:16,525] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-10-05 13:05:16,528] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-10-05 13:05:16,533] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-10-05 13:05:16,537] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-10-05 13:05:16,541] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-10-05 13:05:16,545] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-10-05 13:05:16,549] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-10-05 13:05:16,553] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-10-05 13:05:16,557] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-10-05 13:05:16,560] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-10-05 13:05:16,564] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-10-05 13:05:16,568] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-10-05 13:05:16,572] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-10-05 13:05:16,576] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-10-05 13:05:16,580] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-10-05 13:05:16,585] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-10-05 13:05:16,589] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-10-05 13:05:16,594] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-10-05 13:05:16,597] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-10-05 13:05:16,601] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-10-05 13:05:16,606] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-10-05 13:05:16,610] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-10-05 13:05:16,613] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-10-05 13:05:16,617] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-10-05 13:05:16,621] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-10-05 13:05:16,626] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-10-05 13:05:16,630] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-10-05 13:05:16,634] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-10-05 13:05:40,684] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 162 reports
+[2022-10-05 13:05:58,967] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-10-05 13:05:58,972] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-10-05 13:05:58,976] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-10-05 13:05:58,982] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-10-05 13:05:58,986] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-10-05 13:05:58,990] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-10-05 13:05:58,994] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-10-05 13:05:58,998] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-10-05 13:05:59,002] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-10-05 13:05:59,236] multiqc                                            [INFO   ]  Compressing plot data
+[2022-10-05 13:05:59,299] multiqc                                            [INFO   ]  Report      : fastqc_report.html
+[2022-10-05 13:05:59,299] multiqc                                            [INFO   ]  Data        : fastqc_report_data
+[2022-10-05 13:05:59,299] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpc_ts01ia/multiqc_data' to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/raw_fq_capture/fastqc_report_data'
+[2022-10-05 13:05:59,614] multiqc                                            [INFO   ]  MultiQC complete
