@@ -4,20 +4,6 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-
-
-<details><summary>Start By Following the pire_fq_gz_processing/README.md </summary>
-<p>
-
-[pire_fq_gz_processing/README.md](https://github.com/philippinespire/pire_fq_gz_processing#readme)
-
-</p>
-</details>
-
-
-<details><summary>Start By Following the pire_fq_gz_processing README.md </summary>
-<p>
-
 ## Step 0. Rename files for dDocent HPC
 
 Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack). Starting analyses in `<full path to species dir>`.
