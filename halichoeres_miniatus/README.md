@@ -21,11 +21,12 @@ ls | wc -l #379 files (2 additional files for README & decode.tsv = XX/2 = XX in
 wc -l Hmi_CaptureLibraries_SequenceNameDecode.tsv #188 lines (1 additional line for header = XX individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/renameFQGZc.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv
 
 #run renameFQGZ.bash again to actually rename files
 #need to say "yes" 2X
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/renameFQGZc.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv rename
+
 ```
 
 ---
