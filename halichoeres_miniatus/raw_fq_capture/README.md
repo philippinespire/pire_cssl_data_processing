@@ -1,6 +1,6 @@
 # Raw FASTQ Data
 
-[View MultiQC-FastQC Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/halichoeres_miniatus/raw_fq_capture/multiqc_report.html?token=GHSAT0AAAAAAB276YVKUCNTSDBME63M4QX2Y3MKI6A)
+[View MultiQC-FastQC Report](https://htmlpreview.github.io/?https://github.com/philippinespire/pire_cssl_data_processing/blob/main/halichoeres_miniatus/raw_fq_capture/multiqc_report.html)
 
 
 --
