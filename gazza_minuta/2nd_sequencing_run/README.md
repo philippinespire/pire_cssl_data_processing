@@ -227,10 +227,10 @@ Potential issues:
 Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
 ```
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture/" 
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run" "raw_fq_capture"  
 ```
 
 Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
