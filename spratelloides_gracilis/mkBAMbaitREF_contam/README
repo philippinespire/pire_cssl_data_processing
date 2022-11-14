@@ -1,0 +1,12 @@
+mkBAMcontaminated: This is the mapping using SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta
+
+however, the reference that was used for developing probes is slightly different:
+ The node numbers and lenghts are the same but the coverage is slightly different.
+ This causes the names of the contig/scaffs not to be exactly the same and I think this might be causing problems downstream, specially when calculating coverage.
+
+
+I think what happened is that SPAdes_SgC0072C_contam_R1R2_noIsolate was create twice. One is the current dir in HPC (SPAdes_SgC0072C_contam_R1R2_noIsolate),
+  and another is the one used for probes, which I cannot find the directory, so I think this was somehow removed.
+
+So, as the solution, I am re-running mkBAM in a new directory mkBAMbaitREF_contam, using the ref straight from the probe development step.
+mv ~/PIRE_ProbeTargets/13_Spratelloides_gracilis_shotgun/Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta.masked mkBAMbaitREF_contam/reference.ssl.Sgr-SgC0072C-contam-R1R2-noIsolate-fromPROBES.fasta
