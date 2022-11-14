@@ -17,8 +17,8 @@ salloc
 bash
 
 #check got back sequencing data for all individuals in decode file
-ls | wc -l #379 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
-wc -l Hmi_CaptureLibraries_SequenceNameDecode.tsv #188 lines (1 additional line for header = XX individuals), checks out
+ls | wc -l #374 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
+wc -l Hmi_CaptureLibraries_SequenceNameDecode.tsv #187 lines (1 additional line for header = XX individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
 bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/renameFQGZc.bash Hmi_CaptureLibraries_SequenceNameDecode.tsv
