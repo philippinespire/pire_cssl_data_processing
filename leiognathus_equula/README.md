@@ -466,3 +466,61 @@ Leq-CMig    62               0                     6          20         22     
 ```
 
 Fewer reads per sample and low-depth sites for Albatross. This jibes with a lot of Albatross (and some contemporary) individuals filtered out for missing data when running population structure. Suggest that we sequence the libraries to greater depth?
+
+## Cleaning up intermediate .bam and .fq.gz files
+
+
+Before cleaning up:
+```
+du -sh
+#1.1T	.
+du -h | sort -rh > Leq_cssl_beforeDeleting_IntermFiles
+```
+
+I deleted the RAW.bam files before checking directory sizes, so this will be an underestimate of size change.
+
+Making copies of important files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/
+# exists!
+
+# make copy of contaminated and decontaminated files, mkbam, and fltrvcf
+cp -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+cp -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fq_fp1_clmp_fp2_fqscrn_rprd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+cp -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAM /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+cp -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula
+```
+
+Delete unneeded files. Make a log of deletions first.
+
+```
+# create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fastq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fastq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+#247G	.
+du -h | sort -rh > Leq_cssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Leq_cssl* logs
+mv deleted_files_log logs
+```
+
+Done!
