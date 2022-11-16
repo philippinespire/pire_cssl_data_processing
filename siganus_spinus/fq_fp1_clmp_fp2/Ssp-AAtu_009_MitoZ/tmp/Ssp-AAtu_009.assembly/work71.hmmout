@@ -1,0 +1,358 @@
+# nhmmer :: search a DNA model or alignment against a DNA database
+# HMMER 3.1b2 (February 2015); http://hmmer.org/
+# Copyright (C) 2015 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query file:                      /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm
+# target sequence database:        /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_009_MitoZ/tmp/Ssp-AAtu_009.assembly/work71.scafSeq
+# output directed to file:         work71.hmmout
+# hits tabular output:             work71.hmmtblout
+# number of worker threads:        10
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       ATP6  [M=684]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (684 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             41403  (0.0484); expected (0.02)
+Residues passing bias filter:            17292  (0.0202); expected (0.02)
+Residues passing Vit filter:               694  (0.000812); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.18u 0.02s 00:00:00.20 Elapsed: 00:00:00.11
+# Mc/sec: 5317.37
+//
+Query:       ATP8  [M=161]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (161 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:            219384  (0.257); expected (0.02)
+Residues passing bias filter:           152391  (0.178); expected (0.02)
+Residues passing Vit filter:              4736  (0.00554); expected (0.003)
+Residues passing Fwd filter:              1083  (0.00127); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.17u 0.03s 00:00:00.20 Elapsed: 00:00:00.11
+# Mc/sec: 1251.60
+//
+Query:       COX1  [M=1548]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1548 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             14678  (0.0172); expected (0.02)
+Residues passing bias filter:             9797  (0.0115); expected (0.02)
+Residues passing Vit filter:               467  (0.000546); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.28u 0.02s 00:00:00.30 Elapsed: 00:00:00.16
+# Mc/sec: 8273.40
+//
+Query:       COX2  [M=684]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+  ------ inclusion threshold ------
+      0.029    8.8   0.6  C3532       257    340  2.0
+
+
+Annotation for each hit  (and alignments):
+>> C3532  2.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    8.8   0.6     0.029       500       587 ..       257       340 ..       247       345 ..       365    0.91
+
+  Alignment:
+  score: 8.8 bits
+   COX2 500 ctctaggagtaAAaataGAtgcagtcccagGacGactaAatcaaacaacttttattgcttctcgaccaggagtattttatgGacaatG 587
+             +ct g a t AAa+++G  gc+gt cc g ac   t A tc aaca+ctttt    c++   ga cagg gt+tt+t tgGac  tG
+  C3532 257 AACTTGAACTGAAAGCTGCAGCTGTACCTGAACAGGTGAGTCCAACAGCTTTT----CCAGGTGAGCAGGTGTTTTCTGTGGACCGTG 340
+            568889999****************************************9876....6677899*******************98886 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (684 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             23603  (0.0276); expected (0.02)
+Residues passing bias filter:            15324  (0.0179); expected (0.02)
+Residues passing Vit filter:               365  (0.000427); expected (0.003)
+Residues passing Fwd filter:               365  (0.000427); expected (3e-05)
+Total number of hits:                        1  (9.82e-05)
+# CPU time: 0.18u 0.01s 00:00:00.19 Elapsed: 00:00:00.11
+# Mc/sec: 5317.37
+//
+Query:       COX3  [M=785]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (785 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             27325  (0.032); expected (0.02)
+Residues passing bias filter:            16049  (0.0188); expected (0.02)
+Residues passing Vit filter:              2314  (0.00271); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.18u 0.02s 00:00:00.20 Elapsed: 00:00:00.12
+# Mc/sec: 5593.99
+//
+Query:       CYTB  [M=1141]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1141 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             28842  (0.0337); expected (0.02)
+Residues passing bias filter:            17815  (0.0208); expected (0.02)
+Residues passing Vit filter:               842  (0.000985); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.25u 0.00s 00:00:00.25 Elapsed: 00:00:00.13
+# Mc/sec: 7505.43
+//
+Query:       ND1  [M=972]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (972 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             42371  (0.0495); expected (0.02)
+Residues passing bias filter:            23871  (0.0279); expected (0.02)
+Residues passing Vit filter:              1638  (0.00192); expected (0.003)
+Residues passing Fwd filter:               404  (0.000472); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.26u 0.01s 00:00:00.27 Elapsed: 00:00:00.15
+# Mc/sec: 5541.26
+//
+Query:       ND2  [M=1042]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1042 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             76889  (0.0899); expected (0.02)
+Residues passing bias filter:            47411  (0.0554); expected (0.02)
+Residues passing Vit filter:              3705  (0.00433); expected (0.003)
+Residues passing Fwd filter:               798  (0.000933); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.37u 0.01s 00:00:00.38 Elapsed: 00:00:00.23
+# Mc/sec: 3874.12
+//
+Query:       ND3  [M=349]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+  ------ inclusion threshold ------
+       0.35    6.6   3.3  C3252       231    181  3.0
+
+
+Annotation for each hit  (and alignments):
+>> C3252  3.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    6.6   3.3      0.35        80       131 ..       231       181 ..       269       161 ..       303    0.69
+
+  Alignment:
+  score: 6.6 bits
+    ND3  80 aaataaacccagatacagaaaaactttcccctTAtGAgTGtGGaTttgaccc 131
+            a  t a+ c  g t cag  aa ct++ ccc+T +GA+TGtGG Tttg c c
+  C3252 231 ATCTCAGACATGGTTCAGG-AATCTAATCCCATCCGAATGTGGCTTTGTCTC 181
+            3333344444455555543.456889999******************98755 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (349 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:            118210  (0.138); expected (0.02)
+Residues passing bias filter:            56643  (0.0662); expected (0.02)
+Residues passing Vit filter:              2710  (0.00317); expected (0.003)
+Residues passing Fwd filter:               443  (0.000518); expected (3e-05)
+Total number of hits:                        1  (5.96e-05)
+# CPU time: 0.17u 0.01s 00:00:00.18 Elapsed: 00:00:00.09
+# Mc/sec: 3316.01
+//
+Query:       ND4  [M=1376]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1376 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             52629  (0.0615); expected (0.02)
+Residues passing bias filter:            24956  (0.0292); expected (0.02)
+Residues passing Vit filter:              2340  (0.00274); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.32u 0.01s 00:00:00.33 Elapsed: 00:00:00.18
+# Mc/sec: 6537.01
+//
+Query:       ND4L  [M=297]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (297 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:            125486  (0.147); expected (0.02)
+Residues passing bias filter:            49152  (0.0575); expected (0.02)
+Residues passing Vit filter:              2029  (0.00237); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.14u 0.00s 00:00:00.14 Elapsed: 00:00:00.08
+# Mc/sec: 3174.68
+//
+Query:       ND5  [M=1835]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1835 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:             52985  (0.062); expected (0.02)
+Residues passing bias filter:            33960  (0.0397); expected (0.02)
+Residues passing Vit filter:              1629  (0.0019); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.37u 0.02s 00:00:00.39 Elapsed: 00:00:00.22
+# Mc/sec: 7132.58
+//
+Query:       ND6  [M=510]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Annotation for each hit  (and alignments):
+
+   [No targets detected that satisfy reporting thresholds]
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (510 nodes)
+Target sequences:                         1777  (855132 residues searched)
+Residues passing SSV filter:            119796  (0.14); expected (0.02)
+Residues passing bias filter:            65179  (0.0762); expected (0.02)
+Residues passing Vit filter:              9170  (0.0107); expected (0.003)
+Residues passing Fwd filter:                 0  (0); expected (3e-05)
+Total number of hits:                        0  (0)
+# CPU time: 0.22u 0.00s 00:00:00.22 Elapsed: 00:00:00.13
+# Mc/sec: 3354.75
+//
+[ok]

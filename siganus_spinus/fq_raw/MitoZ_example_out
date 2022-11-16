@@ -1,0 +1,18 @@
+
+tmp directory exists, please remove it firstly!
+
+2022-11-03 11:04:40
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 8
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 8 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+8 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/Ssp-CGub_038-Ex1-cssl.1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/Ssp-CGub_038-Ex1-cssl.2.fq.gz
+slurmstepd: error: *** JOB 1153564 ON d1-w6420a-24 CANCELLED AT 2022-11-09T16:15:31 ***

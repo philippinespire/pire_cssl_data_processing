@@ -29,8 +29,8 @@ module load parallel
 export SINGULARITY_BIND="/home/cbird,/home/e1garcia/"
 
 BAMDIR=$1       # Where the BAM files are
-#OUTDIR=$BAMDIR	# Where the output will be written
 BED=$2		# Path and name of bed file
+#OUTDIR=$3 # Where the output will be written
 
 if [[ -z "$3" ]]; then
         OUTDIR=$BAMDIR/out_BAITcvg
@@ -61,7 +61,7 @@ ls $OUTDIR/*baitCVG.tsv | \
             -e 's/\.baitCVG\.tsv//' | \
 	parallel --no-notice \
 		-kj32 \
-		"grep 'NODE' $OUTDIR/{}.baitCVG.tsv > $OUTDIR/{}.baitCVG.hist.tsv" 
+		"grep -v 'all' $OUTDIR/{}.baitCVG.tsv > $OUTDIR/{}.baitCVG.hist.tsv" 
 
 ls $OUTDIR/*baitCVG.tsv | \
         sed -e 's/^.*\///' \
@@ -72,10 +72,10 @@ ls $OUTDIR/*baitCVG.tsv | \
 
 rm $OUTDIR/*.baitCVG.tsv
 
-echo `date`
-echo "Script executed from: ${PWD}"
-echo "BAMDIR $BAMDIR"
-echo "BAMPATTERN $BAMPATTERN"
-echo "BED $BED"
-echo "OUTDIR $OUTDIR"
+echo `date` > $OUTDIR/getBAITcvg.log
+echo "Script executed from: ${PWD}" >> $OUTDIR/getBAITcvg.log
+echo "BAMDIR $BAMDIR" >> $OUTDIR/getBAITcvg.log
+echo "BAMPATTERN $BAMPATTERN" >> $OUTDIR/getBAITcvg.log
+echo "BED $BED" >> $OUTDIR/getBAITcvg.log
+echo "OUTDIR $OUTDIR" >> $OUTDIR/getBAITcvg.log
 

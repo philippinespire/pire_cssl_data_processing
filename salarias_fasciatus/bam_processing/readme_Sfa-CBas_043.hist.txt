@@ -1,1 +1,0 @@
-bedtools coverage -hist -a ~/PIRE_ProbeTargets/19_Salarias_fasciatus/Baits_chosen.bed -b Sfa-CBas_043-Ex1-cssl.clmp.fp2_repr.ssl.Sfa-scaffolds-allLibs-contam-R1R2-noIsolate-RG.bam > Sfa-CBas_043.hist.txt 

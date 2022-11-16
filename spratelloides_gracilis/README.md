@@ -295,3 +295,9 @@ Running
 ```
 sbatch dDocentHPC.sbatch config.5.cssl
 ```
+
+NOTE: Please use mkBAMbaitREF_contam, this is the mkBAM with the reference that was sent to ArborScience.
+
+mkBAMcontaminated and mkBAMdecontaminated are using the "Best" contam/decontam ref which is not the same as the one that was sent to ArborScience. Here, I think what happenned is that the "best" was created, sent to arbor, then maybe deleted and re-created. So a SPAdes dir for the "best" exist that this is not the same ref that was sent to arbor bio. Use the one from "~/PIRE_Probes"
+  
+
