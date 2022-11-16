@@ -29,8 +29,14 @@ module load parallel
 export SINGULARITY_BIND="/home/cbird,/home/e1garcia/"
 
 BAMDIR=$1       # Where the BAM files are
-OUTPATH=$2	# Where the output will be written
-BED=$3		# Path and name of bed file
+#OUTDIR=$BAMDIR	# Where the output will be written
+BED=$2		# Path and name of bed file
+
+if [[ -z "$3" ]]; then
+        OUTDIR=$BAMDIR/out_BAITcvg
+else
+        OUTDIR=$3
+fi
 
 if [[ -z "$4" ]]; then
         BAMPATTERN="-RG.bam"
@@ -40,7 +46,7 @@ fi
 
 
 #Make outdir
-OUTDIR=$OUTPATH/out_baitCVG
+#OUTDIR=$OUTPATH/out_baitCVG
 mkdir -p $OUTDIR
 
 ls $BAMDIR/*$BAMPATTERN | \
@@ -48,23 +54,23 @@ ls $BAMDIR/*$BAMPATTERN | \
             -e 's/\.bam//' | \
         parallel --no-notice \
                  -kj 32 \
-		"bedtools coverage -hist -a $BED -b $BAMDIR/{}.bam > $OUTDIR/{}.baitCVG.txt"
+		"bedtools coverage -hist -a $BED -b $BAMDIR/{}.bam > $OUTDIR/{}.baitCVG.tsv"
 
-ls $OUTDIR/*baitCVG.txt | \
+ls $OUTDIR/*baitCVG.tsv | \
 	sed -e 's/^.*\///' \
-            -e 's/\.baitCVG\.txt//' | \
+            -e 's/\.baitCVG\.tsv//' | \
 	parallel --no-notice \
 		-kj32 \
-		"grep 'NODE' $OUTDIR/{}.baitCVG.txt > $OUTDIR/{}.baitCVG.hist.txt" 
+		"grep 'NODE' $OUTDIR/{}.baitCVG.tsv > $OUTDIR/{}.baitCVG.hist.tsv" 
 
-ls $OUTDIR/*baitCVG.txt | \
+ls $OUTDIR/*baitCVG.tsv | \
         sed -e 's/^.*\///' \
-            -e 's/\.baitCVG\.txt//' | \
+            -e 's/\.baitCVG\.tsv//' | \
         parallel --no-notice \
                 -kj32 \
-                "grep 'all' $OUTDIR/{}.baitCVG.txt > $OUTDIR/{}.baitCVG.hist.all.txt" 
+                "grep 'all' $OUTDIR/{}.baitCVG.tsv > $OUTDIR/{}.baitCVG.hist.all.tsv" 
 
-rm $OUTDIR/*.baitCVG.txt
+rm $OUTDIR/*.baitCVG.tsv
 
 echo `date`
 echo "Script executed from: ${PWD}"
