@@ -96,7 +96,7 @@ Potential issues:
   * % adapter - 
     * Alb: 60.47%, Contemp: 52.44%
   * number of reads - 
-    * Alb: ~57-60 mil, Contemp: ~0.45-0.5 mil (hard to tell due to scaling)
+    * Alb: ~57-60 mil, Contemp: ~0.45-0.5 mil
 
 ---
 
@@ -144,15 +144,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch 
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 46.29%, Contemp: 40.28%
   * GC content - 
-    *  Alb: XX%, Contemp: XX%
+    *  Alb: 46.81%, Contemp: 44.20%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 97.25%, Contemp: 96.74%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 2.35%, Contemp: 2.44%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~5.5 mil, Contemp: ~0.40 mil
 
 ---
 
@@ -161,7 +161,7 @@ Potential issues:
 Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
