@@ -81,7 +81,7 @@ Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_p
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/raw_fq_capture fq_fp1
 ```
 
 [Report](URL for your report)
