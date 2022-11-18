@@ -67,7 +67,7 @@ Potential issues:
   * GC content - 
     * Alb: 47%, Contemp: 45%
   * number of reads - 
-    * Alb: ~20 mil, Contemp: ~50,000
+    * Alb: ~20 mil, Contemp: ~0.05 mil
 
 Hardly any reads for the Contemp samples as compared to Alb.
 
@@ -92,11 +92,11 @@ Potential issues:
   * GC content -
     * Alb: 45.94%, Contemp: 43.76%
   * passing filter - 
-    * Alb: 98.50%, Contemp: 98.12%
+    * Alb: 99%, Contemp: 98%
   * % adapter - 
     * Alb: 60.47%, Contemp: 52.44%
   * number of reads - 
-    * Alb: ~47 mil, Contemp: ~1 mil (hard to tell due to scaling)
+    * Alb: ~57-60 mil, Contemp: ~0.45-0.5 mil (hard to tell due to scaling)
 
 ---
 
