@@ -114,7 +114,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 Ran [`checkClumpify_EG.R`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any failed.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 salloc
 module load container_env mapdamage2
@@ -134,7 +134,7 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 Ran [`runFASTP_2_cssl.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_cssl.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
