@@ -59,7 +59,7 @@ Potential issues:
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
-/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture/ fq_fp1
@@ -127,13 +127,13 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch 
 
 Potential issues:  
   * % duplication - 
-    * Alb: 10.98%, Contemp: 21.88%
+    * Alb: 10.98%, Contemp: 21.71%
   * GC content - 
-    *  Alb: 42%, Contemp: 47.47%
+    *  Alb: 42.00%, Contemp: 47.09%
   * passing filter - 
     * Alb: 98.79%, Contemp: 98.64%
   * % adapter - 
-    * Alb: 1.18%, Contemp: 0.51%
+    * Alb: 1.18%, Contemp: 0.50%
   * number of reads - 
     * Alb: ~20 mil, Contemp: ~15-19 mil
 
