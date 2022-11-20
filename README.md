@@ -277,6 +277,8 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 ```bash
 cd <path/to/cssl/species dir/>
+
+# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
 sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/PIRE_ProbeTargets/<speciesDir>/<prefix>.singleLine.bed
 ```
 
