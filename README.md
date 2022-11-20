@@ -98,6 +98,14 @@ ___
 
 ## A. PRE-PROCESSING SEQUENCES
 
+<details><summary>Do Not Follow These Instructions</summary>
+<p>
+
+I'm only keeping these here now so that we can confirm whether `pire_fq_gz_processing/README.md` has all the relevant info that's here.  
+
+* There should be no lib prep specific instructions until pre-processing and mapping are complete.
+	* `raw_fq_capture` has been replaced with `fq_raw`. 
+
 ## 1. Set up directories and data
 
 First, create your `species dir` and subdirs `logs` and `raw_fq_capture`. You should also copy this [template README](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md) to your species dir. As you move through the pipeline, you should edit the README with the specific code that you ran, as well as information about the quality of your data and any issues you encountered. The goal is that anyone could follow your steps exactly and end up with the same output at the end of the pipeline.
@@ -169,6 +177,8 @@ Slack post= March 23th 2022, species channel
 ```
 
 ---
+</p>
+</details>
 
 ## 2. Complete fq.gz preprocessing
 
