@@ -272,6 +272,17 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 ---
 
+## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` 
+
+
+```bash
+cd <path/to/cssl/species dir/>
+sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/PIRE_ProbeTargets/<speciesDir>/<prefix>.singleLine.bed
+```
+
+
+---
+
 ## Filter the `VCF` file
 
 
