@@ -1,0 +1,338 @@
+
+Ssp-AAtu_049-Ex1
+2022-11-17 13:35:59
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 8
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 8 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+8 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r2.fq.gz
+time spent on hash reads: 3s, 354734 reads processed
+[LIB] 0, avg_ins 250, reverse 0 
+9375704 nodes allocated, 17911665 kmer in reads, 17911665 kmer processed
+9033972 linear nodes
+time spent on marking linear nodes 0s
+time spent on pre-graph construction: 3s
+
+deLowKmer 0, deLowEdge 1
+Start to remove kmer of out frequency kmers < 0.100000
+2104 kmers off
+8 thread created
+0 linear nodes
+time spent on cut kmer: 0s
+
+Start to remove tips of single frequency kmers short than 142
+105319 tips off
+8 thread created
+17182 linear nodes
+Start to remove tips which don't contribute the most links
+kmer set 0 done
+kmer set 1 done
+kmer set 2 done
+kmer set 3 done
+kmer set 4 done
+kmer set 5 done
+kmer set 6 done
+kmer set 7 done
+103832 tips off
+8 thread created
+0 linear nodes
+time spent on cutTipe: 7s
+
+40030 (20015) edges 667 extra nodes
+time spent on making edges: 1s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+8 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r2.fq.gz
+354734 reads processed
+time 0,0,0,0,0,0,0
+0 markers outputed
+done mapping reads, 291722 reads deleted, 25405 arcs created
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 2s
+
+23580 vertex outputed
+overall time for lightgraph: 0m
+
+contig -g work71 -M 3 
+there're 23580 kmers in vertex file
+there're 40030 edge in edge file
+done sort
+input 40030 edges
+31958 pre-arcs loaded
+start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 30, MAX DIFF 10
+11314 startingPoints, 8701 dheap nodes
+870 pairs found, 661 pairs of paths compared, 352 pairs merged
+sequenc compare failure: 0 309 0 0
+DFibHeap: 75 Nodes allocated
+a linear concatenation lap, 1056 concatenated
+a linear concatenation lap, 1 concatenated
+a linear concatenation lap, 0 concatenated
+37200 edges in graph
+time spent on bubblePinch: 0s
+
+Start to remove the low coverage edge < 2
+2735 edges removed
+
+strict 0, cutLen 142
+a cutTipsInGraph lap, 13740 tips cut
+a cutTipsInGraph lap, 803 tips cut
+a cutTipsInGraph lap, 121 tips cut
+a cutTipsInGraph lap, 59 tips cut
+a cutTipsInGraph lap, 29 tips cut
+a cutTipsInGraph lap, 15 tips cut
+a cutTipsInGraph lap, 6 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 0 tips cut
+384 dead arcs removed
+a linear concatenation lap, 411 concatenated
+a linear concatenation lap, 16 concatenated
+a linear concatenation lap, 0 concatenated
+2148 edges in graph
+there're 40030 edges
+after compacting 2148 edges left
+
+delete unlike arc :400
+1 time to delete light arcs 
+168 loops removed in Graph
+Start to remove light arc using the rate 0.050000 and 0.020000
+delete light arc :0/0
+
+251 short contig(<48) removed 
+a linear concatenation lap, 13 concatenated
+a linear concatenation lap, 0 concatenated
+1620 edges in graph
+there're 2148 edges
+after compacting 1620 edges left
+
+804 ctgs longer than 100, sum up 187812bp, with average length 233
+the longest is 889bp, contig N50 is 226 bp,contig N90 is 215 bp
+810 contigs longer than 72 output
+time elapsed: 0m
+
+map -s work71.soaptrans.lib -g work71 -p 8 -K 71 -f 
+K = 71
+contig len cutoff: 73
+
+there're 810 contigs in file: work71, max seq len 889, min seq len 73, max name len 10
+time spent on parse contigs file 0s
+8 thread created
+time spent on hash reads: 0s
+131551 nodes allocated, 131615 kmer in reads, 131615 kmer processed
+time spent on De bruijn graph construction: 0s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+8 thread created
+1620 edges in graph
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1-cssl.clmp.fp2_r2.fq.gz
+current insert size 250, map_len 32
+Output 1144 out of 354734 (0.3)% reads in gaps
+8673 out of 354734 (2.4)% reads mapped to contigs
+1 pe insert size, the largest boundary is 354734
+
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 2s
+
+overall time for alignment: 0m
+
+scaff -g work71 -F -p 8 
+there're 1 grads, 354734 reads, max read len 150
+K = 71
+there're 1620 edge in edge file
+16 arcs loaded
+input 810 contigs
+done loading updated edges
+time spent on loading edges 0s
+
+for insert size: 250
+Total_PE_link	Same_contig_right	Same_contig_wrong	Minus_dis_PE	Plus_dis_PE	Correct_PE	Accumulate_connect
+3811	3780	0	4	0	17	22
+Using contigs longer than 250 to estimate insert size: 
+Pair_num	SD	insert_size
+589	SD=64, 11 new connections
+all PEs attached
+time spent on loading pair end info 0s
+
+
+9 link to masked contigs, 0 links on a single scaff
+Insert size 250: 10 links input
+Cutoff for number of pairs to make a reliable connection: 3
+all links loaded
+time spent on creating scaffolds 0s
+
+mask the short contigs, which are shorter than 100
+12 links built by the informations of single read
+6 weak connections(<10) removed (there were 6 active cnnects))
+0 simple loops found and removed in graph
+Begin to linearize the graph
+Delete the unnecessary connections : 0+0
+Remove the error connections
+0 complex loops found and removed in graph
+The second time to linearize the graph 
+Delete the unnecessary connections : 0+0
+Divided into 748 loci by the connections
+
+There are 0 locis, which contain more than 2 contigs
+The loci can be classified to four kinds:
+LINEAR:0
+FORK:0
+BUBBLE:0
+COMPLEX:0
+time spent on creating transcriptome 0s
+
+Start to load reads for gap filling. 50 length discrepancy is allowed
+...
+Loaded 1144 reads from work71.readInGap
+8 thread created
+...
+Done with 0 scaffolds, 0 gaps finished, 0 gaps overall
+Threads processed 0 scaffolds
+time elapsed: 0m
+time for the whole pipeline: 0m
+2022-11-17 13:36:15
+rm -rf work71*.Arc work71*.ContigIndex work71*.PEreadOnContig.gz work71*.agp work71*.contig work71*.ctg2Read work71*.edge.gz work71*.gapSeq work71*.kmerFreq work71*.newContigIndex work71*.peGrads work71*.preArc work71*.preGraphBasic work71*.readInGap work71*.readInformation work71*.readOnContig work71*.readOnScaf work71*.scaf_gap work71*.shortreadInGap.gz work71*.updated.edge work71*.vertex
+
+2022-11-17 13:36:15
+nhmmer -o work71.hmmout --tblout work71.hmmtblout --cpu 8 /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1_MitoZ/tmp/Ssp-AAtu_049-Ex1.assembly/work71.scafSeq
+
+2022-11-17 13:36:15
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/get_besthit_of_each_CDS_from_nhmmer.py work71.hmmtblout work71.hmmtblout.besthit
+
+2022-11-17 13:36:16
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/simlify_nhmmer_tbl_besthit.py work71.hmmtblout.besthit work71.hmmtblout.besthit.sim
+
+2022-11-17 13:36:16
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/extract_fasta.py -i /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1_MitoZ/tmp/Ssp-AAtu_049-Ex1.assembly/work71.scafSeq -q work71.hmmtblout.besthit.sim -o work71.hmmtblout.besthit.sim.fa
+
+2022-11-17 13:36:16
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/filter_taxonomy_by_CDS_annotation.py -fa work71.hmmtblout.besthit.sim.fa -MTsoft /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl -db /opt/MitoZ/bin/profiles/MT_database/Animal_CDS_protein.fa -thread 8 -genetic_code 2 -requiring_taxa 'Arthropoda' -relax 0 -WISECONFIGDIR /opt/MitoZ/bin/annotate/wisecfg -outf work71.hmmtblout.besthit.sim.filtered.fa
+
+2022-11-17 13:36:16
+export WISECONFIGDIR=/opt/MitoZ/bin/annotate/wisecfg
+perl /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl -i work71.hmmtblout.besthit.sim.fa -d /opt/MitoZ/bin/profiles/MT_database/Animal_CDS_protein.fa -cpu 8 -g 5 -o ./
+
+
+
+makeblastdb -in work71.hmmtblout.besthit.sim.fa -dbtype nucl
+run the tblastn shell file
+Run solar to conjoin HSPs and filter bad HSPs and redundance.
+preparing genewise input directories and files
+name gi_NC_009093_ATP6_Galendromus_occidentalis_222_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 3091.
+name gi_NC_009093_ATP8_Galendromus_occidentalis_53_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 6665.
+name gi_NC_009093_COX1_Galendromus_occidentalis_517_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 9629.
+name gi_NC_009093_COX2_Galendromus_occidentalis_221_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 12383.
+name gi_NC_009093_COX3_Galendromus_occidentalis_275_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 15953.
+name gi_NC_009093_CYTB_Galendromus_occidentalis_357_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 19517.
+name gi_NC_009093_ND1_Galendromus_occidentalis_270_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 23099.
+name gi_NC_009093_ND4_Galendromus_occidentalis_437_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 33775.
+name gi_NC_009093_ND4L_Galendromus_occidentalis_89_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 37351.
+name gi_NC_009093_ND5_Galendromus_occidentalis_560_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 40913.
+name gi_NC_KM273123_COX3_Drepane_punctata_261_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 83213.
+name gi_NC_KP164983_COX3_Drepane_longimana_261_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 87659.
+name gi_NC_010292_CYTB_Heteronotia_binoei_379_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 98393.
+name gi_NC_019615_ND5_Hoplobatrachus_rugulosus_611_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 144729.
+name gi_NC_027267_ND6_Phalacrocorax_carbo_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 152161.
+name gi_NC_018340_ND6_Champsocephalus_gunnari_174_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 153949.
+name gi_NC_025925_ND6_Ixobrychus_sinensis_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154499.
+name gi_NC_025924_ND6_Ixobrychus_eurhythmus_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154503.
+name gi_NC_025923_ND6_Botaurus_stellaris_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154507.
+name gi_NC_025922_ND6_Butorides_striata_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154511.
+name gi_NC_025921_ND6_Ardeola_bacchus_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154515.
+name gi_NC_025920_ND6_Egretta_sacra_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154519.
+name gi_NC_015087_ND6_Penelopides_panini_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 155151.
+name gi_NC_015085_ND6_Aceros_waldeni_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 155155.
+name gi_NC_029147_ND6_Turdus_philomelos_171_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 156555.
+name gi_NC_029140_ND6_Notiomystis_cincta_172_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 156569.
+name gi_NC_026190_ND6_Phoebastria_albatrus_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157075.
+name gi_NC_026189_ND6_Phoebastria_immutabilis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157079.
+name gi_NC_026188_ND6_Phoebastria_nigripes_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157083.
+name gi_NC_010292_ND6_Heteronotia_binoei_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 159083.
+name gi_NC_007172.2_ND6_Thalassarche_melanophrys_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 159239.
+name gi_NC_016465_COX1_Clava_multicornis_521_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 160481.
+name gi_NC_026908_ATP6_Illex_argentinus_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164365.
+name gi_NC_020348_ATP6_Ommastrephes_bartramii_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164435.
+name gi_NC_016423_ATP6_Bathyteuthis_abyssicola_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164513.
+name gi_NC_007893_ATP6_Watasenia_scintillans_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164857.
+name gi_NC_006354_ATP6_Todarodes_pacificus_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164865.
+name gi_NC_011581_ATP6_Architeuthis_dux_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164873.
+name gi_NC_010636_ATP6_Sthenoteuthis_oualaniensis_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164877.
+name gi_NC_009734_ATP6_Dosidicus_gigas_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164887.
+name gi_NC_026908_ATP8_Illex_argentinus_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165019.
+name gi_NC_020348_ATP8_Ommastrephes_bartramii_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165087.
+name gi_NC_016423_ATP8_Bathyteuthis_abyssicola_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165143.
+name gi_NC_007893_ATP8_Watasenia_scintillans_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165421.
+name gi_NC_006354_ATP8_Todarodes_pacificus_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165429.
+name gi_NC_011581_ATP8_Architeuthis_dux_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165437.
+name gi_NC_010636_ATP8_Sthenoteuthis_oualaniensis_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165441.
+name gi_NC_009734_ATP8_Dosidicus_gigas_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165451.
+name gi_NC_026908_COX1_Illex_argentinus_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165593.
+name gi_NC_020348_COX1_Ommastrephes_bartramii_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165669.
+name gi_NC_016423_COX1_Bathyteuthis_abyssicola_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165749.
+name gi_NC_007893_COX1_Watasenia_scintillans_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166083.
+name gi_NC_011581_COX1_Architeuthis_dux_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166097.
+name gi_NC_010636_COX1_Sthenoteuthis_oualaniensis_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166101.
+name gi_NC_009734_COX1_Dosidicus_gigas_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166111.
+name gi_NC_020348_COX2_Ommastrephes_bartramii_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166331.
+name gi_NC_016423_COX2_Bathyteuthis_abyssicola_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166405.
+name gi_NC_007893_COX2_Watasenia_scintillans_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166743.
+name gi_NC_011581_COX2_Architeuthis_dux_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166757.
+name gi_NC_010636_COX2_Sthenoteuthis_oualaniensis_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166761.
+name gi_NC_009734_COX2_Dosidicus_gigas_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166771.
+name gi_NC_026908_COX3_Illex_argentinus_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166923.
+name gi_NC_020348_COX3_Ommastrephes_bartramii_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166999.
+name gi_NC_007893_COX3_Watasenia_scintillans_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167411.
+name gi_NC_006354_COX3_Todarodes_pacificus_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167417.
+name gi_NC_011581_COX3_Architeuthis_dux_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167425.
+name gi_NC_010636_COX3_Sthenoteuthis_oualaniensis_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167429.
+name gi_NC_009734_COX3_Dosidicus_gigas_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167439.
+name gi_NC_008828_ATP6_Hexamermis_agrotis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 173019.
+name gi_NC_008828_ATP6_Hexamermis_agrotis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 173021.
+name gi_NC_008693_ND3_Romanomermis_iyengari_115_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175141.
+name gi_NC_008640_ND3_Romanomermis_culicivorax_117_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175147.
+name gi_NC_008640_ND3_Romanomermis_culicivorax_117_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175149.
+name C1549 is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 13.
+run the genewise shell file
+running genewise
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  4%[   2000] Cells  8%[   3000] Cells 13%[   4000] Cells 17%[   5000] Cells 22%[   6000] Cells 26%[   7000] Cells 31%[   8000] Cells 35%[   9000] Cells 40%[  10000] Cells 44%[  11000] Cells 49%[  12000] Cells 53%[  13000] Cells 58%[  14000] Cells 62%[  15000] Cells 67%[  16000] Cells 71%[  17000] Cells 76%[  18000] Cells 80%[  19000] Cells 85%[  20000] Cells 89%[  21000] Cells 94%[  22000] Cells 98%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  1%[   4000] Cells  2%[   5000] Cells  3%[   6000] Cells  3%[   7000] Cells  4%[   8000] Cells  5%[   9000] Cells  5%[  10000] Cells  6%[  11000] Cells  7%[  12000] Cells  7%[  13000] Cells  8%[  14000] Cells  9%[  15000] Cells  9%[  16000] Cells 10%[  17000] Cells 11%[  18000] Cells 11%[  19000] Cells 12%[  20000] Cells 13%[  21000] Cells 13%[  22000] Cells 14%[  23000] Cells 15%[  24000] Cells 15%[  25000] Cells 16%[  26000] Cells 16%[  27000] Cells 17%[  28000] Cells 18%[  29000] Cells 18%[  30000] Cells 19%[  31000] Cells 20%[  32000] Cells 20%[  33000] Cells 21%[  34000] Cells 22%[  35000] Cells 22%[  36000] Cells 23%[  37000] Cells 24%[  38000] Cells 24%[  39000] Cells 25%[  40000] Cells 26%[  41000] Cells 26%[  42000] Cells 27%[  43000] Cells 28%[  44000] Cells 28%[  45000] Cells 29%[  46000] Cells 30%[  47000] Cells 30%[  48000] Cells 31%[  49000] Cells 32%[  50000] Cells 32%[  51000] Cells 33%[  52000] Cells 33%[  53000] Cells 34%[  54000] Cells 35%[  55000] Cells 35%[  56000] Cells 36%[  57000] Cells 37%[  58000] Cells 37%[  59000] Cells 38%[  60000] Cells 39%[  61000] Cells 39%[  62000] Cells 40%[  63000] Cells 41%[  64000] Cells 41%[  65000] Cells 42%[  66000] Cells 43%[  67000] Cells 43%[  68000] Cells 44%[  69000] Cells 45%[  70000] Cells 45%[  71000] Cells 46%[  72000] Cells 47%[  73000] Cells 47%[  74000] Cells 48%[  75000] Cells 49%[  76000] Cells 49%[  77000] Cells 50%[  78000] Cells 50%[  79000] Cells 51%[  80000] Cells 52%[  81000] Cells 52%[  82000] Cells 53%[  83000] Cells 54%[  84000] Cells 54%[  85000] Cells 55%[  86000] Cells 56%[  87000] Cells 56%[  88000] Cells 57%[  89000] Cells 58%[  90000] Cells 58%[  91000] Cells 59%[  92000] Cells 60%[  93000] Cells 60%[  94000] Cells 61%[  95000] Cells 62%[  96000] Cells 62%[  97000] Cells 63%[  98000] Cells 64%[  99000] Cells 64%[ 100000] Cells 65%[ 101000] Cells 66%[ 102000] Cells 66%[ 103000] Cells 67%[ 104000] Cells 67%[ 105000] Cells 68%[ 106000] Cells 69%[ 107000] Cells 69%[ 108000] Cells 70%[ 109000] Cells 71%[ 110000] Cells 71%[ 111000] Cells 72%[ 112000] Cells 73%[ 113000] Cells 73%[ 114000] Cells 74%[ 115000] Cells 75%[ 116000] Cells 75%[ 117000] Cells 76%[ 118000] Cells 77%[ 119000] Cells 77%[ 120000] Cells 78%[ 121000] Cells 79%[ 122000] Cells 79%[ 123000] Cells 80%[ 124000] Cells 81%[ 125000] Cells 81%[ 126000] Cells 82%[ 127000] Cells 83%[ 128000] Cells 83%[ 129000] Cells 84%[ 130000] Cells 84%[ 131000] Cells 85%[ 132000] Cells 86%[ 133000] Cells 86%[ 134000] Cells 87%[ 135000] Cells 88%[ 136000] Cells 88%[ 137000] Cells 89%[ 138000] Cells 90%[ 139000] Cells 90%[ 140000] Cells 91%[ 141000] Cells 92%[ 142000] Cells 92%[ 143000] Cells 93%[ 144000] Cells 94%[ 145000] Cells 94%[ 146000] Cells 95%[ 147000] Cells 96%[ 148000] Cells 96%[ 149000] Cells 97%[ 150000] Cells 98%[ 151000] Cells 98%[ 152000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  5%[   4000] Cells  7%[   5000] Cells  8%[   6000] Cells 10%[   7000] Cells 12%[   8000] Cells 14%[   9000] Cells 16%[  10000] Cells 17%[  11000] Cells 19%[  12000] Cells 21%[  13000] Cells 23%[  14000] Cells 25%[  15000] Cells 26%[  16000] Cells 28%[  17000] Cells 30%[  18000] Cells 32%[  19000] Cells 34%[  20000] Cells 35%[  21000] Cells 37%[  22000] Cells 39%[  23000] Cells 41%[  24000] Cells 43%[  25000] Cells 44%[  26000] Cells 46%[  27000] Cells 48%[  28000] Cells 50%[  29000] Cells 52%[  30000] Cells 53%[  31000] Cells 55%[  32000] Cells 57%[  33000] Cells 59%[  34000] Cells 61%[  35000] Cells 62%[  36000] Cells 64%[  37000] Cells 66%[  38000] Cells 68%[  39000] Cells 70%[  40000] Cells 71%[  41000] Cells 73%[  42000] Cells 75%[  43000] Cells 77%[  44000] Cells 79%[  45000] Cells 80%[  46000] Cells 82%[  47000] Cells 84%[  48000] Cells 86%[  49000] Cells 88%[  50000] Cells 89%[  51000] Cells 91%[  52000] Cells 93%[  53000] Cells 95%[  54000] Cells 97%[  55000] Cells 98%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  2%[   4000] Cells  2%[   5000] Cells  3%[   6000] Cells  4%[   7000] Cells  4%[   8000] Cells  5%[   9000] Cells  6%[  10000] Cells  6%[  11000] Cells  7%[  12000] Cells  8%[  13000] Cells  8%[  14000] Cells  9%[  15000] Cells 10%[  16000] Cells 10%[  17000] Cells 11%[  18000] Cells 12%[  19000] Cells 12%[  20000] Cells 13%[  21000] Cells 14%[  22000] Cells 15%[  23000] Cells 15%[  24000] Cells 16%[  25000] Cells 17%[  26000] Cells 17%[  27000] Cells 18%[  28000] Cells 19%[  29000] Cells 19%[  30000] Cells 20%[  31000] Cells 21%[  32000] Cells 21%[  33000] Cells 22%[  34000] Cells 23%[  35000] Cells 23%[  36000] Cells 24%[  37000] Cells 25%[  38000] Cells 25%[  39000] Cells 26%[  40000] Cells 27%[  41000] Cells 27%[  42000] Cells 28%[  43000] Cells 29%[  44000] Cells 30%[  45000] Cells 30%[  46000] Cells 31%[  47000] Cells 32%[  48000] Cells 32%[  49000] Cells 33%[  50000] Cells 34%[  51000] Cells 34%[  52000] Cells 35%[  53000] Cells 36%[  54000] Cells 36%[  55000] Cells 37%[  56000] Cells 38%[  57000] Cells 38%[  58000] Cells 39%[  59000] Cells 40%[  60000] Cells 40%[  61000] Cells 41%[  62000] Cells 42%[  63000] Cells 42%[  64000] Cells 43%[  65000] Cells 44%[  66000] Cells 45%[  67000] Cells 45%[  68000] Cells 46%[  69000] Cells 47%[  70000] Cells 47%[  71000] Cells 48%[  72000] Cells 49%[  73000] Cells 49%[  74000] Cells 50%[  75000] Cells 51%[  76000] Cells 51%[  77000] Cells 52%[  78000] Cells 53%[  79000] Cells 53%[  80000] Cells 54%[  81000] Cells 55%[  82000] Cells 55%[  83000] Cells 56%[  84000] Cells 57%[  85000] Cells 58%[  86000] Cells 58%[  87000] Cells 59%[  88000] Cells 60%[  89000] Cells 60%[  90000] Cells 61%[  91000] Cells 62%[  92000] Cells 62%[  93000] Cells 63%[  94000] Cells 64%[  95000] Cells 64%[  96000] Cells 65%[  97000] Cells 66%[  98000] Cells 66%[  99000] Cells 67%[ 100000] Cells 68%[ 101000] Cells 68%[ 102000] Cells 69%[ 103000] Cells 70%[ 104000] Cells 70%[ 105000] Cells 71%[ 106000] Cells 72%[ 107000] Cells 73%[ 108000] Cells 73%[ 109000] Cells 74%[ 110000] Cells 75%[ 111000] Cells 75%[ 112000] Cells 76%[ 113000] Cells 77%[ 114000] Cells 77%[ 115000] Cells 78%[ 116000] Cells 79%[ 117000] Cells 79%[ 118000] Cells 80%[ 119000] Cells 81%[ 120000] Cells 81%[ 121000] Cells 82%[ 122000] Cells 83%[ 123000] Cells 83%[ 124000] Cells 84%[ 125000] Cells 85%[ 126000] Cells 85%[ 127000] Cells 86%[ 128000] Cells 87%[ 129000] Cells 88%[ 130000] Cells 88%[ 131000] Cells 89%[ 132000] Cells 90%[ 133000] Cells 90%[ 134000] Cells 91%[ 135000] Cells 92%[ 136000] Cells 92%[ 137000] Cells 93%[ 138000] Cells 94%[ 139000] Cells 94%[ 140000] Cells 95%[ 141000] Cells 96%[ 142000] Cells 96%[ 143000] Cells 97%[ 144000] Cells 98%[ 145000] Cells 98%[ 146000] Cells 99%
+convert result to gff3 format
+Annotation finished
+2022-11-17 13:37:55
+rm -rf *.nhr *.nin *.nsq formatdb.log *.tblastn.shell *.length *.blast *.blast.filter *.shell *.blast.solar *.blast.solar.filter *.blast.solar.filter.table *.blast.solar.filter.table.nonredundance *.blast.solar.filter.nr *.genewise *.solar.genewise.gff *.solar.genewise.gff.cds
+
+2022-11-17 13:37:57
+sort -k3 work71.hmmtblout.besthit.sim.fa.solar.genewise.gff.cds.position.cds.taxa | uniq >work71.hmmtblout.besthit.sim.fa.solar.genewise.gff.cds.position.cds.taxa.sorted.uniq
+
+taxa_selected: Metazoa
+result_seq:  {'C1459', 'C953', 'C1291', 'C1191'}
+2022-11-17 13:37:58
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/filter_hmm-besthit-sim.py work71.hmmtblout.besthit.sim.filtered.fa work71.hmmtblout.besthit.sim work71.hmmtblout.besthit.sim.filtered
+
+2022-11-17 13:37:58
+/opt/conda/bin/python3 /opt/MitoZ/bin/assemble/filter_by_abundance.py 10  work71.hmmtblout.besthit.sim.filtered  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_049-Ex1_MitoZ/tmp/Ssp-AAtu_049-Ex1.assembly/work71.scafSeq 
+
+All sequences are low abundance (<10X)
+CDS_found_lengths_list:  [0]
+quick mode got no result!

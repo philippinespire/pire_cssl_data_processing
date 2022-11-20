@@ -1,0 +1,235 @@
+
+Ssp-AAtu_024-Ex1
+2022-11-17 13:35:23
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 8
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 8 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+8 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r2.fq.gz
+time spent on hash reads: 4s, 607412 reads processed
+[LIB] 0, avg_ins 250, reverse 0 
+11302516 nodes allocated, 24977058 kmer in reads, 24977058 kmer processed
+10763673 linear nodes
+time spent on marking linear nodes 0s
+time spent on pre-graph construction: 5s
+
+deLowKmer 0, deLowEdge 1
+Start to remove kmer of out frequency kmers < 0.100000
+10893 kmers off
+8 thread created
+0 linear nodes
+time spent on cut kmer: 0s
+
+Start to remove tips of single frequency kmers short than 142
+122194 tips off
+8 thread created
+23942 linear nodes
+Start to remove tips which don't contribute the most links
+kmer set 0 done
+kmer set 1 done
+kmer set 2 done
+kmer set 3 done
+kmer set 4 done
+kmer set 5 done
+kmer set 6 done
+kmer set 7 done
+175049 tips off
+8 thread created
+0 linear nodes
+time spent on cutTipe: 8s
+
+114604 (57302) edges 2477 extra nodes
+time spent on making edges: 2s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+8 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r2.fq.gz
+607412 reads processed
+time 0,0,0,0,0,0,0
+0 markers outputed
+done mapping reads, 426385 reads deleted, 84289 arcs created
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 4s
+
+62367 vertex outputed
+overall time for lightgraph: 0m
+
+contig -g work71 -M 3 
+there're 62367 kmers in vertex file
+there're 114604 edge in edge file
+done sort
+input 114604 edges
+99982 pre-arcs loaded
+start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 30, MAX DIFF 10
+27232 startingPoints, 30073 dheap nodes
+2480 pairs found, 1547 pairs of paths compared, 338 pairs merged
+sequenc compare failure: 0 1209 0 0
+DFibHeap: 517 Nodes allocated
+a linear concatenation lap, 2825 concatenated
+a linear concatenation lap, 9 concatenated
+a linear concatenation lap, 0 concatenated
+107510 edges in graph
+time spent on bubblePinch: 0s
+
+Start to remove the low coverage edge < 2
+6459 edges removed
+
+strict 0, cutLen 142
+a cutTipsInGraph lap, 37151 tips cut
+a cutTipsInGraph lap, 3769 tips cut
+a cutTipsInGraph lap, 1025 tips cut
+a cutTipsInGraph lap, 534 tips cut
+a cutTipsInGraph lap, 280 tips cut
+a cutTipsInGraph lap, 201 tips cut
+a cutTipsInGraph lap, 129 tips cut
+a cutTipsInGraph lap, 70 tips cut
+a cutTipsInGraph lap, 63 tips cut
+a cutTipsInGraph lap, 28 tips cut
+a cutTipsInGraph lap, 27 tips cut
+a cutTipsInGraph lap, 20 tips cut
+a cutTipsInGraph lap, 18 tips cut
+a cutTipsInGraph lap, 13 tips cut
+a cutTipsInGraph lap, 13 tips cut
+a cutTipsInGraph lap, 11 tips cut
+a cutTipsInGraph lap, 5 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 0 tips cut
+2213 dead arcs removed
+a linear concatenation lap, 2023 concatenated
+a linear concatenation lap, 97 concatenated
+a linear concatenation lap, 0 concatenated
+5002 edges in graph
+there're 114604 edges
+after compacting 5002 edges left
+
+delete unlike arc :2112
+1 time to delete light arcs 
+240 loops removed in Graph
+Start to remove light arc using the rate 0.050000 and 0.020000
+delete light arc :0/0
+
+1252 short contig(<48) removed 
+a linear concatenation lap, 49 concatenated
+a linear concatenation lap, 2 concatenated
+a linear concatenation lap, 0 concatenated
+2396 edges in graph
+there're 5002 edges
+after compacting 2396 edges left
+
+1181 ctgs longer than 100, sum up 284845bp, with average length 241
+the longest is 1176bp, contig N50 is 242 bp,contig N90 is 214 bp
+1198 contigs longer than 72 output
+time elapsed: 0m
+
+map -s work71.soaptrans.lib -g work71 -p 8 -K 71 -f 
+K = 71
+contig len cutoff: 73
+
+there're 1198 contigs in file: work71, max seq len 1176, min seq len 73, max name len 10
+time spent on parse contigs file 0s
+8 thread created
+time spent on hash reads: 0s
+202318 nodes allocated, 202450 kmer in reads, 202450 kmer processed
+time spent on De bruijn graph construction: 1s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+8 thread created
+2396 edges in graph
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1-cssl.clmp.fp2_r2.fq.gz
+current insert size 250, map_len 32
+Output 3486 out of 607412 (0.6)% reads in gaps
+34193 out of 607412 (5.6)% reads mapped to contigs
+1 pe insert size, the largest boundary is 607412
+
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 3s
+
+overall time for alignment: 0m
+
+scaff -g work71 -F -p 8 
+there're 1 grads, 607412 reads, max read len 150
+K = 71
+there're 2396 edge in edge file
+64 arcs loaded
+input 1198 contigs
+done loading updated edges
+time spent on loading edges 0s
+
+for insert size: 250
+Total_PE_link	Same_contig_right	Same_contig_wrong	Minus_dis_PE	Plus_dis_PE	Correct_PE	Accumulate_connect
+15638	15562	1	10	0	63	94
+Using contigs longer than 250 to estimate insert size: 
+Pair_num	SD	insert_size
+2388	SD=45, 47 new connections
+all PEs attached
+time spent on loading pair end info 0s
+
+
+38 link to masked contigs, 0 links on a single scaff
+Insert size 250: 46 links input
+Cutoff for number of pairs to make a reliable connection: 3
+all links loaded
+time spent on creating scaffolds 0s
+
+mask the short contigs, which are shorter than 100
+41 links built by the informations of single read
+20 weak connections(<10) removed (there were 24 active cnnects))
+0 simple loops found and removed in graph
+Begin to linearize the graph
+Delete the unnecessary connections : 0+0
+Remove the error connections
+0 complex loops found and removed in graph
+The second time to linearize the graph 
+Delete the unnecessary connections : 0+0
+Divided into 1051 loci by the connections
+
+There are 1 locis, which contain more than 2 contigs
+The loci can be classified to four kinds:
+LINEAR:0
+FORK:1
+BUBBLE:0
+COMPLEX:0
+time spent on creating transcriptome 0s
+
+Start to load reads for gap filling. 50 length discrepancy is allowed
+...
+Loaded 3486 reads from work71.readInGap
+8 thread created
+...
+Done with 2 scaffolds, 0 gaps finished, 1 gaps overall
+Threads processed 2 scaffolds
+time elapsed: 0m
+time for the whole pipeline: 0m
+2022-11-17 13:35:46
+rm -rf work71*.Arc work71*.ContigIndex work71*.PEreadOnContig.gz work71*.agp work71*.contig work71*.ctg2Read work71*.edge.gz work71*.gapSeq work71*.kmerFreq work71*.newContigIndex work71*.peGrads work71*.preArc work71*.preGraphBasic work71*.readInGap work71*.readInformation work71*.readOnContig work71*.readOnScaf work71*.scaf_gap work71*.shortreadInGap.gz work71*.updated.edge work71*.vertex
+
+2022-11-17 13:35:46
+nhmmer -o work71.hmmout --tblout work71.hmmtblout --cpu 8 /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1_MitoZ/tmp/Ssp-AAtu_024-Ex1.assembly/work71.scafSeq
+
+2022-11-17 13:35:47
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/get_besthit_of_each_CDS_from_nhmmer.py work71.hmmtblout work71.hmmtblout.besthit
+
+2022-11-17 13:35:47
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/simlify_nhmmer_tbl_besthit.py work71.hmmtblout.besthit work71.hmmtblout.besthit.sim
+
+2022-11-17 13:35:47
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/extract_fasta.py -i /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2/Ssp-AAtu_024-Ex1_MitoZ/tmp/Ssp-AAtu_024-Ex1.assembly/work71.scafSeq -q work71.hmmtblout.besthit.sim -o work71.hmmtblout.besthit.sim.fa
+
+CDS_found_lengths_list:  [0]
+quick mode got no result!
