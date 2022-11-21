@@ -221,21 +221,22 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_
 Once finished, ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) to assess quality.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #Multi_FastQC.sh "<indir>" "<file_extension>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "YOUR_SPECIES_DIR/fq_fp1_clmp_fp2_fqscrn_repaired"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/fq_fp1_clmp_fp2_fqscrn_repaired/" "fq.gz" 
 ```
 
 [Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 41.79%, Contemp:  49.81%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 45%, Contemp: 43%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~2 mil, Contemp: ~20 k
+    * Some reads for contemp had higher number of reads such as CPar_035: ~4-5 mil, CPar_002: ~1 mil, & CPar_027: ~1 mil  
 
 ---
 
@@ -244,10 +245,10 @@ Potential issues:
 Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
 ```
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "YOUR_SPECIES_DIR" "PATH_TO_DIR_WITH_RAW_FILES"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus"
 ```
 
 Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
