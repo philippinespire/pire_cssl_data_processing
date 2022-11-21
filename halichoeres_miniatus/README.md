@@ -170,14 +170,14 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_cl
 Checked that all files were successfully completed.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
-ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #XX 
-ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #XX
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #373
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #373
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #374
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #373
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #373
 
 #checked all out files for any errors
 grep 'error' slurm-fqscrn.*out #nothing
@@ -189,7 +189,7 @@ Everything looks good, no errors/missing files.
 Ran [`runMultiQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch) separately.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runMULTIQC.sbatch <indir> <report name>
 #do not use trailing / in paths
@@ -201,9 +201,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp
 Potential issues:
 
   * one hit, one genome, no ID - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 82%, Contemp: 89-90%
   * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 2%, Contemp: 2.2%
 
 ---
 
@@ -212,7 +212,7 @@ Potential issues:
 Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
