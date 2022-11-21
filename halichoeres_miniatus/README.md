@@ -255,13 +255,13 @@ Generated the [percent_read_loss](URL for read loss table) and [percent_reads_re
 
 Reads lost:
 
-  * fastp1 dropped XX% of the reads
-  * XX% of reads were duplicates and were dropped by Clumpify
+  * fastp1 dropped 1.69% of the reads
+  * 89.56% of reads were duplicates and were dropped by Clumpify
   * fastp2 dropped XX% of the reads after deduplication
 
 Reads remaining:
 
-Total reads remaining: XX%
+Total reads remaining: 8.10%
 
 ---
 
