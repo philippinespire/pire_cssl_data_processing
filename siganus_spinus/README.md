@@ -385,3 +385,16 @@ conda deactivate
 ```
 
 Copy *.eigenval, *.eigenvec & *.Q files to local computer and run pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder).
+
+Results all strongly suggest contemporary and historic are different species!
+
+## Running MitoZ to get COI
+
+New scripts (runMitoZ_array.bash, runMitoZ_array.sbatch, and process_MitoZ_outputs.sh).
+
+```
+runMitoZ_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2 32
+sh process_MitoZ_outputs.sh
+```
+
+Worked for ~2/3 of contemporary libraries (all IDed as Siganus spinus in BOLD) but no Albatross libraries!
