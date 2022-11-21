@@ -17,8 +17,8 @@ salloc
 bash
 
 #check got back sequencing data for all individuals in decode file
-ls | wc -l 494 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
-wc -l Gmi_CaptureLibraries2_SequenceNameDecode.tsv 245 lines (1 additional line for header = XX individuals), checks out
+ls | wc -l #494 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
+wc -l Gmi_CaptureLibraries2_SequenceNameDecode.tsv #245 lines (1 additional line for header = XX individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
 bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq_capture/renameFQGZc.bash Gmi_CaptureLibraries2_SequenceNameDecode.tsv
@@ -184,9 +184,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp
 Potential issues:
 
   * one hit, one genome, no ID - 
-    * Alb: 85%, Contemp: 90%
+    * Alb: 92%, Contemp: 90.5%
   * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
-    * Alb: 15%, Contemp: 10%
+    * Alb: 5%, Contemp: 2%
     
 ---
 
