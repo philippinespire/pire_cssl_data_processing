@@ -1,0 +1,31 @@
+
+
+  /// MultiQC 🔍 | v1.13
+
+[2022-11-21 09:21:14,453] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2022-11-21 09:21:14,453] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename fastqc_screen_report --outdir fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn
+[2022-11-21 09:21:14,950] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.13
+[2022-11-21 09:21:14,950] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
+[2022-11-21 09:21:14,950] multiqc                                            [DEBUG  ]  Template    : default
+[2022-11-21 09:21:14,950] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2022-11-21 09:21:14,951] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2022-11-21 09:21:14,951] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpjwhl1qdf
+[2022-11-21 09:21:15,097] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 2455/2455  
+[2022-11-21 09:25:52,053] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 6371] // [skipped_no_match: 1963] // [skipped_ignore_pattern: 979]
+[2022-11-21 09:25:52,421] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-11-21 09:25:52,422] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-11-21 09:25:52,423] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-11-21 09:25:52,428] multiqc.modules.snippy.snippy                      [INFO   ]  Found 1 reports
+[2022-11-21 09:25:52,429] multiqc.plots.bargraph                             [WARNING]  Tried to make bar plot, but had no data: snippy_variants
+[2022-11-21 09:25:52,660] multiqc.modules.fastq_screen.fastq_screen          [INFO   ]  Found 488 reports
+[2022-11-21 09:26:50,957] multiqc                                            [INFO   ]  Compressing plot data
+[2022-11-21 09:26:51,082] multiqc                                            [WARNING]  Deleting    : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report.html   (-f was specified)
+[2022-11-21 09:26:51,084] multiqc                                            [WARNING]  Deleting    : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_data   (-f was specified)
+[2022-11-21 09:26:51,092] multiqc                                            [WARNING]  Deleting    : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_plots   (-f was specified)
+[2022-11-21 09:26:51,106] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report.html
+[2022-11-21 09:26:51,106] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_data
+[2022-11-21 09:26:51,106] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpjwhl1qdf/multiqc_data' to 'fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_data'
+[2022-11-21 09:26:51,142] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_plots
+[2022-11-21 09:26:51,142] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpjwhl1qdf/multiqc_plots' to 'fq_fp1_clmp_fp2_fqscrn/fastqc_screen_report_plots'
+[2022-11-21 09:26:51,331] multiqc                                            [INFO   ]  MultiQC complete

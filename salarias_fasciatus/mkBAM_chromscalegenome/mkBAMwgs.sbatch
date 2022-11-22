@@ -14,6 +14,11 @@ export SINGULARITY_BIND=/home/e1garcia
 #OUTDIR=./mkBAM
 #THREADS=40
 
+#Eric running Sfa cssl repaired fq.gz on chromosome level ref
+#../fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz
+#GCF_902148845.1_fSalaFa1.1_chr1-23-mtgen.fna.gz
+#.			#mkBAM_chromscalegenome
+
 INPATTERN=$1
 REF=$2
 OUTDIR=$3
