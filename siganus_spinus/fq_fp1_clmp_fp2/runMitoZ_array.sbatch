@@ -26,3 +26,5 @@ mkdir ${INDIR}/${sample_name}_MitoZ
 cd ${INDIR}/${sample_name}_MitoZ
 
 crun MitoZ.py all2 --genetic_code 2 --clade Chordata --outprefix ${sample_name} --thread_number 8 --fastq1 ${INDIR}/${sample_name}-cssl.clmp.fp2_r1.fq.gz --fastq2 ${INDIR}/${sample_name}-cssl.clmp.fp2_r2.fq.gz --fastq_read_length 150
+
+rm -r tmp
