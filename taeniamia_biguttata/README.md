@@ -316,9 +316,9 @@ Handing off to George Bonsall for further processing.
 Get correct reference and config file, rename according to dDocent conventions, and edit config file to use this reference.
 
 ```
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAM_Sspref
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAM_Tbiref
 cp ../mkBAM/config.5.cssl .
-mv scaffolds.fasta reference.ssl.Ssp-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta
+mv scaffolds.fasta reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta
 vi config.5.cssl
 ```
 
