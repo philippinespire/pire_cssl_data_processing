@@ -310,3 +310,20 @@ sbatch ../dDocentHPC.sbatch config.5.cssl
 Handing off to George Bonsall for further processing.
 
 ---
+
+11/23/22 - Brendan Reid remapping to the original "Ssp" probe development reference (true species identity = Tbi).
+
+Get correct reference and config file, rename according to dDocent conventions, and edit config file to use this reference.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAM_Sspref
+cp ../mkBAM/config.5.cssl .
+mv scaffolds.fasta reference.ssl.Ssp-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta
+vi config.5.cssl
+```
+
+Get script - still working from Ssp version - and run.
+```
+cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM_probedevref/dDocentHPC.sbatch .
+sbatch dDocentHPC.sbatch config.5.cssl
+```
