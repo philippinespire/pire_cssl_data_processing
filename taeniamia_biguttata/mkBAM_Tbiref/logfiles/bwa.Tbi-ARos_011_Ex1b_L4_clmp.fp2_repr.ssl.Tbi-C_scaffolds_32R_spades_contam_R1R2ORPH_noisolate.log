@@ -1,0 +1,36 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 3167460 sequences (400000245 bp)...
+[M::process] read 164354 sequences (20651517 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (22, 319626, 5, 48)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (49, 66, 144)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 334)
+[M::mem_pestat] mean and std.dev: (87.73, 48.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 429)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (80, 111, 147)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 281)
+[M::mem_pestat] mean and std.dev: (114.41, 49.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 348)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 137, 137)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (38, 203)
+[M::mem_pestat] mean and std.dev: (117.51, 33.14)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 250)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 3167460 reads in 999.031 CPU sec, 26.858 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1, 18138, 0, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (80, 112, 145)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 275)
+[M::mem_pestat] mean and std.dev: (113.68, 48.20)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 340)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 164354 reads in 56.545 CPU sec, 1.551 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Tbi-ARos_011_Ex1b_L4_clmp.fp2_repr\tSM:Tbi-ARos_011_Ex1b_L4_clmp.fp2_repr\tPL:Illumina reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta Tbi-ARos_011_Ex1b_L4_clmp.fp2_repr.R1.fq.gz Tbi-ARos_011_Ex1b_L4_clmp.fp2_repr.R2.fq.gz
+[main] Real time: 44.058 sec; CPU: 1071.126 sec

@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 2539524 sequences (306290271 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (57, 474930, 23, 106)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 124, 412)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1144)
+[M::mem_pestat] mean and std.dev: (215.04, 169.87)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1510)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (88, 114, 143)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 253)
+[M::mem_pestat] mean and std.dev: (115.71, 40.95)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 308)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (15, 97, 138)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 384)
+[M::mem_pestat] mean and std.dev: (89.52, 55.75)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 507)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (83, 173, 173)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 353)
+[M::mem_pestat] mean and std.dev: (132.11, 58.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 443)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 2539524 reads in 822.639 CPU sec, 21.918 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Tbi-ARos_012_Ex1b_L4_clmp.fp2_repr\tSM:Tbi-ARos_012_Ex1b_L4_clmp.fp2_repr\tPL:Illumina reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta Tbi-ARos_012_Ex1b_L4_clmp.fp2_repr.R1.fq.gz Tbi-ARos_012_Ex1b_L4_clmp.fp2_repr.R2.fq.gz
+[main] Real time: 34.401 sec; CPU: 834.304 sec
