@@ -356,3 +356,32 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/
 git mv mkBAM mkBAM_deprecated
 git mv mkBAM_Tbiref mkBAM
 ```
+
+## Preliminary filter (pre-HWE, before we check for structure/cryptic species) 
+
+Clone Chris's fltrVCF and rad_haplotyper repos to species dir first 
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata 
+git clone https://github.com/cbirdlab/fltrVCF.git
+git clone https://github.com/cbirdlab/rad_haplotyper.git 
+
+```
+
+Move to fltrVCF dir, copy and modify config file (change name to indicate this is the first filter).
+
+```
+cd fltrVCF
+cp config_files/config.fltr.ind.cssl ./
+mv config.fltr.ind.cssl config.fltr.ind.cssl.1
+```
+
+See config file for changed settings - omitting the last 2 steps (HWE).
+
+Grabbing the sbatch from `pire_cssl_data_processing/leiognathus_equula/fltrVCF` and running
+
+```
+cp ../../leiognathus_equula/fltrVCF/fltrVCF.sbatch .
+sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
+```
+
