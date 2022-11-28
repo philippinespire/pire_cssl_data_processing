@@ -166,18 +166,18 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
-
+One sample seemed to never be completed (Hmi-ABas_032-Ex1-08C.clmp.fp2_r1), so I reran and included the missing data into the fq_fp1_clmp_fp2_fqscrn directory. 
 Checked that all files were successfully completed.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
-ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #373
-ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #373
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #374
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #374
 ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #374
-ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #373
-ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #373
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #374
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #374
 
 #checked all out files for any errors
 grep 'error' slurm-fqscrn.*out #nothing
@@ -201,9 +201,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp
 Potential issues:
 
   * one hit, one genome, no ID - 
-    * Alb: 82%, Contemp: 89-90%
+    * Alb: 83%, Contemp: 87%
   * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
-    * Alb: 2%, Contemp: 2.2%
+    * Alb: 2.2%, Contemp: 2%
 
 ---
 
