@@ -327,3 +327,32 @@ Get script - still working from Ssp version - and run.
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM_probedevref/dDocentHPC.sbatch .
 sbatch dDocentHPC.sbatch config.5.cssl
 ```
+
+Script ran successfully except for the final indexing step. Resolve by manually indexing.
+
+```
+salloc
+module load vcftools
+module load htslib
+vcf-sort TotalRawSNPs.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.vcf.gz > TotalRawSNPs.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.vcf
+bgzip TotalRawSNPs.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.vcf
+tabix TotalRawSNPs.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.vcf.gz
+```
+
+Checking the new mapping: view a few RG.bam files in IGV in relation to the bait locations (baits are the ones designed based on the "Ssp" genome - '/home/e1garcia/shotgun_PIRE/shotgun_baits/Siganus_spinus_chosen_baits.bed'). Based on IGV the new mapping looks correct - high coverage for contemporary and fairly good coverage for Albatross in most bait regions.
+
+Copying the correct baits file to mkBAM_Tbiref and renaming with correct species name. Note a few things:
+1) I have not yet renamed the bait file in /home/e1garcia/shotgun_PIRE/shotgun_baits/
+2) Bait file has scaffold names with starting with ">" (like a .fasta file) - I had to remove these initial ">"s on my laptop for it to play properly with the reference genome file in IGV. I did not do this yet for the file in 
+
+```
+cp /home/e1garcia/shotgun_PIRE/shotgun_baits/Siganus_spinus_chosen_baits.bed /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAM_Tbiref/Taeniamia_biguttata_chosen_baits.bed
+```
+
+Renaming the original mkBAM folder to mkBAM_deprecated and the mkBAM_Tbiref folder to mkBAM. mkBAM now has the correct mapping files, the correct reference genome, and the correct bait files.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/
+git mv mkBAM mkBAM_deprecated
+git mv mkBAM_Tbiref mkBAM
+```
