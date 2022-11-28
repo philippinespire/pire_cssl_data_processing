@@ -385,3 +385,10 @@ cp ../../leiognathus_equula/fltrVCF/fltrVCF.sbatch .
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.1
 ```
 
+Had to go back and manually unzip the vcf.gz for some reason!
+
+Initial filtering kept many sites (106858!) but filtered out all of the Albatross individuals - possibly we are keeping many sites not covered by the baits that were genotyped for contemporary but not Albatross?. I am going to try again lowering the threshold for filter 5 to 0.8, which should reduce the # of sites but hopefully keep more Albatross?
+
+```
+sbatch fltrVCF.sbatch config.fltr.ind.cssl.2
+```
