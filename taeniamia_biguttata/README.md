@@ -392,3 +392,5 @@ Initial filtering kept many sites (106858!) but filtered out all of the Albatros
 ```
 sbatch fltrVCF.sbatch config.fltr.ind.cssl.2
 ```
+
+Finished with a <10X fewer sites (10417) but retained 17 Albatross individuals.
