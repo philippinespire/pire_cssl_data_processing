@@ -394,3 +394,50 @@ sbatch fltrVCF.sbatch config.fltr.ind.cssl.2
 ```
 
 Finished with a <10X fewer sites (10417) but retained 17 Albatross individuals.
+
+### Initial popgen
+
+## Initial popgen
+
+Make a directory to work in:
+
+``` 
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata
+mkdir pop_structure
+cd pop_structure
+```
+
+Copy final VCF file made from fltrVCF step to `pop_structure` directory.
+
+```
+cp ../fltrVCF/tbi.B.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf .
+```
+
+Run PCA and prepare files for Admixture in PLINK.
+
+```
+salloc
+module load anaconda
+conda activate popgen
+#problem with vcf ordering appeared again... re-sorting!
+module load vcftools
+module load htslib
+vcf-sort tbi.B.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf > tbi.B.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.Fltr07.18.vcf
+plink --vcf tbi.B.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --pca --out PIRE.tbi.B.preHWE
+plink --vcf tbi.B.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-resort.Fltr07.18.vcf --const-fid 0 --allow-extra-chr --make-bed --out PIRE.tbi.B.preHWE
+awk '{$1=0;print $0}' PIRE.tbi.B.preHWE.bim > PIRE.tbi.B.preHWE.bim.tmp
+mv PIRE.tbi.B.preHWE.bim.tmp PIRE.tbi.B.preHWE.bim
+```
+
+Run Admixture for k={1-5].
+```
+bash
+for K in 1 2 3 4 5; \
+do admixture --cv PIRE.tbi.B.preHWE.bed $K | tee log${K}.out; done
+exit
+conda deactivate
+```
+
+Copy *.eigenval, *.eigenvec & *.Q files to local computer and run pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder).
+
+
