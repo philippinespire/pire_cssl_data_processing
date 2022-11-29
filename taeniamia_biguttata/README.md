@@ -440,4 +440,17 @@ conda deactivate
 
 Copy *.eigenval, *.eigenvec & *.Q files to local computer and run pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder).
 
+PCA shows most Albatross and Contemporary individuals clustering together, but 3/17 Albatross individuals were separated along PC1 (explaining ~90% of variation). For Admixture the lowest cross-validation error was for K=1; for K≥2 some structure but no clear Albatross-contemporary split. Suggests we might have ID problems or sequencing issues with some individuals that could be flagged for further investigation/removal, but no pervasive issues...
 
+## Running MitoZ to get COI
+
+Try scripts used on Ssp.
+
+```
+#copy fq_fp1_clmp_fp2 files
+cp /scratch/r3clark//taeniamia_biguttata/fq_fp1_clmp_fp2/*.fq.gz /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/fq_fp1_clmp_fp2
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/fq_fp1_clmp_fp2
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runMitoZ_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/fq_fp1_clmp_fp2 32
+cp ../../scripts/process_MitoZ_outputs.sh .
+sh process_MitoZ_outputs.sh
+```
