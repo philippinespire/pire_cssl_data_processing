@@ -35,7 +35,7 @@ BED=$2		# Path and name of bed file
 if [[ -z "$3" ]]; then
         OUTDIR=$BAMDIR/out_baitTrgtCVG
 else
-        OUTDIR=$3
+        OUTDIR=$3/out_baitTrgtCVG
 fi
 
 if [[ -z "$4" ]]; then

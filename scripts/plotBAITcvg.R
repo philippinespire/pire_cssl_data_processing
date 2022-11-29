@@ -29,29 +29,35 @@ setwd("baitCVGdecontam")
 getwd()
 
 # Get a list of the bedtools output files you'd like to read in
-print(files <- list.files(pattern="G.hist.all.txt$"))
+print(files <- list.files(pattern="G.hist.all.tsv$"))
 
 ### Optional but recommended, create short labels for the file names that are very long. 
 # print the 1st file to see the naming scheme
 files[1] 
 # example: [1] "Sgr-AJol_001-Ex1-cssl.clmp.fp2_repr.ssl.SgC0072C_contam_R1R2_noIsolate-RG.baitCVG.hist.all.txt"
-# Now, modified the regex as necessary to leave only the code for species, era, locality and individual
+
+# Normally, the Species, Era, Population and Indiviual are represented within the first 12 characters of the file name. 
+# If this is the case, you can truncate the names to first 12 characters.
+print(labs <- substr(files,1,12))
+
+# Alternately, modified the regex below as necessary to leave only the code for species, era, locality and individual
 # Check the example below. (mostly this will match <-Ex1-cssl\\.clmp\\.fp2_repr\\.ssl\\.>) (<then you have match your specific assembly treatments>) (and this should match too <.baitCVG\\.hist\\.all\\.txt">)
-print(labs <- gsub("-Ex1-cssl\\.clmp\\.fp2_repr\\.ssl\\.SgC0072C_contam_R1R2_noIsolate-RG\\.baitCVG\\.hist\\.all\\.txt", "", files, perl=TRUE), sep="")
+#print(labs <- gsub("-Ex1-cssl\\.clmp\\.fp2_repr\\.ssl\\.SgC0072C_contam_R1R2_noIsolate-RG\\.baitCVG\\.hist\\.all\\.txt", "", files, perl=TRUE), sep="")
 # example output: [1] "Sgr-AJol_001" "Sgr-AJol_002" "Sgr-AJol_003" "Sgr-AJol_004" "Sgr-AJol_005"
 ### <º)))<<
-
-### IMPORTANT
-# After this point, follow the instructions:
-#  "by ERA" if you have 1 Albatross and 1 Contemporary population
-#  "by POP" if you have more than 1 Albatross and 1 Contemporary population
-
-#### DIVIVE DATA by ERA ####
 
 # get the populations (either code works)
 print(pops <- unique(sub('_.*','', labs)))
 print(pops <- unique(sub('_.*','', files)))
 # [1] "Sgr-AJol" "Sgr-CJol"
+
+
+### IMPORTANT
+# After this point, follow the instructions:
+#  "by ERA" if you have 1 Albatross and 1 Contemporary population
+#  "by POP" if you have more than 1 Albatross and 1 Contemporary populations
+
+#### DIVIVE DATA by ERA ####
 
 # print the labs/files in the console and check which files correspond to which ERA and split them accordingly
 labs
