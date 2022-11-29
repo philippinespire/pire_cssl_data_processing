@@ -248,7 +248,7 @@ Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus" "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus" "raw_fq_capture"
 ```
 
 Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
@@ -256,12 +256,12 @@ Generated the [percent_read_loss](URL for read loss table) and [percent_reads_re
 Reads lost:
 
   * fastp1 dropped 1.69% of the reads
-  * 89.56% of reads were duplicates and were dropped by Clumpify
-  * fastp2 dropped XX% of the reads after deduplication
+  * 89.57% of reads were duplicates and were dropped by Clumpify
+  * fastp2 dropped 3.01% of the reads after deduplication
 
 Reads remaining:
 
-Total reads remaining: 8.10%
+Total reads remaining: 8.14%
 
 ---
 
