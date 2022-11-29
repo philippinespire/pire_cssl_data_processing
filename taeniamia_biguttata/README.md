@@ -440,7 +440,9 @@ conda deactivate
 
 Copy *.eigenval, *.eigenvec & *.Q files to local computer and run pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in pop_structure folder).
 
-PCA shows most Albatross and Contemporary individuals clustering together, but 3/17 Albatross individuals were separated along PC1 (explaining ~90% of variation). For Admixture the lowest cross-validation error was for K=1; for K≥2 some structure but no clear Albatross-contemporary split. Suggests we might have ID problems or sequencing issues with some individuals that could be flagged for further investigation/removal, but no pervasive issues...
+PCA shows most Albatross and Contemporary individuals clustering together, but 4/17 Albatross individuals were separated along PC1 (explaining ~90% of variation). For Admixture the lowest cross-validation error was for K=1; for K≥2 some structure but no clear Albatross-contemporary split. Suggests we might have ID problems or sequencing issues with some individuals that could be flagged for further investigation/removal, but no pervasive issues...
+
+Odd Albatross individuals = ARos_006, ARos_012, ARos_019, ARos_021
 
 ## Running MitoZ to get COI
 
@@ -454,3 +456,12 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runMitoZ_arra
 cp ../../scripts/process_MitoZ_outputs.sh .
 sh process_MitoZ_outputs.sh
 ```
+
+Almost all (62/63) contemporary individuals produced full length COI sequences. Most of these exhibited highest similarity to T. fucata on BOLD, but were also within 2% of T. kagoshimanus. For some the most similar sequence was from T. biguttata, but similarity was <2% so it did not give a positive ID. I wouldn't be surprised if there was rampant incomplete lineage sorting or hybridization in Taeniamia based on the BOLD trees, so COI might not be the best ID method.
+
+Albatross worked better with MitoZ than it did for Siganus - still not really full genomes but some genes recovered. But the outputs are strange -
+*ND4 from ARos_011 is 100% match to Leq! 
+*COX1 from ARos_019 is >99.6% match to Sne!
+*COX1 from ARos_005 is from Bradyrhizobium!
+
+Getting matches to other PIRE species suggests COI could be contamination for these individuals.
