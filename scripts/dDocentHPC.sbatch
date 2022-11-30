@@ -7,6 +7,7 @@
 
 enable_lmod
 module load container_env ddocent
+export SINGULARITY_BIND=/home/e1garcia
 
 CONFIG=$1
 
