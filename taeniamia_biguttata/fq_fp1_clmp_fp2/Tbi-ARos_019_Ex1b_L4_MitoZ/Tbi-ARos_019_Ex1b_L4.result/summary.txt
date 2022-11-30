@@ -1,0 +1,62 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C27244         557            no             Apogon semilineatus 
+C27298         945            no             Apogon semilineatus 
+C26866         392            no             Apogon semilineatus 
+C27256         602            no             Apogon semilineatus 
+C27316         2288           no             Apogon semilineatus 
+C27286         746            no             Siganus vulpinus    
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C26866         5      >392   388        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C27244         10     178    169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C27244         168    >558   391        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C27256         <1     >601   601        -          CDS    CYTB       cytochrome b                      1              
+C27286         18     576    559        +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C27286         576    647    72         -          tRNA   trnS(uga)  tRNA-Ser                          1              
+C27286         649    722    74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C27298         <2     92     91         -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C27298         85     382    298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C27298         382    451    70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C27298         449    800    352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C27298         800    870    71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C27316         8      530    523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C27316         525    >2289  1765       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+
+
+Protein coding genes totally found: 10
+tRNA genes totally found:            4
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                14
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX3                                 1
+ND1                                  1
+ND2                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

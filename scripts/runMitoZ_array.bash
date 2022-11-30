@@ -11,11 +11,11 @@
 nodes=$2    # eg 32 - running 4 at a time?
 
 INDIR=$1                 #example= /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/fq_fp1_clmp_fp2
-FQPATTERN=*-cssl.clmp.fp2_r1.fq.gz        #forward reads
+FQPATTERN=*_clmp.fp2_r1.fq.gz        #forward reads
 
 SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-all_samples=$(ls $INDIR/$FQPATTERN | sed -e 's/-cssl.clmp.fp2_r1\.fq\.gz//' -e 's/.*\///g')
+all_samples=$(ls $INDIR/$FQPATTERN | sed -e 's/_clmp.fp2_r1\.fq\.gz//' -e 's/.*\///g')
 all_samples=($all_samples)
 
 sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} $SCRIPTPATH/runMitoZ_array.sbatch ${INDIR} ${nodes}
