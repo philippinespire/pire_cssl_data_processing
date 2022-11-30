@@ -26,8 +26,8 @@ no              FixStacks (yes,no)                                              
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
 PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
 0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
-denovoSSL               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-Aur-C_500_R1R2ORPHMRGD_decontam_noisolate               Cutoff2 (integer)
+rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+RAW-10-10               Cutoff2 (integer)
                 Use unique reads that occur in at least this many individuals for making the reference genome
 0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
 0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
@@ -38,7 +38,7 @@ Make sure the cutoffs above match the reference*fasta!
 1               bwa mem -A Mapping_Match_Value (integer)
 4               bwa mem -B Mapping_MisMatch_Value (integer)
 6               bwa mem -O Mapping_GapOpen_Penalty (integer)
-80              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
 5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (
 0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
 0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
 30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
-80                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
 no                                      Remove_reads_orphaned_by_filters? (yes,no)
 ------------------------------------------------------------------------------------------------------------------
 
