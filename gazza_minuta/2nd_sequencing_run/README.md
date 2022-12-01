@@ -252,7 +252,7 @@ Total reads remaining: 42.52%
 Make mapping directory and move `*fq.gz` files over.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run
 mkdir mkBAM
 
 mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
@@ -269,30 +269,29 @@ Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
 cd /pire_cssl_data_procesing/scripts/dDocentHPC
 git pull
 
-cd YOUR_SPECIES_DIR/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM
 
 cp ../../scripts/dDocentHPC/configs/config.5.cssl .
 ```
 
-Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`.
+Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`. In this case, since this is the 2nd sequencing run and GMI does not have an assembled genome, the "raw" reference fasta that was used during the 1st sequencing run was copied and used here. 
 
 ```sh
-cd YOUR_SPECIES_DIR/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM
 
-cp PATH TO DIR WITH BEST GENOME ASSEMBLY/<BEST_ASSEMBLY.fasta> .
+cp ../1st_sequencing_run/reference.rad.RAW-10-10.fasta
 
 #the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
 #<assembly type> is `ssl` for denovo assembled shotgun library or `rad` for denovo assembled rad library
 #this naming is a little messy, but it makes the ref 100% tracable back to the source
 #it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
 
-mv BEST_ASSEMBLY.fasta ./PIRE-FORMATTED_NAME.fasta
 ```
 
-Updated the config file with the ref genome info.
+Updated the config file with the ref genome info. The nano from the 1st sequencing run was copied over from 1st sequencing run as well. 
 
 ```sh
-cd YOUR_SPECIES_DIR/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM
 
 nano config.5.cssl
 ```
@@ -302,8 +301,8 @@ Inserted `<assembly type>` into the `Cutoff1` variable and `<unique assembly inf
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
 PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
-ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
+rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+RAW-10-10              Cutoff2 (integer)
                 Use unique reads that occur in at least this many individuals for making the reference genome
 0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
 0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
@@ -323,14 +322,14 @@ Make sure the cutoffs above match the reference*fasta!
 
 ## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
-Ran [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch).
+Since mkVCF was already run during the 1st sequencing run, dDocentHPC.sbatch script was duplicated and had the mkVCF commented out in the script under the new name dDocentHPC_nomkVCF.sbatch.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../dDocentHPC.sbatch config.5.cssl
+sbatch ../../dDocentHPC_nomkVCF.sbatch config.5.cssl
 ```
 
 ---
