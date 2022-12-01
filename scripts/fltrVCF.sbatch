@@ -11,6 +11,7 @@
 
 enable_lmod
 module load container_env ddocent
+export SINGULARITY_BIND=/home/e1garcia
 
 #module load ddocent
 #module load perl/5.22.0
@@ -21,4 +22,4 @@ module load container_env ddocent
 #module load samtools
 #module load R/gcc7/3.5.3
 
-crun bash ../../scripts/fltrVCF/fltrVCF.bash -s $1
+crun bash fltrVCF.bash -s $1
