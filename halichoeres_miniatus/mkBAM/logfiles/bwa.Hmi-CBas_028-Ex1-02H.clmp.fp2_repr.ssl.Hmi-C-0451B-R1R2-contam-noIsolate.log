@@ -1,0 +1,20 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 42436 sequences (5080045 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 13796, 138, 3)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (100, 126, 161)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 283)
+[M::mem_pestat] mean and std.dev: (131.59, 46.97)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 344)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (149, 149, 149)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (149, 149)
+[M::mem_pestat] mean and std.dev: (149.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (149, 149)
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation RF
+[M::mem_process_seqs] Processed 42436 reads in 32.783 CPU sec, 0.865 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 80 -A 1 -B 4 -O 6 -R @RG\tID:Hmi-CBas_028-Ex1-02H.clmp.fp2_repr\tSM:Hmi-CBas_028-Ex1-02H.clmp.fp2_repr\tPL:Illumina reference.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.fasta Hmi-CBas_028-Ex1-02H.clmp.fp2_repr.R1.fq.gz Hmi-CBas_028-Ex1-02H.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 7.117 sec; CPU: 35.967 sec
