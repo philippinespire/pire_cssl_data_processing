@@ -1,0 +1,31 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 4192582 sequences (400000108 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2, 67562, 5, 8)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (51, 67, 84)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 150)
+[M::mem_pestat] mean and std.dev: (68.68, 24.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 183)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::process] read 4103458 sequences (395034935 bp)...
+[M::mem_process_seqs] Processed 4192582 reads in 10466.624 CPU sec, 505.532 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 56921, 2, 11)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (51, 67, 85)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 153)
+[M::mem_pestat] mean and std.dev: (69.06, 25.41)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 187)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (24, 31, 40)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 72)
+[M::mem_pestat] mean and std.dev: (32.00, 15.15)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 93)
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 4103458 reads in 10235.785 CPU sec, 346.200 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 48 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-AMvi_025-Ex1-cssl.clmp.fp2\tSM:Sgr-AMvi_025-Ex1-cssl.clmp.fp2\tPL:Illumina reference.ssl.Sgr-SgC0072C-contam-R1R2-noIsolate-fromPROBES.fasta Sgr-AMvi_025-Ex1-cssl.clmp.fp2.R1.fq.gz Sgr-AMvi_025-Ex1-cssl.clmp.fp2.R2.fq.gz
+[main] Real time: 871.742 sec; CPU: 20721.678 sec
