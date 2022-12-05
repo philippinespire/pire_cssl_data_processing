@@ -11,21 +11,21 @@ Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack).
 Used decode file from Sharon Magnuson & Chris Bird.
 
 ```bash
-cd YOUR_SPECIES_DIR/raw_fq_capture
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture
 
 salloc
 bash
 
 #check got back sequencing data for all individuals in decode file
-ls | wc -l #XX files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
-wc -l NAMEOFDECODEFILE.tsv #XX lines (1 additional line for header = XX individuals), checks out
+ls | wc -l #256 files (2 additional files for README & decode.tsv = XX/2 = XX individuals (R&F)
+wc -l Lle_CaptureLibraries_SequenceNameDecode_fixed.tsv #129 lines (1 additional line for header = XX individuals), checks out
 
 #run renameFQGZ.bash first to make sure new names make sense
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Lle_CaptureLibraries_SequenceNameDecode_fixed.tsv
 
 #run renameFQGZ.bash again to actually rename files
 #need to say "yes" 2X
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDECODEFILE.tsv rename
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Lle_CaptureLibraries_SequenceNameDecode_fixed.tsv rename
 ```
 
 ---
@@ -35,21 +35,21 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash NAMEOFDEC
 Ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).
 
 ```sh
-cd YOUR_SPECIES_DIR/raw_fq_capture
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture
 
 #Multi_FastQC.sh "<indir>" "<file_extension>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "YOUR_SPECIES_DIR/raw_fq_capture" "fq.gz"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture" "fq.gz"
 ```
 
 [Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 79.20%, Contemp: 54.65%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 46%, Contemp: 47%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~19 mil, Contemp: ~6 mil
 
 ---
 
@@ -58,7 +58,7 @@ Potential issues:
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
