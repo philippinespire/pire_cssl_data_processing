@@ -1,0 +1,379 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 193273528320 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2913), pid=30261, tid=30263
+#
+# JRE version:  (11.0.9.1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1-internal+0-adhoc..src, mixed mode, tiered, g1 gc, linux-amd64)
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Xmx180g -Xms180g clump.Clumpify in=fq_fp1/Hte-ATic_045-Ex1-cssl.r1.fq.gz in2=fq_fp1/Hte-ATic_045-Ex1-cssl.r2.fq.gz out=fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r1.fq.gz out2=fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch/cbird dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+
+Host: Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz, 40 cores, 376G, CentOS Stream release 8
+Time: Mon Dec  5 13:00:50 2022 EST elapsed time: 0.013135 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f0308016000):  JavaThread "Unknown thread" [_thread_in_vm, id=30263, stack(0x00007f030ccd9000,0x00007f030cdda000)]
+
+Stack: [0x00007f030ccd9000,0x00007f030cdda000],  sp=0x00007f030cdd81f0,  free space=1020k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xd657ea]  VMError::report_and_die(int, char const*, char const*, __va_list_tag*, Thread*, unsigned char*, void*, void*, char const*, int, unsigned long)+0x38a
+V  [libjvm.so+0xd6645d]  VMError::report_and_die(Thread*, char const*, int, unsigned long, VMErrorType, char const*, __va_list_tag*)+0x2d
+V  [libjvm.so+0x651c39]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*, ...)+0xd9
+V  [libjvm.so+0xb73e74]  os::pd_commit_memory_or_exit(char*, unsigned long, unsigned long, bool, char const*)+0xe4
+V  [libjvm.so+0xb6a90d]  os::commit_memory_or_exit(char*, unsigned long, unsigned long, bool, char const*)+0x2d
+V  [libjvm.so+0x754c8c]  G1PageBasedVirtualSpace::commit_preferred_pages(unsigned long, unsigned long)+0x6c
+V  [libjvm.so+0x7550a8]  G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0x1c8
+V  [libjvm.so+0x75edd2]  G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkGang*)+0x42
+V  [libjvm.so+0x7cee04]  HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkGang*)+0x54
+V  [libjvm.so+0x7cfa14]  HeapRegionManager::make_regions_available(unsigned int, unsigned int, WorkGang*)+0x34
+V  [libjvm.so+0x7d0066]  HeapRegionManager::expand_by(unsigned int, WorkGang*)+0x66
+V  [libjvm.so+0x7162f7]  G1CollectedHeap::expand(unsigned long, WorkGang*, double*)+0xe7
+V  [libjvm.so+0x716a36]  G1CollectedHeap::initialize()+0x6b6
+V  [libjvm.so+0xd24e62]  Universe::initialize_heap()+0x42
+V  [libjvm.so+0xd25145]  universe_init()+0x55
+V  [libjvm.so+0x7ec961]  init_globals()+0x71
+V  [libjvm.so+0xd00590]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x4b0
+V  [libjvm.so+0x897ea1]  JNI_CreateJavaVM+0x61
+C  [libjli.so+0x4689]  JavaMain+0xa9
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000055a205acfc30, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00007f030802e800 GCTaskThread "GC Thread#0" [stack: 0x00007f030c5b0000,0x00007f030c6b0000] [id=30265]
+  0x00007f03080b3000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007f02eb481000,0x00007f02eb581000] [id=30268]
+  0x00007f03080b5000 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007f02eb37f000,0x00007f02eb47f000] [id=30270]
+
+[error occurred during error reporting (printing all threads), id 0xb, SIGSEGV (0xb) at pc=0x00007f030d888870]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f0308013570] Heap_lock - owner thread: 0x00007f0308016000
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.002 Protecting memory [0x00007f030ccd9000,0x00007f030ccdd000] with protection modes 0
+Event: 0.003 Loaded shared library /opt/conda/lib/libzip.so
+
+
+Dynamic libraries:
+55a204b41000-55a204b42000 r--p 00000000 07:01 1238                       /opt/conda/bin/java
+55a204b42000-55a204b43000 r-xp 00001000 07:01 1238                       /opt/conda/bin/java
+55a204b43000-55a204b44000 r--p 00002000 07:01 1238                       /opt/conda/bin/java
+55a204b44000-55a204b45000 r--p 00002000 07:01 1238                       /opt/conda/bin/java
+55a204b45000-55a204b46000 rw-p 00003000 07:01 1238                       /opt/conda/bin/java
+55a205ab7000-55a205ad8000 rw-p 00000000 00:00 0                          [heap]
+7ed430000000-7ed430021000 rw-p 00000000 00:00 0 
+7ed430021000-7ed434000000 ---p 00000000 00:00 0 
+7ed438000000-7ed438021000 rw-p 00000000 00:00 0 
+7ed438021000-7ed43c000000 ---p 00000000 00:00 0 
+7ed43c800000-7ed43e800000 rw-p 00000000 00:00 0 
+7ed43e800000-7ed5ea000000 ---p 00000000 00:00 0 
+7f02ea16b000-7f02eb37d000 rw-p 00000000 00:00 0 
+7f02eb37d000-7f02eb37e000 ---p 00000000 00:00 0 
+7f02eb37e000-7f02eb47f000 rw-p 00000000 00:00 0 
+7f02eb47f000-7f02eb480000 ---p 00000000 00:00 0 
+7f02eb480000-7f02ec000000 rw-p 00000000 00:00 0 
+7f02ec000000-7f02ec021000 rw-p 00000000 00:00 0 
+7f02ec021000-7f02f0000000 ---p 00000000 00:00 0 
+7f02f0091000-7f02f0899000 rw-p 00000000 00:00 0 
+7f02f0899000-7f02f0b09000 rwxp 00000000 00:00 0 
+7f02f0b09000-7f02f0fd8000 ---p 00000000 00:00 0 
+7f02f0fd8000-7f02f1248000 rwxp 00000000 00:00 0 
+7f02f1248000-7f02f8438000 ---p 00000000 00:00 0 
+7f02f8438000-7f02f86a8000 rwxp 00000000 00:00 0 
+7f02f86a8000-7f02ff899000 ---p 00000000 00:00 0 
+7f02ff899000-7f0308000000 r--s 00000000 07:01 26766                      /opt/conda/lib/modules
+7f0308000000-7f03080fe000 rw-p 00000000 00:00 0 
+7f03080fe000-7f030c000000 ---p 00000000 00:00 0 
+7f030c0a9000-7f030c5ae000 rw-p 00000000 00:00 0 
+7f030c5ae000-7f030c5af000 ---p 00000000 00:00 0 
+7f030c5af000-7f030c6b5000 rw-p 00000000 00:00 0 
+7f030c6b5000-7f030c799000 ---p 00000000 00:00 0 
+7f030c799000-7f030c79e000 rw-p 00000000 00:00 0 
+7f030c79e000-7f030c882000 ---p 00000000 00:00 0 
+7f030c882000-7f030c887000 rw-p 00000000 00:00 0 
+7f030c887000-7f030c891000 ---p 00000000 00:00 0 
+7f030c891000-7f030c89c000 r-xp 00000000 07:01 121459                     /usr/lib64/libnss_files-2.28.so
+7f030c89c000-7f030ca9c000 ---p 0000b000 07:01 121459                     /usr/lib64/libnss_files-2.28.so
+7f030ca9c000-7f030ca9d000 r--p 0000b000 07:01 121459                     /usr/lib64/libnss_files-2.28.so
+7f030ca9d000-7f030ca9e000 rw-p 0000c000 07:01 121459                     /usr/lib64/libnss_files-2.28.so
+7f030ca9e000-7f030caa4000 rw-p 00000000 00:00 0 
+7f030caa4000-7f030cab2000 r--p 00000000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cab2000-7f030cac7000 r-xp 0000e000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cac7000-7f030cacd000 r--p 00023000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cacd000-7f030cace000 ---p 00029000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cace000-7f030cacf000 r--p 00029000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cacf000-7f030cad0000 rw-p 0002a000 07:01 26312                      /opt/conda/lib/libjava.so
+7f030cad0000-7f030cad1000 rw-p 00000000 00:00 0 
+7f030cad1000-7f030cad8000 r-xp 00000000 07:01 121560                     /usr/lib64/librt-2.28.so
+7f030cad8000-7f030ccd7000 ---p 00007000 07:01 121560                     /usr/lib64/librt-2.28.so
+7f030ccd7000-7f030ccd8000 r--p 00006000 07:01 121560                     /usr/lib64/librt-2.28.so
+7f030ccd8000-7f030ccd9000 rw-p 00007000 07:01 121560                     /usr/lib64/librt-2.28.so
+7f030ccd9000-7f030ccdd000 ---p 00000000 00:00 0 
+7f030ccdd000-7f030cdda000 rw-p 00000000 00:00 0 
+7f030cdda000-7f030cf5b000 r-xp 00000000 07:01 121394                     /usr/lib64/libm-2.28.so
+7f030cf5b000-7f030d15a000 ---p 00181000 07:01 121394                     /usr/lib64/libm-2.28.so
+7f030d15a000-7f030d15b000 r--p 00180000 07:01 121394                     /usr/lib64/libm-2.28.so
+7f030d15b000-7f030d15c000 rw-p 00181000 07:01 121394                     /usr/lib64/libm-2.28.so
+7f030d15c000-7f030d3c2000 r--p 00000000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030d3c2000-7f030df2e000 r-xp 00266000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030df2e000-7f030e12d000 r--p 00dd2000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030e12d000-7f030e12e000 ---p 00fd1000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030e12e000-7f030e1e8000 r--p 00fd1000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030e1e8000-7f030e221000 rw-p 0108b000 07:01 45164                      /opt/conda/lib/server/libjvm.so
+7f030e221000-7f030e278000 rw-p 00000000 00:00 0 
+7f030e278000-7f030e293000 r-xp 00000000 07:01 121533                     /usr/lib64/libpthread-2.28.so
+7f030e293000-7f030e492000 ---p 0001b000 07:01 121533                     /usr/lib64/libpthread-2.28.so
+7f030e492000-7f030e493000 r--p 0001a000 07:01 121533                     /usr/lib64/libpthread-2.28.so
+7f030e493000-7f030e494000 rw-p 0001b000 07:01 121533                     /usr/lib64/libpthread-2.28.so
+7f030e494000-7f030e498000 rw-p 00000000 00:00 0 
+7f030e498000-7f030e49b000 r-xp 00000000 07:01 121137                     /usr/lib64/libdl-2.28.so
+7f030e49b000-7f030e69a000 ---p 00003000 07:01 121137                     /usr/lib64/libdl-2.28.so
+7f030e69a000-7f030e69b000 r--p 00002000 07:01 121137                     /usr/lib64/libdl-2.28.so
+7f030e69b000-7f030e69c000 rw-p 00003000 07:01 121137                     /usr/lib64/libdl-2.28.so
+7f030e69c000-7f030e858000 r-xp 00000000 07:01 121083                     /usr/lib64/libc-2.28.so
+7f030e858000-7f030ea57000 ---p 001bc000 07:01 121083                     /usr/lib64/libc-2.28.so
+7f030ea57000-7f030ea5b000 r--p 001bb000 07:01 121083                     /usr/lib64/libc-2.28.so
+7f030ea5b000-7f030ea5d000 rw-p 001bf000 07:01 121083                     /usr/lib64/libc-2.28.so
+7f030ea5d000-7f030ea61000 rw-p 00000000 00:00 0 
+7f030ea61000-7f030ea8d000 r-xp 00000000 07:01 120850                     /usr/lib64/ld-2.28.so
+7f030ea98000-7f030ea9a000 r--p 00000000 07:01 26761                      /opt/conda/lib/libzip.so
+7f030ea9a000-7f030ea9e000 r-xp 00002000 07:01 26761                      /opt/conda/lib/libzip.so
+7f030ea9e000-7f030eaa0000 r--p 00006000 07:01 26761                      /opt/conda/lib/libzip.so
+7f030eaa0000-7f030eaa1000 r--p 00007000 07:01 26761                      /opt/conda/lib/libzip.so
+7f030eaa1000-7f030eaa2000 rw-p 00008000 07:01 26761                      /opt/conda/lib/libzip.so
+7f030eaa2000-7f030eaaa000 rw-s 00000000 08:01 6152823                    /tmp/hsperfdata_cbird/30261
+7f030eaaa000-7f030eaac000 r--p 00000000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eaac000-7f030eaaf000 r-xp 00002000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eaaf000-7f030eab0000 r--p 00005000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eab0000-7f030eab1000 ---p 00006000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eab1000-7f030eab2000 r--p 00006000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eab2000-7f030eab3000 rw-p 00007000 07:01 26322                      /opt/conda/lib/libjimage.so
+7f030eab3000-7f030eab8000 r--p 00000000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eab8000-7f030eabf000 r-xp 00005000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eabf000-7f030eac1000 r--p 0000c000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eac1000-7f030eac2000 ---p 0000e000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eac2000-7f030eac4000 r--p 0000e000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eac4000-7f030eac5000 rw-p 00010000 07:01 26634                      /opt/conda/lib/libverify.so
+7f030eac5000-7f030eac8000 r--p 00000000 07:01 26174                      /opt/conda/lib/libgcc_s.so.1
+7f030eac8000-7f030ead4000 r-xp 00003000 07:01 26174                      /opt/conda/lib/libgcc_s.so.1
+7f030ead4000-7f030ead7000 r--p 0000f000 07:01 26174                      /opt/conda/lib/libgcc_s.so.1
+7f030ead7000-7f030ead8000 r--p 00011000 07:01 26174                      /opt/conda/lib/libgcc_s.so.1
+7f030ead8000-7f030ead9000 rw-p 00012000 07:01 26174                      /opt/conda/lib/libgcc_s.so.1
+7f030ead9000-7f030eb7c000 r--p 00000000 07:01 26574                      /opt/conda/lib/libstdc++.so.6.0.28
+7f030eb7c000-7f030ebfb000 r-xp 000a3000 07:01 26574                      /opt/conda/lib/libstdc++.so.6.0.28
+7f030ebfb000-7f030ec3c000 r--p 00122000 07:01 26574                      /opt/conda/lib/libstdc++.so.6.0.28
+7f030ec3c000-7f030ec47000 r--p 00162000 07:01 26574                      /opt/conda/lib/libstdc++.so.6.0.28
+7f030ec47000-7f030ec4b000 rw-p 0016d000 07:01 26574                      /opt/conda/lib/libstdc++.so.6.0.28
+7f030ec4b000-7f030ec53000 rw-p 00000000 00:00 0 
+7f030ec53000-7f030ec56000 r--p 00000000 07:01 26760                      /opt/conda/lib/libz.so.1.2.11.1-motley
+7f030ec56000-7f030ec69000 r-xp 00003000 07:01 26760                      /opt/conda/lib/libz.so.1.2.11.1-motley
+7f030ec69000-7f030ec70000 r--p 00016000 07:01 26760                      /opt/conda/lib/libz.so.1.2.11.1-motley
+7f030ec70000-7f030ec71000 r--p 0001c000 07:01 26760                      /opt/conda/lib/libz.so.1.2.11.1-motley
+7f030ec71000-7f030ec72000 rw-p 0001d000 07:01 26760                      /opt/conda/lib/libz.so.1.2.11.1-motley
+7f030ec76000-7f030ec77000 ---p 00000000 00:00 0 
+7f030ec77000-7f030ec78000 r--p 00000000 00:00 0 
+7f030ec78000-7f030ec7b000 r--p 00000000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec7b000-7f030ec85000 r-xp 00003000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec85000-7f030ec88000 r--p 0000d000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec88000-7f030ec89000 ---p 00010000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec89000-7f030ec8a000 r--p 00010000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec8a000-7f030ec8b000 rw-p 00011000 07:01 26323                      /opt/conda/lib/libjli.so
+7f030ec8b000-7f030ec8d000 rw-p 00000000 00:00 0 
+7f030ec8d000-7f030ec8e000 r--p 0002c000 07:01 120850                     /usr/lib64/ld-2.28.so
+7f030ec8e000-7f030ec90000 rw-p 0002d000 07:01 120850                     /usr/lib64/ld-2.28.so
+7ffc98629000-7ffc9864d000 rw-p 00000000 00:00 0                          [stack]
+7ffc9879e000-7ffc987a1000 r--p 00000000 00:00 0                          [vvar]
+7ffc987a1000-7ffc987a3000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+
+VM Arguments:
+jvm_args: -ea -Xmx180g -Xms180g 
+java_command: clump.Clumpify in=fq_fp1/Hte-ATic_045-Ex1-cssl.r1.fq.gz in2=fq_fp1/Hte-ATic_045-Ex1-cssl.r2.fq.gz out=fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r1.fq.gz out2=fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch/cbird dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+java_class_path (initial): /opt/conda/opt/bbmap-38.90-3/current/
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 4                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 15                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 33554432                                  {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 193273528320                              {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 193273528320                              {product} {command line}
+   size_t MinHeapDeltaBytes                        = 33554432                                  {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7594288                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122031976                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122031976                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=/opt/conda
+CLASSPATH=/opt/conda/lib/mpi.jar
+PATH=/opt/conda/bin/libfabric:/opt/conda/bin:/opt/psmc/bin:/opt/abyss/bin:/opt/conda/bin/libfabric:/opt/micromamba/condabin:/shared/apps/common/slurm/21-08-6-1-w2mq/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LD_LIBRARY_PATH=/opt/conda/lib/libfabric:/opt/conda/lib/libfabric/prov/:/usr/local/lib:/shared/apps/common/slurm/21-08-6-1-w2mq/lib:/shared/apps/common/slurm/21-08-6-1-w2mq/lib/slurm:/.singularity.d/libs
+SHELL=/bin/tcsh
+HOSTTYPE=x86_64-linux
+OSTYPE=linux
+MACHTYPE=x86_64
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+TZ=/etc/localtime
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xd66470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xd66470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xd66470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0xb6f5b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0xb6f5b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xd66470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0xb6f420], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS Stream release 8
+uname:Linux 4.15.0-171-generic #180-Ubuntu SMP Wed Mar 2 17:25:05 UTC 2022 x86_64
+OS uptime: 17 days 23:18 hours
+libc:glibc 2.28 NPTL 2.28 
+rlimit (soft/hard): STACK 8192k/infinity , CORE 0k/infinity , NPROC 767745/1541923 , NOFILE 40960/40960 , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK infinity/infinity
+load average:7.89 7.24 8.52
+
+/proc/meminfo:
+MemTotal:       394853020 kB
+MemFree:        135576156 kB
+MemAvailable:   158895228 kB
+Buffers:           69564 kB
+Cached:         24979140 kB
+SwapCached:            0 kB
+Active:         256843796 kB
+Inactive:         244740 kB
+Active(anon):   232048160 kB
+Inactive(anon):    20648 kB
+Active(file):   24795636 kB
+Inactive(file):   224092 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               436 kB
+Writeback:             0 kB
+AnonPages:      232035652 kB
+Mapped:           114956 kB
+Shmem:             28240 kB
+Slab:             665792 kB
+SReclaimable:     288756 kB
+SUnreclaim:       377036 kB
+KernelStack:       12752 kB
+PageTables:       463036 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    197426508 kB
+Committed_AS:   232668404 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    278528 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:     1540328 kB
+DirectMap2M:    76720128 kB
+DirectMap1G:    325058560 kB
+
+/sys/kernel/mm/transparent_hugepage/enabled:
+always [madvise] never
+/sys/kernel/mm/transparent_hugepage/defrag (defrag/compaction efforts parameter):
+always defer defer+madvise [madvise] never
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+3083847
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+40960
+
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU:total 40 (initial active 20) (20 cores per cpu, 2 threads per core) family 6 model 85 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+CPU Model and flags from /proc/cpuinfo:
+model name	: Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm arat pln pts pku ospke md_clear flush_l1d arch_capabilities
+Online cpus:
+0-39
+Offline cpus:
+
+BIOS frequency limitation:
+<Not Available>
+Frequency switch latency (ns):
+<Not Available>
+Available cpu frequencies:
+<Not Available>
+Current governor:
+<Not Available>
+Core performance/turbo boost:
+<Not Available>
+
+Memory: 4k page, physical 394853020k(135575644k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.9.1-internal+0-adhoc..src) for linux-amd64 JRE (11.0.9.1-internal+0-adhoc..src), built on Mar 19 2021 22:30:45 by "" with gcc 9.3.0
+
+END.
