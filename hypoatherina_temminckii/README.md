@@ -1,5 +1,4 @@
 # Hte cssl processing
 
-## 1. rename files
-
-# All samples not present, all Albatross, evidence that not all samples are present, are not present in the TAMUCC grid, initial download possibly interrupted.
+## 1. Download data.
+## All data not present, only Albatross. Evidence that the initial download was interrupted. `Hta02067*1.fq.gz` was deleted. 
