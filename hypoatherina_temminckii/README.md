@@ -288,4 +288,8 @@ Files are copying using `screen`.
 
 ## 7. Check the quality of your data.
 
-Ran `sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"`. Still processing.
+Executed `sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"`. Still processing.
+
+## 8. First trim.
+
+Executed `sbatch ../../pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1`. Still processing.
