@@ -1,5 +1,9 @@
 # Hte cssl processing
 
+## 0. Set up directory. 
+
+Species directory already establishes, created directories `fq_fp1`, `fq_fp1_clmp`, `fq_fp1_clmp_fp2`, `fq_fp1_clmp_fp2_fqscrn`, and `fq_fp1_clmp_fp2_fqscrn_rprd`.
+
 ## 1. Download data.
 
 All data not present, only 54 Albatross. Evidence that the initial download was interrupted. There are 218 libraries in the decode file. No duplicates, all files and lines are unique. `Hta02067*1.fq.gz` was deleted, only had `*1.fq.gz`.  
