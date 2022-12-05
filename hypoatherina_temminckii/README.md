@@ -293,3 +293,9 @@ Executed `sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.
 ## 8. First trim.
 
 Executed `sbatch ../../pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1`. Still processing.
+
+## 9. Remove duplicates with clumpify.
+
+## 9a. Remove duplicates.
+
+`runCLUMPIFY_r1r2_array.bash` executed. Still processing.
