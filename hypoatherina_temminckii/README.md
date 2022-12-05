@@ -14,6 +14,9 @@ File names were changed from `_Ex1` to `-Ex1-cssl`.
 
 ## 4. Perform a renaming dry run.
 
+<details><summary></summary>
+<p>
+
 ```bash 
 wahab-01:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii/fq_raw> bash ../../../pire_fq_gz_processing/renameFQGZ.bash Hte_CaptureLibraries_SequenceNameDecode.tsv
 
@@ -137,4 +140,13 @@ HtA02061_CKDL220001125-1a-AK9141-AK8544_H3JWGDSX3_L3_2.fq.gz Hte-ATic_061-Ex1-cs
 HtA02062_CKDL220001125-1a-AK3905-AK8544_H3JWGDSX3_L3_2.fq.gz Hte-ATic_062-Ex1-cssl.2.fq.gz
 HtA02063_CKDL220001125-1a-AK7761-AK8544_H3JWGDSX3_L3_2.fq.gz Hte-ATic_063-Ex1-cssl.2.fq.gz
 wahab-01:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii/fq_raw>
+```
+
+</p>
+</details>
+
+## 5. Rename for real 
+
+```bash
+
 ```
