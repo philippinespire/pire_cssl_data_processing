@@ -277,3 +277,7 @@ renaming R2 files...
 
 </p>
 </details>
+
+## 6. Make a copy of the renamed files.
+
+Files are copying using `screen`.
