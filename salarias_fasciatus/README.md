@@ -218,6 +218,7 @@ cd /home/e1garcia/pire_cssl_data_processing/salarias_fasciatus/mkBAM
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM/
 # added export SINGULARITY_BIND=/home/e1garcia + correct pathways
 sbatch dDocentHPC.sbatch config.5.cssl
+```
 
 got an error:
 ```
@@ -225,6 +226,7 @@ Wed Oct 19 05:28:14 EDT 2022 Assembling final VCF file...
 [E::hts_idx_push] Chromosome blocks not continuous
 tbx_index_build failed: TotalRawSNPs.ssl.Sfa-scaffolds-allLibs-contam-R1R2-noIsolate.vcf.gz
 ```
+
 So employed the same steps as Brendan who encountered the same error w/ the Siganus spinus dataset.
 ```
 salloc
