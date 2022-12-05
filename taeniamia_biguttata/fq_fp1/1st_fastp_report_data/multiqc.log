@@ -1,22 +1,866 @@
-[2022-12-01 09:20:29,489] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
-[2022-12-01 09:20:29,491] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 1st_fastp_report_2 --outdir . .
-[2022-12-01 09:20:30,108] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.13
-[2022-12-01 09:20:30,108] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/fq_fp1
-[2022-12-01 09:20:30,108] multiqc                                            [DEBUG  ]  Template    : default
-[2022-12-01 09:20:30,108] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
-[2022-12-01 09:20:30,109] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
-[2022-12-01 09:20:30,109] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpv9vv26_d
-[2022-12-01 09:20:30,397] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/fq_fp1
-[2022-12-01 09:20:56,936] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 589] // [skipped_no_match: 95]
-[2022-12-01 09:20:57,861] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
-[2022-12-01 09:20:57,862] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
-[2022-12-01 09:20:57,863] multiqc                                            [DEBUG  ]  No samples found: custom_content
-[2022-12-01 09:20:57,884] multiqc.modules.snippy.snippy                      [INFO   ]  Found 1 reports
-[2022-12-01 09:20:57,885] multiqc.plots.bargraph                             [WARNING]  Tried to make bar plot, but had no data: snippy_variants
-[2022-12-01 09:20:57,888] multiqc                                            [INFO   ]  Compressing plot data
-[2022-12-01 09:20:57,891] multiqc                                            [INFO   ]  Report      : 1st_fastp_report_2.html
-[2022-12-01 09:20:57,891] multiqc                                            [INFO   ]  Data        : 1st_fastp_report_2_data
-[2022-12-01 09:20:57,891] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpv9vv26_d/multiqc_data' to './1st_fastp_report_2_data'
-[2022-12-01 09:20:57,988] multiqc                                            [INFO   ]  Plots       : 1st_fastp_report_2_plots
-[2022-12-01 09:20:57,988] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpv9vv26_d/multiqc_plots' to './1st_fastp_report_2_plots'
-[2022-12-01 09:20:58,209] multiqc                                            [INFO   ]  MultiQC complete
+[2022-12-02 14:25:03,884] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2022-12-02 14:25:03,885] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/r3clark/.multiqc_config.yaml
+[2022-12-02 14:25:03,885] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-12-02 14:25:03,885] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 1st_fastp_report --outdir ./fq_fp1 ./fq_fp1
+[2022-12-02 14:25:04,756] multiqc                                            [WARNING]  MultiQC Version v1.13 now available!
+[2022-12-02 14:25:04,756] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2022-12-02 14:25:04,756] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 1st_fastp_report --outdir ./fq_fp1 ./fq_fp1
+[2022-12-02 14:25:04,757] multiqc                                            [DEBUG  ]  Working dir : /scratch/r3clark/taeniamia_biguttata
+[2022-12-02 14:25:04,757] multiqc                                            [INFO   ]  Template    : default
+[2022-12-02 14:25:04,757] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2022-12-02 14:25:04,757] multiqc                                            [INFO   ]  Searching   : /scratch/r3clark/taeniamia_biguttata/fq_fp1
+[2022-12-02 14:25:04,757] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2022-12-02 14:25:04,757] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpl1y9eiyl
+[2022-12-02 14:25:04,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:04,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:04,928] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_023_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:04,935] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_023_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:04,993] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_044_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:04,999] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_044_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,053] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_006_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,059] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_006_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:05,115] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_028_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,121] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_028_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,177] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_070_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,183] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_070_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,223] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,237] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_013_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:05,242] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_013_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:05,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_009_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,302] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_009_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,345] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,359] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_034_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,365] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_034_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:05,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,420] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_073_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,425] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_073_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:05,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,482] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_015_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,487] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_015_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,544] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_013_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,550] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_013_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:05,606] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_057_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,611] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_057_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,653] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:05,653] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:05,653] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,667] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_010_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,673] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_010_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,731] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_057_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,736] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_057_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:05,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,791] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_008_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,797] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_008_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:05,850] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_056_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,856] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_056_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:05,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:05,909] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_039_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,915] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_039_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:05,970] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_037_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:05,976] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_037_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,019] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,033] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_005_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,039] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_005_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,092] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_036_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,098] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_036_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,140] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,153] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_070_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,159] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_070_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,201] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,202] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,202] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,202] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:06,214] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_038_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,220] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_038_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,262] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,263] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,276] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_056_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,282] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_056_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,338] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_015_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,344] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_015_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,398] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_005_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:06,404] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_005_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:06,459] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_080_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,465] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_080_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,521] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_006_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,527] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_006_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,585] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_006_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,591] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_006_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,645] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_087_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,651] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_087_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,707] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_022_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:06,713] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_022_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:06,770] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_007_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:06,775] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_007_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:06,829] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_068_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,835] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_068_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:06,876] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,876] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:06,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,877] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:06,878] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:06,891] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_029_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,897] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_029_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:06,952] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_014_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:06,958] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_014_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:07,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:07,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,015] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_038_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,021] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_038_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,075] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_030_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,081] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_030_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,134] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_071_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,140] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_071_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,181] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,193] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_028_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,199] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_028_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,254] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_035_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,260] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_035_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,302] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,316] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_046_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,322] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_046_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,375] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_044_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,381] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_044_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_018_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,442] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_018_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,496] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_048_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,502] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_048_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,556] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_034_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,562] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_034_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:07,616] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_030_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,621] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_030_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,676] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_009_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:07,682] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_009_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:07,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,740] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_011_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,745] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_011_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,799] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_086_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_086_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:07,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:07,861] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_017_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,867] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_017_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:07,922] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_007_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:07,928] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_007_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:07,970] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,970] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:07,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:07,983] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_072_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:07,989] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_072_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,045] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_015_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,050] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_015_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,094] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,107] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_029_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,113] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_029_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,168] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_053_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,173] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_053_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,215] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:08,216] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:08,229] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_023_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,235] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_023_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,290] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_019_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,296] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_019_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,351] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_025_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,357] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_025_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,413] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_001_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,419] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_001_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,472] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_053_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:08,478] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_053_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:08,519] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,532] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_014_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,538] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_014_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,579] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:08,592] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_003_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,598] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_003_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,653] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_030_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,658] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_030_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,714] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_021_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_021_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:08,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:08,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:08,778] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_001_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,784] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_001_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:08,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:08,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,843] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_012_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,849] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_012_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:08,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:08,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:08,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:08,906] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_091_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,913] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_091_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:08,970] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_087_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:08,976] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_087_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,033] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_001_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,040] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_001_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,098] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_004_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:09,104] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_004_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:09,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:09,162] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_025_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,168] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_025_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,211] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:09,227] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_029_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:09,233] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_029_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:09,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:09,294] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_032_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,300] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_032_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,359] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_016_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,365] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_016_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:09,409] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:09,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:09,411] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:09,412] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:09,412] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:09,425] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_009_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,431] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_009_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:09,487] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_026_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,493] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_026_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:09,549] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_059_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,555] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_059_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,610] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_033_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,617] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_033_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:09,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:09,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:09,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:09,676] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_005_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,682] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_005_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,741] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_020_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,747] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_020_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,805] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_008_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,812] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_008_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:09,869] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_004_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,876] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_004_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,933] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_095_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,940] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_095_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:09,998] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_020_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,004] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_020_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:10,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,065] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_016_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,072] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_016_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,116] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:10,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:10,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:10,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,131] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_052_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,138] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_052_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,183] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,183] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:10,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,198] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_093_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,205] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_093_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,262] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_059_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,269] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_059_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,327] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_085_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,333] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_085_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,377] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:10,394] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_021_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,400] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_021_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,461] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_032_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:10,468] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_032_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:10,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:10,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:10,530] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_005_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,537] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_005_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,595] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_022_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,601] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_022_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,661] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_039_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,667] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_039_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,728] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_024_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,735] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_024_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:10,794] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_092_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,800] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_092_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:10,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:10,858] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_008_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,864] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_008_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:10,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:10,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:10,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:10,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:10,923] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_004_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,929] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_004_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:10,988] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_010_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:10,994] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_010_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:11,051] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_046_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,057] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_046_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,113] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_033_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,120] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_033_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,178] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_006_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:11,184] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_006_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:11,240] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_071_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,247] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_071_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,289] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,289] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,303] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_040_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,309] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_040_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,365] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_052_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,371] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_052_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,427] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_010_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,433] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_010_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,475] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,476] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,476] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,490] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_016_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,497] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_016_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,551] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_017_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,558] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_017_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:11,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:11,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:11,614] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_043_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,620] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_043_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,663] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:11,663] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:11,678] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_002_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:11,684] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_002_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:11,742] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_018_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,749] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_018_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_085_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,813] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_085_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:11,870] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_032_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,876] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_032_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:11,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:11,936] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_015_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,942] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_015_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:11,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:12,000] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_013_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,007] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_013_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,065] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_019_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:12,071] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_019_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:12,129] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_018_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,135] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_018_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,178] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:12,192] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_072_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,198] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_072_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,255] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_033_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,261] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_033_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,317] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_055_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,323] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_055_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,366] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:12,368] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:12,383] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_011_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,389] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_011_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,446] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_023_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:12,452] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_023_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:12,497] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,497] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:12,497] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:12,511] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_041_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,517] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_041_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,560] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,562] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,576] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_017_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,582] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_017_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,641] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_014_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:12,647] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_014_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:12,705] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_012_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,712] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_012_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,769] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_068_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,776] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_068_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:12,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:12,820] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:12,834] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_031_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,840] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_031_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,897] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_032_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,904] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_032_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:12,962] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_002_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:12,968] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_002_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,026] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_048_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,032] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_048_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,089] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_003_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,096] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_003_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,155] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_026_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,161] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_026_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,219] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_023_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,226] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_023_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,282] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_080_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,288] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_080_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,346] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_010_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,353] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_010_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:13,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:13,411] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_091_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,417] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_091_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,474] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_042_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,480] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_042_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,539] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_017_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,546] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_017_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,604] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_025_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,610] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_025_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:13,659] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:13,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_025_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,678] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_025_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,734] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_033_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,740] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_033_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:13,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:13,796] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_013_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,802] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_013_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:13,859] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_020_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:13,865] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_020_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:13,922] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_016_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,928] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_016_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:13,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:13,986] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_018_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:13,992] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_018_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,048] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_043_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,054] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_043_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,110] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_028_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:14,116] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_028_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:14,159] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,173] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_001_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:14,179] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_001_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:14,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,235] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_067_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,241] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_067_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_026_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,302] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_026_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,355] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_036_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,361] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_036_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,416] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_014_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,421] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_014_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,474] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_040_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,480] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_040_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,533] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_042_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,539] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_042_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,581] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,594] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_007_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,600] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_007_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,654] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_012_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,660] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_012_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,713] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_027_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,718] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_027_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,775] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_073_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,781] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_073_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,821] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,833] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_041_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,839] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_041_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:14,894] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_020_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,900] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_020_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:14,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:14,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:14,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:14,957] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_095_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:14,963] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_095_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,005] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,017] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_029_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,023] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_029_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,066] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:15,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:15,080] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_081_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,085] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_081_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,138] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_060_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,144] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_060_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:15,199] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_004_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:15,205] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_004_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:15,247] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,259] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_081_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,265] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_081_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:15,318] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_086_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,324] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_086_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,378] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_060_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,383] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_060_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_093_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,442] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_093_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,497] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_067_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,503] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_067_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,558] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_022_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:15,563] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_022_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:15,618] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_035_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,624] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_035_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,665] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:15,666] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:15,679] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_007_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_007_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,739] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_092_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,744] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_092_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:15,798] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_031_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_031_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,845] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:15,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:15,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:15,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:15,860] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_011_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:15,866] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_011_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:15,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:15,920] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_037_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,926] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_037_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,980] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_055_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:15,986] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_055_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,041] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_024_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,046] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_024_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,101] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_027_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:16,106] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_027_Ex1_L4_r1_fastqc.html
+[2022-12-02 14:25:16,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:16,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_r1.fq.gz
+[2022-12-02 14:25:16,163] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_011_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,169] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_011_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,210] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:16,223] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_022_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,228] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_022_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,282] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_028_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,287] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_028_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,342] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_012_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:16,347] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_012_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:16,389] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_r1.fq.gz
+[2022-12-02 14:25:16,403] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_009_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,408] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_009_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,464] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_030_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:16,470] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_030_Ex1b_L4_r1_fastqc.html
+[2022-12-02 14:25:16,525] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-CJos_008_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,531] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-CJos_008_Ex1_L4_r2_fastqc.html
+[2022-12-02 14:25:16,572] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_r2.fq.gz
+[2022-12-02 14:25:16,573] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_r2.fq.gz
+[2022-12-02 14:25:16,586] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Tbi-ARos_026_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Tbi-ARos_026_Ex1b_L4_r2_fastqc.html
+[2022-12-02 14:25:16,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_007_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_014_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,699] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_027_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_068_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_030_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_072_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,705] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_033_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,705] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,706] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,706] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,706] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_029_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_055_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_023_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_039_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_044_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_053_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_006_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_004_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_038_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_093_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_017_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_002_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_001_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_087_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_031_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_067_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_052_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_085_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_024_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_057_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_008_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_010_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_003_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_032_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_025_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_091_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_017_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_010_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_046_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_006_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_056_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_032_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_037_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_001_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_034_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_080_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_012_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_016_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_041_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_086_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_018_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_095_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_040_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_059_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_071_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_014_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_007_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_081_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_070_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_028_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_012_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_029_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_026_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_008_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_030_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_005_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_011_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_015_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_009_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_019_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_021_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_005_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_022_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_009_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_092_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_026_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_033_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_020_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_025_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_028_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_048_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_023_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_013_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_022_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_060_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_fail.fq.gz
+[2022-12-02 14:25:16,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_016_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_013_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_042_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_011_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_036_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_018_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_015_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:16,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_035_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_073_Ex1_L4_unprd.fq.gz
+[2022-12-02 14:25:16,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_043_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-CJos_020_Ex1_L4_fail.fq.gz
+[2022-12-02 14:25:16,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Tbi-ARos_004_Ex1b_L4_unprd.fq.gz
+[2022-12-02 14:25:17,233] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-12-02 14:25:17,234] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2022-12-02 14:25:17,235] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-12-02 14:25:17,239] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-12-02 14:25:17,244] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-12-02 14:25:17,249] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-12-02 14:25:17,253] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-12-02 14:25:17,260] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-12-02 14:25:17,263] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-12-02 14:25:17,266] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-12-02 14:25:17,271] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-12-02 14:25:17,275] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-12-02 14:25:17,279] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-12-02 14:25:17,282] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-12-02 14:25:17,286] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-12-02 14:25:17,289] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-12-02 14:25:17,294] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-12-02 14:25:17,298] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-12-02 14:25:17,303] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-12-02 14:25:17,307] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-12-02 14:25:17,312] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-12-02 14:25:17,319] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-12-02 14:25:17,323] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-12-02 14:25:17,327] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-12-02 14:25:17,331] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-12-02 14:25:17,336] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-12-02 14:25:17,340] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-12-02 14:25:17,345] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-12-02 14:25:17,348] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-12-02 14:25:17,352] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-12-02 14:25:17,356] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-12-02 14:25:17,361] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-12-02 14:25:17,365] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-12-02 14:25:17,369] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-12-02 14:25:17,374] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-12-02 14:25:17,377] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-12-02 14:25:17,384] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-12-02 14:25:17,388] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-12-02 14:25:17,392] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-12-02 14:25:17,402] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-12-02 14:25:17,406] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-12-02 14:25:17,409] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-12-02 14:25:17,413] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-12-02 14:25:17,417] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-12-02 14:25:17,421] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-12-02 14:25:17,425] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-12-02 14:25:17,429] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-12-02 14:25:17,433] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-12-02 14:25:17,438] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-12-02 14:25:17,442] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-12-02 14:25:17,447] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-12-02 14:25:17,451] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-12-02 14:25:17,457] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-12-02 14:25:17,462] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-12-02 14:25:17,466] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-12-02 14:25:17,470] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-12-02 14:25:17,474] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-12-02 14:25:17,477] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-12-02 14:25:17,481] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-12-02 14:25:17,485] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-12-02 14:25:17,489] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-12-02 14:25:17,493] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-12-02 14:25:17,497] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-12-02 14:25:17,501] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-12-02 14:25:17,505] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-12-02 14:25:17,508] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-12-02 14:25:17,512] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-12-02 14:25:17,516] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-12-02 14:25:17,519] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-12-02 14:25:17,523] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-12-02 14:25:17,527] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-12-02 14:25:17,532] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2022-12-02 14:25:17,536] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-12-02 14:25:17,541] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-12-02 14:25:17,544] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-12-02 14:25:17,548] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-12-02 14:25:17,552] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-12-02 14:25:17,556] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-12-02 14:25:17,559] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-12-02 14:25:17,563] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-12-02 14:25:17,567] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-12-02 14:25:17,571] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-12-02 14:25:17,576] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-12-02 14:25:18,015] multiqc.modules.fastp.fastp                        [INFO   ]  Found 94 reports
+[2022-12-02 14:26:26,149] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 188 reports
+[2022-12-02 14:27:01,176] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-12-02 14:27:01,180] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-12-02 14:27:01,185] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-12-02 14:27:01,190] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-12-02 14:27:01,194] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-12-02 14:27:01,198] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-12-02 14:27:01,201] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-12-02 14:27:01,205] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-12-02 14:27:01,209] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-12-02 14:27:01,627] multiqc                                            [INFO   ]  Compressing plot data
+[2022-12-02 14:27:13,475] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2022-12-02 14:27:13,475] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2022-12-02 14:27:13,475] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl1y9eiyl/multiqc_data' to './fq_fp1/1st_fastp_report_data'
+[2022-12-02 14:27:13,655] multiqc                                            [INFO   ]  Plots       : fq_fp1/1st_fastp_report_plots
+[2022-12-02 14:27:13,656] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpl1y9eiyl/multiqc_plots' to './fq_fp1/1st_fastp_report_plots'
+[2022-12-02 14:27:13,918] multiqc                                            [INFO   ]  MultiQC complete

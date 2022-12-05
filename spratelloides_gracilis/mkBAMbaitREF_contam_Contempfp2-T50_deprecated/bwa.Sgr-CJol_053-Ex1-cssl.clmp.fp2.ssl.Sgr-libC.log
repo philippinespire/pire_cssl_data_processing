@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 3157930 sequences (361337450 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (17, 261996, 91, 21)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (3, 20, 113)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 333)
+[M::mem_pestat] mean and std.dev: (38.40, 46.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 443)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (77, 111, 153)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 305)
+[M::mem_pestat] mean and std.dev: (117.54, 56.32)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 381)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (39, 39, 39)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (39, 39)
+[M::mem_pestat] mean and std.dev: (39.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (39, 39)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (50, 54, 188)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 464)
+[M::mem_pestat] mean and std.dev: (73.00, 60.23)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 602)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 3157930 reads in 4474.198 CPU sec, 198.281 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 50 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-CJol_053-Ex1-cssl.clmp.fp2\tSM:Sgr-CJol_053-Ex1-cssl.clmp.fp2\tPL:Illumina reference.ssl.Sgr-libC.fasta Sgr-CJol_053-Ex1-cssl.clmp.fp2.R1.fq.gz Sgr-CJol_053-Ex1-cssl.clmp.fp2.R2.fq.gz
+[main] Real time: 215.083 sec; CPU: 4488.913 sec

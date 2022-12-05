@@ -17,4 +17,4 @@ crun bash ../../scripts/dDocentHPC/dDocentHPC.bash mkBAM $CONFIG
 crun bash ../../scripts/dDocentHPC/dDocentHPC.bash fltrBAM $CONFIG
 
 #this will use freebayes to genotype the bam files and make a VCF
-crun bash ../../scripts/dDocentHPC/dDocentHPC.bash mkVCF $CONFIG
+#crun bash ../../scripts/dDocentHPC/dDocentHPC.bash mkVCF $CONFIG

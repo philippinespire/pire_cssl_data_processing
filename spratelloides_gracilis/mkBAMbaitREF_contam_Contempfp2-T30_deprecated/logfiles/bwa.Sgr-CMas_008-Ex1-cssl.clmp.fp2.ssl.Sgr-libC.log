@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 3192090 sequences (377232022 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (121, 265284, 98, 136)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (676, 676, 676)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (676, 676)
+[M::mem_pestat] mean and std.dev: (676.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (676, 676)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (83, 120, 166)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 332)
+[M::mem_pestat] mean and std.dev: (127.68, 62.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 415)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (14, 52, 279)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 809)
+[M::mem_pestat] mean and std.dev: (93.67, 96.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1074)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (309, 510, 510)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 912)
+[M::mem_pestat] mean and std.dev: (404.70, 180.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1128)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 3192090 reads in 4968.431 CPU sec, 127.721 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-CMas_008-Ex1-cssl.clmp.fp2\tSM:Sgr-CMas_008-Ex1-cssl.clmp.fp2\tPL:Illumina reference.ssl.Sgr-libC.fasta Sgr-CMas_008-Ex1-cssl.clmp.fp2.R1.fq.gz Sgr-CMas_008-Ex1-cssl.clmp.fp2.R2.fq.gz
+[main] Real time: 152.556 sec; CPU: 4988.478 sec

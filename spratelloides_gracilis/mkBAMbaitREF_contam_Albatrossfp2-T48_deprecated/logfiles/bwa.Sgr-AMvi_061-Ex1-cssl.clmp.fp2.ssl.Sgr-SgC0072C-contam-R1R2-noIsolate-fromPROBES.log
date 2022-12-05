@@ -1,0 +1,63 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 4518046 sequences (400000211 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 335671, 1, 20)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (52, 67, 82)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 142)
+[M::mem_pestat] mean and std.dev: (67.87, 22.08)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 172)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (36, 50, 80)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 168)
+[M::mem_pestat] mean and std.dev: (54.53, 30.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 212)
+[M::mem_pestat] skip orientation RR
+[M::process] read 4435992 sequences (400000130 bp)...
+[M::mem_process_seqs] Processed 4518046 reads in 7043.725 CPU sec, 354.261 real sec
+[M::process] read 4475074 sequences (400000153 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 217441, 3, 13)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (52, 68, 82)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 142)
+[M::mem_pestat] mean and std.dev: (68.01, 22.17)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 172)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (21, 36, 61)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 141)
+[M::mem_pestat] mean and std.dev: (32.09, 14.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 181)
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 4435992 reads in 9506.195 CPU sec, 359.102 real sec
+[M::process] read 2253390 sequences (207781926 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 289402, 2, 13)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (52, 68, 82)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 142)
+[M::mem_pestat] mean and std.dev: (67.95, 22.24)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 172)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (31, 42, 564)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1630)
+[M::mem_pestat] mean and std.dev: (158.46, 222.22)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 2163)
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 4475074 reads in 7649.236 CPU sec, 247.668 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 132261, 0, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (52, 68, 83)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 145)
+[M::mem_pestat] mean and std.dev: (68.34, 22.44)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 176)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 2253390 reads in 3856.855 CPU sec, 126.719 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 48 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-AMvi_061-Ex1-cssl.clmp.fp2\tSM:Sgr-AMvi_061-Ex1-cssl.clmp.fp2\tPL:Illumina reference.ssl.Sgr-SgC0072C-contam-R1R2-noIsolate-fromPROBES.fasta Sgr-AMvi_061-Ex1-cssl.clmp.fp2.R1.fq.gz Sgr-AMvi_061-Ex1-cssl.clmp.fp2.R2.fq.gz
+[main] Real time: 1106.713 sec; CPU: 28074.555 sec

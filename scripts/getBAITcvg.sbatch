@@ -72,10 +72,10 @@ ls $OUTDIR/*baitCVG.tsv | \
 
 rm $OUTDIR/*.baitCVG.tsv
 
-echo `date` > $OUTDIR/getBAITcvg.log
+echo "SLURM Job ID: ${SLURM_JOB_ID}" > $OUTDIR/getBAITcvg.log
+echo `date` >> $OUTDIR/getBAITcvg.log
 echo "Script executed from: ${PWD}" >> $OUTDIR/getBAITcvg.log
 echo "BAMDIR $BAMDIR" >> $OUTDIR/getBAITcvg.log
 echo "BAMPATTERN $BAMPATTERN" >> $OUTDIR/getBAITcvg.log
 echo "BED $BED" >> $OUTDIR/getBAITcvg.log
 echo "OUTDIR $OUTDIR" >> $OUTDIR/getBAITcvg.log
-
