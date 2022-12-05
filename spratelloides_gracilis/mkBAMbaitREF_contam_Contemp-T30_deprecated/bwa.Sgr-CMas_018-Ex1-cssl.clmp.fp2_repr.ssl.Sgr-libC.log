@@ -1,0 +1,30 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 1760438 sequences (216141407 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (26, 264571, 71, 37)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (354, 354, 563)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 981)
+[M::mem_pestat] mean and std.dev: (416.35, 162.53)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1190)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (82, 124, 178)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 370)
+[M::mem_pestat] mean and std.dev: (134.72, 71.83)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 466)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (191, 1286, 1330)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 3608)
+[M::mem_pestat] mean and std.dev: (842.53, 547.25)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 4747)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (10, 10, 272)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 796)
+[M::mem_pestat] mean and std.dev: (87.73, 125.76)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1058)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 1760438 reads in 1048.121 CPU sec, 124.488 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 30 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr\tSM:Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr\tPL:Illumina reference.ssl.Sgr-libC.fasta Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Sgr-CMas_018-Ex1-cssl.clmp.fp2_repr.R2.fq.gz
+[main] Real time: 136.855 sec; CPU: 1057.886 sec
