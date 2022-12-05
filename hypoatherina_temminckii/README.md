@@ -281,3 +281,7 @@ renaming R2 files...
 ## 6. Make a copy of the renamed files.
 
 Files are copying using `screen`.
+
+## 7. Check the quality of your data.
+
+Ran `sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"`. Still processing.
