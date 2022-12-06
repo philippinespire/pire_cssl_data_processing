@@ -94,7 +94,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 Ran [`checkClumpify_EG.R`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any failed.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 salloc
 module load container_env mapdamage2
@@ -105,6 +105,16 @@ install.packages("tidyverse") #said yes when prompted, when finished, exited & d
 
 crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 #all files ran successfully
+```
+
+Ran [`runMULTIQC.sbatch`] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch) to get the MultiQC ouput
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
+
+#sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
+#do not use trailing / in paths. Example:
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
 ---
