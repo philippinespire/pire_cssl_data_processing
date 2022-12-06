@@ -1,0 +1,20 @@
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 88016 sequences (10094688 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (11, 8979, 1, 1)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (55, 55, 55)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (55, 55)
+[M::mem_pestat] mean and std.dev: (55.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (55, 55)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (86, 120, 164)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 320)
+[M::mem_pestat] mean and std.dev: (128.79, 60.34)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 398)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation FF
+[M::mem_process_seqs] Processed 88016 reads in 125.926 CPU sec, 5.381 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -L 5 -t 40 -a -M -T 50 -A 1 -B 4 -O 6 -R @RG\tID:Sgr-CMas_055-Ex1-cssl.clmp.fp2\tSM:Sgr-CMas_055-Ex1-cssl.clmp.fp2\tPL:Illumina reference.ssl.Sgr-libC.fasta Sgr-CMas_055-Ex1-cssl.clmp.fp2.R1.fq.gz Sgr-CMas_055-Ex1-cssl.clmp.fp2.R2.fq.gz
+[main] Real time: 8.798 sec; CPU: 127.916 sec
