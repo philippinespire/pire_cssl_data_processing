@@ -68,15 +68,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatc
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 73.35%, Contemp: 49.06%
   * GC content -
-    * Alb: XX%, Contemp: XX%
+    * Alb: 43.88%, Contemp: 46.16%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 96.52%, Contemp: 95.92%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 85.02%, Contemp: 49.25%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~31 mil, Contemp: ~8 mil
 
 ---
 
@@ -85,10 +85,10 @@ Potential issues:
 Ran [`runCLUMPIFY_r1r2_array.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/USERNAME 10
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/mmalabag 10
 ```
 
 Ran [`checkClumpify_EG.R`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any failed.
