@@ -107,7 +107,7 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 #all files ran successfully
 ```
 
-Ran [`https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch`]  to get the MultiQC ouput
+Ran [`runMULTIQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch)  to get the MultiQC ouput
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
