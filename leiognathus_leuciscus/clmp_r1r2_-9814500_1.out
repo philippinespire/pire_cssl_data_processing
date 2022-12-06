@@ -1,0 +1,44 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 3095655
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 1024
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+Lle-AHam_002.
+java -ea -Xmx233g -Xms233g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=fq_fp1/Lle-AHam_002.r1.fq.gz in2=fq_fp1/Lle-AHam_002.r2.fq.gz out=fq_fp1_clmp/Lle-AHam_002.clmp.r1.fq.gz out2=fq_fp1_clmp/Lle-AHam_002.clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r3clark dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx233g
+Executing clump.Clumpify [in=fq_fp1/Lle-AHam_002.r1.fq.gz, in2=fq_fp1/Lle-AHam_002.r2.fq.gz, out=fq_fp1_clmp/Lle-AHam_002.clmp.r1.fq.gz, out2=fq_fp1_clmp/Lle-AHam_002.clmp.r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch-lustre/r3clark, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx233g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=fq_fp1/Lle-AHam_002.r1.fq.gz, in2=fq_fp1/Lle-AHam_002.r2.fq.gz, out=/scratch-lustre/r3clark/Lle-AHam_002.clmp.r1_clumpify_p1_temp%_384bcac985eae479.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+[3.326s][warning][os,thread] Failed to start thread - pthread_create failed (EAGAIN) for attributes: stacksize: 1024k, guardsize: 0k, detached.
+java.lang.OutOfMemoryError: unable to create native thread: possibly out of memory or process/resource limits reached
+	at java.base/java.lang.Thread.start0(Native Method)
+	at java.base/java.lang.Thread.start(Thread.java:803)
+	at stream.ConcurrentGenericReadOutputStream.start(ConcurrentGenericReadOutputStream.java:60)
+	at clump.KmerSplit.process(KmerSplit.java:302)
+	at clump.KmerSplit.main(KmerSplit.java:52)
+	at clump.Clumpify.runOnePass_v2(Clumpify.java:403)
+	at clump.Clumpify.process(Clumpify.java:275)
+	at clump.Clumpify.main(Clumpify.java:47)
+
+This program ran out of memory.
+Try increasing the -Xmx flag and using tool-specific memory-related parameters.
