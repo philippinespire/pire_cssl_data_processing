@@ -215,7 +215,7 @@ cd YOUR_SPECIES_DIR/mkBAM
 cp ../../scripts/dDocentHPC/configs/config.5.cssl .
 ```
 
-**IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+**IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
 
 **IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME:** *(species where probes came from RAD data)* Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location.
 
