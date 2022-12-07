@@ -124,7 +124,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1
 Ran [`runFASTP_2_cssl.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_cssl.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
@@ -134,15 +134,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch 
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 24.17%, Contemp: 12.42%
   * GC content - 
-    *  Alb: XX%, Contemp: XX%
+    *  Alb: 45%, Contemp: 46.51%
   * passing filter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 97.88%, Contemp: 99.00%
   * % adapter - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 2.74%, Contemp: 0.88%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~7 mil, Contemp: ~4.5 mil
 
 ---
 
@@ -151,7 +151,7 @@ Potential issues:
 Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
