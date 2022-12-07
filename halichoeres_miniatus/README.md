@@ -642,14 +642,3 @@ crun bcftools concat --allow-overlaps  <GZIPPED MONO VCF>  <GZIPPED POLY VCF> -O
 
 tabix <spp>.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
----
-
-## Genome Properties
-
-Jellyfish genome size 1n:
-
-
-C-value other sources 1n: Range from c-value=0.66 (Halichoeres biocellatus from Hardie & Herbert 2003) to 0.93 (Halichoeres poecilopterus  from Ojima & Yamamoto 1990)
-
-GenBank chromosome-scale genome size 1n:
-
