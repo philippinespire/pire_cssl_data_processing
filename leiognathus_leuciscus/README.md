@@ -156,18 +156,31 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
+Some files didn't run (either due to storage problems or general errors) so I had to rerun them individually, to success.
+
+```sh
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_089.clmp.fp2_r2.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_092.clmp.fp2_r1.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_092.clmp.fp2_r2.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_093.clmp.fp2_r2.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_094.clmp.fp2_r1.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_094.clmp.fp2_r2.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_095.clmp.fp2_r2.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_096.clmp.fp2_r1.fq.gz
+bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_096.clmp.fp2_r2.fq.gz
+```
 
 Checked that all files were successfully completed.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
-ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #XX 
-ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #XX
-ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #XX
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #256
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #256 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #256
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l #256
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l #256
 
 #checked all out files for any errors
 grep 'error' slurm-fqscrn.*out #nothing
@@ -179,7 +192,7 @@ Everything looks good, no errors/missing files.
 Ran [`runMultiQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runMULTIQC.sbatch) separately.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runMULTIQC.sbatch <indir> <report name>
 #do not use trailing / in paths
@@ -191,9 +204,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp
 Potential issues:
 
   * one hit, one genome, no ID - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 85%, Contemp: 90%
   * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 4%, Contemp: 2%
 
 ---
 
@@ -202,7 +215,7 @@ Potential issues:
 Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
