@@ -224,21 +224,24 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_
 Once finished, ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) to assess quality.
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #Multi_FastQC.sh "<indir>" "<file_extension>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "YOUR_SPECIES_DIR/fq_fp1_clmp_fp2_fqscrn_repaired"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh ".../leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn_repaired" "fqc_rprd_report" "fq.gz"
+
+# check to be sure the job is running
+watch squeue -u mmalabag
 ```
 
 [Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 18.99%, Contemp: 13.12%
   * GC content - 
-    * Alb: XX%, Contemp: XX%
+    * Alb: 44%, Contemp: 45%
   * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+    * Alb: ~1.5 mil, Contemp: ~2 mil
 
 ---
 
@@ -247,7 +250,7 @@ Potential issues:
 Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
 ```
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "YOUR_SPECIES_DIR" "PATH_TO_DIR_WITH_RAW_FILES"
