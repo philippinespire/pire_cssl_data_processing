@@ -31,6 +31,7 @@ hmmsearch_out.log
 *fastqc.html
 *screen.[a-z]*
 *screen.[A-Z]*
+*.log
 
 # Other large files
 *fromPROBES.stats
@@ -66,6 +67,7 @@ logfiles/
 # Allow these files to sync
 !depth_coverage/
 !*[Dd]ecode.*.tsv
+!*[Dd]ecode*tsv
 !multiqc_general_stats.txt
 !multiqc_fastqc.txt
 !mqc_fastp_filtered_reads_plot_1.txt
