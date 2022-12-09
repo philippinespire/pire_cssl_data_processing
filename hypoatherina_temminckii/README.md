@@ -478,12 +478,12 @@ Hte-ATic_063-Ex1-cssl	81.5%	50.5%	97.8%	49.1%
 
 ## 9a. Remove duplicates.
 
-`runCLUMPIFY_r1r2_array.bash` executed. Initially failed due to issue with wahab, now finished/fixed.
+`runCLUMPIFY_r1r2_array.bash` executed. Initially failed due to issue with wahab, now fixed/finishing running.
 
 ## 9b. Check duplicate removal process.
 
-'checkClumpify_EG.R' executed. "Clumpify Successfully worked on all samples"
+'checkClumpify_EG.R' executed for files that have finished, "Clumpify Successfully worked on all samples". *_NEED TO RUN AGAIN WHEN CLUMPIFY COMPLETELY FINISHES._*
 
 ## 9c. Generate metadata on deduplicated FASTQ files.
 
-'runMULTIQC.sbatch' executed. Still processing.
+'runMULTIQC.sbatch' executed. Still processing. *_NEED TO RUN AGAIN WHEN CLUMPIFY COMPLETELY FINISHES._*
