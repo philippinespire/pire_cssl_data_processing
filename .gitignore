@@ -29,6 +29,8 @@ hmmsearch_out.log
 *.bed
 *fastp.html
 *fastqc.html
+*screen.[a-z]*
+*screen.[A-Z]*
 
 # Other large files
 *fromPROBES.stats
@@ -59,6 +61,7 @@ augustus_config_dir/
 *busco_c*/
 tmp/
 logs/
+logfiles/
 
 # Allow these files to sync
 !depth_coverage/
