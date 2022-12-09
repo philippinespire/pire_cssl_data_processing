@@ -253,20 +253,20 @@ Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 #read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_cssl.sh "YOUR_SPECIES_DIR" "PATH_TO_DIR_WITH_RAW_FILES"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus" "raw_fq_capture"
 ```
 
 Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
 
 Reads lost:
 
-  * fastp1 dropped XX% of the reads
-  * XX% of reads were duplicates and were dropped by Clumpify
-  * fastp2 dropped XX% of the reads after deduplication
+  * fastp1 dropped 3.93% of the reads
+  * 58.46% of reads were duplicates and were dropped by Clumpify
+  * fastp2 dropped 1.28% of the reads after deduplication
 
 Reads remaining:
 
-Total reads remaining: XX%
+Total reads remaining: 34.56%
 
 ---
 
