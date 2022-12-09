@@ -26,8 +26,8 @@ no              FixStacks (yes,no)                                              
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
 PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
 0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshold
-ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-Lle-C-3NR-R1R2ORPH-contam-noisolate-off               Cutoff2 (integer)
+denovoSSL               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
+Aur-C_500_R1R2ORPHMRGD_decontam_noisolate               Cutoff2 (integer)
                 Use unique reads that occur in at least this many individuals for making the reference genome
 0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
 0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
@@ -38,7 +38,7 @@ Make sure the cutoffs above match the reference*fasta!
 1               bwa mem -A Mapping_Match_Value (integer)
 4               bwa mem -B Mapping_MisMatch_Value (integer)
 6               bwa mem -O Mapping_GapOpen_Penalty (integer)
-30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+80              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
 5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ no              samtools view -f 2      Keep_only_properly_aligned_read_pairs? (
 0               samtools view -F        Custom_samtools_view_F_bit_value? (integer)                             performed separately from the above, consult samtools man
 0               samtools view -f        Custom_samtools_view_f_bit_value? (integer)                             performed separately from the above, consult samtools man
 30                                      Remove_reads_with_excessive_soft_clipping? (no, integers by 10s)        minimum number of soft clipped bases in a read that is unacceptable
-30                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
+80                                      Remove_reads_with_alignment_score_below (integer)               Should match bwa mem -T, which sometimes doesn't work
 no                                      Remove_reads_orphaned_by_filters? (yes,no)
 ------------------------------------------------------------------------------------------------------------------
 
@@ -77,8 +77,8 @@ no      freebayes -r --region (filename.bed or no)                      Limit an
 0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)         Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
 20      freebayes -Q --mismatch-base-quality-threshold (integer)        Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
 50      freebayes -U --read-mismatch-limit (integer)                    Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
-30      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
-30      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20      freebayes ~3 ~~min-alternate-qsum (integer)                     This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+50      freebayes -$ --read-snp-limit (integer)                         Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
 20      freebayes -e --read-indel-limit (integer)                       Exclude reads with more than N separate gaps. default: ~unbounded
 no      freebayes -w --hwe-priors-off (no|yes)                          Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
 no      freebayes -V --binomial-obs-priors-off (no|yes)                 Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
