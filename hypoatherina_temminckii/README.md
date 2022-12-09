@@ -293,7 +293,7 @@ Executed `sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.
 <details><summary>Expand for MultiQC Output.</summary>
 
 ```bash
-Sample Name	          % Dups	% GC	M Seqs
+Sample Name	 % Dups	% GC	M Seqs
 Hte-ATic_001-Ex1-cssl.1	93.6%	55%	0.6
 Hte-ATic_001-Ex1-cssl.2	89.5%	55%	0.6
 Hte-ATic_002-Ex1-cssl.1	95.5%	56%	6.6
