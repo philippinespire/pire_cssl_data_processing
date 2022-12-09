@@ -237,11 +237,11 @@ watch squeue -u mmalabag
 
 Potential issues:  
   * % duplication - 
-    * Alb: 18.99%, Contemp: 13.12%
+    * Alb: 22.33%, Contemp: 13.17%
   * GC content - 
     * Alb: 44%, Contemp: 45%
   * number of reads - 
-    * Alb: ~1.5 mil, Contemp: ~2 mil
+    * Alb: ~3.5 mil, Contemp: ~2 mil
 
 ---
 
