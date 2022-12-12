@@ -350,7 +350,15 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mk
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch ../../dDocentHPC.sbatch config.5.cssl
 ```
+---
+## Generate Mapping Stats for Capture Targets with [`getBAITcvg.sbatch`]
 
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
+
+# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
+sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/16_Halichoeres_miniatus/Baits_chosen.singleLine.bed
+```
 ---
 
 ## Step 10. Filter VCF File
