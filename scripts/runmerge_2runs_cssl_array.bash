@@ -9,7 +9,7 @@
 speciesdir=$1 
 speciescode=$2 
 
-mkdir –p ${speciesdir}/mergebams_run1run2 
+mkdir -p ${speciesdir}/mergebams_run1run2
 
 ls -1 ${speciesdir}/1st_sequencing_run/mkBAM/${speciescode}*RG.bam | xargs -n1 basename | cut -c 1-12 > ${speciesdir}/mergebams_run1run2/1strun_samps 
 ls -1 ${speciesdir}/2nd_sequencing_run/mkBAM/${speciescode}*RG.bam | xargs -n1 basename | cut -c 1-12 > ${speciesdir}/mergebams_run1run2/2ndrun_samps 
@@ -23,4 +23,4 @@ SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 samps2merge=$( cat ${speciesdir}/mergebams_run1run2/run1run2_samps.txt )
 samps2merge=($samps2merge) 
 
-sbatch --array=0-$((${#samples2merge[@]}-1)) $SCRIPTPATH/runmerge_2runs_cssl_array.sbatch ${speciesdir} 
+sbatch --array=0-$((${#samps2merge[@]}-1)) $SCRIPTPATH/runmerge_2runs_cssl_array.sbatch ${speciesdir} 
