@@ -13,10 +13,10 @@ export SINGULARITY_BIND=/home/e1garcia
 
 speciesdir=${1} 
 
-samps2merge=$( cat ${speciesdir}/mergebams_run1run2/run1run2_samps ) 
+samps2merge=$( cat ${speciesdir}/mergebams_run1run2/run1run2_samps.txt ) 
 samps2merge=($samps2merge) 
 
-sample_name=${all_samples[${SLURM_ARRAY_TASK_ID}]} 
+sample_name=${samps2merge[${SLURM_ARRAY_TASK_ID}]}
 echo ${sample_name} 
 
 samtools merge ${speciesdir}/mergebams_run1run2/${sample_name}_merge ${speciesdir}/1st_sequencing_run/mkBAM/${sample_name}*RG.bam ${speciesdir}/2nd_sequencing_run/mkBAM/${sample_name}*RG.bam 
