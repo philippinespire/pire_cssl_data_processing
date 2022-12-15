@@ -20,7 +20,7 @@ comm -1 -3 ${speciesdir}/mergebams_run1run2/1strun_samps ${speciesdir}/mergebams
 
 SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P ) 
 
-samps2merge=$( cat ${speciesdir}/mergebams_run1run2/run1run2_samps )
+samps2merge=$( cat ${speciesdir}/mergebams_run1run2/run1run2_samps.txt )
 samps2merge=($samps2merge) 
 
 sbatch --array=0-$((${#samples2merge[@]}-1)) $SCRIPTPATH/runmerge_2runs_cssl_array.sbatch ${speciesdir} 
