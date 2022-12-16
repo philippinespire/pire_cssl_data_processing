@@ -398,15 +398,15 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 After looking at the results, it was decided to also run filterVCF two more times: one time just Alb and the other just Contemp. The vcf file was copied and split for the appropriate runs.
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
 
 module load vcftools
 
-#Run with just Albatross 
+#Run with just Albatross
 vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf --keep indivALB.txt --recode --recode-INFO-all --out TotalRawSNPs.onlyALB.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf
 
-#Run with just Contemporary 
+#Run with just Contemporary
 vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf --keep indivCONTEMP.txt --recode --recode-INFO-all --out TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf
 
 #Config files were copied and updated to include the appropriate vcf file for each specific run
