@@ -486,4 +486,4 @@ Hte-ATic_063-Ex1-cssl	81.5%	50.5%	97.8%	49.1%
 
 ## 9c. Generate metadata on deduplicated FASTQ files.
 
-'runMULTIQC.sbatch' executed. Still processing. *_NEED TO RUN AGAIN WHEN CLUMPIFY COMPLETELY FINISHES._*
+`runMULTIQC.sbatch` executed. 
