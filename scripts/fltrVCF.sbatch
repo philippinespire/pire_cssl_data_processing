@@ -22,4 +22,4 @@ export SINGULARITY_BIND=/home/e1garcia
 #module load samtools
 #module load R/gcc7/3.5.3
 
-crun bash fltrVCF.bash -s $1
+crun bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/fltrVCF.bash -s $1
