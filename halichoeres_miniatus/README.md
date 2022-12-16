@@ -410,9 +410,14 @@ vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf -
 vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf --keep indivCONTEMP.txt --recode --recode-INFO-all --out TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf
 
 #Config files were copied and updated to include the appropriate vcf file for each specific run
-fltrVCF -v ../filterVCF/TotalRawSNPs.onlyALB.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            # vcf file to filter for ALBATROSS
+fltrVCF -v ../filterVCF/TotalRawSNPs.onlyALB.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            #vcf file to filter for ALBATROSS
 
-fltrVCF -v ../filterVCF/TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            # vcf file to filter for CONTEMPORARY
+fltrVCF -v ../filterVCF/TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            #vcf file to filter for CONTEMPORARY
+
+#Run filterVCF 
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.Alb #For ALBATROSS
+
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.Contemp #For CONTEMPORARY
 ```
 
 ---
