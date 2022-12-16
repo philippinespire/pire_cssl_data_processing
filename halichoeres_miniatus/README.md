@@ -387,13 +387,32 @@ cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR/filterVCF
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 #troubleshooting will be necessary
+```
+
+After looking at the results, it was decided to also run filterVCF two more times: one time just Alb and the other just Contemp. The vcf file was copied and split for the appropriate runs.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
+
+module load vcftools
+
+#Run with just Albatross 
+vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf --keep indivALB.txt --recode --recode-INFO-all --out TotalRawSNPs.onlyALB.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf
+
+#Run with just Contemporary 
+vcftools --vcf ../mkBAM/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf --keep indivCONTEMP.txt --recode --recode-INFO-all --out TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf
+
+#Config files were copied and updated to include the appropriate vcf file for each specific run
+fltrVCF -v ../filterVCF/TotalRawSNPs.onlyALB.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            # vcf file to filter for ALBATROSS
+
+fltrVCF -v ../filterVCF/TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf            # vcf file to filter for CONTEMPORARY
 ```
 
 ---
