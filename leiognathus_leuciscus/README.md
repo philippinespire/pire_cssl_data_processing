@@ -343,16 +343,6 @@ Make sure the cutoffs above match the reference*fasta!
 ```
 
 ---
-## Generate Mapping Stats for Capture Targets with [`getBAITcvg.sbatch`]
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
-
-# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
-sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/07_Leiognathus_leuciscus/Leiognathus_leuciscus_Chosen_baits.singleLine.bed
-```
-
----
 
 ## Step 9. Map reads to reference - Filter Maps - Genotype Maps
 
@@ -364,6 +354,16 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/m
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch ../../dDocentHPC.sbatch config.5.cssl
+```
+
+---
+## Generate Mapping Stats for Capture Targets with [`getBAITcvg.sbatch`]
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
+
+# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
+sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/07_Leiognathus_leuciscus/Leiognathus_leuciscus_Chosen_baits.singleLine.bed
 ```
 
 ---
