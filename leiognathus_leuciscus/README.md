@@ -297,12 +297,10 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/m
 cp ../../scripts/dDocentHPC/configs/config.5.cssl .
 ```
 
-Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`.
+Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`. Best genome had to be extracted from out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz and was placed in main lle_spades directory for easy access.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
-
-#best genome had to be extracted from out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz and was placed in main lle_spades directory for easy access
 
 cp /home/e1garcia/shotgun_PIRE/lle_spades/scaffolds.fasta .
 
@@ -342,6 +340,16 @@ Make sure the cutoffs above match the reference*fasta!
 30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
 5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
+```
+
+---
+## Generate Mapping Stats for Capture Targets with [`getBAITcvg.sbatch`]
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
+
+# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
+sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/07_Leiognathus_leuciscus/Leiognathus_leuciscus_Chosen_baits.singleLine.bed
 ```
 
 ---
