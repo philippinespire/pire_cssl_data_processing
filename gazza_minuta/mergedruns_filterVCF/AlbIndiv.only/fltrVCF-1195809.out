@@ -1,0 +1,348 @@
+
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Tue Dec 20 15:22:54 EST 2022 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl.Alb
+
+Tue Dec 20 15:22:54 EST 2022 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl.Alb'
+	Filters are set to '01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07'
+	CutoffCode is set to '.rad.RAW-10-10'
+	BAM_PATH is set to '../mergebams_run1run2'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	VCF_FILE is set to '../../mergedruns_filterVCF/TotalRawSNPs.onlyALB.rad.RAW-10-10.vcf.recode.vcf'
+	Bed file is set to '../mergebams_run1run2/mapped.rad.RAW-10-10.bed'
+	Reference genome is set to '../mergebams_run1run2/reference.rad.RAW-10-10.fasta'
+	PopMap is set to '../mergebams_run1run2/popmap.rad.RAW-10-10'
+	HWE_SCRIPT is set to '../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '../../scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'Gmi.A'
+	The number of threads is set to '40'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	../../mergedruns_filterVCF/TotalRawSNPs.onlyALB.rad.RAW-10-10.vcf.recode.vcf will be used for serial processing.
+
+Tue Dec 20 15:22:54 EST 2022 Getting universal chromosome/contig prefix ...
+          Querying ../../mergedruns_filterVCF/TotalRawSNPs.onlyALB.rad.RAW-10-10.vcf.recode.vcf ...
+          Prefix: dDocent
+          It is assumed that all values in the CHROM column of vcf begin with dDocent
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Tue Dec 20 15:22:54 EST 2022  reading variables into MAIN
+
+Tue Dec 20 15:22:54 EST 2022 ---------------------------FILTER01: Remove sites with Y < alleles < X -----------------------------
+     vcftools --vcf ../../mergedruns_filterVCF/TotalRawSNPs.onlyALB.rad.RAW-10-10.vcf.recode.vcf --min-alleles 2 --max-alleles 2 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr01.1.recode.vcf 2> /dev/null
+	Sites remaining:	282530
+	Contigs remaining:	9401
+
+
+Tue Dec 20 15:22:59 EST 2022 ---------------------------FILTER02: Remove Sites with Indels -----------------------------
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr01.1.recode.vcf --remove-indels --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr02.2.recode.vcf 2> /dev/null
+	Sites remaining:	265315
+	Contigs remaining:	9392
+
+
+Tue Dec 20 15:23:02 EST 2022 ---------------------------FILTER03: Remove Sites with QUAL < minQ -----------------------------
+                                                                                                                        
+                                               Histogram of QUAL before FILTER03                                        
+                                                                                                                        
+     8000 +---------------------------------------------------------------------------------------------------------+   
+          |**                  +                    +                     +                    +                    |   
+          | *                                                   'QUALbefore' using (bin($1,binwidth)):(1.0) ******* |   
+     7000 |-*                                                                                                     +-|   
+          | *                                                                                                       |   
+          | *                                                                                                       |   
+     6000 |-*                                                                                                     +-|   
+          | *                                                                                                       |   
+          | *                                                                                                       |   
+     5000 |-*                                                                                                     +-|   
+          | *                                                                                                       |   
+     4000 |-*                                                                                                     +-|   
+          | *                                                                                                       |   
+          | *                                                                                                       |   
+     3000 |-*                                   **********                                                        +-|   
+          | *                             ******* * *  * *********** ********                                       |   
+          | ***                       ***** * * * * *  * * * * * * *** *  * ***********                             |   
+     2000 |-* *                    **** * * * * * * *  * * * * * * * * *  * * * * * * **************              +-|   
+          | * ***              *****  * * * * * * * *  * * * * * * * * *  * * * * * * * *  * * * * *****************|   
+          | * * **************** * *  * * * * * * * *  * * * * * * * * *  * * * * * * * *  * * * * * * * *  * * * * |   
+     1000 |-* * * *  * * * * * * * *  * * * * * * * *  * * * * * * * * *  * * * * * * * *  * * * * * * * *  * * * *-|   
+          | * * * *  * * * * * * * *  * * * * * * * *  * * * * * * * * *  * * * * * * * *  * * * * * * * *  * * * * |   
+          | * * * *  * * * * * * * *  * * * * * * * *  * * * * * * * * *  * * * * * * * *  * * * * * * * *  * * * * |   
+        0 +---------------------------------------------------------------------------------------------------------+   
+          0                   100                  200                   300                  400                  500  
+                                    QUAL ~ Phred-Scaled Probality of Zero Alternate Alleles                             
+                                                                                                                        
+                                                                                                                        
+                                               Scatter plot of QUAL per site.                                           
+                                                                                                                        
+     500 +----------------------------------------------------------------------------------------------------------+   
+         |                 +                 +                 **               +                 +                 |   
+         |                                                      **                             'QUALbefore'    *    |   
+         |                                                       ***                                                |   
+         |                                                         **                                               |   
+     400 |-+                                                        ***                                           +-|   
+         |                                                            ***                                           |   
+         |                                                              **                                          |   
+         |                                                               ***                                        |   
+     300 |-+                                                               ***                                    +-|   
+         |                                                                   ***                                    |   
+         |                                                                     ****                                 |   
+         |                                                                        ***                               |   
+         |                                                                          ***                             |   
+     200 |-+                                                                          ***                         +-|   
+         |                                                                              ****                        |   
+         |                                                                                 ***                      |   
+         |                                                                                   ***                    |   
+     100 |-+                                                                                   **                 +-|   
+         |                                                                                      **                  |   
+         |                                                                                       **                 |   
+         |                                                                                        **                |   
+         |                 +                 +                 +                +                 +***              |   
+       0 +----------------------------------------------------------------------------------------------------------+   
+         0               50000             100000            150000           200000            250000            300000
+                                                            Site                                                        
+                                                                                                                        
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr02.2.recode.vcf --minQ 100 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr03.3.recode.vcf 2> /dev/null
+	Sites remaining:	243387
+	Contigs remaining:	9391
+
+
+Tue Dec 20 15:23:10 EST 2022 ---------------------------FILTER04: Remove Sites With Mean Depth of Coverage < min-meanDP -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr04.4.ldepth.mean: No such file or directory
+cut: Gmi.A.rad.RAW-10-10.Fltr04.4.ldepth.mean: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitedepthmeanbefore' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                         ^
+         line 0: x range is invalid
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitedepthmeanbefore' pt "*" 
+                                           ^
+         line 0: x range is invalid
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'meandepthVSvariance' pt "*"
+                                          ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr03.3.recode.vcf --min-meanDP 5 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr04.4.recode.vcf 2> /dev/null
+	Sites remaining:	243376
+	Contigs remaining:	9391
+
+
+Tue Dec 20 15:23:13 EST 2022 ---------------------------FILTER14: If individual's genotype has DP < X, convert to missing data -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr14.5.gdepth: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'genotypedepthbefore' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                         ^
+         line 0: all points y value undefined!
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'genotypedepthbefore' pt "*" 
+                                           ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr04.4.recode.vcf --minDP 5 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr14.5.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:14 EST 2022 ---------------------------FILTER07: Remove sites with Alternate Allele Count <=X -----------------------------
+     vcffixup Gmi.A.rad.RAW-10-10.Fltr14.5.recode.vcf | vcffilter -s -f "AC > 0 & AN - AC > 0"  > Gmi.A.rad.RAW-10-10.Fltr07.6.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:14 EST 2022 ---------------------------FILTER05: Remove sites called in <X proportion of individuals -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr05.7.lmiss: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitemissingness' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                     ^
+         line 0: all points y value undefined!
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitemissingness' pt "*" 
+                                       ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr07.6.vcf --max-missing 0.55 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr05.7.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:14 EST 2022 ---------------------------FILTER16: Remove Individuals|Libraries with Too Much Missing Data-----------------------------
+mawk: cannot open Gmi.A.rad.RAW-10-10.Fltr16.8.imiss (No such file or directory)
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'totalmissing' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                  ^
+         line 0: all points y value undefined!
+
+         line 0: Non-numeric string found where a numeric expression was expected
+
+         line 0: warning: Skipping data file with no valid points
+         line 0: Can't plot with an empty x range!
+
+mawk: cannot open Gmi.A.rad.RAW-10-10.Fltr16.8.imiss (No such file or directory)
+ 0 individuals|libraries with too much missing data:
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr05.7.recode.vcf --remove Gmi.A.rad.RAW-10-10.Fltr16.8.lowDP-2.indv --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr16.8.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+ Individuals|Libraries Remaining Per Sample
+
+Tue Dec 20 15:23:15 EST 2022 ---------------------------FILTER15: Remove sites with maf > minor allele frequency > max-maf -----------------------------
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr16.8.recode.vcf --maf 0 --max-maf 1 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr15.9.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:15 EST 2022 ---------------------------FILTER06: Remove sites with Average Allele Balance deviating too far from 0.5 while keeping those with AB=0  -----------------------------
+Broken VCF header, no column names?
+ at /shared/apps/auto/vcftools/0.1.14-gcc-7.3.0-rhfb/lib/Vcf.pm line 172.
+	Vcf::throw(Vcf4_2=HASH(0x5653f0018588), "Broken VCF header, no column names?") called at /shared/apps/auto/vcftools/0.1.14-gcc-7.3.0-rhfb/lib/Vcf.pm line 866
+	VcfReader::_read_column_names(Vcf4_2=HASH(0x5653f0018588)) called at /shared/apps/auto/vcftools/0.1.14-gcc-7.3.0-rhfb/lib/Vcf.pm line 601
+	VcfReader::parse_header(Vcf4_2=HASH(0x5653f0018588)) called at /opt/rad_haplotyper/bin/vcf-query line 212
+	main::read_data(HASH(0x5653effdcf90)) called at /opt/rad_haplotyper/bin/vcf-query line 12
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'siteAB.dat' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                ^
+         line 0: all points y value undefined!
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'siteAB.dat' pt "*" 
+                                  ^
+         line 0: x range is invalid
+
+     vcffixup Gmi.A.rad.RAW-10-10.Fltr15.9.recode.vcf | vcffilter -s -f "AB > 0.375 & AB < 0.625 | AB = 0"  > Gmi.A.rad.RAW-10-10.Fltr06.10.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:15 EST 2022 ---------------------------FILTER11: Remove sites with Quality/DP ratio < X -----------------------------
+     vcffilter -s -f "QUAL / DP > 0.2" Gmi.A.rad.RAW-10-10.Fltr06.10.vcf > Gmi.A.rad.RAW-10-10.Fltr11.11.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:16 EST 2022 ---------------------------FILTER09: Remove sites with low/high ratio of mean mapping quality of alt to ref -----------------------------
+     vcffilter -s -f "MQM / MQMR > 0.75 & MQM / MQMR < 1.33333" Gmi.A.rad.RAW-10-10.Fltr11.11.vcf > Gmi.A.rad.RAW-10-10.Fltr09.12.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:16 EST 2022 ---------------------------FILTER10: Remove sites with one allele only supported by reads not properly paired -----------------------------
+     vcffilter -s -f "PAIRED > 0.05 & PAIREDR > 0.05 & PAIREDR / PAIRED < 1.75 & PAIREDR / PAIRED > 0.25 | PAIRED < 0.05 & PAIREDR < 0.05" Gmi.A.rad.RAW-10-10.Fltr09.12.vcf > Gmi.A.rad.RAW-10-10.Fltr10.13.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:16 EST 2022 ---------------------------FILTER04: Remove Sites With Mean Depth of Coverage < min-meanDP -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr04.14.ldepth.mean: No such file or directory
+cut: Gmi.A.rad.RAW-10-10.Fltr04.14.ldepth.mean: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitedepthmeanbefore' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                         ^
+         line 0: x range is invalid
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitedepthmeanbefore' pt "*" 
+                                           ^
+         line 0: x range is invalid
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'meandepthVSvariance' pt "*"
+                                          ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr10.13.vcf --min-meanDP 15 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr04.14.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:17 EST 2022 ---------------------------FILTER13: Remove sites with mean DP greater than X  -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr13.15.ldepth: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'meandepthpersitebefore' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                            ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr04.14.recode.vcf --max-meanDP 400 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr13.15.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:17 EST 2022 ---------------------------FILTER05: Remove sites called in <X proportion of individuals -----------------------------
+cut: Gmi.A.rad.RAW-10-10.Fltr05.16.lmiss: No such file or directory
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitemissingness' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                     ^
+         line 0: all points y value undefined!
+
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'sitemissingness' pt "*" 
+                                       ^
+         line 0: x range is invalid
+
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr13.15.recode.vcf --max-missing 0.6 --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr05.16.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Dec 20 15:23:17 EST 2022 ---------------------------FILTER16: Remove Individuals|Libraries with Too Much Missing Data-----------------------------
+mawk: cannot open Gmi.A.rad.RAW-10-10.Fltr16.17.imiss (No such file or directory)
+         line 0: warning: Skipping data file with no valid points
+
+gnuplot> plot 'totalmissing' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+                                                                                  ^
+         line 0: all points y value undefined!
+
+         line 0: Non-numeric string found where a numeric expression was expected
+
+         line 0: warning: Skipping data file with no valid points
+         line 0: Can't plot with an empty x range!
+
+mawk: cannot open Gmi.A.rad.RAW-10-10.Fltr16.17.imiss (No such file or directory)
+ 0 individuals|libraries with too much missing data:
+     vcftools --vcf Gmi.A.rad.RAW-10-10.Fltr05.16.recode.vcf --remove Gmi.A.rad.RAW-10-10.Fltr16.17.lowDP-2.indv --recode --recode-INFO-all --out Gmi.A.rad.RAW-10-10.Fltr16.17.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+ Individuals|Libraries Remaining Per Sample
+
+Tue Dec 20 15:23:18 EST 2022 ---------------------------FILTER07: Remove sites with Alternate Allele Count <=X -----------------------------
+     vcffixup Gmi.A.rad.RAW-10-10.Fltr16.17.recode.vcf | vcffilter -s -f "AC > 0 & AN - AC > 0"  > Gmi.A.rad.RAW-10-10.Fltr07.18.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Dec 20 15:23:18 EST 2022  --------------------------- Filtering complete! ---------------------------
+

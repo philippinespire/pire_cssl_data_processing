@@ -10,8 +10,9 @@
 #sbatch fltrVCF.sbatch config.fltr.ind
 
 enable_lmod
-module load container_env ddocent
+module load container_env ddocent/2.7.8
 export SINGULARITY_BIND=/home/e1garcia
+export PARALLEL_SHELL=/bin/bash
 
 #module load ddocent
 #module load perl/5.22.0

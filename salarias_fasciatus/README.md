@@ -181,21 +181,21 @@ Moving on to CSSL pipeline!
 
 ## Step 7.  Mapping & Filtering Data
 ```bash
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salatrias_fasciatus
-mkdir mkBAM
-mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus
+mkdir mkBAMtest
+mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAMtest
 ```
 
 Clone dDocentHPC config flie
 ```bash
 git clone https://github.com/cbirdlab/dDocentHPC.git
-cd mkBAM
+cd mkBAMtest
 cp ../dDocentHPC/configs/config.5.cssl .
 ```
 
 Copied best assembly to mkBAM folder
 ```
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/mkBAMtest
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/probe_design/Sfa_scaffolds_allLibs_contam_R1R2_noIsolate.fasta .
 #rename file
 mv Sfa_scaffolds_allLibs_contam_R1R2_noIsolate.fasta reference.ssl.Sfa-scaffolds-allLibs-contam-R1R2-noIsolate.fasta
@@ -212,7 +212,7 @@ Sfa-scaffolds-allLibs-contam-R1R2-noIsolate               Cutoff2 (integer)
 Run dDocent - map reads
 
 ```bash
-cd /home/e1garcia/pire_cssl_data_processing/salarias_fasciatus/mkBAM
+cd /home/e1garcia/pire_cssl_data_processing/salarias_fasciatus/mkBAMtest
 #this has to be run from dir with fq.gz files to be mapped and the ref genome
 # this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/dDocentHPC.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/mkBAM/
