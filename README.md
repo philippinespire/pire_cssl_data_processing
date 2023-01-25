@@ -193,13 +193,13 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
 
 ## Set up mapping directory and get reference genome
 
-Make a mapping directory and move the re-paired `*fq.gz` files over. 
+Make a mapping directory and make symbolic links to the re-paired `*fq.gz` files inside mkBAM. 
 
 ```sh
 cd YOUR_SPECIES_DIR
 
 mkdir mkBAM
-mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+ln -s fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 ```
 
 Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `config.5.cssl` over to `mkBAM`.
