@@ -48,3 +48,4 @@ Tue Jan 24 17:17:33 EST 2023  reading variables into MAIN
 
 Tue Jan 24 17:17:33 EST 2023 ---------------------------FILTER01: Remove sites with Y < alleles < X -----------------------------
      vcftools --vcf ../TotalRawSNPs.onlyCONTEMP.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf.recode.vcf --min-alleles 2 --max-alleles 2 --recode --recode-INFO-all --out Hmi.A.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.Fltr01.1.recode.vcf 2> /dev/null
+	Sites remaining:	
