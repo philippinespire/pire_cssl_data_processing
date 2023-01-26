@@ -202,18 +202,34 @@ mkdir mkBAM
 ln fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 ```
 
-Skip this step if working in the `e1garcia` dir on wahab
+<details><summary>Skip this step if working in the `e1garcia` dir on wahab</summary>
+<p>
+
 Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `config.5.cssl` over to `mkBAM`.
 
   * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
 
 ```bash
-cd pire_cssl_data_processing/scripts
+cd YOUR_SPECIES_DIR
+cd ../../
 
+# you should now be in the dir that holds your cssl repo dir
+# on wahab, this has already been done, so don't do if you are in e1garcia dir on wahab
 git clone https://github.com/cbirdlab/dDocentHPC.git
 
+
+```
+	
+---
+</p>
+</details>
+
+Copy the dDocentHPC config file and sbatch file to your mkBAM dir
+
+```bash
 cd YOUR_SPECIES_DIR/mkBAM
-cp ../../scripts/dDocentHPC/configs/config.5.cssl .
+cp ../../../dDocentHPC/configs/config.6.cssl .
+cp ../../../dDocentHPC/dDocentHPC_dev.sbatch .
 ```
 
 **IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
