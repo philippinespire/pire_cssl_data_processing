@@ -205,7 +205,7 @@ ln fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 <details><summary>Skip this step if working in the `e1garcia` dir on wahab</summary>
 <p>
 
-Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `config.5.cssl` over to `mkBAM`.
+Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
 
   * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
 
