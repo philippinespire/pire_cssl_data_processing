@@ -193,20 +193,21 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
 
 ## Set up mapping directory and get reference genome
 
-Make a mapping directory and make symbolic links to the re-paired `*fq.gz` files inside mkBAM. 
+Make a mapping directory and make "hard links" to the re-paired `*fq.gz` files inside `mkBAM`.  This makes it so files stay where they belong, but will create links to the data files in the `mkBAM` dir.  The way you know they are hard links is that there will be a "2" rather than a "1" in the 2nd column created by `ls -l` and the very first character of the row will be a "-" (file) rather than a "d" (dir). 
 
-```sh
+```bash
 cd YOUR_SPECIES_DIR
 
 mkdir mkBAM
-ln -s fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+ln fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 ```
 
+Skip this step if working in the `e1garcia` dir on wahab
 Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo and copy `config.5.cssl` over to `mkBAM`.
 
   * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
 
-```sh
+```bash
 cd pire_cssl_data_processing/scripts
 
 git clone https://github.com/cbirdlab/dDocentHPC.git
