@@ -1,2 +1,29 @@
 The Ssp-A resequencing cssl data are back and can be found at https://gridftp.tamucc.edu/genomics/20230123_PIRE-Ssp-A-capture2/ The sequence name decode sheet is in with the data.
 Note there is an updated naming scheme that is formatted as Extraction_id-LibraryPlateWell-LibraryType-Library_id-SeqRun. Extraction_ID is the sample name and extraction from the Extraction database, LibraryPlateWell is the well that the library was processed in. LibraryType is ssl, cssl, or lcwgs. Library_id refers to which library was used (sometimes there were multiple libraries made for an individual). SeqRun is the number of times that individual has been sequenced for this library type.
+
+## 2nd sequencing run
+
+### Rename and back up
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Ssp_CaptureLibraries2_SequenceNameDecode.tsv
+```
+
+Looks OK - proceeding to rename:
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Ssp_CaptureLibraries2_SequenceNameDecode.tsv rename
+```
+
+Back up renamed files. I moved these to siganus first by mistake
+
+```
+cp -r fq_raw /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
+```
+
+### MultiQC
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw" "fq.gz"
+```
