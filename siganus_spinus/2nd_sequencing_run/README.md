@@ -42,3 +42,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Single_FASTQC_noparalle
 
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw" fastqc_report
 ```
+
+Summary:
+* Mostly <1M, though two have ~8M
+* Quality good
+* GC content all over the place, some look very bad / almost all contamination!
+* High duplication (~60-90%) and adapter content.
