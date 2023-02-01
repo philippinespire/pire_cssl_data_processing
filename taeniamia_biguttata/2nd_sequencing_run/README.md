@@ -30,3 +30,10 @@ mv /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/fq_raw" "fq.gz"
 ```
+
+Summary:
+* ≥ 1M reads per library; most >2M, a few >10M
+* High duplication (50-90%)
+* Good quality
+* GC content a bit all over the place - some contamination?
+* High adapter content
