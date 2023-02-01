@@ -61,3 +61,10 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Single_FASTQC_noparalle
 
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/fq_raw" fastqc_report
 ```
+
+Summary:
+* Mostly > 500K sequences; up to 6M. Contemporaries low.
+* Quality good
+* Some yellow-flags for GC content - minor contamination?
+* Duplication not too bad! ~20% for Albatross, ~40% for contemp
+* High adapter content
