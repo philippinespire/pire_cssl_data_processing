@@ -78,3 +78,8 @@ cd cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2
 #do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
+
+Summary:
+* Low duplication, low-moderate adapter content
+* GC content pretty stable
+* ≥94% passed filter
