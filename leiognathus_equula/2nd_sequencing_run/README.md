@@ -108,3 +108,5 @@ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R .
 crun R < checkClumpify_EG.R --no-save
 exit #to relinquish the interactive node
 ```
+
+Clumpify Successfully worked on all samples!
