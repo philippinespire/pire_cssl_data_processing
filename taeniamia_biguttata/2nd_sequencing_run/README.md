@@ -3,7 +3,7 @@ Note there is an updated naming scheme that is formatted as Extraction_id-Librar
 
 ## 2nd sequencing run
 
-### Rename and back up
+### 0. Rename and back up
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/raw_fq_capture
@@ -25,7 +25,7 @@ mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeni
 mv /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 ```
 
-### MultiQC
+### 1. MultiQC
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/fq_raw" "fq.gz"
@@ -37,3 +37,14 @@ Summary:
 * Good quality
 * GC content a bit all over the place - some contamination?
 * High adapter content
+
+
+### 2. First trim.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+
+#sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
+#do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+```
