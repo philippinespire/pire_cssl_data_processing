@@ -1,0 +1,2314 @@
+
+Read1 before filtering:
+total reads: 326209
+total bases: 48931350
+Q20 bases: 47265969(96.5965%)
+Q30 bases: 45064407(92.0972%)
+
+Read2 before filtering:
+total reads: 326209
+total bases: 48931350
+Q20 bases: 45373230(92.7283%)
+Q30 bases: 42294105(86.4356%)
+
+Read1 after filtering:
+total reads: 296474
+total bases: 40686003
+Q20 bases: 39717955(97.6207%)
+Q30 bases: 38067228(93.5634%)
+
+Read2 aftering filtering:
+total reads: 296474
+total bases: 40689123
+Q20 bases: 39276425(96.5281%)
+Q30 bases: 37006780(90.9501%)
+
+Filtering result:
+reads passed filter: 592948
+reads failed due to low quality: 53960
+reads failed due to too many N: 138
+reads failed due to too short: 4392
+reads failed due to low complexity: 980
+reads with adapter trimmed: 239337
+bases trimmed due to adapters: 7955579
+reads with polyX in 3' end: 11723
+bases trimmed in polyX tail: 168509
+
+Duplication rate: 21.3676%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 22 seconds
+Read1 before filtering:
+total reads: 276541
+total bases: 41481150
+Q20 bases: 40418377(97.4379%)
+Q30 bases: 38831963(93.6135%)
+
+Read2 before filtering:
+total reads: 276541
+total bases: 41481150
+Q20 bases: 39652501(95.5916%)
+Q30 bases: 37442171(90.2631%)
+
+Read1 after filtering:
+total reads: 266729
+total bases: 36399111
+Q20 bases: 35720314(98.1351%)
+Q30 bases: 34439295(94.6158%)
+
+Read2 aftering filtering:
+total reads: 266729
+total bases: 36400076
+Q20 bases: 35439637(97.3614%)
+Q30 bases: 33693891(92.5654%)
+
+Filtering result:
+reads passed filter: 533458
+reads failed due to low quality: 17394
+reads failed due to too many N: 132
+reads failed due to too short: 1574
+reads failed due to low complexity: 524
+reads with adapter trimmed: 219698
+bases trimmed due to adapters: 7124630
+reads with polyX in 3' end: 5162
+bases trimmed in polyX tail: 79651
+
+Duplication rate: 20.7319%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_020_Ex1-4H-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_020_Ex1-4H-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_020_Ex1-4H-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_020_Ex1-4H-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_020_Ex1-4H-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_020_Ex1-4H-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 25 seconds
+Read1 before filtering:
+total reads: 755962
+total bases: 113394300
+Q20 bases: 110291336(97.2636%)
+Q30 bases: 105662722(93.1817%)
+
+Read2 before filtering:
+total reads: 755962
+total bases: 113394300
+Q20 bases: 107921016(95.1732%)
+Q30 bases: 101719601(89.7043%)
+
+Read1 after filtering:
+total reads: 721903
+total bases: 95493051
+Q20 bases: 93629470(98.0485%)
+Q30 bases: 90112667(94.3657%)
+
+Read2 aftering filtering:
+total reads: 721903
+total bases: 95495055
+Q20 bases: 92927228(97.311%)
+Q30 bases: 88265640(92.4295%)
+
+Filtering result:
+reads passed filter: 1443806
+reads failed due to low quality: 60966
+reads failed due to too many N: 302
+reads failed due to too short: 5340
+reads failed due to low complexity: 1510
+reads with adapter trimmed: 749292
+bases trimmed due to adapters: 25335946
+reads with polyX in 3' end: 18671
+bases trimmed in polyX tail: 275975
+
+Duplication rate: 20.1599%
+
+Insert size peak (evaluated by paired-end reads): 120
+
+JSON report: fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_003_Ex1-1G-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_003_Ex1-1G-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_003_Ex1-1G-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_003_Ex1-1G-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_003_Ex1-1G-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_003_Ex1-1G-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 29 seconds
+Read1 before filtering:
+total reads: 795726
+total bases: 119358900
+Q20 bases: 115857801(97.0667%)
+Q30 bases: 110828491(92.8531%)
+
+Read2 before filtering:
+total reads: 795726
+total bases: 119358900
+Q20 bases: 113760679(95.3098%)
+Q30 bases: 106878605(89.5439%)
+
+Read1 after filtering:
+total reads: 770231
+total bases: 102807273
+Q20 bases: 100608407(97.8612%)
+Q30 bases: 96642418(94.0035%)
+
+Read2 aftering filtering:
+total reads: 770231
+total bases: 102802540
+Q20 bases: 99705696(96.9876%)
+Q30 bases: 94348314(91.7762%)
+
+Filtering result:
+reads passed filter: 1540462
+reads failed due to low quality: 43876
+reads failed due to too many N: 330
+reads failed due to too short: 5240
+reads failed due to low complexity: 1544
+reads with adapter trimmed: 715388
+bases trimmed due to adapters: 24831479
+reads with polyX in 3' end: 15115
+bases trimmed in polyX tail: 234640
+
+Duplication rate: 20.6122%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_010_Ex1-5H-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_010_Ex1-5H-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_010_Ex1-5H-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_010_Ex1-5H-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_010_Ex1-5H-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_010_Ex1-5H-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 31 seconds
+Read1 before filtering:
+total reads: 491640
+total bases: 73746000
+Q20 bases: 71966658(97.5872%)
+Q30 bases: 69123123(93.7314%)
+
+Read2 before filtering:
+total reads: 491640
+total bases: 73746000
+Q20 bases: 70864261(96.0923%)
+Q30 bases: 66929363(90.7566%)
+
+Read1 after filtering:
+total reads: 478197
+total bases: 65322433
+Q20 bases: 64134741(98.1818%)
+Q30 bases: 61806631(94.6178%)
+
+Read2 aftering filtering:
+total reads: 478197
+total bases: 65322545
+Q20 bases: 63638908(97.4226%)
+Q30 bases: 60453104(92.5455%)
+
+Filtering result:
+reads passed filter: 956394
+reads failed due to low quality: 21206
+reads failed due to too many N: 258
+reads failed due to too short: 4572
+reads failed due to low complexity: 850
+reads with adapter trimmed: 408185
+bases trimmed due to adapters: 12674626
+reads with polyX in 3' end: 7619
+bases trimmed in polyX tail: 113627
+
+Duplication rate: 21.4615%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 32 seconds
+Read1 before filtering:
+total reads: 738274
+total bases: 110741100
+Q20 bases: 108160371(97.6696%)
+Q30 bases: 104014870(93.9262%)
+
+Read2 before filtering:
+total reads: 738274
+total bases: 110741100
+Q20 bases: 105080866(94.8888%)
+Q30 bases: 98805407(89.222%)
+
+Read1 after filtering:
+total reads: 694145
+total bases: 95642312
+Q20 bases: 93965823(98.2471%)
+Q30 bases: 90586529(94.7139%)
+
+Read2 aftering filtering:
+total reads: 694145
+total bases: 95631353
+Q20 bases: 93009028(97.2579%)
+Q30 bases: 88094708(92.1191%)
+
+Filtering result:
+reads passed filter: 1388290
+reads failed due to low quality: 73790
+reads failed due to too many N: 274
+reads failed due to too short: 13056
+reads failed due to low complexity: 1138
+reads with adapter trimmed: 519581
+bases trimmed due to adapters: 17442745
+reads with polyX in 3' end: 20943
+bases trimmed in polyX tail: 266290
+
+Duplication rate: 21.4008%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_013_Ex1-1B-cssl-2-2.1.fq.gz --in2 fq_raw/Leq-ABas_013_Ex1-1B-cssl-2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_013_Ex1-1B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_013_Ex1-1B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_013_Ex1-1B-cssl-2-2.fail.fq.gz -h fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.fastp.html -j fq_fp1/Leq-ABas_013_Ex1-1B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 35 seconds
+Read1 before filtering:
+total reads: 1222182
+total bases: 183327300
+Q20 bases: 178190716(97.1981%)
+Q30 bases: 170624323(93.0709%)
+
+Read2 before filtering:
+total reads: 1222182
+total bases: 183327300
+Q20 bases: 174436404(95.1503%)
+Q30 bases: 164046276(89.4827%)
+
+Read1 after filtering:
+total reads: 1174974
+total bases: 162118693
+Q20 bases: 158680263(97.8791%)
+Q30 bases: 152392434(94.0005%)
+
+Read2 aftering filtering:
+total reads: 1174974
+total bases: 162101466
+Q20 bases: 157088167(96.9073%)
+Q30 bases: 148556521(91.6442%)
+
+Filtering result:
+reads passed filter: 2349948
+reads failed due to low quality: 84956
+reads failed due to too many N: 534
+reads failed due to too short: 6750
+reads failed due to low complexity: 2176
+reads with adapter trimmed: 845347
+bases trimmed due to adapters: 27865652
+reads with polyX in 3' end: 25172
+bases trimmed in polyX tail: 375626
+
+Duplication rate: 22.1569%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_004_Ex1-2C-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_004_Ex1-2C-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_004_Ex1-2C-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_004_Ex1-2C-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_004_Ex1-2C-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_004_Ex1-2C-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 36 seconds
+Read1 before filtering:
+total reads: 1399059
+total bases: 209858850
+Q20 bases: 204503482(97.4481%)
+Q30 bases: 196322954(93.55%)
+
+Read2 before filtering:
+total reads: 1399059
+total bases: 209858850
+Q20 bases: 200680566(95.6264%)
+Q30 bases: 188692160(89.9138%)
+
+Read1 after filtering:
+total reads: 1359607
+total bases: 187714347
+Q20 bases: 184057301(98.0518%)
+Q30 bases: 177234886(94.4173%)
+
+Read2 aftering filtering:
+total reads: 1359607
+total bases: 187678329
+Q20 bases: 182103186(97.0294%)
+Q30 bases: 172202194(91.7539%)
+
+Filtering result:
+reads passed filter: 2719214
+reads failed due to low quality: 69066
+reads failed due to too many N: 614
+reads failed due to too short: 7078
+reads failed due to low complexity: 2146
+reads with adapter trimmed: 992113
+bases trimmed due to adapters: 31859673
+reads with polyX in 3' end: 24819
+bases trimmed in polyX tail: 367965
+
+Duplication rate: 20.762%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 41 seconds
+Read1 before filtering:
+total reads: 1824653
+total bases: 273697950
+Q20 bases: 266055990(97.2079%)
+Q30 bases: 254647571(93.0396%)
+
+Read2 before filtering:
+total reads: 1824653
+total bases: 273697950
+Q20 bases: 261903147(95.6906%)
+Q30 bases: 245725995(89.78%)
+
+Read1 after filtering:
+total reads: 1784645
+total bases: 255344464
+Q20 bases: 249787737(97.8238%)
+Q30 bases: 239698372(93.8726%)
+
+Read2 aftering filtering:
+total reads: 1784645
+total bases: 255314496
+Q20 bases: 247026126(96.7537%)
+Q30 bases: 232701036(91.1429%)
+
+Filtering result:
+reads passed filter: 3569290
+reads failed due to low quality: 70888
+reads failed due to too many N: 826
+reads failed due to too short: 6396
+reads failed due to low complexity: 1906
+reads with adapter trimmed: 895450
+bases trimmed due to adapters: 23843408
+reads with polyX in 3' end: 25998
+bases trimmed in polyX tail: 395949
+
+Duplication rate: 22.5804%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_001_Ex1-1A-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_001_Ex1-1A-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_001_Ex1-1A-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_001_Ex1-1A-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_001_Ex1-1A-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_001_Ex1-1A-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 68 seconds
+Read1 before filtering:
+total reads: 2688520
+total bases: 403278000
+Q20 bases: 392456110(97.3165%)
+Q30 bases: 375807907(93.1883%)
+
+Read2 before filtering:
+total reads: 2688520
+total bases: 403278000
+Q20 bases: 385863496(95.6818%)
+Q30 bases: 362094816(89.7879%)
+
+Read1 after filtering:
+total reads: 2622857
+total bases: 366526204
+Q20 bases: 358919588(97.9247%)
+Q30 bases: 344698277(94.0446%)
+
+Read2 aftering filtering:
+total reads: 2622857
+total bases: 366491158
+Q20 bases: 355123537(96.8983%)
+Q30 bases: 334885777(91.3762%)
+
+Filtering result:
+reads passed filter: 5245714
+reads failed due to low quality: 117142
+reads failed due to too many N: 1284
+reads failed due to too short: 8846
+reads failed due to low complexity: 4054
+reads with adapter trimmed: 1619783
+bases trimmed due to adapters: 52104555
+reads with polyX in 3' end: 44086
+bases trimmed in polyX tail: 680357
+
+Duplication rate: 20.7719%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 68 seconds
+Read1 before filtering:
+total reads: 2335504
+total bases: 350325600
+Q20 bases: 340264631(97.1281%)
+Q30 bases: 326103413(93.0858%)
+
+Read2 before filtering:
+total reads: 2335504
+total bases: 350325600
+Q20 bases: 331655287(94.6706%)
+Q30 bases: 311385458(88.8846%)
+
+Read1 after filtering:
+total reads: 2217504
+total bases: 301676775
+Q20 bases: 295278248(97.879%)
+Q30 bases: 283925871(94.1159%)
+
+Read2 aftering filtering:
+total reads: 2217504
+total bases: 301679397
+Q20 bases: 292556388(96.9759%)
+Q30 bases: 276898485(91.7857%)
+
+Filtering result:
+reads passed filter: 4435008
+reads failed due to low quality: 211562
+reads failed due to too many N: 1082
+reads failed due to too short: 18156
+reads failed due to low complexity: 5200
+reads with adapter trimmed: 1885497
+bases trimmed due to adapters: 62088312
+reads with polyX in 3' end: 59996
+bases trimmed in polyX tail: 874635
+
+Duplication rate: 21.4508%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_012_Ex1-7A-cssl-2-2.1.fq.gz --in2 fq_raw/Leq-ABas_012_Ex1-7A-cssl-2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_012_Ex1-7A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_012_Ex1-7A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_012_Ex1-7A-cssl-2-2.fail.fq.gz -h fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.fastp.html -j fq_fp1/Leq-ABas_012_Ex1-7A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 68 seconds
+Read1 before filtering:
+total reads: 2116135
+total bases: 317420250
+Q20 bases: 308615211(97.2261%)
+Q30 bases: 295454376(93.0799%)
+
+Read2 before filtering:
+total reads: 2116135
+total bases: 317420250
+Q20 bases: 304459942(95.917%)
+Q30 bases: 286743109(90.3355%)
+
+Read1 after filtering:
+total reads: 2071820
+total bases: 294101413
+Q20 bases: 287757370(97.8429%)
+Q30 bases: 276170495(93.9032%)
+
+Read2 aftering filtering:
+total reads: 2071820
+total bases: 294071650
+Q20 bases: 285178487(96.9759%)
+Q30 bases: 269709009(91.7154%)
+
+Filtering result:
+reads passed filter: 4143640
+reads failed due to low quality: 79654
+reads failed due to too many N: 1044
+reads failed due to too short: 5954
+reads failed due to low complexity: 1978
+reads with adapter trimmed: 1200166
+bases trimmed due to adapters: 32258362
+reads with polyX in 3' end: 29044
+bases trimmed in polyX tail: 438001
+
+Duplication rate: 22.99%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_005_Ex1-2H-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_005_Ex1-2H-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_005_Ex1-2H-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_005_Ex1-2H-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_005_Ex1-2H-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_005_Ex1-2H-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 2067572
+total bases: 310135800
+Q20 bases: 301896020(97.3432%)
+Q30 bases: 289238880(93.262%)
+
+Read2 before filtering:
+total reads: 2067572
+total bases: 310135800
+Q20 bases: 297645072(95.9725%)
+Q30 bases: 280235909(90.3591%)
+
+Read1 after filtering:
+total reads: 2028364
+total bases: 287846280
+Q20 bases: 281903867(97.9356%)
+Q30 bases: 270748786(94.0602%)
+
+Read2 aftering filtering:
+total reads: 2028364
+total bases: 287813445
+Q20 bases: 278991467(96.9348%)
+Q30 bases: 263613223(91.5917%)
+
+Filtering result:
+reads passed filter: 4056728
+reads failed due to low quality: 70628
+reads failed due to too many N: 1074
+reads failed due to too short: 5046
+reads failed due to low complexity: 1668
+reads with adapter trimmed: 1096258
+bases trimmed due to adapters: 31848812
+reads with polyX in 3' end: 27156
+bases trimmed in polyX tail: 403181
+
+Duplication rate: 21.167%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_008_Ex1-4G-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_008_Ex1-4G-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_008_Ex1-4G-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_008_Ex1-4G-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_008_Ex1-4G-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_008_Ex1-4G-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 2853588
+total bases: 428038200
+Q20 bases: 416150577(97.2228%)
+Q30 bases: 398262312(93.0436%)
+
+Read2 before filtering:
+total reads: 2853588
+total bases: 428038200
+Q20 bases: 406677582(95.0096%)
+Q30 bases: 380313803(88.8504%)
+
+Read1 after filtering:
+total reads: 2758067
+total bases: 387983631
+Q20 bases: 379757499(97.8798%)
+Q30 bases: 364505671(93.9487%)
+
+Read2 aftering filtering:
+total reads: 2758067
+total bases: 387904201
+Q20 bases: 374524472(96.5508%)
+Q30 bases: 352038317(90.7539%)
+
+Filtering result:
+reads passed filter: 5516134
+reads failed due to low quality: 172658
+reads failed due to too many N: 1324
+reads failed due to too short: 13158
+reads failed due to low complexity: 3902
+reads with adapter trimmed: 1553248
+bases trimmed due to adapters: 50636606
+reads with polyX in 3' end: 52348
+bases trimmed in polyX tail: 756615
+
+Duplication rate: 21.6867%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 68 seconds
+Read1 before filtering:
+total reads: 1992179
+total bases: 298826850
+Q20 bases: 290182293(97.1072%)
+Q30 bases: 278022257(93.0379%)
+
+Read2 before filtering:
+total reads: 1992179
+total bases: 298826850
+Q20 bases: 285227373(95.449%)
+Q30 bases: 267787225(89.6128%)
+
+Read1 after filtering:
+total reads: 1941668
+total bases: 275327811
+Q20 bases: 269239499(97.7887%)
+Q30 bases: 258650262(93.9427%)
+
+Read2 aftering filtering:
+total reads: 1941668
+total bases: 275294458
+Q20 bases: 266244310(96.7126%)
+Q30 bases: 251157875(91.2324%)
+
+Filtering result:
+reads passed filter: 3883336
+reads failed due to low quality: 90020
+reads failed due to too many N: 930
+reads failed due to too short: 7630
+reads failed due to low complexity: 2442
+reads with adapter trimmed: 1145349
+bases trimmed due to adapters: 31171555
+reads with polyX in 3' end: 29641
+bases trimmed in polyX tail: 462570
+
+Duplication rate: 24.5534%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 1501654
+total bases: 225248100
+Q20 bases: 219384063(97.3966%)
+Q30 bases: 210723815(93.5519%)
+
+Read2 before filtering:
+total reads: 1501654
+total bases: 225248100
+Q20 bases: 213898497(94.9613%)
+Q30 bases: 200908660(89.1944%)
+
+Read1 after filtering:
+total reads: 1432739
+total bases: 196955880
+Q20 bases: 193175162(98.0804%)
+Q30 bases: 186122586(94.4996%)
+
+Read2 aftering filtering:
+total reads: 1432739
+total bases: 196943768
+Q20 bases: 191104126(97.0349%)
+Q30 bases: 180830973(91.8186%)
+
+Filtering result:
+reads passed filter: 2865478
+reads failed due to low quality: 120410
+reads failed due to too many N: 702
+reads failed due to too short: 13120
+reads failed due to low complexity: 3598
+reads with adapter trimmed: 1106985
+bases trimmed due to adapters: 35800359
+reads with polyX in 3' end: 37182
+bases trimmed in polyX tail: 569475
+
+Duplication rate: 24.5022%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 1948312
+total bases: 292246800
+Q20 bases: 283953639(97.1623%)
+Q30 bases: 271737637(92.9822%)
+
+Read2 before filtering:
+total reads: 1948312
+total bases: 292246800
+Q20 bases: 276709417(94.6835%)
+Q30 bases: 259174577(88.6835%)
+
+Read1 after filtering:
+total reads: 1859572
+total bases: 262326471
+Q20 bases: 256696326(97.8538%)
+Q30 bases: 246387394(93.924%)
+
+Read2 aftering filtering:
+total reads: 1859572
+total bases: 262293354
+Q20 bases: 253616208(96.6918%)
+Q30 bases: 238981052(91.1121%)
+
+Filtering result:
+reads passed filter: 3719144
+reads failed due to low quality: 159556
+reads failed due to too many N: 874
+reads failed due to too short: 12516
+reads failed due to low complexity: 4534
+reads with adapter trimmed: 1065170
+bases trimmed due to adapters: 33210216
+reads with polyX in 3' end: 43346
+bases trimmed in polyX tail: 673396
+
+Duplication rate: 21.2217%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 3523877
+total bases: 528581550
+Q20 bases: 514705697(97.3749%)
+Q30 bases: 493357376(93.3361%)
+
+Read2 before filtering:
+total reads: 3523877
+total bases: 528581550
+Q20 bases: 499603379(94.5177%)
+Q30 bases: 466114635(88.1822%)
+
+Read1 after filtering:
+total reads: 3368415
+total bases: 478283275
+Q20 bases: 468558634(97.9668%)
+Q30 bases: 450138336(94.1154%)
+
+Read2 aftering filtering:
+total reads: 3368415
+total bases: 478155464
+Q20 bases: 461338172(96.4829%)
+Q30 bases: 433124159(90.5823%)
+
+Filtering result:
+reads passed filter: 6736830
+reads failed due to low quality: 285362
+reads failed due to too many N: 1594
+reads failed due to too short: 16554
+reads failed due to low complexity: 7414
+reads with adapter trimmed: 1716553
+bases trimmed due to adapters: 53960170
+reads with polyX in 3' end: 88240
+bases trimmed in polyX tail: 1313645
+
+Duplication rate: 24.6716%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 73 seconds
+Read1 before filtering:
+total reads: 2514906
+total bases: 377235900
+Q20 bases: 366278488(97.0953%)
+Q30 bases: 350462047(92.9026%)
+
+Read2 before filtering:
+total reads: 2514906
+total bases: 377235900
+Q20 bases: 360700377(95.6167%)
+Q30 bases: 339003091(89.865%)
+
+Read1 after filtering:
+total reads: 2447166
+total bases: 341477695
+Q20 bases: 333827869(97.7598%)
+Q30 bases: 320368047(93.8181%)
+
+Read2 aftering filtering:
+total reads: 2447166
+total bases: 341475814
+Q20 bases: 330993862(96.9304%)
+Q30 bases: 312730221(91.582%)
+
+Filtering result:
+reads passed filter: 4894332
+reads failed due to low quality: 116046
+reads failed due to too many N: 1216
+reads failed due to too short: 13478
+reads failed due to low complexity: 4740
+reads with adapter trimmed: 1707743
+bases trimmed due to adapters: 50241817
+reads with polyX in 3' end: 38647
+bases trimmed in polyX tail: 661571
+
+Duplication rate: 20.7872%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_022_Ex1-6A-cssl-2-2.1.fq.gz --in2 fq_raw/Leq-ABas_022_Ex1-6A-cssl-2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_022_Ex1-6A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_022_Ex1-6A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_022_Ex1-6A-cssl-2-2.fail.fq.gz -h fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.fastp.html -j fq_fp1/Leq-ABas_022_Ex1-6A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 63 seconds
+Read1 before filtering:
+total reads: 1737770
+total bases: 260665500
+Q20 bases: 252627483(96.9163%)
+Q30 bases: 241508806(92.6509%)
+
+Read2 before filtering:
+total reads: 1737770
+total bases: 260665500
+Q20 bases: 246248506(94.4692%)
+Q30 bases: 230688662(88.4999%)
+
+Read1 after filtering:
+total reads: 1650820
+total bases: 229328981
+Q20 bases: 224205953(97.7661%)
+Q30 bases: 215219953(93.8477%)
+
+Read2 aftering filtering:
+total reads: 1650820
+total bases: 229303815
+Q20 bases: 221709725(96.6882%)
+Q30 bases: 209138454(91.2058%)
+
+Filtering result:
+reads passed filter: 3301640
+reads failed due to low quality: 156170
+reads failed due to too many N: 762
+reads failed due to too short: 13158
+reads failed due to low complexity: 3810
+reads with adapter trimmed: 1150557
+bases trimmed due to adapters: 36741529
+reads with polyX in 3' end: 41752
+bases trimmed in polyX tail: 620621
+
+Duplication rate: 21.5644%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 58 seconds
+Read1 before filtering:
+total reads: 4427837
+total bases: 664175550
+Q20 bases: 645952015(97.2562%)
+Q30 bases: 618135694(93.0681%)
+
+Read2 before filtering:
+total reads: 4427837
+total bases: 664175550
+Q20 bases: 634216969(95.4894%)
+Q30 bases: 594618933(89.5274%)
+
+Read1 after filtering:
+total reads: 4320258
+total bases: 614453876
+Q20 bases: 601232723(97.8483%)
+Q30 bases: 576718610(93.8587%)
+
+Read2 aftering filtering:
+total reads: 4320258
+total bases: 614375287
+Q20 bases: 593905025(96.6681%)
+Q30 bases: 559157619(91.0124%)
+
+Filtering result:
+reads passed filter: 8640516
+reads failed due to low quality: 194394
+reads failed due to too many N: 2088
+reads failed due to too short: 13070
+reads failed due to low complexity: 5606
+reads with adapter trimmed: 2111468
+bases trimmed due to adapters: 64647041
+reads with polyX in 3' end: 64641
+bases trimmed in polyX tail: 994456
+
+Duplication rate: 23.4241%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_016_Ex1-2D-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_016_Ex1-2D-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_016_Ex1-2D-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_016_Ex1-2D-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_016_Ex1-2D-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_016_Ex1-2D-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 98 seconds
+Read1 before filtering:
+total reads: 823104
+total bases: 123465600
+Q20 bases: 120467805(97.572%)
+Q30 bases: 115766130(93.7639%)
+
+Read2 before filtering:
+total reads: 823104
+total bases: 123465600
+Q20 bases: 118728091(96.1629%)
+Q30 bases: 112253592(90.9189%)
+
+Read1 after filtering:
+total reads: 804109
+total bases: 111177142
+Q20 bases: 109107020(98.138%)
+Q30 bases: 105125553(94.5568%)
+
+Read2 aftering filtering:
+total reads: 804109
+total bases: 111168505
+Q20 bases: 108136971(97.273%)
+Q30 bases: 102688038(92.3715%)
+
+Filtering result:
+reads passed filter: 1608218
+reads failed due to low quality: 31728
+reads failed due to too many N: 370
+reads failed due to too short: 4670
+reads failed due to low complexity: 1222
+reads with adapter trimmed: 604839
+bases trimmed due to adapters: 18511276
+reads with polyX in 3' end: 11967
+bases trimmed in polyX tail: 181552
+
+Duplication rate: 23.0337%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 30 seconds
+Read1 before filtering:
+total reads: 595084
+total bases: 89262600
+Q20 bases: 87174643(97.6609%)
+Q30 bases: 83969316(94.07%)
+
+Read2 before filtering:
+total reads: 595084
+total bases: 89262600
+Q20 bases: 85723013(96.0346%)
+Q30 bases: 81230859(91.0021%)
+
+Read1 after filtering:
+total reads: 575759
+total bases: 77510657
+Q20 bases: 76191151(98.2976%)
+Q30 bases: 73624237(94.986%)
+
+Read2 aftering filtering:
+total reads: 575759
+total bases: 77515366
+Q20 bases: 75628840(97.5663%)
+Q30 bases: 72088793(92.9994%)
+
+Filtering result:
+reads passed filter: 1151518
+reads failed due to low quality: 33196
+reads failed due to too many N: 246
+reads failed due to too short: 3896
+reads failed due to low complexity: 1312
+reads with adapter trimmed: 531792
+bases trimmed due to adapters: 17552812
+reads with polyX in 3' end: 8747
+bases trimmed in polyX tail: 129135
+
+Duplication rate: 21.2044%
+
+Insert size peak (evaluated by paired-end reads): 114
+
+JSON report: fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 32 seconds
+Read1 before filtering:
+total reads: 2926438
+total bases: 438965700
+Q20 bases: 426469013(97.1532%)
+Q30 bases: 408580208(93.0779%)
+
+Read2 before filtering:
+total reads: 2926438
+total bases: 438965700
+Q20 bases: 420790078(95.8594%)
+Q30 bases: 396050802(90.2236%)
+
+Read1 after filtering:
+total reads: 2859942
+total bases: 395883131
+Q20 bases: 387352442(97.8451%)
+Q30 bases: 372310638(94.0456%)
+
+Read2 aftering filtering:
+total reads: 2859942
+total bases: 395905009
+Q20 bases: 384164130(97.0344%)
+Q30 bases: 363436640(91.7989%)
+
+Filtering result:
+reads passed filter: 5719884
+reads failed due to low quality: 117022
+reads failed due to too many N: 1356
+reads failed due to too short: 10908
+reads failed due to low complexity: 3706
+reads with adapter trimmed: 2116307
+bases trimmed due to adapters: 64880925
+reads with polyX in 3' end: 43034
+bases trimmed in polyX tail: 644694
+
+Duplication rate: 21.6546%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 1284292
+total bases: 192643800
+Q20 bases: 187387872(97.2717%)
+Q30 bases: 179587401(93.2225%)
+
+Read2 before filtering:
+total reads: 1284292
+total bases: 192643800
+Q20 bases: 182280640(94.6206%)
+Q30 bases: 170995441(88.7625%)
+
+Read1 after filtering:
+total reads: 1217195
+total bases: 170761766
+Q20 bases: 167250401(97.9437%)
+Q30 bases: 160790253(94.1606%)
+
+Read2 aftering filtering:
+total reads: 1217195
+total bases: 170753370
+Q20 bases: 165450847(96.8946%)
+Q30 bases: 156282411(91.5252%)
+
+Filtering result:
+reads passed filter: 2434390
+reads failed due to low quality: 124332
+reads failed due to too many N: 604
+reads failed due to too short: 7322
+reads failed due to low complexity: 1936
+reads with adapter trimmed: 767682
+bases trimmed due to adapters: 24072044
+reads with polyX in 3' end: 33067
+bases trimmed in polyX tail: 442458
+
+Duplication rate: 21.2059%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 37 seconds
+Read1 before filtering:
+total reads: 4937764
+total bases: 740664600
+Q20 bases: 719457362(97.1367%)
+Q30 bases: 687523509(92.8252%)
+
+Read2 before filtering:
+total reads: 4937764
+total bases: 740664600
+Q20 bases: 705682842(95.277%)
+Q30 bases: 659356261(89.0222%)
+
+Read1 after filtering:
+total reads: 4823167
+total bases: 685973807
+Q20 bases: 670801319(97.7882%)
+Q30 bases: 642876935(93.7174%)
+
+Read2 aftering filtering:
+total reads: 4823167
+total bases: 685830900
+Q20 bases: 661300773(96.4233%)
+Q30 bases: 620429334(90.4639%)
+
+Filtering result:
+reads passed filter: 9646334
+reads failed due to low quality: 208508
+reads failed due to too many N: 2326
+reads failed due to too short: 12988
+reads failed due to low complexity: 5372
+reads with adapter trimmed: 2318053
+bases trimmed due to adapters: 72200544
+reads with polyX in 3' end: 70825
+bases trimmed in polyX tail: 1078477
+
+Duplication rate: 23.1052%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_002_Ex1-1D-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_002_Ex1-1D-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_002_Ex1-1D-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_002_Ex1-1D-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_002_Ex1-1D-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_002_Ex1-1D-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 109 seconds
+Read1 before filtering:
+total reads: 1135962
+total bases: 170394300
+Q20 bases: 165895156(97.3596%)
+Q30 bases: 159233877(93.4502%)
+
+Read2 before filtering:
+total reads: 1135962
+total bases: 170394300
+Q20 bases: 163113834(95.7273%)
+Q30 bases: 153525415(90.1001%)
+
+Read1 after filtering:
+total reads: 1106693
+total bases: 153254559
+Q20 bases: 150175943(97.9912%)
+Q30 bases: 144576168(94.3373%)
+
+Read2 aftering filtering:
+total reads: 1106693
+total bases: 153235049
+Q20 bases: 148647889(97.0065%)
+Q30 bases: 140634616(91.7771%)
+
+Filtering result:
+reads passed filter: 2213386
+reads failed due to low quality: 50736
+reads failed due to too many N: 492
+reads failed due to too short: 5510
+reads failed due to low complexity: 1800
+reads with adapter trimmed: 812823
+bases trimmed due to adapters: 25178692
+reads with polyX in 3' end: 16781
+bases trimmed in polyX tail: 255975
+
+Duplication rate: 21.2753%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 40 seconds
+Read1 before filtering:
+total reads: 5389331
+total bases: 808399650
+Q20 bases: 785231718(97.1341%)
+Q30 bases: 751471522(92.9579%)
+
+Read2 before filtering:
+total reads: 5389331
+total bases: 808399650
+Q20 bases: 773230329(95.6495%)
+Q30 bases: 726524788(89.872%)
+
+Read1 after filtering:
+total reads: 5257464
+total bases: 707089157
+Q20 bases: 692327359(97.9123%)
+Q30 bases: 665384970(94.102%)
+
+Read2 aftering filtering:
+total reads: 5257464
+total bases: 707119207
+Q20 bases: 686018286(97.0159%)
+Q30 bases: 648728917(91.7425%)
+
+Filtering result:
+reads passed filter: 10514928
+reads failed due to low quality: 236272
+reads failed due to too many N: 2368
+reads failed due to too short: 16730
+reads failed due to low complexity: 8364
+reads with adapter trimmed: 4695526
+bases trimmed due to adapters: 158572303
+reads with polyX in 3' end: 85787
+bases trimmed in polyX tail: 1341936
+
+Duplication rate: 21.3127%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 110 seconds
+Read1 before filtering:
+total reads: 1761360
+total bases: 264204000
+Q20 bases: 256794653(97.1956%)
+Q30 bases: 245786677(93.0291%)
+
+Read2 before filtering:
+total reads: 1761360
+total bases: 264204000
+Q20 bases: 252914601(95.727%)
+Q30 bases: 237720560(89.9761%)
+
+Read1 after filtering:
+total reads: 1720901
+total bases: 240761203
+Q20 bases: 235587873(97.8513%)
+Q30 bases: 226184866(93.9457%)
+
+Read2 aftering filtering:
+total reads: 1720901
+total bases: 240743936
+Q20 bases: 233166146(96.8523%)
+Q30 bases: 220075646(91.4148%)
+
+Filtering result:
+reads passed filter: 3441802
+reads failed due to low quality: 70612
+reads failed due to too many N: 810
+reads failed due to too short: 7494
+reads failed due to low complexity: 2002
+reads with adapter trimmed: 1078694
+bases trimmed due to adapters: 33928346
+reads with polyX in 3' end: 24413
+bases trimmed in polyX tail: 365757
+
+Duplication rate: 20.3626%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 53 seconds
+Read1 before filtering:
+total reads: 2016985
+total bases: 302547750
+Q20 bases: 293429662(96.9862%)
+Q30 bases: 280863474(92.8328%)
+
+Read2 before filtering:
+total reads: 2016985
+total bases: 302547750
+Q20 bases: 288985776(95.5174%)
+Q30 bases: 272748196(90.1505%)
+
+Read1 after filtering:
+total reads: 1945957
+total bases: 263460725
+Q20 bases: 257748723(97.8319%)
+Q30 bases: 247782188(94.049%)
+
+Read2 aftering filtering:
+total reads: 1945957
+total bases: 263499873
+Q20 bases: 256199055(97.2293%)
+Q30 bases: 243382506(92.3653%)
+
+Filtering result:
+reads passed filter: 3891914
+reads failed due to low quality: 124986
+reads failed due to too many N: 990
+reads failed due to too short: 12120
+reads failed due to low complexity: 3960
+reads with adapter trimmed: 1704563
+bases trimmed due to adapters: 55771456
+reads with polyX in 3' end: 38043
+bases trimmed in polyX tail: 624280
+
+Duplication rate: 19.6031%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 54 seconds
+Read1 before filtering:
+total reads: 3162005
+total bases: 474300750
+Q20 bases: 461930212(97.3918%)
+Q30 bases: 442401509(93.2745%)
+
+Read2 before filtering:
+total reads: 3162005
+total bases: 474300750
+Q20 bases: 454613035(95.8491%)
+Q30 bases: 427022838(90.0321%)
+
+Read1 after filtering:
+total reads: 3095681
+total bases: 449218515
+Q20 bases: 439795000(97.9022%)
+Q30 bases: 422012814(93.9438%)
+
+Read2 aftering filtering:
+total reads: 3095681
+total bases: 449158163
+Q20 bases: 434921740(96.8304%)
+Q30 bases: 409942532(91.2691%)
+
+Filtering result:
+reads passed filter: 6191362
+reads failed due to low quality: 118186
+reads failed due to too many N: 1572
+reads failed due to too short: 9498
+reads failed due to low complexity: 3392
+reads with adapter trimmed: 1231363
+bases trimmed due to adapters: 29040633
+reads with polyX in 3' end: 42338
+bases trimmed in polyX tail: 657073
+
+Duplication rate: 23.529%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 89 seconds
+Read1 before filtering:
+total reads: 894841
+total bases: 134226150
+Q20 bases: 130732183(97.397%)
+Q30 bases: 125430723(93.4473%)
+
+Read2 before filtering:
+total reads: 894841
+total bases: 134226150
+Q20 bases: 128631176(95.8317%)
+Q30 bases: 121644431(90.6265%)
+
+Read1 after filtering:
+total reads: 866950
+total bases: 117351435
+Q20 bases: 115072064(98.0577%)
+Q30 bases: 110757042(94.3806%)
+
+Read2 aftering filtering:
+total reads: 866950
+total bases: 117339572
+Q20 bases: 114230580(97.3504%)
+Q30 bases: 108654708(92.5985%)
+
+Filtering result:
+reads passed filter: 1733900
+reads failed due to low quality: 48356
+reads failed due to too many N: 396
+reads failed due to too short: 5202
+reads failed due to low complexity: 1828
+reads with adapter trimmed: 743608
+bases trimmed due to adapters: 24801255
+reads with polyX in 3' end: 15231
+bases trimmed in polyX tail: 243473
+
+Duplication rate: 20.9975%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 27 seconds
+Read1 before filtering:
+total reads: 301603
+total bases: 45240450
+Q20 bases: 44154199(97.5989%)
+Q30 bases: 42369246(93.6535%)
+
+Read2 before filtering:
+total reads: 301603
+total bases: 45240450
+Q20 bases: 43717102(96.6328%)
+Q30 bases: 41366334(91.4366%)
+
+Read1 after filtering:
+total reads: 297662
+total bases: 39115116
+Q20 bases: 38387647(98.1402%)
+Q30 bases: 36963177(94.4984%)
+
+Read2 aftering filtering:
+total reads: 297662
+total bases: 39115286
+Q20 bases: 38131404(97.4847%)
+Q30 bases: 36255159(92.688%)
+
+Filtering result:
+reads passed filter: 595324
+reads failed due to low quality: 6834
+reads failed due to too many N: 134
+reads failed due to too short: 648
+reads failed due to low complexity: 266
+reads with adapter trimmed: 310176
+bases trimmed due to adapters: 10923674
+reads with polyX in 3' end: 4147
+bases trimmed in polyX tail: 58832
+
+Duplication rate: 38.4748%
+
+Insert size peak (evaluated by paired-end reads): 123
+
+JSON report: fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_006-Ex1-5E-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_006-Ex1-5E-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_006-Ex1-5E-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_006-Ex1-5E-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_006-Ex1-5E-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_006-Ex1-5E-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 19 seconds
+Read1 before filtering:
+total reads: 2549284
+total bases: 382392600
+Q20 bases: 371236245(97.0825%)
+Q30 bases: 355196720(92.888%)
+
+Read2 before filtering:
+total reads: 2549284
+total bases: 382392600
+Q20 bases: 363835191(95.147%)
+Q30 bases: 341159491(89.2171%)
+
+Read1 after filtering:
+total reads: 2468533
+total bases: 344691867
+Q20 bases: 337006440(97.7703%)
+Q30 bases: 323390466(93.8202%)
+
+Read2 aftering filtering:
+total reads: 2468533
+total bases: 344648211
+Q20 bases: 333106711(96.6512%)
+Q30 bases: 313973721(91.0998%)
+
+Filtering result:
+reads passed filter: 4937066
+reads failed due to low quality: 139394
+reads failed due to too many N: 1158
+reads failed due to too short: 16328
+reads failed due to low complexity: 4622
+reads with adapter trimmed: 1639567
+bases trimmed due to adapters: 50287480
+reads with polyX in 3' end: 43555
+bases trimmed in polyX tail: 721851
+
+Duplication rate: 23.6618%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_029_Ex1-3B-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_029_Ex1-3B-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_029_Ex1-3B-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_029_Ex1-3B-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_029_Ex1-3B-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_029_Ex1-3B-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 60 seconds
+Read1 before filtering:
+total reads: 994987
+total bases: 149248050
+Q20 bases: 145342419(97.3831%)
+Q30 bases: 139475182(93.4519%)
+
+Read2 before filtering:
+total reads: 994987
+total bases: 149248050
+Q20 bases: 141756971(94.9808%)
+Q30 bases: 133101262(89.1812%)
+
+Read1 after filtering:
+total reads: 951315
+total bases: 132344954
+Q20 bases: 129735371(98.0282%)
+Q30 bases: 124877130(94.3573%)
+
+Read2 aftering filtering:
+total reads: 951315
+total bases: 132329606
+Q20 bases: 128365429(97.0043%)
+Q30 bases: 121386451(91.7304%)
+
+Filtering result:
+reads passed filter: 1902630
+reads failed due to low quality: 80240
+reads failed due to too many N: 416
+reads failed due to too short: 4754
+reads failed due to low complexity: 1934
+reads with adapter trimmed: 659839
+bases trimmed due to adapters: 20728281
+reads with polyX in 3' end: 24671
+bases trimmed in polyX tail: 357511
+
+Duplication rate: 20.8853%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 34 seconds
+Read1 before filtering:
+total reads: 129119
+total bases: 19367850
+Q20 bases: 18888973(97.5275%)
+Q30 bases: 18121739(93.5661%)
+
+Read2 before filtering:
+total reads: 129119
+total bases: 19367850
+Q20 bases: 18547710(95.7655%)
+Q30 bases: 17401610(89.8479%)
+
+Read1 after filtering:
+total reads: 126768
+total bases: 17265030
+Q20 bases: 16930174(98.0605%)
+Q30 bases: 16288342(94.343%)
+
+Read2 aftering filtering:
+total reads: 126768
+total bases: 17267144
+Q20 bases: 16717513(96.8169%)
+Q30 bases: 15758709(91.2641%)
+
+Filtering result:
+reads passed filter: 253536
+reads failed due to low quality: 3974
+reads failed due to too many N: 56
+reads failed due to too short: 534
+reads failed due to low complexity: 138
+reads with adapter trimmed: 101806
+bases trimmed due to adapters: 3445102
+reads with polyX in 3' end: 1844
+bases trimmed in polyX tail: 26505
+
+Duplication rate: 43.3449%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_030-Ex1-8G-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_030-Ex1-8G-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_030-Ex1-8G-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_030-Ex1-8G-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_030-Ex1-8G-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_030-Ex1-8G-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 7 seconds
+Read1 before filtering:
+total reads: 401623
+total bases: 60243450
+Q20 bases: 58912919(97.7914%)
+Q30 bases: 56684107(94.0917%)
+
+Read2 before filtering:
+total reads: 401623
+total bases: 60243450
+Q20 bases: 58340083(96.8405%)
+Q30 bases: 55227748(91.6743%)
+
+Read1 after filtering:
+total reads: 397808
+total bases: 49896407
+Q20 bases: 49067318(98.3384%)
+Q30 bases: 47399484(94.9958%)
+
+Read2 aftering filtering:
+total reads: 397808
+total bases: 49900891
+Q20 bases: 48766712(97.7271%)
+Q30 bases: 46489247(93.1632%)
+
+Filtering result:
+reads passed filter: 795616
+reads failed due to low quality: 6650
+reads failed due to too many N: 168
+reads failed due to too short: 502
+reads failed due to low complexity: 310
+reads with adapter trimmed: 502480
+bases trimmed due to adapters: 19360049
+reads with polyX in 3' end: 4469
+bases trimmed in polyX tail: 59991
+
+Duplication rate: 38.3909%
+
+Insert size peak (evaluated by paired-end reads): 113
+
+JSON report: fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_016-Ex1-4A-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_016-Ex1-4A-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_016-Ex1-4A-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_016-Ex1-4A-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_016-Ex1-4A-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_016-Ex1-4A-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 20 seconds
+Read1 before filtering:
+total reads: 267670
+total bases: 40150500
+Q20 bases: 39186184(97.5982%)
+Q30 bases: 37631659(93.7265%)
+
+Read2 before filtering:
+total reads: 267670
+total bases: 40150500
+Q20 bases: 38708441(96.4084%)
+Q30 bases: 36540532(91.0089%)
+
+Read1 after filtering:
+total reads: 264042
+total bases: 34086686
+Q20 bases: 33455147(98.1473%)
+Q30 bases: 32231518(94.5575%)
+
+Read2 aftering filtering:
+total reads: 264042
+total bases: 34089897
+Q20 bases: 33199139(97.387%)
+Q30 bases: 31532282(92.4974%)
+
+Filtering result:
+reads passed filter: 528084
+reads failed due to low quality: 6322
+reads failed due to too many N: 104
+reads failed due to too short: 552
+reads failed due to low complexity: 278
+reads with adapter trimmed: 288352
+bases trimmed due to adapters: 10815926
+reads with polyX in 3' end: 3957
+bases trimmed in polyX tail: 55555
+
+Duplication rate: 44.0911%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_020-Ex1-2A-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_020-Ex1-2A-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_020-Ex1-2A-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_020-Ex1-2A-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_020-Ex1-2A-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_020-Ex1-2A-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 11 seconds
+Read1 before filtering:
+total reads: 278499
+total bases: 41774850
+Q20 bases: 40625612(97.249%)
+Q30 bases: 38925929(93.1803%)
+
+Read2 before filtering:
+total reads: 278499
+total bases: 41774850
+Q20 bases: 40200904(96.2323%)
+Q30 bases: 37889313(90.6989%)
+
+Read1 after filtering:
+total reads: 274167
+total bases: 35516508
+Q20 bases: 34785597(97.9421%)
+Q30 bases: 33478398(94.2615%)
+
+Read2 aftering filtering:
+total reads: 274167
+total bases: 35520911
+Q20 bases: 34558598(97.2909%)
+Q30 bases: 32784581(92.2966%)
+
+Filtering result:
+reads passed filter: 548334
+reads failed due to low quality: 7492
+reads failed due to too many N: 120
+reads failed due to too short: 702
+reads failed due to low complexity: 350
+reads with adapter trimmed: 299878
+bases trimmed due to adapters: 11015854
+reads with polyX in 3' end: 3964
+bases trimmed in polyX tail: 57471
+
+Duplication rate: 40.0244%
+
+Insert size peak (evaluated by paired-end reads): 103
+
+JSON report: fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_042-Ex1-6A-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_042-Ex1-6A-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_042-Ex1-6A-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_042-Ex1-6A-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_042-Ex1-6A-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_042-Ex1-6A-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 11 seconds
+Read1 before filtering:
+total reads: 1232726
+total bases: 184908900
+Q20 bases: 179940905(97.3133%)
+Q30 bases: 172569338(93.3267%)
+
+Read2 before filtering:
+total reads: 1232726
+total bases: 184908900
+Q20 bases: 177112524(95.7837%)
+Q30 bases: 166823302(90.2192%)
+
+Read1 after filtering:
+total reads: 1200858
+total bases: 165998114
+Q20 bases: 162665360(97.9923%)
+Q30 bases: 156518756(94.2895%)
+
+Read2 aftering filtering:
+total reads: 1200858
+total bases: 165982883
+Q20 bases: 161034935(97.019%)
+Q30 bases: 152401271(91.8175%)
+
+Filtering result:
+reads passed filter: 2401716
+reads failed due to low quality: 53940
+reads failed due to too many N: 570
+reads failed due to too short: 6986
+reads failed due to low complexity: 2240
+reads with adapter trimmed: 886355
+bases trimmed due to adapters: 27864526
+reads with polyX in 3' end: 17979
+bases trimmed in polyX tail: 274387
+
+Duplication rate: 20.4531%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 40 seconds
+Read1 before filtering:
+total reads: 1295981
+total bases: 194397150
+Q20 bases: 188506862(96.97%)
+Q30 bases: 180578746(92.8917%)
+
+Read2 before filtering:
+total reads: 1295981
+total bases: 194397150
+Q20 bases: 184557063(94.9382%)
+Q30 bases: 173386047(89.1917%)
+
+Read1 after filtering:
+total reads: 1244706
+total bases: 173328677
+Q20 bases: 169502276(97.7924%)
+Q30 bases: 162919074(93.9943%)
+
+Read2 aftering filtering:
+total reads: 1244706
+total bases: 173310309
+Q20 bases: 167702082(96.7641%)
+Q30 bases: 158511000(91.4608%)
+
+Filtering result:
+reads passed filter: 2489412
+reads failed due to low quality: 93400
+reads failed due to too many N: 616
+reads failed due to too short: 6076
+reads failed due to low complexity: 2458
+reads with adapter trimmed: 848879
+bases trimmed due to adapters: 26487890
+reads with polyX in 3' end: 25927
+bases trimmed in polyX tail: 385818
+
+Duplication rate: 21.9113%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 37 seconds
+Read1 before filtering:
+total reads: 2313057
+total bases: 346958550
+Q20 bases: 337693066(97.3295%)
+Q30 bases: 323846516(93.3387%)
+
+Read2 before filtering:
+total reads: 2313057
+total bases: 346958550
+Q20 bases: 329194799(94.8802%)
+Q30 bases: 308905986(89.0325%)
+
+Read1 after filtering:
+total reads: 2211002
+total bases: 305974549
+Q20 bases: 299796557(97.9809%)
+Q30 bases: 288272981(94.2147%)
+
+Read2 aftering filtering:
+total reads: 2211002
+total bases: 305944624
+Q20 bases: 296513125(96.9173%)
+Q30 bases: 280196802(91.5842%)
+
+Filtering result:
+reads passed filter: 4422004
+reads failed due to low quality: 186852
+reads failed due to too many N: 1016
+reads failed due to too short: 11022
+reads failed due to low complexity: 5220
+reads with adapter trimmed: 1548310
+bases trimmed due to adapters: 50719376
+reads with polyX in 3' end: 54782
+bases trimmed in polyX tail: 835933
+
+Duplication rate: 23.2916%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 2354797
+total bases: 353219550
+Q20 bases: 342884441(97.074%)
+Q30 bases: 327893416(92.8299%)
+
+Read2 before filtering:
+total reads: 2354797
+total bases: 353219550
+Q20 bases: 335851314(95.0829%)
+Q30 bases: 314766540(89.1136%)
+
+Read1 after filtering:
+total reads: 2279590
+total bases: 324406830
+Q20 bases: 317135483(97.7586%)
+Q30 bases: 304121125(93.7468%)
+
+Read2 aftering filtering:
+total reads: 2279590
+total bases: 324345667
+Q20 bases: 313263292(96.5832%)
+Q30 bases: 295055371(90.9694%)
+
+Filtering result:
+reads passed filter: 4559180
+reads failed due to low quality: 130414
+reads failed due to too many N: 1164
+reads failed due to too short: 14936
+reads failed due to low complexity: 3900
+reads with adapter trimmed: 1151042
+bases trimmed due to adapters: 34201370
+reads with polyX in 3' end: 36822
+bases trimmed in polyX tail: 608158
+
+Duplication rate: 22.9623%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_039_Ex1-2B-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_039_Ex1-2B-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_039_Ex1-2B-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_039_Ex1-2B-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_039_Ex1-2B-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_039_Ex1-2B-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 69 seconds
+Read1 before filtering:
+total reads: 271007
+total bases: 40651050
+Q20 bases: 39647306(97.5308%)
+Q30 bases: 38026734(93.5443%)
+
+Read2 before filtering:
+total reads: 271007
+total bases: 40651050
+Q20 bases: 39191128(96.4086%)
+Q30 bases: 37030548(91.0937%)
+
+Read1 after filtering:
+total reads: 266968
+total bases: 35284966
+Q20 bases: 34600484(98.0601%)
+Q30 bases: 33278179(94.3126%)
+
+Read2 aftering filtering:
+total reads: 266968
+total bases: 35285686
+Q20 bases: 34325100(97.2777%)
+Q30 bases: 32571849(92.309%)
+
+Filtering result:
+reads passed filter: 533936
+reads failed due to low quality: 7120
+reads failed due to too many N: 134
+reads failed due to too short: 544
+reads failed due to low complexity: 280
+reads with adapter trimmed: 259874
+bases trimmed due to adapters: 9335443
+reads with polyX in 3' end: 4011
+bases trimmed in polyX tail: 55061
+
+Duplication rate: 42.6452%
+
+Insert size peak (evaluated by paired-end reads): 121
+
+JSON report: fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-CMig_058-Ex1-2B-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-CMig_058-Ex1-2B-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-CMig_058-Ex1-2B-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-CMig_058-Ex1-2B-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-CMig_058-Ex1-2B-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.fastp.html -j fq_fp1/Leq-CMig_058-Ex1-2B-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 10 seconds
+Read1 before filtering:
+total reads: 4241329
+total bases: 636199350
+Q20 bases: 618740155(97.2557%)
+Q30 bases: 592337654(93.1057%)
+
+Read2 before filtering:
+total reads: 4241329
+total bases: 636199350
+Q20 bases: 604987524(95.094%)
+Q30 bases: 566057613(88.9749%)
+
+Read1 after filtering:
+total reads: 4100670
+total bases: 573608004
+Q20 bases: 561752643(97.9332%)
+Q30 bases: 539542495(94.0612%)
+
+Read2 aftering filtering:
+total reads: 4100670
+total bases: 573544609
+Q20 bases: 554577261(96.693%)
+Q30 bases: 521936019(91.0018%)
+
+Filtering result:
+reads passed filter: 8201340
+reads failed due to low quality: 253938
+reads failed due to too many N: 1960
+reads failed due to too short: 17294
+reads failed due to low complexity: 8126
+reads with adapter trimmed: 2518283
+bases trimmed due to adapters: 80726675
+reads with polyX in 3' end: 80123
+bases trimmed in polyX tail: 1308217
+
+Duplication rate: 23.367%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_026_Ex1-1F-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_026_Ex1-1F-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_026_Ex1-1F-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_026_Ex1-1F-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_026_Ex1-1F-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_026_Ex1-1F-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 107 seconds
+Read1 before filtering:
+total reads: 2903280
+total bases: 435492000
+Q20 bases: 424820850(97.5496%)
+Q30 bases: 407612892(93.5983%)
+
+Read2 before filtering:
+total reads: 2903280
+total bases: 435492000
+Q20 bases: 417822823(95.9427%)
+Q30 bases: 392049778(90.0246%)
+
+Read1 after filtering:
+total reads: 2855724
+total bases: 405937733
+Q20 bases: 397995063(98.0434%)
+Q30 bases: 382682106(94.2711%)
+
+Read2 aftering filtering:
+total reads: 2855724
+total bases: 405854060
+Q20 bases: 392829628(96.7909%)
+Q30 bases: 369868310(91.1333%)
+
+Filtering result:
+reads passed filter: 5711448
+reads failed due to low quality: 84700
+reads failed due to too many N: 1364
+reads failed due to too short: 6792
+reads failed due to low complexity: 2256
+reads with adapter trimmed: 1499235
+bases trimmed due to adapters: 43590504
+reads with polyX in 3' end: 36280
+bases trimmed in polyX tail: 522593
+
+Duplication rate: 22.8895%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_033_Ex1-5F-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_033_Ex1-5F-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_033_Ex1-5F-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_033_Ex1-5F-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_033_Ex1-5F-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_033_Ex1-5F-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 75 seconds
+Read1 before filtering:
+total reads: 1775509
+total bases: 266326350
+Q20 bases: 258800006(97.174%)
+Q30 bases: 247769553(93.0323%)
+
+Read2 before filtering:
+total reads: 1775509
+total bases: 266326350
+Q20 bases: 254197075(95.4457%)
+Q30 bases: 238922142(89.7103%)
+
+Read1 after filtering:
+total reads: 1719153
+total bases: 241576000
+Q20 bases: 236373657(97.8465%)
+Q30 bases: 226995559(93.9644%)
+
+Read2 aftering filtering:
+total reads: 1719153
+total bases: 241554708
+Q20 bases: 234004731(96.8744%)
+Q30 bases: 220993982(91.4882%)
+
+Filtering result:
+reads passed filter: 3438306
+reads failed due to low quality: 99694
+reads failed due to too many N: 788
+reads failed due to too short: 9156
+reads failed due to low complexity: 3074
+reads with adapter trimmed: 1037555
+bases trimmed due to adapters: 32052972
+reads with polyX in 3' end: 30231
+bases trimmed in polyX tail: 456044
+
+Duplication rate: 20.65%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 45 seconds
+Read1 before filtering:
+total reads: 1963737
+total bases: 294560550
+Q20 bases: 286181311(97.1553%)
+Q30 bases: 273962695(93.0073%)
+
+Read2 before filtering:
+total reads: 1963737
+total bases: 294560550
+Q20 bases: 279402887(94.8541%)
+Q30 bases: 261717998(88.8503%)
+
+Read1 after filtering:
+total reads: 1887841
+total bases: 266485996
+Q20 bases: 260722282(97.8371%)
+Q30 bases: 250354425(93.9466%)
+
+Read2 aftering filtering:
+total reads: 1887841
+total bases: 266443692
+Q20 bases: 257398879(96.6054%)
+Q30 bases: 242398851(90.9756%)
+
+Filtering result:
+reads passed filter: 3775682
+reads failed due to low quality: 138150
+reads failed due to too many N: 986
+reads failed due to too short: 9466
+reads failed due to low complexity: 3190
+reads with adapter trimmed: 1080250
+bases trimmed due to adapters: 33310868
+reads with polyX in 3' end: 39105
+bases trimmed in polyX tail: 567386
+
+Duplication rate: 21.4335%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 50 seconds
+Read1 before filtering:
+total reads: 5516245
+total bases: 827436750
+Q20 bases: 805712942(97.3746%)
+Q30 bases: 771734993(93.2682%)
+
+Read2 before filtering:
+total reads: 5516245
+total bases: 827436750
+Q20 bases: 790125476(95.4907%)
+Q30 bases: 741112003(89.5672%)
+
+Read1 after filtering:
+total reads: 5367771
+total bases: 756463398
+Q20 bases: 740797579(97.9291%)
+Q30 bases: 711166343(94.012%)
+
+Read2 aftering filtering:
+total reads: 5367771
+total bases: 756348703
+Q20 bases: 732093292(96.7931%)
+Q30 bases: 689999202(91.2277%)
+
+Filtering result:
+reads passed filter: 10735542
+reads failed due to low quality: 266964
+reads failed due to too many N: 2538
+reads failed due to too short: 17384
+reads failed due to low complexity: 10062
+reads with adapter trimmed: 2987714
+bases trimmed due to adapters: 94101649
+reads with polyX in 3' end: 93913
+bases trimmed in polyX tail: 1506404
+
+Duplication rate: 22.8387%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_028_Ex1-2E-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_028_Ex1-2E-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_028_Ex1-2E-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_028_Ex1-2E-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_028_Ex1-2E-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_028_Ex1-2E-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 123 seconds
+Read1 before filtering:
+total reads: 4220465
+total bases: 633069750
+Q20 bases: 615638254(97.2465%)
+Q30 bases: 589375344(93.098%)
+
+Read2 before filtering:
+total reads: 4220465
+total bases: 633069750
+Q20 bases: 600181824(94.805%)
+Q30 bases: 560474627(88.5328%)
+
+Read1 after filtering:
+total reads: 4072786
+total bases: 581966814
+Q20 bases: 569519189(97.8611%)
+Q30 bases: 546562141(93.9164%)
+
+Read2 aftering filtering:
+total reads: 4072786
+total bases: 581855225
+Q20 bases: 560979800(96.4123%)
+Q30 bases: 526552061(90.4954%)
+
+Filtering result:
+reads passed filter: 8145572
+reads failed due to low quality: 270230
+reads failed due to too many N: 1934
+reads failed due to too short: 16476
+reads failed due to low complexity: 6718
+reads with adapter trimmed: 1904440
+bases trimmed due to adapters: 57026789
+reads with polyX in 3' end: 79568
+bases trimmed in polyX tail: 1210716
+
+Duplication rate: 25.0299%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 73 seconds
+Read1 before filtering:
+total reads: 3902751
+total bases: 585412650
+Q20 bases: 568826480(97.1668%)
+Q30 bases: 543967681(92.9204%)
+
+Read2 before filtering:
+total reads: 3902751
+total bases: 585412650
+Q20 bases: 559289662(95.5377%)
+Q30 bases: 524565827(89.6062%)
+
+Read1 after filtering:
+total reads: 3803032
+total bases: 535173864
+Q20 bases: 523495300(97.8178%)
+Q30 bases: 502111640(93.8222%)
+
+Read2 aftering filtering:
+total reads: 3803032
+total bases: 535132055
+Q20 bases: 517812977(96.7636%)
+Q30 bases: 487873518(91.1688%)
+
+Filtering result:
+reads passed filter: 7606064
+reads failed due to low quality: 180168
+reads failed due to too many N: 1844
+reads failed due to too short: 11672
+reads failed due to low complexity: 5754
+reads with adapter trimmed: 2161424
+bases trimmed due to adapters: 68305740
+reads with polyX in 3' end: 61698
+bases trimmed in polyX tail: 936538
+
+Duplication rate: 21.2059%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.1.fq.gz --in2 fq_raw/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.2.fq.gz --out1 fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.fail.fq.gz -h fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.fastp.html -j fq_fp1/Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 77 seconds
+Read1 before filtering:
+total reads: 5934026
+total bases: 890103900
+Q20 bases: 867254231(97.4329%)
+Q30 bases: 830861877(93.3444%)
+
+Read2 before filtering:
+total reads: 5934026
+total bases: 890103900
+Q20 bases: 852772672(95.806%)
+Q30 bases: 800030174(89.8805%)
+
+Read1 after filtering:
+total reads: 5826027
+total bases: 825313431
+Q20 bases: 808590111(97.9737%)
+Q30 bases: 776396963(94.073%)
+
+Read2 aftering filtering:
+total reads: 5826027
+total bases: 825171495
+Q20 bases: 798281688(96.7413%)
+Q30 bases: 751708177(91.0972%)
+
+Filtering result:
+reads passed filter: 11652054
+reads failed due to low quality: 196120
+reads failed due to too many N: 2780
+reads failed due to too short: 11968
+reads failed due to low complexity: 5130
+reads with adapter trimmed: 3136171
+bases trimmed due to adapters: 94174202
+reads with polyX in 3' end: 74279
+bases trimmed in polyX tail: 1088471
+
+Duplication rate: 25.0019%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.fastp.json
+HTML report: fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Leq-ABas_042_Ex1-3H-cssl-1-2.1.fq.gz --in2 fq_raw/Leq-ABas_042_Ex1-3H-cssl-1-2.2.fq.gz --out1 fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.r1.fq.gz --out2 fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Leq-ABas_042_Ex1-3H-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Leq-ABas_042_Ex1-3H-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Leq-ABas_042_Ex1-3H-cssl-1-2.fail.fq.gz -h fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.fastp.html -j fq_fp1/Leq-ABas_042_Ex1-3H-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 114 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-02-06 11:37:05,318] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-02-06 11:37:05,319] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 1st_fastp_report --outdir fq_fp1 fq_fp1
+[2023-02-06 11:37:05,799] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-02-06 11:37:05,799] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+[2023-02-06 11:37:05,799] multiqc                                            [DEBUG  ]  Template    : default
+[2023-02-06 11:37:05,799] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-02-06 11:37:05,800] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-02-06 11:37:05,800] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmplg2yg_5k
+[2023-02-06 11:37:05,945] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/fq_fp1
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 312/312  
+[2023-02-06 11:37:13,766] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 312] // [skipped_no_match: 260] // [skipped_ignore_pattern: 208]
+[2023-02-06 11:37:14,166] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-06 11:37:14,167] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-06 11:37:14,168] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-02-06 11:37:14,396] multiqc.modules.fastp.fastp                        [INFO   ]  Found 52 reports
+[2023-02-06 11:37:42,915] multiqc                                            [INFO   ]  Compressing plot data
+[2023-02-06 11:37:46,922] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2023-02-06 11:37:46,922] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2023-02-06 11:37:46,922] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmplg2yg_5k/multiqc_data' to 'fq_fp1/1st_fastp_report_data'
+[2023-02-06 11:37:47,356] multiqc                                            [INFO   ]  Plots       : fq_fp1/1st_fastp_report_plots
+[2023-02-06 11:37:47,357] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmplg2yg_5k/multiqc_plots' to 'fq_fp1/1st_fastp_report_plots'
+[2023-02-06 11:37:47,647] multiqc                                            [INFO   ]  MultiQC complete
