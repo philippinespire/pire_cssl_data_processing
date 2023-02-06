@@ -1,0 +1,1918 @@
+
+Read1 before filtering:
+total reads: 448936
+total bases: 67340400
+Q20 bases: 65900302(97.8615%)
+Q30 bases: 63624073(94.4813%)
+
+Read2 before filtering:
+total reads: 448936
+total bases: 67340400
+Q20 bases: 65265138(96.9183%)
+Q30 bases: 62060869(92.1599%)
+
+Read1 after filtering:
+total reads: 441944
+total bases: 56634051
+Q20 bases: 55857374(98.6286%)
+Q30 bases: 54246711(95.7846%)
+
+Read2 aftering filtering:
+total reads: 441944
+total bases: 56639879
+Q20 bases: 55533333(98.0463%)
+Q30 bases: 53183011(93.8968%)
+
+Filtering result:
+reads passed filter: 883888
+reads failed due to low quality: 12436
+reads failed due to too many N: 204
+reads failed due to too short: 918
+reads failed due to low complexity: 426
+reads with adapter trimmed: 495175
+bases trimmed due to adapters: 19144038
+reads with polyX in 3' end: 5079
+bases trimmed in polyX tail: 79275
+
+Duplication rate: 69.4444%
+
+Insert size peak (evaluated by paired-end reads): 109
+
+JSON report: fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_011-Ex1-1C-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_011-Ex1-1C-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_011-Ex1-1C-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_011-Ex1-1C-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_011-Ex1-1C-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_011-Ex1-1C-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 15 seconds
+Read1 before filtering:
+total reads: 487703
+total bases: 73155450
+Q20 bases: 71393952(97.5921%)
+Q30 bases: 68642744(93.8313%)
+
+Read2 before filtering:
+total reads: 487703
+total bases: 73155450
+Q20 bases: 70702966(96.6476%)
+Q30 bases: 66929381(91.4893%)
+
+Read1 after filtering:
+total reads: 480607
+total bases: 57473841
+Q20 bases: 56616809(98.5088%)
+Q30 bases: 54846260(95.4282%)
+
+Read2 aftering filtering:
+total reads: 480607
+total bases: 57484147
+Q20 bases: 56326860(97.9868%)
+Q30 bases: 53885506(93.7398%)
+
+Filtering result:
+reads passed filter: 961214
+reads failed due to low quality: 12538
+reads failed due to too many N: 184
+reads failed due to too short: 768
+reads failed due to low complexity: 702
+reads with adapter trimmed: 701729
+bases trimmed due to adapters: 28981379
+reads with polyX in 3' end: 7634
+bases trimmed in polyX tail: 113057
+
+Duplication rate: 69.2191%
+
+Insert size peak (evaluated by paired-end reads): 115
+
+JSON report: fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_006-Ex1-1A-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_006-Ex1-1A-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_006-Ex1-1A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_006-Ex1-1A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_006-Ex1-1A-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_006-Ex1-1A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 15 seconds
+Read1 before filtering:
+total reads: 348126
+total bases: 52218900
+Q20 bases: 50865316(97.4079%)
+Q30 bases: 48807949(93.468%)
+
+Read2 before filtering:
+total reads: 348126
+total bases: 52218900
+Q20 bases: 50382325(96.4829%)
+Q30 bases: 47661766(91.273%)
+
+Read1 after filtering:
+total reads: 342619
+total bases: 42120591
+Q20 bases: 41407643(98.3074%)
+Q30 bases: 40016104(95.0037%)
+
+Read2 aftering filtering:
+total reads: 342619
+total bases: 42124743
+Q20 bases: 41173955(97.7429%)
+Q30 bases: 39297079(93.2874%)
+
+Filtering result:
+reads passed filter: 685238
+reads failed due to low quality: 9678
+reads failed due to too many N: 156
+reads failed due to too short: 776
+reads failed due to low complexity: 404
+reads with adapter trimmed: 454171
+bases trimmed due to adapters: 18370662
+reads with polyX in 3' end: 4979
+bases trimmed in polyX tail: 72828
+
+Duplication rate: 66.656%
+
+Insert size peak (evaluated by paired-end reads): 121
+
+JSON report: fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_015-Ex1-4F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_015-Ex1-4F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_015-Ex1-4F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_015-Ex1-4F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_015-Ex1-4F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_015-Ex1-4F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 16 seconds
+Read1 before filtering:
+total reads: 521609
+total bases: 78241350
+Q20 bases: 76565805(97.8585%)
+Q30 bases: 73891144(94.44%)
+
+Read2 before filtering:
+total reads: 521609
+total bases: 78241350
+Q20 bases: 75885928(96.9895%)
+Q30 bases: 72273247(92.3722%)
+
+Read1 after filtering:
+total reads: 512889
+total bases: 66965953
+Q20 bases: 66003056(98.5621%)
+Q30 bases: 64005277(95.5788%)
+
+Read2 aftering filtering:
+total reads: 512889
+total bases: 66966291
+Q20 bases: 65642878(98.0238%)
+Q30 bases: 62886699(93.908%)
+
+Filtering result:
+reads passed filter: 1025778
+reads failed due to low quality: 15910
+reads failed due to too many N: 232
+reads failed due to too short: 728
+reads failed due to low complexity: 570
+reads with adapter trimmed: 524846
+bases trimmed due to adapters: 19753941
+reads with polyX in 3' end: 6563
+bases trimmed in polyX tail: 104361
+
+Duplication rate: 69.0399%
+
+Insert size peak (evaluated by paired-end reads): 108
+
+JSON report: fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_007-Ex1-1B-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_007-Ex1-1B-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_007-Ex1-1B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_007-Ex1-1B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_007-Ex1-1B-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_007-Ex1-1B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 17 seconds
+Read1 before filtering:
+total reads: 179326
+total bases: 26898900
+Q20 bases: 26423552(98.2328%)
+Q30 bases: 25589177(95.1309%)
+
+Read2 before filtering:
+total reads: 179326
+total bases: 26898900
+Q20 bases: 26181782(97.334%)
+Q30 bases: 24966156(92.8148%)
+
+Read1 after filtering:
+total reads: 177016
+total bases: 23211164
+Q20 bases: 22919417(98.7431%)
+Q30 bases: 22280678(95.9912%)
+
+Read2 aftering filtering:
+total reads: 177016
+total bases: 23212699
+Q20 bases: 22795889(98.2044%)
+Q30 bases: 21860346(94.1741%)
+
+Filtering result:
+reads passed filter: 354032
+reads failed due to low quality: 4128
+reads failed due to too many N: 66
+reads failed due to too short: 284
+reads failed due to low complexity: 142
+reads with adapter trimmed: 174696
+bases trimmed due to adapters: 6641974
+reads with polyX in 3' end: 1740
+bases trimmed in polyX tail: 25722
+
+Duplication rate: 69.0946%
+
+Insert size peak (evaluated by paired-end reads): 100
+
+JSON report: fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_021-Ex1-4C-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_021-Ex1-4C-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_021-Ex1-4C-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_021-Ex1-4C-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_021-Ex1-4C-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_021-Ex1-4C-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 17 seconds
+Read1 before filtering:
+total reads: 532340
+total bases: 79851000
+Q20 bases: 78288175(98.0428%)
+Q30 bases: 75700930(94.8027%)
+
+Read2 before filtering:
+total reads: 532340
+total bases: 79851000
+Q20 bases: 77539984(97.1058%)
+Q30 bases: 73922968(92.5761%)
+
+Read1 after filtering:
+total reads: 523953
+total bases: 66873978
+Q20 bases: 66015002(98.7155%)
+Q30 bases: 64172980(95.9611%)
+
+Read2 aftering filtering:
+total reads: 523953
+total bases: 66870902
+Q20 bases: 65716409(98.2735%)
+Q30 bases: 63142232(94.4241%)
+
+Filtering result:
+reads passed filter: 1047906
+reads failed due to low quality: 15056
+reads failed due to too many N: 256
+reads failed due to too short: 932
+reads failed due to low complexity: 530
+reads with adapter trimmed: 620429
+bases trimmed due to adapters: 23308561
+reads with polyX in 3' end: 6202
+bases trimmed in polyX tail: 94339
+
+Duplication rate: 69.7799%
+
+Insert size peak (evaluated by paired-end reads): 127
+
+JSON report: fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_012-Ex1-1D-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_012-Ex1-1D-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_012-Ex1-1D-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_012-Ex1-1D-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_012-Ex1-1D-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_012-Ex1-1D-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 17 seconds
+Read1 before filtering:
+total reads: 285960
+total bases: 42894000
+Q20 bases: 41990598(97.8939%)
+Q30 bases: 40507889(94.4372%)
+
+Read2 before filtering:
+total reads: 285960
+total bases: 42894000
+Q20 bases: 41646663(97.092%)
+Q30 bases: 39617951(92.3625%)
+
+Read1 after filtering:
+total reads: 281825
+total bases: 35791621
+Q20 bases: 35295957(98.6151%)
+Q30 bases: 34240942(95.6675%)
+
+Read2 aftering filtering:
+total reads: 281825
+total bases: 35795921
+Q20 bases: 35112395(98.0905%)
+Q30 bases: 33635558(93.9648%)
+
+Filtering result:
+reads passed filter: 563650
+reads failed due to low quality: 7472
+reads failed due to too many N: 144
+reads failed due to too short: 412
+reads failed due to low complexity: 242
+reads with adapter trimmed: 333651
+bases trimmed due to adapters: 12864077
+reads with polyX in 3' end: 3731
+bases trimmed in polyX tail: 51759
+
+Duplication rate: 69.129%
+
+Insert size peak (evaluated by paired-end reads): 124
+
+JSON report: fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_016-Ex1-1F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_016-Ex1-1F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_016-Ex1-1F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_016-Ex1-1F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_016-Ex1-1F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_016-Ex1-1F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 17 seconds
+Read1 before filtering:
+total reads: 411893
+total bases: 61783950
+Q20 bases: 60360200(97.6956%)
+Q30 bases: 58207848(94.2119%)
+
+Read2 before filtering:
+total reads: 411893
+total bases: 61783950
+Q20 bases: 59826499(96.8318%)
+Q30 bases: 57019566(92.2886%)
+
+Read1 after filtering:
+total reads: 403827
+total bases: 51229701
+Q20 bases: 50448920(98.4759%)
+Q30 bases: 48880163(95.4137%)
+
+Read2 aftering filtering:
+total reads: 403827
+total bases: 51225133
+Q20 bases: 50227169(98.0518%)
+Q30 bases: 48210175(94.1143%)
+
+Filtering result:
+reads passed filter: 807654
+reads failed due to low quality: 14568
+reads failed due to too many N: 214
+reads failed due to too short: 792
+reads failed due to low complexity: 558
+reads with adapter trimmed: 487404
+bases trimmed due to adapters: 18532658
+reads with polyX in 3' end: 5810
+bases trimmed in polyX tail: 94420
+
+Duplication rate: 70.0933%
+
+Insert size peak (evaluated by paired-end reads): 119
+
+JSON report: fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_025-Ex1-2B-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_025-Ex1-2B-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_025-Ex1-2B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_025-Ex1-2B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_025-Ex1-2B-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_025-Ex1-2B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 19 seconds
+Read1 before filtering:
+total reads: 689390
+total bases: 103408500
+Q20 bases: 100341857(97.0344%)
+Q30 bases: 95794580(92.637%)
+
+Read2 before filtering:
+total reads: 689390
+total bases: 103408500
+Q20 bases: 99612416(96.329%)
+Q30 bases: 93943870(90.8473%)
+
+Read1 after filtering:
+total reads: 679796
+total bases: 75832086
+Q20 bases: 74434247(98.1567%)
+Q30 bases: 71680237(94.5249%)
+
+Read2 aftering filtering:
+total reads: 679796
+total bases: 75854340
+Q20 bases: 74157275(97.7627%)
+Q30 bases: 70765165(93.2909%)
+
+Filtering result:
+reads passed filter: 1359592
+reads failed due to low quality: 17212
+reads failed due to too many N: 318
+reads failed due to too short: 902
+reads failed due to low complexity: 756
+reads with adapter trimmed: 1139055
+bases trimmed due to adapters: 51496018
+reads with polyX in 3' end: 13767
+bases trimmed in polyX tail: 186359
+
+Duplication rate: 58.3501%
+
+Insert size peak (evaluated by paired-end reads): 98
+
+JSON report: fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_008-Ex1-4G-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_008-Ex1-4G-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_008-Ex1-4G-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_008-Ex1-4G-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_008-Ex1-4G-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_008-Ex1-4G-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 19 seconds
+Read1 before filtering:
+total reads: 451169
+total bases: 67675350
+Q20 bases: 66269267(97.9223%)
+Q30 bases: 63936516(94.4753%)
+
+Read2 before filtering:
+total reads: 451169
+total bases: 67675350
+Q20 bases: 65669257(97.0357%)
+Q30 bases: 62486603(92.3329%)
+
+Read1 after filtering:
+total reads: 444444
+total bases: 57277409
+Q20 bases: 56473584(98.5966%)
+Q30 bases: 54770578(95.6234%)
+
+Read2 aftering filtering:
+total reads: 444444
+total bases: 57275066
+Q20 bases: 56157775(98.0493%)
+Q30 bases: 53771690(93.8832%)
+
+Filtering result:
+reads passed filter: 888888
+reads failed due to low quality: 12028
+reads failed due to too many N: 232
+reads failed due to too short: 658
+reads failed due to low complexity: 532
+reads with adapter trimmed: 499230
+bases trimmed due to adapters: 18638051
+reads with polyX in 3' end: 5487
+bases trimmed in polyX tail: 84621
+
+Duplication rate: 69.6713%
+
+Insert size peak (evaluated by paired-end reads): 103
+
+JSON report: fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_018-Ex1-1H-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_018-Ex1-1H-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_018-Ex1-1H-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_018-Ex1-1H-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_018-Ex1-1H-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_018-Ex1-1H-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 20 seconds
+Read1 before filtering:
+total reads: 453416
+total bases: 68012400
+Q20 bases: 66508130(97.7882%)
+Q30 bases: 64149372(94.3201%)
+
+Read2 before filtering:
+total reads: 453416
+total bases: 68012400
+Q20 bases: 65707586(96.6112%)
+Q30 bases: 62296813(91.5963%)
+
+Read1 after filtering:
+total reads: 445200
+total bases: 58773037
+Q20 bases: 57904338(98.5219%)
+Q30 bases: 56139765(95.5196%)
+
+Read2 aftering filtering:
+total reads: 445200
+total bases: 58761559
+Q20 bases: 57471742(97.805%)
+Q30 bases: 54850568(93.3443%)
+
+Filtering result:
+reads passed filter: 890400
+reads failed due to low quality: 14930
+reads failed due to too many N: 194
+reads failed due to too short: 806
+reads failed due to low complexity: 502
+reads with adapter trimmed: 423090
+bases trimmed due to adapters: 15876016
+reads with polyX in 3' end: 5189
+bases trimmed in polyX tail: 85693
+
+Duplication rate: 69.5371%
+
+Insert size peak (evaluated by paired-end reads): 120
+
+JSON report: fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_017-Ex1-1G-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_017-Ex1-1G-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_017-Ex1-1G-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_017-Ex1-1G-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_017-Ex1-1G-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_017-Ex1-1G-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 20 seconds
+Read1 before filtering:
+total reads: 614896
+total bases: 92234400
+Q20 bases: 90329224(97.9344%)
+Q30 bases: 87166912(94.5059%)
+
+Read2 before filtering:
+total reads: 614896
+total bases: 92234400
+Q20 bases: 89529274(97.0671%)
+Q30 bases: 85323831(92.5076%)
+
+Read1 after filtering:
+total reads: 605810
+total bases: 76945236
+Q20 bases: 75875815(98.6102%)
+Q30 bases: 73613326(95.6698%)
+
+Read2 aftering filtering:
+total reads: 605810
+total bases: 76949561
+Q20 bases: 75518375(98.1401%)
+Q30 bases: 72451550(94.1546%)
+
+Filtering result:
+reads passed filter: 1211620
+reads failed due to low quality: 16012
+reads failed due to too many N: 278
+reads failed due to too short: 922
+reads failed due to low complexity: 960
+reads with adapter trimmed: 720075
+bases trimmed due to adapters: 27636083
+reads with polyX in 3' end: 7375
+bases trimmed in polyX tail: 113780
+
+Duplication rate: 70.6051%
+
+Insert size peak (evaluated by paired-end reads): 120
+
+JSON report: fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_014-Ex1-1E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_014-Ex1-1E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_014-Ex1-1E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_014-Ex1-1E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_014-Ex1-1E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_014-Ex1-1E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 443303
+total bases: 66495450
+Q20 bases: 64355144(96.7813%)
+Q30 bases: 61398900(92.3355%)
+
+Read2 before filtering:
+total reads: 443303
+total bases: 66495450
+Q20 bases: 63801825(95.9492%)
+Q30 bases: 60075755(90.3457%)
+
+Read1 after filtering:
+total reads: 434766
+total bases: 49808131
+Q20 bases: 48836383(98.049%)
+Q30 bases: 47028775(94.4199%)
+
+Read2 aftering filtering:
+total reads: 434766
+total bases: 49817794
+Q20 bases: 48614608(97.5848%)
+Q30 bases: 46317801(92.9744%)
+
+Filtering result:
+reads passed filter: 869532
+reads failed due to low quality: 15318
+reads failed due to too many N: 196
+reads failed due to too short: 926
+reads failed due to low complexity: 634
+reads with adapter trimmed: 690364
+bases trimmed due to adapters: 30385088
+reads with polyX in 3' end: 8931
+bases trimmed in polyX tail: 129917
+
+Duplication rate: 61.2417%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_023-Ex1-5D-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_023-Ex1-5D-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_023-Ex1-5D-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_023-Ex1-5D-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_023-Ex1-5D-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_023-Ex1-5D-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 528680
+total bases: 79302000
+Q20 bases: 77229020(97.386%)
+Q30 bases: 74091296(93.4293%)
+
+Read2 before filtering:
+total reads: 528680
+total bases: 79302000
+Q20 bases: 76684693(96.6996%)
+Q30 bases: 72780662(91.7766%)
+
+Read1 after filtering:
+total reads: 519450
+total bases: 60881502
+Q20 bases: 59869690(98.3381%)
+Q30 bases: 57848334(95.0179%)
+
+Read2 aftering filtering:
+total reads: 519450
+total bases: 60899129
+Q20 bases: 59667500(97.9776%)
+Q30 bases: 57146602(93.8381%)
+
+Filtering result:
+reads passed filter: 1038900
+reads failed due to low quality: 16474
+reads failed due to too many N: 226
+reads failed due to too short: 930
+reads failed due to low complexity: 830
+reads with adapter trimmed: 792914
+bases trimmed due to adapters: 33747552
+reads with polyX in 3' end: 10691
+bases trimmed in polyX tail: 160234
+
+Duplication rate: 66.8312%
+
+Insert size peak (evaluated by paired-end reads): 90
+
+JSON report: fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_020-Ex1-4B-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_020-Ex1-4B-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_020-Ex1-4B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_020-Ex1-4B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_020-Ex1-4B-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_020-Ex1-4B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 879663
+total bases: 131949450
+Q20 bases: 126777402(96.0803%)
+Q30 bases: 120114745(91.0309%)
+
+Read2 before filtering:
+total reads: 879663
+total bases: 131949450
+Q20 bases: 126158991(95.6116%)
+Q30 bases: 118358444(89.6998%)
+
+Read1 after filtering:
+total reads: 862257
+total bases: 100785344
+Q20 bases: 98275225(97.5094%)
+Q30 bases: 94120833(93.3874%)
+
+Read2 aftering filtering:
+total reads: 862257
+total bases: 100835391
+Q20 bases: 97991627(97.1798%)
+Q30 bases: 92944326(92.1743%)
+
+Filtering result:
+reads passed filter: 1724514
+reads failed due to low quality: 30676
+reads failed due to too many N: 432
+reads failed due to too short: 2192
+reads failed due to low complexity: 1512
+reads with adapter trimmed: 1325618
+bases trimmed due to adapters: 56368072
+reads with polyX in 3' end: 15889
+bases trimmed in polyX tail: 239610
+
+Duplication rate: 63.1611%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_013-Ex1-6F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_013-Ex1-6F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_013-Ex1-6F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_013-Ex1-6F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_013-Ex1-6F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_013-Ex1-6F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 1067977
+total bases: 160196550
+Q20 bases: 155343590(96.9706%)
+Q30 bases: 148438650(92.6603%)
+
+Read2 before filtering:
+total reads: 1067977
+total bases: 160196550
+Q20 bases: 154201244(96.2575%)
+Q30 bases: 145832421(91.0334%)
+
+Read1 after filtering:
+total reads: 1047486
+total bases: 119457285
+Q20 bases: 117200721(98.111%)
+Q30 bases: 112902139(94.5126%)
+
+Read2 aftering filtering:
+total reads: 1047486
+total bases: 119500401
+Q20 bases: 116770707(97.7157%)
+Q30 bases: 111552657(93.3492%)
+
+Filtering result:
+reads passed filter: 2094972
+reads failed due to low quality: 36332
+reads failed due to too many N: 430
+reads failed due to too short: 2756
+reads failed due to low complexity: 1464
+reads with adapter trimmed: 1678465
+bases trimmed due to adapters: 74536109
+reads with polyX in 3' end: 22971
+bases trimmed in polyX tail: 344603
+
+Duplication rate: 64.8068%
+
+Insert size peak (evaluated by paired-end reads): 93
+
+JSON report: fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_009-Ex1-4E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_009-Ex1-4E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_009-Ex1-4E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_009-Ex1-4E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_009-Ex1-4E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_009-Ex1-4E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 24 seconds
+Read1 before filtering:
+total reads: 635093
+total bases: 95263950
+Q20 bases: 91931806(96.5022%)
+Q30 bases: 87556602(91.9095%)
+
+Read2 before filtering:
+total reads: 635093
+total bases: 95263950
+Q20 bases: 91243290(95.7795%)
+Q30 bases: 85839643(90.1072%)
+
+Read1 after filtering:
+total reads: 621333
+total bases: 71533296
+Q20 bases: 70037375(97.9088%)
+Q30 bases: 67368970(94.1785%)
+
+Read2 aftering filtering:
+total reads: 621333
+total bases: 71574266
+Q20 bases: 69716606(97.4046%)
+Q30 bases: 66323270(92.6636%)
+
+Filtering result:
+reads passed filter: 1242666
+reads failed due to low quality: 25032
+reads failed due to too many N: 256
+reads failed due to too short: 1256
+reads failed due to low complexity: 976
+reads with adapter trimmed: 972404
+bases trimmed due to adapters: 42696919
+reads with polyX in 3' end: 13577
+bases trimmed in polyX tail: 197566
+
+Duplication rate: 61.8352%
+
+Insert size peak (evaluated by paired-end reads): 95
+
+JSON report: fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_024-Ex1-5C-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_024-Ex1-5C-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_024-Ex1-5C-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_024-Ex1-5C-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_024-Ex1-5C-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_024-Ex1-5C-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 25 seconds
+Read1 before filtering:
+total reads: 613068
+total bases: 91960200
+Q20 bases: 90689673(98.6184%)
+Q30 bases: 88284701(96.0032%)
+
+Read2 before filtering:
+total reads: 613068
+total bases: 91960200
+Q20 bases: 89755429(97.6025%)
+Q30 bases: 85948864(93.4631%)
+
+Read1 after filtering:
+total reads: 606135
+total bases: 81659470
+Q20 bases: 80802464(98.9505%)
+Q30 bases: 78839178(96.5463%)
+
+Read2 aftering filtering:
+total reads: 606135
+total bases: 81656236
+Q20 bases: 80368929(98.4235%)
+Q30 bases: 77353395(94.7305%)
+
+Filtering result:
+reads passed filter: 1212270
+reads failed due to low quality: 12430
+reads failed due to too many N: 284
+reads failed due to too short: 692
+reads failed due to low complexity: 460
+reads with adapter trimmed: 529195
+bases trimmed due to adapters: 18441403
+reads with polyX in 3' end: 3236
+bases trimmed in polyX tail: 51400
+
+Duplication rate: 73.3005%
+
+Insert size peak (evaluated by paired-end reads): 127
+
+JSON report: fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_022-Ex1-2A-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_022-Ex1-2A-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_022-Ex1-2A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_022-Ex1-2A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_022-Ex1-2A-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_022-Ex1-2A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 25 seconds
+Read1 before filtering:
+total reads: 736454
+total bases: 110468100
+Q20 bases: 107264293(97.0998%)
+Q30 bases: 102520461(92.8055%)
+
+Read2 before filtering:
+total reads: 736454
+total bases: 110468100
+Q20 bases: 106569530(96.4709%)
+Q30 bases: 100746113(91.1993%)
+
+Read1 after filtering:
+total reads: 725220
+total bases: 82713315
+Q20 bases: 81197513(98.1674%)
+Q30 bases: 78237416(94.5887%)
+
+Read2 aftering filtering:
+total reads: 725220
+total bases: 82745044
+Q20 bases: 80893360(97.7622%)
+Q30 bases: 77218278(93.3207%)
+
+Filtering result:
+reads passed filter: 1450440
+reads failed due to low quality: 20080
+reads failed due to too many N: 314
+reads failed due to too short: 1196
+reads failed due to low complexity: 878
+reads with adapter trimmed: 1170968
+bases trimmed due to adapters: 51415481
+reads with polyX in 3' end: 14653
+bases trimmed in polyX tail: 207451
+
+Duplication rate: 62.3997%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_019-Ex1-4H-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_019-Ex1-4H-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_019-Ex1-4H-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_019-Ex1-4H-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_019-Ex1-4H-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_019-Ex1-4H-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 25 seconds
+Read1 before filtering:
+total reads: 481467
+total bases: 72220050
+Q20 bases: 70870467(98.1313%)
+Q30 bases: 68589014(94.9723%)
+
+Read2 before filtering:
+total reads: 481467
+total bases: 72220050
+Q20 bases: 70131090(97.1075%)
+Q30 bases: 66837872(92.5475%)
+
+Read1 after filtering:
+total reads: 473978
+total bases: 63760656
+Q20 bases: 62883371(98.6241%)
+Q30 bases: 61051252(95.7507%)
+
+Read2 aftering filtering:
+total reads: 473978
+total bases: 63766064
+Q20 bases: 62526576(98.0562%)
+Q30 bases: 59895526(93.9301%)
+
+Filtering result:
+reads passed filter: 947956
+reads failed due to low quality: 13104
+reads failed due to too many N: 202
+reads failed due to too short: 1062
+reads failed due to low complexity: 610
+reads with adapter trimmed: 424711
+bases trimmed due to adapters: 14567688
+reads with polyX in 3' end: 5431
+bases trimmed in polyX tail: 86322
+
+Duplication rate: 71.3887%
+
+Insert size peak (evaluated by paired-end reads): 130
+
+JSON report: fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_029-Ex1-2C-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_029-Ex1-2C-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_029-Ex1-2C-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_029-Ex1-2C-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_029-Ex1-2C-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_029-Ex1-2C-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 17 seconds
+Read1 before filtering:
+total reads: 545154
+total bases: 81773100
+Q20 bases: 79091236(96.7204%)
+Q30 bases: 75470967(92.2931%)
+
+Read2 before filtering:
+total reads: 545154
+total bases: 81773100
+Q20 bases: 78432478(95.9148%)
+Q30 bases: 73992723(90.4854%)
+
+Read1 after filtering:
+total reads: 532022
+total bases: 63859707
+Q20 bases: 62547280(97.9448%)
+Q30 bases: 60173693(94.228%)
+
+Read2 aftering filtering:
+total reads: 532022
+total bases: 63889360
+Q20 bases: 62275485(97.474%)
+Q30 bases: 59305038(92.8246%)
+
+Filtering result:
+reads passed filter: 1064044
+reads failed due to low quality: 23718
+reads failed due to too many N: 224
+reads failed due to too short: 1304
+reads failed due to low complexity: 1018
+reads with adapter trimmed: 776456
+bases trimmed due to adapters: 31513614
+reads with polyX in 3' end: 12418
+bases trimmed in polyX tail: 191249
+
+Duplication rate: 65.1965%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_027-Ex1-5B-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_027-Ex1-5B-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_027-Ex1-5B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_027-Ex1-5B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_027-Ex1-5B-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_027-Ex1-5B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 20 seconds
+Read1 before filtering:
+total reads: 469969
+total bases: 70495350
+Q20 bases: 68527615(97.2087%)
+Q30 bases: 65678965(93.1678%)
+
+Read2 before filtering:
+total reads: 469969
+total bases: 70495350
+Q20 bases: 67916677(96.3421%)
+Q30 bases: 64188571(91.0536%)
+
+Read1 after filtering:
+total reads: 460632
+total bases: 54948423
+Q20 bases: 53949121(98.1814%)
+Q30 bases: 52005585(94.6444%)
+
+Read2 aftering filtering:
+total reads: 460632
+total bases: 54963301
+Q20 bases: 53664821(97.6376%)
+Q30 bases: 51166968(93.093%)
+
+Filtering result:
+reads passed filter: 921264
+reads failed due to low quality: 16872
+reads failed due to too many N: 228
+reads failed due to too short: 872
+reads failed due to low complexity: 702
+reads with adapter trimmed: 665556
+bases trimmed due to adapters: 27954069
+reads with polyX in 3' end: 10039
+bases trimmed in polyX tail: 148368
+
+Duplication rate: 68.015%
+
+Insert size peak (evaluated by paired-end reads): 108
+
+JSON report: fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_031-Ex1-3F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_031-Ex1-3F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_031-Ex1-3F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_031-Ex1-3F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_031-Ex1-3F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_031-Ex1-3F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 18 seconds
+Read1 before filtering:
+total reads: 482694
+total bases: 72404100
+Q20 bases: 70165055(96.9076%)
+Q30 bases: 67049006(92.6039%)
+
+Read2 before filtering:
+total reads: 482694
+total bases: 72404100
+Q20 bases: 69822002(96.4338%)
+Q30 bases: 66136840(91.3441%)
+
+Read1 after filtering:
+total reads: 473023
+total bases: 56963410
+Q20 bases: 55841356(98.0302%)
+Q30 bases: 53792436(94.4333%)
+
+Read2 aftering filtering:
+total reads: 473023
+total bases: 56978986
+Q20 bases: 55723258(97.7962%)
+Q30 bases: 53248124(93.4522%)
+
+Filtering result:
+reads passed filter: 946046
+reads failed due to low quality: 17542
+reads failed due to too many N: 194
+reads failed due to too short: 852
+reads failed due to low complexity: 754
+reads with adapter trimmed: 674201
+bases trimmed due to adapters: 27698033
+reads with polyX in 3' end: 9780
+bases trimmed in polyX tail: 148458
+
+Duplication rate: 67.1766%
+
+Insert size peak (evaluated by paired-end reads): 107
+
+JSON report: fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_034-Ex1-6B-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_034-Ex1-6B-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_034-Ex1-6B-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_034-Ex1-6B-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_034-Ex1-6B-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_034-Ex1-6B-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 18 seconds
+Read1 before filtering:
+total reads: 207777
+total bases: 31166550
+Q20 bases: 30561108(98.0574%)
+Q30 bases: 29558416(94.8402%)
+
+Read2 before filtering:
+total reads: 207777
+total bases: 31166550
+Q20 bases: 30231553(97%)
+Q30 bases: 28750508(92.248%)
+
+Read1 after filtering:
+total reads: 204618
+total bases: 26514638
+Q20 bases: 26157631(98.6535%)
+Q30 bases: 25398134(95.7891%)
+
+Read2 aftering filtering:
+total reads: 204618
+total bases: 26512843
+Q20 bases: 25992933(98.039%)
+Q30 bases: 24880305(93.8425%)
+
+Filtering result:
+reads passed filter: 409236
+reads failed due to low quality: 5704
+reads failed due to too many N: 98
+reads failed due to too short: 320
+reads failed due to low complexity: 196
+reads with adapter trimmed: 213822
+bases trimmed due to adapters: 8286570
+reads with polyX in 3' end: 2290
+bases trimmed in polyX tail: 34371
+
+Duplication rate: 67.7586%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_043-Ex1-3G-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_043-Ex1-3G-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_043-Ex1-3G-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_043-Ex1-3G-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_043-Ex1-3G-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_043-Ex1-3G-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 16 seconds
+Read1 before filtering:
+total reads: 615196
+total bases: 92279400
+Q20 bases: 90748823(98.3414%)
+Q30 bases: 88027255(95.3921%)
+
+Read2 before filtering:
+total reads: 615196
+total bases: 92279400
+Q20 bases: 89823602(97.3387%)
+Q30 bases: 85919361(93.1078%)
+
+Read1 after filtering:
+total reads: 605641
+total bases: 76697713
+Q20 bases: 75799096(98.8284%)
+Q30 bases: 73782463(96.199%)
+
+Read2 aftering filtering:
+total reads: 605641
+total bases: 76696618
+Q20 bases: 75514280(98.4584%)
+Q30 bases: 72773675(94.8851%)
+
+Filtering result:
+reads passed filter: 1211282
+reads failed due to low quality: 16960
+reads failed due to too many N: 290
+reads failed due to too short: 1216
+reads failed due to low complexity: 644
+reads with adapter trimmed: 720169
+bases trimmed due to adapters: 28178137
+reads with polyX in 3' end: 7100
+bases trimmed in polyX tail: 108145
+
+Duplication rate: 69.6073%
+
+Insert size peak (evaluated by paired-end reads): 112
+
+JSON report: fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_030-Ex1-2D-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_030-Ex1-2D-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_030-Ex1-2D-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_030-Ex1-2D-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_030-Ex1-2D-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_030-Ex1-2D-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 531265
+total bases: 79689750
+Q20 bases: 77757823(97.5757%)
+Q30 bases: 74659762(93.688%)
+
+Read2 before filtering:
+total reads: 531265
+total bases: 79689750
+Q20 bases: 77070017(96.7126%)
+Q30 bases: 73051825(91.6703%)
+
+Read1 after filtering:
+total reads: 523015
+total bases: 64117873
+Q20 bases: 63025415(98.2962%)
+Q30 bases: 60814826(94.8485%)
+
+Read2 aftering filtering:
+total reads: 523015
+total bases: 64110839
+Q20 bases: 62752826(97.8818%)
+Q30 bases: 59977408(93.5527%)
+
+Filtering result:
+reads passed filter: 1046030
+reads failed due to low quality: 14576
+reads failed due to too many N: 232
+reads failed due to too short: 1040
+reads failed due to low complexity: 652
+reads with adapter trimmed: 738393
+bases trimmed due to adapters: 28414650
+reads with polyX in 3' end: 9517
+bases trimmed in polyX tail: 140828
+
+Duplication rate: 67.04%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_038-Ex1-2G-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_038-Ex1-2G-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_038-Ex1-2G-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_038-Ex1-2G-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_038-Ex1-2G-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_038-Ex1-2G-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 18 seconds
+Read1 before filtering:
+total reads: 650327
+total bases: 97549050
+Q20 bases: 95261904(97.6554%)
+Q30 bases: 91701578(94.0056%)
+
+Read2 before filtering:
+total reads: 650327
+total bases: 97549050
+Q20 bases: 94462019(96.8354%)
+Q30 bases: 90003941(92.2653%)
+
+Read1 after filtering:
+total reads: 637798
+total bases: 73443931
+Q20 bases: 72337514(98.4935%)
+Q30 bases: 70051833(95.3814%)
+
+Read2 aftering filtering:
+total reads: 637798
+total bases: 73461872
+Q20 bases: 72162098(98.2307%)
+Q30 bases: 69411270(94.4861%)
+
+Filtering result:
+reads passed filter: 1275596
+reads failed due to low quality: 22228
+reads failed due to too many N: 294
+reads failed due to too short: 1522
+reads failed due to low complexity: 1014
+reads with adapter trimmed: 1011766
+bases trimmed due to adapters: 44198924
+reads with polyX in 3' end: 11126
+bases trimmed in polyX tail: 166777
+
+Duplication rate: 68.0558%
+
+Insert size peak (evaluated by paired-end reads): 89
+
+JSON report: fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_033-Ex1-2E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_033-Ex1-2E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_033-Ex1-2E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_033-Ex1-2E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_033-Ex1-2E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_033-Ex1-2E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 88712
+total bases: 13306800
+Q20 bases: 13076046(98.2659%)
+Q30 bases: 12675013(95.2521%)
+
+Read2 before filtering:
+total reads: 88712
+total bases: 13306800
+Q20 bases: 12942096(97.2593%)
+Q30 bases: 12331004(92.6669%)
+
+Read1 after filtering:
+total reads: 87549
+total bases: 11774544
+Q20 bases: 11624015(98.7216%)
+Q30 bases: 11298755(95.9592%)
+
+Read2 aftering filtering:
+total reads: 87549
+total bases: 11777072
+Q20 bases: 11548386(98.0582%)
+Q30 bases: 11052743(93.8497%)
+
+Filtering result:
+reads passed filter: 175098
+reads failed due to low quality: 2084
+reads failed due to too many N: 38
+reads failed due to too short: 114
+reads failed due to low complexity: 90
+reads with adapter trimmed: 76246
+bases trimmed due to adapters: 2691619
+reads with polyX in 3' end: 875
+bases trimmed in polyX tail: 13427
+
+Duplication rate: 70.8951%
+
+Insert size peak (evaluated by paired-end reads): 131
+
+JSON report: fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_046-Ex1-3C-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_046-Ex1-3C-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_046-Ex1-3C-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_046-Ex1-3C-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_046-Ex1-3C-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_046-Ex1-3C-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 13 seconds
+Read1 before filtering:
+total reads: 732067
+total bases: 109810050
+Q20 bases: 106303279(96.8065%)
+Q30 bases: 101749548(92.6596%)
+
+Read2 before filtering:
+total reads: 732067
+total bases: 109810050
+Q20 bases: 105490468(96.0663%)
+Q30 bases: 99593376(90.696%)
+
+Read1 after filtering:
+total reads: 715189
+total bases: 86011410
+Q20 bases: 84375076(98.0975%)
+Q30 bases: 81464816(94.714%)
+
+Read2 aftering filtering:
+total reads: 715189
+total bases: 86060229
+Q20 bases: 84108370(97.732%)
+Q30 bases: 80313188(93.3221%)
+
+Filtering result:
+reads passed filter: 1430378
+reads failed due to low quality: 30578
+reads failed due to too many N: 298
+reads failed due to too short: 1530
+reads failed due to low complexity: 1350
+reads with adapter trimmed: 1014102
+bases trimmed due to adapters: 42087485
+reads with polyX in 3' end: 14315
+bases trimmed in polyX tail: 213381
+
+Duplication rate: 68.1016%
+
+Insert size peak (evaluated by paired-end reads): 106
+
+JSON report: fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_026-Ex1-6A-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_026-Ex1-6A-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_026-Ex1-6A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_026-Ex1-6A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_026-Ex1-6A-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_026-Ex1-6A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 24 seconds
+Read1 before filtering:
+total reads: 563102
+total bases: 84465300
+Q20 bases: 82479746(97.6493%)
+Q30 bases: 79460950(94.0753%)
+
+Read2 before filtering:
+total reads: 563102
+total bases: 84465300
+Q20 bases: 81785758(96.8276%)
+Q30 bases: 77860590(92.1806%)
+
+Read1 after filtering:
+total reads: 552471
+total bases: 67836403
+Q20 bases: 66800066(98.4723%)
+Q30 bases: 64698307(95.374%)
+
+Read2 aftering filtering:
+total reads: 552471
+total bases: 67845990
+Q20 bases: 66547142(98.0856%)
+Q30 bases: 63855883(94.1189%)
+
+Filtering result:
+reads passed filter: 1104942
+reads failed due to low quality: 18946
+reads failed due to too many N: 264
+reads failed due to too short: 1152
+reads failed due to low complexity: 900
+reads with adapter trimmed: 744772
+bases trimmed due to adapters: 29793219
+reads with polyX in 3' end: 9186
+bases trimmed in polyX tail: 143919
+
+Duplication rate: 68.1435%
+
+Insert size peak (evaluated by paired-end reads): 124
+
+JSON report: fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_039-Ex1-2H-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_039-Ex1-2H-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_039-Ex1-2H-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_039-Ex1-2H-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_039-Ex1-2H-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_039-Ex1-2H-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 19 seconds
+Read1 before filtering:
+total reads: 765984
+total bases: 114897600
+Q20 bases: 111615818(97.1437%)
+Q30 bases: 106725151(92.8872%)
+
+Read2 before filtering:
+total reads: 765984
+total bases: 114897600
+Q20 bases: 110909413(96.5289%)
+Q30 bases: 105012348(91.3965%)
+
+Read1 after filtering:
+total reads: 753610
+total bases: 85918769
+Q20 bases: 84376675(98.2052%)
+Q30 bases: 81344398(94.6759%)
+
+Read2 aftering filtering:
+total reads: 753610
+total bases: 85950030
+Q20 bases: 84107117(97.8558%)
+Q30 bases: 80412136(93.5568%)
+
+Filtering result:
+reads passed filter: 1507220
+reads failed due to low quality: 21886
+reads failed due to too many N: 338
+reads failed due to too short: 1492
+reads failed due to low complexity: 1032
+reads with adapter trimmed: 1237398
+bases trimmed due to adapters: 53689838
+reads with polyX in 3' end: 15590
+bases trimmed in polyX tail: 220288
+
+Duplication rate: 62.254%
+
+Insert size peak (evaluated by paired-end reads): 97
+
+JSON report: fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_035-Ex1-5E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_035-Ex1-5E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_035-Ex1-5E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_035-Ex1-5E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_035-Ex1-5E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_035-Ex1-5E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 22 seconds
+Read1 before filtering:
+total reads: 757661
+total bases: 113649150
+Q20 bases: 109142649(96.0347%)
+Q30 bases: 103680818(91.2289%)
+
+Read2 before filtering:
+total reads: 757661
+total bases: 113649150
+Q20 bases: 108518278(95.4853%)
+Q30 bases: 101999761(89.7497%)
+
+Read1 after filtering:
+total reads: 737780
+total bases: 85793352
+Q20 bases: 83754592(97.6236%)
+Q30 bases: 80412784(93.7285%)
+
+Read2 aftering filtering:
+total reads: 737780
+total bases: 85821981
+Q20 bases: 83576547(97.3836%)
+Q30 bases: 79547554(92.689%)
+
+Filtering result:
+reads passed filter: 1475560
+reads failed due to low quality: 35822
+reads failed due to too many N: 304
+reads failed due to too short: 2256
+reads failed due to low complexity: 1380
+reads with adapter trimmed: 1160398
+bases trimmed due to adapters: 49184799
+reads with polyX in 3' end: 16672
+bases trimmed in polyX tail: 256334
+
+Duplication rate: 64.8424%
+
+Insert size peak (evaluated by paired-end reads): 100
+
+JSON report: fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_037-Ex1-6D-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_037-Ex1-6D-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_037-Ex1-6D-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_037-Ex1-6D-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_037-Ex1-6D-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_037-Ex1-6D-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 21 seconds
+Read1 before filtering:
+total reads: 769713
+total bases: 115456950
+Q20 bases: 112289633(97.2567%)
+Q30 bases: 107553502(93.1546%)
+
+Read2 before filtering:
+total reads: 769713
+total bases: 115456950
+Q20 bases: 111567847(96.6316%)
+Q30 bases: 105691725(91.5421%)
+
+Read1 after filtering:
+total reads: 756589
+total bases: 86710217
+Q20 bases: 85159511(98.2116%)
+Q30 bases: 82096478(94.6791%)
+
+Read2 aftering filtering:
+total reads: 756589
+total bases: 86735848
+Q20 bases: 84898509(97.8817%)
+Q30 bases: 81214721(93.6346%)
+
+Filtering result:
+reads passed filter: 1513178
+reads failed due to low quality: 23356
+reads failed due to too many N: 282
+reads failed due to too short: 1342
+reads failed due to low complexity: 1268
+reads with adapter trimmed: 1236878
+bases trimmed due to adapters: 53015614
+reads with polyX in 3' end: 15037
+bases trimmed in polyX tail: 224394
+
+Duplication rate: 65.7738%
+
+Insert size peak (evaluated by paired-end reads): 95
+
+JSON report: fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_036-Ex1-2F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_036-Ex1-2F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_036-Ex1-2F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_036-Ex1-2F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_036-Ex1-2F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_036-Ex1-2F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 22 seconds
+Read1 before filtering:
+total reads: 699398
+total bases: 104909700
+Q20 bases: 102790609(97.9801%)
+Q30 bases: 99320341(94.6722%)
+
+Read2 before filtering:
+total reads: 699398
+total bases: 104909700
+Q20 bases: 101677137(96.9187%)
+Q30 bases: 96514334(91.9975%)
+
+Read1 after filtering:
+total reads: 690173
+total bases: 83831687
+Q20 bases: 82692209(98.6408%)
+Q30 bases: 80261161(95.7408%)
+
+Read2 aftering filtering:
+total reads: 690173
+total bases: 83839582
+Q20 bases: 82208682(98.0547%)
+Q30 bases: 78727763(93.9029%)
+
+Filtering result:
+reads passed filter: 1380346
+reads failed due to low quality: 16684
+reads failed due to too many N: 290
+reads failed due to too short: 684
+reads failed due to low complexity: 792
+reads with adapter trimmed: 903902
+bases trimmed due to adapters: 39008536
+reads with polyX in 3' end: 9929
+bases trimmed in polyX tail: 141182
+
+Duplication rate: 70.1959%
+
+Insert size peak (evaluated by paired-end reads): 99
+
+JSON report: fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_041-Ex1-3A-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_041-Ex1-3A-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_041-Ex1-3A-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_041-Ex1-3A-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_041-Ex1-3A-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_041-Ex1-3A-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 23 seconds
+Read1 before filtering:
+total reads: 447375
+total bases: 67106250
+Q20 bases: 65474626(97.5686%)
+Q30 bases: 63038107(93.9378%)
+
+Read2 before filtering:
+total reads: 447375
+total bases: 67106250
+Q20 bases: 64799702(96.5628%)
+Q30 bases: 61465865(91.5948%)
+
+Read1 after filtering:
+total reads: 438661
+total bases: 55318479
+Q20 bases: 54435393(98.4036%)
+Q30 bases: 52679390(95.2293%)
+
+Read2 aftering filtering:
+total reads: 438661
+total bases: 55330881
+Q20 bases: 54111850(97.7968%)
+Q30 bases: 51701112(93.4399%)
+
+Filtering result:
+reads passed filter: 877322
+reads failed due to low quality: 15760
+reads failed due to too many N: 216
+reads failed due to too short: 742
+reads failed due to low complexity: 710
+reads with adapter trimmed: 518921
+bases trimmed due to adapters: 20745450
+reads with polyX in 3' end: 8131
+bases trimmed in polyX tail: 131597
+
+Duplication rate: 70.6097%
+
+Insert size peak (evaluated by paired-end reads): 111
+
+JSON report: fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_049-Ex1-3H-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_049-Ex1-3H-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_049-Ex1-3H-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_049-Ex1-3H-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_049-Ex1-3H-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_049-Ex1-3H-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 13 seconds
+Read1 before filtering:
+total reads: 388262
+total bases: 58239300
+Q20 bases: 56826057(97.5734%)
+Q30 bases: 54759665(94.0253%)
+
+Read2 before filtering:
+total reads: 388262
+total bases: 58239300
+Q20 bases: 56357253(96.7684%)
+Q30 bases: 53731781(92.2603%)
+
+Read1 after filtering:
+total reads: 379370
+total bases: 47766951
+Q20 bases: 47038900(98.4758%)
+Q30 bases: 45628388(95.5229%)
+
+Read2 aftering filtering:
+total reads: 379370
+total bases: 47777433
+Q20 bases: 46905894(98.1758%)
+Q30 bases: 45074858(94.3434%)
+
+Filtering result:
+reads passed filter: 758740
+reads failed due to low quality: 15980
+reads failed due to too many N: 146
+reads failed due to too short: 1182
+reads failed due to low complexity: 476
+reads with adapter trimmed: 462531
+bases trimmed due to adapters: 18217991
+reads with polyX in 3' end: 4928
+bases trimmed in polyX tail: 78695
+
+Duplication rate: 68.6321%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_052-Ex1-6E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_052-Ex1-6E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_052-Ex1-6E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_052-Ex1-6E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_052-Ex1-6E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_052-Ex1-6E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 10 seconds
+Read1 before filtering:
+total reads: 512440
+total bases: 76866000
+Q20 bases: 74947055(97.5035%)
+Q30 bases: 72013178(93.6866%)
+
+Read2 before filtering:
+total reads: 512440
+total bases: 76866000
+Q20 bases: 74257292(96.6062%)
+Q30 bases: 70442924(91.6438%)
+
+Read1 after filtering:
+total reads: 503707
+total bases: 58412376
+Q20 bases: 57485074(98.4125%)
+Q30 bases: 55582048(95.1546%)
+
+Read2 aftering filtering:
+total reads: 503707
+total bases: 58423977
+Q20 bases: 57226088(97.9497%)
+Q30 bases: 54798465(93.7945%)
+
+Filtering result:
+reads passed filter: 1007414
+reads failed due to low quality: 15762
+reads failed due to too many N: 186
+reads failed due to too short: 798
+reads failed due to low complexity: 720
+reads with adapter trimmed: 766164
+bases trimmed due to adapters: 33874655
+reads with polyX in 3' end: 9673
+bases trimmed in polyX tail: 146929
+
+Duplication rate: 68.562%
+
+Insert size peak (evaluated by paired-end reads): 95
+
+JSON report: fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_051-Ex1-3E-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_051-Ex1-3E-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_051-Ex1-3E-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_051-Ex1-3E-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_051-Ex1-3E-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_051-Ex1-3E-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 12 seconds
+Read1 before filtering:
+total reads: 575017
+total bases: 86252550
+Q20 bases: 84116022(97.5229%)
+Q30 bases: 80930487(93.8297%)
+
+Read2 before filtering:
+total reads: 575017
+total bases: 86252550
+Q20 bases: 83082522(96.3247%)
+Q30 bases: 78674203(91.2138%)
+
+Read1 after filtering:
+total reads: 562516
+total bases: 66993409
+Q20 bases: 65946209(98.4369%)
+Q30 bases: 63832015(95.281%)
+
+Read2 aftering filtering:
+total reads: 562516
+total bases: 66993428
+Q20 bases: 65594865(97.9124%)
+Q30 bases: 62776872(93.706%)
+
+Filtering result:
+reads passed filter: 1125032
+reads failed due to low quality: 22588
+reads failed due to too many N: 242
+reads failed due to too short: 1090
+reads failed due to low complexity: 1082
+reads with adapter trimmed: 811469
+bases trimmed due to adapters: 34464258
+reads with polyX in 3' end: 10587
+bases trimmed in polyX tail: 161399
+
+Duplication rate: 68.9565%
+
+Insert size peak (evaluated by paired-end reads): 104
+
+JSON report: fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_047-Ex1-3D-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_047-Ex1-3D-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_047-Ex1-3D-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_047-Ex1-3D-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_047-Ex1-3D-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_047-Ex1-3D-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 23 seconds
+Read1 before filtering:
+total reads: 616752
+total bases: 92512800
+Q20 bases: 89628109(96.8818%)
+Q30 bases: 85520988(92.4423%)
+
+Read2 before filtering:
+total reads: 616752
+total bases: 92512800
+Q20 bases: 88926895(96.1239%)
+Q30 bases: 83854107(90.6405%)
+
+Read1 after filtering:
+total reads: 604404
+total bases: 68221930
+Q20 bases: 66928950(98.1047%)
+Q30 bases: 64441519(94.4587%)
+
+Read2 aftering filtering:
+total reads: 604404
+total bases: 68243943
+Q20 bases: 66699900(97.7375%)
+Q30 bases: 63639710(93.2533%)
+
+Filtering result:
+reads passed filter: 1208808
+reads failed due to low quality: 22116
+reads failed due to too many N: 248
+reads failed due to too short: 1132
+reads failed due to low complexity: 1200
+reads with adapter trimmed: 991106
+bases trimmed due to adapters: 44323466
+reads with polyX in 3' end: 12997
+bases trimmed in polyX tail: 192310
+
+Duplication rate: 60.6494%
+
+Insert size peak (evaluated by paired-end reads): 91
+
+JSON report: fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_048-Ex1-5G-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_048-Ex1-5G-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_048-Ex1-5G-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_048-Ex1-5G-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_048-Ex1-5G-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_048-Ex1-5G-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 23 seconds
+Read1 before filtering:
+total reads: 650808
+total bases: 97621200
+Q20 bases: 94265083(96.5621%)
+Q30 bases: 89648002(91.8325%)
+
+Read2 before filtering:
+total reads: 650808
+total bases: 97621200
+Q20 bases: 93582611(95.863%)
+Q30 bases: 88002749(90.1472%)
+
+Read1 after filtering:
+total reads: 639219
+total bases: 74243379
+Q20 bases: 72619704(97.813%)
+Q30 bases: 69735343(93.928%)
+
+Read2 aftering filtering:
+total reads: 639219
+total bases: 74272024
+Q20 bases: 72287075(97.3275%)
+Q30 bases: 68651365(92.4323%)
+
+Filtering result:
+reads passed filter: 1278438
+reads failed due to low quality: 20570
+reads failed due to too many N: 250
+reads failed due to too short: 1536
+reads failed due to low complexity: 822
+reads with adapter trimmed: 996651
+bases trimmed due to adapters: 42709372
+reads with polyX in 3' end: 12533
+bases trimmed in polyX tail: 179087
+
+Duplication rate: 62.5893%
+
+Insert size peak (evaluated by paired-end reads): 99
+
+JSON report: fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_045-Ex1-5H-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_045-Ex1-5H-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_045-Ex1-5H-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_045-Ex1-5H-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_045-Ex1-5H-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_045-Ex1-5H-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 24 seconds
+Read1 before filtering:
+total reads: 823088
+total bases: 123463200
+Q20 bases: 119362814(96.6789%)
+Q30 bases: 113858326(92.2205%)
+
+Read2 before filtering:
+total reads: 823088
+total bases: 123463200
+Q20 bases: 118551504(96.0217%)
+Q30 bases: 111771146(90.5299%)
+
+Read1 after filtering:
+total reads: 805603
+total bases: 93133977
+Q20 bases: 91259416(97.9872%)
+Q30 bases: 87854518(94.3313%)
+
+Read2 aftering filtering:
+total reads: 805603
+total bases: 93178457
+Q20 bases: 90869288(97.5218%)
+Q30 bases: 86574506(92.9126%)
+
+Filtering result:
+reads passed filter: 1611206
+reads failed due to low quality: 31636
+reads failed due to too many N: 356
+reads failed due to too short: 1654
+reads failed due to low complexity: 1324
+reads with adapter trimmed: 1267129
+bases trimmed due to adapters: 54625113
+reads with polyX in 3' end: 16489
+bases trimmed in polyX tail: 249050
+
+Duplication rate: 58.9444%
+
+Insert size peak (evaluated by paired-end reads): 101
+
+JSON report: fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_050-Ex1-5F-cssl-2-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_050-Ex1-5F-cssl-2-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_050-Ex1-5F-cssl-2-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_050-Ex1-5F-cssl-2-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_050-Ex1-5F-cssl-2-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.fastp.html -j fq_fp1/Ssp-AAtu_050-Ex1-5F-cssl-2-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 16 seconds
+Read1 before filtering:
+total reads: 7979428
+total bases: 1196914200
+Q20 bases: 1170470816(97.7907%)
+Q30 bases: 1123357991(93.8545%)
+
+Read2 before filtering:
+total reads: 7979428
+total bases: 1196914200
+Q20 bases: 1156019743(96.5833%)
+Q30 bases: 1092247168(91.2553%)
+
+Read1 after filtering:
+total reads: 7866269
+total bases: 1068918012
+Q20 bases: 1050340526(98.262%)
+Q30 bases: 1010799411(94.5629%)
+
+Read2 aftering filtering:
+total reads: 7866269
+total bases: 1068872630
+Q20 bases: 1041112401(97.4028%)
+Q30 bases: 987532272(92.3901%)
+
+Filtering result:
+reads passed filter: 15732538
+reads failed due to low quality: 184212
+reads failed due to too many N: 3674
+reads failed due to too short: 28112
+reads failed due to low complexity: 10320
+reads with adapter trimmed: 6237733
+bases trimmed due to adapters: 217274870
+reads with polyX in 3' end: 140438
+bases trimmed in polyX tail: 2047284
+
+Duplication rate: 88.6973%
+
+Insert size peak (evaluated by paired-end reads): 153
+
+JSON report: fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_005-Ex1-4E-cssl-1-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_005-Ex1-4E-cssl-1-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_005-Ex1-4E-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_005-Ex1-4E-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_005-Ex1-4E-cssl-1-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.fastp.html -j fq_fp1/Ssp-AAtu_005-Ex1-4E-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 117 seconds
+Read1 before filtering:
+total reads: 7433057
+total bases: 1114958550
+Q20 bases: 1091121879(97.8621%)
+Q30 bases: 1048664330(94.0541%)
+
+Read2 before filtering:
+total reads: 7433057
+total bases: 1114958550
+Q20 bases: 1078905237(96.7664%)
+Q30 bases: 1022258601(91.6858%)
+
+Read1 after filtering:
+total reads: 7324540
+total bases: 974933409
+Q20 bases: 958532339(98.3177%)
+Q30 bases: 923337086(94.7077%)
+
+Read2 aftering filtering:
+total reads: 7324540
+total bases: 974898282
+Q20 bases: 952028354(97.6541%)
+Q30 bases: 906144940(92.9476%)
+
+Filtering result:
+reads passed filter: 14649080
+reads failed due to low quality: 171844
+reads failed due to too many N: 3628
+reads failed due to too short: 30338
+reads failed due to low complexity: 11224
+reads with adapter trimmed: 6488294
+bases trimmed due to adapters: 242511917
+reads with polyX in 3' end: 120651
+bases trimmed in polyX tail: 1802488
+
+Duplication rate: 87.7479%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.fastp.json
+HTML report: fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.fastp.html
+
+fastp --in1 fq_raw/Ssp-AAtu_040-Ex1-5E-cssl-1-2.1.fq.gz --in2 fq_raw/Ssp-AAtu_040-Ex1-5E-cssl-1-2.2.fq.gz --out1 fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.r1.fq.gz --out2 fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.r2.fq.gz --unpaired1 fq_fp1/failed/Ssp-AAtu_040-Ex1-5E-cssl-1-2.unprd.fq.gz --unpaired2 fq_fp1/failed/Ssp-AAtu_040-Ex1-5E-cssl-1-2.unprd.fq.gz --failed_out fq_fp1/failed/Ssp-AAtu_040-Ex1-5E-cssl-1-2.fail.fq.gz -h fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.fastp.html -j fq_fp1/Ssp-AAtu_040-Ex1-5E-cssl-1-2.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 110 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-02-06 11:48:07,271] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-02-06 11:48:07,272] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 1st_fastp_report --outdir fq_fp1 fq_fp1
+[2023-02-06 11:48:07,763] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-02-06 11:48:07,763] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
+[2023-02-06 11:48:07,763] multiqc                                            [DEBUG  ]  Template    : default
+[2023-02-06 11:48:07,763] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-02-06 11:48:07,764] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-02-06 11:48:07,764] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpew1rv_r4
+[2023-02-06 11:48:07,913] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_fp1
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 258/258  
+[2023-02-06 11:48:14,359] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 258] // [skipped_no_match: 215] // [skipped_ignore_pattern: 172]
+[2023-02-06 11:48:14,739] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-06 11:48:14,740] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-06 11:48:14,741] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-02-06 11:48:14,929] multiqc.modules.fastp.fastp                        [INFO   ]  Found 43 reports
+[2023-02-06 11:48:40,153] multiqc                                            [INFO   ]  Compressing plot data
+[2023-02-06 11:48:43,486] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2023-02-06 11:48:43,486] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2023-02-06 11:48:43,486] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpew1rv_r4/multiqc_data' to 'fq_fp1/1st_fastp_report_data'
+[2023-02-06 11:48:43,868] multiqc                                            [INFO   ]  Plots       : fq_fp1/1st_fastp_report_plots
+[2023-02-06 11:48:43,868] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpew1rv_r4/multiqc_plots' to 'fq_fp1/1st_fastp_report_plots'
+[2023-02-06 11:48:44,191] multiqc                                            [INFO   ]  MultiQC complete
