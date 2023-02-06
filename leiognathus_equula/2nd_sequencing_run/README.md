@@ -71,8 +71,10 @@ Summary:
 
 ## 2. First trim
 
+```
 cd cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/
 
 #sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
 #do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+```
