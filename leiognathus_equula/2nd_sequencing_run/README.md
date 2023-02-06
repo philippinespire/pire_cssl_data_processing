@@ -3,7 +3,7 @@ Note there is an updated naming scheme that is formatted as Extraction_id-Librar
 
 ### Leq 2nd cssl run
 
-## Cleaning up and renaming
+## 0. Cleaning up and renaming
 
 First remove some files that are of uncertain origin according to Sharon.
 
@@ -68,3 +68,11 @@ Summary:
 * Some yellow-flags for GC content - minor contamination?
 * Duplication not too bad! ~20% for Albatross, ~40% for contemp
 * High adapter content
+
+## 2. First trim
+
+cd cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/
+
+#sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
+#do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
