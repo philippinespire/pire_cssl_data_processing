@@ -58,3 +58,8 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequ
 #do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
+
+Summary:
+* Still high duplication and adapter content
+* Still lots of variation in GC
+* >97% passing filter!
