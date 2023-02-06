@@ -52,4 +52,4 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatc
 Summary:
 * Duplication + adapter content still high
 * Still high variation in GC content 
-* Most reads passed filter however
+* Most reads (>90%) passed filter however
