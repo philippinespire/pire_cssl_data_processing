@@ -3,7 +3,7 @@ Note there is an updated naming scheme that is formatted as Extraction_id-Librar
 
 ## 2nd sequencing run
 
-### Rename and back up
+### 0. Rename and back up
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw
@@ -22,7 +22,7 @@ Back up renamed files. I moved these to siganus first by mistake
 cp -r fq_raw /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
 ```
 
-### MultiQC
+### 1. MultiQC
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw" "fq.gz"
@@ -48,3 +48,13 @@ Summary:
 * Quality good
 * GC content all over the place, some look very bad / almost all contamination!
 * High duplication (~60-90%) and adapter content.
+
+### 2. First trim.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
+
+#sbatch runFASTP_1st_trim.sbatch <indir> <outdir>
+#do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+```
