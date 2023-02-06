@@ -48,3 +48,8 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 #do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
+
+Summary:
+* Duplication + adapter content still high
+* Still high variation in GC content 
+* Most reads passed filter however
