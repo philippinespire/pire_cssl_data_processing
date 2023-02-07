@@ -111,7 +111,7 @@ exit #to relinquish the interactive node
 
 Clumpify Successfully worked on all samples!
 
-Ran [runMULTIQC.sbatch] to get MultiQC output
+Ran `runMULTIQC.sbatch` to get MultiQC output
 
 ```
 # on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
