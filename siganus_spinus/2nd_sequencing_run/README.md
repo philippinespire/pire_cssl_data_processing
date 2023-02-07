@@ -93,7 +93,7 @@ Clumpify Successfully worked on all samples!
 
 Ran `runMULTIQC.sbatch` to get MultiQC output
 
-# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
+#on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
 
 #sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
