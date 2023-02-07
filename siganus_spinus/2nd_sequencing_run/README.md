@@ -103,6 +103,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1
 ```
 
 ### 3. Second trim. Execute runFASTP_2.sbatch
+
+```
 #on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
 
@@ -110,7 +112,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequ
 #do not use trailing / in paths
 # if lcwgs, run cssl script
 sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
-
+```
 Potential issues:
   * % duplication -
     * Alb: 17.90%
