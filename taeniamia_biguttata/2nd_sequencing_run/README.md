@@ -91,3 +91,27 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 #do not use trailing / in paths. Example:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
+
+## 3. Second trim. Execute `runFASTP_2.sbatch`
+
+```
+#on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+
+#sbatch runFASTP_2.sbatch <indir; clumpified files> <outdir>
+#do not use trailing / in paths
+# if lcwgs, run cssl script
+sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
+
+Potential issues:
+  * % duplication -
+    * Alb: 29.89%
+  * GC content -
+    * Alb: 42.41%
+  * passing filter -
+    * Alb: 98.80%
+  * % adapter -
+    * Alb: 1.33%
+  * number of reads -
+    * Alb: ~2.8-3 mil
