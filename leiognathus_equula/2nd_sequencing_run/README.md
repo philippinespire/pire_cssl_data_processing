@@ -110,3 +110,14 @@ exit #to relinquish the interactive node
 ```
 
 Clumpify Successfully worked on all samples!
+
+Ran [runMULTIQC.sbatch] to get MultiQC output
+
+```
+# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+
+#sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
+#do not use trailing / in paths. Example:
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
