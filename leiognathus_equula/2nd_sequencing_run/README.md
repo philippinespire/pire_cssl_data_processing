@@ -135,13 +135,13 @@ sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clm
 ```
 
 Potential issues:
-  *% duplication -
-    *Alb: 4.87%, Contemp: 8.30%
-  *GC content -
-    *Alb: 46.46%, Contemp: 44.78%
-  *passing filter -
-    *Alb: 99.60%, Contemp: 99.67%
-  *% adapter -
-    *Alb: 0.40%, Contemp: 0.57%
-  *number of reads -
-    *Alb: ~4 mil, Contemp: ~300k
+  * % duplication -
+    * Alb: 4.87%, Contemp: 8.30%
+  * GC content -
+    * Alb: 46.46%, Contemp: 44.78%
+  * passing filter -
+    * Alb: 99.60%, Contemp: 99.67%
+  * % adapter -
+    * Alb: 0.40%, Contemp: 0.57%
+  * number of reads -
+    * Alb: ~4 mil, Contemp: ~300k
