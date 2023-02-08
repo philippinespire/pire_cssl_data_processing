@@ -124,3 +124,38 @@ Potential issues:
     * Alb: 0.88%
   * number of reads -
     * Alb: ~500k with 040 sample going up to 2.8 mil and 005 going up to 3.1 mil
+
+### 4. Decontaminate `runFQSCRN_6.bash`
+
+```
+# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
+cd <yourPireDirPath>/pire_<ssl-or-cssl-or-lcwgs>_data_processing/<genus_species>
+
+#runFQSCRN_6.bash <indir; fp2 files> <outdir> <number of nodes running simultaneously>
+#do not use trailing / in paths
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
+Once done, confirm that all files were successfully completed.
+
+```
+# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
+cd <yourPireDirPath>/pire_<ssl-or-cssl-or-lcwgs>_data_processing/<genus_species>
+
+#FastQ Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l 86
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 86
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l 86
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l 86
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l 86
+
+#for each, you should have the same number as the number of input files (number of fq.gz files)
+
+#you should also check for errors in the *out files:
+#this will return any out files that had a problem
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+```
+Everything looks good, no errors/missing files.
