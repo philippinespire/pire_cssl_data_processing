@@ -98,7 +98,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 
 #sbatch runFASTP_2_cssl.sbatch <indir; clumpified files> <outdir>
 #do not use trailing / in paths
-sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+sbatch ../../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
 Potential issues:
@@ -120,7 +120,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 
 #runFQSCRN_6.bash <indir; fp2 files> <outdir> <number of nodes running simultaneously>
 #do not use trailing / in paths
-bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+bash ../../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ``` 
 Once done, confirm that all files were successfully completed.
 ```
@@ -139,3 +139,18 @@ grep 'error' slurm-fqscrn.*out
 grep 'No reads in' slurm-fqscrn.*out
 ```
 Everything looks good, no errors/missing files.
+
+Ran runMULTIQC.sbatch to get the MultiQC output.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+
+#sbatch runMULTIQC.sbatch <indir; fqscreen files> <report name>
+#do not use trailing / in paths
+sbatch ../../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+Potential issues:
+ * one hit, one genome, no ID - 
+  * Alb: ~89% 
+ * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
+  * Alb: ~11%
