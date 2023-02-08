@@ -114,23 +114,20 @@ Clumpify Successfully worked on all samples!
 Ran `runMULTIQC.sbatch` to get MultiQC output
 
 ```
-# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
 
 #sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
-#do not use trailing / in paths. Example:
+#do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
 ### 3. Second trim. Execute `runFASTP_2.sbatch`
 
 ```
-#on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
 
-#sbatch runFASTP_2.sbatch <indir; clumpified files> <outdir>
+#sbatch runFASTP_2_cssl.sbatch <indir; clumpified files> <outdir>
 #do not use trailing / in paths
-# if lcwgs, run cssl script
 sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
@@ -145,3 +142,37 @@ Potential issues:
     * Alb: 0.40%, Contemp: 0.57%
   * number of reads -
     * Alb: ~4 mil, Contemp: ~300k
+
+### 4. Decontaminate runFQSCRN_6.bash
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+
+#runFQSCRN_6.bash <indir; fp2 files> <outdir> <number of nodes running simultaneously>
+#do not use trailing / in paths
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
+One sample stalled and had to be rerun individually
+```
+bash ../../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.clmp.fp2_r1.fq.gz
+```
+The sample succesfully ran.
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+
+#FastQ Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l 104
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 104
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l 104
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l 104
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l 104
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+#for the individual job for Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.clmp.fp2_r1
+grep 'error' slurm-fqscrn.1241320.0*out
+ grep 'No reads in' slurm-fqscrn.1241320.0*out
+```
+Everything looks good, no errors/missing files.
