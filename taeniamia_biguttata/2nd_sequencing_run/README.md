@@ -152,5 +152,5 @@ sbatch ../../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn f
 Potential issues:
  * one hit, one genome, no ID - 
   * Alb: ~89% 
- * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 
+ * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) 
   * Alb: ~11%
