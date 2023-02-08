@@ -128,7 +128,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_
 
 #sbatch runFASTP_2_cssl.sbatch <indir; clumpified files> <outdir>
 #do not use trailing / in paths
-sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+sbatch ../../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
 Potential issues:
@@ -149,7 +149,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_
 
 #runFQSCRN_6.bash <indir; fp2 files> <outdir> <number of nodes running simultaneously>
 #do not use trailing / in paths
-bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+bash ../../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
 One sample stalled and had to be rerun individually
 ```
@@ -176,3 +176,18 @@ grep 'error' slurm-fqscrn.1241320.0*out
  grep 'No reads in' slurm-fqscrn.1241320.0*out
 ```
 Everything looks good, no errors/missing files.
+
+Ran `runMULTIQC.sbatch` to get the MultiQC output.
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
+
+#sbatch runMULTIQC.sbatch <indir; fqscreen files> <report name>
+#do not use trailing / in paths
+sbatch ../../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+Potential issues:
+* one hit, one genome, no ID - 
+ Alb: ~85%
+* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
+ Alb: ~15%
