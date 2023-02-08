@@ -84,23 +84,20 @@ Clumpify Successfully worked on all samples!
 Ran `runMULTIQC.sbatch` to get MultiQC output
 
 ```
-#on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 
 #sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
-#do not use trailing / in paths. Example:
+#do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
 ## 3. Second trim. Execute `runFASTP_2.sbatch`
 
 ```
-#on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 
-#sbatch runFASTP_2.sbatch <indir; clumpified files> <outdir>
+#sbatch runFASTP_2_cssl.sbatch <indir; clumpified files> <outdir>
 #do not use trailing / in paths
-# if lcwgs, run cssl script
 sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
@@ -119,7 +116,6 @@ Potential issues:
 ### 4. Decontaminate runFQSCRN_6.bash
 
 ```
-# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 
 #runFQSCRN_6.bash <indir; fp2 files> <outdir> <number of nodes running simultaneously>
@@ -128,7 +124,6 @@ bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp
 ``` 
 Once done, confirm that all files were successfully completed.
 ```
-# on wahab replace <yourPireDirPath> with /home/e1garcia/shotgun_PIRE
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 
 #FastQ Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
