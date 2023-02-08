@@ -154,3 +154,28 @@ Potential issues:
  Alb: ~89% 
  * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) 
  Alb: ~11%
+
+ ### 5. Execute `runREPAIR.sbatch`
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+
+#runREPAIR.sbatch <indir; fqscreen files> <outdir> <threads>
+sbatch ../../../pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 40
+```
+
+Ran `Multi_FASTQC.sh` separately.
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+
+#sbatch Multi_FASTQC.sh "<indir>" "<output report name>" "<file extension>"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+```
+
+Potential issues:
+* % duplication -
+Alb: 22.62%
+* GC content -
+Alb: 41%
+* number of reads -
+Alb: ~800k
