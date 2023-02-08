@@ -150,7 +150,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 sbatch ../../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
 ```
 Potential issues:
-one hit, one genome, no ID - 
-Alb: ~89% 
-no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) 
-Alb: ~11%
+ * one hit, one genome, no ID -
+ Alb: ~89% 
+ * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) 
+ Alb: ~11%
