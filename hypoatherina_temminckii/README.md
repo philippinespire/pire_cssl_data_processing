@@ -487,3 +487,120 @@ Hte-ATic_063-Ex1-cssl	81.5%	50.5%	97.8%	49.1%
 ## 9c. Generate metadata on deduplicated FASTQ files.
 
 `runMULTIQC.sbatch` executed. completed.
+
+<details><summary>Expand for MultiQC Output.</summary>
+
+```bash
+
+Sample Name	% Dups	% GC	Length	M Seqs
+Hte-ATic_001-Ex1-cssl.clmp.r1	46.8%	52%	120 bp	0.1
+Hte-ATic_001-Ex1-cssl.clmp.r2	45.5%	53%	121 bp	0.1
+Hte-ATic_002-Ex1-cssl.clmp.r1	61.8%	56%	139 bp	0.7
+Hte-ATic_002-Ex1-cssl.clmp.r2	55.5%	56%	140 bp	0.7
+Hte-ATic_003-Ex1-cssl.clmp.r1	63.8%	50%	136 bp	1.2
+Hte-ATic_003-Ex1-cssl.clmp.r2	55.7%	50%	136 bp	1.2
+Hte-ATic_004-Ex1-cssl.clmp.r1	64.7%	49%	137 bp	1.5
+Hte-ATic_004-Ex1-cssl.clmp.r2	56.5%	49%	137 bp	1.5
+Hte-ATic_005-Ex1-cssl.clmp.r1	54.1%	47%	131 bp	1.2
+Hte-ATic_005-Ex1-cssl.clmp.r2	51.2%	47%	132 bp	1.2
+Hte-ATic_006-Ex1-cssl.clmp.r1	64.1%	47%	137 bp	1.7
+Hte-ATic_006-Ex1-cssl.clmp.r2	53.3%	47%	138 bp	1.7
+Hte-ATic_007-Ex1-cssl.clmp.r1	54.4%	54%	134 bp	0.9
+Hte-ATic_007-Ex1-cssl.clmp.r2	50.8%	54%	134 bp	0.9
+Hte-ATic_008-Ex1-cssl.clmp.r1	66.1%	55%	132 bp	0.3
+Hte-ATic_008-Ex1-cssl.clmp.r2	56.9%	55%	132 bp	0.3
+Hte-ATic_010-Ex1-cssl.clmp.r1	63.3%	55%	134 bp	0.4
+Hte-ATic_010-Ex1-cssl.clmp.r2	53.1%	55%	134 bp	0.4
+Hte-ATic_011-Ex1-cssl.clmp.r1	54.0%	46%	123 bp	0.5
+Hte-ATic_011-Ex1-cssl.clmp.r2	49.7%	46%	123 bp	0.5
+Hte-ATic_012-Ex1-cssl.clmp.r1	62.4%	54%	134 bp	0.6
+Hte-ATic_012-Ex1-cssl.clmp.r2	52.9%	54%	134 bp	0.6
+Hte-ATic_013-Ex1-cssl.clmp.r1	60.6%	50%	137 bp	1.3
+Hte-ATic_013-Ex1-cssl.clmp.r2	53.7%	50%	137 bp	1.3
+Hte-ATic_014-Ex1-cssl.clmp.r1	61.6%	55%	136 bp	0.5
+Hte-ATic_014-Ex1-cssl.clmp.r2	55.5%	56%	136 bp	0.5
+Hte-ATic_015-Ex1-cssl.clmp.r1	59.7%	49%	130 bp	1.1
+Hte-ATic_015-Ex1-cssl.clmp.r2	53.3%	49%	130 bp	1.1
+Hte-ATic_017-Ex1-cssl.clmp.r1	52.8%	46%	127 bp	0.6
+Hte-ATic_017-Ex1-cssl.clmp.r2	49.3%	46%	127 bp	0.6
+Hte-ATic_019-Ex1-cssl.clmp.r1	60.1%	54%	134 bp	0.8
+Hte-ATic_019-Ex1-cssl.clmp.r2	53.9%	54%	135 bp	0.8
+Hte-ATic_020-Ex1-cssl.clmp.r1	55.4%	53%	132 bp	1.0
+Hte-ATic_020-Ex1-cssl.clmp.r2	52.1%	53%	132 bp	1.0
+Hte-ATic_021-Ex1-cssl.clmp.r1	46.4%	44%	119 bp	1.0
+Hte-ATic_021-Ex1-cssl.clmp.r2	47.6%	45%	120 bp	1.0
+Hte-ATic_022-Ex1-cssl.clmp.r1	63.6%	52%	133 bp	0.9
+Hte-ATic_022-Ex1-cssl.clmp.r2	53.1%	52%	133 bp	0.9
+Hte-ATic_023-Ex1-cssl.clmp.r1	62.3%	52%	135 bp	0.8
+Hte-ATic_023-Ex1-cssl.clmp.r2	53.3%	52%	135 bp	0.8
+Hte-ATic_024-Ex1-cssl.clmp.r1	57.4%	51%	129 bp	0.7
+Hte-ATic_024-Ex1-cssl.clmp.r2	51.6%	51%	130 bp	0.7
+Hte-ATic_025-Ex1-cssl.clmp.r1	57.9%	53%	130 bp	0.7
+Hte-ATic_025-Ex1-cssl.clmp.r2	54.3%	53%	130 bp	0.7
+Hte-ATic_026-Ex1-cssl.clmp.r1	47.2%	44%	135 bp	13.0
+Hte-ATic_026-Ex1-cssl.clmp.r2	47.1%	44%	135 bp	13.0
+Hte-ATic_027-Ex1-cssl.clmp.r1	51.8%	44%	126 bp	0.8
+Hte-ATic_027-Ex1-cssl.clmp.r2	50.2%	45%	126 bp	0.8
+Hte-ATic_029-Ex1-cssl.clmp.r1	66.2%	54%	139 bp	1.4
+Hte-ATic_029-Ex1-cssl.clmp.r2	57.2%	54%	139 bp	1.4
+Hte-ATic_030-Ex1-cssl.clmp.r1	40.9%	48%	129 bp	5.7
+Hte-ATic_030-Ex1-cssl.clmp.r2	41.0%	48%	130 bp	5.7
+Hte-ATic_031-Ex1-cssl.clmp.r1	66.5%	49%	136 bp	1.1
+Hte-ATic_031-Ex1-cssl.clmp.r2	57.8%	49%	136 bp	1.1
+Hte-ATic_032-Ex1-cssl.clmp.r1	63.4%	51%	135 bp	1.1
+Hte-ATic_032-Ex1-cssl.clmp.r2	56.2%	51%	135 bp	1.1
+Hte-ATic_033-Ex1-cssl.clmp.r1	51.9%	54%	126 bp	1.0
+Hte-ATic_033-Ex1-cssl.clmp.r2	51.6%	54%	126 bp	1.0
+Hte-ATic_034-Ex1-cssl.clmp.r1	64.2%	51%	130 bp	0.6
+Hte-ATic_034-Ex1-cssl.clmp.r2	56.0%	51%	131 bp	0.6
+Hte-ATic_035-Ex1-cssl.clmp.r1	67.3%	45%	130 bp	1.2
+Hte-ATic_035-Ex1-cssl.clmp.r2	60.3%	45%	130 bp	1.2
+Hte-ATic_036-Ex1-cssl.clmp.r1	53.6%	50%	128 bp	1.2
+Hte-ATic_036-Ex1-cssl.clmp.r2	49.6%	50%	128 bp	1.2
+Hte-ATic_037-Ex1-cssl.clmp.r1	58.7%	51%	129 bp	0.7
+Hte-ATic_037-Ex1-cssl.clmp.r2	53.8%	51%	129 bp	0.7
+Hte-ATic_038-Ex1-cssl.clmp.r1	48.2%	45%	121 bp	0.7
+Hte-ATic_038-Ex1-cssl.clmp.r2	47.9%	45%	121 bp	0.7
+Hte-ATic_039-Ex1-cssl.clmp.r1	60.6%	58%	138 bp	1.7
+Hte-ATic_039-Ex1-cssl.clmp.r2	53.0%	58%	138 bp	1.7
+Hte-ATic_041-Ex1-cssl.clmp.r1	45.5%	41%	127 bp	8.0
+Hte-ATic_041-Ex1-cssl.clmp.r2	48.4%	41%	127 bp	8.0
+Hte-ATic_044-Ex1-cssl.clmp.r1	55.9%	51%	131 bp	0.9
+Hte-ATic_044-Ex1-cssl.clmp.r2	51.1%	51%	131 bp	0.9
+Hte-ATic_045-Ex1-cssl.clmp.r1	59.0%	55%	136 bp	1.0
+Hte-ATic_045-Ex1-cssl.clmp.r2	54.2%	55%	136 bp	1.0
+Hte-ATic_046-Ex1-cssl.clmp.r1	62.0%	50%	132 bp	0.9
+Hte-ATic_046-Ex1-cssl.clmp.r2	52.3%	50%	132 bp	0.9
+Hte-ATic_047-Ex1-cssl.clmp.r1	55.8%	46%	123 bp	0.6
+Hte-ATic_047-Ex1-cssl.clmp.r2	52.3%	46%	124 bp	0.6
+Hte-ATic_048-Ex1-cssl.clmp.r1	55.6%	49%	127 bp	0.7
+Hte-ATic_048-Ex1-cssl.clmp.r2	52.3%	49%	127 bp	0.7
+Hte-ATic_049-Ex1-cssl.clmp.r1	56.9%	44%	124 bp	1.1
+Hte-ATic_049-Ex1-cssl.clmp.r2	53.6%	44%	125 bp	1.1
+Hte-ATic_050-Ex1-cssl.clmp.r1	45.8%	42%	117 bp	1.3
+Hte-ATic_050-Ex1-cssl.clmp.r2	47.8%	42%	117 bp	1.3
+Hte-ATic_051-Ex1-cssl.clmp.r1	41.1%	42%	121 bp	5.9
+Hte-ATic_051-Ex1-cssl.clmp.r2	42.5%	42%	121 bp	5.9
+Hte-ATic_054-Ex1-cssl.clmp.r1	59.2%	56%	137 bp	0.9
+Hte-ATic_054-Ex1-cssl.clmp.r2	52.1%	56%	137 bp	0.9
+Hte-ATic_055-Ex1-cssl.clmp.r1	54.8%	52%	132 bp	1.2
+Hte-ATic_055-Ex1-cssl.clmp.r2	51.3%	52%	132 bp	1.2
+Hte-ATic_056-Ex1-cssl.clmp.r1	54.6%	51%	132 bp	1.1
+Hte-ATic_056-Ex1-cssl.clmp.r2	51.7%	51%	132 bp	1.1
+Hte-ATic_057-Ex1-cssl.clmp.r1	64.2%	55%	134 bp	1.2
+Hte-ATic_057-Ex1-cssl.clmp.r2	52.9%	55%	135 bp	1.2
+Hte-ATic_058-Ex1-cssl.clmp.r1	59.2%	50%	128 bp	0.9
+Hte-ATic_058-Ex1-cssl.clmp.r2	52.3%	50%	129 bp	0.9
+Hte-ATic_059-Ex1-cssl.clmp.r1	57.8%	48%	130 bp	1.0
+Hte-ATic_059-Ex1-cssl.clmp.r2	51.2%	48%	131 bp	1.0
+Hte-ATic_060-Ex1-cssl.clmp.r1	57.0%	49%	131 bp	1.1
+Hte-ATic_060-Ex1-cssl.clmp.r2	53.9%	49%	131 bp	1.1
+Hte-ATic_061-Ex1-cssl.clmp.r1	54.9%	52%	127 bp	1.2
+Hte-ATic_061-Ex1-cssl.clmp.r2	52.8%	52%	127 bp	1.2
+Hte-ATic_062-Ex1-cssl.clmp.r1	61.3%	51%	130 bp	0.8
+Hte-ATic_062-Ex1-cssl.clmp.r2	55.6%	52%	131 bp	0.8
+Hte-ATic_063-Ex1-cssl.clmp.r1	64.2%	48%	133 bp	0.9
+Hte-ATic_063-Ex1-cssl.clmp.r2	56.1%	48%	133 bp	0.9
+
+  </p>
+  </details>
