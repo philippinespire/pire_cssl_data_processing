@@ -1,0 +1,2676 @@
+
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2’: File exists
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2/failed’: File exists
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 62193
+total bases: 7491740
+Q20 bases: 6801156(90.7821%)
+Q30 bases: 6132639(81.8587%)
+
+Read2 before filtering:
+total reads: 62193
+total bases: 7506269
+Q20 bases: 6837474(91.0902%)
+Q30 bases: 6175487(82.2711%)
+
+Read1 after filtering:
+total reads: 60191
+total bases: 6939650
+Q20 bases: 6478306(93.3521%)
+Q30 bases: 5900052(85.0194%)
+
+Read2 aftering filtering:
+total reads: 60191
+total bases: 6972642
+Q20 bases: 6522141(93.539%)
+Q30 bases: 5947897(85.3033%)
+
+Filtering result:
+reads passed filter: 120382
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 4004
+reads with adapter trimmed: 3312
+bases trimmed due to adapters: 19281
+reads corrected by overlap analysis: 35592
+bases corrected by overlap analysis: 70888
+
+Duplication rate: 22.8539%
+
+Insert size peak (evaluated by paired-end reads): 123
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_001-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_001-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_001-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_001-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_001-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_001-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 6 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 325995
+total bases: 43023770
+Q20 bases: 38674725(89.8915%)
+Q30 bases: 34682471(80.6123%)
+
+Read2 before filtering:
+total reads: 325995
+total bases: 43077307
+Q20 bases: 38872376(90.2386%)
+Q30 bases: 34879296(80.9691%)
+
+Read1 after filtering:
+total reads: 314793
+total bases: 39065510
+Q20 bases: 36421299(93.2313%)
+Q30 bases: 33084236(84.6891%)
+
+Read2 aftering filtering:
+total reads: 314793
+total bases: 39680270
+Q20 bases: 36908782(93.0155%)
+Q30 bases: 33474106(84.3596%)
+
+Filtering result:
+reads passed filter: 629586
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 22404
+reads with adapter trimmed: 12596
+bases trimmed due to adapters: 93920
+reads corrected by overlap analysis: 208063
+bases corrected by overlap analysis: 455227
+
+Duplication rate: 28.6535%
+
+Insert size peak (evaluated by paired-end reads): 128
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_008-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_008-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_008-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_008-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_008-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_008-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 26 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 518707
+total bases: 63954463
+Q20 bases: 57814783(90.3999%)
+Q30 bases: 52037727(81.3668%)
+
+Read2 before filtering:
+total reads: 518707
+total bases: 64115398
+Q20 bases: 57377563(89.4911%)
+Q30 bases: 51051700(79.6247%)
+
+Read1 after filtering:
+total reads: 500104
+total bases: 58382214
+Q20 bases: 54559594(93.4524%)
+Q30 bases: 49666409(85.0711%)
+
+Read2 aftering filtering:
+total reads: 500104
+total bases: 58586049
+Q20 bases: 54222694(92.5522%)
+Q30 bases: 48809883(83.3132%)
+
+Filtering result:
+reads passed filter: 1000208
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 37206
+reads with adapter trimmed: 24922
+bases trimmed due to adapters: 147475
+reads corrected by overlap analysis: 309701
+bases corrected by overlap analysis: 660242
+
+Duplication rate: 27.6092%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_011-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_011-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_011-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_011-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_011-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_011-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 34 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 659736
+total bases: 92078621
+Q20 bases: 82862575(89.9911%)
+Q30 bases: 73980998(80.3455%)
+
+Read2 before filtering:
+total reads: 659736
+total bases: 92175423
+Q20 bases: 82913549(89.9519%)
+Q30 bases: 73980835(80.2609%)
+
+Read1 after filtering:
+total reads: 634818
+total bases: 83662192
+Q20 bases: 77688424(92.8597%)
+Q30 bases: 70198244(83.9068%)
+
+Read2 aftering filtering:
+total reads: 634818
+total bases: 84728399
+Q20 bases: 78300727(92.4138%)
+Q30 bases: 70564562(83.2832%)
+
+Filtering result:
+reads passed filter: 1269636
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 49836
+reads with adapter trimmed: 19720
+bases trimmed due to adapters: 131832
+reads corrected by overlap analysis: 333429
+bases corrected by overlap analysis: 691977
+
+Duplication rate: 27.0648%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_002-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_002-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_002-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_002-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_002-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_002-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 37 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 592687
+total bases: 79475490
+Q20 bases: 72066430(90.6776%)
+Q30 bases: 64654979(81.3521%)
+
+Read2 before filtering:
+total reads: 592687
+total bases: 79684606
+Q20 bases: 71086458(89.2098%)
+Q30 bases: 62878299(78.909%)
+
+Read1 after filtering:
+total reads: 569618
+total bases: 72737100
+Q20 bases: 67894197(93.3419%)
+Q30 bases: 61573056(84.6515%)
+
+Read2 aftering filtering:
+total reads: 569618
+total bases: 72692956
+Q20 bases: 66854266(91.968%)
+Q30 bases: 59794784(82.2566%)
+
+Filtering result:
+reads passed filter: 1139236
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 46138
+reads with adapter trimmed: 18816
+bases trimmed due to adapters: 115431
+reads corrected by overlap analysis: 299858
+bases corrected by overlap analysis: 628620
+
+Duplication rate: 25.4503%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_012-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_012-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_012-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_012-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_012-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_012-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 38 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 440048
+total bases: 58915021
+Q20 bases: 53588688(90.9593%)
+Q30 bases: 48293295(81.9711%)
+
+Read2 before filtering:
+total reads: 440048
+total bases: 58956296
+Q20 bases: 52636004(89.2797%)
+Q30 bases: 46700371(79.2118%)
+
+Read1 after filtering:
+total reads: 424472
+total bases: 54061989
+Q20 bases: 50620235(93.6337%)
+Q30 bases: 46106215(85.284%)
+
+Read2 aftering filtering:
+total reads: 424472
+total bases: 53978193
+Q20 bases: 49730486(92.1307%)
+Q30 bases: 44621852(82.6664%)
+
+Filtering result:
+reads passed filter: 848944
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 31152
+reads with adapter trimmed: 13386
+bases trimmed due to adapters: 88977
+reads corrected by overlap analysis: 226106
+bases corrected by overlap analysis: 488037
+
+Duplication rate: 23.7766%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_010-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_010-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_010-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_010-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_010-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_010-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 38 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 487584
+total bases: 66499294
+Q20 bases: 60087794(90.3585%)
+Q30 bases: 53855255(80.9862%)
+
+Read2 before filtering:
+total reads: 487584
+total bases: 66569896
+Q20 bases: 59837731(89.8871%)
+Q30 bases: 53438293(80.274%)
+
+Read1 after filtering:
+total reads: 470200
+total bases: 60859504
+Q20 bases: 56693717(93.1551%)
+Q30 bases: 51391016(84.4421%)
+
+Read2 aftering filtering:
+total reads: 470200
+total bases: 61286082
+Q20 bases: 56682553(92.4885%)
+Q30 bases: 51145663(83.454%)
+
+Filtering result:
+reads passed filter: 940400
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 34768
+reads with adapter trimmed: 15786
+bases trimmed due to adapters: 132162
+reads corrected by overlap analysis: 253534
+bases corrected by overlap analysis: 541695
+
+Duplication rate: 27.1197%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_014-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_014-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_014-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_014-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_014-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_014-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 38 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 642548
+total bases: 81369501
+Q20 bases: 73555545(90.3969%)
+Q30 bases: 66178975(81.3314%)
+
+Read2 before filtering:
+total reads: 642548
+total bases: 81535275
+Q20 bases: 73325915(89.9315%)
+Q30 bases: 65531006(80.3714%)
+
+Read1 after filtering:
+total reads: 619984
+total bases: 74335188
+Q20 bases: 69449174(93.4271%)
+Q30 bases: 63211779(85.0361%)
+
+Read2 aftering filtering:
+total reads: 619984
+total bases: 74781806
+Q20 bases: 69445805(92.8646%)
+Q30 bases: 62773518(83.9422%)
+
+Filtering result:
+reads passed filter: 1239968
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 45128
+reads with adapter trimmed: 30048
+bases trimmed due to adapters: 170155
+reads corrected by overlap analysis: 394394
+bases corrected by overlap analysis: 855784
+
+Duplication rate: 26.5527%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_017-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_017-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_017-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_017-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_017-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_017-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 41 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 773767
+total bases: 104112260
+Q20 bases: 93893007(90.1844%)
+Q30 bases: 84160372(80.8362%)
+
+Read2 before filtering:
+total reads: 773767
+total bases: 104339244
+Q20 bases: 93438546(89.5526%)
+Q30 bases: 83236964(79.7753%)
+
+Read1 after filtering:
+total reads: 743335
+total bases: 94825009
+Q20 bases: 88262931(93.0798%)
+Q30 bases: 80026040(84.3934%)
+
+Read2 aftering filtering:
+total reads: 743335
+total bases: 95481617
+Q20 bases: 88123152(92.2933%)
+Q30 bases: 79360637(83.1161%)
+
+Filtering result:
+reads passed filter: 1486670
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 60864
+reads with adapter trimmed: 27264
+bases trimmed due to adapters: 214157
+reads corrected by overlap analysis: 459093
+bases corrected by overlap analysis: 1002895
+
+Duplication rate: 29.7673%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_019-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_019-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_019-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_019-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_019-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_019-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 43 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 678607
+total bases: 87919115
+Q20 bases: 79160712(90.0381%)
+Q30 bases: 70858302(80.5949%)
+
+Read2 before filtering:
+total reads: 678607
+total bases: 88098763
+Q20 bases: 79212070(89.9128%)
+Q30 bases: 70652401(80.1968%)
+
+Read1 after filtering:
+total reads: 652240
+total bases: 80021421
+Q20 bases: 74448588(93.0358%)
+Q30 bases: 67428173(84.2627%)
+
+Read2 aftering filtering:
+total reads: 652240
+total bases: 80958690
+Q20 bases: 74901753(92.5185%)
+Q30 bases: 67493046(83.3673%)
+
+Filtering result:
+reads passed filter: 1304480
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 52734
+reads with adapter trimmed: 28688
+bases trimmed due to adapters: 160362
+reads corrected by overlap analysis: 422665
+bases corrected by overlap analysis: 881173
+
+Duplication rate: 26.7701%
+
+Insert size peak (evaluated by paired-end reads): 105
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_024-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_024-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_024-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_024-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_024-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_024-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 37 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 949938
+total bases: 127256865
+Q20 bases: 114533780(90.002%)
+Q30 bases: 102492544(80.5399%)
+
+Read2 before filtering:
+total reads: 949938
+total bases: 127471519
+Q20 bases: 114884905(90.1259%)
+Q30 bases: 102811124(80.6542%)
+
+Read1 after filtering:
+total reads: 913913
+total bases: 115940912
+Q20 bases: 107743303(92.9295%)
+Q30 bases: 97549611(84.1374%)
+
+Read2 aftering filtering:
+total reads: 913913
+total bases: 117392335
+Q20 bases: 108705430(92.6001%)
+Q30 bases: 98263786(83.7055%)
+
+Filtering result:
+reads passed filter: 1827826
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 72050
+reads with adapter trimmed: 37046
+bases trimmed due to adapters: 248905
+reads corrected by overlap analysis: 529482
+bases corrected by overlap analysis: 1116117
+
+Duplication rate: 27.6756%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_007-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_007-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_007-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_007-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_007-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_007-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 44 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 976017
+total bases: 116542587
+Q20 bases: 104916083(90.0238%)
+Q30 bases: 94276033(80.8941%)
+
+Read2 before filtering:
+total reads: 976017
+total bases: 116976355
+Q20 bases: 105530183(90.215%)
+Q30 bases: 94642859(80.9077%)
+
+Read1 after filtering:
+total reads: 943943
+total bases: 106538231
+Q20 bases: 99307195(93.2127%)
+Q30 bases: 90275727(84.7355%)
+
+Read2 aftering filtering:
+total reads: 943943
+total bases: 107520411
+Q20 bases: 100165112(93.1592%)
+Q30 bases: 90822128(84.4697%)
+
+Filtering result:
+reads passed filter: 1887886
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 64148
+reads with adapter trimmed: 57026
+bases trimmed due to adapters: 299376
+reads corrected by overlap analysis: 643048
+bases corrected by overlap analysis: 1364342
+
+Duplication rate: 27.9583%
+
+Insert size peak (evaluated by paired-end reads): 106
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_021-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_021-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_021-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_021-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_021-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_021-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 45 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 915784
+total bases: 121734199
+Q20 bases: 110158191(90.4908%)
+Q30 bases: 98933496(81.2701%)
+
+Read2 before filtering:
+total reads: 915784
+total bases: 122081063
+Q20 bases: 108310344(88.72%)
+Q30 bases: 95611114(78.3177%)
+
+Read1 after filtering:
+total reads: 881663
+total bases: 110828529
+Q20 bases: 103584598(93.4638%)
+Q30 bases: 94123745(84.9274%)
+
+Read2 aftering filtering:
+total reads: 881663
+total bases: 110941439
+Q20 bases: 101861922(91.8159%)
+Q30 bases: 91001082(82.0262%)
+
+Filtering result:
+reads passed filter: 1763326
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 68242
+reads with adapter trimmed: 30086
+bases trimmed due to adapters: 187211
+reads corrected by overlap analysis: 507980
+bases corrected by overlap analysis: 1107859
+
+Duplication rate: 28.7396%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_022-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_022-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_022-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_022-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_022-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_022-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 46 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 989625
+total bases: 130361778
+Q20 bases: 117110594(89.8351%)
+Q30 bases: 104781902(80.3778%)
+
+Read2 before filtering:
+total reads: 989625
+total bases: 130577582
+Q20 bases: 117256351(89.7982%)
+Q30 bases: 104782780(80.2456%)
+
+Read1 after filtering:
+total reads: 949835
+total bases: 118012606
+Q20 bases: 109731816(92.9831%)
+Q30 bases: 99411901(84.2384%)
+
+Read2 aftering filtering:
+total reads: 949835
+total bases: 119157347
+Q20 bases: 110420371(92.6677%)
+Q30 bases: 99819063(83.7708%)
+
+Filtering result:
+reads passed filter: 1899670
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 79580
+reads with adapter trimmed: 37892
+bases trimmed due to adapters: 274699
+reads corrected by overlap analysis: 594770
+bases corrected by overlap analysis: 1269315
+
+Duplication rate: 29.4516%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_020-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_020-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_020-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_020-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_020-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_020-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 46 seconds
+Detecting adapter sequence for read1...
+GATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGAT
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 848618
+total bases: 114478754
+Q20 bases: 103643365(90.535%)
+Q30 bases: 92894011(81.1452%)
+
+Read2 before filtering:
+total reads: 848618
+total bases: 114670296
+Q20 bases: 102101554(89.0392%)
+Q30 bases: 90242244(78.6971%)
+
+Read1 after filtering:
+total reads: 814164
+total bases: 104437114
+Q20 bases: 97317240(93.1826%)
+Q30 bases: 88159947(84.4144%)
+
+Read2 aftering filtering:
+total reads: 814164
+total bases: 104478254
+Q20 bases: 95970679(91.8571%)
+Q30 bases: 85793612(82.1162%)
+
+Filtering result:
+reads passed filter: 1628328
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 68908
+reads with adapter trimmed: 31267
+bases trimmed due to adapters: 256963
+reads corrected by overlap analysis: 452768
+bases corrected by overlap analysis: 959222
+
+Duplication rate: 27.5881%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_023-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_023-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_023-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_023-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_023-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_023-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 46 seconds
+Detecting adapter sequence for read1...
+GATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGAT
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1070922
+total bases: 138878517
+Q20 bases: 125194518(90.1468%)
+Q30 bases: 112188512(80.7818%)
+
+Read2 before filtering:
+total reads: 1070922
+total bases: 139421976
+Q20 bases: 124190085(89.075%)
+Q30 bases: 110273093(79.093%)
+
+Read1 after filtering:
+total reads: 1030219
+total bases: 126300841
+Q20 bases: 117767706(93.2438%)
+Q30 bases: 106771620(84.5375%)
+
+Read2 aftering filtering:
+total reads: 1030219
+total bases: 126646873
+Q20 bases: 116851010(92.2652%)
+Q30 bases: 105032331(82.9332%)
+
+Filtering result:
+reads passed filter: 2060438
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 81406
+reads with adapter trimmed: 47007
+bases trimmed due to adapters: 479115
+reads corrected by overlap analysis: 664325
+bases corrected by overlap analysis: 1480044
+
+Duplication rate: 29.8623%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_015-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_015-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_015-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_015-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_015-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_015-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 46 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1205471
+total bases: 163911601
+Q20 bases: 147616065(90.0583%)
+Q30 bases: 132168123(80.6338%)
+
+Read2 before filtering:
+total reads: 1205471
+total bases: 164467592
+Q20 bases: 145722330(88.6025%)
+Q30 bases: 128590786(78.1861%)
+
+Read1 after filtering:
+total reads: 1157045
+total bases: 148077841
+Q20 bases: 138011790(93.2022%)
+Q30 bases: 125064168(84.4584%)
+
+Read2 aftering filtering:
+total reads: 1157045
+total bases: 148299478
+Q20 bases: 136276963(91.8931%)
+Q30 bases: 121857936(82.1702%)
+
+Filtering result:
+reads passed filter: 2314090
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 96852
+reads with adapter trimmed: 38924
+bases trimmed due to adapters: 365526
+reads corrected by overlap analysis: 705711
+bases corrected by overlap analysis: 1531514
+
+Duplication rate: 28.8284%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_003-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_003-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_003-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_003-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_003-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_003-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 47 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1220086
+total bases: 160367233
+Q20 bases: 144397175(90.0416%)
+Q30 bases: 129341097(80.6531%)
+
+Read2 before filtering:
+total reads: 1220086
+total bases: 160780417
+Q20 bases: 144082983(89.6148%)
+Q30 bases: 128358124(79.8344%)
+
+Read1 after filtering:
+total reads: 1174407
+total bases: 145751566
+Q20 bases: 135757340(93.143%)
+Q30 bases: 123062689(84.4332%)
+
+Read2 aftering filtering:
+total reads: 1174407
+total bases: 146952822
+Q20 bases: 135931230(92.4999%)
+Q30 bases: 122466771(83.3375%)
+
+Filtering result:
+reads passed filter: 2348814
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 91358
+reads with adapter trimmed: 47864
+bases trimmed due to adapters: 319807
+reads corrected by overlap analysis: 711235
+bases corrected by overlap analysis: 1580114
+
+Duplication rate: 28.6671%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_005-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_005-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_005-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_005-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_005-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_005-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1511710
+total bases: 207230577
+Q20 bases: 186450517(89.9725%)
+Q30 bases: 166831701(80.5053%)
+
+Read2 before filtering:
+total reads: 1511710
+total bases: 207907972
+Q20 bases: 182887371(87.9655%)
+Q30 bases: 160834014(77.3583%)
+
+Read1 after filtering:
+total reads: 1448714
+total bases: 186633625
+Q20 bases: 173893934(93.174%)
+Q30 bases: 157529746(84.4059%)
+
+Read2 aftering filtering:
+total reads: 1448714
+total bases: 185122770
+Q20 bases: 169803315(91.7247%)
+Q30 bases: 151601294(81.8923%)
+
+Filtering result:
+reads passed filter: 2897428
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 125992
+reads with adapter trimmed: 46926
+bases trimmed due to adapters: 598468
+reads corrected by overlap analysis: 906845
+bases corrected by overlap analysis: 1988095
+
+Duplication rate: 30.661%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_004-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_004-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_004-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_004-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_004-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_004-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 49 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1297002
+total bases: 177755336
+Q20 bases: 159939330(89.9772%)
+Q30 bases: 142920849(80.4031%)
+
+Read2 before filtering:
+total reads: 1297002
+total bases: 178059181
+Q20 bases: 158535764(89.0354%)
+Q30 bases: 140295415(78.7915%)
+
+Read1 after filtering:
+total reads: 1247108
+total bases: 160885142
+Q20 bases: 149744799(93.0756%)
+Q30 bases: 135460200(84.1968%)
+
+Read2 aftering filtering:
+total reads: 1247108
+total bases: 161724929
+Q20 bases: 148792393(92.0034%)
+Q30 bases: 133261556(82.4001%)
+
+Filtering result:
+reads passed filter: 2494216
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 99788
+reads with adapter trimmed: 39250
+bases trimmed due to adapters: 308103
+reads corrected by overlap analysis: 665613
+bases corrected by overlap analysis: 1418264
+
+Duplication rate: 30.7723%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_013-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_013-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_013-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_013-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_013-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_013-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 50 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1681078
+total bases: 230807454
+Q20 bases: 208588176(90.3732%)
+Q30 bases: 187350747(81.1719%)
+
+Read2 before filtering:
+total reads: 1681078
+total bases: 231526621
+Q20 bases: 202608540(87.5098%)
+Q30 bases: 177290803(76.5747%)
+
+Read1 after filtering:
+total reads: 1604631
+total bases: 207415785
+Q20 bases: 193937819(93.502%)
+Q30 bases: 176315667(85.0059%)
+
+Read2 aftering filtering:
+total reads: 1604631
+total bases: 204908564
+Q20 bases: 187121060(91.3193%)
+Q30 bases: 166338623(81.177%)
+
+Filtering result:
+reads passed filter: 3209262
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 152894
+reads with adapter trimmed: 46954
+bases trimmed due to adapters: 546916
+reads corrected by overlap analysis: 924805
+bases corrected by overlap analysis: 2052013
+
+Duplication rate: 30.865%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_006-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_006-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_006-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_006-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_006-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_006-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 51 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 719654
+total bases: 93379851
+Q20 bases: 83969463(89.9225%)
+Q30 bases: 75161725(80.4903%)
+
+Read2 before filtering:
+total reads: 719654
+total bases: 93735752
+Q20 bases: 84306942(89.9411%)
+Q30 bases: 75360299(80.3965%)
+
+Read1 after filtering:
+total reads: 693761
+total bases: 84963313
+Q20 bases: 79050281(93.0405%)
+Q30 bases: 71616896(84.2916%)
+
+Read2 aftering filtering:
+total reads: 693761
+total bases: 86193171
+Q20 bases: 79904455(92.7039%)
+Q30 bases: 72201236(83.7668%)
+
+Filtering result:
+reads passed filter: 1387522
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 51786
+reads with adapter trimmed: 27076
+bases trimmed due to adapters: 170788
+reads corrected by overlap analysis: 434565
+bases corrected by overlap analysis: 963498
+
+Duplication rate: 28.283%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_025-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_025-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_025-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_025-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_025-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_025-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 36 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 613610
+total bases: 80058149
+Q20 bases: 72281501(90.2863%)
+Q30 bases: 64984824(81.172%)
+
+Read2 before filtering:
+total reads: 613610
+total bases: 80228917
+Q20 bases: 71332736(88.9115%)
+Q30 bases: 63287458(78.8836%)
+
+Read1 after filtering:
+total reads: 591526
+total bases: 72876368
+Q20 bases: 68142468(93.5042%)
+Q30 bases: 62001038(85.077%)
+
+Read2 aftering filtering:
+total reads: 591526
+total bases: 73062928
+Q20 bases: 67342967(92.1712%)
+Q30 bases: 60503947(82.8107%)
+
+Filtering result:
+reads passed filter: 1183052
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 44168
+reads with adapter trimmed: 22252
+bases trimmed due to adapters: 164391
+reads corrected by overlap analysis: 402545
+bases corrected by overlap analysis: 917319
+
+Duplication rate: 27.7196%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_034-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_034-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_034-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_034-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_034-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_034-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 38 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 710597
+total bases: 85891045
+Q20 bases: 77689198(90.4509%)
+Q30 bases: 69948311(81.4384%)
+
+Read2 before filtering:
+total reads: 710597
+total bases: 86140522
+Q20 bases: 77710223(90.2133%)
+Q30 bases: 69710473(80.9265%)
+
+Read1 after filtering:
+total reads: 687362
+total bases: 78775102
+Q20 bases: 73635427(93.4755%)
+Q30 bases: 67048988(85.1144%)
+
+Read2 aftering filtering:
+total reads: 687362
+total bases: 79127506
+Q20 bases: 73704848(93.1469%)
+Q30 bases: 66857703(84.4936%)
+
+Filtering result:
+reads passed filter: 1374724
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 46470
+reads with adapter trimmed: 40272
+bases trimmed due to adapters: 209451
+reads corrected by overlap analysis: 425974
+bases corrected by overlap analysis: 905628
+
+Duplication rate: 26.6694%
+
+Insert size peak (evaluated by paired-end reads): 106
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_038-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_038-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_038-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_038-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_038-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_038-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 37 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 563843
+total bases: 69625021
+Q20 bases: 62669420(90.0099%)
+Q30 bases: 56206055(80.7268%)
+
+Read2 before filtering:
+total reads: 563843
+total bases: 69807391
+Q20 bases: 62299386(89.2447%)
+Q30 bases: 55442890(79.4227%)
+
+Read1 after filtering:
+total reads: 543229
+total bases: 63288686
+Q20 bases: 58980053(93.1921%)
+Q30 bases: 53523572(84.5705%)
+
+Read2 aftering filtering:
+total reads: 543229
+total bases: 63461981
+Q20 bases: 58690026(92.4806%)
+Q30 bases: 52877540(83.3216%)
+
+Filtering result:
+reads passed filter: 1086458
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 41228
+reads with adapter trimmed: 27260
+bases trimmed due to adapters: 158184
+reads corrected by overlap analysis: 358327
+bases corrected by overlap analysis: 775538
+
+Duplication rate: 32.0128%
+
+Insert size peak (evaluated by paired-end reads): 115
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_047-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_047-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_047-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_047-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_047-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_047-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 34 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 833149
+total bases: 104836449
+Q20 bases: 94589025(90.2253%)
+Q30 bases: 85236719(81.3045%)
+
+Read2 before filtering:
+total reads: 833149
+total bases: 105132350
+Q20 bases: 94015239(89.4256%)
+Q30 bases: 84026705(79.9247%)
+
+Read1 after filtering:
+total reads: 805796
+total bases: 95300960
+Q20 bases: 89237627(93.6377%)
+Q30 bases: 81431989(85.4472%)
+
+Read2 aftering filtering:
+total reads: 805796
+total bases: 95161171
+Q20 bases: 88512294(93.013%)
+Q30 bases: 80190108(84.2677%)
+
+Filtering result:
+reads passed filter: 1611592
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 54706
+reads with adapter trimmed: 38812
+bases trimmed due to adapters: 251999
+reads corrected by overlap analysis: 516774
+bases corrected by overlap analysis: 1126690
+
+Duplication rate: 26.685%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_027-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_027-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_027-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_027-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_027-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_027-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 47 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 710511
+total bases: 91619194
+Q20 bases: 82349288(89.8821%)
+Q30 bases: 73671509(80.4106%)
+
+Read2 before filtering:
+total reads: 710511
+total bases: 91765237
+Q20 bases: 82102447(89.4701%)
+Q30 bases: 73084725(79.6431%)
+
+Read1 after filtering:
+total reads: 683725
+total bases: 83223723
+Q20 bases: 77432400(93.0413%)
+Q30 bases: 70093670(84.2232%)
+
+Read2 aftering filtering:
+total reads: 683725
+total bases: 83962740
+Q20 bases: 77566612(92.3822%)
+Q30 bases: 69832831(83.1712%)
+
+Filtering result:
+reads passed filter: 1367450
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 53572
+reads with adapter trimmed: 31918
+bases trimmed due to adapters: 213883
+reads corrected by overlap analysis: 445900
+bases corrected by overlap analysis: 962586
+
+Duplication rate: 30.397%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_037-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_037-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_037-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_037-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_037-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_037-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 39 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1099930
+total bases: 149270347
+Q20 bases: 134462401(90.0798%)
+Q30 bases: 120536657(80.7506%)
+
+Read2 before filtering:
+total reads: 1099930
+total bases: 149703092
+Q20 bases: 131756649(88.012%)
+Q30 bases: 115933439(77.4422%)
+
+Read1 after filtering:
+total reads: 1056812
+total bases: 134738025
+Q20 bases: 125761239(93.3376%)
+Q30 bases: 114176897(84.7399%)
+
+Read2 aftering filtering:
+total reads: 1056812
+total bases: 133864052
+Q20 bases: 122785550(91.7241%)
+Q30 bases: 109660704(81.9195%)
+
+Filtering result:
+reads passed filter: 2113624
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 86236
+reads with adapter trimmed: 33064
+bases trimmed due to adapters: 404563
+reads corrected by overlap analysis: 650711
+bases corrected by overlap analysis: 1412713
+
+Duplication rate: 30.7961%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_031-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_031-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_031-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_031-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_031-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_031-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1011427
+total bases: 127501777
+Q20 bases: 114220232(89.5832%)
+Q30 bases: 102399246(80.312%)
+
+Read2 before filtering:
+total reads: 1011427
+total bases: 128023869
+Q20 bases: 115752840(90.415%)
+Q30 bases: 104391446(81.5406%)
+
+Read1 after filtering:
+total reads: 975362
+total bases: 115304014
+Q20 bases: 107334107(93.0879%)
+Q30 bases: 97519703(84.5762%)
+
+Read2 aftering filtering:
+total reads: 975362
+total bases: 117696481
+Q20 bases: 109815268(93.3038%)
+Q30 bases: 100151312(85.0929%)
+
+Filtering result:
+reads passed filter: 1950724
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 72130
+reads with adapter trimmed: 47262
+bases trimmed due to adapters: 289633
+reads corrected by overlap analysis: 646121
+bases corrected by overlap analysis: 1422581
+
+Duplication rate: 27.5809%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_033-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_033-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_033-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_033-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_033-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_033-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 45 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 724736
+total bases: 91817126
+Q20 bases: 82723587(90.096%)
+Q30 bases: 74177332(80.7881%)
+
+Read2 before filtering:
+total reads: 724736
+total bases: 92143042
+Q20 bases: 82756695(89.8133%)
+Q30 bases: 73872552(80.1716%)
+
+Read1 after filtering:
+total reads: 699843
+total bases: 83907234
+Q20 bases: 78180657(93.1751%)
+Q30 bases: 70922535(84.5249%)
+
+Read2 aftering filtering:
+total reads: 699843
+total bases: 84809578
+Q20 bases: 78525993(92.5909%)
+Q30 bases: 70837751(83.5256%)
+
+Filtering result:
+reads passed filter: 1399686
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 49786
+reads with adapter trimmed: 32500
+bases trimmed due to adapters: 197407
+reads corrected by overlap analysis: 476059
+bases corrected by overlap analysis: 1010234
+
+Duplication rate: 29.9495%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_048-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_048-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_048-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_048-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_048-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_048-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 38 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1104926
+total bases: 148938327
+Q20 bases: 134294782(90.168%)
+Q30 bases: 120180503(80.6915%)
+
+Read2 before filtering:
+total reads: 1104926
+total bases: 149170153
+Q20 bases: 133081887(89.2148%)
+Q30 bases: 118011045(79.1117%)
+
+Read1 after filtering:
+total reads: 1064446
+total bases: 135985440
+Q20 bases: 126587780(93.0892%)
+Q30 bases: 114572080(84.2532%)
+
+Read2 aftering filtering:
+total reads: 1064446
+total bases: 136282019
+Q20 bases: 125555735(92.1293%)
+Q30 bases: 112628406(82.6436%)
+
+Filtering result:
+reads passed filter: 2128892
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 80960
+reads with adapter trimmed: 34982
+bases trimmed due to adapters: 291909
+reads corrected by overlap analysis: 655460
+bases corrected by overlap analysis: 1460021
+
+Duplication rate: 31.6383%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_032-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_032-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_032-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_032-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_032-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_032-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 911394
+total bases: 119276778
+Q20 bases: 107279594(89.9417%)
+Q30 bases: 96036598(80.5158%)
+
+Read2 before filtering:
+total reads: 911394
+total bases: 119500236
+Q20 bases: 107034631(89.5686%)
+Q30 bases: 95316283(79.7624%)
+
+Read1 after filtering:
+total reads: 876036
+total bases: 108016706
+Q20 bases: 100524037(93.0634%)
+Q30 bases: 91112256(84.3502%)
+
+Read2 aftering filtering:
+total reads: 876036
+total bases: 109069287
+Q20 bases: 100796405(92.415%)
+Q30 bases: 90775405(83.2273%)
+
+Filtering result:
+reads passed filter: 1752072
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 70716
+reads with adapter trimmed: 35756
+bases trimmed due to adapters: 247599
+reads corrected by overlap analysis: 506742
+bases corrected by overlap analysis: 1068094
+
+Duplication rate: 28.1148%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_044-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_044-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_044-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_044-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_044-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_044-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 42 seconds
+Detecting adapter sequence for read1...
+GATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGAT
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1024594
+total bases: 139443344
+Q20 bases: 125434811(89.954%)
+Q30 bases: 112192362(80.4573%)
+
+Read2 before filtering:
+total reads: 1024594
+total bases: 139736604
+Q20 bases: 125500912(89.8125%)
+Q30 bases: 112111872(80.2309%)
+
+Read1 after filtering:
+total reads: 986303
+total bases: 126703697
+Q20 bases: 117736436(92.9227%)
+Q30 bases: 106565825(84.1063%)
+
+Read2 aftering filtering:
+total reads: 986303
+total bases: 128032573
+Q20 bases: 118459640(92.523%)
+Q30 bases: 106975353(83.5532%)
+
+Filtering result:
+reads passed filter: 1972606
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 76582
+reads with adapter trimmed: 36827
+bases trimmed due to adapters: 293038
+reads corrected by overlap analysis: 565455
+bases corrected by overlap analysis: 1185898
+
+Duplication rate: 29.5177%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_045-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_045-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_045-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_045-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_045-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 41 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 937622
+total bases: 123556192
+Q20 bases: 111900769(90.5667%)
+Q30 bases: 100489467(81.331%)
+
+Read2 before filtering:
+total reads: 937622
+total bases: 123682733
+Q20 bases: 109702342(88.6966%)
+Q30 bases: 96784829(78.2525%)
+
+Read1 after filtering:
+total reads: 899859
+total bases: 112554159
+Q20 bases: 105116696(93.3921%)
+Q30 bases: 95445635(84.7997%)
+
+Read2 aftering filtering:
+total reads: 899859
+total bases: 112175295
+Q20 bases: 102920767(91.7499%)
+Q30 bases: 91903866(81.9288%)
+
+Filtering result:
+reads passed filter: 1799718
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 75526
+reads with adapter trimmed: 34282
+bases trimmed due to adapters: 238878
+reads corrected by overlap analysis: 538239
+bases corrected by overlap analysis: 1169046
+
+Duplication rate: 29.7002%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_046-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_046-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_046-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_046-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_046-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_046-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 42 seconds
+Detecting adapter sequence for read1...
+GATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGAT
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1355886
+total bases: 188629447
+Q20 bases: 170133475(90.1945%)
+Q30 bases: 152250121(80.7139%)
+
+Read2 before filtering:
+total reads: 1355886
+total bases: 188983934
+Q20 bases: 168658306(89.2448%)
+Q30 bases: 149400037(79.0544%)
+
+Read1 after filtering:
+total reads: 1306253
+total bases: 171481665
+Q20 bases: 159807334(93.1921%)
+Q30 bases: 144731995(84.4009%)
+
+Read2 aftering filtering:
+total reads: 1306253
+total bases: 173161747
+Q20 bases: 159263754(91.974%)
+Q30 bases: 142616975(82.3606%)
+
+Filtering result:
+reads passed filter: 2612506
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 99266
+reads with adapter trimmed: 34640
+bases trimmed due to adapters: 372281
+reads corrected by overlap analysis: 692269
+bases corrected by overlap analysis: 1614444
+
+Duplication rate: 30.0257%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_029-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_029-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_029-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_029-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_029-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_029-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 53 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1169258
+total bases: 152261101
+Q20 bases: 136948214(89.943%)
+Q30 bases: 122844953(80.6805%)
+
+Read2 before filtering:
+total reads: 1169258
+total bases: 152611351
+Q20 bases: 134625967(88.2149%)
+Q30 bases: 118802412(77.8464%)
+
+Read1 after filtering:
+total reads: 1127251
+total bases: 137895049
+Q20 bases: 128839032(93.4327%)
+Q30 bases: 117045648(84.8802%)
+
+Read2 aftering filtering:
+total reads: 1127251
+total bases: 137142185
+Q20 bases: 126244072(92.0534%)
+Q30 bases: 113058290(82.4387%)
+
+Filtering result:
+reads passed filter: 2254502
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 84014
+reads with adapter trimmed: 44234
+bases trimmed due to adapters: 410005
+reads corrected by overlap analysis: 826933
+bases corrected by overlap analysis: 1976207
+
+Duplication rate: 35.6182%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_035-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_035-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_035-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_035-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_035-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_035-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 49 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1244891
+total bases: 159155742
+Q20 bases: 143427289(90.1176%)
+Q30 bases: 128520812(80.7516%)
+
+Read2 before filtering:
+total reads: 1244891
+total bases: 159716804
+Q20 bases: 142483631(89.2102%)
+Q30 bases: 126654660(79.2995%)
+
+Read1 after filtering:
+total reads: 1196581
+total bases: 144795978
+Q20 bases: 134886744(93.1564%)
+Q30 bases: 122275502(84.4468%)
+
+Read2 aftering filtering:
+total reads: 1196581
+total bases: 145045151
+Q20 bases: 133910172(92.3231%)
+Q30 bases: 120496532(83.0752%)
+
+Filtering result:
+reads passed filter: 2393162
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 96620
+reads with adapter trimmed: 54366
+bases trimmed due to adapters: 354689
+reads corrected by overlap analysis: 747847
+bases corrected by overlap analysis: 1569374
+
+Duplication rate: 29.635%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_036-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_036-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_036-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_036-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_036-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_036-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1667395
+total bases: 230708454
+Q20 bases: 207839518(90.0875%)
+Q30 bases: 185935162(80.5931%)
+
+Read2 before filtering:
+total reads: 1667395
+total bases: 231037114
+Q20 bases: 207170885(89.67%)
+Q30 bases: 184499525(79.8571%)
+
+Read1 after filtering:
+total reads: 1606047
+total bases: 209851435
+Q20 bases: 195274776(93.0538%)
+Q30 bases: 176806618(84.2532%)
+
+Read2 aftering filtering:
+total reads: 1606047
+total bases: 212148864
+Q20 bases: 195645553(92.2209%)
+Q30 bases: 176051311(82.9848%)
+
+Filtering result:
+reads passed filter: 3212094
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 122696
+reads with adapter trimmed: 45028
+bases trimmed due to adapters: 337189
+reads corrected by overlap analysis: 811919
+bases corrected by overlap analysis: 1715495
+
+Duplication rate: 28.1803%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_039-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_039-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_039-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_039-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_039-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_039-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 50 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1084448
+total bases: 134738344
+Q20 bases: 121623401(90.2664%)
+Q30 bases: 109485553(81.2579%)
+
+Read2 before filtering:
+total reads: 1084448
+total bases: 135210702
+Q20 bases: 120365026(89.0203%)
+Q30 bases: 106935814(79.0883%)
+
+Read1 after filtering:
+total reads: 1049013
+total bases: 122804248
+Q20 bases: 114929013(93.5872%)
+Q30 bases: 104716427(85.271%)
+
+Read2 aftering filtering:
+total reads: 1049013
+total bases: 122728733
+Q20 bases: 113594833(92.5577%)
+Q30 bases: 102262994(83.3244%)
+
+Filtering result:
+reads passed filter: 2098026
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 70870
+reads with adapter trimmed: 46078
+bases trimmed due to adapters: 298650
+reads corrected by overlap analysis: 710998
+bases corrected by overlap analysis: 1650611
+
+Duplication rate: 30.3995%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_049-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_049-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_049-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_049-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_049-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_049-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 35 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 946576
+total bases: 129583417
+Q20 bases: 116895917(90.209%)
+Q30 bases: 104758990(80.8429%)
+
+Read2 before filtering:
+total reads: 946576
+total bases: 129650757
+Q20 bases: 116446192(89.8153%)
+Q30 bases: 103757972(80.0288%)
+
+Read1 after filtering:
+total reads: 908555
+total bases: 117679184
+Q20 bases: 109585227(93.122%)
+Q30 bases: 99387268(84.4561%)
+
+Read2 aftering filtering:
+total reads: 908555
+total bases: 119023768
+Q20 bases: 109944278(92.3717%)
+Q30 bases: 98976734(83.1571%)
+
+Filtering result:
+reads passed filter: 1817110
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 76042
+reads with adapter trimmed: 29846
+bases trimmed due to adapters: 223663
+reads corrected by overlap analysis: 508013
+bases corrected by overlap analysis: 1073193
+
+Duplication rate: 26.2685%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_054-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_054-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_054-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_054-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_054-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_054-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 42 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 770892
+total bases: 100683825
+Q20 bases: 90539337(89.9244%)
+Q30 bases: 81071946(80.5213%)
+
+Read2 before filtering:
+total reads: 770892
+total bases: 100944197
+Q20 bases: 90170332(89.3269%)
+Q30 bases: 80213505(79.4632%)
+
+Read1 after filtering:
+total reads: 742370
+total bases: 91301375
+Q20 bases: 85022356(93.1228%)
+Q30 bases: 77059179(84.4009%)
+
+Read2 aftering filtering:
+total reads: 742370
+total bases: 91977854
+Q20 bases: 85021550(92.437%)
+Q30 bases: 76552817(83.2296%)
+
+Filtering result:
+reads passed filter: 1484740
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 57044
+reads with adapter trimmed: 31722
+bases trimmed due to adapters: 233372
+reads corrected by overlap analysis: 472083
+bases corrected by overlap analysis: 1020390
+
+Duplication rate: 30.0101%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_062-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_062-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_062-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_062-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_062-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_062-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 37 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 899833
+total bases: 115338858
+Q20 bases: 103943339(90.12%)
+Q30 bases: 93196925(80.8027%)
+
+Read2 before filtering:
+total reads: 899833
+total bases: 115745456
+Q20 bases: 103003487(88.9914%)
+Q30 bases: 91364080(78.9353%)
+
+Read1 after filtering:
+total reads: 866185
+total bases: 104974016
+Q20 bases: 97829439(93.194%)
+Q30 bases: 88752769(84.5474%)
+
+Read2 aftering filtering:
+total reads: 866185
+total bases: 105263873
+Q20 bases: 97045479(92.1926%)
+Q30 bases: 87147051(82.7891%)
+
+Filtering result:
+reads passed filter: 1732370
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 67296
+reads with adapter trimmed: 36266
+bases trimmed due to adapters: 248227
+reads corrected by overlap analysis: 551135
+bases corrected by overlap analysis: 1218487
+
+Duplication rate: 30.1822%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_058-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_058-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_058-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_058-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_058-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_058-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 40 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 980731
+total bases: 127756291
+Q20 bases: 115143858(90.1277%)
+Q30 bases: 103110760(80.7089%)
+
+Read2 before filtering:
+total reads: 980731
+total bases: 128122677
+Q20 bases: 114074470(89.0353%)
+Q30 bases: 101087054(78.8986%)
+
+Read1 after filtering:
+total reads: 942587
+total bases: 116371421
+Q20 bases: 108361267(93.1167%)
+Q30 bases: 98139171(84.3327%)
+
+Read2 aftering filtering:
+total reads: 942587
+total bases: 116413251
+Q20 bases: 107306808(92.1775%)
+Q30 bases: 96261038(82.6891%)
+
+Filtering result:
+reads passed filter: 1885174
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 76288
+reads with adapter trimmed: 40688
+bases trimmed due to adapters: 294361
+reads corrected by overlap analysis: 637843
+bases corrected by overlap analysis: 1376204
+
+Duplication rate: 28.6789%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_059-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_059-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_059-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_059-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_059-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_059-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 43 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1171738
+total bases: 154264883
+Q20 bases: 138654809(89.881%)
+Q30 bases: 123983397(80.3705%)
+
+Read2 before filtering:
+total reads: 1171738
+total bases: 154679846
+Q20 bases: 138523498(89.555%)
+Q30 bases: 123378493(79.7638%)
+
+Read1 after filtering:
+total reads: 1123935
+total bases: 139659265
+Q20 bases: 129867621(92.9889%)
+Q30 bases: 117549648(84.1689%)
+
+Read2 aftering filtering:
+total reads: 1123935
+total bases: 141182949
+Q20 bases: 130476078(92.4163%)
+Q30 bases: 117542676(83.2556%)
+
+Filtering result:
+reads passed filter: 2247870
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 95606
+reads with adapter trimmed: 43928
+bases trimmed due to adapters: 302321
+reads corrected by overlap analysis: 696269
+bases corrected by overlap analysis: 1469771
+
+Duplication rate: 29.4071%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_055-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_055-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_055-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_055-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_055-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_055-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1335035
+total bases: 155725288
+Q20 bases: 139857998(89.8107%)
+Q30 bases: 125658959(80.6927%)
+
+Read2 before filtering:
+total reads: 1335035
+total bases: 156295455
+Q20 bases: 140799339(90.0854%)
+Q30 bases: 126341157(80.8348%)
+
+Read1 after filtering:
+total reads: 1292303
+total bases: 141465168
+Q20 bases: 132129500(93.4007%)
+Q30 bases: 120247002(85.0011%)
+
+Read2 aftering filtering:
+total reads: 1292303
+total bases: 142988878
+Q20 bases: 133486629(93.3546%)
+Q30 bases: 121218928(84.7751%)
+
+Filtering result:
+reads passed filter: 2584606
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 85464
+reads with adapter trimmed: 78136
+bases trimmed due to adapters: 489625
+reads corrected by overlap analysis: 886459
+bases corrected by overlap analysis: 1950880
+
+Duplication rate: 30.0334%
+
+Insert size peak (evaluated by paired-end reads): 110
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_050-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_050-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_050-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_050-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_050-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_050-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 52 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1190850
+total bases: 160277203
+Q20 bases: 144893248(90.4017%)
+Q30 bases: 129923104(81.0615%)
+
+Read2 before filtering:
+total reads: 1190850
+total bases: 160770554
+Q20 bases: 142761518(88.7983%)
+Q30 bases: 126005696(78.3761%)
+
+Read1 after filtering:
+total reads: 1144074
+total bases: 145917470
+Q20 bases: 136121614(93.2867%)
+Q30 bases: 123453276(84.6049%)
+
+Read2 aftering filtering:
+total reads: 1144074
+total bases: 146345355
+Q20 bases: 134258958(91.7412%)
+Q30 bases: 119896563(81.9271%)
+
+Filtering result:
+reads passed filter: 2288148
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 93552
+reads with adapter trimmed: 34916
+bases trimmed due to adapters: 263845
+reads corrected by overlap analysis: 666826
+bases corrected by overlap analysis: 1490189
+
+Duplication rate: 29.4848%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_057-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_057-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_057-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_057-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_057-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_057-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 47 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1099783
+total bases: 144803242
+Q20 bases: 130041723(89.8058%)
+Q30 bases: 116272755(80.2971%)
+
+Read2 before filtering:
+total reads: 1099783
+total bases: 145121287
+Q20 bases: 130036498(89.6054%)
+Q30 bases: 115988512(79.9252%)
+
+Read1 after filtering:
+total reads: 1057285
+total bases: 131138229
+Q20 bases: 121923399(92.9732%)
+Q30 bases: 110381897(84.1722%)
+
+Read2 aftering filtering:
+total reads: 1057285
+total bases: 132363295
+Q20 bases: 122457822(92.5165%)
+Q30 bases: 110484250(83.4705%)
+
+Filtering result:
+reads passed filter: 2114570
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 84996
+reads with adapter trimmed: 46434
+bases trimmed due to adapters: 334345
+reads corrected by overlap analysis: 655073
+bases corrected by overlap analysis: 1405265
+
+Duplication rate: 30.1833%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_056-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_056-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_056-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_056-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_056-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_056-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 48 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1151941
+total bases: 146571386
+Q20 bases: 131441184(89.6772%)
+Q30 bases: 117673381(80.284%)
+
+Read2 before filtering:
+total reads: 1151941
+total bases: 146731059
+Q20 bases: 131759341(89.7965%)
+Q30 bases: 117835714(80.3073%)
+
+Read1 after filtering:
+total reads: 1110135
+total bases: 132857197
+Q20 bases: 123622434(93.0491%)
+Q30 bases: 112090704(84.3693%)
+
+Read2 aftering filtering:
+total reads: 1110135
+total bases: 134241139
+Q20 bases: 124584627(92.8066%)
+Q30 bases: 112673879(83.9339%)
+
+Filtering result:
+reads passed filter: 2220270
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 83612
+reads with adapter trimmed: 51706
+bases trimmed due to adapters: 350084
+reads corrected by overlap analysis: 744120
+bases corrected by overlap analysis: 1595246
+
+Duplication rate: 30.6133%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_061-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_061-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_061-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_061-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_061-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_061-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 45 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 1148159
+total bases: 150175330
+Q20 bases: 134858286(89.8006%)
+Q30 bases: 120535390(80.2631%)
+
+Read2 before filtering:
+total reads: 1148159
+total bases: 150463667
+Q20 bases: 134587169(89.4483%)
+Q30 bases: 119775964(79.6046%)
+
+Read1 after filtering:
+total reads: 1105669
+total bases: 136287280
+Q20 bases: 126667983(92.9419%)
+Q30 bases: 114586835(84.0774%)
+
+Read2 aftering filtering:
+total reads: 1105669
+total bases: 137429238
+Q20 bases: 127010966(92.4192%)
+Q30 bases: 114345006(83.2028%)
+
+Filtering result:
+reads passed filter: 2211338
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 84980
+reads with adapter trimmed: 46902
+bases trimmed due to adapters: 338146
+reads corrected by overlap analysis: 706147
+bases corrected by overlap analysis: 1567585
+
+Duplication rate: 32.0464%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_060-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_060-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_060-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_060-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_060-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_060-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 45 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 882938
+total bases: 117148897
+Q20 bases: 106140328(90.6029%)
+Q30 bases: 95623199(81.6254%)
+
+Read2 before filtering:
+total reads: 882938
+total bases: 117432496
+Q20 bases: 103799719(88.391%)
+Q30 bases: 91588821(77.9927%)
+
+Read1 after filtering:
+total reads: 850999
+total bases: 106672633
+Q20 bases: 99859167(93.6127%)
+Q30 bases: 90993841(85.302%)
+
+Read2 aftering filtering:
+total reads: 850999
+total bases: 105653461
+Q20 bases: 97092682(91.8973%)
+Q30 bases: 86875494(82.2268%)
+
+Filtering result:
+reads passed filter: 1701998
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 63878
+reads with adapter trimmed: 32560
+bases trimmed due to adapters: 295938
+reads corrected by overlap analysis: 512931
+bases corrected by overlap analysis: 1110940
+
+Duplication rate: 29.0275%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_063-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_063-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_063-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_063-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_063-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_063-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 44 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5671271
+total bases: 734836345
+Q20 bases: 662359705(90.137%)
+Q30 bases: 593961398(80.8291%)
+
+Read2 before filtering:
+total reads: 5671271
+total bases: 736494200
+Q20 bases: 660354319(89.6618%)
+Q30 bases: 588736228(79.9377%)
+
+Read1 after filtering:
+total reads: 5450874
+total bases: 669180496
+Q20 bases: 622773521(93.0651%)
+Q30 bases: 564888041(84.4149%)
+
+Read2 aftering filtering:
+total reads: 5450874
+total bases: 673300051
+Q20 bases: 622761493(92.4939%)
+Q30 bases: 561494804(83.3944%)
+
+Filtering result:
+reads passed filter: 10901748
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 440794
+reads with adapter trimmed: 249402
+bases trimmed due to adapters: 1485683
+reads corrected by overlap analysis: 3463650
+bases corrected by overlap analysis: 7303909
+
+Duplication rate: 27.0369%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_030-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_030-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_030-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_030-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_030-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_030-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 103 seconds
+Detecting adapter sequence for read1...
+GATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGATGAT
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 8009890
+total bases: 1014512239
+Q20 bases: 907602600(89.462%)
+Q30 bases: 811754190(80.0142%)
+
+Read2 before filtering:
+total reads: 8009890
+total bases: 1018284032
+Q20 bases: 907317841(89.1026%)
+Q30 bases: 807524803(79.3025%)
+
+Read1 after filtering:
+total reads: 7710163
+total bases: 914365809
+Q20 bases: 851527530(93.1277%)
+Q30 bases: 771725984(84.4001%)
+
+Read2 aftering filtering:
+total reads: 7710163
+total bases: 918068973
+Q20 bases: 851769668(92.7784%)
+Q30 bases: 768585182(83.7176%)
+
+Filtering result:
+reads passed filter: 15420326
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 599454
+reads with adapter trimmed: 460498
+bases trimmed due to adapters: 4110286
+reads corrected by overlap analysis: 5855531
+bases corrected by overlap analysis: 13337110
+
+Duplication rate: 32.5447%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_041-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_041-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_041-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_041-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_041-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_041-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 121 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 5927683
+total bases: 716002203
+Q20 bases: 645203642(90.112%)
+Q30 bases: 580330135(81.0514%)
+
+Read2 before filtering:
+total reads: 5927683
+total bases: 718717341
+Q20 bases: 641224430(89.2179%)
+Q30 bases: 570768341(79.4149%)
+
+Read1 after filtering:
+total reads: 5712897
+total bases: 650847421
+Q20 bases: 608000150(93.4167%)
+Q30 bases: 553423563(85.0312%)
+
+Read2 aftering filtering:
+total reads: 5712897
+total bases: 651233579
+Q20 bases: 603683108(92.6984%)
+Q30 bases: 544436116(83.6007%)
+
+Filtering result:
+reads passed filter: 11425794
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 429572
+reads with adapter trimmed: 312870
+bases trimmed due to adapters: 1672989
+reads corrected by overlap analysis: 3940482
+bases corrected by overlap analysis: 8641337
+
+Duplication rate: 27.7591%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_051-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_051-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_051-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_051-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_051-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_051-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 85 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 13017257
+total bases: 1757269824
+Q20 bases: 1577963695(89.7963%)
+Q30 bases: 1417042249(80.6389%)
+
+Read2 before filtering:
+total reads: 13017257
+total bases: 1762223782
+Q20 bases: 1554219613(88.1965%)
+Q30 bases: 1375793384(78.0714%)
+
+Read1 after filtering:
+total reads: 12561389
+total bases: 1576524974
+Q20 bases: 1474478098(93.5271%)
+Q30 bases: 1342934310(85.1832%)
+
+Read2 aftering filtering:
+total reads: 12561389
+total bases: 1564169988
+Q20 bases: 1444381568(92.3417%)
+Q30 bases: 1299502888(83.0794%)
+
+Filtering result:
+reads passed filter: 25122778
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 911736
+reads with adapter trimmed: 452978
+bases trimmed due to adapters: 3946712
+reads corrected by overlap analysis: 7781433
+bases corrected by overlap analysis: 16965643
+
+Duplication rate: 33.5975%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-ATic_026-Ex1-cssl.clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-ATic_026-Ex1-cssl.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-ATic_026-Ex1-cssl.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-ATic_026-Ex1-cssl.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-ATic_026-Ex1-cssl.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-ATic_026-Ex1-cssl.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 33 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 168 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-02-14 14:24:50,721] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-02-14 14:24:50,723] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2023-02-14 14:24:50,723] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2023-02-14 14:24:50,724] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 2nd_fastp_report --outdir fq_fp1_clmp_fp2 fq_fp1_clmp_fp2
+[2023-02-14 14:24:51,239] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-02-14 14:24:51,239] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii
+[2023-02-14 14:24:51,239] multiqc                                            [DEBUG  ]  Template    : default
+[2023-02-14 14:24:51,240] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-02-14 14:24:51,240] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-02-14 14:24:51,240] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpz1fjnjwf
+[2023-02-14 14:24:51,388] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii/fq_fp1_clmp_fp2
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 324/324  
+[2023-02-14 14:24:59,848] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 324] // [skipped_no_match: 270] // [skipped_ignore_pattern: 216]
+[2023-02-14 14:25:00,487] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-14 14:25:00,488] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-14 14:25:00,489] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-02-14 14:25:00,726] multiqc.modules.fastp.fastp                        [INFO   ]  Found 54 reports
+[2023-02-14 14:25:30,177] multiqc                                            [INFO   ]  Compressing plot data
+[2023-02-14 14:25:34,374] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2023-02-14 14:25:34,375] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2023-02-14 14:25:34,375] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpz1fjnjwf/multiqc_data' to 'fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2023-02-14 14:25:34,825] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2/2nd_fastp_report_plots
+[2023-02-14 14:25:34,825] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpz1fjnjwf/multiqc_plots' to 'fq_fp1_clmp_fp2/2nd_fastp_report_plots'
+[2023-02-14 14:25:35,137] multiqc                                            [INFO   ]  MultiQC complete
