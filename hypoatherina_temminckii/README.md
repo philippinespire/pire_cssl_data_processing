@@ -604,3 +604,6 @@ Hte-ATic_063-Ex1-cssl.clmp.r2	56.1%	48%	133 bp	0.9
 
   </p>
   </details>
+
+## 10. Second trim.
+`sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch` executed, completed.
