@@ -604,3 +604,11 @@ Hte-ATic_063-Ex1-cssl.clmp.r2	56.1%	48%	133 bp	0.9
 
   </p>
   </details>
+
+## 10. Second trim.
+
+`sbatch ../../pire_fq_gz_processing/runFASTP_2_cssl.sbatch` executed, completed.
+
+## 11. Decontaminate files.
+
+Completed, 108 files for each file type, all files accounted for. No errors.
