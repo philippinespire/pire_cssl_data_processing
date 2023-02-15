@@ -11,4 +11,4 @@ SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 all_samples=$(ls $BAMDIR/$BAMPATTERN | sed -e 's/-merged\.rad\.RAW-10-10-RG\.bam//' -e 's/.*\///g')
 all_samples=($all_samples)
 
-sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} $SCRIPTPATH/atlas_pmd_array.sbatch ${BAMDIR}
+sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} $SCRIPTPATH/merge_fixrg_array.sbatch ${BAMDIR}
