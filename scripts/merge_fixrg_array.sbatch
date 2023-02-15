@@ -28,3 +28,6 @@ cd ${BAMDIR}
 crun java -jar /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/picard.jar AddOrReplaceReadGroups I=${sample_name}-merged.rad.RAW-10-10-RG.bam O=${sample_name}-merged.rgfix.rad.RAW-10-10-RG.bam RGID=${sample_name}-merged RGLB=mergedlibs RGPL=illumina RGPU=unit1 RGSM=${sample_name}-merged 
 
 samtools index ${sample_name}-merged.rgfix.rad.RAW-10-10-RG.bam
+
+rm ${sample_name}-merged.rad.RAW-10-10-RG.bam
+rm ${sample_name}-merged.rad.RAW-10-10-RG.bam.bai
