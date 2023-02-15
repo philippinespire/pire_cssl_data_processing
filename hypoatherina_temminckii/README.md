@@ -734,3 +734,7 @@ Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.R2	56.3%	48%	121 bp	0.5
   
 </p>
 </details>
+
+## 14. Clean up
+
+`mkdir logs` and moved the *out files to the newly created `logs` directory.
