@@ -332,4 +332,4 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 sbatch ../../dDocentHPC_nomkVCF.sbatch config.5.cssl
 ```
 
-Stopped here as the 1st and 2nd sequencing run was combined and ran through filteirng and pop structure steps together (see main GMI repo for more information)
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main GMI readME for more information)
