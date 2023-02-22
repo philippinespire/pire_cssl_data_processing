@@ -420,61 +420,66 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.Alb #For ALBATROSS
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.Contemp #For CONTEMPORARY
 ```
 
+Due to lack of sufficient contemporary data, we proceeded with just the Albatross samples with the original config settings.
+
 ---
 
 ## Step 11. Check for cryptic species
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 mkdir pop_structure
 cd pop_structure
 
 #copy final VCF file made from fltrVCF step to `pop_structure` directory
 #will be from the SECOND 07 filter
-cp ../filterVCF/<FINAL FILTERED VCF> .
+cp ../filterVCF/Hmi.A.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.Fltr07.18.vcf .
+
+#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file. 
 ```
 
 Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-plink --vcf <VCF FILE> --allow-extra-chr --pca --out PIRE.<spp>.<loc>.preHWE
+#VCF file has split chromosome, so running PCA from bed file
+plink --vcf Hmi.A.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Hmi.Bas.preHWE
+plink --pca --allow-extra-chr --bfile PIRE.Hmi.Bas.preHWE --out PIRE.Hmi.Bas.preHWE
 conda deactivate
 ```
 
 Made input files for ADMIXTURE with PLINK.
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-plink --vcf <VCF FILE> --allow-extra-chr --make-bed --out PIRE.<spp>.<loc>.preHWE
-
-awk '{$1=0;print $0}' PIRE.<spp>.<loc>.preHWE.bim > PIRE.<spp>.<loc>.preHWE.bim.tmp
-mv PIRE.<spp>.<loc>.preHWE.bim.tmp PIRE.<spp>.<loc>.preHWE.bim
+#bed and bim files already made (for PCA)
+awk '{$1=0;print $0}' PIRE.Hmi.Bas.preHWE.bim > PIRE.Hmi.Bas.preHWE.bim.tmp
+mv PIRE.Hmi.Bas.preHWE.bim.tmp PIRE.Hmi.Bas.preHWE.bim
 conda deactivate
 ```
 
 Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-admixture PIRE.<spp>.<loc>.preHWE.bed 1 --cv > PIRE.<spp>.<loc>.preHWE.log1.out #run from 1-5
+admixture PIRE.Hmi.Bas.preHWE.bed 1 --cv > PIRE.Hmi.Bas.preHWE.log1.out #run from 1-5
 conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `YOUR_SPECIES_DIR/pop_structure`).
+Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/pop_structure`).
 
 ---
 
@@ -482,13 +487,11 @@ Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_css
 
 **NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
 
-PCA & ADMIXTURE showed cryptic structure. ABas & CBas all assigned to one deme ("A"). ~50% of AHam & CBat assigned to same deme ("A") as ABas & CBas and ~50% assigned to separate deme ("B"). Species IDs unknown at this point.
-
-Adjusted popmap file to reflect new structure.
+No evidence for cyrptic species. Proceeded to next step.
 
 ```sh
-cd YOUR_SPECIES_DIR/filterVCF
-cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
+cp ../mkBAM/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate  ./popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit
 
 #added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
