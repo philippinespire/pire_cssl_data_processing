@@ -353,7 +353,9 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/m
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../dDocentHPC.sbatch config.5.cssl
+sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkBAM config.5.cssl    #make BAM files
+sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch fltrBAM config.5.cssl  #filter BAM files
+sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl    #make VCF files
 ```
 
 ---
@@ -384,7 +386,7 @@ git pull
 cd pire_cssl_data_processing/scripts/rad_haplotyper
 git pull
 
-cd pire_cssl_data_processing/gazza_minuta
+cd pire_cssl_data_processing/leiognathus_leuciscus
 mkdir filterVCF
 cd filterVCF
 
@@ -408,52 +410,55 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ## Step 11. Check for cryptic species
 
 ```sh
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 mkdir pop_structure
 cd pop_structure
 
 #copy final VCF file made from fltrVCF step to `pop_structure` directory
 #will be from the SECOND 07 filter
-cp ../filterVCF/<FINAL FILTERED VCF> .
+cp ../filterVCF/Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf .
+
+#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file. 
 ```
 
 Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-plink --vcf <VCF FILE> --allow-extra-chr --pca --out PIRE.<spp>.<loc>.preHWE
+#VCF file has split chromosome, so running PCA from bed file
+plink --vcf Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Lle.Ham.preHWE
+plink  --pca --allow-extra-chr --bfile PIRE.Lle.Ham.preHWE --out PIRE.Lle.Ham.preHWE
 conda deactivate
 ```
 
 Made input files for ADMIXTURE with PLINK.
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-plink --vcf <VCF FILE> --allow-extra-chr --make-bed --out PIRE.<spp>.<loc>.preHWE
-
-awk '{$1=0;print $0}' PIRE.<spp>.<loc>.preHWE.bim > PIRE.<spp>.<loc>.preHWE.bim.tmp
-mv PIRE.<spp>.<loc>.preHWE.bim.tmp PIRE.<spp>.<loc>.preHWE.bim
+#bed and bim files already made (for PCA)
+awk '{$1=0;print $0}' PIRE.Lle.Ham.preHWE.bim > PIRE.Lle.Ham.preHWE.bim.tmp
+mv PIRE.Lle.Ham.preHWE.bim.tmp PIRE.Lle.Ham.preHWE.bim
 conda deactivate
 ```
 
 Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```sh
-cd YOUR_SPECIES_DIR/pop_structure
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
 module load anaconda
 conda activate popgen
 
-admixture PIRE.<spp>.<loc>.preHWE.bed 1 --cv > PIRE.<spp>.<loc>.preHWE.log1.out #run from 1-5
+admixture PIRE.Lle.Ham.preHWE.bed 1 --cv > PIRE.Lle.Ham.preHWE.log1.out #run from 1-5
 conda deactivate
 ```
 
@@ -465,13 +470,13 @@ Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_css
 
 **NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
 
-PCA & ADMIXTURE showed cryptic structure. ABas & CBas all assigned to one deme ("A"). ~50% of AHam & CBat assigned to same deme ("A") as ABas & CBas and ~50% assigned to separate deme ("B"). Species IDs unknown at this point.
+PCA & ADMIXTURE showed cryptic structure. Most samples were assigned group "A" and the remaining were group "B"
 
 Adjusted popmap file to reflect new structure.
 
 ```sh
-cd YOUR_SPECIES_DIR/filterVCF
-cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
+cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate ./popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit
 
 #added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
