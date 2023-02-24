@@ -289,6 +289,32 @@ sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
 
 ---
 
+### Merging .bam files from multiple runs
+
+If you are working with multiple sequencing runs, you should first map sequencing data from each run to your reference, then merge the .bam files using the `runmerge_2runs_cssl_array` scripts.
+
+Note that these scipts assume you have two separate folders named 1st_sequencing_run and 2nd_sequencing_run in your species folder, and that the .bam files are in folders named mkBAM within each of these.
+
+To run the merge script:
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code> 
+```
+
+This will create another folder (<species cssl folder>/mergebams_run1run2) containing the merged .bam files, as well as 3 lists of individuals that were sequenced in run 1 only, run 2 only, and the merged individuals that were sequenced in run 1 and 2 together.
+
+If you are working with >2 sequencing runs the script will need to be modified - contact Brendan if you need to do so!
+
+In order for the merged .bam files to be interpreted correctly by dDocent the read group information will have to be modified to include only a single group. The `merge_fixrg_array` scripts should thus be run before proceeding.
+
+To run the fixrg script:
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/ <path to directory with merged bam files>
+```
+
+After merging you can use these merged .bam files with the unmerged files from run 1 or run 2 only in downstream steps (mkVCF and fltrVCF).
+
 ## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` 
 
 
@@ -692,3 +718,4 @@ tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream
 ```
 
 That's it!
+
