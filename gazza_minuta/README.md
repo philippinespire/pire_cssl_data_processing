@@ -381,6 +381,7 @@ module load samtools/1.9
 crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
 
 tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+```
 
 ## Merging .bam files from two separate runs (12/15/22)
 
@@ -391,3 +392,9 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2run
 ```
 
 Output: merged.bam files in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mergebams_run1run2
+
+Fix read group information in merged .bam files.
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge_copy
+```
