@@ -1,0 +1,694 @@
+
+
+
+* dDocentHPC v4.6 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM in OVERWRITE mode. \n          Sample names, file indexing, etc will be overwritten to clear errors...
+ 
+Fri Feb 3 07:58:39 EST 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+
+Fri Feb 3 07:58:39 EST 2023 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+All		Number of Processors (Not Adjustable)
+All		Free Memory (Not Adjustable)
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+33		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+Lle		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+15		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+no								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50								Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+yes								Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+
+Fri Feb 3 07:58:39 EST 2023 Reading in variables from config file...
+
+Fri Feb 3 07:58:39 EST 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is not installed or is not in your '$PATH'.
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ ERROR: Some software is not installed or not up to date but dDocentHPC
+				will continue to run with limited functionality.
+        Please install all required software for full functionality
+
+
+Fri Feb 3 07:58:40 EST 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Lle-AHam_001.clmp.fp2_repr
+  Lle-AHam_002.clmp.fp2_repr
+  Lle-AHam_003.clmp.fp2_repr
+  Lle-AHam_004.clmp.fp2_repr
+  Lle-AHam_005.clmp.fp2_repr
+  Lle-AHam_006.clmp.fp2_repr
+  Lle-AHam_007.clmp.fp2_repr
+  Lle-AHam_008.clmp.fp2_repr
+  Lle-AHam_009.clmp.fp2_repr
+  Lle-AHam_010.clmp.fp2_repr
+  Lle-AHam_011.clmp.fp2_repr
+  Lle-AHam_012.clmp.fp2_repr
+  Lle-AHam_013.clmp.fp2_repr
+  Lle-AHam_014.clmp.fp2_repr
+  Lle-AHam_015.clmp.fp2_repr
+  Lle-AHam_016.clmp.fp2_repr
+  Lle-AHam_017.clmp.fp2_repr
+  Lle-AHam_018.clmp.fp2_repr
+  Lle-AHam_019.clmp.fp2_repr
+  Lle-AHam_020.clmp.fp2_repr
+  Lle-AHam_021.clmp.fp2_repr
+  Lle-AHam_022.clmp.fp2_repr
+  Lle-AHam_023.clmp.fp2_repr
+  Lle-AHam_024.clmp.fp2_repr
+  Lle-AHam_025.clmp.fp2_repr
+  Lle-AHam_026.clmp.fp2_repr
+  Lle-AHam_027.clmp.fp2_repr
+  Lle-AHam_028.clmp.fp2_repr
+  Lle-AHam_029.clmp.fp2_repr
+  Lle-AHam_030.clmp.fp2_repr
+  Lle-AHam_031.clmp.fp2_repr
+  Lle-AHam_032.clmp.fp2_repr
+  Lle-CNas_001.clmp.fp2_repr
+  Lle-CNas_002.clmp.fp2_repr
+  Lle-CNas_003.clmp.fp2_repr
+  Lle-CNas_004.clmp.fp2_repr
+  Lle-CNas_005.clmp.fp2_repr
+  Lle-CNas_006.clmp.fp2_repr
+  Lle-CNas_007.clmp.fp2_repr
+  Lle-CNas_008.clmp.fp2_repr
+  Lle-CNas_009.clmp.fp2_repr
+  Lle-CNas_010.clmp.fp2_repr
+  Lle-CNas_011.clmp.fp2_repr
+  Lle-CNas_012.clmp.fp2_repr
+  Lle-CNas_013.clmp.fp2_repr
+  Lle-CNas_014.clmp.fp2_repr
+  Lle-CNas_015.clmp.fp2_repr
+  Lle-CNas_016.clmp.fp2_repr
+  Lle-CNas_017.clmp.fp2_repr
+  Lle-CNas_018.clmp.fp2_repr
+  Lle-CNas_019.clmp.fp2_repr
+  Lle-CNas_020.clmp.fp2_repr
+  Lle-CNas_021.clmp.fp2_repr
+  Lle-CNas_022.clmp.fp2_repr
+  Lle-CNas_023.clmp.fp2_repr
+  Lle-CNas_024.clmp.fp2_repr
+  Lle-CNas_025.clmp.fp2_repr
+  Lle-CNas_026.clmp.fp2_repr
+  Lle-CNas_027.clmp.fp2_repr
+  Lle-CNas_028.clmp.fp2_repr
+  Lle-CNas_029.clmp.fp2_repr
+  Lle-CNas_030.clmp.fp2_repr
+  Lle-CNas_031.clmp.fp2_repr
+  Lle-CNas_032.clmp.fp2_repr
+  Lle-CNas_033.clmp.fp2_repr
+  Lle-CNas_034.clmp.fp2_repr
+  Lle-CNas_035.clmp.fp2_repr
+  Lle-CNas_036.clmp.fp2_repr
+  Lle-CNas_037.clmp.fp2_repr
+  Lle-CNas_038.clmp.fp2_repr
+  Lle-CNas_039.clmp.fp2_repr
+  Lle-CNas_040.clmp.fp2_repr
+  Lle-CNas_041.clmp.fp2_repr
+  Lle-CNas_042.clmp.fp2_repr
+  Lle-CNas_043.clmp.fp2_repr
+  Lle-CNas_044.clmp.fp2_repr
+  Lle-CNas_045.clmp.fp2_repr
+  Lle-CNas_046.clmp.fp2_repr
+  Lle-CNas_047.clmp.fp2_repr
+  Lle-CNas_048.clmp.fp2_repr
+  Lle-CNas_049.clmp.fp2_repr
+  Lle-CNas_050.clmp.fp2_repr
+  Lle-CNas_051.clmp.fp2_repr
+  Lle-CNas_052.clmp.fp2_repr
+  Lle-CNas_053.clmp.fp2_repr
+  Lle-CNas_054.clmp.fp2_repr
+  Lle-CNas_055.clmp.fp2_repr
+  Lle-CNas_056.clmp.fp2_repr
+  Lle-CNas_057.clmp.fp2_repr
+  Lle-CNas_058.clmp.fp2_repr
+  Lle-CNas_059.clmp.fp2_repr
+  Lle-CNas_060.clmp.fp2_repr
+  Lle-CNas_061.clmp.fp2_repr
+  Lle-CNas_062.clmp.fp2_repr
+  Lle-CNas_063.clmp.fp2_repr
+  Lle-CNas_064.clmp.fp2_repr
+  Lle-CNas_065.clmp.fp2_repr
+  Lle-CNas_066.clmp.fp2_repr
+  Lle-CNas_067.clmp.fp2_repr
+  Lle-CNas_068.clmp.fp2_repr
+  Lle-CNas_069.clmp.fp2_repr
+  Lle-CNas_070.clmp.fp2_repr
+  Lle-CNas_071.clmp.fp2_repr
+  Lle-CNas_072.clmp.fp2_repr
+  Lle-CNas_073.clmp.fp2_repr
+  Lle-CNas_074.clmp.fp2_repr
+  Lle-CNas_075.clmp.fp2_repr
+  Lle-CNas_076.clmp.fp2_repr
+  Lle-CNas_077.clmp.fp2_repr
+  Lle-CNas_078.clmp.fp2_repr
+  Lle-CNas_079.clmp.fp2_repr
+  Lle-CNas_080.clmp.fp2_repr
+  Lle-CNas_081.clmp.fp2_repr
+  Lle-CNas_082.clmp.fp2_repr
+  Lle-CNas_083.clmp.fp2_repr
+  Lle-CNas_084.clmp.fp2_repr
+  Lle-CNas_085.clmp.fp2_repr
+  Lle-CNas_086.clmp.fp2_repr
+  Lle-CNas_087.clmp.fp2_repr
+  Lle-CNas_088.clmp.fp2_repr
+  Lle-CNas_089.clmp.fp2_repr
+  Lle-CNas_090.clmp.fp2_repr
+  Lle-CNas_091.clmp.fp2_repr
+  Lle-CNas_092.clmp.fp2_repr
+  Lle-CNas_093.clmp.fp2_repr
+  Lle-CNas_094.clmp.fp2_repr
+  Lle-CNas_095.clmp.fp2_repr
+  Lle-CNas_096.clmp.fp2_repr
+
+SOFT_CLIP_CUT=no
+FILTER_ORPHANS=yes
+MAPPING_MIN_QUALITY=20
+SAMTOOLS_VIEW_F=260
+SAMTOOLS_VIEW_f=0
+SAMTOOLS_VIEW_Fcustom=0
+SAMTOOLS_VIEW_fcustom=0
+FILTER_MIN_AS=50
+FILTER_MIN_AS_LEN=100
+
+  Fri Feb 3 07:58:41 EST 2023  Filtering bam files by Samtools Flags, Alignment Scores relative to Read Length, and Orphans...
+
+  Fri Feb 3 08:12:42 EST 2023  Indexing the filtered BAM files...
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1115:20184:33630' with ref_name='NODE_1275_length_53445_cov_4.761613', ref_length=53445, flags=163, pos=16895 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_001.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1528:30038:34194' with ref_name='NODE_6389_length_21351_cov_5.697111', ref_length=21351, flags=99, pos=9148 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_002.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2108:6108:34084' with ref_name='NODE_2379_length_40241_cov_5.027602', ref_length=40241, flags=163, pos=6431 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_003.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1118:25889:6621' with ref_name='NODE_83921_length_368_cov_120.040892', ref_length=368, flags=163, pos=101 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_004.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2250:26033:24690' with ref_name='NODE_3878_length_30298_cov_4.436140', ref_length=30298, flags=163, pos=24183 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_005.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1240:20066:14011' with ref_name='NODE_7_length_201371_cov_5.196018', ref_length=201371, flags=99, pos=165810 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_006.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2547:5810:36699' with ref_name='NODE_3908_length_30191_cov_4.474910', ref_length=30191, flags=163, pos=29430 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_007.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1364:32877:7670' with ref_name='NODE_7959_length_17796_cov_4.406114', ref_length=17796, flags=99, pos=9467 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_008.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1277:7663:3583' with ref_name='NODE_46_length_132349_cov_5.538208', ref_length=132349, flags=163, pos=66204 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_009.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1140:2320:11960' with ref_name='NODE_4519_length_27310_cov_5.007754', ref_length=27310, flags=99, pos=24005 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_010.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2258:23430:7999' with ref_name='NODE_9794_length_14735_cov_5.152091', ref_length=14735, flags=147, pos=1282 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_011.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2115:5611:11929' with ref_name='NODE_8007_length_17701_cov_4.549426', ref_length=17701, flags=99, pos=14695 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_012.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1301:9218:9408' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=163, pos=341 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_013.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1417:6108:2926' with ref_name='NODE_75312_length_433_cov_1598.892216', ref_length=433, flags=99, pos=135 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_014.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1455:20880:30201' with ref_name='NODE_6921_length_20041_cov_5.594374', ref_length=20041, flags=163, pos=19923 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_015.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1471:26051:18364' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=99, pos=192 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_016.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2451:30581:11710' with ref_name='NODE_562_length_71480_cov_4.872473', ref_length=71480, flags=99, pos=16074 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_017.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2123:3052:32988' with ref_name='NODE_6995_length_19856_cov_4.660778', ref_length=19856, flags=99, pos=5068 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_018.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2303:20302:23249' with ref_name='NODE_25119_length_4942_cov_4.902127', ref_length=4942, flags=163, pos=4100 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_019.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1134:9959:29669' with ref_name='NODE_1127_length_55773_cov_4.884129', ref_length=55773, flags=163, pos=26498 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_020.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1318:27272:14246' with ref_name='NODE_3942_length_30049_cov_5.313723', ref_length=30049, flags=99, pos=21385 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_021.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2361:7193:20243' with ref_name='NODE_3796_length_30764_cov_4.923626', ref_length=30764, flags=99, pos=20104 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_022.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2678:28565:33113' with ref_name='NODE_34701_length_2957_cov_88.131910', ref_length=2957, flags=163, pos=1166 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_023.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1402:4734:34585' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=99, pos=491 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_024.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2635:23384:2973' with ref_name='NODE_2928_length_35784_cov_5.118677', ref_length=35784, flags=163, pos=20785 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_025.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2647:7808:22936' with ref_name='NODE_16581_length_8482_cov_7.347966', ref_length=8482, flags=99, pos=8289 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_026.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1374:1561:12649' with ref_name='NODE_914_length_60657_cov_4.764094', ref_length=60657, flags=99, pos=26544 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_027.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1563:22110:24815' with ref_name='NODE_427_length_78312_cov_5.146050', ref_length=78312, flags=163, pos=71191 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_028.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2414:6045:5134' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=99, pos=497 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_029.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2620:30129:16282' with ref_name='NODE_7017_length_19808_cov_4.468060', ref_length=19808, flags=99, pos=11561 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_030.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2412:19461:3630' with ref_name='NODE_83921_length_368_cov_120.040892', ref_length=368, flags=163, pos=118 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_031.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2638:6017:2394' with ref_name='NODE_90_length_114913_cov_4.819412', ref_length=114913, flags=163, pos=95970 cannot be indexed
+samtools index: failed to create index for "Lle-AHam_032.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1255:32615:10629' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=99, pos=4493 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_001.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1462:31864:20948' with ref_name='NODE_677_length_66953_cov_7.132169', ref_length=66953, flags=163, pos=61957 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_002.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1255:17797:35102' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=163, pos=376 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_003.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2515:30707:15092' with ref_name='NODE_1837_length_45351_cov_5.291678', ref_length=45351, flags=99, pos=5892 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_004.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2242:24180:24706' with ref_name='NODE_4237_length_28657_cov_5.088417', ref_length=28657, flags=99, pos=10420 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_005.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1553:20898:35775' with ref_name='NODE_13468_length_10722_cov_5.044903', ref_length=10722, flags=163, pos=4712 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_006.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1549:11134:31360' with ref_name='NODE_1653_length_47726_cov_4.725303', ref_length=47726, flags=163, pos=47230 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_007.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2462:9353:29215' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=99, pos=479 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_008.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2437:31864:6574' with ref_name='NODE_83921_length_368_cov_120.040892', ref_length=368, flags=99, pos=8 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_009.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2157:24614:20290' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=163, pos=4335 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_010.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2261:31403:36151' with ref_name='NODE_59551_length_861_cov_4299.208661', ref_length=861, flags=163, pos=1 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_011.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2364:21866:31438' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=99, pos=156 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_012.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2571:11225:36871' with ref_name='NODE_13112_length_11060_cov_5.272055', ref_length=11060, flags=163, pos=3100 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_013.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2266:13747:36104' with ref_name='NODE_1936_length_44211_cov_4.885156', ref_length=44211, flags=163, pos=11053 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_014.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2377:7952:2237' with ref_name='NODE_36359_length_2710_cov_1280.244734', ref_length=2710, flags=163, pos=1 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_015.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2664:32316:26522' with ref_name='NODE_246_length_90591_cov_5.078095', ref_length=90591, flags=99, pos=80983 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_016.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2658:6397:13980' with ref_name='NODE_23922_length_5279_cov_2.450386', ref_length=5279, flags=163, pos=1672 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_017.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2103:1506:34820' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=99, pos=16529 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_018.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1533:4363:36385' with ref_name='NODE_75312_length_433_cov_1598.892216', ref_length=433, flags=99, pos=76 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_019.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1243:2067:21230' with ref_name='NODE_9973_length_14502_cov_2.707422', ref_length=14502, flags=99, pos=8323 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_020.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1460:1777:26240' with ref_name='NODE_59551_length_861_cov_4299.208661', ref_length=861, flags=163, pos=25 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_021.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #2302: 25895 followed by 25891
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1453:10529:31031' with ref_name='NODE_2302_length_40844_cov_6.043195', ref_length=40844, flags=99, pos=25891 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_022.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1202:30138:11945' with ref_name='NODE_242_length_91170_cov_5.101723', ref_length=91170, flags=99, pos=35244 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_023.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2176:9435:21371' with ref_name='NODE_2239_length_41444_cov_4.851784', ref_length=41444, flags=99, pos=15953 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_024.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2136:17291:34820' with ref_name='NODE_32_length_139630_cov_5.061563', ref_length=139630, flags=99, pos=121706 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_025.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1566:5791:2190' with ref_name='NODE_166_length_99864_cov_4.856162', ref_length=99864, flags=163, pos=9275 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_026.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2450:27055:13933' with ref_name='NODE_466_length_75621_cov_5.317470', ref_length=75621, flags=99, pos=68104 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_027.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1676:24930:13322' with ref_name='NODE_322_length_84318_cov_5.052803', ref_length=84318, flags=99, pos=51656 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_028.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2608:23194:3051' with ref_name='NODE_2382_length_40218_cov_4.588549', ref_length=40218, flags=99, pos=19204 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_029.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #64874: 400 followed by 191
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1464:24352:3897' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=163, pos=191 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_030.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1647:15510:12132' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=163, pos=510 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_031.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2126:12843:18662' with ref_name='NODE_36359_length_2710_cov_1280.244734', ref_length=2710, flags=163, pos=5 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_032.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2108:7645:4053' with ref_name='NODE_6568_length_20910_cov_4.451252', ref_length=20910, flags=99, pos=12973 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_033.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2608:21486:20322' with ref_name='NODE_14684_length_9740_cov_4.535525', ref_length=9740, flags=99, pos=1258 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_034.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1520:29884:37059' with ref_name='NODE_59551_length_861_cov_4299.208661', ref_length=861, flags=163, pos=28 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_035.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2274:9643:22263' with ref_name='NODE_1034_length_57731_cov_4.904324', ref_length=57731, flags=99, pos=38569 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_036.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2561:7961:1752' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=163, pos=442 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_037.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1410:20012:19961' with ref_name='NODE_95_length_112470_cov_5.349628', ref_length=112470, flags=163, pos=91565 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_038.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2338:8160:9862' with ref_name='NODE_75312_length_433_cov_1598.892216', ref_length=433, flags=163, pos=224 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_039.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1259:29414:1986' with ref_name='NODE_1825_length_45498_cov_4.641930', ref_length=45498, flags=99, pos=2632 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_040.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1251:18629:6292' with ref_name='NODE_21_length_156342_cov_5.116876', ref_length=156342, flags=163, pos=74204 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_041.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1209:10719:33270' with ref_name='NODE_1307_length_52981_cov_4.761034', ref_length=52981, flags=99, pos=31340 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_042.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2604:2193:30874' with ref_name='NODE_2497_length_39136_cov_4.636114', ref_length=39136, flags=99, pos=37202 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_043.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1305:24948:15734' with ref_name='NODE_5877_length_22767_cov_4.998544', ref_length=22767, flags=163, pos=9905 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_044.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1122:4969:4711' with ref_name='NODE_10086_length_14356_cov_4.729607', ref_length=14356, flags=99, pos=2453 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_045.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2217:20374:9878' with ref_name='NODE_2744_length_37241_cov_5.057536', ref_length=37241, flags=99, pos=11359 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_046.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2155:10565:15029' with ref_name='NODE_1773_length_46122_cov_4.869783', ref_length=46122, flags=99, pos=22432 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_047.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1615:15356:11303' with ref_name='NODE_36359_length_2710_cov_1280.244734', ref_length=2710, flags=99, pos=11 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_048.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1672:5710:13730' with ref_name='NODE_2666_length_37813_cov_4.786817', ref_length=37813, flags=99, pos=9063 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_049.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1465:11234:35039' with ref_name='NODE_3191_length_34052_cov_4.417106', ref_length=34052, flags=99, pos=11153 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_050.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1123:27471:13620' with ref_name='NODE_896_length_61013_cov_4.899678', ref_length=61013, flags=99, pos=8333 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_051.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1368:10954:16579' with ref_name='NODE_4012_length_29752_cov_5.546285', ref_length=29752, flags=99, pos=14695 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_052.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2616:22245:26490' with ref_name='NODE_30854_length_3605_cov_6.946092', ref_length=3605, flags=99, pos=597 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_053.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2440:27109:35102' with ref_name='NODE_34_length_138323_cov_5.000658', ref_length=138323, flags=163, pos=126313 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_054.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2575:1136:35336' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=99, pos=2842 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_055.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2603:29098:29121' with ref_name='NODE_137502_length_187_cov_69.556818', ref_length=187, flags=163, pos=1 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_056.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2433:2166:28134' with ref_name='NODE_3258_length_33670_cov_4.974651', ref_length=33670, flags=99, pos=20709 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_057.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1372:14886:16752' with ref_name='NODE_14375_length_9975_cov_15.897226', ref_length=9975, flags=99, pos=434 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_058.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1157:8395:22576' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=99, pos=4810 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_059.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1606:5421:35837' with ref_name='NODE_2799_length_36729_cov_4.487933', ref_length=36729, flags=99, pos=11285 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_060.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1508:14931:1360' with ref_name='NODE_826_length_62742_cov_7.325320', ref_length=62742, flags=163, pos=12175 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_061.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2424:18285:21699' with ref_name='NODE_96_length_112312_cov_4.761186', ref_length=112312, flags=163, pos=86558 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_062.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1427:23918:28761' with ref_name='NODE_4167_length_28980_cov_4.624667', ref_length=28980, flags=99, pos=24913 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_063.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1173:31331:35493' with ref_name='NODE_619_length_68964_cov_4.933508', ref_length=68964, flags=163, pos=42690 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_064.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1137:22525:27038' with ref_name='NODE_698_length_66337_cov_5.403258', ref_length=66337, flags=163, pos=65336 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_065.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1647:7166:21136' with ref_name='NODE_718_length_65834_cov_5.091291', ref_length=65834, flags=163, pos=13631 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_066.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2652:27245:35775' with ref_name='NODE_15586_length_9113_cov_4.997227', ref_length=9113, flags=99, pos=2123 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_067.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1241:29848:10191' with ref_name='NODE_8498_length_16765_cov_915.279551', ref_length=16765, flags=99, pos=10060 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_068.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2140:8449:8703' with ref_name='NODE_22785_length_5639_cov_6.813357', ref_length=5639, flags=163, pos=3094 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_069.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1652:1886:12524' with ref_name='NODE_2966_length_35493_cov_4.749647', ref_length=35493, flags=163, pos=18668 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_070.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2272:18050:5259' with ref_name='NODE_136_length_104789_cov_4.782806', ref_length=104789, flags=99, pos=40633 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_071.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1617:18991:8954' with ref_name='NODE_13828_length_10410_cov_13.884298', ref_length=10410, flags=99, pos=9155 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_072.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1559:18186:17268' with ref_name='NODE_826_length_62742_cov_7.325320', ref_length=62742, flags=163, pos=55930 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_073.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2466:31901:35509' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=99, pos=236 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_074.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2254:6470:5776' with ref_name='NODE_6948_length_19964_cov_5.358470', ref_length=19964, flags=163, pos=15390 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_075.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2255:8983:32330' with ref_name='NODE_29502_length_3873_cov_23.053524', ref_length=3873, flags=145, pos=3245 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_076.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1250:8549:12727' with ref_name='NODE_82_length_116284_cov_4.763111', ref_length=116284, flags=163, pos=101400 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_077.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1123:21838:32362' with ref_name='NODE_15436_length_9204_cov_7.906645', ref_length=9204, flags=163, pos=3123 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_078.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1136:25789:22357' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=99, pos=336 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_079.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1456:6668:3302' with ref_name='NODE_10390_length_13958_cov_5.334512', ref_length=13958, flags=163, pos=5402 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_080.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1311:20148:17378' with ref_name='NODE_327_length_83895_cov_4.712886', ref_length=83895, flags=163, pos=9492 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_081.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2677:3188:28025' with ref_name='NODE_14_length_181466_cov_5.035547', ref_length=181466, flags=163, pos=83605 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_082.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1555:3070:9377' with ref_name='NODE_13468_length_10722_cov_5.044903', ref_length=10722, flags=99, pos=4781 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_083.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2655:20537:12320' with ref_name='NODE_16021_length_8829_cov_4.937457', ref_length=8829, flags=99, pos=6992 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_084.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2105:23384:36072' with ref_name='NODE_27501_length_4337_cov_3.834120', ref_length=4337, flags=99, pos=2080 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_085.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2677:8323:29747' with ref_name='NODE_13627_length_10588_cov_4.237773', ref_length=10588, flags=163, pos=1034 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_086.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2101:8504:6292' with ref_name='NODE_3394_length_32824_cov_5.122475', ref_length=32824, flags=163, pos=30191 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_087.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1650:18557:33411' with ref_name='NODE_22254_length_5823_cov_5.414221', ref_length=5823, flags=99, pos=4831 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_088.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2125:23882:1611' with ref_name='NODE_236_length_91914_cov_5.174623', ref_length=91914, flags=99, pos=15677 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_089.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2404:15673:2112' with ref_name='NODE_29787_length_3820_cov_4.801666', ref_length=3820, flags=99, pos=1596 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_090.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1433:18774:23641' with ref_name='NODE_10511_length_13798_cov_4.934010', ref_length=13798, flags=163, pos=8372 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_091.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2234:28899:1501' with ref_name='NODE_36359_length_2710_cov_1280.244734', ref_length=2710, flags=163, pos=15 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_092.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:1541:7518:8876' with ref_name='NODE_64874_length_609_cov_54.543137', ref_length=609, flags=163, pos=320 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_093.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2214:28863:20760' with ref_name='NODE_215_length_94363_cov_4.726651', ref_length=94363, flags=163, pos=93638 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_094.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2403:8947:16172' with ref_name='NODE_4233_length_28669_cov_5.068778', ref_length=28669, flags=99, pos=25879 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_095.clmp.fp2_repr.ssl.Lle-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00197:364:HF5TCDSX2:1:2647:28131:33113' with ref_name='NODE_8911_length_16073_cov_4.772693', ref_length=16073, flags=163, pos=347 cannot be indexed
+samtools index: failed to create index for "Lle-CNas_096.clmp.fp2_repr.ssl.Lle-RG.bam"
+
+  Fri Feb 3 08:12:43 EST 2023  Filtering complete!
+
+Compress large filesFri Feb  3 08:12:43 EST 2023

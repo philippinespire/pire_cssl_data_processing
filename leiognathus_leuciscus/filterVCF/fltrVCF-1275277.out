@@ -1,0 +1,70 @@
+
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Mon Feb 20 14:29:26 EST 2023 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl.HWE
+
+Mon Feb 20 14:29:26 EST 2023 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl.HWE'
+	Filters are set to '18 17'
+	CutoffCode is set to '.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate'
+	BAM_PATH is set to '../mkBAM'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	VCF_FILE is set to 'Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf'
+	Bed file is set to '../mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed'
+	Reference genome is set to '../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta'
+	PopMap is set to 'popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit'
+	HWE_SCRIPT is set to '../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '../../scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'Lle.A'
+	The number of threads is set to '40'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf will be used for serial processing.
+
+Mon Feb 20 14:29:27 EST 2023 Getting universal chromosome/contig prefix ...
+          Querying Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf ...
+          Prefix: NODE
+          It is assumed that all values in the CHROM column of vcf begin with NODE
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Mon Feb 20 14:29:27 EST 2023  reading variables into MAIN
+
+Mon Feb 20 14:29:27 EST 2023 ---------------------------FILTER18: Remove sites not in HWE p<X) -----------------------------
+Processing population: Lle-AHam-A (20 inds)
+Processing population: Lle-AHam-B (12 inds)
+Processing population: Lle-CNas-A (1 inds)
+Processing population: Lle-CNas-B (95 inds)
+Outputting results of HWE test for filtered loci to 'filtered.hwe'
+Kept 45192 of a possible 45577 loci (filtered 385 loci)
+
+	Sites remaining:	45192
+	Contigs remaining:	5361
+	Sites remaining:	45192
+	Contigs remaining:	4957
+
+Mon Feb 20 14:30:03 EST 2023 ---------------------------FILTER17: Remove sites with data missing for too many individuals|libraries in a population -----------------------------
+     Using PopMap File: popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit
+     vcftools --vcf Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr18.1.HWE.recode.vcf --exclude-positions Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.2.badloci --recode --recode-INFO-all --out Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.2.recode.vcf 2> /dev/null
+	Sites remaining:	30320
+	Contigs remaining:	3593
+
+
+Mon Feb 20 14:30:48 EST 2023  --------------------------- Filtering complete! ---------------------------
+

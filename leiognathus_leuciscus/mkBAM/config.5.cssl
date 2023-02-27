@@ -38,7 +38,7 @@ Make sure the cutoffs above match the reference*fasta!
 1               bwa mem -A Mapping_Match_Value (integer)
 4               bwa mem -B Mapping_MisMatch_Value (integer)
 6               bwa mem -O Mapping_GapOpen_Penalty (integer)
-80              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
+30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
 5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
 
