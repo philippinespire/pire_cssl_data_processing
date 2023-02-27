@@ -11,7 +11,7 @@ Information on data pre-processing steps (up to step 14 and 7 respectively) can 
 
 Used the following command:
 
-```
+```sh
 bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta Gmi
 ```
 
@@ -19,14 +19,14 @@ Output: merged.bam files in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processin
 
 Fix read group information in merged .bam files.
 
-```
+```sh
 bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge_copy
 ```
 
 ---
 ## Filter and make VCF for merged BAM files
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge
 
 sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch fltrBAM config.5.cssl #Run filtering
@@ -38,7 +38,7 @@ sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl #Make VCF 
 
 Make a filtering directory
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta
 mkdir /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 ```
@@ -47,14 +47,14 @@ Since the code is being worked with while in Eric's directory, no need to clone.
 
 Copy config file to directory
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 ```
 
 Update config with correct paths
 
-```
+```sh
 fltrVCF Settings, run fltrVCF -h for description of settings
          # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
         fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07               # order to run filters in
@@ -75,7 +75,7 @@ The filter settings didn't need adjustment and were were left at the default.
 
 Run fltrVCF.sbatch
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 ```
@@ -85,7 +85,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 Make a population_structure directory and copy your filtered VCF file there.
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 
 mkdir pop_structure
@@ -99,7 +99,7 @@ cp ../filterVCF/Gmi.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.18.vcf 
 
 Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
 #create your conda popgen environment and install PLINK
 
@@ -115,7 +115,7 @@ conda deactivate
 
 Made input files for ADMIXTURE with PLINK.
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
 
 module load anaconda
@@ -130,7 +130,7 @@ conda deactivate
 
 Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure
 
 module load anaconda
@@ -149,7 +149,7 @@ Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_css
 PCA & ADMIXTURE showed cryptic structure. Most samples were assigned group "A" and the remaining were group "B".
 Adjusted popmap file to reflect new structure.
 
-```
+```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
 cp ../mkBAM/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate  ./popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit
 
