@@ -141,7 +141,7 @@ admixture PIRE.Gmi.Bas.preHWE.bed 1 --cv > PIRE.Gmi.Bas.preHWE.log1.out #run fro
 conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/pop_structure).
+Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure_merge).
 
 ---
 ## Filter VCF file for HWE
