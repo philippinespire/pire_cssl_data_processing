@@ -1,7 +1,11 @@
 # CAPTURE SHOTGUN DATA PROCESSING & ANALYSIS
 
 ---
-
+<details><summary>The Purpose of this Repo</summary>
+<p>
+	
+## The Purpose of this Repo
+	
 The purpose of this repo is to document the processing and analysis of `Capture Sequencing Libraries - CSSL data` for the Philippines PIRE Project. These data were generated using probes that resulted from the [Shotgun Sequencing Libraries - SSL repo](https://github.com/philippinespire/pire_ssl_data_processing). Both CSSL and SSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing.  
 
 For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  
@@ -13,6 +17,11 @@ For now, each species will get it's own directory in the repo.  Try to avoing pu
 Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu).
 
 ---
+
+</p>
+</details>	
+
+<details><summary>Use Git/GitHub to Track Progress</summary>
 
 ## Use Git/GitHub to Track Progress
 
@@ -54,6 +63,11 @@ A list of ongoing CSSL projects can be found below. If you are working on a CSSL
 
 ---
 
+</p>
+</details>
+
+<details><summary>Maintaining Git Repo</summary>
+	
 ## Maintaining Git Repo
 
 You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
@@ -93,6 +107,9 @@ git commit -m "update deletions"
 git push -u origin main
 ```
 ___
+	
+</p>
+</details>
 
 ## Data Processing Roadmap
 
@@ -105,7 +122,7 @@ I'm only keeping these here now so that we can confirm whether `pire_fq_gz_proce
 
 * There should be no lib prep specific instructions until pre-processing and mapping are complete.
 	* `raw_fq_capture` has been replaced with `fq_raw`. 
-
+	
 ## 1. Set up directories and data
 
 First, create your `species dir` and subdirs `logs` and `raw_fq_capture`. You should also copy this [template README](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md) to your species dir. As you move through the pipeline, you should edit the README with the specific code that you ran, as well as information about the quality of your data and any issues you encountered. The goal is that anyone could follow your steps exactly and end up with the same output at the end of the pipeline.
@@ -180,6 +197,9 @@ Slack post= March 23th 2022, species channel
 </p>
 </details>
 
+<details><summary>Follow These Instructions: Complete fq.gz Preprocessing</summary>
+<p>
+
 ## 2. Complete fq.gz preprocessing
 
 Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here.
@@ -189,7 +209,13 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
   
 ---
 
+</p>
+</details>
+	
 ## B. MAPPING & FILTERING DATA
+
+<details><summary>Set Up Mapping Directory and Get Reference Genome</summary>
+</p>
 
 ## Set up mapping directory and get reference genome
 
@@ -232,12 +258,24 @@ cp ../../../dDocentHPC/configs/config.6.cssl .
 cp ../../../dDocentHPC/dDocentHPC_dev.sbatch .
 ```
 
-**IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+<details><summary><strong>IF YOUR SPECIES HAS AN ASSEMBLED GENOME:</strong> <em>(most species)</em> </summary>
+<p>
+	
+Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
 
-**IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME:** *(species where probes came from RAD data)* Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location.
+</details>
+</p>
+	
+<details><summary><strong>IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME:</strong> <em>(species where probes came from RAD data)</em></summary>
+<p>
+
+Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location.
 
   * Should only apply to the following species: *Atherinomorus endrachtensis*, *Gazza minuta*, *Leiognathus equula*,  and *Spratelloides delicatulus*
-    * *Ambassis urotaenia*, *Leiognathus leuciscus*, and *Siganus spinus* also had probes made from RAD data but have a whole genome assembly to map to
+    * *Ambassis urotaenia*, *Leiognathus leuciscus*, and *Siganus spinus* also had probes made from RAD data but have a whole genome assembly to map to.
+	
+</details>
+</p>
 
 Copy the best genome to `mkBAM`. Rename in the process.
 
@@ -275,6 +313,12 @@ Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
 
 ---
 
+</details>
+</p>
+
+<details><summary>Map reads to reference - Filter maps - Genotype maps</summary>
+<p>
+
 ## Map reads to reference - Filter maps - Genotype maps
 
 Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
@@ -289,6 +333,12 @@ sbatch ../../scripts/dDocentHPC.sbatch config.6.cssl
 
 ---
 
+</details>
+</p>
+
+<details><summary>Merging .bam files from multiple runs</summary>
+<p>
+	
 ### Merging .bam files from multiple runs
 
 If you are working with multiple sequencing runs, you should first map sequencing data from each run to your reference, then merge the .bam files using the `runmerge_2runs_cssl_array` scripts.
@@ -314,6 +364,14 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/ <path to dir
 ```
 
 After merging you can use these merged .bam files with the unmerged files from run 1 or run 2 only in downstream steps (mkVCF and fltrVCF).
+	
+---
+	
+</details>
+</p>
+	
+<details><summary>Generate Mapping Stats for Capture Targets</summary>
+<p>
 
 ## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` 
 
@@ -328,6 +386,12 @@ sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_pro
 
 ---
 
+</details>	
+</p>
+	
+<details><summary>Filter the `VCF` file</summary>
+<p>
+	
 ## Filter the `VCF` file
 
 
@@ -390,7 +454,13 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  ```
  
  ---
- 
+	
+</details>
+</p>
+	
+<details><summary>Check for cryptic species</summary>
+<p>
+	
  ## Check for cryptic species
  
  Run PCA and ADMIXTURE to identify any cryptic species/population structure in your data. More information on what PCA & ADMIXTURE are, and how to run them (along with other population genetic analyses) can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/).
@@ -464,6 +534,12 @@ conda deactivate
 Copy your `*.eigenval`, `*.eigenvec` & `*Q` files to your local computer. Run [`pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/pop_structure.R) on your local computer to visualize your PCA & ADMIXTURE results and identify any cryptic population structure.
 
 ---
+	
+</details>
+</p>
+	
+<details><summary>Filter the `VCF` file for HWE</summary>
+<p>
 
 ## Filter the `VCF` file for HWE
 
@@ -524,10 +600,16 @@ You can leave the filter settings as the default for now, but you may need to ad
 ***Congratulations!!*** *You have now finished the CSSL pipeline. Analyze your data to your heart's content.*
 
 ---
+	
+</details>
+</p>
 
 ## C. OPTIONAL STEPS
 
 The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) and/or calculate pi (nucleotide diversity).
+	
+<details><summary>Make a `VCF` file with monomorphic loci</summary>
+<p>
 
 ## Make a `VCF` file with monomorphic loci
 
@@ -562,6 +644,12 @@ sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
 
 ---
+	
+</details>
+</p>
+	
+<details><summary>Filter the VCF with monomorphic loci</summary>
+<p>
 
 ## Filter the VCF with monomorphic loci
 
@@ -650,7 +738,15 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
 #settings should match the settings used when filtering the original VCF file
 sbatch ../../../fltrVCF.sbatch config.fltr.ind.cssl.poly
 ```
+	
+---
+	
+</details>
+</p>
 
+<details><summary>Merge monomorphic & polymorphic VCF files</summary>
+<p>
+	
 ## Merge monomorphic & polymorphic VCF files
 
 Check the *filtered* monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove the necessary individuals from the relevant files. *Your monomorphic and polymorphic VCFs should have the EXACT same individuals present. If not, merging will not work!*
@@ -717,5 +813,9 @@ crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.n
 tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
 
+---
+	
+</details>
+</p>
+	
 That's it!
-
