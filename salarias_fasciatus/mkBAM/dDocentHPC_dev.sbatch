@@ -4,9 +4,10 @@
 #SBATCH -o mkBAM-%j.out
 #SBATCH --time=00:00:00
 #SBATCH --cpus-per-task=40
+##SBATCH --exclusive=user
 
 enable_lmod
-module load container_env ddocent
+module load container_env ddocent/2.9.4
 
 export SINGULARITY_BIND=/home/e1garcia
 export PARALLEL_SHELL=/bin/bash
@@ -17,4 +18,4 @@ export PARALLEL_SHELL=/bin/bash
 FUNCTION=$1
 CONFIG=$2
 
-crun.ddocent bash dDocentHPC_dev.bash $FUNCTION $CONFIG
+crun.ddocent bash ../../../dDocentHPC/dDocentHPC_dev.bash $FUNCTION $CONFIG

@@ -1,0 +1,388 @@
+
+
+
+* dDocentHPC v4.6 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM in OVERWRITE mode. \n          Sample names, file indexing, etc will be overwritten to clear errors...
+ 
+Mon Mar 6 14:39:42 EST 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/mkBAM_copy
+
+Mon Mar 6 14:39:42 EST 2023 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+All		Number of Processors (Not Adjustable)
+All		Free Memory (Not Adjustable)
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+rad		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+RAW-2-2		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5		bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+no								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50								Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+yes								Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+
+Mon Mar 6 14:39:42 EST 2023 Reading in variables from config file...
+
+Mon Mar 6 14:39:42 EST 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Mon Mar 6 14:39:42 EST 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Leq-ABas_001_Ex1-1A-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_002_Ex1-1D-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_003_Ex1-1G-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_004_Ex1-2C-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_005_Ex1-2H-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_008_Ex1-4G-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_010_Ex1-5H-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_012_Ex1-7A-cssl-2-2.clmp.fp2_repr
+  Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_013_Ex1-1B-cssl-2-2.clmp.fp2_repr
+  Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_016_Ex1-2D-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_020_Ex1-4H-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_022_Ex1-6A-cssl-2-2.clmp.fp2_repr
+  Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_026_Ex1-1F-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_028_Ex1-2E-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_029_Ex1-3B-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_033_Ex1-5F-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_039_Ex1-2B-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_042_Ex1-3H-cssl-1-2.clmp.fp2_repr
+  Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.clmp.fp2_repr
+  Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.clmp.fp2_repr
+  Leq-CMig_006-Ex1-5E-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_016-Ex1-4A-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_020-Ex1-2A-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_030-Ex1-8G-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_042-Ex1-6A-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr
+
+SOFT_CLIP_CUT=no
+FILTER_ORPHANS=yes
+MAPPING_MIN_QUALITY=20
+SAMTOOLS_VIEW_F=268
+SAMTOOLS_VIEW_f=2
+SAMTOOLS_VIEW_Fcustom=0
+SAMTOOLS_VIEW_fcustom=0
+FILTER_MIN_AS=50
+FILTER_MIN_AS_LEN=100
+
+  Mon Mar 6 14:39:43 EST 2023  Filtering bam files by Samtools Flags, Alignment Scores relative to Read Length, and Orphans...
+
+  Mon Mar 6 14:39:49 EST 2023  Indexing the filtered BAM files...
+[E::hts_idx_push] Unsorted positions on sequence #1118: 239 followed by 182
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1554:5602:26381' with ref_name='dDocent_Contig_2934', ref_length=440, flags=99, pos=182 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_001_Ex1-1A-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 443 followed by 428
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2674:15438:12414' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=428 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_002_Ex1-1D-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1428:31403:21339' with ref_name='dDocent_Contig_236', ref_length=927, flags=163, pos=551 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_003_Ex1-1G-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2204:8558:16814' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=16 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_004_Ex1-2C-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2505:11388:9126' with ref_name='dDocent_Contig_236', ref_length=927, flags=99, pos=207 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_005_Ex1-2H-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2116:32705:25692' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=2 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_006_Ex1-3E3E-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1340:26024:10332' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=110 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_008_Ex1-4G-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #168: 260 followed by 230
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2565:8910:10848' with ref_name='dDocent_Contig_804', ref_length=479, flags=163, pos=230 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_009_Ex1-5D5D-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2156:30734:6872' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=171 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_010_Ex1-5H-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2370:5773:8046' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=350 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_011_Ex1-6E6E-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1219:12861:27618' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=80 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_012_Ex1-7A-cssl-2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #168: 349 followed by 271
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1125:19985:31751' with ref_name='dDocent_Contig_804', ref_length=479, flags=99, pos=271 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_013_Ex1-1B1B-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2626:24433:29778' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=317 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_013_Ex1-1B-cssl-2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1334:4580:4194' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=336 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_014_Ex1-1E1E-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2431:8449:36229' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=35 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_015_Ex1-1H1H-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2423:16514:27962' with ref_name='dDocent_Contig_804', ref_length=479, flags=99, pos=271 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_016_Ex1-2D-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2510:24433:32597' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=144 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_017_Ex1-3A3A-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 397 followed by 33
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1507:18222:15515' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=33 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_018_Ex1-3F3F-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2172:28800:36683' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=166 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_019_Ex1-4C4C-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2269:4544:13275' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=430 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_020_Ex1-4H-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1556:31105:19601' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=249 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_021_Ex1-5E5E-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2223:15040:21997' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=19 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_022_Ex1-6A-cssl-2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 302 followed by 158
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2266:8341:22263' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=158 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_023_Ex1-6F6F-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2506:32434:16955' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=102 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_025_Ex1-1C1C-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1101:25455:27946' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=140 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_026_Ex1-1F-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2522:22435:26099' with ref_name='dDocent_Contig_3768', ref_length=525, flags=163, pos=320 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_027_Ex1-2A2A-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1151:27552:15327' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=260 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_028_Ex1-2E-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2117:25409:5572' with ref_name='dDocent_Contig_1340', ref_length=621, flags=99, pos=260 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_029_Ex1-3B-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 371 followed by 338
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1552:9616:12038' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=338 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_030_Ex1-3G3G-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2561:23710:29559' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=306 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_031_Ex1-4D4D-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 383 followed by 341
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1254:15411:23046' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=341 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_032_Ex1-5A5A-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2264:18647:1063' with ref_name='dDocent_Contig_1340', ref_length=621, flags=163, pos=348 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_033_Ex1-5F-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1147:17445:5149' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=165 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_034_Ex1-6B6B-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1150:28908:8656' with ref_name='dDocent_Contig_804', ref_length=479, flags=99, pos=187 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_035_Ex1-6G6G-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 431 followed by 84
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2338:13711:28181' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=84 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_036_Ex1-7B7B-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2512:1271:6230' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=210 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_039_Ex1-2B-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4747: 267 followed by 2
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2614:2763:27759' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=2 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_040_Ex1-2F2F-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2175:3233:20932' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=21 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_042_Ex1-3H-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1538:3712:11835' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=47 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_043_Ex1-4E4E-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 332 followed by 12
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2314:24948:19836' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=12 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_044_Ex1-5B5B-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1429:26196:18865' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=78 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_046_Ex1-6C6C-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1610:13467:14826' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=117 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_048_Ex1-7C7C-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1446:21775:19852' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=403 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_052_Ex1-2G2G-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 436 followed by 55
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1420:18439:21903' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=55 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_053_Ex1-3D3D-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2110:16459:7294' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=339 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_056_Ex1-5C5C-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2266:15474:32268' with ref_name='dDocent_Contig_5441', ref_length=437, flags=163, pos=149 cannot be indexed
+samtools index: failed to create index for "Leq-ABas_058_Ex1-6D6D-cssl-1and2-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2656:31747:24158' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=207 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_006-Ex1-5E-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1425:21133:14920' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=342 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_016-Ex1-4A-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:1377:12048:20791' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=386 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_020-Ex1-2A-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Unsorted positions on sequence #4000: 414 followed by 377
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2273:25265:7075' with ref_name='dDocent_Contig_3774', ref_length=593, flags=99, pos=377 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_030-Ex1-8G-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2566:21649:13714' with ref_name='dDocent_Contig_5441', ref_length=437, flags=99, pos=115 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_042-Ex1-6A-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+[E::hts_idx_push] Chromosome blocks not continuous
+[E::sam_index] Read 'A00738:552:HMMWCDSX5:3:2136:31186:29293' with ref_name='dDocent_Contig_3774', ref_length=593, flags=163, pos=439 cannot be indexed
+samtools index: failed to create index for "Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam"
+
+  Mon Mar 6 14:39:50 EST 2023  Filtering complete!
+
+Compress large filesMon Mar  6 14:39:50 EST 2023

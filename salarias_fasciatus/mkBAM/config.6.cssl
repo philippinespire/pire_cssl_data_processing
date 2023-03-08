@@ -1,8 +1,5 @@
 Settings for dDocentHPC
 #Made in notepad++, use for best viewing
-#Changes made by Jem for Sfa cssl:
-#mkBAM -B = 4, -O = 6, and -T = 20
-#fltrBAM Read length alignment score threshold = 130
 
 These default settings assume ddRAD, no overlapping 151 bp reads
 
@@ -11,7 +8,7 @@ All		Free Memory (Not Adjustable)
 
 ----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
 146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
-75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+33		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
 20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
 15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
 20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
@@ -30,7 +27,7 @@ no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomol
 PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
 0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
 ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
-reference.ssl.Sfa-scaffolds-allLibs-contam-R1R2-noIsolate.fasta		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+Sfa		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
 0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
 0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
@@ -40,25 +37,25 @@ Make sure the cutoffs above match the reference*fasta!
 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
 4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
 6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
-20		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
-30,5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+15		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
 ------------------------------------------------------------------------------------------------------------------
 
 ----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
 20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
-no		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
-yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
 yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
 no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
 no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
 no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
-yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
 0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
 0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
-20								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+no								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
 50								Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
-130								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
-yes								Remove_reads_orphaned_by_filters? (yes,no)
+100								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no								Remove_reads_orphaned_by_filters? (yes,no)
 ------------------------------------------------------------------------------------------------------------------
 
 ----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------

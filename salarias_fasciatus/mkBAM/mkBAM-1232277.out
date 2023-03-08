@@ -1,0 +1,164 @@
+
+
+
+* dDocentHPC v4.6 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM in OVERWRITE mode. \n          Sample names, file indexing, etc will be overwritten to clear errors...
+ 
+Thu Feb 2 07:18:34 EST 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus/mkBAM
+
+Thu Feb 2 07:18:34 EST 2023 Reading config file... 
+ 
+cat: config.6.lcwgs: No such file or directory
+
+Thu Feb 2 07:18:34 EST 2023 Reading in variables from config file...
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+../../../dDocentHPC/dDocentHPC_dev.bash: line 159: [: ==: unary operator expected
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+../../../dDocentHPC/dDocentHPC_dev.bash: line 179: [: ==: unary operator expected
+grep: config.6.lcwgs: No such file or directory
+../../../dDocentHPC/dDocentHPC_dev.bash: line 180: [: ==: unary operator expected
+grep: config.6.lcwgs: No such file or directory
+../../../dDocentHPC/dDocentHPC_dev.bash: line 181: [: ==: unary operator expected
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+grep: config.6.lcwgs: No such file or directory
+
+Thu Feb 2 07:18:34 EST 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+../../../dDocentHPC/dDocentHPC_dev.bash: line 225: [: !=: unary operator expected
+  The dependency trimmomatic is not installed or is not in your '$PATH'.
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ ERROR: Some software is not installed or not up to date but dDocentHPC
+				will continue to run with limited functionality.
+        Please install all required software for full functionality
+
+
+Thu Feb 2 07:18:34 EST 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ls: cannot access '*..-RAW.bam': No such file or directory
+ls: cannot access '*..-RAW.bam': No such file or directory
+ 
+ The samples being processed are:
+
+SOFT_CLIP_CUT=
+FILTER_ORPHANS=
+MAPPING_MIN_QUALITY=
+SAMTOOLS_VIEW_F=0
+SAMTOOLS_VIEW_f=0
+SAMTOOLS_VIEW_Fcustom=
+SAMTOOLS_VIEW_fcustom=
+FILTER_MIN_AS=
+FILTER_MIN_AS_LEN=
+
+  Thu Feb 2 07:18:35 EST 2023  Filtering bam files by Samtools Flags, Soft Clipped Bases, Alignment Scores relative to Read Length, and Orphans...
+ls: cannot access '*.-RAW.bam': No such file or directory
+
+  Thu Feb 2 07:18:35 EST 2023  Indexing the filtered BAM files...
+ls: cannot access '*.-RG.bam': No such file or directory
+
+  Thu Feb 2 07:18:35 EST 2023  Filtering complete!
+
+Compress large filesThu Feb  2 07:18:35 EST 2023
