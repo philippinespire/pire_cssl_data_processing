@@ -256,7 +256,7 @@ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/p
 mv Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta ./reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta
 ```
 
-Update `config.5.cssl` with the reference genome assembly information. You only need to udpdate the `mkREF` section.
+Update `config.6.cssl` with the reference genome assembly information. You only need to udpdate the `mkREF` section.
 
 Insert `<assembly type>` into the `Cutoff1` variable and `<unique assembly info>` into the `Cutoff2` variable. *Hint: this will match how you renamed the reference assembly fasta.*
 
@@ -284,7 +284,7 @@ cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl
+sbatch ../../scripts/dDocentHPC.sbatch config.6.cssl
 ```
 
 ---
