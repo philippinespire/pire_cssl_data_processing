@@ -747,6 +747,6 @@ Required dDocentHPC files copied into `mkBAM`.
 
 Species assembled genome copied and renamed into `mkBam`. 
 
-`config.5.cssl` edited with correct information. 
+`config.6.cssl` edited with correct information. 
 
-`sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl` run and complete.
+`sbatch ../../scripts/dDocentHPC.sbatch config.6.cssl` running.
