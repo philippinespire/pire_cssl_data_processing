@@ -742,7 +742,11 @@ Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.R2	56.3%	48%	121 bp	0.5
 ## 15. Map Repaired fq.gz to Reference genome
 
 `mkBAM` directory created, hard links created for the re-paired fq.gz files. 
+
 Required dDocentHPC files copied into `mkBAM`. 
+
 Species assembled genome copied and renamed into `mkBam`. 
+
 `config.5.cssl` edited with correct information. 
+
 `sbatch ../../scripts/dDocentHPC.sbatch config.5.cssl` run and complete.
