@@ -18,4 +18,4 @@ export PARALLEL_SHELL=/bin/bash
 FUNCTION=$1
 CONFIG=$2
 
-crun.ddocent bash dDocentHPC_dev.bash $FUNCTION $CONFIG
+crun.ddocent bash ../../../dDocentHPC/dDocentHPC_dev2.bash $FUNCTION $CONFIG

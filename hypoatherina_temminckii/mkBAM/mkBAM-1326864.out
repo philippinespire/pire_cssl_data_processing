@@ -1,0 +1,1444 @@
+
+
+
+* dDocentHPC v4.6 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkBAM in OVERWRITE mode. \n          Sample names, file indexing, etc will be overwritten to clear errors...
+ 
+Wed Mar 8 14:44:31 EST 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii/mkBAM
+
+Wed Mar 8 14:44:31 EST 2023 Reading config file... 
+ 
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+All		Number of Processors (Not Adjustable)
+All		Free Memory (Not Adjustable)
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+33		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+Hte-A-32sSob-R1R2-decontam-noisolate		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+13		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+30		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+yes		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+no		Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no		Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
+
+Wed Mar 8 14:44:31 EST 2023 Reading in variables from config file...
+
+Wed Mar 8 14:44:31 EST 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Wed Mar 8 14:44:31 EST 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Hte-ATic_001-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_002-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_003-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_004-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_005-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_006-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_007-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_008-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_010-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_011-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_012-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_013-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_014-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_015-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_017-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_019-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_020-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_021-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_022-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_023-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_024-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_025-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_026-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_027-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_029-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_030-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_031-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_032-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_033-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_034-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_035-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_036-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_037-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_038-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_039-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_041-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_044-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_045-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_046-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_047-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_048-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_049-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_050-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_051-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_054-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_055-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_056-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_057-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_058-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_059-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_060-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_061-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_062-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_063-Ex1-cssl.clmp.fp2_repr
+
+ 
+Wed Mar 8 14:44:32 EST 2023  Checking files for mapping...
+ 
+Wed Mar 8 14:44:32 EST 2023   Reference genome found in working directory.
+ 
+Wed Mar 8 14:44:32 EST 2023   Indexing ref genome...
+ 
+Wed Mar 8 14:44:37 EST 2023   Indexing for bwa-meme because there are 164215136 bytes of RAM avail...
+ 
+Wed Mar 8 15:06:32 EST 2023   BWA-MEME training P-RMI...
+[Info] build_rmis_dna script for BWA-MEME 1.0.5v
+Generate 2^28 leaf-models: 268435456 models
+Training top-level pwl28 model layer
+Training second-level linear model layer (num models = 268435456)
+[2nd layer]Computing lower bound stats...
+[2nd layer]Fixing empty models...
+Computing last level errors...
+[INFO] Number of leaf and partial models: 270518933, leaf: 268435456, partial: 2083477, leaf models that have partial models:19843
+Model build time: 419368 ms
+Average model error: 25544.60147868122 (0.0015033572317295746%)
+Average model log2 error: 3.6841227453485805
+Max model log2 error on model 196852667: 20.372124303859092 (0.07986997532641849%)
+
+Wed Mar 8 15:16:11 EST 2023  was ref assembled by dDocent? No. BWA will estimate insert length stats
+
+numPARALLEL=1
+memPerPARALLEL=134561776
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memPerThreadPerPARALLEL=3364044
+memSortPerThreadPerPARALLEL=3364044
+
+Wed Mar 8 15:16:11 EST 2023  Run bwa mem on dDocent files
+FILE=Hte-ATic_001-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:16:11 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_001-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_001-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_001-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_001-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_001-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_001-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_001-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:16:55 EST 2023  run samtools index Hte-ATic_001-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_002-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:16:55 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_002-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_002-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_002-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_002-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_002-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_002-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_002-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:17:49 EST 2023  run samtools index Hte-ATic_002-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_003-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:17:49 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_003-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_003-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_003-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_003-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_003-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_003-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_003-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:19:09 EST 2023  run samtools index Hte-ATic_003-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_004-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:19:11 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_004-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_004-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_004-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_004-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_004-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_004-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_004-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:20:45 EST 2023  run samtools index Hte-ATic_004-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_005-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:20:48 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_005-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_005-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_005-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_005-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_005-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_005-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_005-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:21:58 EST 2023  run samtools index Hte-ATic_005-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_006-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:22:00 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_006-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_006-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_006-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_006-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_006-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_006-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_006-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:23:36 EST 2023  run samtools index Hte-ATic_006-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_007-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:23:39 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_007-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_007-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_007-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_007-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_007-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_007-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_007-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:24:37 EST 2023  run samtools index Hte-ATic_007-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_008-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:24:37 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_008-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_008-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_008-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_008-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_008-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_008-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_008-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:25:25 EST 2023  run samtools index Hte-ATic_008-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_010-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:25:25 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_010-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_010-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_010-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_010-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_010-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_010-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_010-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:26:15 EST 2023  run samtools index Hte-ATic_010-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_011-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:26:16 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_011-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_011-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_011-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_011-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_011-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_011-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_011-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:27:12 EST 2023  run samtools index Hte-ATic_011-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_012-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:27:13 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_012-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_012-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_012-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_012-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_012-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_012-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_012-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:28:10 EST 2023  run samtools index Hte-ATic_012-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_013-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:28:11 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_013-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_013-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_013-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_013-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_013-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_013-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_013-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:29:16 EST 2023  run samtools index Hte-ATic_013-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_014-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:29:18 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_014-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_014-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_014-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_014-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_014-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_014-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_014-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:30:07 EST 2023  run samtools index Hte-ATic_014-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_015-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:30:08 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_015-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_015-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_015-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_015-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_015-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_015-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_015-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:31:15 EST 2023  run samtools index Hte-ATic_015-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_017-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:31:17 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_017-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_017-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_017-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_017-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_017-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_017-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_017-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:32:16 EST 2023  run samtools index Hte-ATic_017-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_019-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:32:17 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_019-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_019-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_019-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_019-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_019-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_019-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_019-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:33:09 EST 2023  run samtools index Hte-ATic_019-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_020-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:33:10 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_020-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_020-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_020-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_020-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_020-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_020-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_020-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:34:11 EST 2023  run samtools index Hte-ATic_020-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_021-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:34:12 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_021-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_021-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_021-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_021-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_021-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_021-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_021-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:35:25 EST 2023  run samtools index Hte-ATic_021-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_022-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:35:27 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_022-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_022-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_022-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_022-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_022-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_022-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_022-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:36:32 EST 2023  run samtools index Hte-ATic_022-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_023-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:36:33 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_023-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_023-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_023-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_023-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_023-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_023-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_023-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:37:35 EST 2023  run samtools index Hte-ATic_023-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_024-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:37:36 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_024-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_024-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_024-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_024-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_024-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_024-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_024-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:38:31 EST 2023  run samtools index Hte-ATic_024-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_025-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:38:32 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_025-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_025-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_025-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_025-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_025-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_025-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_025-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:39:29 EST 2023  run samtools index Hte-ATic_025-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_026-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:39:30 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_026-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_026-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_026-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_026-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_026-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_026-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_026-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:41:28 EST 2023  run samtools index Hte-ATic_026-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_027-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:41:32 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_027-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_027-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_027-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_027-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_027-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_027-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_027-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:42:30 EST 2023  run samtools index Hte-ATic_027-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_029-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:42:31 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_029-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_029-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_029-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_029-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_029-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_029-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_029-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:43:34 EST 2023  run samtools index Hte-ATic_029-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_030-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:43:35 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_030-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_030-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_030-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_030-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_030-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_030-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_030-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:46:09 EST 2023  run samtools index Hte-ATic_030-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_031-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:46:14 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_031-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_031-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_031-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_031-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_031-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_031-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_031-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:47:36 EST 2023  run samtools index Hte-ATic_031-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_032-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:47:39 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_032-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_032-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_032-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_032-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_032-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_032-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_032-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:48:46 EST 2023  run samtools index Hte-ATic_032-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_033-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:48:47 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_033-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_033-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_033-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_033-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_033-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_033-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_033-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:49:47 EST 2023  run samtools index Hte-ATic_033-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_034-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:49:48 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_034-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_034-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_034-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_034-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_034-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_034-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_034-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:50:41 EST 2023  run samtools index Hte-ATic_034-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_035-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:50:42 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_035-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_035-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_035-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_035-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_035-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_035-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_035-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:52:01 EST 2023  run samtools index Hte-ATic_035-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_036-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:52:03 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_036-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_036-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_036-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_036-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_036-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_036-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_036-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:53:15 EST 2023  run samtools index Hte-ATic_036-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_037-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:53:17 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_037-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_037-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_037-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_037-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_037-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_037-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_037-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:54:16 EST 2023  run samtools index Hte-ATic_037-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_038-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:54:17 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_038-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_038-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_038-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_038-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_038-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_038-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_038-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:55:20 EST 2023  run samtools index Hte-ATic_038-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_039-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:55:22 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_039-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_039-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_039-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_039-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_039-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_039-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_039-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 15:56:32 EST 2023  run samtools index Hte-ATic_039-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_041-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 15:56:33 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_041-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_041-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_041-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_041-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_041-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_041-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_041-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:01:55 EST 2023  run samtools index Hte-ATic_041-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_044-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:02:08 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_044-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_044-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_044-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_044-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_044-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_044-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_044-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:03:11 EST 2023  run samtools index Hte-ATic_044-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_045-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:03:12 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_045-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_045-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_045-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_045-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_045-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_045-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_045-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:04:13 EST 2023  run samtools index Hte-ATic_045-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_046-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:04:14 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_046-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_046-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_046-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_046-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_046-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_046-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_046-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:05:20 EST 2023  run samtools index Hte-ATic_046-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_047-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:05:21 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_047-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_047-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_047-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_047-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_047-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_047-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_047-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:06:21 EST 2023  run samtools index Hte-ATic_047-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_048-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:06:22 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_048-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_048-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_048-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_048-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_048-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_048-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_048-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:07:19 EST 2023  run samtools index Hte-ATic_048-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_049-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:07:20 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_049-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_049-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_049-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_049-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_049-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_049-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_049-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:08:28 EST 2023  run samtools index Hte-ATic_049-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_050-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:08:29 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_050-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_050-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_050-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_050-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_050-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_050-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_050-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:09:53 EST 2023  run samtools index Hte-ATic_050-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_051-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:09:56 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_051-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_051-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_051-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_051-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_051-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_051-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_051-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:13:32 EST 2023  run samtools index Hte-ATic_051-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_054-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:13:41 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_054-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_054-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_054-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_054-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_054-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_054-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_054-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:14:40 EST 2023  run samtools index Hte-ATic_054-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_055-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:14:41 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_055-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_055-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_055-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_055-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_055-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_055-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_055-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:15:48 EST 2023  run samtools index Hte-ATic_055-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_056-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:15:50 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_056-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_056-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_056-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_056-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_056-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_056-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_056-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:16:57 EST 2023  run samtools index Hte-ATic_056-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_057-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:16:59 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_057-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_057-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_057-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_057-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_057-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_057-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_057-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:18:04 EST 2023  run samtools index Hte-ATic_057-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_058-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:18:05 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_058-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_058-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_058-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_058-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_058-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_058-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_058-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:19:10 EST 2023  run samtools index Hte-ATic_058-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_059-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:19:11 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_059-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_059-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_059-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_059-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_059-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_059-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_059-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:20:24 EST 2023  run samtools index Hte-ATic_059-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_060-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:20:26 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_060-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_060-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_060-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_060-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_060-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_060-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_060-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:21:35 EST 2023  run samtools index Hte-ATic_060-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_061-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:21:37 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_061-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_061-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_061-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_061-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_061-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_061-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_061-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:22:44 EST 2023  run samtools index Hte-ATic_061-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_062-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:22:45 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_062-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_062-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_062-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_062-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_062-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_062-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_062-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:23:47 EST 2023  run samtools index Hte-ATic_062-Ex1-cssl.clmp.fp2_repr
+FILE=Hte-ATic_063-Ex1-cssl.clmp.fp2_repr
+CUTOFFS=ssl.Hte-A-32sSob-R1R2-decontam-noisolate
+MAPPING_CLIPPING_PENALTY=5
+MAPPING_MIN_ALIGNMENT_SCORE=13
+optA=1
+optB=4
+optO=6
+freeMEM=134561776
+memSortPerPARALLEL=134561760
+threadsPerPARALLEL=40
+threadsSortPerPARALLEL=40
+memSortPerThreadPerPARALLEL=3364044
+ATYPE=PE
+INSERT_MEAN=
+INSERT_SD=
+INSERT_MAX=
+INSERT_MIN=
+
+Wed Mar 8 16:23:49 EST 2023  Running bwa-meme_mode2 (RAM: 88G, Free Memory: 134561776)
+      bwa-meme_mode2 mem -7 reference.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.fasta Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.R1.fq.gz Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.R2.fq.gz -L 5 -t  -a -M -T 13 -A 1 -B 4 -O 6 -R @RGtID:Hte-ATic_063-Ex1-cssl.clmp.fp2_reprtSM:Hte-ATic_063-Ex1-cssl.clmp.fp2_reprtPL:Illumina 2> bwa.Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log | mbuffer -m 134561760 | samtools sort -m  --output-fmt bam,level=1 -@ 40 > Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate-RAW.bam 2>samtools.sort.bam.Hte-ATic_063-Ex1-cssl.clmp.fp2_repr.ssl.Hte-A-32sSob-R1R2-decontam-noisolate.log
+
+Wed Mar 8 16:24:52 EST 2023  run samtools index Hte-ATic_063-Ex1-cssl.clmp.fp2_repr
+
+Wed Mar 8 16:24:54 EST 2023 mkBAM completed!
+
+Compress large filesWed Mar  8 16:24:54 EST 2023
