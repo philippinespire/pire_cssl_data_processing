@@ -1,3 +1,15 @@
+
+
+
+* dDocentHPC v4.6 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC fltrBAM in OVERWRITE mode. \n          Sample names, file indexing, etc will be overwritten to clear errors...
+ 
+Fri Mar 10 09:19:17 EST 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii/mkBAM
+
+Fri Mar 10 09:19:17 EST 2023 Reading config file... 
+ 
 Settings for dDocentHPC
 #Made in notepad++, use for best viewing
 
@@ -8,7 +20,7 @@ All		Free Memory (Not Adjustable)
 
 ----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
 146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
-75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+33		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
 20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
 15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
 20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
@@ -26,8 +38,8 @@ no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomol
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
 PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
 0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
-rad		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
-RAW-2-2		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+ssl		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+Hte-A-32sSob-R1R2-decontam-noisolate		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
 0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
 0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
@@ -37,25 +49,25 @@ Make sure the cutoffs above match the reference*fasta!
 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
 4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
 6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
-30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+13		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
 5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
 ------------------------------------------------------------------------------------------------------------------
 
 ----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
-20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
-no		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
-yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+30		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
 yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
 no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
 no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
-no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
-yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+yes		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
 0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
 0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
-20								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
-50								Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
-150								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
-no								Remove_reads_orphaned_by_filters? (yes,no)
+no		Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no		Remove_reads_orphaned_by_filters? (yes,no)
 ------------------------------------------------------------------------------------------------------------------
 
 ----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
@@ -92,3 +104,131 @@ no		freebayes    --report-monomorphic (no|yes)						Report even loci which appea
 Email
 user@tamucc.edu
 
+
+Fri Mar 10 09:19:17 EST 2023 Reading in variables from config file...
+
+Fri Mar 10 09:19:17 EST 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Fri Mar 10 09:19:18 EST 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+ 
+ The samples being processed are:
+  Hte-ATic_001-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_002-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_003-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_004-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_005-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_006-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_007-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_008-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_010-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_011-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_012-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_013-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_014-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_015-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_017-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_019-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_020-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_021-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_022-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_023-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_024-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_025-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_026-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_027-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_029-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_030-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_031-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_032-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_033-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_034-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_035-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_036-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_037-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_038-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_039-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_041-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_044-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_045-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_046-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_047-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_048-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_049-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_050-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_051-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_054-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_055-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_056-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_057-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_058-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_059-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_060-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_061-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_062-Ex1-cssl.clmp.fp2_repr
+  Hte-ATic_063-Ex1-cssl.clmp.fp2_repr
+
+SOFT_CLIP_CUT=no
+FILTER_ORPHANS=no
+MAPPING_MIN_QUALITY=30
+SAMTOOLS_VIEW_F=2308
+SAMTOOLS_VIEW_f=0
+SAMTOOLS_VIEW_Fcustom=0
+SAMTOOLS_VIEW_fcustom=0
+FILTER_MIN_AS=50
+FILTER_MIN_AS_LEN=100
+
+  Fri Mar 10 09:19:19 EST 2023  Filtering bam files by Samtools Flags and Alignment Scores relative to Read Length...
+
+  Fri Mar 10 09:23:15 EST 2023  Indexing the filtered BAM files...
+
+  Fri Mar 10 09:23:19 EST 2023  Filtering complete!
+
+Compress large filesFri Mar 10 09:23:19 EST 2023
