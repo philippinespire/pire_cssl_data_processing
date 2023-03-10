@@ -751,4 +751,4 @@ Species assembled genome copied and renamed into `mkBam`.
 
 `sbatch ../../scripts/dDocentHPC.sbatch config.6.cssl` ran and completed.
 
-`sbatch dDocentHPC_dev.sbatch fltrBAM config.6.cssl` running.
+`sbatch dDocentHPC_dev.sbatch fltrBAM config.6.cssl` ran and completed.
