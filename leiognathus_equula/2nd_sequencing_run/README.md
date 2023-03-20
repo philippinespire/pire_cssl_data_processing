@@ -37,6 +37,8 @@ mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiog
 cp /home/e1garica/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/raw_fq_capture/* /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/fq_raw_cssl/
 ```
 
+---
+
 ### 1. Run MultiQC
 
 ```
@@ -69,6 +71,8 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * Duplication not too bad! ~20% for Albatross, ~40% for contemp
 * High adapter content
 
+---
+
 ## 2. First trim
 
 ```
@@ -83,6 +87,8 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * Low duplication, low-moderate adapter content
 * GC content pretty stable
 * ≥94% passed filter
+
+---
 
 ### 3. Clumpify / remove duplicates
 
@@ -121,7 +127,9 @@ Ran `runMULTIQC.sbatch` to get MultiQC output
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
-### 3. Second trim. Execute `runFASTP_2.sbatch`
+---
+
+### 4. Second trim. Execute `runFASTP_2.sbatch`
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
@@ -143,7 +151,9 @@ Potential issues:
   * number of reads -
     * Alb: ~4 mil, Contemp: ~300k
 
-### 4. Decontaminate runFQSCRN_6.bash
+---
+
+### 5. Decontaminate runFQSCRN_6.bash
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
 
@@ -192,7 +202,9 @@ Potential issues:
 * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
  Alb: ~15%
  
-### 5. Execute runREPAIR.sbatch 
+---
+
+### 6. Execute runREPAIR.sbatch 
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
@@ -217,7 +229,9 @@ Alb: 45%, Contemp: 44%
 * number of reads -
 Alb: ~1 mil, Contemp: ~120 mil
 
-### 6. Set up mapping dir and get reference genome
+---
+
+### 7. Set up mapping dir and get reference genome
 
 Make mapping directory and move `*fq.gz` files over.
 
@@ -233,7 +247,14 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_
 cp ../../1st_sequencing_run/mkBAM/reference.rad.RAW-2-2.fasta .
 ```
 
-Update `config.6.rad`
+Copied `config.6.rad` 
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/mkBAM
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.rad .
+```
+
+Update `config.6.rad`. Check to see if mkBAM settings can remain consistent with the 1st sequencing run and run without error.
 
 ```sh
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
@@ -248,9 +269,9 @@ RAW-2-2         Cutoff2 (integer)                                               
 
 ---
 
-## 7. Map reads to reference - Filter Maps - Genotype Maps
+## 8. Map reads to reference - Filter Maps - Genotype Maps
 
-Had to copy and edit `dDocentHPC_dev2.sbatch` in order to run in the 2nd sequencing run directory (just add another ../ to command). The script was saved as `dDocentHPC_dev2_multipleruns.sbatch`.
+Had to copy and edit `dDocentHPC_dev2.sbatch` in order to run in the 2nd sequencing run directory (just added another ../ to command). The script was saved as `dDocentHPC_dev2_multipleruns.sbatch`.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/mkBAM
