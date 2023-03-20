@@ -216,3 +216,48 @@ Alb: 3.77%, Contemp: 8.82%
 Alb: 45%, Contemp: 44%
 * number of reads -
 Alb: ~1 mil, Contemp: ~120 mil
+
+### 6. Set up mapping dir and get reference genome
+
+Make mapping directory and move `*fq.gz` files over.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run
+ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
+```
+
+Copied best genome from 1st sequencing run to maintain consistency.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/mkBAM
+cp ../../1st_sequencing_run/mkBAM/reference.rad.RAW-2-2.fasta .
+```
+
+Update `config.6.rad`
+
+```sh
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads 
+rad             Cutoff1 (integer)                                                                                               Use unique reads that
+RAW-2-2         Cutoff2 (integer)                                                                                               Use unique reads that
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble i
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble i
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+## 7. Map reads to reference - Filter Maps - Genotype Maps
+
+Had to copy and edit `dDocentHPC_dev2.sbatch` in order to run in the 2nd sequencing run directory (just add another ../ to command). The script was saved as `dDocentHPC_dev2_multipleruns.sbatch`.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.rad
+```
+
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main GMI readME for more information)
