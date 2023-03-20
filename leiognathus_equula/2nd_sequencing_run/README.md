@@ -3,7 +3,7 @@ Note there is an updated naming scheme that is formatted as Extraction_id-Librar
 
 ### Leq 2nd cssl run
 
-## 0. Cleaning up and renaming
+### 0. Cleaning up and renaming
 
 First remove some files that are of uncertain origin according to Sharon.
 
@@ -73,7 +73,7 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 
 ---
 
-## 2. First trim
+### 2. First trim
 
 ```
 cd cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run/
@@ -269,7 +269,7 @@ RAW-2-2         Cutoff2 (integer)                                               
 
 ---
 
-## 8. Map reads to reference - Filter Maps - Genotype Maps
+### 8. Map reads to reference - Filter Maps - Genotype Maps
 
 Had to copy and edit `dDocentHPC_dev2.sbatch` in order to run in the 2nd sequencing run directory (just added another ../ to command). The script was saved as `dDocentHPC_dev2_multipleruns.sbatch`.
 
