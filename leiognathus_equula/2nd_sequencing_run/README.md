@@ -281,4 +281,4 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_
 sbatch dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.rad
 ```
 
-Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main GMI readME for more information)
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main LEQ readME for more information)
