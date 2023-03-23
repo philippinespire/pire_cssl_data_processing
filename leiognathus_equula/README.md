@@ -126,14 +126,28 @@ mv PIRE.Leq.Bas.preHWE.bim.tmp PIRE.Leq.Bas.preHWE.bim
 
 conda deactivate
 ```
+
+Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge
+
+module load anaconda
+conda activate popgen
+
+admixture admixture PIRE.Leq.Bas.preHWE.bed 1 --cv > PIRE.Leq.Bas.preHWE.log1.out #run from 1-5
+
+conda deactivate
+```
+
 Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge).
 
-Filter VCF file for HWE
+--- 
 
---- Filter VCF file for HWE
+## Filter VCF file for HWE
 **NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
 
-No evidence for cyrptic species. Proceeded to next step.
+No evidence for cryptic species. Proceeded to next step.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
