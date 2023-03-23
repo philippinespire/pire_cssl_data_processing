@@ -71,3 +71,73 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -t 40                                                                                       # number of threads [1]
 ```
 Filter 5 was changed from 0:55:0.6 to 0.8.
+
+Run fltrVCF.sbatch
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/filterVCF_merge
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl 
+```
+---
+
+## Check for cryptic species
+
+Make a population_structure directory and copy your filtered VCF file there.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/filterVCF_merge
+
+mkdir pop_structuremerge
+cd ../pop_structuremerge
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp ../filterVCFmerge/Tbi.A.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf .
+
+#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file.
+```
+
+Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/pop_structuremerge
+
+#create your conda popgen environment and install PLINK
+
+module load anaconda
+conda activate popgen
+
+#VCF file has split chromosome, so running PCA from bed file
+ plink --vcf Tbi.A.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Tbi.Ros.preHWE
+plink --pca --allow-extra-chr --bfile PIRE.Tbi.Ros.preHWE --out PIRE.Tbi.Ros.preHWE
+
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/pop_structuremerge
+
+module load anaconda
+conda activate popgen
+
+#bed and bim files already made (for PCA)
+awk '{$1=0;print $0}' PIRE.Tbi.Ros.preHWE.bim > PIRE.Tbi.Ros.preHWE.bim.tmp
+mv PIRE.Tbi.Ros.preHWE.bim.tmp PIRE.Tbi.Ros.preHWE.bim
+
+conda deactivate
+```
+
+Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/pop_structuremerge
+
+module load anaconda
+conda activate popgen
+
+admixture admixture PIRE.Tbi.Ros.preHWE.bed 1 --cv > PIRE.Tbi.Ros.preHWE.log1.out #run from 1-5
+
+conda deactivate
+```
+
+Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge).
+
