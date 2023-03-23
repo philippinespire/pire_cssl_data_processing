@@ -126,6 +126,18 @@ mv PIRE.Ssp.Atu.preHWE.bim.tmp PIRE.Ssp.Atu.preHWE.bim
 
 conda deactivate
 ```
+Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/pop_structuremerge
+
+module load anaconda
+conda activate popgen
+
+admixture admixture PIRE.Ssp.Atu.preHWE.bed 1 --cv > PIRE.Ssp.Atu.preHWE.log1.out #run from 1-5
+
+conda deactivate
+```
 Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/pop_structuremerge).
 
 Even when allowing for less stringent settings, the data wasn't looking great. I spoke with Brendan and it was decided to not proceed with the following steps.
