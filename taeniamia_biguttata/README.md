@@ -106,7 +106,7 @@ module load anaconda
 conda activate popgen
 
 #VCF file has split chromosome, so running PCA from bed file
- plink --vcf Tbi.A.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Tbi.Ros.preHWE
+plink --vcf Tbi.A.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Tbi.Ros.preHWE
 plink --pca --allow-extra-chr --bfile PIRE.Tbi.Ros.preHWE --out PIRE.Tbi.Ros.preHWE
 
 conda deactivate
