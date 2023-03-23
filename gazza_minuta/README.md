@@ -71,7 +71,7 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -t 40                                                                  # number of threads [1]
         fltrVCF -o Gmi.A 
 ```
-The filter settings didn't need adjustment and were were left at the default.
+The filter settings didn't need adjustment and were left at the default.
 
 Run fltrVCF.sbatch
 
