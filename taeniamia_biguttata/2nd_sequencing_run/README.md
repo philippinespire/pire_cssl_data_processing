@@ -25,6 +25,7 @@ mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeni
 mv /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/fq_raw /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
 ```
 
+---
 ### 1. MultiQC
 
 ```
@@ -38,7 +39,7 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * GC content a bit all over the place - some contamination?
 * High adapter content
 
-
+---
 ### 2. First trim.
 
 ```
@@ -54,6 +55,7 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * Still high variation in GC content 
 * Most reads (>90%) passed filter however
 
+---
 ### 3. Clumpify
 
 ```
@@ -91,7 +93,8 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
-## 3. Second trim. Execute `runFASTP_2.sbatch`
+---
+## 4. Second trim. Execute `runFASTP_2.sbatch`
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
@@ -113,7 +116,8 @@ Potential issues:
   * number of reads -
     * Alb: ~2.8-3 mil
 
-### 4. Decontaminate runFQSCRN_6.bash
+---
+### 5. Decontaminate runFQSCRN_6.bash
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
@@ -155,7 +159,8 @@ Potential issues:
  * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) 
  Alb: ~11%
 
- ### 5. Execute `runREPAIR.sbatch`
+---
+ ### 6. Execute `runREPAIR.sbatch`
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
@@ -179,3 +184,57 @@ Alb: 22.62%
 Alb: 41%
 * number of reads -
 Alb: ~800k
+
+---
+### 7. Set up mapping dir and get reference genome
+
+Make mapping directory and move `*fq.gz` files over.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run
+ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
+```
+
+Copied best genome from 1st sequencing run to maintain consistency.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/mkBAM
+cp ../../1st_sequencing_run/mkBAM/reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta .
+```
+
+Copied `config.6.lcwgs` 
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/mkBAM
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.lcwgs .
+```
+
+Update `config.6.lcwgs`. Check to see if mkBAM settings can remain consistent with the 1st sequencing run and run without error.
+
+```sh
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlappi
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse
+ssl             Cutoff1 (integer)                                                                                               Use uniqu
+Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate            Cutoff2 (integer)                                                       
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs t
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs t
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+### 8. Map reads to reference - Filter Maps - Genotype Maps
+
+Used the edited `dDocentHPC_dev2_multipleruns.sbatch` found in ../../../leiognathus_equula/mkBAM in order to run in the 2nd sequencing run directory (just added another ../ to command).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../../leiognathus_equula/mkBAM/dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.lcwgs
+sbatch ../../../leiognathus_equula/mkBAM/dDocentHPC_dev2_multipleruns.sbatch fltrBAM config.6.lcwgs
+```
+
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main SSP readME for more information)
