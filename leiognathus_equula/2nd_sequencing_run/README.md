@@ -279,6 +279,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.rad
+sbatch dDocentHPC_dev2_multipleruns.sbatch fltrBAM config.6.rad
 ```
 
 Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main LEQ readME for more information)
