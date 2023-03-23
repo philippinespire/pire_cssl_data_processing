@@ -78,4 +78,54 @@ Run fltrVCF.sbatch
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/filterVCF_merge
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl 
 ```
-Even when allowing for less stringent settings, the data wasn't looking too great. I spoke with Brendan and it was decided to not proceed with the following steps.
+
+---
+
+## Check for cryptic species
+
+Make a population_structure directory and copy your filtered VCF file there.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/filterVCF_merge
+
+mkdir pop_structuremerge
+cd ../pop_structuremerge
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp ../filterVCFmerge/Ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18.vcf .
+
+#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file.
+```
+
+Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/pop_structuremerge
+
+#create your conda popgen environment and install PLINK
+
+module load anaconda
+conda activate popgen
+
+#VCF file has split chromosome, so running PCA from bed file
+plink --vcf Ssp.A.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Ssp.Atu.preHWE
+plink --pca --allow-extra-chr --bfile PIRE.Ssp.Atu.preHWE --out PIRE.Ssp.Atu.preHWE
+
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/pop_structuremerge
+
+module load anaconda
+conda activate popgen
+
+#bed and bim files already made (for PCA)
+awk '{$1=0;print $0}' PIRE.Ssp.Atu.preHWE.bim > PIRE.Ssp.Atu.preHWE.bim.tmp
+mv PIRE.Ssp.Atu.preHWE.bim.tmp PIRE.Ssp.Atu.preHWE.bim
+
+conda deactivate
+```
+Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/pop_structuremerge).
+
+Even when allowing for less stringent settings, the data wasn't looking great. I spoke with Brendan and it was decided to not proceed with the following steps.
