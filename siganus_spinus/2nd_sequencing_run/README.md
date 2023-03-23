@@ -22,6 +22,7 @@ Back up renamed files. I moved these to siganus first by mistake
 cp -r fq_raw /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
 ```
 
+---
 ### 1. MultiQC
 
 ```
@@ -49,6 +50,7 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * GC content all over the place, some look very bad / almost all contamination!
 * High duplication (~60-90%) and adapter content.
 
+---
 ### 2. First trim.
 
 ```
@@ -64,6 +66,7 @@ Summary [here](https://github.com/philippinespire/pire_cssl_data_processing/blob
 * Still lots of variation in GC
 * > 97% passing filter!
 
+---
 ### 3. Clumpify
 
 ```
@@ -101,7 +104,8 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequ
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
-### 3. Second trim. Execute runFASTP_2.sbatch
+---
+### 4. Second trim. Execute runFASTP_2.sbatch
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
@@ -122,7 +126,8 @@ Potential issues:
   * number of reads -
     * Alb: ~500k with 040 sample going up to 2.8 mil and 005 going up to 3.1 mil
 
-### 4. Decontaminate `runFQSCRN_6.bash`
+---
+### 5. Decontaminate `runFQSCRN_6.bash`
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
@@ -165,7 +170,8 @@ Potential issues:
 * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
  Alb: ~22%
  
- ### 5. Execute `runREPAIR.sbatch`
+ ---
+ ### 6. Execute `runREPAIR.sbatch`
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
@@ -189,3 +195,57 @@ Alb: 14.37%
 Alb: 45%
 * number of reads -
 Alb: ~100k (except for 005 with ~1 mil and 040 with ~920k)
+
+---
+
+### 7. Set up mapping dir and get reference genome
+
+Make mapping directory and move `*fq.gz` files over.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run
+ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
+```
+
+Copied best genome from 1st sequencing run to maintain consistency.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/mkBAM
+cp ../../1st_sequencing_run/mkBAM/reference.ssl.Ssp-3NR-R1R2ORPH-contam-noisolate.fasta .
+```
+
+Copied `config.6.lcwgs` 
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/mkBAM
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.lcwgs .
+```
+
+Update `config.6.lcwgs`. Check to see if mkBAM settings can remain consistent with the 1st sequencing run and run without error.
+
+```sh
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlappi
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse
+ssl             Cutoff1 (integer)                                                                                               Use uniqu
+Ssp-3NR-R1R2ORPH-contam-noisolate               Cutoff2 (integer)                                                                       
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs t
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs t
+------------------------------------------------------------------------------------------------------------------
+```
+
+---
+
+### 8. Map reads to reference - Filter Maps - Genotype Maps
+
+Used the edited `dDocentHPC_dev2_multipleruns.sbatch` found in ../../../leiognathus_equula/mkBAM in order to run in the 2nd sequencing run directory (just added another ../ to command).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch ../../../leiognathus_equula/mkBAM/dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.lcwgs
+```
+
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main SSP readME for more information)
