@@ -139,5 +139,5 @@ admixture admixture PIRE.Tbi.Ros.preHWE.bed 1 --cv > PIRE.Tbi.Ros.preHWE.log1.ou
 conda deactivate
 ```
 
-Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge).
+Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/pop_structuremerge).
 
