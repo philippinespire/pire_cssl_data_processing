@@ -1,3 +1,4 @@
+
 # Sde Data Processing Log
 
 Working dir `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus`
@@ -250,3 +251,216 @@ Running
 ```
 sbatch dDocentHPC.sbatch config.5.cssl
 ```
+
+## Mapping with dDocentHPC_dev2 and config.6
+
+So mapping results were not great with normal dDocentHPC and config5 so we are trying the new dDocentHPC_dev2 and config.6
+
+First, I ran all the data with default settings for config.6 in `mkBAM_config6`
+```
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146             trimmomatic MINLEN (integer, mkREF only)                                                Drop the read if it is below a specified length. Set to the length 
+33              trimmomatic MINLEN (integer, mkBAM only)                                                Drop the read if it is below a specified length. Set to the minimum
+20              trimmomatic LEADING:<quality> (integer, mkBAM only)                             Specifies the minimum quality required to keep a base.
+15              trimmomatic TRAILING:<quality> (integer, mkREF only)                    Specifies the minimum quality required to keep a base.
+20              trimmomatic TRAILING:<quality> (integer, mkBAM only)                    Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)                   Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off ad
+2               trimmomatic ILLUMINACLIP:<seed mismatches> (integer)                    specifies the maximum mismatch count which will still allow a full match to be perf
+30              trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)             specifies how accurate the match between the two 'adapter ligated' reads must be fo
+10              trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)                 specifies how accurate the match between any adapter etc. sequence must be against 
+20              trimmomatic SLIDINGWINDOW:<windowSize> (integer)                                specifies the number of bases to average across
+20              trimmomatic SLIDINGWINDOW:<windowQuality> (integer)                             specifies the average quality required.
+0               trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0               trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)   The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no              FixStacks (yes,no)                                                                                      Demultiplexing with stacks introduces anomolies.  T
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=d
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity threshol
+rad             Cutoff1 (integer)                                                                                               Use unique reads that have at least this mu
+sde             Cutoff2 (integer)                                                                                               Use unique reads that occur in at least thi
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1               bwa mem -A Mapping_Match_Value (integer)                                                bwa mem default is 1
+4               bwa mem -B Mapping_MisMatch_Value (integer)                                     bwa mem default is 4
+6               bwa mem -O Mapping_GapOpen_Penalty (integer)                                    bwa mem default is 6
+13              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    bwa mem default is 30. Remove reads that have an alignment score less than this. do
+5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)                   bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+30              samtools view -q                Mapping_Min_Quality (integer)                                                                           Remove reads with m
+yes             samtools view -F 4              Remove_unmapped_reads? (yes,no)                                                                         Since the reads are
+no              samtools view -F 8              Remove_read_pair_if_one_is_unmapped? (yes,no)                                           If either read in a pair does not m
+yes             samtools view -F 256    Remove_secondary_alignments? (yes,no)                                                           Secondary alignments are reads that
+no              samtools view -F 512    Remove_reads_not_passing_platform_vendor_filters (yes,no)               We generally don't see any of these
+no              samtools view -F 1024   Remove_PCR_or_optical_duplicates? (yes,no)                                              You probably don't want to set this to yes
+yes             samtools view -F 2048   Remove_supplementary_alignments? (yes,no)                                               We generally don't see any of these
+no              samtools view -f 2              Keep_only_properly_aligned_read_pairs? (yes,no)                                         Set to no if OL mode 
+0               samtools view -F                Custom_samtools_view_F_bit_value? (integer)                                             performed separately from the above
+0               samtools view -f                Custom_samtools_view_f_bit_value? (integer)                                             performed separately from the above
+no              Remove_reads_with_excessive_soft_clipping? (no, integers)                       minimum number of soft clipped bases in a read, summed between the beginnin
+50              Remove_reads_with_alignment_score_below_relative_threshold (integer)    Alignment score thresholds are calculated based on this value adjusted by a factor 
+100             Read_length_assumed_by_relative_alignment_score_threshold (integer)     Alignment score thresholds are calculated based on the threshold in the previous se
+no              Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+```
+
+Then, run coverage scripts and compared results with config.5 by clonning the repo locally and running the r scripts in (process_sequencing_metadata)[https://github.com/philippinespire/process_sequencing_metadata]
+
+For example, for 2nd_run:
+```
+pwd
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/
+
+sbatch ../../scripts/getBAITcvg.sbatch ./mkBAM_config_6 /home/e1garcia/shotgun_PIRE/pire_probe_sets/03_Spratelloides_delicatulus/Spratelloides_Chosen_baits.singleLine.bed
+Submitted batch job 1355887
+
+cd mkBAM_config_6
+sbatch ../../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+```
+
+
+**Results were a bit better with config.6 but the overall story is the same**
+
+Next, I tried playing with few of the fltrBAM settings.
+
+ To do this, I selected one of the largest and smallest BAM files per population and and redo mkBAM with 4 different config.6 with different vatioations in the following settings::
+```
+config6 = default config6 setting
+
+no      samtools view -F 8            Remove_read_pair_if_one_is_unmapped? (yes,no)  
+no      samtools view -f 2            Keep_only_properly_aligned_read_pairs? (yes,no) 
+no      Remove_reads_orphaned_by_filters? (yes,no)
+
+config6-1
+
+yes      samtools view -F 8            Remove_read_pair_if_one_is_unmapped? (yes,no)  
+no       samtools view -f 2            Keep_only_properly_aligned_read_pairs? (yes,no) 
+yes      Remove_reads_orphaned_by_filters? (yes,no)
+
+config6-2
+
+no       samtools view -F 8            Remove_read_pair_if_one_is_unmapped? (yes,no)  
+yes      samtools view -f 2            Keep_only_properly_aligned_read_pairs? (yes,no) 
+no       Remove_reads_orphaned_by_filters? (yes,no)
+
+config6-3
+
+yes      samtools view -F 8            Remove_read_pair_if_one_is_unmapped? (yes,no)  
+yes      samtools view -f 2            Keep_only_properly_aligned_read_pairs? (yes,no) 
+yes      Remove_reads_orphaned_by_filters? (yes,no)
+```
+
+Ran the coverage scripts and the r scripts from process metadata
+
+**Results**
+
+In a nutshell, setting a yes in:
+```
+ yes          samtools view -f 2            Keep_only_properly_aligned_read_pairs? (yes,no) 
+```
+affects mostly the large BAM files making them to decrease in number of mapped reads, mean mapped read depth, genome coverage,  but also a decrease on coverage and depth in targets 
+
+At least for Sde, these two didn't change results
+```
+yes/no      samtools view -F 8            Remove_read_pair_if_one_is_unmapped? (yes,no)  
+yes/no      Remove_reads_orphaned_by_filters? (yes,no)
+```
+Thus, results for config6 and config6-1 are very similar, and results for config6-2 and -3 are very similar (worse)
+
+We still suspect that the RAD reference might be problematic for the mapping. 
+Thus, in the next step I will put one of the best C-individuals (Sde-CMat_087) though SPAdes, remap with this new ref and config6 default settings, run coverage and r scripts to compare results.
+
+
+---
+
+Just noticed that I have not run config6 in 2nd_sequencing_run. So I ran that and also merging the bam files in common between 1st and 2nd seq runs
+
+### Merging BAMs
+
+See (pire_cssl_data_processing)[https://github.com/philippinespire/pire_cssl_data_processing] for details. 
+
+Original mkBAM were made with config5 so renamed those first
+```
+pwd
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/
+mv mkBAM mkBAM_config5
+mv 2nd_sequencing_run/mkBAM 2nd_sequencing_run/mkBAM_config5
+```
+
+I made temp dir to fit Brendan's scripts
+```
+mkdir 1st_sequencing_run/
+mkdir 1st_sequencing_run/mkBAM
+```
+
+Moved the duplicated -RG.bams from mkBAM_config6 into mkBAM (temp dir for merging)
+```
+mv mkBAM_config6/<files> mkBAM
+mv 2nd_sequencing_run/mkBAM_config6/<files> 2nd_sequencing_run/mkBAM
+
+#Files
+Sde-AMar_055*-RG.bam
+Sde-AMar_061*-RG.bam
+Sde-AMat_002*-RG.bam
+Sde-AMat_005*-RG.bam
+Sde-CHam_014*-RG.bam
+Sde-CHam_077*-RG.bam
+Sde-CMat_055*-RG.bam
+Sde-CMat_061*-RG.bam 
+```
+
+Running merge script
+```
+bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus Sde
+```
+Next, need to run the fixing scripts. But these Scripts were made without a general prefix. So I copied the scripts here and modified both of them to fix to my prefix/bam pattern. 
+
+```
+cp ../scripts/merge_fixrg_array* .
+
+nano merge_fixrg_array.bash
+# example, I need to modify the Bam pattern
+BAMPATTERN=*-merged-RG.bam
+```
+
+Running merge_fixrg_array.bash
+```
+bash merge_fixrg_array.bash mergebams_run1run2
+```
+
+These seemed to worked ok. So now moving back the merged.fixed.RG.bams back to mkBAM_config6 (1st run)
+```
+pwd
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/
+mv ../mergebams_run1run2/*bam* mkBAM_config6
+```
+
+I have to redo the coverage scripts.
+```
+cd mkBAM_config_6/
+mv coverageMappedReads/ coverageMappedReads_noMergedBAM_deprecated
+mv out_baitTrgtCVG/ out_baitTrgtCVG_noMergedBAM_deprecated
+
+
+### Making a reference from CSSL Sde-CMat_087
+
+pwd ` `
+
+Made a copy of the repaired files in subidr `spades_CMat_087`
+```
+ls -ltrh spades_CMat_087
+-rwxrwx--- 1 e1garcia users 449M Nov 14 17:10 Sde-CMat_087-SdC01087-L2-clmp-fp2-repr.R1.fq.gz
+-rwxrwx--- 1 e1garcia users 541M Nov 14 17:11 Sde-CMat_087-SdC01087-L2-clmp-fp2-repr.R2.fq.gz
+```
+Assembled a ref from cssl using SPAdes in `SPAdes_Sde-CMat-A_decontam_R1R2_noIsolate`
+
+I used Sgr genome size estimate for now.
+
+Then, mapped all the data to the new ref in `mkBAM_csslRef` using default settings in config.6

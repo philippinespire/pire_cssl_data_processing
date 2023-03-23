@@ -315,16 +315,20 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/ <path to dir
 
 After merging you can use these merged .bam files with the unmerged files from run 1 or run 2 only in downstream steps (mkVCF and fltrVCF).
 
-## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` 
 
+## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` and `mappedReadStats.sbatch`
+
+Move into the mkBAM dir and execute both scripts
 
 ```bash
-cd <path/to/cssl/species dir/>
+cd <path/to/cssl/species dir/mkBAM dir>
 
 # getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
-sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/<speciesDir>/<prefix>.singleLine.bed
-```
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/<speciesDir>/<prefix>.singleLine.bed
 
+# mappedReadStats.sbatch <Path to BAM file dir> <coverageMappedReads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+```
 
 ---
 
