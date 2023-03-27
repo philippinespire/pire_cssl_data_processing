@@ -134,7 +134,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/pop
 module load anaconda
 conda activate popgen
 
-admixture admixture PIRE.Tbi.Ros.preHWE.bed 1 --cv > PIRE.Tbi.Ros.preHWE.log1.out #run from 1-5
+admixture PIRE.Tbi.Ros.preHWE.bed 1 --cv > PIRE.Tbi.Ros.preHWE.log1.out #run from 1-5
 
 conda deactivate
 ```
