@@ -330,6 +330,12 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
 ```
 
+***NOTE:*** Sometimes the scripts don't compute all files. Thus, check the output to make sure you have output for all input BAM files. 
+
+* `getBAITcvg.sbatch` will give you 2 out files per input BAM file.
+
+* `mappedReadStats.sbatch` will output a single file. Check that you have the same number of lines (excluding the header) than number of input BAM files.
+
 ---
 
 ## Filter the `VCF` file
