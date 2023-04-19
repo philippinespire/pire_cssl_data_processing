@@ -323,7 +323,7 @@ Move into the mkBAM dir and execute both scripts
 ```bash
 cd <path/to/cssl/species dir/mkBAM dir>
 
-# getBAITcvg.sbatch <Path to BAM file dir> <Path for outdir> <path to bedfile>
+# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
 sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/<speciesDir>/<prefix>.singleLine.bed
 
 # mappedReadStats.sbatch <Path to BAM file dir> <coverageMappedReads>
