@@ -1,0 +1,23 @@
+
+Sde-AMat_002
+INFO	2023-03-23 11:02:12	AddOrReplaceReadGroups	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** 
+https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    AddOrReplaceReadGroups -I Sde-AMat_002-merged-RG.bam -O Sde-AMat_002-merged.rgfix-RG.bam -RGID Sde-AMat_002-merged -RGLB mergedlibs -RGPL illumina -RGPU unit1 -RGSM Sde-AMat_002-merged
+**********
+
+
+11:02:13.438 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Thu Mar 23 11:02:13 GMT-05:00 2023] AddOrReplaceReadGroups INPUT=Sde-AMat_002-merged-RG.bam OUTPUT=Sde-AMat_002-merged.rgfix-RG.bam RGID=Sde-AMat_002-merged RGLB=mergedlibs RGPL=illumina RGPU=unit1 RGSM=Sde-AMat_002-merged    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Thu Mar 23 11:02:13 GMT-05:00 2023] Executing as e1garcia@e3-w6420b-13 on Linux 4.15.0-171-generic amd64; OpenJDK 64-Bit Server VM 1.8.0_252-b09; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.27.5
+INFO	2023-03-23 11:02:13	AddOrReplaceReadGroups	Created read-group ID=Sde-AMat_002-merged PL=illumina LB=mergedlibs SM=Sde-AMat_002-merged
+
+[Thu Mar 23 11:02:25 GMT-05:00 2023] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 0.20 minutes.
+Runtime.totalMemory()=1981808640

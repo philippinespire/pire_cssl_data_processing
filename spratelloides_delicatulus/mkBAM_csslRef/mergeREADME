@@ -1,0 +1,16 @@
+For the merge files I followed Brendan's instructions for merging and naming files.
+
+Yet, I later changed the name of files to include "clmp" so that the R script in metadata processing would parse the name correctly
+
+```
+for i in *merged.*; do mv "$i" "${i/\.rgfix-RG/-rgfix-L2-clmp-fp2-repr\.cssl\.Sde-CMat_087-RG}"; done
+```
+
+
+----
+
+April 11 2023
+
+Original bam Files that were  merged have been placed in dir "have_been_merged"
+
+

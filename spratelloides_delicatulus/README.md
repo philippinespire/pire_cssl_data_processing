@@ -447,9 +447,23 @@ I have to redo the coverage scripts.
 cd mkBAM_config_6/
 mv coverageMappedReads/ coverageMappedReads_noMergedBAM_deprecated
 mv out_baitTrgtCVG/ out_baitTrgtCVG_noMergedBAM_deprecated
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/03_Spratelloides_delicatulus/Spratelloides_Chosen_baits.singleLine.bed
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+```
+
+Now, have to run the process_metadata r scripts again.
+
+R scripts were not parsing the names of the merged files correctly. 
+
+Thus,  I renamed the merged files so that they will have "merged-fixed" so I know these were merged and fixed, but also
+put back the same naming scheme of the other files so the R scripts would parse the names correctly (added the same Lane, clmp, etc, format after the Spp_EraSite_Ind))
 
 
-### Making a reference from CSSL Sde-CMat_087
+---
+
+## Making a reference from CSSL Sde-CMat_087
+
+Since we suspect issues with the RAD ref, one thing we thought we would check is to make a ref directly from one of the cssl individuals with better coverage.
 
 pwd ` `
 
@@ -464,3 +478,95 @@ Assembled a ref from cssl using SPAdes in `SPAdes_Sde-CMat-A_decontam_R1R2_noIso
 I used Sgr genome size estimate for now.
 
 Then, mapped all the data to the new ref in `mkBAM_csslRef` using default settings in config.6
+
+
+### Running coverage scripts in mkBAM_csslRef
+
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/mkBAM_csslRef
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/03_Spratelloides_delicatulus/Spratelloides_Chosen_baits.singleLine.bed
+```
+
+I encountered multiple problems with cssl:
+
+1. I accidentally created links to the files from the 1run in the 2nd run. Thus I had to reran mkBAM_csslRef.
+
+2. Some of the resulting *RG.bam files were empty. These were individuals that started with very low number of raw reads so it is probably not worth troubleshooting them.
+Yes the problem is that empty files were braking the mappedReadStats.sbatch script so it would not compute stats for those files. It took some digging to find out that this was happening. 
+To resolve this, I deleted the empty RG.bam files. 
+
+3. When running the R scripts the colplot shows a substancially higher amount of reads mapping, suggesting RADseq genome not to be very good.
+ Yet, the scatter plot with "Mean Depth of Coverage" shows lower depth for all pops, suggesting that the capture was not specific, i.e. we more reads mapping but not in the target regions
+
+4. Unfortunately, the plots showing the depth in target regions are showing 0 depth. Now I think that the getBAITcvg.sbatch script didn't work probably because the name of contigs in the bed file are not the same than in the bam files. I will check this next
+
+#### Making a new bed for the probe target regions compatible with CSSL Ref.
+
+So the bed file I originally created for the baits contains the name of contigs from the RAD reference. 
+When I created a new ref from cssl the contigs are not longer called/or are the same. 
+
+Thus, I will to create a new bed for the cssl by:
+
+1. Mapping the probe sequences to the cssl ref
+2. Create a bed file from that bam
+3. re-run the coverage scripts
+
+***Setting up***
+```
+pwd
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_csslRef/
+# mkdir for making the Bed
+mkdir mkBAM_mappingProbes_tomakeBED
+# copy needed files from pwd to mkBAM_mappingProbes_tomakeBED
+dDocentHPC_dev2.sbatch
+config.6.cssl
+reference.cssl.Sde-CMat_087.fasta
+```
+
+***Creating the fq files***
+
+* mBAM needs R1 and R2 files (forward and reverse reads)
+
+I copied the bait sequences, which have 3 tiles per region. For Sde, one from postion 0 to 80, another from 27 to 107, and the last from 54 to 133.  Example:
+```
+TGCAGGTGCTGGCTTCTTTTTCGTTGTAAAGAAGGACAAGTCCCTGAGACCCTGTATCGACTACCGAGGACTCAACAGTA
+                           AAAGAAGGACAAGTCCCTGAGACCCTGTATCGACTACCGAGGACTCAACAGTATCACAGTGAAAAACAGGTACCCTCTTC
+                                                     GTATCGACTACCGAGGACTCAACAGTATCACAGTGAAAAACAGGTACCCTCTTCCCTTATTGTCCTCGGCCTTTGACAAG
+```
+
+Given that the baits consist of 3 tiles which the middle is completely contained within the first and last tiles,
+ I am running the first tile are the forward read and the last tile as the reverse read (and eliminating the middle)
+```
+ln ~/shotgun_PIRE/pire_probe_sets/03_Spratelloides_delicatulus/Bird_Final_Baits_GC_55-36_choosen_baits.fas mkBAM_mappingProbes_tomakeBED/
+# this code prints the line matching "_0$" which is the first tile and the next line or the actual sequence.
+awk '/_0$/{x=NR+1}(NR<=x){print}' Bird_Final_Baits_GC_55-36_choosen_baits.fas > Bird_Final_Baits_GC_55-36_choosen_baits.R1.fq
+# this code prints the line matching "_53$" which is the last tile and the next line or the actual sequence.
+awk '/_53$/{x=NR+1}(NR<=x){print}' Bird_Final_Baits_GC_55-36_choosen_baits.fas > Bird_Final_Baits_GC_55-36_choosen_baits.R2.fq
+```
+
+***Execute mkBAM***
+```
+sbatch dDocentHPC_dev2.sbatch mkBAM config.6.cssl
+# after that was done, then
+sbatch dDocentHPC_dev2.sbatch fltrBAM config.6.cssl
+```
+
+Then, I made the bed from the RAW bam (since we don't want to lose bait regions
+```
+bedtools bamtobed -i Bird_Final_Baits_GC_55-36_choosen_baits.cssl.Sde-CMat_087-RAW.bam > Sde_bait_csslRef.bed
+```
+
+Just in case, I will only keep the first 2 columns (name of contig, start pos , end pos)
+```
+cut -f1-3 Sde_bait_csslRef.bed > Sde_bait_csslRef_3columns.bed
+```
+
+
+***Running the probe coverage and R scripts again***
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_csslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_csslRef_3columns.bed
+```
+Did the above for both 1st and 2nd run mkBAM_csslRef
+
+***R scripts ran locally***
