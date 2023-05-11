@@ -49,7 +49,7 @@ A list of ongoing CSSL projects can be found below. If you are working on a CSSL
 |Hmi | On ODU HPC | Ivan | QC needs to be done |
 |Sde | On ODU HPC | Eric / Omar | Second batch of data - QC needs to be done, combine with first batch for postQC/SNP calling steps |
 |Sgr | On ODU HPC | Eric | QC needs to be done |
-|Sfa | On ODU HPC | Jem | Filter VCF |
+|Sfa | On ODU HPC | Jem | fltrBAM done as of 05/11/2023, proceeding with GenErode, Atlas then ANGSD |
 |Ssp | On ODU HPC | Brendan | QC needs to be done |
 
 ---
