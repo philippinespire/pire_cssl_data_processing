@@ -1,0 +1,156 @@
+
+Gmi-ABas_003-Ex1-b-cssl2
+2023-06-30 14:54:27
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 16
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 16 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+16 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R2.fq.gz
+time spent on hash reads: 0s, 422 reads processed
+[LIB] 0, avg_ins 250, reverse 0 
+10204 nodes allocated, 17388 kmer in reads, 17388 kmer processed
+9786 linear nodes
+time spent on marking linear nodes 0s
+time spent on pre-graph construction: 0s
+
+deLowKmer 0, deLowEdge 1
+Start to remove kmer of out frequency kmers < 0.100000
+0 kmers off
+16 thread created
+0 linear nodes
+time spent on cut kmer: 0s
+
+Start to remove tips of single frequency kmers short than 142
+112 tips off
+16 thread created
+7 linear nodes
+Start to remove tips which don't contribute the most links
+kmer set 0 done
+kmer set 1 done
+kmer set 2 done
+kmer set 3 done
+kmer set 4 done
+kmer set 5 done
+kmer set 6 done
+kmer set 7 done
+kmer set 8 done
+kmer set 9 done
+kmer set 10 done
+kmer set 11 done
+kmer set 12 done
+kmer set 13 done
+kmer set 14 done
+kmer set 15 done
+164 tips off
+16 thread created
+0 linear nodes
+time spent on cutTipe: 0s
+
+8 (4) edges 0 extra nodes
+time spent on making edges: 0s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+16 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R2.fq.gz
+422 reads processed
+time 0,0,0,0,0,0,0
+0 markers outputed
+done mapping reads, 384 reads deleted, 4 arcs created
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 1s
+
+6 vertex outputed
+overall time for lightgraph: 0m
+
+contig -g work71 -M 3 
+there're 6 kmers in vertex file
+there're 8 edge in edge file
+done sort
+input 8 edges
+4 pre-arcs loaded
+start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 30, MAX DIFF 10
+4 startingPoints, 0 dheap nodes
+0 pairs found, 0 pairs of paths compared, 0 pairs merged
+sequenc compare failure: 0 0 0 0
+DFibHeap: 0 Nodes allocated
+a linear concatenation lap, 0 concatenated
+8 edges in graph
+time spent on bubblePinch: 0s
+
+Start to remove the low coverage edge < 2
+1 edges removed
+
+strict 0, cutLen 142
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 0 tips cut
+0 dead arcs removed
+a linear concatenation lap, 0 concatenated
+0 edges in graph
+there're 8 edges
+after compacting 0 edges left
+
+delete unlike arc :0
+1 time to delete light arcs 
+0 loops removed in Graph
+Start to remove light arc using the rate 0.050000 and 0.020000
+delete light arc :0/0
+
+0 short contig(<48) removed 
+a linear concatenation lap, 0 concatenated
+0 edges in graph
+there're 0 edges
+after compacting 0 edges left
+
+0 contigs longer than 72 output
+time elapsed: 0m
+
+map -s work71.soaptrans.lib -g work71 -p 16 -K 71 -f 
+K = 71
+contig len cutoff: 73
+
+there're 0 contigs in file: work71, max seq len 10, min seq len 0, max name len 10
+time spent on parse contigs file 0s
+16 thread created
+time spent on hash reads: 0s
+0 nodes allocated, 0 kmer in reads, 0 kmer processed
+time spent on De bruijn graph construction: 0s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+16 thread created
+0 edges in graph
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/mkBAM/Gmi-ABas_003-Ex1-b-cssl2.clmp.fp2_repr.R2.fq.gz
+current insert size 250, map_len 32
+Output 0 out of 4110230 (0.0)% reads in gaps
+0 out of 4110230 (0.0)% reads mapped to contigs
+1 pe insert size, the largest boundary is 4110230
+
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 18s
+
+overall time for alignment: 0m
+
+scaff -g work71 -F -p 16 
+there're 1 grads, 4110230 reads, max read len 150
+K = 71
+there're 0 edge in edge file
+0 arcs loaded
+input 0 contigs
+done loading updated edges
+Error occured when running command:
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 16
