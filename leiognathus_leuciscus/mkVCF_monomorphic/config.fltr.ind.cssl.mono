@@ -7,17 +7,17 @@ Notes: These settings are designed to clean a raw VCF file made from individuals
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
 	fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                  # order to run filters in
-	fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off                               # cutoffs, ie ref description
-	fltrVCF -b /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM                                                                  # path to *.bam files
-	fltrVCF -R /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-	fltrVCF -d /home/cbird/pire_cssl_data_processing/leiognathus_leucsicus/mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.bed           # bed file used in genotyping
-	fltrVCF -v /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.vcf          # vcf file to filter
-        fltrVCF -g /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.fasta      # reference genome
-	fltrVCF -p /scratch/r3clark/PIRE-Lle-Ham/mkVCF_monomorphic/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.HWEsplit               # popmap file
-	fltrVCF -w /home/r3clark/PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-	fltrVCF -r /home/r3clark/PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
-	fltrVCF -o lle.mono                                                                     # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                        # number of threads [1]
+	fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                               # cutoffs, ie ref description
+	fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic                                                                  # path to *.bam files
+	fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                                                                  # path to fltrVCF R scripts
+	fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed                           # bed file used in genotyping
+	fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.vcf         # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta                      # reference genome
+	fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                               # popmap file
+	fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                                                 # path to HWE filter script
+	fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                                                                 # path to rad_haplotyper script
+	fltrVCF -o Lle.mono                                                                                                                                                       # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                                                                                             # number of threads [1]
 
 Filters
 	# See manual for how to pass multiple settings to filters that are run multiple times
