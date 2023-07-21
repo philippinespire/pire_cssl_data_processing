@@ -1,0 +1,326 @@
+
+Thu May 19 17:03:37 EDT 2022
+
+BAMDIR=/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+OUTDIR=/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic
+BAMPATTERN=-RG.bam
+SPECIES=Aen
+
+Running samtools coverage and stats
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_001-AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_002-AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_003-AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_004-AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_005-AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_006-AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_007-AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_008-AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_009-AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_010-AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_011-AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_012-AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_013-AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_014-AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_015-AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_016-AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_017-AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_019-AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_020-AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_021-AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_022-AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_023-AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_024-AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_025-AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_027-AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_028-AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_029-AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_030-AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_031-AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_032-AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_033-AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_035-AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_036-AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_037-AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_038-AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_039-AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_040-AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_041-AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_042-AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_043-AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_044-AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_045-AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_046-AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_047-AeA01047_CKDL210012719-1a-AK8410-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_048-AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_049-AeA01049_CKDL210012719-1a-AK8587-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_050-AeA01050_CKDL210012719-1a-AK8587-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_051-AeA01051_CKDL210012719-1a-AK8587-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_052-AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_053-AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_054-AeA01054_CKDL210012719-1a-AK8587-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_055-AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_056-AeA01056_CKDL210012719-1a-AK8587-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_057-AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_058-AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_059-AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_060-AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_001-AeC01001_CKDL210012719-1a-5UDI301-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_002-AeC01002_CKDL210012719-1a-AK7758-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_003-AeC01003_CKDL210012719-1a-AK7078-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_004-AeC01004_CKDL210012719-1a-AK9143-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_005-AeC01005_CKDL210012719-1a-5UDI225-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_006-AeC01006_CKDL210012719-1a-AK9144-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_007-AeC01007_CKDL210012719-1a-AK3911-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_008-AeC01008_CKDL210012719-1a-5UDI245-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_009-AeC01009_CKDL210012719-1a-AK8593-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_010-AeC01010_CKDL210012719-1a-AK8593-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_011-AeC01011_CKDL210012719-1a-5UDI294-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_012-AeC01012_CKDL210012719-1a-AK9146-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_013-AeC01013_CKDL210012719-1a-5UDI301-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_014-AeC01014_CKDL210012719-1a-AK7758-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_015-AeC01015_CKDL210012719-1a-AK7078-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_016-AeC01016_CKDL210012719-1a-AK9143-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_017-AeC01017_CKDL210012719-1a-5UDI225-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_018-AeC01018_CKDL210012719-1a-AK9144-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_019-AeC01019_CKDL210012719-1a-AK3911-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_020-AeC01020_CKDL210012719-1a-5UDI245-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_021-AeC01021_CKDL210012719-1a-AK8593-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_022-AeC01022_CKDL210012719-1a-5UDI294-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_023-AeC01023_CKDL210012719-1a-AK9146-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_024-AeC01024_CKDL210012719-1a-AK5577-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_025-AeC01025_CKDL210012719-1a-5UDI301-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_026-AeC01026_CKDL210012719-1a-AK7758-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_027-AeC01027_CKDL210012719-1a-AK7078-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_028-AeC01028_CKDL210012719-1a-AK9143-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_029-AeC01029_CKDL210012719-1a-5UDI225-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_030-AeC01030_CKDL210012719-1a-AK9144-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_031-AeC01031_CKDL210012719-1a-AK3911-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_032-AeC01032_CKDL210012719-1a-5UDI245-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_033-AeC01033_CKDL210012719-1a-AK8593-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_034-AeC01034_CKDL210012719-1a-5UDI294-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_035-AeC01035_CKDL210012719-1a-AK9146-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_036-AeC01036_CKDL210012719-1a-AK5577-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_037-AeC01037_CKDL210012719-1a-5UDI301-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_038-AeC01038_CKDL210012719-1a-AK7758-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_039-AeC01039_CKDL210012719-1a-AK7078-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_040-AeC01040_CKDL210012719-1a-AK9143-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_041-AeC01041_CKDL210012719-1a-5UDI225-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_042-AeC01042_CKDL210012719-1a-AK9144-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_043-AeC01043_CKDL210012719-1a-AK3911-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_044-AeC01044_CKDL210012719-1a-5UDI245-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_045-AeC01045_CKDL210012719-1a-AK8593-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_046-AeC01046_CKDL210012719-1a-5UDI294-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_047-AeC01047_CKDL210012719-1a-AK9146-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_048-AeC01048_CKDL210012719-1a-AK5577-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_049-AeC01049_CKDL210012719-1a-5UDI301-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_050-AeC01050_CKDL210012719-1a-AK7758-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_051-AeC01051_CKDL210012719-1a-AK7078-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_052-AeC01052_CKDL210012719-1a-AK9143-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_053-AeC01053_CKDL210012719-1a-5UDI225-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_054-AeC01054_CKDL210012719-1a-AK9144-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_055-AeC01055_CKDL210012719-1a-AK3911-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_056-AeC01056_CKDL210012719-1a-5UDI245-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_057-AeC01057_CKDL210012719-1a-AK8593-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_058-AeC01058_CKDL210012719-1a-5UDI294-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_059-AeC01059_CKDL210012719-1a-AK9146-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_060-AeC01060_CKDL210012719-1a-AK5577-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_062-AeC01062_CKDL210012719-1a-AK7758-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_063-AeC01063_CKDL210012719-1a-AK7078-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_064-AeC01064_CKDL210012719-1a-AK9143-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_065-AeC01065_CKDL210012719-1a-5UDI225-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_066-AeC01066_CKDL210012719-1a-AK9144-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_067-AeC01067_CKDL210012719-1a-AK3911-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_068-AeC01068_CKDL210012719-1a-5UDI245-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_069-AeC01069_CKDL210012719-1a-AK8593-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_070-AeC01070_CKDL210012719-1a-5UDI294-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_071-AeC01071_CKDL210012719-1a-AK9146-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_072-AeC01072_CKDL210012719-1a-AK5577-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_073-AeC01073_CKDL210012719-1a-5UDI301-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_074-AeC01074_CKDL210012719-1a-AK7758-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_075-AeC01075_CKDL210012719-1a-AK7078-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_076-AeC01076_CKDL210012719-1a-AK9143-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_077-AeC01077_CKDL210012719-1a-5UDI225-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_078-AeC01078_CKDL210012719-1a-AK9144-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_079-AeC01079_CKDL210012719-1a-AK3911-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_080-AeC01080_CKDL210012719-1a-5UDI245-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_081-AeC01081_CKDL210012719-1a-AK8593-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_082-AeC01082_CKDL210012719-1a-5UDI294-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_083-AeC01083_CKDL210012719-1a-AK9146-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_084-AeC01084_CKDL210012719-1a-AK5577-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_085-AeC01085_CKDL210012719-1a-5UDI301-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_086-AeC01086_CKDL210012719-1a-AK7758-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_087-AeC01087_CKDL210012719-1a-AK7078-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_088-AeC01088_CKDL210012719-1a-AK9143-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_089-AeC01089_CKDL210012719-1a-5UDI225-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_090-AeC01090_CKDL210012719-1a-AK9144-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_091-AeC01091_CKDL210012719-1a-AK3911-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_092-AeC01092_CKDL210012719-1a-5UDI245-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_094-AeC01094_CKDL210012719-1a-5UDI294-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_095-AeC01095_CKDL210012719-1a-AK9146-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+/bin/bash: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_096-AeC01096_CKDL210012719-1a-AK5577-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.cvg: Permission denied
+Calculating summary stats
+/var/spool/slurmd/job682596/slurm_script: line 90: /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/out_Aen_ReadStats.tsv: Permission denied
+
+Summary Completed. Out file=/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/out_Aen_ReadStats.tsv
+sed: can't read /scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/out_Aen_ReadStats.tsv: No such file or directory
+
+Processed files
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_001-AeA01001_CKDL210012719-1a-AK9141-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_002-AeA01002_CKDL210012719-1a-AK9141-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_003-AeA01003_CKDL210012719-1a-AK9141-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_004-AeA01004_CKDL210012719-1a-AK9141-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_005-AeA01005_CKDL210012719-1a-AK9141-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_006-AeA01006_CKDL210012719-1a-AK9141-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_007-AeA01007_CKDL210012719-1a-AK9141-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_008-AeA01008_CKDL210012719-1a-AK9141-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_009-AeA01009_CKDL210012719-1a-AK3905-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_010-AeA01010_CKDL210012719-1a-AK3905-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_011-AeA01011_CKDL210012719-1a-AK3905-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_012-AeA01012_CKDL210012719-1a-AK3905-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_013-AeA01013_CKDL210012719-1a-AK3905-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_014-AeA01014_CKDL210012719-1a-AK3905-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_015-AeA01015_CKDL210012719-1a-AK3905-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_016-AeA01016_CKDL210012719-1a-AK3905-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_017-AeA01017_CKDL210012719-1a-AK7761-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_019-AeA01019_CKDL210012719-1a-AK7761-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_020-AeA01020_CKDL210012719-1a-AK7761-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_021-AeA01021_CKDL210012719-1a-AK7761-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_022-AeA01022_CKDL210012719-1a-AK7761-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_023-AeA01023_CKDL210012719-1a-AK7761-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_024-AeA01024_CKDL210012719-1a-AK7761-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_025-AeA01025_CKDL210012719-1a-5UDI298-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_027-AeA01027_CKDL210012719-1a-5UDI298-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_028-AeA01028_CKDL210012719-1a-5UDI298-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_029-AeA01029_CKDL210012719-1a-5UDI298-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_030-AeA01030_CKDL210012719-1a-5UDI298-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_031-AeA01031_CKDL210012719-1a-5UDI298-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_032-AeA01032_CKDL210012719-1a-5UDI298-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_033-AeA01033_CKDL210012719-1a-AK9142-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_035-AeA01035_CKDL210012719-1a-AK9142-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_036-AeA01036_CKDL210012719-1a-AK9142-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_037-AeA01037_CKDL210012719-1a-AK9142-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_038-AeA01038_CKDL210012719-1a-AK9142-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_039-AeA01039_CKDL210012719-1a-AK9142-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_040-AeA01040_CKDL210012719-1a-AK9142-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_041-AeA01041_CKDL210012719-1a-AK8410-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_042-AeA01042_CKDL210012719-1a-AK8410-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_043-AeA01043_CKDL210012719-1a-AK8410-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_044-AeA01044_CKDL210012719-1a-AK8410-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_045-AeA01045_CKDL210012719-1a-AK8410-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_046-AeA01046_CKDL210012719-1a-AK8410-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_047-AeA01047_CKDL210012719-1a-AK8410-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_048-AeA01048_CKDL210012719-1a-AK8410-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_049-AeA01049_CKDL210012719-1a-AK8587-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_050-AeA01050_CKDL210012719-1a-AK8587-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_051-AeA01051_CKDL210012719-1a-AK8587-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_052-AeA01052_CKDL210012719-1a-AK8587-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_053-AeA01053_CKDL210012719-1a-AK8587-7UDI308_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_054-AeA01054_CKDL210012719-1a-AK8587-AK2587_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_055-AeA01055_CKDL210012719-1a-AK8587-GC12_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_056-AeA01056_CKDL210012719-1a-AK8587-7UDI246_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_057-AeA01057_CKDL210012719-1a-AK7759-7UDI214_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_058-AeA01058_CKDL210012719-1a-AK7759-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_059-AeA01059_CKDL210012719-1a-AK7759-AK1864_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-AHam_060-AeA01060_CKDL210012719-1a-AK7759-AK7558_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_001-AeC01001_CKDL210012719-1a-5UDI301-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_002-AeC01002_CKDL210012719-1a-AK7758-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_003-AeC01003_CKDL210012719-1a-AK7078-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_004-AeC01004_CKDL210012719-1a-AK9143-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_005-AeC01005_CKDL210012719-1a-5UDI225-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_006-AeC01006_CKDL210012719-1a-AK9144-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_007-AeC01007_CKDL210012719-1a-AK3911-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_008-AeC01008_CKDL210012719-1a-5UDI245-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_009-AeC01009_CKDL210012719-1a-AK8593-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_010-AeC01010_CKDL210012719-1a-AK8593-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_011-AeC01011_CKDL210012719-1a-5UDI294-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_012-AeC01012_CKDL210012719-1a-AK9146-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_013-AeC01013_CKDL210012719-1a-5UDI301-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_014-AeC01014_CKDL210012719-1a-AK7758-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_015-AeC01015_CKDL210012719-1a-AK7078-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_016-AeC01016_CKDL210012719-1a-AK9143-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_017-AeC01017_CKDL210012719-1a-5UDI225-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_018-AeC01018_CKDL210012719-1a-AK9144-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_019-AeC01019_CKDL210012719-1a-AK3911-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_020-AeC01020_CKDL210012719-1a-5UDI245-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_021-AeC01021_CKDL210012719-1a-AK8593-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_022-AeC01022_CKDL210012719-1a-5UDI294-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_023-AeC01023_CKDL210012719-1a-AK9146-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_024-AeC01024_CKDL210012719-1a-AK5577-AK533_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_025-AeC01025_CKDL210012719-1a-5UDI301-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_026-AeC01026_CKDL210012719-1a-AK7758-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_027-AeC01027_CKDL210012719-1a-AK7078-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_028-AeC01028_CKDL210012719-1a-AK9143-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_029-AeC01029_CKDL210012719-1a-5UDI225-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_030-AeC01030_CKDL210012719-1a-AK9144-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_031-AeC01031_CKDL210012719-1a-AK3911-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_032-AeC01032_CKDL210012719-1a-5UDI245-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_033-AeC01033_CKDL210012719-1a-AK8593-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_034-AeC01034_CKDL210012719-1a-5UDI294-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_035-AeC01035_CKDL210012719-1a-AK9146-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_036-AeC01036_CKDL210012719-1a-AK5577-AK7557_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_037-AeC01037_CKDL210012719-1a-5UDI301-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_038-AeC01038_CKDL210012719-1a-AK7758-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_039-AeC01039_CKDL210012719-1a-AK7078-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_040-AeC01040_CKDL210012719-1a-AK9143-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_041-AeC01041_CKDL210012719-1a-5UDI225-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_042-AeC01042_CKDL210012719-1a-AK9144-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_043-AeC01043_CKDL210012719-1a-AK3911-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_044-AeC01044_CKDL210012719-1a-5UDI245-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_045-AeC01045_CKDL210012719-1a-AK8593-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_046-AeC01046_CKDL210012719-1a-5UDI294-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_047-AeC01047_CKDL210012719-1a-AK9146-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_048-AeC01048_CKDL210012719-1a-AK5577-AK8488_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_049-AeC01049_CKDL210012719-1a-5UDI301-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_050-AeC01050_CKDL210012719-1a-AK7758-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_051-AeC01051_CKDL210012719-1a-AK7078-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_052-AeC01052_CKDL210012719-1a-AK9143-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_053-AeC01053_CKDL210012719-1a-5UDI225-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_054-AeC01054_CKDL210012719-1a-AK9144-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_055-AeC01055_CKDL210012719-1a-AK3911-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_056-AeC01056_CKDL210012719-1a-5UDI245-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_057-AeC01057_CKDL210012719-1a-AK8593-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_058-AeC01058_CKDL210012719-1a-5UDI294-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_059-AeC01059_CKDL210012719-1a-AK9146-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_060-AeC01060_CKDL210012719-1a-AK5577-GC06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_062-AeC01062_CKDL210012719-1a-AK7758-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_063-AeC01063_CKDL210012719-1a-AK7078-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_064-AeC01064_CKDL210012719-1a-AK9143-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_065-AeC01065_CKDL210012719-1a-5UDI225-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_066-AeC01066_CKDL210012719-1a-AK9144-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_067-AeC01067_CKDL210012719-1a-AK3911-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_068-AeC01068_CKDL210012719-1a-5UDI245-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_069-AeC01069_CKDL210012719-1a-AK8593-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_070-AeC01070_CKDL210012719-1a-5UDI294-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_071-AeC01071_CKDL210012719-1a-AK9146-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_072-AeC01072_CKDL210012719-1a-AK5577-AK4236_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_073-AeC01073_CKDL210012719-1a-5UDI301-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_074-AeC01074_CKDL210012719-1a-AK7758-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_075-AeC01075_CKDL210012719-1a-AK7078-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_076-AeC01076_CKDL210012719-1a-AK9143-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_077-AeC01077_CKDL210012719-1a-5UDI225-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_078-AeC01078_CKDL210012719-1a-AK9144-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_079-AeC01079_CKDL210012719-1a-AK3911-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_080-AeC01080_CKDL210012719-1a-5UDI245-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_081-AeC01081_CKDL210012719-1a-AK8593-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_082-AeC01082_CKDL210012719-1a-5UDI294-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_083-AeC01083_CKDL210012719-1a-AK9146-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_084-AeC01084_CKDL210012719-1a-AK5577-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_085-AeC01085_CKDL210012719-1a-5UDI301-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_086-AeC01086_CKDL210012719-1a-AK7758-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_087-AeC01087_CKDL210012719-1a-AK7078-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_088-AeC01088_CKDL210012719-1a-AK9143-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_089-AeC01089_CKDL210012719-1a-5UDI225-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_090-AeC01090_CKDL210012719-1a-AK9144-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_091-AeC01091_CKDL210012719-1a-AK3911-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_092-AeC01092_CKDL210012719-1a-5UDI245-GD06_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_094-AeC01094_CKDL210012719-1a-5UDI294-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_095-AeC01095_CKDL210012719-1a-AK9146-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
+/scratch/r3clark/PIRE-Aen-Ham/mkVCF_monomorphic/Aen-Cbat_096-AeC01096_CKDL210012719-1a-AK5577-AK4234_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam
