@@ -1,0 +1,31 @@
+
+Tbi-ARos_013
+INFO	2023-05-11 15:17:12	AddOrReplaceReadGroups	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** 
+https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    AddOrReplaceReadGroups -I Tbi-ARos_013-merged.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-RG.bam -O Tbi-ARos_013-merged.rgfix.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-RG.bam -RGID Tbi-ARos_013-merged -RGLB mergedlibs -RGPL illumina -RGPU unit1 -RGSM Tbi-ARos_013-merged
+**********
+
+
+15:17:13.254 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Thu May 11 15:17:13 GMT-05:00 2023] AddOrReplaceReadGroups INPUT=Tbi-ARos_013-merged.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-RG.bam OUTPUT=Tbi-ARos_013-merged.rgfix.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate-RG.bam RGID=Tbi-ARos_013-merged RGLB=mergedlibs RGPL=illumina RGPU=unit1 RGSM=Tbi-ARos_013-merged    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Thu May 11 15:17:13 GMT-05:00 2023] Executing as mmalabag@d1-w6420a-08 on Linux 4.15.0-171-generic amd64; OpenJDK 64-Bit Server VM 1.8.0_252-b09; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.27.5
+INFO	2023-05-11 15:17:17	AddOrReplaceReadGroups	Created read-group ID=Tbi-ARos_013-merged PL=illumina LB=mergedlibs SM=Tbi-ARos_013-merged
+
+INFO	2023-05-11 15:17:35	AddOrReplaceReadGroups	Processed     1,000,000 records.  Elapsed time: 00:00:14s.  Time for last 1,000,000:   14s.  Last read position: NODE_2458_length_27170_cov_4.983783:1,416
+INFO	2023-05-11 15:17:50	AddOrReplaceReadGroups	Processed     2,000,000 records.  Elapsed time: 00:00:29s.  Time for last 1,000,000:   14s.  Last read position: NODE_6583_length_18383_cov_3.146740:14,922
+INFO	2023-05-11 15:18:05	AddOrReplaceReadGroups	Processed     3,000,000 records.  Elapsed time: 00:00:44s.  Time for last 1,000,000:   15s.  Last read position: NODE_12915_length_13316_cov_3.021941:4,858
+INFO	2023-05-11 15:18:20	AddOrReplaceReadGroups	Processed     4,000,000 records.  Elapsed time: 00:00:59s.  Time for last 1,000,000:   14s.  Last read position: NODE_20602_length_10214_cov_3.174296:1,235
+INFO	2023-05-11 15:18:34	AddOrReplaceReadGroups	Processed     5,000,000 records.  Elapsed time: 00:01:13s.  Time for last 1,000,000:   14s.  Last read position: NODE_36603_length_6926_cov_92.106196:5,225
+INFO	2023-05-11 15:18:48	AddOrReplaceReadGroups	Processed     6,000,000 records.  Elapsed time: 00:01:27s.  Time for last 1,000,000:   13s.  Last read position: NODE_60970_length_4433_cov_2.956622:763
+INFO	2023-05-11 15:19:02	AddOrReplaceReadGroups	Processed     7,000,000 records.  Elapsed time: 00:01:41s.  Time for last 1,000,000:   14s.  Last read position: NODE_100180_length_2414_cov_3.254860:1,983
+INFO	2023-05-11 15:19:16	AddOrReplaceReadGroups	Processed     8,000,000 records.  Elapsed time: 00:01:55s.  Time for last 1,000,000:   14s.  Last read position: NODE_199287_length_360_cov_2.624521:41
+[Thu May 11 15:19:21 GMT-05:00 2023] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 2.14 minutes.
+Runtime.totalMemory()=10161225728
