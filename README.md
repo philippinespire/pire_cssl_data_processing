@@ -262,8 +262,8 @@ Copy the dDocentHPC config file and sbatch file to your mkBAM dir
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM
-cp ../../../dDocentHPC/configs/config.6.cssl .
-cp ../../../dDocentHPC/dDocentHPC_dev.sbatch .
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.cssl .
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/dDocentHPC_dev.sbatch .
 ```
 
 **IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
