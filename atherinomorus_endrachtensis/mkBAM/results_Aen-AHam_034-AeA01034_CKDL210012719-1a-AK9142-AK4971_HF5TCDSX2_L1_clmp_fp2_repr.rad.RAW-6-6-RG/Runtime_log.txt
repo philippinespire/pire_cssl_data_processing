@@ -1,0 +1,7 @@
+2023-04-25 16:57:33,905	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta
+2023-04-25 17:00:06,354	DEBUG	main: BAM read in 187.229326 seconds
+2023-04-25 17:20:00,630	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-04-25 17:20:01,197	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Stats_out 0 0 0 results_Aen-AHam_034-AeA01034_CKDL210012719-1a-AK9142-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/acgt_ratio.csv 0 0
+2023-04-25 17:38:12,831	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1091.633025 seconds
+2023-04-25 17:38:13,390	INFO	main: Successful run
+2023-04-25 17:38:13,390	DEBUG	main: Run completed in 2474.265926 seconds
