@@ -6,14 +6,22 @@ The purpose of this repo is to document the processing and analysis of `Capture 
 
 For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  
 
+<details><summary>Details</summary>
+<p>
+	
 **The Gmi dir (all steps) & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
   * A template version of can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md).
 
 Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu).
 
+</p>
+</details>
+
 ---
 
+<details><summary>Use Git/GitHub to Track Progress</summary>
+<p>
 ## Use Git/GitHub to Track Progress
 
 To process a species, begin by cloning this repo to your working dir. I recommend setting up a shotgun_PIRE sub-dir in your home dir if you have not done something similar already.
@@ -52,8 +60,14 @@ A list of ongoing CSSL projects can be found below. If you are working on a CSSL
 |Sfa | On ODU HPC | Jem | fltrBAM done as of 05/11/2023, proceeding with GenErode, Atlas then ANGSD |
 |Ssp | On ODU HPC | Brendan | QC needs to be done |
 
+</p>
+</details>
+
 ---
 
+<details><summary>Maintaining Git Repo</summary>
+<p>
+	
 ## Maintaining Git Repo
 
 You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
@@ -92,7 +106,8 @@ git add -u .
 git commit -m "update deletions"
 git push -u origin main
 ```
-___
+
+---
 
 ## Data Processing Roadmap
 
