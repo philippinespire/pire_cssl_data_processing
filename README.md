@@ -318,7 +318,7 @@ cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../scripts/dDocentHPC.sbatch config.6.cssl
+sbatch /home/e1garcia/shotgun_PIRE/dDocentHPC/dDocentHPC.sbatch config.6.cssl
 ```
 
 ---
