@@ -199,7 +199,7 @@ Make a mapping directory and make "hard links" to the re-paired `*fq.gz` files i
 cd YOUR_SPECIES_DIR
 
 mkdir mkBAM
-ln fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
+ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
 ```
 
 <details><summary>Skip this step if working in the `e1garcia` dir on wahab</summary>
