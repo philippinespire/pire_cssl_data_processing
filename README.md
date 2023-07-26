@@ -107,9 +107,13 @@ git commit -m "update deletions"
 git push -u origin main
 ```
 
+</p>
+</details>
+
 ---
 
-## Data Processing Roadmap
+<details><summary>PRE-PROCESSING SEQUENCES</summary>
+<p>
 
 ## A. PRE-PROCESSING SEQUENCES
 
@@ -195,6 +199,15 @@ Slack post= March 23th 2022, species channel
 </p>
 </details>
 
+
+</p>
+</details>
+
+---
+
+<details><summary>Complete fq.gz preprocessing</summary>
+<p>
+	
 ## 2. Complete fq.gz preprocessing
 
 Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here.
@@ -202,8 +215,14 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
   * This includes running FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ_SCREEN, and file re-pair scripts.
   * Make sure you are running the **CSSL** versions of any scripts when necessary.
   
+</p>
+</details>
+
 ---
 
+<details><summary>MAPPING & FILTERING DATA</summary>
+<p>
+	
 ## B. MAPPING & FILTERING DATA
 
 ## Set up mapping directory and get reference genome
@@ -739,6 +758,9 @@ tabix <spp 3 letter code>.all.recode.nomissing.sorted.vcf.gz #index all sites VC
 
 #Example for Gmi
 crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
+
+</p>
+</details>
 tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
 ```
 
