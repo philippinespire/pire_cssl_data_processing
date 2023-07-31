@@ -236,12 +236,12 @@ mkdir mkBAM
 ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
 ```
 
-<details><summary>Skip this step if working in the `e1garcia` dir on wahab</summary>
+<details><summary>Get dDocentHPC if you're NOT working within `e1garcia` (click in the arrow in this line)</summary>
 <p>
 
 Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
 
-  * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, `dDocentHPC` is already cloned.
+  * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. Don't do this step if you were working within `e1garcia`, `shotgun_PIRE/dDocentHPC` dir is already cloned.
 
 ```bash
 cd YOUR_SPECIES_DIR
@@ -250,15 +250,13 @@ cd ../../
 # you should now be in the dir that holds your cssl repo dir
 # on wahab, this has already been done, so don't do if you are in e1garcia dir on wahab
 git clone https://github.com/cbirdlab/dDocentHPC.git
-
-
 ```
-	
+ 
 ---
 </p>
 </details>
 
-Copy the dDocentHPC config file and sbatch file to your mkBAM dir
+If you were working within `e1garcia` continue here. Copy the dDocentHPC config file and sbatch file to your mkBAM dir
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM
