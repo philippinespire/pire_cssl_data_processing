@@ -1,0 +1,14 @@
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+Parallel module is no longer necessary, please feel free to not load it,
+parallel
+command will still be available to you.
+

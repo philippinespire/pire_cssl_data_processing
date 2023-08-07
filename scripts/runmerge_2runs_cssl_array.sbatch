@@ -8,7 +8,7 @@
 #SBATCH --exclusive=user 
 
 enable_lmod 
-module load samtools 
+module load container_env samtools
 export SINGULARITY_BIND=/home/e1garcia 
 
 speciesdir=${1} 
@@ -19,6 +19,6 @@ samps2merge=($samps2merge)
 sample_name=${samps2merge[${SLURM_ARRAY_TASK_ID}]}
 echo ${sample_name} 
 
-samtools merge ${speciesdir}/mergebams_run1run2/${sample_name}-merged-RG.bam ${speciesdir}/1st_sequencing_run/mkBAM/${sample_name}*RG.bam ${speciesdir}/2nd_sequencing_run/mkBAM/${sample_name}*RG.bam 
+crun.samtools samtools merge ${speciesdir}/mergebams_run1run2/${sample_name}-merged-RG.bam ${speciesdir}/1st_sequencing_run/mkBAM/${sample_name}*RG.bam ${speciesdir}/2nd_sequencing_run/mkBAM/${sample_name}*RG.bam 
 
-samtools index ${speciesdir}/mergebams_run1run2/${sample_name}-merged-RG.bam
+crun.samtools samtools index ${speciesdir}/mergebams_run1run2/${sample_name}-merged-RG.bam

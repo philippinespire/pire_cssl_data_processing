@@ -1,0 +1,7 @@
+2023-05-09 10:30:19,465	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Lle-AHam_026.clmp.fp2_repr.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-RG.bam -r reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta -l 150 --merge-reference-sequences
+2023-05-09 10:43:01,713	DEBUG	main: BAM read in 772.741184 seconds
+2023-05-09 10:43:17,673	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-05-09 10:43:17,674	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Lle-AHam_026.clmp.fp2_repr.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Lle-AHam_026.clmp.fp2_repr.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-RG/Stats_out 0 0 0 results_Lle-AHam_026.clmp.fp2_repr.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-RG/acgt_ratio.csv 0 0
+2023-05-09 11:03:57,355	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1239.680789 seconds
+2023-05-09 11:03:57,364	INFO	main: Successful run
+2023-05-09 11:03:57,364	DEBUG	main: Run completed in 2028.392633 seconds

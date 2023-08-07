@@ -3,7 +3,7 @@
 #SBATCH --job-name=bedtools
 #SBATCH -o bedtoolstats-%j.out
 #SBATCH --time=00:00:00
-#SBATCH --cpus-per-task=40
+#SBATCH --cpus-per-task=32
 
 # "getBAITcvg.sbatch" uses "bedtools coverage -hist" to calculates the breath and depth of coverage from the targeted Bait regions only (as determined by a bed file).
 # It compares each region provided by the bed file to the aligments in bam files.
@@ -23,7 +23,8 @@
 
 
 enable_lmod
-module load bedtools2/2.27.1
+#module load bedtools2/2.27.1
+module load container_env bedtools
 module load parallel
 
 export SINGULARITY_BIND="/home/cbird,/home/e1garcia/"
@@ -54,7 +55,7 @@ ls $BAMDIR/*$BAMPATTERN | \
             -e 's/\.bam//' | \
         parallel --no-notice \
                  -kj 32 \
-		"bedtools coverage -hist -a $BED -b $BAMDIR/{}.bam > $OUTDIR/{}.baitCVG.tsv"
+		"crun.bedtools bedtools coverage -hist -a $BED -b $BAMDIR/{}.bam > $OUTDIR/{}.baitCVG.tsv"
 
 ls $OUTDIR/*baitCVG.tsv | \
 	sed -e 's/^.*\///' \

@@ -36,7 +36,7 @@ Filters
         041 custom bash                 0.99            #Remove contigs with higher mean of mean depth across sites, percentile [0.99]
         041 custom bash                 0               #Remove contigs with lower CV of mean depth across sites, percentile [0]
         041 custom bash                 0.99            #Remove contigs with higher CV of mean depth across sites, percentile [0.99]
-        05 vcftools --max-missing       0.55:0.6        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
+        05 vcftools --max-missing       0.45            #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
 
         06 vcffilter AB min             0.375           #Remove sites with equal or lower allele balance [0.2]
         06 vcffilter AB max             0.625           #Remove sites with equal or lower allele balance [0.8]
@@ -53,7 +53,7 @@ Filters
         14 vcftools --minDP             5               #Code genotypes with lesser depth of coverage as NA [5]
         15 vcftools --maf               0               #Remove sites with lesser minor allele frequency.  Adjust based upon sample size. [0.005]
         15 vcftools --max-maf           1               #Remove sites with greater minor allele frequency.  Adjust based upon sample size. [0.995]
-        16 vcftools --missing-indv      0.6:0.5         #Remove individuals with more missing data. [0.5]
+        16 vcftools --missing-indv      0.8         #Remove individuals with more missing data. [0.5]
         161 vcftools --remove           rmInd.txt       #Remove individuals listed in file
         17 vcftools --missing-sites     0.5             #Remove sites with more data missing in a pop sample. [0.5]
         18 filter_hwe_by_pop_HPC        0.001           #Remove sites with <p in test for HWE by pop sample. Adjust based upon sample size [0.001]
