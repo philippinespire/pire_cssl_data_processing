@@ -362,7 +362,7 @@ Read the BWA manual.
 
 ---
 
-## Map reads to reference - Filter maps - Genotype maps
+## Map reads to reference
 
 Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
 
@@ -372,6 +372,75 @@ cd YOUR_SPECIES_DIR/mkBAM
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
 sbatch dDocentHPC.sbatch mkBAM config.6.cssl
+```
+
+---
+
+# Filtering the bam files
+
+## ADJUSTING fltrBAM SETTINGS in `config.6.cssl`
+
+_*It is always a good idea to spot check your alignments using IGV, both before and after filtering to confirm the effects of the filters and to identify abnormalities that you want to remove*_
+
+
+```
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+30		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+yes		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+no		Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no		Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+```
+
+Most of the fltrBAM settings are self explanitory. But some are non-intuitive. 
+
+### no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no) 
+
+I haven't seen this filter to have an effect on the data and remove reads that I think are duplicates (multiple read pairs start and end in the same position with identical sequences).  You can search a RAW alignment, find some read pairs that are duplicates, then search the filtered alignment made with this setting set to "yes" to see if it does anything.
+
+### no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)	
+
+This sounds like a good thing to do, BUT, sometimes it can be too "proper".  For example, if BWA MEM decides the insert size is too long, then a read pair might be filtered that is perfectly fine.  It can be a good idea to experiment with this setting.  There are ways to adjust the "proper" insert size, but they are not straight forward, involves making calculations from your data, and beyond the scope here.  If you search the dDocentHPC source code, you'll find an example of this for RAD data.
+
+### 0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+### 0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)
+
+These give you total control over the filters available in samtools.  Consult the samtools manual.
+
+### 50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+### 100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+
+These two settings allow you to apply a read length aware filter of the alignment score.  They cannot recover reads that are removed with the `bwa mem -T` setting, but they can remove reads that passed the `bwa mem -T setting` (see mkBAM). Thus, these work in concert with `bwa mem -T` to filter your mapped reads by alignment score.  This is especialy important if you have reads of variable lengths because `bwa mem -T` alone causes short reads to have less heterozygosity than longer reads.  
+
+The second value (100 `Read_length_assumed_by_relative_alignment_score_threshold`) controls the meaning of the first value (50 `Remove_reads_with_alignment_score_below_relative_threshold`).   These values work together to define the threshold alignment score (50) for reads of a given length (100), then the theshold is adjusted proportionately for all read lengths.  
+
+Example 1: With the default values of 50 and 100, 10 mismatches are allowed in a 100 bp read (10%).  100 - (A+B) * 100 * 0.10 = 50, where A is the match score from mkBAM and B is the mismatch penalty from mkBAM.  If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.10 
+
+Example 2: Let's say that you wanted your values to match the default for bwa mem -T and we assume that they intended that setting to be applied to 150 bp reads. Change the 50 to 30.  Change the 100 to 150.  Now, 150 - (A+B) * 150 * 0.16 = 30.  If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.16.  
+
+--- 
+
+## Map reads to reference
+
+Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
+
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch dDocentHPC.sbatch fltrBAM config.6.cssl
 ```
 
 ---
