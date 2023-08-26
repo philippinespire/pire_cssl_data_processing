@@ -309,6 +309,17 @@ Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
 
 ## ADJUSTING mkBAM SETTINGS in `config.6.cssl`
 
+```
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+13		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+```
+
 ### 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
 
 for every matching base between the ref genome and a read, this value is added to the alignment score
