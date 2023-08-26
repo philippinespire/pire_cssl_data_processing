@@ -307,6 +307,50 @@ Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
 
 ---
 
+## ADJUSTING mkBAM SETTINGS in `config.6.cssl`
+
+### 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+
+for every matching base between the ref genome and a read, this value is added to the alignment score
+
+If all the bases match, then the max alignment score is bp * (A)
+
+### 4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+
+For every mismatch between the ref genome and a read, this value is subtracted from the alignment score. 
+
+If there is 1 mismatch, then the alignment score = bp * A - (A + B)
+
+### 6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+
+Works similarly to the mismatches, but for gap open.  I have never encountered a situation where we wanted to adjust the gap extend penalty, so it is not accessibe from the config.
+
+### 13		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+
+This is the threshold alignment score above which all reads are kept and below which reads are classified as unmapped.
+
+This setting has a lot of power. If all of your reads are the same length, then you don't have much to worry about.  Set this at the value you want.
+
+Example 1:  All my reads are 150 bp (because in fastp, I removed any read shorter than this length).  I want to go with the bwa mem default value of 30 because I trust that this is the correct value.  150-30=120.  120/(A+B) = 24 mismatches or 16% of bases mismatched allowed using defaults.  120/(A+O) = 17 gap opens allowed using defaults. (this is just an example, not a suggestion)
+
+Example 2: All my reads are 150 bp, but I'm not trusting of defaults.  I decide that I'm more comfortable with a threshold of 10% of bases mismatching, so I change T to be 150 - 15 * (A+B) = 75.  (this is just an example, not a suggestion)
+
+If your reads have a broader distribution of lengths, as might be expected from degraded samples (aDNA, historical DNA, etc), then you have to take a different approach because the alignment score is heavily affecte by the read length and you don't want to bias the heterozygosity of your data by read length. The strategy is to adjust this setting for your shortest read length, and later fltrBAM will apply a "read length aware" filter to take care of the longer reads.  If you set T to zero (bad idea), you'll generate massive bam files, so you do want some filtering to happen here. 
+
+Example 3: My shortest reads are 50 bp because in fastp I removed any read shorter than 50 bp.  I assume that the authors of bwa mem set the defaults assuming that the read lengths are 150 (the Illumina std length), and I want to adjust that default to apply to reads that are 50 bp by allowing up to 16% mismatching bases.  So, I change T to be 50 - (A+B) * 50 * 0.16 = 10.    (this is just an example, not a suggestion)
+
+Example 4: My shortest reads are 33 bp because in fastp I removed any read shorter than 33 bp.  I know something about the biology and genome architecture of my species and would prefer to keep reads with 10% or fewer mismatches.  So, I change T to be 33 - (A+B) * 33 * 0.10 = 16.5 ~ 16.    (this is just an example, not a suggestion)
+
+You can obviously also make calculations based on gaps. 
+
+### 5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+
+Read the BWA manual.
+
+
+
+---
+
 ## Map reads to reference - Filter maps - Genotype maps
 
 Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
