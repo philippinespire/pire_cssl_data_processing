@@ -25,7 +25,7 @@
 enable_lmod
 #module load bedtools2/2.27.1
 module load container_env bedtools
-module load parallel
+#module load parallel
 
 export SINGULARITY_BIND="/home/cbird,/home/e1garcia/"
 
