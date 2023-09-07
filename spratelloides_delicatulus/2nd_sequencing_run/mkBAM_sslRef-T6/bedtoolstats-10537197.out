@@ -1,0 +1,819 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+/usr/bin/bash: line 1: 626954 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_001-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_001-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626956 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626958 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626959 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626961 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626963 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 626967 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626972 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626973 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_016-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_016-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 626975 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626977 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626979 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626982 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626984 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 626986 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 627052 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627074 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627100 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 627136 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627151 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627186 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627202 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627219 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 627233 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627245 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627257 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 627270 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 627274 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_046-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_046-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629134 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629197 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_049-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_049-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629405 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_050-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_050-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629407 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_052-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_052-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629401 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629406 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629403 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_055-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_055-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629416 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629471 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629477 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_058-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_058-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629551 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629554 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629556 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_061-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_061-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629563 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_062-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_062-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629565 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_063-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_063-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629567 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_065-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_065-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629605 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_066-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_066-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 629607 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_067-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_067-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629670 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_068-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_068-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629689 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_069-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_069-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 629726 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_070-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_070-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 630895 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_071-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_071-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 630957 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_072-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_072-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 631014 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_073-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_073-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631095 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_074-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_074-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631100 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_075-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_075-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631105 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_076-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_076-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 631110 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_077-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_077-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631128 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_078-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_078-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631357 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_079-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_079-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631458 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_080-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_080-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 631535 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_081-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_081-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+    from ..base.context import context
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+    from ..common.configuration import (Configuration, ConfigurationLoadError, MapParameter,
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+    from ..base.context import context
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+    from ..common.configuration import (Configuration, ConfigurationLoadError, MapParameter,
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+    from ..base.context import context
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+    from ..common.configuration import (Configuration, ConfigurationLoadError, MapParameter,
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+/usr/bin/bash: line 1: 631857 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ABul_089-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ABul_089-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+    from ..base.context import context
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+    from ..common.configuration import (Configuration, ConfigurationLoadError, MapParameter,
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+    from ..base.context import context
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+    from ..common.configuration import (Configuration, ConfigurationLoadError, MapParameter,
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+    from .serialize import yaml_round_trip_load
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 57, in <module>
+    from ruamel.yaml.main import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/main.py", line 17, in <module>
+    from ruamel.yaml.loader import BaseLoader, SafeLoader, Loader, RoundTripLoader  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/loader.py", line 4, in <module>
+    from ruamel.yaml.scanner import Scanner, RoundTripScanner
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+Traceback (most recent call last):
+  File "/opt/micromamba/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/__init__.py", line 3, in <module>
+    from .main import main  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/main.py", line 34, in <module>
+    from .conda_argparse import generate_parser
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/cli/conda_argparse.py", line 27, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/base/context.py", line 53, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/configuration.py", line 38, in <module>
+  File "/opt/micromamba/lib/python3.11/site-packages/conda/common/serialize.py", line 13, in <module>
+    import ruamel.yaml as yaml
+  File "/opt/micromamba/lib/python3.11/site-packages/ruamel/yaml/__init__.py", line 51, in <module>
+    from .cyaml import *  # NOQA
+    ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+/etc/container_runtime/runtime: line 7: exec: bedtools: not found
+/usr/bin/bash: line 1: 635315 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 635369 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 635401 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 635463 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 635465 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_008-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_008-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 635541 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 635700 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_010-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_010-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 635925 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_013-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_013-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 635988 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636091 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636093 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 636150 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636242 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636323 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636397 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 636479 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_023-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_023-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636512 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 636626 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_025-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_025-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636640 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_026-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_026-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 636760 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636812 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 636897 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 636940 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637003 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 637040 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637147 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637238 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637283 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_037-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_037-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637457 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637458 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637459 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+/usr/bin/bash: line 1: 637465 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 637471 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 637472 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637479 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 637488 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 637489 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-ATum_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-ATum_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 637494 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638169 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_012-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_012-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+/usr/bin/bash: line 1: 638411 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_015-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_015-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638476 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638477 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638482 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638547 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638621 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638772 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638776 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638779 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638791 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638821 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638828 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 638909 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 638936 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 639282 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 639373 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 639401 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 639429 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 639608 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_043-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 639646 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 639947 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640149 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640151 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640148 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_051-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_051-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640161 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640166 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640181 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640188 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640198 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_058-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_058-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640199 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640264 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+/usr/bin/bash: line 1: 640279 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_064-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_064-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640291 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_065-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_065-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640311 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_067-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_067-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640441 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_069-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_069-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640442 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_070-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_070-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640481 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_071-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_071-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640486 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_072-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_072-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640494 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_074-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_074-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640540 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_075-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_075-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640541 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_076-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_076-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 640599 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_077-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_077-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 640601 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_078-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_078-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 641433 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_079-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_079-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 641686 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_080-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_080-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 641819 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_083-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_083-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 641952 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_084-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_084-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 641968 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_086-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_086-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642534 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_088-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_088-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642547 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_089-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_089-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642557 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_090-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_090-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642558 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_091-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_091-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642568 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_092-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_092-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642569 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_094-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_094-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642584 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CJol_096-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CJol_096-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642585 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_001-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_001-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642676 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_002-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642695 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_003-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642705 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_004-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642706 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_005-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_005-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642748 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_006-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642785 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_007-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642798 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_008-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_008-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642811 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_009-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 642817 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_010-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_010-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 642847 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_011-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_011-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 643785 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_012-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_012-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 643928 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_013-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_013-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644071 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_014-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644072 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_015-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_015-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644077 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_016-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_016-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644084 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_017-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644142 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_018-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644157 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_019-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644162 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_020-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644200 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_021-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644413 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_022-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644509 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_024-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644536 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_025-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_025-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 644538 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_026-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_026-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 644758 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_027-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645075 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_028-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645166 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_029-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645327 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_030-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645342 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_031-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645367 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_032-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645410 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_033-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645457 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_034-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645515 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_035-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645557 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_036-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_036-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645562 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_037-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_037-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645692 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_038-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645765 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_039-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645809 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_040-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645817 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_041-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 645864 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_042-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 645938 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_044-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 646341 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_045-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646409 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_046-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_046-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646426 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_047-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646428 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_048-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646587 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_049-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_049-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646648 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_050-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_050-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646651 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_051-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_051-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646657 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_052-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_052-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 646697 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_053-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 646751 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_054-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 646884 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_055-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_055-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 646907 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_056-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+/usr/bin/bash: line 1: 646972 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_057-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+[E::bgzf_uncompress] Call to inflateInit2 failed: out of memory
+[E::bgzf_read] Read block operation failed with error 1 after 0 of 4 bytes
+/usr/bin/bash: line 1: 647143 Segmentation fault      (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_059-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/bin/bash: line 1: 647146 Aborted                 (core dumped) crun.bedtools bedtools coverage -hist -a /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed -b ./Sde-CTum_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.bam > ./out_baitTrgtCVG/Sde-CTum_060-Ex1-cssl.clmp.fp2_repr.ssl.Sde-CMat_061-RG.baitCVG.tsv

@@ -435,6 +435,16 @@ Running merge_fixrg_array.bash
 bash merge_fixrg_array.bash mergebams_run1run2
 ```
 
+***UPDATE August 2023***
+
+I have updated the following scripts to be run with Sde
+```
+merge_fixrg_array-Sde-EG.bash
+merge_fixrg_array-Sde-EG.sbatch
+#execute
+bash merge_fixrg_array-Sde-EG.bash mergebams_run1run2
+```
+
 These seemed to worked ok. So now moving back the merged.fixed.RG.bams back to mkBAM_config6 (1st run)
 ```
 pwd
@@ -570,3 +580,83 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.
 Did the above for both 1st and 2nd run mkBAM_csslRef
 
 ***R scripts ran locally***
+
+
+## Making a reference from SSL
+
+Since the cssl ref did not improved the mapping in all pops. I got the green light to do an SSL reference genome. Thus, Sde now has an SSL genome (see pire_ssl... for details)
+
+SSL sustantially improved the mapping for some pops but some still had low mapping success.
+
+Next I tried lower the MINLEN in fp2 to have more reads passing to SPAdes. I tried (140 default already ran, 100, 80, 50). BUSCO and QUAST for each can be found in the Sde-ssl repo. In general, BUSCO and QUAST did improve as we lower the MINLEN but the difference was only marginal.
+Thus, I wasn't sure how much the "longer" refs would increase mapping success. I processes the fp2_min80 all the way to initial genotyping to see if there was an effect. Surprisingly, fp2_min80 produced almost the same mapping success, and the VCF results were similar to worse (fp2_min140 ended up with more loci at the end of the initial genotyping, and both 140 and 80 had the same number of individuals surviving at the end). 
+
+In view of these results, I decided to stick with the original fp2_min140.
+
+Next, we are running blobtools to ID and remove contamination from refernce genome. We did both 140 and 80 because I was curious to see if the 80 would have more contamination in the assembly. This still running.
+
+### More lenient mapping by Lowering the Aligment Scores**
+**August 28th**
+
+Chris suggested lowering the aligment scores in mkBAM and fltrBAM to see if that increases the mapping success.
+
+Before I had mkBAM with `T=13` and fltrBAM with `50 Remove_reads_with_alignment_score_below_relative_threshold (integer)` and `100 Read_length_assumed_by_relative_alignment_score_threshold (integer)` 
+Now Running one mkBMA with `T=6` and fltrBAM with `30 Remove_reads_with_alignment_score_below_relative_threshold (integer)` and `150 Read_length_assumed_by_relative_alignment_score_threshold (integer)`
+
+New and most lenient run so far `mkBAM_sslRef-T6` is being process all the way to getting coverage and metadata plots.
+
+***Coverage script bed file***
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/mkBAM_sslRef/mkBAM_mappingProbes_tomakeBED/Sde_bait_sslRef_RGbam_3columns_singleLine.bed
+```
+
+## Pop Analyses
+
+I went ahead and performed a few pop gen analyses with the vcf from fp2_min140 (lenient fltrBAM)
+
+pwd `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/pop_structure_fltrBAM/`
+
+I followed the instructions in the cssl repo and produced structure and pca plots.
+
+*Fst* was calculated with vcftools
+```
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/pop_structure_fltrBAM/Fst
+```
+
+First create popmap files for each location and era. Each popmap file has a single column listing all the individuals belonging to that pop.
+ I then simply called these files by the Era-SiteID combo.
+```
+ABul.txt
+AMat.txt
+ATum.txt
+CHam.txt
+CJol.txt
+CMat.txt
+CTum.txt
+CVal.txt
+```
+**Note** the individual name must match those in the vcf file. You can extract these manually with
+```
+grep '^#C' <vcffile> | cut -f10- | sed 's/\t/\n/g' > individuals
+```
+
+Then split that file by pops. This is what one popfile looks like:
+```
+head ABul.txt
+Sde-ABul_001-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_002-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_003-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_004-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_006-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_007-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_009-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_014-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_016-Ex1-cssl.clmp.fp2_repr
+Sde-ABul_017-Ex1-cssl.clmp.fp2_repr
+```
+
+Now you calculate pairwise pop Fst with vcftools
+```
+module load container_env ddocent/2.9.4
+crun vcftools --vcf Sde.A.ssl.Sde-CMat_061.Fltr07.18.vcf --weir-fst-pop ABul.txt --weir-fst-pop CJol.txt --out ABul_vs_CJol
+```
