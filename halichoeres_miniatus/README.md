@@ -490,25 +490,42 @@ Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_css
 No evidence for cyrptic species. Proceeded to next step.
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF
-cp ../mkBAM/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate  ./popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF/AlbIndiv.only
+cp ../mkBAM/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate  ./popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit #to make it more uniform
 
-#added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
 
-Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
-
 ```sh
-cd YOUR_SPECIES_DIR/filterVCF
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF/AlbIndiv.only
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
 #vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
 #config file should ONLY run filters 18 & 17 (in that order)
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+```
+Make a copy of the config.fltr.ind.cssl file called config.fltr.ind.cssl.HWE with file paths and file extensions based on your species AND the new HWEsplit popmap (if applicable). The VCF path should point to the VCF made at the end of the previous filtering run (the file PCA & ADMIXTURE was run with). Remove any filters that aren't run in this step (from the fltrVCF -f line). You will only run filters 18 & 17 (in that order).
+```sh
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 18 17                                                                     # order to run filters in
+        fltrVCF -c ssl.Hmi-C-0451B-R1R2-contam-noIsolate                                     # cutoffs, ie ref description
+        fltrVCF -b ../../mkBAM                                                               # path to *.bam files
+        fltrVCF -R ../../../scripts/fltrVCF/scripts                                          # path to fltrVCF R scripts
+        fltrVCF -d ../../mkBAM/mapped.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.bed              # bed file used in genotyping
+        fltrVCF -v Hmi.A.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.Fltr07.18.vcf                 # vcf file to filter
+        fltrVCF -g ../../mkBAM/reference.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.fasta         # reference genome
+        fltrVCF -p popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit                     # popmap file
+        fltrVCF -w ../../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                         # path to HWE filter script
+        fltrVCF -r ../../../scripts/rad_haplotyper/rad_haplotyper.pl                         # path to rad_haplotyper script
+        fltrVCF -o Hmi.A                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
 
-#troubleshooting will be necessary
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 ```
 
 ---
@@ -519,7 +536,7 @@ Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
 ```sh
 #run in scratch if need more space
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus
 
 mkdir mKVCF_monomorphic
 mv mkBAM/*bam* mkVCF_monomorphic
@@ -534,7 +551,7 @@ yes      freebayes    --report-monomorphic (no|yes)                      Report 
 ```
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
 mv config.5.cssl config.5.cssl.monomrphic
 ```
@@ -542,7 +559,7 @@ mv config.5.cssl config.5.cssl.monomrphic
 Genotyped with [dDoceentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
 sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 ```
