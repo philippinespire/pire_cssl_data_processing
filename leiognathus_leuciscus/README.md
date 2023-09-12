@@ -481,19 +481,37 @@ cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate ./popmap.ssl.Lle-C-3N
 #added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
 
-Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+Copy config for HWE.
 
 ```sh
-cd YOUR_SPECIES_DIR/filterVCF
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+```
 
-#before running, make sure the config file is updated with file paths and file extensions based on your species
-#popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
-#vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
-#config file should ONLY run filters 18 & 17 (in that order)
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+Edit config. Before running, make sure the config file is updated with file paths and file extensions based on your species. Popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected). Vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with). Config file should ONLY run filters 18 & 17 (in that order)
 
-#troubleshooting will be necessary
+```sh
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 18 17                                                                     # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                                   # cutoffs, ie ref description
+        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed               # bed file used in genotyping
+        fltrVCF -v Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf               # vcf file to filter
+        fltrVCF -g ../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta          # reference genome
+        fltrVCF -p popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit                   # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Lle.A                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF_merge/filterVCF_merge
+
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE 
 ```
 
 ---
@@ -504,7 +522,7 @@ Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
 ```sh
 #run in scratch if need more space
-cd YOUR_SPECIES_DIR
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 mkdir mKVCF_monomorphic
 mv mkBAM/*bam* mkVCF_monomorphic
@@ -519,7 +537,7 @@ yes      freebayes    --report-monomorphic (no|yes)                      Report 
 ```
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 mv config.5.cssl config.5.cssl.monomrphic
 ```
@@ -527,9 +545,9 @@ mv config.5.cssl config.5.cssl.monomrphic
 Genotyped with [dDoceentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
-sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl.monomorphic 
 ```
 
 ---
@@ -541,28 +559,45 @@ Will filter for monomorphic & polymorphic loci separately, then merge the VCFs t
 Set-up filtering for monomorphic sites only.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 cp ../../scripts/config.fltr.ind.cssl.mono .
+```
+
+Update the `config.fltr.ind.cssl.mono` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made. **The settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file.**
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                  # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                               # cutoffs, ie ref description
+        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic                                                                  # path to *.bam files
+        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                                                                  # path to fltrVCF R scripts
+        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed                           # bed file used in genotyping
+        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.vcf         # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta                      # reference genome
+        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                               # popmap file
+        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                                                 # path to HWE filter script
+        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                                                                 # path to rad_haplotyper script
+        fltrVCF -o Lle.mono                                                                                                                                                       # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                                                                                             # number of threads [1]
 ```
 
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #VCF file should be the VCF file made after the "make monomorphic VCF" step
 #settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 10)
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
-
-#troubleshooting will  be necessary
 ```
 
 Set-up filtering for polymorphic sites only.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 mkdir polymorphic_filter
 cd polymorphic_filter
@@ -570,18 +605,31 @@ cd polymorphic_filter
 cp ../../../scripts/config.fltr.ind.cssl.poly .
 ```
 
+Update the `config.fltr.ind.cssl.poly` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made AND the HWEsplit popmap you made if you had any cryptic population structure. **The settings for all your filters should match the settings used when filtering the original VCF file.**
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17                                                                                                # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                                                                                                                    # cutoffs, ie ref description
+        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic                                                              # path to *.bam files
+        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                                                              # path to fltrVCF R scripts
+        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed                       # bed file used in genotyping
+        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.vcf     # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta                  # reference genome
+        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit              # popmap file
+        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                                             # path to HWE filter script
+        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                                                             # path to rad_haplotyper script
+        fltrVCF -o Lle.poly                                                                                                                                                   # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                                                                                         # number of threads [1]
+```
+
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/polymorphic_filter
 
-#before running, make sure the config file is updated with file paths and file extensions based on your species
-#VCF file should be the VCF file made after the "make monomorphic VCF" step
-#popmap file should be file used in step 12, that accounts for any cryptic structure (*HWEsplit extension)
-#settings should match the settings used when filtering the original VCF file (step 10)
-sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
-
-#troubleshooting will be necessary
+sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly 
 ```
 
 ---
@@ -590,75 +638,79 @@ sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
 
 Check monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
 
-* mono.VCF: filtering removed XX, XX, XX, ... Need to remove XX individuals as well to match polymorphic VCF.
-* poly.VCF: filtering removed XX,XX, XX, ...
-
 Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either  file (total of XX for *spp*). Used this list to make sure number of individuals matched in both filtered VCFs.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-mv polymorphic_filter/<FINAL POLY FILTERED VCF> . #will be from the 17 filter
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
+mv polymorphic_filter/Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.vcf . 
 
 module load vcftools
 
-vcftools --vcf <FINAL POLY FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL POLY FILTERED VCF>.nomissing
-mv <FINAL POLY FILTERED VCF>.nomissing.recode.vcf <FINAL POLY FILTERED VCF>nomissing.vcf
+#remove missing individuals in mono
+vcftools --vcf Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out  Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.vcf #remove missing indiv
+mv Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.vcf.recode.vcf Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.vcf #rename
 
-vcftools --vcf <FINAL MONO FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL MONO FILTERED VCF>.nomissing
-mv <FINAL MONO FILTERED VCF>.nomissing.recode.vcf <FINAL MONO FILTERED VCF>nomissing.vcf
+#remove missing individuals in poly
+vcftools --vcf Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.vcf
+mv Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.vcf.recode.vcf Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.vcf
+
 ```
 
 Sorted each VCF file.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load vcftools
 
 #sort monomorphic (nomissing VCF)
-vcf-sort <NOMISSING MONO VCF> > <NOMISING MONO VCF>.sorted.vcf
+vcf-sort Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.vcf > Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.sorted.vcf
 
 #sort polymorphic (nomissing VCF)
-vcf-sort <NOMISSING POLY VCF> > <NOMISING POLY VCF>.sorted.vcf
+vcf-sort Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.vcf > Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.sorted.vcf
 ```
 
 Zipped each VCF file.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load samtools/1.9
 
 #zip monomorphic
-bgzip -c <SORTED MONO VCF> > <SORTED MONO VCF>.gz
+bgzip -c Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.sorted.vcf > Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.sorted.vcf.gz
 
 #zip polymorphic
-bgzip -c <SORTED POLY VCF> > <SORTED POLY VCF>.gz
+bgzip -c Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.sorted.vcf > Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.sorted.vcf.gz
 ```
 
 Indexed each VCF file.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
 module load samtools/1.9
 
 #index monomorphic
-tabix  <GZIPPED MONO VCF>
+tabix Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.sorted.vcf.gz
 
 #index polymorphic
-tabix <GZIPPED POLY VCF>
+tabix Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.sorted.vcf.gz
 ```
 
 Merged files.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic/mkVCF_monomorphic
 
 module load container_env bcftools
 module load samtools/1.9
 
-crun bcftools concat --allow-overlaps  <GZIPPED MONO VCF>  <GZIPPED POLY VCF> -O z -o <spp>.all.recode.nomissing.sorted.vcf.gz
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
-tabix <spp>.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+crun bcftools concat --allow-overlaps Lle.mono.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.11.recode.nomissing.sorted.vcf.gz Lle.poly.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o Lle.all.recode.nomissing.sorted.vcf.gz
+tabix Lle.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
+
+exit
 ```
