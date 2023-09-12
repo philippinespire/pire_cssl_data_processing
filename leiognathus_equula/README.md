@@ -40,7 +40,7 @@ Make a filtering directory
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAMmerge/
-mkdir /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
+mkdir /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF
 ```
 
 Since the code is being worked with while in Eric's directory, no need to clone. However, if not, clone the fltrVCF and rad_haplotyper repos and copy config.fltr.ind.cssl over to filterVCF_merge.
@@ -48,7 +48,7 @@ Since the code is being worked with while in Eric's directory, no need to clone.
 Copy config file to directory
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF
 cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 ```
 
@@ -75,7 +75,7 @@ The filter settings didn't need adjustment and were left at the default.
 Run fltrVCF.sbatch
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl 
 ```
 
@@ -86,7 +86,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
 Make a population_structure directory and copy your filtered VCF file there.
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF
 
 mkdir pop_structuremerge
 cd ../pop_structuremerge
@@ -99,7 +99,7 @@ cp ../filterVCFmerge/Leq.A.rad.RAW-2-2.Fltr07.18.vcf .
 
 Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structure
 
 #create your conda popgen environment and install PLINK
 
@@ -115,7 +115,7 @@ conda deactivate
 
 Made input files for ADMIXTURE with PLINK.
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structure
 
 module load anaconda
 conda activate popgen
@@ -130,7 +130,7 @@ conda deactivate
 Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structuremerge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/pop_structure
 
 module load anaconda
 conda activate popgen
@@ -150,6 +150,33 @@ Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_css
 No evidence for cryptic species. Proceeded to next step.
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/filterVCF
 
+cp config.fltr.ind.cssl config.fltr.ind.cssl.HWE
+```
+
+Make a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with file paths and file extensions based on your species AND the new HWEsplit popmap (if applicable). The VCF path should point to the VCF made at the end of the previous filtering run (the file PCA & ADMIXTURE was run with). Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run filters 18 & 17 (in that order).**
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 18 17                     # order to run filters in
+        fltrVCF -c rad.RAW-2-2                                                               # cutoffs, ie ref description
+        fltrVCF -b ../mkBAMmerge                                                             # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAMmerge/mapped.rad.RAW-2-2.bed                                      # bed file used in genotyping
+        fltrVCF -v ../pop_structure/Leq.A.rad.RAW-2-2.Fltr07.18.rename.vcf                   # vcf file to filter
+        fltrVCF -g ../mkBAMmerge/reference.rad.RAW-2-2.fasta                                 # reference genome
+        fltrVCF -p popmap.rad.RAW-2-2.HWE                                                    # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Leq.A                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge/filterVCF_merge
+
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 ```
