@@ -561,7 +561,7 @@ Genotyped with [dDoceentHPC_mkVCF.sbatch](https://github.com/philippinespire/pir
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
-sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+sbatch dDocentHPC.sbatch config.5.cssl.monomorphic #copied dDocentHPC.sbatch to edit and create only VCF files
 ```
 
 ---
@@ -573,124 +573,79 @@ Will filter for monomorphic & polymorphic loci separately, then merge the VCFs t
 Set-up filtering for monomorphic sites only.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
 cp ../../scripts/config.fltr.ind.cssl.mono .
 ```
+Update the `config.fltr.ind.cssl.mono` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made. **The settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file.**
 
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                                                                                                    # order to run filters in
+        fltrVCF -c ssl.Hmi-C-0451B-R1R2-contam-noIsolate                                                                                               # cutoffs, ie ref description
+        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic                                        # path to *.bam files
+        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                                       # path to fltrVCF R scripts
+        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkBAM/mapped.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.bed   # bed file used in genotyping
+        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf      # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic/reference.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.fasta      # reference genome
+        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkBAM/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.edited        # popmap file
+        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Hmi.mono                                                                                                        # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                                                        # number of threads [1]
+
+```
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
-#before running, make sure the config file is updated with file paths and file extensions based on your species
-#VCF file should be the VCF file made after the "make monomorphic VCF" step
-#settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file (step 10)
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono 
 
-#troubleshooting will  be necessary
 ```
 
 Set-up filtering for polymorphic sites only.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic
 
 mkdir polymorphic_filter
 cd polymorphic_filter
 
 cp ../../../scripts/config.fltr.ind.cssl.poly .
 ```
+Update the `config.fltr.ind.cssl.poly` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made AND the HWEsplit popmap you made if you had any cryptic population structure. **The settings for all your filters should match the settings used when filtering the original VCF file.**
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17                                                                                             # order to run filters in
+        fltrVCF -c ssl.Hmi-C-0451B-R1R2-contam-noIsolate                                                                                                                   # cutoffs, ie ref description
+        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic                                                            # path to *.bam files
+        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                                                           # path to fltrVCF R scripts
+        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkBAM/mapped.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.bed                       # bed file used in genotyping
+        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic/TotalRawSNPs.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.vcf     # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic/reference.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.fasta      # reference genome
+        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/filterVCF/AlbIndiv.only/popmap.ssl.Hmi-C-0451B-R1R2-contam-noIsolate.HWEsplit    # popmap file
+        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                                          # path to HWE filter script
+        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                                                          # path to rad_haplotyper script
+        fltrVCF -o Hmi.poly                                                                                                                                                # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                                                                                      # number of threads [1]
+```
 
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus/mkVCF_monomorphic/polymorphic_filter
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #VCF file should be the VCF file made after the "make monomorphic VCF" step
 #popmap file should be file used in step 12, that accounts for any cryptic structure (*HWEsplit extension)
 #settings should match the settings used when filtering the original VCF file (step 10)
-sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
+sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly 
 
-#troubleshooting will be necessary
 ```
 
----
-
-## Step 15. Merge monomorphic & polymorphic VCF files
-
-Check monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
-
-* mono.VCF: filtering removed XX, XX, XX, ... Need to remove XX individuals as well to match polymorphic VCF.
-* poly.VCF: filtering removed XX,XX, XX, ...
-
-Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of all the individuals removed from either  file (total of XX for *spp*). Used this list to make sure number of individuals matched in both filtered VCFs.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-mv polymorphic_filter/<FINAL POLY FILTERED VCF> . #will be from the 17 filter
-
-module load vcftools
-
-vcftools --vcf <FINAL POLY FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL POLY FILTERED VCF>.nomissing
-mv <FINAL POLY FILTERED VCF>.nomissing.recode.vcf <FINAL POLY FILTERED VCF>nomissing.vcf
-
-vcftools --vcf <FINAL MONO FILTERED VCF> --remove indv_missing.txt --recode --recode-INFO-all --out <FINAL MONO FILTERED VCF>.nomissing
-mv <FINAL MONO FILTERED VCF>.nomissing.recode.vcf <FINAL MONO FILTERED VCF>nomissing.vcf
-```
-
-Sorted each VCF file.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-
-module load vcftools
-
-#sort monomorphic (nomissing VCF)
-vcf-sort <NOMISSING MONO VCF> > <NOMISING MONO VCF>.sorted.vcf
-
-#sort polymorphic (nomissing VCF)
-vcf-sort <NOMISSING POLY VCF> > <NOMISING POLY VCF>.sorted.vcf
-```
-
-Zipped each VCF file.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-
-module load samtools/1.9
-
-#zip monomorphic
-bgzip -c <SORTED MONO VCF> > <SORTED MONO VCF>.gz
-
-#zip polymorphic
-bgzip -c <SORTED POLY VCF> > <SORTED POLY VCF>.gz
-```
-
-Indexed each VCF file.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-
-module load samtools/1.9
-
-#index monomorphic
-tabix  <GZIPPED MONO VCF>
-
-#index polymorphic
-tabix <GZIPPED POLY VCF>
-```
-
-Merged files.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-
-module load container_env bcftools
-module load samtools/1.9
-
-crun bcftools concat --allow-overlaps  <GZIPPED MONO VCF>  <GZIPPED POLY VCF> -O z -o <spp>.all.recode.nomissing.sorted.vcf.gz
-
-tabix <spp>.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream analyses
-```
+However, because only Alb individuals were taken, there was not enough information. Running the previous code resulted in empty polymorphic files. Therefore, the proceeding steps could not run. 
