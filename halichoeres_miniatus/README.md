@@ -377,7 +377,7 @@ git pull
 cd pire_cssl_data_processing/scripts/rad_haplotyper
 git pull
 
-cd pire_cssl_data_processing/gazza_minuta
+cd pire_cssl_data_processing/halichoeres_miniatus
 mkdir filterVCF
 cd filterVCF
 
