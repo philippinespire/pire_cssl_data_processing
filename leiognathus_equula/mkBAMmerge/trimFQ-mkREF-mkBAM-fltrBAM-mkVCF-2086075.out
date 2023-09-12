@@ -1,0 +1,955 @@
++ VERSION=4.5
++ echo
+
++ echo -e '\n* dDocentHPC v4.5 Forked by cbird@tamucc.edu * \n'
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
++ '[' -n mkVCF ']'
+++ echo mkVCF
++ FUNKTION=mkVCF
++ echo
+
++ echo 'Running dDocentHPC mkVCF...'
+Running dDocentHPC mkVCF...
++ '[' -n config.6.rad ']'
++ echo ' '
+ 
+++ date
+++ pwd
++ echo Tue Aug 8 15:10:37 EDT 2023 'Files output to: ' /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAMmerge
+Tue Aug 8 15:10:37 EDT 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAMmerge
++ echo ''
+
+++ date
++ echo Tue Aug 8 15:10:37 EDT 2023 'Reading config file... '
+Tue Aug 8 15:10:37 EDT 2023 Reading config file... 
++ echo ' '
+ 
++ cat config.6.rad
+Settings for dDocentHPC
+#Made in notepad++, use for best viewing
+
+These default settings assume ddRAD, no overlapping 151 bp reads
+
+20		Number of Processors (Not Adjustable)
+All		Free Memory (Not Adjustable)
+
+----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
+146		trimmomatic MINLEN (integer, mkREF only)						Drop the read if it is below a specified length. Set to the length of the Read1 reads.
+75		trimmomatic MINLEN (integer, mkBAM only)						Drop the read if it is below a specified length. Set to the minimum frag length you want mapped to the reference.
+20		trimmomatic LEADING:<quality> (integer, mkBAM only)				Specifies the minimum quality required to keep a base.
+15		trimmomatic TRAILING:<quality> (integer, mkREF only)			Specifies the minimum quality required to keep a base.
+20		trimmomatic TRAILING:<quality> (integer, mkBAM only)			Specifies the minimum quality required to keep a base.
+TruSeq3-PE-2.fa	trimmomatic ILLUMINACLIP:<fasta> (0, fasta file name)			Specifies the trimmomatic adapter file to use. entering a 0 (zero) will turn off adapter trimming. Options are: TruSeq3-PE-2.fa, TruSeq3-PE.fa, TruSeq3-SE.fa, TruSeq2-PE.fa, TruSeq2-SE.fa, any other files included with trimmomatic.  Entering a custom path here will break the script. If you want a customized file, you have to put it where the default trimmomatic files are located on your computer.  If you have trouble finding this location, run dDocentHPC trimREF and it will be included in the output.
+2		trimmomatic ILLUMINACLIP:<seed mismatches> (integer)			specifies the maximum mismatch count which will still allow a full match to be performed
+30		trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)		specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment
+10		trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)			specifies how accurate the match between any adapter etc. sequence must be against a read.
+20		trimmomatic SLIDINGWINDOW:<windowSize> (integer)				specifies the number of bases to average across
+20		trimmomatic SLIDINGWINDOW:<windowQuality> (integer)				specifies the average quality required.
+0		trimmomatic CROP:<bp to keep> (integer, mkBAM only)    Trim read sequences down to this length. Enter 0 for no cropping
+0		trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)	The number of bases to remove from the start of the read. 0 for ddRAD, 5 for ezRAD
+no		FixStacks (yes,no)   											Demultiplexing with stacks introduces anomolies.  This removes them.  
+------------------------------------------------------------------------------------------------------------------
+
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE		Type of reads for assembly (PE, SE, OL, RPE)					PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+0.9		cdhit Clustering_Similarity_Pct (0-1)							Use cdhit to cluster and collapse uniq reads by similarity threshold
+rad		Cutoff1 (integer)												Use unique reads that have at least this much coverage for making the reference	genome
+RAW-2-2		Cutoff2 (integer)												Use unique reads that occur in at least this many individuals for making the reference genome
+0.05	rainbow merge -r <percentile> (decimal 0-1)						Percentile-based minimum number of seqs to assemble in a precluster
+0.95	rainbow merge -R <percentile> (decimal 0-1)						Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+
+----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
+Make sure the cutoffs above match the reference*fasta!
+1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
+30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+------------------------------------------------------------------------------------------------------------------
+
+----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
+20		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
+no		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
+yes		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
+no		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
+yes		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
+0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
+0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
+20								Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50								Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+150								Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no								Remove_reads_orphaned_by_filters? (yes,no)
+------------------------------------------------------------------------------------------------------------------
+
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no		freebayes -J --pooled-discrete (yes|no) 						If yes, a pool of individuals is assumed to be the statistical unit of observation. 
+no		freebayes -A --cnv-map (filename.bed or no)						If the pools have different numbers of individuals, then you should provide a copy number variation (cnv) *.bed file with the "ploidy" of each pool. the bed file should be in the working directory and formatted as follows: popmap_column_1 ploidy_of_pool.  If that doesn't work, try the basenames of the files in popmap column 1.
+2		freebayes -p --ploidy (integer)									Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+no		freebayes -r --region (filename.bed or no)						Limit analysis to specified region.  Bed file format: <chrom>:<start_position>-<end_position>
+0		only genotype read 1 (integer)									Limit analysis to only Read 1 positions, integer is maximum Read1 bp position
+2		Minimum Mean Depth of Coverage Per Individual					Limit analysis to contigs with at least the specified mean depth of coverage per individual
+0		freebayes -n --use-best-n-alleles (integer)						reduce the number of alleles considered to n, zero means all, set to 2 or more if you run out of memory
+30		freebayes -m --min-mapping-quality (integer) 
+20		freebayes -q --min-base-quality (integer) 
+-1		freebayes -E --haplotype-length (-1, 3, or integer)    			Set to -1 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs.  Can be set up to half the read length, or more.
+0		freebayes    --min-repeat-entropy (0, 1, or integer) 			Set to 0 to avoid multi nucleotide polymorphisms and force calling MNPs as SNPs. To detect interrupted repeats, build across sequence until it has entropy > N bits per bp. 
+10		freebayes    --min-coverage (integer)       					Require at least this coverage to process a site
+0.375	freebayes -F --min-alternate-fraction (decimal 0-1)   			There must be at least 1 individual with this fraction of alt reads to evaluate the position. If your individuals are barcoded, then use 0.2. If your data is pooled, then set based upon ~ 1/(numIndivids * ploidy) and average depth of coverage
+20		freebayes -C --min-alternate-count (integer)					Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2
+20		freebayes -G --min-alternate-total (integer)					Require at least this count of observations supporting an alternate allele within the total population in order to use the allele in analysis.  default: 1
+0.33	freebayes -z --read-max-mismatch-fraction (decimal 0-1)			Exclude reads with more than N [0,1] fraction of mismatches where each mismatch has base quality >= mismatch-base-quality-threshold default: 1.0
+20		freebayes -Q --mismatch-base-quality-threshold (integer)		Count mismatches toward --read-mismatch-limit if the base quality of the mismatch is >= Q.  default: 10
+30		freebayes -U --read-mismatch-limit (integer)					Exclude reads with more than N mismatches where each mismatch has base quality >= mismatch-base-quality-threshold. default: ~unbounded
+30		freebayes ~3 ~~min-alternate-qsum (integer)						This value is the mean base quality score for alternate reads and will be multiplied by -C to set -3. Description of -3: Require at least this count of observations supporting an alternate allele within a single individual in order to evaluate the position.  default: 2	
+30		freebayes -$ --read-snp-limit (integer)							Exclude reads with more than N base mismatches, ignoring gaps with quality >= mismatch-base-quality-threshold. default: ~unbounded
+20		freebayes -e --read-indel-limit	(integer)						Exclude reads with more than N separate gaps. default: ~unbounded
+no		freebayes -w --hwe-priors-off (no|yes)							Disable estimation of the probability of the combination arising under HWE given the allele frequency as estimated by observation frequency.
+no		freebayes -V --binomial-obs-priors-off (no|yes)					Disable incorporation of prior expectations about observations. Uses read placement probability, strand balance probability, and read position (5'-3') probability.
+no		freebayes -a --allele-balance-priors-off (no|yes)				Disable use of aggregate probability of observation balance between alleles as a component of the priors.
+no		freebayes    --no-partial-observations (no|yes)					Exclude observations which do not fully span the dynamically-determined detection window.  (default, use all observations, dividing partial support across matching haplotypes when generating haplotypes.)
+no		freebayes    --report-monomorphic (no|yes)						Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Email
+user@tamucc.edu
+
++ echo ''
+
+++ date
++ echo Tue Aug 8 15:10:37 EDT 2023 'Reading in variables from config file...'
+Tue Aug 8 15:10:37 EDT 2023 Reading in variables from config file...
++ CONFIG=config.6.rad
+++ awk '{print $1;}'
+++ grep 'Number of Processors ' config.6.rad
++ NUMProc=20
+++ awk '{print $1;}'
+++ grep 'Maximum Memory ' config.6.rad
++ MAXMemory=
++ TRIM=RemoveThisVar
+++ awk '{print $1;}'
+++ grep 'trimmomatic MINLEN (integer, mkREF only)' config.6.rad
++ TRIM_LENGTH_ASSEMBLY=146
+++ awk '{print $1;}'
+++ grep 'trimmomatic ILLUMINACLIP:<fasta>' config.6.rad
++ ADAPTERS_FILE=TruSeq3-PE-2.fa
+++ awk '{print $1;}'
+++ grep 'trimmomatic ILLUMINACLIP:<seed mismatches> (integer)' config.6.rad
++ SEED_ASSEMBLY=2
+++ awk '{print $1;}'
+++ grep 'trimmomatic ILLUMINACLIP:<palindrome clip thresh> (integer)' config.6.rad
++ PALIMDROME_ASSEMBLY=30
+++ awk '{print $1;}'
+++ grep 'trimmomatic ILLUMINACLIP:<simple clip thresh> (integer)' config.6.rad
++ SIMPLE_ASSEMBLY=10
+++ awk '{print $1;}'
+++ grep 'trimmomatic SLIDINGWINDOW:<windowSize> (integer)' config.6.rad
++ windowSize_ASSEMBLY=20
+++ awk '{print $1;}'
+++ grep 'trimmomatic SLIDINGWINDOW:<windowQuality> (integer)' config.6.rad
++ windowQuality_ASSEMBLY=20
+++ awk '{print $1;}'
+++ grep 'trimmomatic TRAILING:<quality> (integer, mkREF only)' config.6.rad
++ TRAILING_ASSEMBLY=15
+++ awk '{print $1;}'
+++ grep 'trimmomatic MINLEN (integer, mkBAM only)' config.6.rad
++ TRIM_LENGTH_MAPPING=75
+++ awk '{print $1;}'
+++ grep 'trimmomatic LEADING:<quality> (integer, mkBAM only)' config.6.rad
++ LEADING_MAPPING=20
+++ awk '{print $1;}'
+++ grep 'trimmomatic TRAILING:<quality> (integer, mkBAM only)' config.6.rad
++ TRAILING_MAPPING=20
+++ awk '{print $1;}'
+++ grep 'trimmomatic CROP:' config.6.rad
++ CROP=0
+++ awk '{print $1;}'
+++ grep 'trimmomatic HEADCROP:<length> (integer, only Read1 for ezRAD)' config.6.rad
++ HEADCROP=0
+++ awk '{print $1;}'
+++ grep 'FixStacks ' config.6.rad
++ FixStacks=no
++ ASSEMBLY=RemoveThisVar
+++ awk '{print $1;}'
+++ grep 'Type of reads for assembly (PE, SE, OL, RPE)' config.6.rad
++ ATYPE=PE
+++ awk '{print $1;}'
+++ grep 'cdhit Clustering_Similarity_Pct' config.6.rad
++ simC=0.9
++ HPC=RemoveThisVar
++ MANCUTOFF=RemoveThisVar
+++ awk '{print $1;}'
+++ grep 'Cutoff1 (integer)' config.6.rad
++ CUTOFF=rad
+++ awk '{print $1;}'
+++ grep 'Cutoff2 (integer)' config.6.rad
++ CUTOFF2=RAW-2-2
+++ awk '{print $1;}'
+++ grep 'rainbow merge -r' config.6.rad
++ rPERCENTILE=0.05
+++ awk '{print $1;}'
+++ grep 'rainbow merge -R' config.6.rad
++ RPERCENTILE=0.95
++ MAP=RemoveThisVar
+++ awk '{print $1;}'
+++ grep 'bwa mem -A Mapping_Match_Value' config.6.rad
++ optA=1
+++ awk '{print $1;}'
+++ grep 'bwa mem -B Mapping_MisMatch_Value' config.6.rad
++ optB=4
+++ awk '{print $1;}'
+++ grep 'bwa mem -O Mapping_GapOpen_Penalty' config.6.rad
++ optO=6
+++ awk '{print $1;}'
+++ grep 'bwa mem -T Mapping_Minimum_Alignment_Score' config.6.rad
++ MAPPING_MIN_ALIGNMENT_SCORE=30
+++ awk '{print $1;}'
+++ grep 'bwa mem -L Mapping_Clipping_Penalty' config.6.rad
++ MAPPING_CLIPPING_PENALTY=5
++ FILTERMAP=RemoveThisVar
+++ awk '{print $1;}'
+++ grep Mapping_Min_Quality config.6.rad
++ MAPPING_MIN_QUALITY=20
+++ awk '{print $1;}'
+++ grep 'Remove_unmapped_reads?' config.6.rad
++ SAMTOOLS_VIEW_F4=no
+++ awk '{print $1;}'
+++ grep Remove_read_pair_if_one_is_unmapped config.6.rad
++ SAMTOOLS_VIEW_F8=yes
+++ awk '{print $1;}'
+++ grep Remove_secondary_alignments config.6.rad
++ SAMTOOLS_VIEW_F256=yes
+++ awk '{print $1;}'
+++ grep Remove_reads_not_passing_platform_vendor_filters config.6.rad
++ SAMTOOLS_VIEW_F512=no
+++ awk '{print $1;}'
+++ grep Remove_PCR_or_optical_duplicates config.6.rad
++ SAMTOOLS_VIEW_F1024=no
+++ awk '{print $1;}'
+++ grep Remove_supplementary_alignments config.6.rad
++ SAMTOOLS_VIEW_F2048=no
+++ awk '{print $1;}'
+++ grep Keep_only_properly_aligned_read_pairs config.6.rad
++ SAMTOOLS_VIEW_f2=yes
++ PARALLEL='parallel --no-notice -j 20'
++ '[' no == yes ']'
++ F4=0
++ '[' yes == yes ']'
++ F8=8
++ '[' yes == yes ']'
++ F256=256
++ '[' no == yes ']'
++ F512=0
++ '[' no == yes ']'
++ F1024=0
++ '[' no == yes ']'
++ F2048=0
++ SAMTOOLS_VIEW_F=264
++ '[' yes == yes ']'
++ SAMTOOLS_VIEW_f=2
+++ awk '{print $1;}'
+++ grep Custom_samtools_view_F_bit_value config.6.rad
++ SAMTOOLS_VIEW_Fcustom=0
+++ awk '{print $1;}'
+++ grep Custom_samtools_view_f_bit_value config.6.rad
++ SAMTOOLS_VIEW_fcustom=0
+++ awk '{print $1;}'
+++ grep Remove_reads_with_excessive_soft_clipping config.6.rad
++ SOFT_CLIP_CUT=20
++ SOFT_CLIP_CUTOFF=2
+++ awk '{print $1;}'
+++ grep Remove_reads_with_alignment_score_below config.6.rad
++ FILTER_MIN_AS=50
+++ awk '{print $1;}'
+++ grep Remove_reads_orphaned_by_filters config.6.rad
++ FILTER_ORPHANS=no
++ SNP=RemoveThisVar
+++ awk '{print $1;}'
+++ grep 'freebayes -J --pooled-discrete' config.6.rad
++ POOLS=no
+++ awk '{print $1;}'
+++ grep 'freebayes -A --cnv-map' config.6.rad
++ POOL_PLOIDY_FILE=no
+++ awk '{print $1;}'
+++ grep 'freebayes -p --ploidy' config.6.rad
++ PLOIDY=2
+++ awk '{print $1;}'
+++ grep 'freebayes -r --region' config.6.rad
++ FREEBAYES_r=no
++ '[' no == no ']'
++ FREEBAYES_r=
+++ awk '{print $1;}'
+++ grep 'only genotype read 1' config.6.rad
++ R1MaxBP=0
+++ awk '{print $1;}'
+++ grep 'Minimum Mean Depth of Coverage Per Individual' config.6.rad
++ MinGenoDepth=2
+++ awk '{print $1;}'
+++ grep 'freebayes -n --use-best-n-alleles' config.6.rad
++ BEST_N_ALLELES=0
+++ awk '{print $1;}'
+++ grep 'freebayes -m --min-mapping-quality' config.6.rad
++ MIN_MAPPING_QUAL=30
+++ awk '{print $1;}'
+++ grep 'freebayes -q --min-base-quality' config.6.rad
++ MIN_BASE_QUAL=20
+++ awk '{print $1;}'
+++ grep 'freebayes -E --haplotype-length' config.6.rad
++ HAPLOTYPE_LENGTH=-1
+++ awk '{print $1;}'
+++ grep 'freebayes    --min-repeat-entropy' config.6.rad
++ MIN_REPEAT_ENTROPY=0
+++ awk '{print $1;}'
+++ grep 'freebayes    --min-coverage' config.6.rad
++ MIN_COVERAGE=10
+++ awk '{print $1;}'
+++ grep 'freebayes -F --min-alternate-fraction' config.6.rad
++ MIN_ALT_FRACTION=0.375
+++ awk '{print $1;}'
+++ grep 'freebayes -z --read-max-mismatch-fraction' config.6.rad
++ FREEBAYES_z=0.33
+++ awk '{print $1;}'
+++ grep 'freebayes -C --min-alternate-count' config.6.rad
++ FREEBAYES_C=20
+++ awk '{print $1;}'
+++ grep 'freebayes ~3 ~~min-alternate-qsum' config.6.rad
++ FREEBAYES_3=30
++ FREEBAYES_3=600
+++ awk '{print $1;}'
+++ grep 'freebayes -G --min-alternate-total' config.6.rad
++ FREEBAYES_G=20
+++ awk '{print $1;}'
+++ grep 'freebayes -Q --mismatch-base-quality-threshold' config.6.rad
++ FREEBAYES_Q=20
+++ awk '{print $1;}'
+++ grep 'freebayes -U --read-mismatch-limit' config.6.rad
++ FREEBAYES_U=30
+++ awk '{print $1;}'
+++ grep 'freebayes -\$ --read-snp-limit' config.6.rad
++ FREEBAYES_DOLLAR=30
+++ awk '{print $1;}'
+++ grep 'freebayes -e --read-indel-limit' config.6.rad
++ FREEBAYES_e=20
+++ awk '{print $1;}'
+++ grep 'freebayes -w --hwe-priors-off' config.6.rad
++ FREEBAYES_w=no
++ '[' no == no ']'
++ FREEBAYES_w=
+++ awk '{print $1;}'
+++ grep 'freebayes -V --binomial-obs-priors-off' config.6.rad
++ FREEBAYES_V=no
++ '[' no == no ']'
++ FREEBAYES_V=
+++ awk '{print $1;}'
+++ grep 'freebayes -a --allele-balance-priors-off' config.6.rad
++ FREEBAYES_a=no
++ '[' no == no ']'
++ FREEBAYES_a=
+++ awk '{print $1;}'
+++ grep -P 'freebayes *\t* --no-partial-observations' config.6.rad
++ FREEBAYES_no_partial_observations=no
++ '[' no == no ']'
++ FREEBAYES_no_partial_observations=
+++ awk '{print $1;}'
+++ grep -P 'freebayes *\t* --report-monomorphic' config.6.rad
++ FREEBAYES_report_monomorphic=no
++ '[' no == no ']'
++ FREEBAYES_report_monomorphic=
+++ tail -1
+++ grep -A1 Email config.6.rad
++ MAIL=user@tamucc.edu
++ CUTOFFS=rad.RAW-2-2
++ echo
+
+++ date
++ echo Tue Aug 8 15:10:38 EDT 2023 'Checking for all required dDocent software...'
+Tue Aug 8 15:10:38 EDT 2023 Checking for all required dDocent software...
++ DEP=(trimmomatic freebayes mawk bwa samtools vcftools rainbow gnuplot gawk seqtk cd-hit-est bamToBed bedtools coverageBed parallel vcfcombine bamtools pearRM)
++ CheckDependencies trimmomatic
++ echo
+
++ echo ' Running CheckDependencies Function...'
+ Running CheckDependencies Function...
++ DEP=trimmomatic
++ missing_dep=
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ found=0
+++ head -1
+++ find /cm/shared/applications/slurm/wrapper /cm/shared/containers/rad_haplotyper/1.1.9 /opt/conda/share/trimmomatic-0.39-2 /opt/conda/bin /opt/seaview /opt/pagan2/bin /opt/conda/bin/libfabric /opt/micromamba/condabin /cm/shared/applications/slurm/23.02.2/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin -maxdepth 1 -name 'trimmomatic*jar'
++ TRIMMOMATIC=/opt/conda/share/trimmomatic-0.39-2/trimmomatic.jar
++ '[' TruSeq3-PE-2.fa '!=' 0 ']'
+++ head -1
+++ find /cm/shared/applications/slurm/wrapper /cm/shared/containers/rad_haplotyper/1.1.9 /opt/conda/share/trimmomatic-0.39-2 /opt/conda/bin /opt/seaview /opt/pagan2/bin /opt/conda/bin/libfabric /opt/micromamba/condabin /cm/shared/applications/slurm/23.02.2/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin -maxdepth 2 -name TruSeq3-PE-2.fa
++ ADAPTERS=/opt/conda/share/trimmomatic-0.39-2/adapters/TruSeq3-PE-2.fa
++ '[' -z /opt/conda/share/trimmomatic-0.39-2/adapters/TruSeq3-PE-2.fa ']'
++ '[' -z /opt/conda/share/trimmomatic-0.39-2/trimmomatic.jar ']'
++ '[' 0 -ne 0 ']'
++ echo '  The dependency trimmomatic is installed!'
+  The dependency trimmomatic is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash freebayes
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency freebayes is installed!'
+  The dependency freebayes is installed!
++ case "$i" in
+++ awk '-F[ v-]*' '/ersion/ {print $3}'
+++ freebayes
++ real_version=1.3.6
++ target_version=1.0.0
++ CheckVersion 1.0.0 1.3.6
++ lower=1.0.0
++ higher=1.3.6
+++ head -1
+++ sort -V
+++ echo -e '1.0.0\n1.3.6'
++ real=1.0.0
++ '[' '!' 1.0.0 = 1.0.0 ']'
++ '[' freebayes = bedtools ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash mawk
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency mawk is installed!'
+  The dependency mawk is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash bwa
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency bwa is installed!'
+  The dependency bwa is installed!
++ case "$i" in
+++ awk '-F[ -]' '/Version/ {print $2}'
+++ bwa
++ real_version=0.7.17
++ target_version=0.7.13
++ CheckVersion 0.7.13 0.7.17
++ lower=0.7.13
++ higher=0.7.17
+++ head -1
+++ sort -V
+++ echo -e '0.7.13\n0.7.17'
++ real=0.7.13
++ '[' '!' 0.7.13 = 0.7.13 ']'
++ '[' bwa = bedtools ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash samtools
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency samtools is installed!'
+  The dependency samtools is installed!
++ case "$i" in
+++ awk '/Version/ {print $2}'
+++ samtools --help
++ real_version=1.16.1
++ target_version=1.3
++ CheckVersion 1.3 1.16.1
++ lower=1.3
++ higher=1.16.1
+++ head -1
+++ sort -V
+++ echo -e '1.3\n1.16.1'
++ real=1.3
++ '[' '!' 1.3 = 1.3 ']'
++ '[' samtools = bedtools ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash vcftools
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency vcftools is installed!'
+  The dependency vcftools is installed!
++ case "$i" in
+++ awk '-F[()]' '/VCFtools/ {print $2}'
+++ vcftools
++ real_version=0.1.16
++ target_version=0.1.11
++ CheckVersion 0.1.11 0.1.16
++ lower=0.1.11
++ higher=0.1.16
+++ head -1
+++ sort -V
+++ echo -e '0.1.11\n0.1.16'
++ real=0.1.11
++ '[' '!' 0.1.11 = 0.1.11 ']'
++ '[' vcftools = bedtools ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash rainbow
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency rainbow is installed!'
+  The dependency rainbow is installed!
++ case "$i" in
+++ awk '/^rainbow/ {print $2}'
+++ rainbow
++ real_version=2.0.4
++ target_version=2.0.2
++ CheckVersion 2.0.2 2.0.4
++ lower=2.0.2
++ higher=2.0.4
+++ head -1
+++ sort -V
+++ echo -e '2.0.2\n2.0.4'
++ real=2.0.2
++ '[' '!' 2.0.2 = 2.0.2 ']'
++ '[' rainbow = bedtools ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash gnuplot
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency gnuplot is installed!'
+  The dependency gnuplot is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash gawk
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency gawk is installed!'
+  The dependency gawk is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash seqtk
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency seqtk is installed!'
+  The dependency seqtk is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash cd-hit-est
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency cd-hit-est is installed!'
+  The dependency cd-hit-est is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash bamToBed
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency bamToBed is installed!'
+  The dependency bamToBed is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash bedtools
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency bedtools is installed!'
+  The dependency bedtools is installed!
++ case "$i" in
+++ awk '-F[v ]' '{print $3}'
+++ bedtools --version
++ real_version=2.30.0
++ target_version=2.23.0
++ CheckVersion 2.23.0 2.30.0
++ lower=2.23.0
++ higher=2.30.0
+++ head -1
+++ sort -V
+++ echo -e '2.23.0\n2.30.0'
++ real=2.23.0
++ '[' '!' 2.23.0 = 2.23.0 ']'
++ '[' bedtools = bedtools ']'
++ CheckVersion 2.24.0 2.30.0
++ lower=2.24.0
++ higher=2.30.0
+++ head -1
+++ sort -V
+++ echo -e '2.24.0\n2.30.0'
++ real=2.24.0
++ '[' '!' 2.24.0 = 2.24.0 ']'
++ CheckVersion 2.30.0 2.26.0
++ lower=2.30.0
++ higher=2.26.0
+++ head -1
+++ sort -V
+++ echo -e '2.30.0\n2.26.0'
++ real=2.26.0
++ '[' '!' 2.30.0 = 2.26.0 ']'
++ BEDTOOLSFLAG=NEW
++ '[' -z NEW ']'
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash coverageBed
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency coverageBed is installed!'
+  The dependency coverageBed is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash parallel
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency parallel is installed!'
+  The dependency parallel is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash vcfcombine
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency vcfcombine is installed!'
+  The dependency vcfcombine is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash bamtools
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency bamtools is installed!'
+  The dependency bamtools is installed!
++ case "$i" in
++ continue
++ for i in "${DEP[@]}"
++ echo
+
++ case "$i" in
++ hash pearRM
++ found=0
++ '[' 0 -ne 0 ']'
++ echo '  The dependency pearRM is installed!'
+  The dependency pearRM is installed!
++ case "$i" in
++ continue
++ echo
+
++ '[' -z '' ']'
++ echo ' All dependencies are installed and up to date!'
+ All dependencies are installed and up to date!
++ return
++ fgrep -v GNU
++ awk --version
++ awk=awk
++ fgrep GNU
++ sort --version
++ sort=sort
+++ wc -l
+++ ls '*.fq'
++ TEST=0
++ '[' 0 -gt 0 ']'
++ [[ -n mkVCF ]]
++ main
++ echo ''
+
++ echo ''
+
+++ date
++ echo Tue Aug 8 15:10:38 EDT 2023 ' Begin main ddocent function'
+Tue Aug 8 15:10:38 EDT 2023  Begin main ddocent function
++ echo ''
+
++ echo ' The HPC version of dDocent will only digest files with particular extensions for particular tasks'
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
++ echo '  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz'
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
++ echo '  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz'
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
++ echo '  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz'
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
++ '[' mkVCF == trimFQ ']'
++ '[' mkVCF == trimFQref ']'
++ '[' mkVCF == trimFQmap ']'
++ '[' mkVCF == mkREF ']'
++ '[' mkVCF == mkBAM ']'
++ '[' mkVCF == fltrBAM ']'
++ '[' mkVCF == mkVCF ']'
++ F=R1
++ Fwild='*.R1.fq.gz'
++ Fsed=.R1.fq.gz
++ R=R2
++ Rwild='*.R2.fq.gz'
++ Rsed=.R2.fq.gz
++ echo ''
+
++ echo '  extensions selected: *.R1.fq.gz *.R2.fq.gz'
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
++ '[' mkVCF == fltrBAM ']'
++ '[' mkVCF == mkVCF ']'
+++ wc -l
+++ ls Leq-ABas_001-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_002-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_003-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_004-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_005-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_006-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_007_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_008-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_009-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_010-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_011-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_012-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_013-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_014-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_015-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_016-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_017-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_018-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_019-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_020-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_021-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_022-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_023-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_025-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_026-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_027-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_028-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_029-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_030-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_031-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_032-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_033-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_034-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_035-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_036-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_039-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_040-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_041_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_042-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_043-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_044-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_045_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_046-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_047_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_048-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_052-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_053-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_054_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_055_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_056-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_058-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_004-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_005-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_006-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_007-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_008-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_009-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_012-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_014-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_015-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_016-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_017-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_020-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_021-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_022-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_025-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_026-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_028-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_029-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_030-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_032-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_033-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_036-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_037-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_038-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_040-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_041-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_042-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_045-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_046-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_047-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_049-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_050-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_051-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_054-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_055-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_058-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_059-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_062-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_063-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_064-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_065-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_066-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_068-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_069-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_070-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_073-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_074-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_075-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_076-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_077-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_079-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_081-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_084-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_085-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_086-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_087-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_089-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_091-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_092-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_093-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_095-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_096-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam
++ NumInd=114
++ '[' '!' -s namelist.rad.RAW-2-2 ']'
+++ grep -c '^' namelist.rad.RAW-2-2
++ '[' 114 '!=' 114 ']'
++ echo ''
+
++ echo ' The namelist file already exists and was not recreated. '
+ The namelist file already exists and was not recreated. 
++ echo '  If you experience errors, you should delete the namelist file.'
+  If you experience errors, you should delete the namelist file.
+++ grep -c '^' namelist.rad.RAW-2-2
++ NUMNAMES=114
++ '[' 114 == 114 ']'
++ NAMES=(`cat "namelist.$CUTOFFS" `)
+++ cat namelist.rad.RAW-2-2
++ echo ' '
+ 
++ echo ' The samples being processed are:'
+ The samples being processed are:
++ parallel --no-notice 'echo '\''  '\''{}'
++ cat namelist.rad.RAW-2-2
+  Leq-ABas_001-merged.rgfix
+  Leq-ABas_002-merged.rgfix
+  Leq-ABas_003-merged.rgfix
+  Leq-ABas_004-merged.rgfix
+  Leq-ABas_005-merged.rgfix
+  Leq-ABas_006-merged.rgfix
+  Leq-ABas_007_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_008-merged.rgfix
+  Leq-ABas_009-merged.rgfix
+  Leq-ABas_010-merged.rgfix
+  Leq-ABas_011-merged.rgfix
+  Leq-ABas_012-merged.rgfix
+  Leq-ABas_013-merged.rgfix
+  Leq-ABas_014-merged.rgfix
+  Leq-ABas_015-merged.rgfix
+  Leq-ABas_016-merged.rgfix
+  Leq-ABas_017-merged.rgfix
+  Leq-ABas_018-merged.rgfix
+  Leq-ABas_019-merged.rgfix
+  Leq-ABas_020-merged.rgfix
+  Leq-ABas_021-merged.rgfix
+  Leq-ABas_022-merged.rgfix
+  Leq-ABas_023-merged.rgfix
+  Leq-ABas_025-merged.rgfix
+  Leq-ABas_026-merged.rgfix
+  Leq-ABas_027-merged.rgfix
+  Leq-ABas_028-merged.rgfix
+  Leq-ABas_029-merged.rgfix
+  Leq-ABas_030-merged.rgfix
+  Leq-ABas_031-merged.rgfix
+  Leq-ABas_032-merged.rgfix
+  Leq-ABas_033-merged.rgfix
+  Leq-ABas_034-merged.rgfix
+  Leq-ABas_035-merged.rgfix
+  Leq-ABas_036-merged.rgfix
+  Leq-ABas_039-merged.rgfix
+  Leq-ABas_040-merged.rgfix
+  Leq-ABas_041_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_042-merged.rgfix
+  Leq-ABas_043-merged.rgfix
+  Leq-ABas_044-merged.rgfix
+  Leq-ABas_045_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_046-merged.rgfix
+  Leq-ABas_047_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_048-merged.rgfix
+  Leq-ABas_052-merged.rgfix
+  Leq-ABas_053-merged.rgfix
+  Leq-ABas_054_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_055_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_056-merged.rgfix
+  Leq-ABas_058-merged.rgfix
+  Leq-CMig_004-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_005-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_006-merged.rgfix
+  Leq-CMig_007-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_008-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_009-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_012-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_014-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_015-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_016-merged.rgfix
+  Leq-CMig_017-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_020-merged.rgfix
+  Leq-CMig_021-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_022-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_025-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_026-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_028-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_029-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_030-merged.rgfix
+  Leq-CMig_032-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_033-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_036-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_037-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_038-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_040-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_041-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_042-merged.rgfix
+  Leq-CMig_045-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_046-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_047-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_049-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_050-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_051-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_054-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_055-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_058-merged.rgfix
+  Leq-CMig_059-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_062-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_063-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_064-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_065-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_066-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_068-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_069-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_070-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_073-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_074-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_075-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_076-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_077-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_079-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_081-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_084-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_085-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_086-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_087-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_089-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_091-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_092-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_093-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_095-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_096-Ex1_L3_clmp.fp2_repr
++ echo ''
+
+++ date
++ STARTTIME='Tue Aug  8 15:10:39 EDT 2023'
++ '[' no == yes ']'
++ '[' mkVCF == trimFQ ']'
++ '[' mkVCF == trimFQref ']'
++ '[' mkVCF == trimFQmap ']'
++ '[' mkVCF == mkREF ']'
++ '[' mkVCF == mkBAM ']'
++ '[' mkVCF == fltrBAM ']'
++ '[' mkVCF == mkVCF ']'
++ GENOTYPE
++ echo ''
+
+++ date
++ echo Tue Aug 8 15:10:39 EDT 2023 'Genotyping initiated...'
+Tue Aug 8 15:10:39 EDT 2023 Genotyping initiated...
++ echo ''
+
+++ date
++ echo ' Tue' Aug 8 15:10:39 EDT 2023 ' Preparing files for genotyping...'
+ Tue Aug 8 15:10:39 EDT 2023  Preparing files for genotyping...
+++ wc -l
+++ ls Leq-ABas_001-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_002-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_003-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_004-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_005-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_006-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_007_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_008-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_009-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_010-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_011-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_012-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_013-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_014-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_015-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_016-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_017-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_018-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_019-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_020-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_021-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_022-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_023-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_025-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_026-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_027-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_028-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_029-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_030-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_031-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_032-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_033-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_034-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_035-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_036-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_039-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_040-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_041_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_042-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_043-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_044-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_045_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_046-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_047_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_048-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_052-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_053-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_054_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_055_Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-ABas_056-merged.rgfix.rad.RAW-2-2-RG.bam Leq-ABas_058-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_004-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_005-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_006-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_007-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_008-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_009-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_012-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_014-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_015-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_016-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_017-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_020-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_021-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_022-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_025-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_026-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_028-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_029-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_030-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_032-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_033-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_036-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_037-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_038-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_040-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_041-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_042-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_045-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_046-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_047-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_049-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_050-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_051-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_054-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_055-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_058-merged.rgfix.rad.RAW-2-2-RG.bam Leq-CMig_059-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_062-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_063-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_064-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_065-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_066-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_068-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_069-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_070-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_073-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_074-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_075-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_076-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_077-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_079-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_081-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_084-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_085-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_086-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_087-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_089-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_091-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_092-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_093-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_095-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam Leq-CMig_096-Ex1_L3_clmp.fp2_repr.rad.RAW-2-2-RG.bam
++ RGBAM=114
++ '[' '!' -f split.1.rad.RAW-2-2.bam ']'
++ '[' 114 == 0 ']'
++ echo ''
+
+++ date
++ echo '  Tue' Aug 8 15:10:39 EDT 2023 'Filtered BAM files detected with -RG.bam.'
+  Tue Aug 8 15:10:39 EDT 2023 Filtered BAM files detected with -RG.bam.
++ '[' '!' -f cat.rad.RAW-2-2-RRG.bam ']'
++ '[' cat.rad.RAW-2-2-RRG.bam -nt mapped.rad.RAW-2-2.bed ']'
+++ date
++ echo '  Tue' Aug 8 15:10:39 EDT 2023 ' Estimating coverage of ref intervals & remove extreme copy number loci...'
+  Tue Aug 8 15:10:39 EDT 2023  Estimating coverage of ref intervals & remove extreme copy number loci...
++ '[' cat.rad.RAW-2-2-RRG.bam -nt cov.rad.RAW-2-2.stats ']'
+++ date
++ echo '  Tue' Aug 8 15:10:39 EDT 2023 ' Filtering contigs with low coverage...'
+  Tue Aug 8 15:10:39 EDT 2023  Filtering contigs with low coverage...
++++ cut '-d ' -f1
++++ wc -l namelist.rad.RAW-2-2
+++ echo 227
++ minCOV=227
++ uniq
++ mawk -v minCOV=227 '$4 < minCOV {print $1}' cov.rad.RAW-2-2.stats
++ grep -f low.cov.rad.RAW-2-2.contigs -vF cov.rad.RAW-2-2.stats
++ mv low.cov.rad.RAW-2-2.stats cov.rad.RAW-2-2.stats
++ rm low.cov.rad.RAW-2-2.contigs
++ grep -e dDocent reference.rad.RAW-2-2.fasta
++ head -1 reference.rad.RAW-2-2.fasta
+++ perl -e '$d=.001;@l=<>;print $l[int($d*@l)]'
+++ sort -rn
+++ mawk '{print $4}' cov.rad.RAW-2-2.stats
++ DP=337268
+++ mawk '{len=$3-$2;lc=len*$4;tl=tl+lc} END {OFMT = "%.0f";print tl/"20"}'
+++ mawk -v x=337268 '$4 <= x' cov.rad.RAW-2-2.stats
++ CC=333248978
+++ date
++ echo '  Tue' Aug 8 15:10:40 EDT 2023 ' Making the bed files...'
+  Tue Aug 8 15:10:40 EDT 2023  Making the bed files...
++ mawk -v x1=rad.RAW-2-2 -v cutoff=333248978 'BEGIN{i=1} 
+		{
+			len=$3-$2;lc=len*$4;cov = cov + lc
+			if ( cov < cutoff) {x="mapped."i"."x1".bed";print $1"\t"$2"\t"$3 > x}
+			else {i=i+1; x="mapped."i"."x1".bed"; print $1"\t"$2"\t"$3 > x; cov=0}
+		}'
++ shuf
++ mawk -v x=337268 '$4 <= x' cov.rad.RAW-2-2.stats
++ '[' 0 -gt 0 ']'
++ '[' '!' -s popmap.rad.RAW-2-2 ']'
++ samtools faidx reference.rad.RAW-2-2.fasta
++ ulimit -s 81920
++ '[' no == no ']'
++ echo
+
+++ date
++ echo ' Tue' Aug 8 15:10:40 EDT 2023 ' Genotyping individuals of ploidy 2 using freebayes...'
+ Tue Aug 8 15:10:40 EDT 2023  Genotyping individuals of ploidy 2 using freebayes...
++ parallel --no-notice -j 20 'freebayes -b cat.rad.RAW-2-2-RRG.bam -t mapped.{}.bed -v raw.{}.vcf -f reference.rad.RAW-2-2.fasta -p 2 -n 0 -m 30 -q 20 -E -1 --min-repeat-entropy 0 --min-coverage 10 -F 0.375 -C 20 -G 20 -3 600 -e 20 -z 0.33 -Q 20 -U 30 -$ 30 --populations popmap.rad.RAW-2-2 '
++ shuf
++ sed s/.bed//g
++ sed s/mapped.//g
++ ls mapped.10.rad.RAW-2-2.bed mapped.11.rad.RAW-2-2.bed mapped.12.rad.RAW-2-2.bed mapped.13.rad.RAW-2-2.bed mapped.14.rad.RAW-2-2.bed mapped.15.rad.RAW-2-2.bed mapped.16.rad.RAW-2-2.bed mapped.17.rad.RAW-2-2.bed mapped.18.rad.RAW-2-2.bed mapped.19.rad.RAW-2-2.bed mapped.1.rad.RAW-2-2.bed mapped.20.rad.RAW-2-2.bed mapped.21.rad.RAW-2-2.bed mapped.22.rad.RAW-2-2.bed mapped.23.rad.RAW-2-2.bed mapped.24.rad.RAW-2-2.bed mapped.25.rad.RAW-2-2.bed mapped.26.rad.RAW-2-2.bed mapped.27.rad.RAW-2-2.bed mapped.28.rad.RAW-2-2.bed mapped.2.rad.RAW-2-2.bed mapped.3.rad.RAW-2-2.bed mapped.4.rad.RAW-2-2.bed mapped.5.rad.RAW-2-2.bed mapped.6.rad.RAW-2-2.bed mapped.7.rad.RAW-2-2.bed mapped.8.rad.RAW-2-2.bed mapped.9.rad.RAW-2-2.bed
+slurmstepd: error: *** JOB 2086075 ON d6-w6420b-23 CANCELLED AT 2023-08-08T15:12:20 ***

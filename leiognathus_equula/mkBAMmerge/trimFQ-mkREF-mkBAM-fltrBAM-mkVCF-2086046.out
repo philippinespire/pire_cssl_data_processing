@@ -1,9 +1,20 @@
+
+
+* dDocentHPC v4.5 Forked by cbird@tamucc.edu * 
+
+
+Running dDocentHPC mkVCF...
+ 
+Tue Aug 8 15:00:54 EDT 2023 Files output to:  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/mkBAMmerge
+
+Tue Aug 8 15:00:54 EDT 2023 Reading config file... 
+ 
 Settings for dDocentHPC
 #Made in notepad++, use for best viewing
 
 These default settings assume ddRAD, no overlapping 151 bp reads
 
-20		Number of Processors (Not Adjustable)
+All		Number of Processors (Not Adjustable)
 All		Free Memory (Not Adjustable)
 
 ----------trimFQ: Settings for Trimming FASTQ Files---------------------------------------------------------------
@@ -92,3 +103,282 @@ no		freebayes    --report-monomorphic (no|yes)						Report even loci which appea
 Email
 user@tamucc.edu
 
+
+Tue Aug 8 15:00:54 EDT 2023 Reading in variables from config file...
+
+Tue Aug 8 15:00:55 EDT 2023 Checking for all required dDocent software...
+
+ Running CheckDependencies Function...
+
+  The dependency trimmomatic is installed!
+
+  The dependency freebayes is installed!
+
+  The dependency mawk is installed!
+
+  The dependency bwa is installed!
+
+  The dependency samtools is installed!
+
+  The dependency vcftools is installed!
+
+  The dependency rainbow is installed!
+
+  The dependency gnuplot is installed!
+
+  The dependency gawk is installed!
+
+  The dependency seqtk is installed!
+
+  The dependency cd-hit-est is installed!
+
+  The dependency bamToBed is installed!
+
+  The dependency bedtools is installed!
+
+  The dependency coverageBed is installed!
+
+  The dependency parallel is installed!
+
+  The dependency vcfcombine is installed!
+
+  The dependency bamtools is installed!
+
+  The dependency pearRM is installed!
+
+ All dependencies are installed and up to date!
+
+
+Tue Aug 8 15:00:56 EDT 2023  Begin main ddocent function
+
+ The HPC version of dDocent will only digest files with particular extensions for particular tasks
+  untouched files for trimming must be *.F.fq.gz and *.R.fq.gz
+  files trimmed for assembly (mkREF) must be *r1.fq.gz *r2.fq.gz
+  files trimmed for mapping (mkBAM) must be *R1.fq.gz *R2.fq.gz
+
+  extensions selected: *.R1.fq.gz *.R2.fq.gz
+
+ The namelist file already exists and was not recreated. 
+  If you experience errors, you should delete the namelist file.
+ 
+ The samples being processed are:
+  Leq-ABas_001-merged.rgfix
+  Leq-ABas_002-merged.rgfix
+  Leq-ABas_003-merged.rgfix
+  Leq-ABas_004-merged.rgfix
+  Leq-ABas_005-merged.rgfix
+  Leq-ABas_006-merged.rgfix
+  Leq-ABas_007_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_008-merged.rgfix
+  Leq-ABas_009-merged.rgfix
+  Leq-ABas_010-merged.rgfix
+  Leq-ABas_011-merged.rgfix
+  Leq-ABas_012-merged.rgfix
+  Leq-ABas_013-merged.rgfix
+  Leq-ABas_014-merged.rgfix
+  Leq-ABas_015-merged.rgfix
+  Leq-ABas_016-merged.rgfix
+  Leq-ABas_017-merged.rgfix
+  Leq-ABas_018-merged.rgfix
+  Leq-ABas_019-merged.rgfix
+  Leq-ABas_020-merged.rgfix
+  Leq-ABas_021-merged.rgfix
+  Leq-ABas_022-merged.rgfix
+  Leq-ABas_023-merged.rgfix
+  Leq-ABas_025-merged.rgfix
+  Leq-ABas_026-merged.rgfix
+  Leq-ABas_027-merged.rgfix
+  Leq-ABas_028-merged.rgfix
+  Leq-ABas_029-merged.rgfix
+  Leq-ABas_030-merged.rgfix
+  Leq-ABas_031-merged.rgfix
+  Leq-ABas_032-merged.rgfix
+  Leq-ABas_033-merged.rgfix
+  Leq-ABas_034-merged.rgfix
+  Leq-ABas_035-merged.rgfix
+  Leq-ABas_036-merged.rgfix
+  Leq-ABas_039-merged.rgfix
+  Leq-ABas_040-merged.rgfix
+  Leq-ABas_041_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_042-merged.rgfix
+  Leq-ABas_043-merged.rgfix
+  Leq-ABas_044-merged.rgfix
+  Leq-ABas_045_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_046-merged.rgfix
+  Leq-ABas_047_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_048-merged.rgfix
+  Leq-ABas_052-merged.rgfix
+  Leq-ABas_053-merged.rgfix
+  Leq-ABas_054_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_055_Ex1_L3_clmp.fp2_repr
+  Leq-ABas_056-merged.rgfix
+  Leq-ABas_058-merged.rgfix
+  Leq-CMig_004-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_005-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_006-merged.rgfix
+  Leq-CMig_007-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_008-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_009-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_012-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_014-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_015-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_016-merged.rgfix
+  Leq-CMig_017-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_020-merged.rgfix
+  Leq-CMig_021-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_022-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_025-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_026-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_028-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_029-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_030-merged.rgfix
+  Leq-CMig_032-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_033-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_036-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_037-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_038-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_040-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_041-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_042-merged.rgfix
+  Leq-CMig_045-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_046-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_047-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_049-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_050-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_051-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_054-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_055-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_058-Ex1-2B-cssl-1-2.clmp.fp2_repr
+  Leq-CMig_058-merged.rgfix
+  Leq-CMig_059-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_062-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_063-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_064-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_065-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_066-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_068-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_069-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_070-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_073-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_074-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_075-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_076-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_077-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_079-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_081-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_084-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_085-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_086-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_087-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_089-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_091-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_092-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_093-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_095-Ex1_L3_clmp.fp2_repr
+  Leq-CMig_096-Ex1_L3_clmp.fp2_repr
+
+
+Tue Aug 8 15:00:58 EDT 2023 Genotyping initiated...
+
+ Tue Aug 8 15:00:58 EDT 2023  Preparing files for genotyping...
+
+  Tue Aug 8 15:00:58 EDT 2023 Filtered BAM files detected with -RG.bam.
+  Tue Aug 8 15:00:58 EDT 2023  Estimating coverage of ref intervals & remove extreme copy number loci...
+  Tue Aug 8 15:00:58 EDT 2023  Filtering contigs with low coverage...
+  Tue Aug 8 15:00:58 EDT 2023  Making the bed files...
+
+ Tue Aug 8 15:00:58 EDT 2023  Genotyping individuals of ploidy 2 using freebayes...
+parallel: Error: Parsing of --jobs/-j/--max-procs/-P failed.
+Usage:
+
+parallel [options] [command [arguments]] < list_of_arguments
+parallel [options] [command [arguments]] (::: arguments|:::: argfile(s))...
+cat ... | parallel --pipe [options] [command [arguments]]
+
+-j n            Run n jobs in parallel
+-k              Keep same order
+-X              Multiple arguments with context replace
+--colsep regexp Split input on regexp for positional replacements
+{} {.} {/} {/.} {#} {%} {= perl code =} Replacement strings
+{3} {3.} {3/} {3/.} {=3 perl code =}    Positional replacement strings
+With --plus:    {} = {+/}/{/} = {.}.{+.} = {+/}/{/.}.{+.} = {..}.{+..} =
+                {+/}/{/..}.{+..} = {...}.{+...} = {+/}/{/...}.{+...}
+
+-S sshlogin     Example: foo@server.example.com
+--slf ..        Use ~/.parallel/sshloginfile as the list of sshlogins
+--trc {}.bar    Shorthand for --transfer --return {}.bar --cleanup
+--onall         Run the given command with argument on all sshlogins
+--nonall        Run the given command with no arguments on all sshlogins
+
+--pipe          Split stdin (standard input) to multiple jobs.
+--recend str    Record end separator for --pipe.
+--recstart str  Record start separator for --pipe.
+
+See 'man parallel' for details
+
+Academic tradition requires you to cite works you base your article on.
+When using programs that use GNU Parallel to process data for publication
+please cite:
+
+  O. Tange (2011): GNU Parallel - The Command-Line Power Tool,
+  ;login: The USENIX Magazine, February 2011:42-47.
+
+This helps funding further development; AND IT WON'T COST YOU A CENT.
+If you pay 10000 EUR you should feel free to use GNU Parallel without citing.
+
+
+  Tue Aug 8 15:00:58 EDT 2023 Cleaning up files...
+mv: cannot stat 'raw.1.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.2.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.3.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.4.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.5.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.6.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.7.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.8.rad.RAW-2-2.vcf': No such file or directory
+mv: cannot stat 'raw.9.rad.RAW-2-2.vcf': No such file or directory
+parallel: Error: Parsing of --jobs/-j/--max-procs/-P failed.
+Usage:
+
+parallel [options] [command [arguments]] < list_of_arguments
+parallel [options] [command [arguments]] (::: arguments|:::: argfile(s))...
+cat ... | parallel --pipe [options] [command [arguments]]
+
+-j n            Run n jobs in parallel
+-k              Keep same order
+-X              Multiple arguments with context replace
+--colsep regexp Split input on regexp for positional replacements
+{} {.} {/} {/.} {#} {%} {= perl code =} Replacement strings
+{3} {3.} {3/} {3/.} {=3 perl code =}    Positional replacement strings
+With --plus:    {} = {+/}/{/} = {.}.{+.} = {+/}/{/.}.{+.} = {..}.{+..} =
+                {+/}/{/..}.{+..} = {...}.{+...} = {+/}/{/...}.{+...}
+
+-S sshlogin     Example: foo@server.example.com
+--slf ..        Use ~/.parallel/sshloginfile as the list of sshlogins
+--trc {}.bar    Shorthand for --transfer --return {}.bar --cleanup
+--onall         Run the given command with argument on all sshlogins
+--nonall        Run the given command with no arguments on all sshlogins
+
+--pipe          Split stdin (standard input) to multiple jobs.
+--recend str    Record end separator for --pipe.
+--recstart str  Record start separator for --pipe.
+
+See 'man parallel' for details
+
+Academic tradition requires you to cite works you base your article on.
+When using programs that use GNU Parallel to process data for publication
+please cite:
+
+  O. Tange (2011): GNU Parallel - The Command-Line Power Tool,
+  ;login: The USENIX Magazine, February 2011:42-47.
+
+This helps funding further development; AND IT WON'T COST YOU A CENT.
+If you pay 10000 EUR you should feel free to use GNU Parallel without citing.
+
+
+ Tue Aug 8 15:00:58 EDT 2023 Assembling final VCF file...
+could not open "./raw.rad.RAW-2-2.vcf/raw.01.rad.RAW-2-2.vcf" exiting
+[bgzip] can't create TotalRawSNPs.rad.RAW-2-2.vcf.gz: File exists
+[tabix] the compression of 'TotalRawSNPs.rad.RAW-2-2.vcf.gz' is not BGZF
+
+Compress large filesTue Aug  8 15:00:59 EDT 2023
