@@ -9,7 +9,7 @@ fltrVCF Settings, run fltrVCF -h for description of settings
         fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07                     # order to run filters in
         fltrVCF -c rad.RAW-2-2                                                               # cutoffs, ie ref description
         fltrVCF -b ../mkBAMmerge                                                             # path to *.bam files
-        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                              # path to fltrVCF R scripts
         fltrVCF -d ../mkBAMmerge/mapped.rad.RAW-2-2.bed                                      # bed file used in genotyping
         fltrVCF -v ../mkBAMmerge/TotalRawSNPs.rad.RAW-2-2.vcf                                # vcf file to filter
         fltrVCF -g ../mkBAMmerge/reference.rad.RAW-2-2.fasta                                 # reference genome
