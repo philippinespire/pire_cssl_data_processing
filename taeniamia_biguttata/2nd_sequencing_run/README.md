@@ -202,23 +202,23 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 cp ../../1st_sequencing_run/mkBAM/reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta .
 ```
 
-Copied `config.6.lcwgs` 
+Copied `config.6.cssl` 
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run/mkBAM
-cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.lcwgs .
+cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.cssl .
 ```
 
-Update `config.6.lcwgs`. Check to see if mkBAM settings can remain consistent with the 1st sequencing run and run without error.
+Update `config.6.cssl`. Check to see if mkBAM settings can remain consistent with the 1st sequencing run and run without error.
 
 ```sh
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlappi
-0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse
-ssl             Cutoff1 (integer)                                                                                               Use uniqu
-Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate            Cutoff2 (integer)                                                       
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs t
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs t
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend rea>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdhit to cluster and collapse uniq reads by similarity >
+ssl             Cutoff1 (integer)                                                                                               Use unique reads that have at least>
+Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate            Cutoff2 (integer)                                                                                  >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
 ```
 
@@ -233,8 +233,8 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
 #this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../../leiognathus_equula/mkBAM/dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.lcwgs
-sbatch ../../../leiognathus_equula/mkBAM/dDocentHPC_dev2_multipleruns.sbatch fltrBAM config.6.lcwgs
+sbatch ../../../leiognathus_equula/2nd_sequencing_run/mkBAM/dDocentHPC_dev2_multipleruns.sbatch mkBAM config.6.cssl 
+sbatch ../../../leiognathus_equula/2nd_sequencing_run/mkBAM/dDocentHPC_dev2_multipleruns.sbatch fltrBAM config.6.cssl 
 ```
 
 Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main SSP readME for more information)
