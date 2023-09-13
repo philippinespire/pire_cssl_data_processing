@@ -314,3 +314,138 @@ sbatch ../dDocentHPC.sbatch config.5.cssl
 Handing off to Kyra Fitz for further processing.
 
 ---
+
+Took over from Kyra and proceeded with the following steps
+
+## Re-ran dDocentHPC sbatch due to the script updates
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/mkBAM
+
+sbatch ../dDocentHPC.sbatch config.5.cssl
+```
+
+---
+
+## Step 10. Filter VCF File
+
+Pulled latest changes from fltrVCF and rad_haplotyper repos.
+
+```sh
+#if you haven't already, you first need to clone the fltrVCF.git repo & the rad_haplotyper.git repo
+#cd pire_cssl_data_processing/scripts
+#git clone https://github.com/cbirdlab/fltrVCF.git
+#git clone https://github.com/cbirdlab/rad_haplotyper.git
+
+cd pire_cssl_data_processing/scripts/fltrVCF
+git pull
+
+cd pire_cssl_data_processing/scripts/rad_haplotyper
+git pull
+
+cd pire_cssl_data_processing/taeniamia_zosterophora
+mkdir filterVCF
+cd filterVCF
+
+cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
+```
+Update config with correct paths
+
+```sh
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07                # order to run filters in
+        fltrVCF -c ssl.Tzo-C-0402G-R1R2-contam-noisolate                               # cutoffs, ie ref description
+        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAM/mapped.ssl.Tzo-C-0402G-R1R2-contam-noisolate.bed           # bed file used in genotyping
+        fltrVCF -v ../mkBAM/TotalRawSNPs.ssl.Tzo-C-0402G-R1R2-contam-noisolate.vcf.gz  # vcf file to filter
+        fltrVCF -g ../mkBAM/reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta      # reference genome
+        fltrVCF -p ../mkBAM/popmap.ssl.Tzo-C-0402G-R1R2-contam-noisolate                # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o tzo.A                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/filterVCF
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
+```
+
+---
+
+## Check for cryptic species
+
+Make a population_structure directory and copy your filtered VCF file there.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/filterVCF_merge
+
+mkdir pop_structure
+cd pop_structure
+
+#copy final VCF file made from fltrVCF step to `pop_structure` directory
+cp ../filterVCF/Gmi.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.18.vcf .
+
+#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file.
+
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+crun bcftools reheader -s sample_names.txt -o Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.rename.vcf Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.vcf
+
+exit
+```
+
+Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/pop_structure
+#create your conda popgen environment and install PLINK
+
+module load anaconda
+conda activate popgen
+
+#VCF file has split chromosome, so running PCA from bed file
+plink --vcf Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.rename.vcf --allow-extra-chr --make-bed --out PIRE.Tzo.Mvi.preHWE
+plink --pca --allow-extra-chr --bfile PIRE.Tzo.Mvi.preHWE --out PIRE.Tzo.Mvi.preHWE
+
+conda deactivate
+```
+
+Made input files for ADMIXTURE with PLINK.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/pop_structure
+
+module load anaconda
+conda activate popgen
+
+#bed and bim files already made (for PCA)
+awk '{$1=0;print $0}' PIRE.Tzo.Mvi.preHWE.bim > PIRE.Tzo.Mvi.preHWE.bim.tmp
+mv PIRE.Tzo.Mvi.preHWE.bim.tmp PIRE.Tzo.Mvi.preHWE.bim
+
+conda deactivate
+```
+
+Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/pop_structure
+
+module load anaconda
+conda activate popgen
+
+admixture PIRE.Tzo.Mvi.preHWE.bed 1 --cv > PIRE.Tzo.Mvi.preHWE.log1.out #run from 1-5
+
+conda deactivate
+```
+
+Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure_merge).
+
