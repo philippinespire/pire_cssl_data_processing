@@ -159,7 +159,7 @@ cp ../mkBAMmerge/popmap.rad.RAW-10-10  ./popmap.rad.RAW-10-10.HWEsplit
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
@@ -189,7 +189,7 @@ fltrVCF Settings, run fltrVCF -h for description of settings
 Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
 
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 ```
