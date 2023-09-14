@@ -449,3 +449,41 @@ conda deactivate
 
 Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R on local computer to visualize PCA & ADMIXTURE results (figures in /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/pop_structure_merge).
 
+---
+
+## Filter the `VCF` file for HWE
+
+After consulting with Kyra, it was concluded that although the admixture may look off, the PCA looks fine. Because the species also has a very short dispersal distance, this may have affected the admixture plot. Therefore, it was decided that it was fine and concluded (no cryptic).
+
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/filterVCF
+cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
+```
+
+Make a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with file paths and file extensions based on your species AND the new HWEsplit popmap (if applicable). The VCF path should point to the VCF made at the end of the previous filtering run (the file PCA & ADMIXTURE was run with). Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run filters 18 & 17 (in that order).**
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 18 17                                                                     # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off                               # cutoffs, ie ref description
+        fltrVCF -b ../mkBAMmerge                                                             # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d ../mkBAMmerge/mapped.rad.RAW-10-10.bed                                    # bed file used in genotyping
+        fltrVCF -v Gmi.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.18.vcf           # vcf file to filter
+        fltrVCF -g ../mkBAMmerge/reference.rad.RAW-10-10.fasta                               # reference genome
+        fltrVCF -p popmap.rad.RAW-10-10.HWEsplit                                             # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -o Gmi.A                                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                        # number of threads [1]
+```
+Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/filterVCF
+
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+```
