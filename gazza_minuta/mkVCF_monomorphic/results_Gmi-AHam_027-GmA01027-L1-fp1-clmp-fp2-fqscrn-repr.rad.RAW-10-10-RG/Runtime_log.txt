@@ -1,0 +1,7 @@
+2023-04-25 15:37:53,714	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Gmi-AHam_027-GmA01027-L1-fp1-clmp-fp2-fqscrn-repr.rad.RAW-10-10-RG.bam -r reference.rad.RAW-10-10.fasta
+2023-04-25 15:39:05,489	DEBUG	main: BAM read in 77.728270 seconds
+2023-04-25 15:46:18,531	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-04-25 15:46:18,532	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Gmi-AHam_027-GmA01027-L1-fp1-clmp-fp2-fqscrn-repr.rad.RAW-10-10-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Gmi-AHam_027-GmA01027-L1-fp1-clmp-fp2-fqscrn-repr.rad.RAW-10-10-RG/Stats_out 0 0 0 results_Gmi-AHam_027-GmA01027-L1-fp1-clmp-fp2-fqscrn-repr.rad.RAW-10-10-RG/acgt_ratio.csv 0 0
+2023-04-25 16:18:47,723	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1949.190573 seconds
+2023-04-25 16:18:47,725	INFO	main: Successful run
+2023-04-25 16:18:47,725	DEBUG	main: Run completed in 2459.964643 seconds
