@@ -1,0 +1,217 @@
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+	tidyverse
+	gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Tue Aug 8 03:10:10 PM EDT 2023 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl.poly
+
+Tue Aug 8 03:10:10 PM EDT 2023 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl.poly'
+	Filters are set to '01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17'
+	CutoffCode is set to '.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate'
+	BAM_PATH is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAMmerge'
+	SCRIPT_PATH is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts'
+	VCF_FILE is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/Tbi.mono.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.11.recode.vcf'
+	Bed file is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkBAMmerge/mapped.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.bed'
+	Reference genome is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/reference.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.fasta'
+	PopMap is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/popmap.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate'
+	HWE_SCRIPT is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'Tbi.poly'
+	The number of threads is set to '40'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/Tbi.mono.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.11.recode.vcf will be used for serial processing.
+
+Tue Aug 8 03:10:10 PM EDT 2023 Getting universal chromosome/contig prefix ...
+          Querying /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/Tbi.mono.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.11.recode.vcf ...
+          Prefix: NODE
+          It is assumed that all values in the CHROM column of vcf begin with NODE
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Tue Aug 8 03:10:10 PM EDT 2023  reading variables into MAIN
+
+Tue Aug 8 03:10:10 PM EDT 2023 ---------------------------FILTER01: Remove sites with Y < alleles < X -----------------------------
+     vcftools --vcf /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/Tbi.mono.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.11.recode.vcf --min-alleles 2 --max-alleles 2 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr01.1.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:11 PM EDT 2023 ---------------------------FILTER02: Remove Sites with Indels -----------------------------
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr01.1.recode.vcf --remove-indels --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr02.2.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:12 PM EDT 2023 ---------------------------FILTER03: Remove Sites with QUAL < minQ -----------------------------
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 408: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 426: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr02.2.recode.vcf --minQ 100 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr03.3.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:12 PM EDT 2023 ---------------------------FILTER04: Remove Sites With Mean Depth of Coverage < min-meanDP -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.4.ldepth.mean: No such file or directory
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.4.ldepth.mean: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 461: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 476: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 487: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr03.3.recode.vcf --min-meanDP 5 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.4.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:13 PM EDT 2023 ---------------------------FILTER14: If individual's genotype has DP < X, convert to missing data -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr14.5.gdepth: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 776: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 791: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.4.recode.vcf --minDP 10 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr14.5.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:13 PM EDT 2023 ---------------------------FILTER07: Remove sites with Alternate Allele Count <=X -----------------------------
+     vcffixup Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr14.5.recode.vcf | vcffilter -s -f "AC > 0 & AN - AC > 0"  > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.6.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:14 PM EDT 2023 ---------------------------FILTER05: Remove sites called in <X proportion of individuals -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.7.lmiss: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 516: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 530: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.6.vcf --max-missing 0.55 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.7.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:15 PM EDT 2023 ---------------------------FILTER16: Remove Individuals|Libraries with Too Much Missing Data-----------------------------
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 835: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 839: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 855: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 872: mawk: command not found
+ 0 individuals|libraries with too much missing data:
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.7.recode.vcf --remove Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.8.lowDP-2.indv --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.8.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+ Individuals|Libraries Remaining Per Sample
+
+Tue Aug 8 03:10:15 PM EDT 2023 ---------------------------FILTER15: Remove sites with maf > minor allele frequency > max-maf -----------------------------
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.8.recode.vcf --maf 0 --max-maf 1 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr15.9.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:16 PM EDT 2023 ---------------------------FILTER06: Remove sites with Average Allele Balance deviating too far from 0.5 while keeping those with AB=0  -----------------------------
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 555: vcf-query: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 558: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 572: gnuplot: command not found
+     vcffixup Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr15.9.recode.vcf | vcffilter -s -f "AB > 0.375 & AB < 0.625 | AB = 0"  > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr06.10.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:16 PM EDT 2023 ---------------------------FILTER11: Remove sites with Quality/DP ratio < X -----------------------------
+     vcffilter -s -f "QUAL / DP > 0.2" Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr06.10.vcf > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr11.11.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:17 PM EDT 2023 ---------------------------FILTER09: Remove sites with low/high ratio of mean mapping quality of alt to ref -----------------------------
+     vcffilter -s -f "MQM / MQMR > 0.75 & MQM / MQMR < 1.33333" Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr11.11.vcf > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr09.12.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:17 PM EDT 2023 ---------------------------FILTER10: Remove sites with one allele only supported by reads not properly paired -----------------------------
+     vcffilter -s -f "PAIRED > 0.05 & PAIREDR > 0.05 & PAIREDR / PAIRED < 1.75 & PAIREDR / PAIRED > 0.25 | PAIRED < 0.05 & PAIREDR < 0.05" Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr09.12.vcf > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr10.13.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:18 PM EDT 2023 ---------------------------FILTER04: Remove Sites With Mean Depth of Coverage < min-meanDP -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.14.ldepth.mean: No such file or directory
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.14.ldepth.mean: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 461: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 476: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 487: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr10.13.vcf --min-meanDP 15 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.14.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:19 PM EDT 2023 ---------------------------FILTER13: Remove sites with mean DP greater than X  -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr13.15.ldepth: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 705: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 705: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 708: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr04.14.recode.vcf --max-meanDP 200 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr13.15.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:19 PM EDT 2023 ---------------------------FILTER05: Remove sites called in <X proportion of individuals -----------------------------
+cut: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.16.lmiss: No such file or directory
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 516: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 530: gnuplot: command not found
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr13.15.recode.vcf --max-missing 0.8 --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.16.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:20 PM EDT 2023 ---------------------------FILTER16: Remove Individuals|Libraries with Too Much Missing Data-----------------------------
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 835: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 839: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 855: gnuplot: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 872: mawk: command not found
+ 0 individuals|libraries with too much missing data:
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr05.16.recode.vcf --remove Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.17.lowDP-2.indv --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.17.recode.vcf 2> /dev/null | vcffixup -
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+ Individuals|Libraries Remaining Per Sample
+
+Tue Aug 8 03:10:20 PM EDT 2023 ---------------------------FILTER07: Remove sites with Alternate Allele Count <=X -----------------------------
+     vcffixup Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr16.17.recode.vcf | vcffilter -s -f "AC > 0 & AN - AC > 0"  > Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf
+	Sites remaining:	0
+	Contigs remaining:	0
+
+Tue Aug 8 03:10:21 PM EDT 2023 ---------------------------FILTER18: Remove sites not in HWE p<X) -----------------------------
+Processing population: Tbi-ARos (31 inds)
+No such file or directory at /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl line 72.
+
+	Sites remaining:	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 1000: mawk: command not found
+0
+	Contigs remaining:	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 1001: mawk: command not found
+0
+	Sites remaining:	grep: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr18.19.HWE.recode.vcf: No such file or directory
+0
+	Contigs remaining:	grep: Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr18.19.HWE.recode.vcf: No such file or directory
+0
+
+Tue Aug 8 03:10:21 PM EDT 2023 ---------------------------FILTER17: Remove sites with data missing for too many individuals|libraries in a population -----------------------------
+     Using PopMap File: /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/mkVCF_monomorphic/popmap.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 933: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 973: mawk: command not found
+/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/fltrVCF.bash: line 973: mawk: command not found
+cat: 'Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.20.*.lmiss': No such file or directory
+     vcftools --vcf Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr07.18.vcf --exclude-positions Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.20.badloci --recode --recode-INFO-all --out Tbi.poly.ssl.Tbi-C_scaffolds_32R_spades_contam_R1R2ORPH_noisolate.Fltr17.20.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Tue Aug 8 03:10:22 PM EDT 2023  --------------------------- Filtering complete! ---------------------------
+
