@@ -1,0 +1,72 @@
+
+
+fltrVCF.bash v4.4 -- a script to filter vcf files repeatably
+
+Dependencies required for fltrVCF to be fully functional:
+	R
+		tidyverse
+		gridExtra
+	vcftools
+	vcflib
+	samtools
+	perl
+	mawk
+	parallel
+	rad_haplotyper.pl https://github.com/cbirdlab/rad_haplotyper.git
+	filter_hwe_by_pop_HPC
+
+Thu Sep 14 16:05:51 EDT 2023 Reading options from command line:
+
+	Settings File:            config.fltr.ind.cssl.HWE
+
+Thu Sep 14 16:05:51 EDT 2023 Reading options from config file and setting defaults
+	SETTINGS are being loaded from file: 'config.fltr.ind.cssl.HWE'
+	Filters are set to '18 17'
+	CutoffCode is set to '.ssl.Tzo-C-0402G-R1R2-contam-noisolate'
+	BAM_PATH is set to '../mkBAM'
+	SCRIPT_PATH is set to '../../scripts/fltrVCF/scripts'
+	VCF_FILE is set to '../pop_structure/Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.rename.vcf'
+	Bed file is set to '../mkBAM/mapped.ssl.Tzo-C-0402G-R1R2-contam-noisolate.bed'
+	Reference genome is set to '../mkBAM/reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta'
+	PopMap is set to '../mkBAM/popmap.ssl.Tzo-C-0402G-R1R2-contam-noisolate'
+	HWE_SCRIPT is set to '../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl'
+	RADHAP_SCRIPT is set to '../../scripts/rad_haplotyper/rad_haplotyper.pl'
+	Output file prefix is set to 'tzo.A'
+	The number of threads is set to '40'
+	-P not set by user. Only filters that natively support parallelization will be run in parallel.
+	../pop_structure/Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.rename.vcf will be used for serial processing.
+
+Thu Sep 14 16:05:51 EDT 2023 Getting universal chromosome/contig prefix ...
+          Querying ../pop_structure/Tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr07.18.rename.vcf ...
+          Prefix: NODE
+          It is assumed that all values in the CHROM column of vcf begin with NODE
+          If this is not the case, then fltrVCF will not work properly.
+          The prefix is used to count SNPs/variants, contigs, etc and is used in some filters.
+
+Thu Sep 14 16:05:51 EDT 2023  reading variables into MAIN
+
+Thu Sep 14 16:05:51 EDT 2023 ---------------------------FILTER18: Remove sites not in HWE p<X) -----------------------------
+Processing population: Tzo-AMvi (47 inds)
+No such file or directory at ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl line 72.
+
+	Sites remaining:	mawk: cannot open tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr18.1.HWE.recode.vcf (No such file or directory)
+0
+	Contigs remaining:	mawk: cannot open tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr18.1.HWE.recode.vcf (No such file or directory)
+0
+	Sites remaining:	grep: tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr18.1.HWE.recode.vcf: No such file or directory
+0
+	Contigs remaining:	grep: tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr18.1.HWE.recode.vcf: No such file or directory
+0
+ls: cannot access 'tzo.A*vcf': No such file or directory
+ls: cannot access 'tzo.A*vcf': No such file or directory
+
+Thu Sep 14 16:05:53 EDT 2023 ---------------------------FILTER17: Remove sites with data missing for too many individuals|libraries in a population -----------------------------
+     Using PopMap File: ../mkBAM/popmap.ssl.Tzo-C-0402G-R1R2-contam-noisolate
+cat: 'tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr17.2.*.lmiss': No such file or directory
+     vcftools --vcf  --exclude-positions tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr17.2.badloci --recode --recode-INFO-all --out tzo.A.ssl.Tzo-C-0402G-R1R2-contam-noisolate.Fltr17.2.recode.vcf 2> /dev/null
+	Sites remaining:	0
+	Contigs remaining:	0
+
+
+Thu Sep 14 16:05:54 EDT 2023  --------------------------- Filtering complete! ---------------------------
+
