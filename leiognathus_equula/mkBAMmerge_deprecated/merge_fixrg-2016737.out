@@ -1,0 +1,17 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+
+The following have been reloaded with a version change:
+  1) samtools/1 => samtools/1.17
+
+Leq-ABas_052
+/etc/container_runtime/runtime: line 7: exec: java: not found
+/var/spool/slurmd/job2016737/slurm_script: line 30: samtools: command not found
