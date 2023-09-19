@@ -8,9 +8,9 @@
 #SBATCH --cpus-per-task=40 
 
 enable_lmod
-module load samtools
+module load container_env samtools
 module load container_env/0.1
-module load java
+module load container_env java
 export SINGULARITY_BIND=/home/e1garcia
 
 BAMDIR=$1
@@ -25,9 +25,9 @@ echo ${sample_name}
 
 cd ${BAMDIR}
 
-crun java -jar /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/picard.jar AddOrReplaceReadGroups I=${sample_name}-merged.rad.RAW-2-2-RG.bam O=${sample_name}-merged.rgfix.rad.RAW-2-2-RG.bam RGID=${sample_name}-merged RGLB=mergedlibs RGPL=illumina RGPU=unit1 RGSM=${sample_name}-merged 
+java -jar /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/picard.jar AddOrReplaceReadGroups I=${sample_name}-merged.rad.RAW-2-2-RG.bam O=${sample_name}-merged.rgfix.rad.RAW-2-2-RG.bam RGID=${sample_name}-merged RGLB=mergedlibs RGPL=illumina RGPU=unit1 RGSM=${sample_name}-merged 
 
-samtools index ${sample_name}-merged.rgfix.rad.RAW-2-2-RG.bam
+crun.samtools samtools index ${sample_name}-merged.rgfix.rad.RAW-2-2-RG.bam
 
 rm ${sample_name}-merged.rad.RAW-2-2-RG.bam
 rm ${sample_name}-merged.rad.RAW-2-2-RG.bam.bai
