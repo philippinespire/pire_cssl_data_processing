@@ -18,6 +18,7 @@ Contact Dr. Eric Garcia for questions or if you are having issues running script
 
 <details><summary>Use Git/GitHub to Track Progress</summary>
 <p>
+	
 ## Use Git/GitHub to Track Progress
 
 To process a species, begin by cloning this repo to your working dir. We recommend setting up a shotgun_PIRE sub-dir in your home dir if you have not done something similar already.
