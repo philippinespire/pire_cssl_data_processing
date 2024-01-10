@@ -4,10 +4,9 @@
 
 The purpose of this repo is to document the processing and analysis of `Capture Sequencing Libraries - CSSL data` for the Philippines PIRE Project. These data were generated using probes that resulted from the [Shotgun Sequencing Libraries - SSL repo](https://github.com/philippinespire/pire_ssl_data_processing). Both CSSL and SSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing.  
 
-For now, each species will get it's own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  
+For now, each species will get its own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  
 
-<details><summary>Details</summary>
-<p>
+## Details
 	
 **The Gmi dir (all steps) & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
@@ -15,16 +14,13 @@ For now, each species will get it's own directory in the repo.  Try to avoing pu
 
 Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu).
 
-</p>
-</details>
-
 ---
 
 <details><summary>Use Git/GitHub to Track Progress</summary>
 <p>
 ## Use Git/GitHub to Track Progress
 
-To process a species, begin by cloning this repo to your working dir. I recommend setting up a shotgun_PIRE sub-dir in your home dir if you have not done something similar already.
+To process a species, begin by cloning this repo to your working dir. We recommend setting up a shotgun_PIRE sub-dir in your home dir if you have not done something similar already.
 
 Example: `/home/youruserID/shotgun_PIRE/`
 
@@ -38,9 +34,9 @@ git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 #you can also work out of Eric's shotgun_PIRE directory if you want to save space. (/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing)
 ```
 
-The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo.  For example, the dir `dDocentHPC` contains the [dDocentHPC](https://github.com/cbirdlab/dDocentHPC) repo which you will be using, but we don't need to save that to this repo, so `dDocentHPC/` occurs in  `.gitignore` so that it is not uploaded to GitHub in this repo.
+The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. For example, the dir `dDocentHPC` contains the [dDocentHPC](https://github.com/cbirdlab/dDocentHPC) repo you will be using, but we don't need to save that to this repo, so `dDocentHPC/` occurs in  `.gitignore` so that it is not uploaded to GitHub in this repo.
 
-Because large data files will not be saved to GitHub, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermediate files produced by fastp, clumpify, fastq_screen, etc.
+Because large data files will not be saved to GitHub, they will reside in an individual's copy of the repo (or somewhere else on the HPC). You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. (Ex: We don't ultimately need the intermediate fq.gz files produced by fastp, clumpify, fastq_screen, etc.)
 
 A list of ongoing CSSL projects can be found below. If you are working on a CSSL analysis project (or if you wish to claim a project), please indicate so in the table.
 
@@ -89,15 +85,15 @@ bash ../runGIT.bash "initiated Sgr repo"
 
 You will need to enter your git credentials multiple times each time you run this script (or push any changes manually).
 
-If you should be met with a conflict screen, you are in the archane `vim` editor.  You can look up instructions on how to interface with it. I typically do the following:
+If you should be met with a conflict screen, you are in the archane `vim` editor.  You can look up instructions on how to interface with it. We suggest the following:
 
 * hit escape key twice
-* type the following
+* type the following:
   `:quit!`
   
-If you have to delete files for whatever reason, these deletions occurred in your local directory but these files will remain in the git memory if they had already entered the system (been pushed).
+If you have to delete files for whatever reason, these deletions occurred in your local directory. However, these files will remain in the git memory if they had already entered the system (been pushed).
 
-If you are in this situation, run these git commands manually, AFTER running the `runGIT.bash` as described above (or pulling manually). `add -u` will stage your deleted files, then you can commit and push.
+If you are in this situation, run these git commands manually, AFTER running the `runGIT.bash` as described above (or pulling manually). The command `add -u` will stage your deleted files, then you can commit and push.
 
 Run this from the directory where you deleted files:
 
@@ -112,103 +108,10 @@ git push -u origin main
 
 ---
 
-<details><summary>PRE-PROCESSING SEQUENCES</summary>
+<details><summary>Pre-Processing Sequences</summary>
 <p>
 
 ## A. PRE-PROCESSING SEQUENCES
-
-<details><summary>Do Not Follow These Instructions</summary>
-<p>
-
-I'm only keeping these here now so that we can confirm whether `pire_fq_gz_processing/README.md` has all the relevant info that's here.  
-
-* There should be no lib prep specific instructions until pre-processing and mapping are complete.
-	* `raw_fq_capture` has been replaced with `fq_raw`. 
-
-## 1. Set up directories and data
-
-First, create your `species dir` and subdirs `logs` and `raw_fq_capture`. You should also copy this [template README](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md) to your species dir. As you move through the pipeline, you should edit the README with the specific code that you ran, as well as information about the quality of your data and any issues you encountered. The goal is that anyone could follow your steps exactly and end up with the same output at the end of the pipeline.
-
-Example for Tzo:
-
-```sh
-cd YOUR_WORKING_DIR
-#example: /home/r3clark/PIRE/pire_cssl_data_processing
-
-mkdir taeniamia_zosterophora #this is your species dir
-mkdir taeniamia_zosterophora/raw_fq_capture #this is where the raw fq.gz files will be copied
-mkdir taeniamia_zosterophora/logs #this is where all out/log files will go
-
-cd taeniamia_zosterophora
-cp ../scripts/README.md .
-```
-
-Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This means that you should have the same number of forward (`*1.fq.gz` or `*f.fq.gz`) and reverse (`*2.fq.gz` or `r.fq.gz`) sequence files. If you don't have equal numbers for forward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
-
-If you aren't sure where your raw species sequencing data is stored on the HPC, check the Slack channel for your species. Usually there is a thread detailing where the data was transferred to (it is often in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/your_species/raw_fq_capture`).
-
-Example for Tzo:
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture
-
-#check got back sequencing data for all individuals in decode file
-ls | wc -l #208 files (2 additional files for README & decode.tsv = 206/2 = 103 individuals (R&F)
-
-#compare this to number of lines in the decode.tsv file to make sure there every individual has sequencing data
-wc -l Tzo_CaptureLibraries_SequenceNameDecode.tsv #104 lines (1 additional line for header = 103 individuals), checks out
-```
-
-Next, copy these raw files to your species dir (if you are working somewhere other than Eric's `shotgun_PIRE` dir). *This can take several hours.*
-
-Example for Tzo:
-
-```sh
-cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora
-
-cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/* raw_fq_capture/
-```
-
-Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one doesn't exist already (if you copied your data from the RC, a long-term copy already exists). *This can take several hours.*
-
-Example:
-
-```sh
-cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing #you MUST be on the log-in node to access the RC storage
-
-mkdir taeniamia_zosterophora #this is your species dir
-mkdir taeniamia_zosterophora/raw_fq_capture
-
-cp /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/* taeniamia_zosterophora/raw_fq_capture/
-```
-
-Create a `README.md` in the `raw_fq_capture` dir with the full path to the original raw files and necessary decoding info to find out which individuals these sequence files came from. This information is usually provided by Sharon Magnuson & Eric Garcia in the species slack channel.
-
-Example for Tzo:
-
-```sh
-Transfer from TAMUCC to ODU
-scp /work/hobi/GCL/20220323_PIRE_Tzo-Capture/* e1garcia@turing.hpc.odu.edu:/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/raw_fq_capture/
-
-206 fq files + decode file
-
-Slack post= March 23th 2022, species channel
-```
-
----
-</p>
-</details>
-
-
-</p>
-</details>
-
----
-
-<details><summary>Complete fq.gz preprocessing</summary>
-<p>
-	
-## 2. Complete fq.gz preprocessing
 
 Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo and complete the steps then return here.
 
@@ -220,14 +123,18 @@ Go to the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_
 
 ---
 
-<details><summary>MAPPING & FILTERING DATA</summary>
+<details><summary>Mapping & Filtering Data</summary>
 <p>
 	
 ## B. MAPPING & FILTERING DATA
 
-## Set up mapping directory and get reference genome
+## 1. Set up mapping directory
 
-Make a mapping directory and make "hard links" to the re-paired `*fq.gz` files inside `mkBAM`.  This makes it so files stay where they belong, but will create links to the data files in the `mkBAM` dir.  The way you know they are hard links is that there will be a "2" rather than a "1" in the 2nd column created by `ls -l` and the very first character of the row will be a "-" (file) rather than a "d" (dir). 
+Make a mapping directory and make "hard links" to the re-paired `*fq.gz` files inside `mkBAM`.  This ensures that files stay where they belong (e.g., where they were originally created), but will create links to the original files in the `mkBAM` dir.  
+
+ * You can double check that these are hard links by typing the command `ls -l` and looking for:
+    1. A "2" rather than a "1" in the 2nd column
+    2. A "-" (file) rather than a "d" (dir) in the very first character of the row
 
 ```bash
 cd YOUR_SPECIES_DIR
@@ -236,47 +143,47 @@ mkdir mkBAM
 ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
 ```
 
-<details><summary>Get dDocentHPC if you're NOT working within `e1garcia` (click in the arrow in this line)</summary>
-<p>
+If you are **NOT** working with `e1garcia`, clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
 
-Clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
-
-  * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`. Don't do this step if you were working within `e1garcia`, `shotgun_PIRE/dDocentHPC` dir is already cloned.
+  * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`.
+  * DO NOT do this step if you were working within `e1garcia` (`shotgun_PIRE/dDocentHPC` dir is already cloned).
 
 ```bash
 cd YOUR_SPECIES_DIR
 cd ../../
 
-# you should now be in the dir that holds your cssl repo dir
-# on wahab, this has already been done, so don't do if you are in e1garcia dir on wahab
+# you should now be in the dir that holds your CSSL repo dir
+# DO NOT do this if you are in e1garcia dir on wahab
 git clone https://github.com/cbirdlab/dDocentHPC.git
 ```
- 
----
-</p>
-</details>
 
-If you were working within `e1garcia` continue here. Copy the dDocentHPC config file and sbatch file to your mkBAM dir
+Copy the dDocentHPC config file and sbatch file to your mkBAM dir
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM
-cp /home/e1garcia/shotgun_PIRE/dDocentHPC/configs/config.6.cssl .
-cp /home/e1garcia/shotgun_PIRE/dDocentHPC/dDocentHPC.sbatch .
+cp /../../../dDocentHPC/configs/config.6.cssl .
+cp /../../../dDocentHPC/dDocentHPC.sbatch .
 ```
 
-**IF YOUR SPECIES HAS AN ASSEMBLED GENOME:** *(most species)* Find the best genome in the `pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta`.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50. Then filter by species in RStudio. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+---
 
-**IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME:** *(species where probes came from RAD data)* Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location.
+## 2. Get reference genome
 
-  * Should only apply to the following species: *Atherinomorus endrachtensis*, *Gazza minuta*, *Leiognathus equula*,  and *Spratelloides delicatulus*
-    * *Ambassis urotaenia*, *Leiognathus leuciscus*, and *Siganus spinus* also had probes made from RAD data but have a whole genome assembly to map to
+#### **IF YOUR SPECIES HAS AN ASSEMBLED GENOME *(most species)*:** 
+Find the best genome in the `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<genus_species>/probe_design/` dir.  It should be a `*.fasta` file.  This genome was selected during the ssl processing by running [`wrangleData.R`](https://github.com/philippinespire/denovo_genome_assembly/blob/main/compare_assemblers/wrangle_data.R) and sorting the tibble by (1) BUSCO single copy complete and (2) QUAST n50, then filtering by species. *You can also look at the README of your species in the SSL directory (pire_ssl_data_processing) - the best genome should be listed there as well.* 
+
+#### **IF YOUR SPECIES DOES NOT HAVE AN ASSEMBLED GENOME *(species where probes came from RAD data)*:** 
+Find the "raw" reference fasta that was used for probe development (it will be the `*probes4development.fasta` that has NOT been filtered) and use that as your "best assembly" for mapping. You may have to dig through the Slack channel for your species and contact the individual responsible for creating this file to identify its location. *Most should be available in the relevant species folder on Wahab (`/RC/group/rc_carpenterlab_ngs/rad_PIRE`).*
+
+  * This should only apply to the following species: *Atherinomorus endrachtensis*, *Gazza minuta*, *Leiognathus equula*, and *Spratelloides delicatulus*.
+    * *Ambassis urotaenia*, *Leiognathus leuciscus*, and *Siganus spinus* also had probes made from RAD data but have a whole genome assembly to map to.
 
 Copy the best genome to `mkBAM`. Rename in the process.
 
 Example for Tzo:
 
 ```sh
-cd /home/r3clark/PIRE/pire_cssl_data_processing/taeniamia_zosterophora/mkBAM
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/mkBAM
 
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/probe_design/Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta .
 
@@ -307,7 +214,9 @@ Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
 
 ---
 
-## ADJUSTING mkBAM SETTINGS in `config.6.cssl`
+## 3. Adjust mkBAM Settings in `config.6.cssl`
+
+Adjust the 
 
 ```
 ----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
@@ -320,7 +229,7 @@ Make sure the cutoffs above match the reference*fasta!
 ------------------------------------------------------------------------------------------------------------------
 ```
 
-### 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
+#### 1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
 
 for every matching base between the ref genome and a read, this value is added to the alignment score
 
@@ -888,3 +797,5 @@ tabix gmi.all.recode.nomissing.sorted.vcf.gz #index all sites VCF for downstream
 
 That's it!
 
+</p>
+</details>
