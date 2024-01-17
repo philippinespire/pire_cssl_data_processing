@@ -458,7 +458,7 @@ Finally, rename the rescaled `.bam` files so that dDocent will recognize them. E
 
 ---
 
-## Run mkVCF
+## 10. Run mkVCF
 
 Copy (and rename) the reference fasta and `config.6.cssl` file to `mapDamageBAM`.
 
@@ -480,7 +480,7 @@ Example for Gmi:
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
 PE             			Type of reads for assembly (PE, SE, OL, RPE)           PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
 rad               		Cutoff1 (integer)                                     
-RAW-10-10-rescale      		Cutoff2 (integer)
+RAW-10-10-rescaled     		Cutoff2 (integer)
 0.05    			rainbow merge -r <percentile> (decimal 0-1)            Percentile-based minimum number of seqs to assemble in a precluster
 0.95   				rainbow merge -R <percentile> (decimal 0-1)            Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
@@ -519,21 +519,18 @@ no              freebayes    --report-monomorphic (no|yes)                     R
 ------------------------------------------------------------------------------------------------------------------
 ```
 
-
 Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to call variable sites.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkBAM
+cd YOUR_SPECIES_DIR/mapDamageBAM
 
-#this script has to be run from dir with fq.gz files to be mapped and the ref genome
-#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch dDocentHPC.sbatch mkVCF config.6.cssl
+#this script has to be run from dir with rescaled .bam files
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale
 ```
 
 --
 
-## Filter the `VCF` file
-
+## 11. Filter the `VCF` file
 
 Make a filtering directory. 
 
@@ -545,11 +542,13 @@ mkdir filterVCF
 
 Clone the [`fltrVCF`](https://github.com/cbirdlab/fltrVCF) and [`rad_haplotyper`](https://github.com/cbirdlab/rad_haplotyper) repos and copy `config.fltr.ind.cssl` over to `filterVCF`.
 
-  * If you have previously cloned either of these repos, just pull any of the latest changes with `git pull`. If you are working out of Eric's `shotgun_PIRE` dir, they are already cloned.
+  * If you have previously cloned either of these repos, just pull any of the latest changes with `git pull`.
+  * **NOTE: If you are working out of Eric's `shotgun_PIRE` dir, they are already cloned.**
 
 ```sh
 cd pire_cssl_data_processing/scripts
 
+#DO NOT DO THIS IF YOU ARE WORKING OUT OF ERIC'S DIRECTORY
 git clone https://github.com/cbirdlab/fltrVCF.git
 git clone https://github.com/cbirdlab/rad_haplotyper.git
 
@@ -565,21 +564,47 @@ Example of `config.fltr.ind.cssl` for Gmi:
 ```
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07               # order to run filters in
-        fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
-        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
-        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-        fltrVCF -d ../mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
-        fltrVCF -v TotalRawSNPs.rad.RAW-10-10.noindvless100Kseq.vcf  # vcf file to filter
-        fltrVCF -g ../mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
-        fltrVCF -p ../mkBAM/popmap.rad.RAW-10-10                # popmap file
-        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
-        fltrVCF -o Gmi.A                                                                    # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                        # number of threads [1]
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07     # order to run filters in
+        fltrVCF -c rad.RAW-10-10-rescale                     		     # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                           # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                             # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-10-10-rescaled.bed         # bed file used in genotyping
+        fltrVCF -v ../mapDamageBAM/TotalRawSNPs.rad.RAW-10-10-rescaled.vcf   # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.rad.RAW-10-10-rescaled.fasta    # reference genome
+        fltrVCF -p ../mapDamageBAM/popmap.rad.RAW-10-10-rescaled             # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl            # path to rad_haplotyper script
+        fltrVCF -o Gmi.A                                                     # prefix on output files, use to track settings
+        fltrVCF -t 40                                                        # number of threads [1]
 ```
 
-You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
+Adjust the fltrVCf settings as needed. We recommend leaving the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
+
+```
+Filters
+        # See manual for how to pass multiple settings to filters that are run multiple times
+        # Only edit the values in the third column
+        01 vcftools --min-alleles       2               #Remove sites with less alleles [2]
+        01 vcftools --max-alleles       2               #Remove sites with more alleles [2]
+        02 vcftools --remove-indels                     #Remove sites with indels.  Not adjustable
+        03 vcftools --minQ              100             #Remove sites with lower QUAL [20]
+        04 vcftools --min-meanDP        5:15            #Remove sites with lower mean depth [15]
+        05 vcftools --max-missing       0.55:0.6        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
+
+        06 vcffilter AB min             0.375           #Remove sites with equal or lower allele balance [0.2]
+        06 vcffilter AB max             0.625           #Remove sites with equal or lower allele balance [0.8]
+        06 vcffilter AB nohet           0               #Keep sites with AB=0. Not adjustable
+        07 vcffilter AC min             0               #Remove sites with equal or lower MINOR allele count [3]
+        09 vcffilter MQM/MQMR min       0.25            #Remove sites where the difference in the ratio of mean mapping quality between REF and ALT alleles is greater than this proportion from 1. Ex: 0 means the mapping quality must be equal between REF and ALTERNATE. Smaller numbers are more stringent. Keep sites where the following is true: 1-X < MQM/MQMR < 1/(1-X) [0.1]
+        10 vcffilter PAIRED                             #Remove sites where one of the alleles is only supported by reads that are not properly paired (see SAM format specification). Not adjustable
+        11 vcffilter QUAL/DP min        0.2             #Remove sites where the ratio of QUAL to DP is deemed to be too low. [0.25]
+
+        13 vcftools --max-meanDP        400             #Remove sites with higher mean depth [250]
+        14 vcftools --minDP             5               #Code genotypes with lesser depth of coverage as NA [5]
+        15 vcftools --maf               0               #Remove sites with lesser minor allele frequency.  Adjust based upon sample size. [0.005]
+        15 vcftools --max-maf           1               #Remove sites with greater minor allele frequency.  Adjust based upon sample size. [0.995]
+        16 vcftools --missing-indv      0.6:0.5         #Remove individuals with more missing data. [0.5]
+```
 
 Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
@@ -595,9 +620,9 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  
  ---
  
- ## Check for cryptic species
+ ## 12. Check for cryptic species
  
- Run PCA and ADMIXTURE to identify any cryptic species/population structure in your data. More information on what PCA & ADMIXTURE are, and how to run them (along with other population genetic analyses) can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/).
+Run PCA and ADMIXTURE to identify any cryptic species/population structure in your data. More information on what PCA & ADMIXTURE are, and how to run them (along with other population genetic analyses), can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/).
  
  Make a `population_structure` directory and copy your filtered VCF file there.
  
@@ -611,42 +636,42 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
  cp ../filterVCF/<FINAL VCF> .
  ```
  
- Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
  
  ```sh
  cd YOUR_SPECIES_DIR/pop_structure
  
  #create your conda popgen environment and install PLINK
  
- module load anaconda
- conda activate popgen
- 
- plink --vcf <YOUR VCF> --allow-extra-chr --pca --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
- 
- #example for Gmi
- plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
- 
- conda deactivate
- ```
- 
- Make input files for ADMIXTURE with PLINK.
- 
- ```sh
- cd YOUR_SPECIES_DIR/pop_structure
+module load container_env python3
+bash
+export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
-module load anaconda
-conda activate popgen
+crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --pca --out PIRE.<SP 3 letter code>.<LOC>.preHWE
+exit
+ 
+#example for Gmi
+crun.python3 -p ~/.conda/envs/popgen plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
+```
+ 
+Make input files for ADMIXTURE with PLINK.
+ 
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
 
-plink --vcf <YOUR VCF> --allow-extra-chr --make-bed --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
+module load container_env python3
+bash
+export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
+
+crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --make-bed --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
 awk '{$1=0;print $0}' PIRE.<SP 3 letter code>.<LOC>.preHWE.bim > PIRE.<SP 3 letter code>.<LOC>.preHWE.bim.tmp
 mv PIRE.<SP 3 letter code>.<LOC>.preHWE.bim.tmp PIRE.<SP 3 letter code>.<LOC>.preHWE.bim
+exit
 
 #Example for Gmi
-plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Gmi.Ham.preHWE
+crun.python3 -p ~/.conda/envs/popgen plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Gmi.Ham.preHWE
 awk '{$1=0;print $0}' PIRE.Gmi.Ham.preHWE.bim > PIRE.Gmi.Ham.preHWE.bim.tmp
 mv PIRE.Gmi.Ham.preHWE.bim.tmp PIRE.Gmi.Ham.preHWE.bim
-
-conda deactivate
 ```
 
 Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
@@ -654,29 +679,29 @@ Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [h
 ```sh
 cd YOUR_SPECIES_DIR/pop_structure
 
-module load anaconda
-conda activate popgen
+module load container_env python3
+bash
+export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
-admixture PIRE.<SP 3 letter code>.<LOC>.preHWE.bed 1 --cv > PIRE.<SP 3 letter code>.<LOC>.preHWE.log1.out #run from 1-5
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.<SP 3 letter code>.<LOC>.preHWE.bed 1 --cv > PIRE.<SP 3 letter code>.<LOC>.preHWE.log1.out #run from 1-5
+exit
 
 #Example for Gmi
-admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run from 1-5
-
-conda deactivate
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Gmi.Ham.preHWE.bed 1 --cv > PIRE.Gmi.Ham.preHWE.log1.out #run from 1-5
 ```
 
 Copy your `*.eigenval`, `*.eigenvec` & `*Q` files to your local computer. Run [`pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/pop_structure.R) on your local computer to visualize your PCA & ADMIXTURE results and identify any cryptic population structure.
 
 ---
 
-## Filter the `VCF` file for HWE
+## 13. Filter the `VCF` file for HWE
 
-IF PCA & ADMIXTURE show cryptic structure, then you need to adjust the `popmap` file to reflect this.
+**NOTE:** If PCA & ADMIXTURE show cryptic structure, then you need to adjust the `popmap` file to reflect this.
 
 ```sh
 cd YOUR_SPECIES_DIR/filterVCF
 
-cp ../mkBAM/<POPMAP> ./<POPMAP>.HWEsplit
+cp ../mapDamageBAM/<POPMAP> ./<POPMAP>.HWEsplit
 
 #change the second column (pop assignment) to match any cryptic structure that is present
 #one easy way to do this is to add -A or -B to the end of the population assignment to assign individuals to group A or B
@@ -695,19 +720,27 @@ Example of `config.fltr.ind.cssl.HWE` for Gmi:
 ```
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 18 17               # order to run filters in
-        fltrVCF -c rad.RAW-10-10                               # cutoffs, ie ref description
-        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
-        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-        fltrVCF -d ../mkBAM/mapped.rad.RAW-10-10.bed           # bed file used in genotyping
-        fltrVCF -v Gmi.A.rad.RAW-10-10.Fltr07.18.vcf  # vcf file to filter
-        fltrVCF -g ../mkBAM/reference.rad.RAW-10-10.fasta      # reference genome
-        fltrVCF -p popmap.rad.RAW-10-10.HWEsplit                # popmap file
-        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
-        fltrVCF -o Gmi.A.HWE                                                                     # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                        # number of threads [1]
+        fltrVCF -f 18 17              					    # order to run filters in
+        fltrVCF -c rad.RAW-10-10-rescaled                                   # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                          # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                            # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-10-10-rescaled.bed        # bed file used in genotyping
+        fltrVCF -v Gmi.A.rad.RAW-10-10.Fltr07.18.vcf  			    # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.rad.RAW-10-10-rescaled.fasta   # reference genome
+        fltrVCF -p popmap.rad.RAW-10-10-rescaled.HWEsplit                   # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl           # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl           # path to rad_haplotyper script
+        fltrVCF -o Gmi.A.HWE                                                # prefix on output files, use to track settings
+        fltrVCF -t 40                                                       # number of threads [1]
 ```
+
+Adjust the fltrVCf settings as needed. Again, we recommend leaving the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
+
+```
+Filters
+   17 vcftools --missing-sites     0.5             #Remove sites with more data missing in a pop sample. [0.5]
+   18 filter_hwe_by_pop_HPC        0.001           #Remove sites with <p in test for HWE by pop sample. Adjust based upon sample size [0.001]
+```  
 
 Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
@@ -723,17 +756,21 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 #troubleshooting will be necessary
 ```
 
-You can leave the filter settings as the default for now, but you may need to adjust some settings based on your output (e.g. make some filters more or less stringent if large numbers of SNPs are being removed, etc.).
-
 ***Congratulations!!*** *You have now finished the CSSL pipeline. Analyze your data to your heart's content.*
+
+</p>
+</details>
 
 ---
 
+<details><summary>Making "All Sites" VCF</summary>
+<p>
+
 ## C. OPTIONAL STEPS
 
-The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) and/or calculate pi (nucleotide diversity).
+The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) and/or calculate pi (nucleotide diversity) or do any demographic modeling.
 
-## Make a `VCF` file with monomorphic loci
+## 1. Make a `VCF` file with monomorphic loci
 
 Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and move necessary files over.
 
