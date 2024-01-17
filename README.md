@@ -417,16 +417,26 @@ sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedRea
 
 ---
 
-## Run mapDamage
+## 9. Run mapDamage
 
-Run `runMapdamage2.sbatch`.
+Run `runMAPDMG.2.sbatch` to rescale the `.bam` file quality scores and account for degradation errors due to sample age.
+  * Essentially, mapDamage recalibrates the quality scores of positions that have likely been damaged/degraded over time. It creates a new `.bam` file by downscaling quality values for misincorporations likely due to ancient/historical DNA damage. It decides which positions to rescore based on their initial quality values, position along reads, and damage patterns.
 
 ```sh
-cd YOUR_SPECIES_DIR/mkBAM
+cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
 
 #this script has to be run from the dir with the FILTERED (.RG.bam) bam files
-sbatch runMapdamage2.sbatch
+#NOTE: if you are running out of mkBAMmerge, you may need to copy the reference genome fasta file over
+sbatch ../../scripts/runMAPDMG.2.sbatch <"bam files to run mapDamage on"> <path to reference fasta>
+
+#Example for Gmi:
+sbatch ../../scripts/runMAPDMG.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fasta
 ```
+
+mapDamage will create a `results*` folder for each individual. This folder will contain a number of files, 2 of which are most important for us: 1) the rescaled `.bam` file and 2) the `Fragmisincorporation_plot.pdf`.
+  * You can download the `Fragmisincorporation_plot.pdf` to your local computer and open it up to check the degradation patterns of your reads. For Albatross (historical) individuals, we expect to see elevated C->T substitutions towards the 5" end of reads and elevated G->A subsitutions towards the 3" end (these are a common signature of the deamination process that often happens to ancient/historical DNA). We do NOT expect to see these elevated rates in contemporary individuals.
+
+
 
 --
 
