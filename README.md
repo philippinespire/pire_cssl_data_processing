@@ -436,9 +436,27 @@ sbatch ../../scripts/runMAPDMG.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fast
 mapDamage will create a `results*` folder for each individual. This folder will contain a number of files, 2 of which are most important for us: 1) the rescaled `.bam` file and 2) the `Fragmisincorporation_plot.pdf`.
   * You can download the `Fragmisincorporation_plot.pdf` to your local computer and open it up to check the degradation patterns of your reads. For Albatross (historical) individuals, we expect to see elevated C->T substitutions towards the 5" end of reads and elevated G->A subsitutions towards the 3" end (these are a common signature of the deamination process that often happens to ancient/historical DNA). We do NOT expect to see these elevated rates in contemporary individuals.
 
+We want to use the rescaled `.bam` files to call variable sites downstream. To do this we will first move the files into a new directory (cleaning up `mkBAM` or `mkBAMmerge` in the process):
 
+```
+cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAM_merge
 
---
+#move the mapDamage results folders into one directory
+mkdir mapDamage_output
+mv results*-RG/ mapDamage_output
+
+#make new directory for the rescaled bam files
+cd ..
+mkdir mapDamageBAM
+
+#move rescaled bam files into new directory
+cd mapDamageBAM
+mv ../mkBAM/mapDamage_output/results*/*bam . #or mv ../mkBAMmerge/mapDamage_output/results*/*bam .
+```
+
+Finally, rename the rescaled `.bam` files so that dDocent will recognize them. Essentially, the file endings need to change from `*-RG.rescaled.bam` to `*-rescaled-RG.bam`.
+
+---
 
 ## Run mkVCF
 
