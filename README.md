@@ -195,7 +195,7 @@ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/p
 mv Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta ./reference.ssl.Tzo-C-0402G-R1R2-contam-noisolate.fasta
 ```
 
-Update `config.6.cssl` with the reference genome assembly information. You only need to udpdate the `mkREF` section.
+Update `config.6.cssl` with the reference genome assembly information. You only need to uddate the `mkREF` section.
 
 Insert `<assembly type>` into the `Cutoff1` variable and `<unique assembly info>` into the `Cutoff2` variable. *Hint: this will match how you renamed the reference assembly fasta.*
 
@@ -434,7 +434,7 @@ sbatch ../../scripts/runMAPDMG.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fast
 ```
 
 mapDamage will create a `results*` folder for each individual. This folder will contain a number of files, 2 of which are most important for us: 1) the rescaled `.bam` file and 2) the `Fragmisincorporation_plot.pdf`.
-  * You can download the `Fragmisincorporation_plot.pdf` to your local computer and open it up to check the degradation patterns of your reads. For Albatross (historical) individuals, we expect to see elevated C->T substitutions towards the 5" end of reads and elevated G->A subsitutions towards the 3" end (these are a common signature of the deamination process that often happens to ancient/historical DNA). We do NOT expect to see these elevated rates in contemporary individuals.
+  * You can download the `Fragmisincorporation_plot.pdf` to your local computer and open it up to check the degradation patterns of your reads. For Albatross (historical) individuals, we expect to see elevated C->T substitutions towards the 5' end of reads and elevated G->A subsitutions towards the 3' end (these are a common signature of the deamination process that often happens to ancient/historical DNA). We do NOT expect to see these elevated rates in contemporary individuals.
 
 We want to use the rescaled `.bam` files to call variable sites downstream. To do this we will first move the files into a new directory (cleaning up `mkBAM` or `mkBAMmerge` in the process):
 
@@ -459,6 +459,66 @@ Finally, rename the rescaled `.bam` files so that dDocent will recognize them. E
 ---
 
 ## Run mkVCF
+
+Copy (and rename) the reference fasta and `config.6.cssl` file to `mapDamageBAM`.
+
+```sh
+cd YOUR_SPECIES_DIR/mapDamageBAM
+
+cp ../mkBAM/<reference_fasta> ./<reference_fasta_rescaled> #or cp ../mkBAMmerge/<reference_fasta> ./<reference_fasta_rescaled>
+cp ../mkBAM/config.6.cssl ./config.6.cssl.rescale
+
+#Example for Gmi
+cp ../mkBAMmerge/reference.rad.RAW-10-10.fasta ./reference.rad.RAW-10-10-rescaled.fasta
+```
+
+Edit `config.6.cssl.rescale` so that the reference fasta name matches your file. You only need to edit the mkREF section.
+
+Example for Gmi:
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE             			Type of reads for assembly (PE, SE, OL, RPE)           PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+rad               		Cutoff1 (integer)                                     
+RAW-10-10-rescale      		Cutoff2 (integer)
+0.05    			rainbow merge -r <percentile> (decimal 0-1)            Percentile-based minimum number of seqs to assemble in a precluster
+0.95   				rainbow merge -R <percentile> (decimal 0-1)            Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+```
+
+Edit the mkVCF settings as desired:
+
+```
+----------mkVCF: Settings for variant calling/ genotyping---------------------------------------------------------
+no              freebayes -J --pooled-discrete (yes|no)                                                 If yes, a pool of individuals is assumed to be the s>
+no              freebayes -A --cnv-map (filename.bed or no)                                             If the pools have different numbers of individuals, >
+2               freebayes -p --ploidy (integer)                                                                 Whether pooled or not, if no cnv-map file is>
+no              freebayes -r --region (filename.bed or no)                                              Limit analysis to specified region.  Bed file format>
+0               only genotype read 1 (integer)                                                                  Limit analysis to only Read 1 positions, int>
+0               Minimum Mean Depth of Coverage Per Individual                                   Limit analysis to contigs with at least the specified mean d>
+0               freebayes -n --use-best-n-alleles (integer)                                             reduce the number of alleles considered to n, zero m>
+30              freebayes -m --min-mapping-quality (integer)
+20              freebayes -q --min-base-quality (integer)
+-1              freebayes -E --haplotype-length (-1, 3, or integer)                     Set to -1 to avoid multi nucleotide polymorphisms and force calling >
+0               freebayes    --min-repeat-entropy (0, 1, or integer)                    Set to 0 to avoid multi nucleotide polymorphisms and force calling M>
+10              freebayes    --min-coverage (integer)                                           Require at least this coverage to process a site
+0.375   freebayes -F --min-alternate-fraction (decimal 0-1)                     There must be at least 1 individual with this fraction of alt reads to evalu>
+2               freebayes -C --min-alternate-count (integer)                                    Require at least this count of observations supporting an al>
+10              freebayes -G --min-alternate-total (integer)                                    Require at least this count of observations supporting an al>
+0.33    freebayes -z --read-max-mismatch-fraction (decimal 0-1)                 Exclude reads with more than N [0,1] fraction of mismatches where each misma>
+20              freebayes -Q --mismatch-base-quality-threshold (integer)                Count mismatches toward --read-mismatch-limit if the base quality of>
+50              freebayes -U --read-mismatch-limit (integer)                                    Exclude reads with more than N mismatches where each mismatc>
+20              freebayes ~3 ~~min-alternate-qsum (integer)                                             This value is the mean base quality score for altern>
+50              freebayes -$ --read-snp-limit (integer)                                                 Exclude reads with more than N base mismatches, igno>
+20              freebayes -e --read-indel-limit (integer)                                               Exclude reads with more than N separate gaps. defaul>
+no              freebayes -w --hwe-priors-off (no|yes)                                                  Disable estimation of the probability of the combina>
+no              freebayes -V --binomial-obs-priors-off (no|yes)                                 Disable incorporation of prior expectations about observatio>
+no              freebayes -a --allele-balance-priors-off (no|yes)                               Disable use of aggregate probability of observation balance >
+no              freebayes    --no-partial-observations (no|yes)                                 Exclude observations which do not fully span the dynamically>
+no              freebayes    --report-monomorphic (no|yes)                                              Report even loci which appear to be monomorphic, and>
+------------------------------------------------------------------------------------------------------------------
+```
+
 
 Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to call variable sites.
 
