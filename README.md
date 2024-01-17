@@ -10,8 +10,6 @@ For now, each species will get its own directory in the repo.  Try to avoing put
 	
 **The Gmi dir will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
-  * A template version of can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md).
-
 Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu).
 
 ---
@@ -768,11 +766,11 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ## C. OPTIONAL STEPS
 
-The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) and/or calculate pi (nucleotide diversity) or do any demographic modeling.
+The following steps are optional, and are useful mainly if you want to create an "all sites" VCF (one with both polymorphic and monomorphic sites) to calculate pi (nucleotide diversity) or do any demographic modeling.
 
 ## 1. Make a `VCF` file with monomorphic loci
 
-Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and move necessary files over.
+Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and move/copy necessary files over.
 
 **NOTE:** You may want to run these steps in `scratch`, as the "all sites" VCF and intermediate files can be fairly large in size (sometimes close to 1 TB!!).
 
@@ -781,17 +779,17 @@ cd YOUR_SPECIES_DIR
 
 mkdir mkVCF_monomorphic
 
-mv mkBAM/*bam* mkVCF_monomorphic
-mv mkBAM/*fasta mkVCF_monomorphic
-mv mkBAM/config.5.cssl mkVCF_monomorphic/config.5.cssl.monomorphic
+ln mapDamageBAM/*bam mkVCF_monomorphic #NOTE: want to use the rescaled bam files for this!
+cp mapDamageBAM/*fasta mkVCF_monomorphic
+cp mapDamageBAM/config.6.cssl mkVCF_monomorphic/config.6.cssl.monomorphic
 ```
 
-Change the `config.5.cssl.monomorphic` file so that the last setting (monomorphic) is set to yes.
+Change the `config.6.cssl.monomorphic` file so that the last mkVCF setting (monomorphic) is set to yes.
 
 Example:
 
 ```
-yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+yes      freebayes    --report-monomorphic (no|yes)         Report even loci which appear to be monomorphic, and report allconsidered alleles, even those which are not in called genotypes. Loci which do not have any potential alternates have '.' for ALT.
 ```
 
 Genotype with [dDocentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
@@ -799,12 +797,12 @@ Genotype with [dDocentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
-sbatch ../../scripts/dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.monomorphic
 ```
 
 ---
 
-## Filter the VCF with monomorphic loci
+## 2. Filter the VCF with monomorphic loci
 
 Set-up filtering the monomorphic and polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, it is probably best to do this in `scratch`.
 
