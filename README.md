@@ -1001,12 +1001,17 @@ crun bcftools concat --allow-overlaps  <MONOMORPHIC SORTED VCF.GZ>  <POLYMORPHIC
 crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
 
 exit
+```
 
-#index final file
-module load samtools
+And index the final, merged file one last time.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+module load container_env samtools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
+#index the all sites VCF
 crun tabix <ALL SITES VCF>
 
 #Example for Gmi
