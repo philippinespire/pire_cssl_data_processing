@@ -1007,6 +1007,7 @@ And index the final, merged file one last time.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
 module load container_env samtools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
