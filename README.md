@@ -2,13 +2,13 @@
 
 ---
 
-The purpose of this repo is to document the processing and analysis of `Capture Sequencing Libraries - CSSL data` for the Philippines PIRE Project. These data were generated using probes that resulted from the [Shotgun Sequencing Libraries - SSL repo](https://github.com/philippinespire/pire_ssl_data_processing). Both CSSL and SSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing.  
+The purpose of this repo is to document the processing and analysis of `Capture Sequencing Libraries - CSSL data` for the Philippines PIRE Project. These data were generated using probes that (mainly) resulted from the [Shotgun Sequencing Libraries - SSL repo](https://github.com/philippinespire/pire_ssl_data_processing). Both CSSL and SSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing.  
 
 For now, each species will get its own directory in the repo.  Try to avoing putting dirs inside dirs inside dirs.  
 
 ## Details
 	
-**The Gmi dir (all steps) & Tzo dir (through genotyping) will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
+**The Gmi dir will serve as the examples to follow in terms of both directory structure and documentation of progress in `README.md`. The `README.md` structure for your species should follow this format as closely as possible.**
 
   * A template version of can be found [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/README.md).
 
@@ -153,17 +153,16 @@ If you are **NOT** working with `e1garcia`, clone the [`dDocentHPC`](https://git
 cd YOUR_SPECIES_DIR
 cd ../../
 
-# you should now be in the dir that holds your CSSL repo dir
+# you should now be in the dir that holds your CSSL repo dir (e.g. shotgun_PIRE)
 # DO NOT do this if you are in e1garcia dir on wahab
 git clone https://github.com/cbirdlab/dDocentHPC.git
 ```
 
-Copy the dDocentHPC config file and sbatch file to your mkBAM dir
+Copy the dDocentHPC config file to your mkBAM dir
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM
 cp /../../../dDocentHPC/configs/config.6.cssl .
-cp /../../../dDocentHPC/dDocentHPC.sbatch .
 ```
 
 ---
@@ -204,196 +203,217 @@ Example for Tzo:
 
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
-ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-Tzo-C-0402G-R1R2-contam-noisolate               Cutoff2 (integer)
-                Use unique reads that occur in at least this many individuals for making the reference genome
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+PE             				Type of reads for assembly (PE, SE, OL, RPE)           PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+ssl               			Cutoff1 (integer)                                     
+Tzo-C-0402G-R1R2-contam-noisolate       Cutoff2 (integer)
+0.05    				rainbow merge -r <percentile> (decimal 0-1)            Percentile-based minimum number of seqs to assemble in a precluster
+0.95   					rainbow merge -R <percentile> (decimal 0-1)            Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
 ```
 
 ---
 
-## 3. Adjust mkBAM Settings in `config.6.cssl`
+## 3. Adjust mkBAM settings in `config.6.cssl`
 
 Adjust the mkBAM settings as desired:
 
 ```
 ----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
 Make sure the cutoffs above match the reference*fasta!
-1		bwa mem -A Mapping_Match_Value (integer) 						bwa mem default is 1
-4		bwa mem -B Mapping_MisMatch_Value (integer) 					bwa mem default is 4
-6		bwa mem -O Mapping_GapOpen_Penalty (integer) 					bwa mem default is 6
-30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 			bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
-5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
+1		bwa mem -A Mapping_Match_Value (integer) 			bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 			bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 			bwa mem default is 6
+30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 		bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5		bwa mem -L Mapping_Clipping_Penalty (integer,integer) 		bwa mem default is 5
 ------------------------------------------------------------------------------------------------------------------
 ```
 
 These settings work as follows:
-
-**1	bwa mem -A Mapping_Match_Value (integer) 	bwa mem default is 1**
-
- * For every matching base between the ref genome and a read, this value is added to the alignment score.
-   * If all the bases match, then the maximum alignment score = bp * (A).
-
-**4	bwa mem -B Mapping_MisMatch_Value (integer) 	bwa mem default is 4**
-
- * For every mismatch between the ref genome and a read, this value is subtracted from the alignment score.
-   * If there is 1 mismatch, then the alignment score = bp * A - (A + B).
-
-**6	bwa mem -O Mapping_GapOpen_Penalty (integer) 	bwa mem default is 6**
-
- * This filter works similarly to the mismatches one, but for gap opens. We have never encountered a situation where we wanted to adjust the gap extend penalty, so it is not accessible from the config file.
-
-**13	bwa mem -T Mapping_Minimum_Alignment_Score (integer) 	bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.**
-
- * This is the threshold alignment score above which all reads are kept and below which reads are classified as unmapped.
- * This setting has a lot of power. If all of your reads are the same length, then you don't have much to worry about.  Set this at the value you want.
-    * **Example 1:** All my reads are 150 bp (because with fastp, I removed any read shorter than this length). I want to go with the bwa mem default value of 30 because I trust that this is the correct value.  150-30=120.  120/(A+B) = 24 mismatches (e.g. 16% of all bases are allowed to be mismatched).  120/(A+O) = 17 gap opens allowed. Any reads with an alignment score lower than this will be removed.
-    * **Example 2:** All my reads are 150 bp, but I do not trust the default settings.  I decide that I'm more comfortable with a threshold of 10% of bases mismatching, so I change T to be 150 - 15 * (A+B) = 75.
- * If your reads have a broad distribution of lengths, as might be expected from degraded samples (aDNA, historical DNA, etc), then you have to take a different approach because the alignment score is heavily affected by read length and you don't want to bias the heterozygosity of your data by read length. In this case, we suggest adjusting this setting based on your shortest read length (later on in the pipeline, fltrBAM will apply a "read length aware" filter to take care of the longer reads). You don't just want to set T to zero (bad idea), as you'll generate massive bam files, so you do want some filtering to happen at this step.
-    * **Example 3:** My shortest reads are 50 bp because in fastp I removed any read shorter than 50 bp. I assume that the authors of bwa mem set the defaults assuming that the read lengths are 150 (the Illumina std length), and I want to adjust that default to apply to reads that are 50 bp by allowing up to 16% mismatching bases.  So, I change T to be 50 - (A+B) * 50 * 0.16 = 10.
-    * **Example 4:** My shortest reads are 33 bp because in fastp I removed any read shorter than 33 bp. I know something about the biology and genome architecture of my species and would prefer to keep reads with 10% or fewer mismatches.  So, I change T to be 33 - (A+B) * 33 * 0.10 = 16.5 ~ 16.
- * **NOTE:** In all the above examples, we were making our decisions based on the (potential) number of mismatched bases we were comfortable with. You can obviously also make the same calculations based on gaps as well. 
-
-### 5	bwa mem -L Mapping_Clipping_Penalty (integer,integer) 			bwa mem default is 5
-
-Read the BWA manual.
-
-
+1. **bwa mem -A Mapping_Match_Value (integer)**
+   * bwa mem default is 1
+     * For every matching base between the ref genome and a read, this value is added to the alignment score.
+     * If all the bases match, then the maximum alignment score = bp * (A).
+2. **bwa mem -B Mapping_MisMatch_Value (integer)**
+   * bwa mem default is 4
+     * For every mismatch between the ref genome and a read, this value is subtracted from the alignment score.
+     * If there is 1 mismatch, then the alignment score = bp * A - (A + B).
+3. **bwa mem -O Mapping_GapOpen_Penalty (integer)**
+   * bwa mem default is 6
+     * This filter works similarly to the mismatches one, but for gap opens. We have never encountered a situation where we wanted to adjust the gap extend penalty, so it is not accessible from the config file.
+4. **bwa mem -T Mapping_Minimum_Alignment_Score (integer)**
+   * bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+     * This is the threshold alignment score above which all reads are kept and below which reads are classified as unmapped.
+     * This setting has a lot of power. If all of your reads are the same length, then you don't have much to worry about.  Set this at the value you want.
+       * **Example 1:** All my reads are 150 bp (because with fastp, I removed any read shorter than this length). I want to go with the bwa mem default value of 30 because I trust that this is the correct value.  150-30=120.  120/(A+B) = 24 mismatches (e.g. 16% of all bases are allowed to be mismatched).  120/(A+O) = 17 gap opens allowed. Any reads with an alignment score lower than this will be removed.
+       * **Example 2:** All my reads are 150 bp, but I do not trust the default settings.  I decide that I'm more comfortable with a threshold of 10% of bases mismatching, so I change T to be 150 - 15 * (A+B) = 75.
+     * If your reads have a broad distribution of lengths, as might be expected from degraded samples (aDNA, historical DNA, etc), then you have to take a different approach because the alignment score is heavily affected by read length and you don't want to bias the heterozygosity of your data by read length. In this case, we suggest adjusting this setting based on your shortest read length (later on in the pipeline, fltrBAM will apply a "read length aware" filter to take care of the longer reads). You don't just want to set T to zero (bad idea), as you'll generate massive bam files, so you do want some filtering to happen at this step.
+       * **Example 3:** My shortest reads are 50 bp because in fastp I removed any read shorter than 50 bp. I assume that the authors of bwa mem set the defaults assuming that the read lengths are 150 (the Illumina std length), and I want to adjust that default to apply to reads that are 50 bp by allowing up to 16% mismatching bases.  So, I change T to be 50 - (A+B) * 50 * 0.16 = 10.
+       * **Example 4:** My shortest reads are 33 bp because in fastp I removed any read shorter than 33 bp. I know something about the biology and genome architecture of my species and would prefer to keep reads with 10% or fewer mismatches.  So, I change T to be 33 - (A+B) * 33 * 0.10 = 16.5 ~ 16.
+     * **NOTE:** In all the above examples, we were making our decisions based on the (potential) number of mismatched bases we were comfortable with. You can obviously also make the same calculations based on gaps as well. 
+5. **bwa mem -L Mapping_Clipping_Penalty (integer,integer)**
+   * bwa mem default is 5
+     * Read the BWA manual for more information on this filter.
 
 ---
 
-## Map reads to reference
+## 4. Map reads to reference genome
 
-Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
+Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map reads to the reference genome.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
-#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch dDocentHPC.sbatch mkBAM config.6.cssl
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
 ```
 
 ---
 
-# Filtering the bam files
+## 5. Adjust fltrBAM settings in `config.6.cssl`
 
-## ADJUSTING fltrBAM SETTINGS in `config.6.cssl`
+_*It is always a good idea to spot check your alignments using IGV (both before and after filtering) to confirm the effects of the filters and to identify abnormalities that you want to remove*_
 
-_*It is always a good idea to spot check your alignments using IGV, both before and after filtering to confirm the effects of the filters and to identify abnormalities that you want to remove*_
-
+Adjust the fltrBAM settings as desired:
 
 ```
 ----------fltrBAM: Settings for filtering mapping alignments in the *bam files---------------
-30		samtools view -q 		Mapping_Min_Quality (integer)    									Remove reads with mapping qual less than this value
-yes		samtools view -F 4 		Remove_unmapped_reads? (yes,no)   									Since the reads aren't mapped, we generally don't need to filter them
-no		samtools view -F 8 		Remove_read_pair_if_one_is_unmapped? (yes,no)    					If either read in a pair does not map, then the other is also removed
-yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     							Secondary alignments are reads that also map to other contigs in the reference genome
-no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)     		We generally don't see any of these
-no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     						You probably don't want to set this to yes
-yes		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     						We generally don't see any of these
-no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)						Set to no if OL mode 
-0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
-0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)     					performed separately from the above, consult samtools man
-no		Remove_reads_with_excessive_soft_clipping? (no, integers)			minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
-50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
-100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
-no		Remove_reads_orphaned_by_filters? (yes,no)
+30		samtools view -q 	Mapping_Min_Quality (integer)  					Remove reads with mapping qual less than this value
+yes		samtools view -F 4 	Remove_unmapped_reads? (yes,no) 				Since the reads aren't mapped, we generally don't need to filter them
+no		samtools view -F 8 	Remove_read_pair_if_one_is_unmapped? (yes,no)    		If either read in a pair does not map, then the other is also removed
+yes		samtools view -F 256 	Remove_secondary_alignments? (yes,no)     			Secondary alignments are reads that also map to other contigs in the reference genome
+no		samtools view -F 512 	Remove_reads_not_passing_platform_vendor_filters (yes,no)   	We generally don't see any of these
+no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)     			You probably don't want to set this to yes
+yes		samtools view -F 2048 	Remove_supplementary_alignments? (yes,no)     			We generally don't see any of these
+no		samtools view -f 2 	Keep_only_properly_aligned_read_pairs? (yes,no)			Set to no if OL mode 
+0		samtools view -F 	Custom_samtools_view_F_bit_value? (integer)    			performed separately from the above, consult samtools man
+0		samtools view -f 	Custom_samtools_view_f_bit_value? (integer)    			performed separately from the above, consult samtools man
+no					Remove_reads_with_excessive_soft_clipping? (no, integers)	minimum number of soft clipped bases in a read, summed between the beginning and end, that are unacceptable
+50					Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
+100					Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
+no					Remove_reads_orphaned_by_filters? (yes,no)
 ------------------------------------------------------------------------------------------------------------------
-
 ```
-
-Most of the fltrBAM settings are self explanitory. But some are non-intuitive. 
-
-### no		samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no) 
-
-I haven't seen this filter to have an effect on the data and remove reads that I think are duplicates (multiple read pairs start and end in the same position with identical sequences).  You can search a RAW alignment, find some read pairs that are duplicates, then search the filtered alignment made with this setting set to "yes" to see if it does anything.
-
-### no		samtools view -f 2 		Keep_only_properly_aligned_read_pairs? (yes,no)	
-
-This sounds like a good thing to do, BUT, sometimes it can be too "proper".  For example, if BWA MEM decides the insert size is too long, then a read pair might be filtered that is perfectly fine.  It can be a good idea to experiment with this setting.  There are ways to adjust the "proper" insert size, but they are not straight forward, involves making calculations from your data, and beyond the scope here.  If you search the dDocentHPC source code, you'll find an example of this for RAD data.
-
-### 0		samtools view -F 		Custom_samtools_view_F_bit_value? (integer)     					performed separately from the above, consult samtools man
-### 0		samtools view -f 		Custom_samtools_view_f_bit_value? (integer)
-
-These give you total control over the filters available in samtools.  Consult the samtools manual.
-
-### 50		Remove_reads_with_alignment_score_below_relative_threshold (integer)	Alignment score thresholds are calculated based on this value adjusted by a factor (actual read length relative the assumed read length value in next setting). RelativeThreshold = as_threshold * actual_read_length / assumed_read_length, where this setting controls as_threshold. NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads elimated by bwa mem -T, but if the -T setting is too low then the RAW bam files can be huge.
-### 100		Read_length_assumed_by_relative_alignment_score_threshold (integer)	Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (actual read length relative the assumed read length value here). RelativeThreshold= as_threshold * actual_read_length / assumed_read_length, where this setting controls assumed_read_length
-
-These two settings allow you to apply a read length aware filter of the alignment score.  They cannot recover reads that are removed with the `bwa mem -T` setting, but they can remove reads that passed the `bwa mem -T setting` (see mkBAM). Thus, these work in concert with `bwa mem -T` to filter your mapped reads by alignment score.  This is especialy important if you have reads of variable lengths because `bwa mem -T` alone causes short reads to have less heterozygosity than longer reads.  
-
-The second value (100 `Read_length_assumed_by_relative_alignment_score_threshold`) controls the meaning of the first value (50 `Remove_reads_with_alignment_score_below_relative_threshold`).   These values work together to define the threshold alignment score (50) for reads of a given length (100), then the theshold is adjusted proportionately for all read lengths.  
-
-Example 1: With the default values of 50 and 100, 10 mismatches are allowed in a 100 bp read (10%).  100 - (A+B) * 100 * 0.10 = 50, where A is the match score from mkBAM and B is the mismatch penalty from mkBAM.  If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.10 
-
-Example 2: Let's say that you wanted your values to match the default for bwa mem -T and we assume that they intended that setting to be applied to 150 bp reads. Change the 50 to 30.  Change the 100 to 150.  Now, 150 - (A+B) * 150 * 0.16 = 30.  If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.16.  
+Most of the fltrBAM settings are self-explanatory, but some aren't so intuitive. The settings that aren't so straightforward are explained below:
+1. **samtools view -F 1024 	Remove_PCR_or_optical_duplicates? (yes,no)** 
+   * You probably don't want to set this to yes
+     * We haven't seen this filter have an effect on the data and remove reads that are likely duplicates (multiple read pairs that start and end in the same position with identical sequences).
+       * If you want, you can search a RAW alignment, find some read pairs that are duplicates, then search the filtered alignment made with this setting set to "yes" to see if it does anything.
+2. **samtools view -f 2 	Keep_only_properly_aligned_read_pairs? (yes,no)**
+   * Set to no if in OL mode
+     * This sounds like a good thing to do, BUT, sometimes it can overcorrect. For example, if BWA MEM decides the insert size is too long, then a read pair might be filtered that is otherwise perfectly fine.
+     * It may be a good idea to experiment with this setting if you have time. There are ways to adjust the "proper" insert size, but they are not straight forward, involve some calculations, and beyond the scope of this guide. However, if you search the dDocentHPC source code, you'll find an example for RAD data.
+3. **samtools view -F 		Custom_samtools_view_F_bit_value? (integer)**
+   * Performed separately from the setting below, consult the samtools manual
+4. **samtools view -f 		Custom_samtools_view_f_bit_value? (integer)**
+   * Performed separately from the setting above, consult the samtools manual
+     * These two settings give you total control over the filters available in samtools.
+5. **Remove_reads_with_alignment_score_below_relative_threshold (integer)**
+   * Alignment score thresholds are calculated based on this value adjusted by a factor (the actual read length relative to the assumed read length value in the next setting).
+     * RelativeThreshold = as_threshold * actual_read_length / assumed_read_length. This setting controls as_threshold.
+     * NOTE! bwa mem -T affects which reads are mapped based on alignment score, and therefore this filter cannot save reads eliminated by bwa mem -T.
+6. **Read_length_assumed_by_relative_alignment_score_threshold (integer)**
+   * Alignment score thresholds are calculated based on the threshold in the previous setting adjusted by a factor (the actual read length relative the assumed read length value here).
+     * RelativeThreshold= as_threshold * actual_read_length / assumed_read_length. This setting controls assumed_read_length.
+   * This setting and the previous one allow you to apply a read length aware filter on the alignment score.
+     * They cannot recover reads that are removed with the `bwa mem -T` setting, but they can remove reads that passed the `bwa mem -T setting` (see mkBAM). Thus, these work in concert with `bwa mem -T` to filter your mapped reads by alignment score. This is especialy important if you have reads of variable lengths because `bwa mem -T` alone causes short reads to have less heterozygosity than longer reads.
+   * The second value (`Read_length_assumed_by_relative_alignment_score_threshold`) controls the meaning of the first value (`Remove_reads_with_alignment_score_below_relative_threshold`). These values work together to define the threshold alignment score (e.g., 50) for reads of a given length (e.g., 100), and then the theshold is adjusted proportionately for all read lengths.
+     * **Example 1:** With the default values of 50 and 100, 10 mismatches are allowed in a 100 bp read (10%).  100 - (A+B) * 100 * 0.10 = 50, where A is the match score from mkBAM and B is the mismatch penalty from mkBAM. If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.10
+     * **Example 2:** Let's say that you wanted your values to match the default for bwa mem -T and we assume that they intended that setting to be applied to 150 bp reads. Here, you would change the 50 to 30 and change the 100 to 150. Now, 150 - (A+B) * 150 * 0.16 = 30. If you have reads that are N bp, the threshold will automatically adjust to N - (A+B) * N  * 0.16.  
 
 --- 
 
-## Map reads to reference
+## 6. Filter BAM files
 
-Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to map, filter the resulting bam files, and call variable sites.
+Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to filter raw BAM files.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkBAM
 
-#this script has to be run from dir with fq.gz files to be mapped and the ref genome
-#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch dDocentHPC.sbatch fltrBAM config.6.cssl
+#this script has to be run from dir with the raw BAM files to be filtered
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl
 ```
 
 ---
 
-### Merging .bam files from multiple runs
+## 7. Merge BAM files from multiple runs
 
-If you are working with multiple sequencing runs, you should first map sequencing data from each run to your reference, then merge the .bam files using the `runmerge_2runs_cssl_array` scripts.
-
-Note that these scipts assume you have two separate folders named 1st_sequencing_run and 2nd_sequencing_run in your species folder, and that the .bam files are in folders named mkBAM within each of these.
+This step **ONLY** applies if you are working with multiple sequencing runs. If so, you should complete through step 6 (filtering `.bam` files) separately for each run. Then, merge the `.bam` files using the [`runmerge_2runs_cssl_array`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/runmerge_2runs_cssl_array.bash) scripts.
+  * Note that these scipts assume you have two separate directories named `1st_sequencing_run` and `2nd_sequencing_run` in your species folder, that the `.bam` files are in folders named mkBAM within each of these, and that they have been filtered (end in `RG.bam`).
+  * *If you only have data from one sequencing run, you can skip ahead to step 8.*
 
 To run the merge script:
 
+```sh
+cd YOUR_SPECIES_DIR
+
+bash ../scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code>
+
+#Example for Gmi
+bash ../scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/ Gmi
 ```
-bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code> 
-```
 
-This will create another folder (<species cssl folder>/mergebams_run1run2) containing the merged .bam files, as well as 3 lists of individuals that were sequenced in run 1 only, run 2 only, and the merged individuals that were sequenced in run 1 and 2 together.
+This will create another folder (`YOUR_SPECIES_DIR/mergebams_run1run2`) containing the merged `.bam` files, as well as 3 lists of individuals that were sequenced in run 1 only, run 2 only, and in both runs separately (these are the individuals whose `.bam` files were merged).
+  * **NOTE:** If you are working with >2 sequencing runs the script will need to be modified - contact Brendan for help if so.
 
-If you are working with >2 sequencing runs the script will need to be modified - contact Brendan if you need to do so!
-
-In order for the merged .bam files to be interpreted correctly by dDocent the read group information will have to be modified to include only a single group. The `merge_fixrg_array` scripts should thus be run before proceeding.
+In order for the merged `.bam` files to be interpreted correctly by dDocent, the read group information will have to be modified to include only a single group. To do this, run the [`merge_fixrg_array`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/merge_fixrg_array.bash) scripts before proceeding.
 
 To run the fixrg script:
 
+```sh
+cd YOUR_SPECIES_DIR
+
+bash ../scripts/merge_fixrg_array.bash <path to species mergebam dir>
+
+#Example for Gmi
+bash ../scripts/merge_fixrg_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mergebams_run1run2
 ```
-bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/ <path to directory with merged bam files>
+
+Finally, copy both the merged and unmerged filtered `.bam` files into one directory (`YOUR_SPECIES_DIR/mkBAMmerge`) with [`copyunmerged.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/copyunmerged.sbatch).
+
+To run the copyunmerged script:
+
+```sh
+cd YOUR_SPECIES_DIR
+
+#assumes original bam files are in mkBAM folders within 1st_sequencing_run and 2nd_sequencing_run, and merged files are in mergebams_run1run2
+
+sbatch ../scripts/copyunmerged.sbatch <path to species directory> <merged bams directory> mkBAMmerge
+
+#Example for Gmi
+e.g. sbatch ../scripts/copyunmerged.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta mergebams_run1run2 mkBAMmerge
 ```
 
 After merging you can use these merged .bam files with the unmerged files from run 1 or run 2 only in downstream steps (mkVCF and fltrVCF).
 
+---
 
-## Generate Mapping Stats for Capture Targets with `getBAITcvg.sbatch` and `mappedReadStats.sbatch`
+## 8. Generate mapping stats for capture targets
 
-Move into the mkBAM dir and execute both scripts
+Move into the `mkBAM` dir (or the `mkBAMmerge` directory if you have multiple sequencing runs) and execute the following scripts:
+
+1. [getBAITcvg.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/getBAITcvg.sbatch) which calculates the breath and depth of coverage for the targeted bait regions (as determined by a bed file).
 
 ```bash
-cd <path/to/cssl/species dir/mkBAM dir>
+cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
 
-# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
-sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/<speciesDir>/<prefix>.singleLine.bed
+sbatch getBAITcvg.sbatch . <path to singleLine.bed file with bait regions>
+#most all the bed files can be found in /home/e1garcia/shotgun_PIRE/pire_probe_sets
 
-# mappedReadStats.sbatch <Path to BAM file dir> <coverageMappedReads>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+#Example for Gmi
+sbatch ../../scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/06_Gazza_minuta/Gazza_Chosen_baits.singleLine.bed
 ```
 
-***NOTE:*** Sometimes the scripts don't compute all files. Thus, check the output to make sure you have output for all input BAM files. 
+2. [mappedReadStats.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/mappedReadStats.sbatch) which calculates the number and % of reads that were kept or lost at each step in the pipeline.
 
-* `getBAITcvg.sbatch` will give you 2 out files per input BAM file.
+```bash
+cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
+ 
+sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+```
 
-* `mappedReadStats.sbatch` will output a single file. Check that you have the same number of lines (excluding the header) than number of input BAM files.
+***NOTE:*** Sometimes the scripts don't process all files. Thus, check the output to make sure you have output for all the BAM files in your directory. 
+  * `getBAITcvg.sbatch` will give you 2 output files per input BAM file.
+  * `mappedReadStats.sbatch` will output a single file. Check that you have the same number of lines (excluding the header) as the number of input BAM files.
 
 ---
 
