@@ -397,6 +397,33 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch 
 
 ---
 
+## Run mapDamage
+
+Run `runMapdamage2.sbatch`.
+
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
+
+#this script has to be run from the dir with the FILTERED (.RG.bam) bam files
+sbatch runMapdamage2.sbatch
+```
+
+--
+
+## Run mkVCF
+
+Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch) to call variable sites.
+
+```sh
+cd YOUR_SPECIES_DIR/mkBAM
+
+#this script has to be run from dir with fq.gz files to be mapped and the ref genome
+#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
+sbatch dDocentHPC.sbatch mkVCF config.6.cssl
+```
+
+--
+
 ## Filter the `VCF` file
 
 
