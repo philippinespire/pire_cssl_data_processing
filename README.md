@@ -417,7 +417,7 @@ sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedRea
 
 ## 9. Run mapDamage
 
-Run `runMAPDMG.2.sbatch` to rescale the `.bam` file quality scores and account for degradation errors due to sample age.
+Run [`runMAPDMG.2.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/runMAPDMG.2.sbatch) to rescale the `.bam` file quality scores and account for degradation errors due to sample age.
   * Essentially, mapDamage recalibrates the quality scores of positions that have likely been damaged/degraded over time. It creates a new `.bam` file by downscaling quality values for misincorporations likely due to ancient/historical DNA damage. It decides which positions to rescore based on their initial quality values, position along reads, and damage patterns.
 
 ```sh
