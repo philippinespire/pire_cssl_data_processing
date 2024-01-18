@@ -992,7 +992,7 @@ module load container_env bcftools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
-mv polymorphic_filter/<POLYMORPHIC SORTED VCF.GZ> .. #move polymorphic sorted VCF file to the main mkVCF_monomorphic directory
+mv polymorphic_filter/<POLYMORPHIC SORTED VCF.GZ> . #move polymorphic sorted VCF file to the main mkVCF_monomorphic directory
 
 #merge VCF files
 crun bcftools concat --allow-overlaps  <MONOMORPHIC SORTED VCF.GZ>  <POLYMORPHIC SORTED VCF.GZ> -O z -o <spp 3 letter code>.all.recode.sorted.vcf.gz
