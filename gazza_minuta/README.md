@@ -6,7 +6,7 @@ Information on data pre-processing & processing steps prior to merging `.bam` fi
 
 ---
 
-## 10. Merge .bam files from two separate runs (12.15.2022)
+## 10. Merge .bam files from two separate runs
 
 Ran the merge script:
 
@@ -272,7 +272,7 @@ Copied `*.eigenval`, `*.eigenvec`, & `*.Q` files to local computer. Ran pire_css
 ## 16. Filter VCF file for HWE
 
 PCA & ADMIXTURE showed cryptic structure. ABas & CBas (individuals from Basud River) were all assigned to one deme (deme "A"). ~50% of AHam & CBat (individuals from Hamilo Cove) were assigned to the same deme as ABas & CBas while the other ~50% clustered separately (identified as deme "B" for now).
-  * Species IDs are unknown at this point, however Brendan recovered and blasted COI sequences for some individuals. Those recovered from Bas individuals hit against Gmi very confidently. CBat_008 (which belongs to the "B" deme) did not hit to Gmi, but instead hit against *Gazza spp Fiji* or *GFazza achlamys* with a higher % match (though not great). Thus, we are going to move forward deme "A" and continue to call it Gmi.
+  * Species IDs are unknown at this point, however Brendan recovered and blasted COI sequences for some individuals. Those recovered from Bas individuals hit against Gmi very confidently. CBat_008 (which belongs to the "B" deme) did not hit to Gmi, but instead hit against *Gazza spp Fiji* or *Gazza achlamys* with a higher % match (though not great). Thus, we are going to move forward deme "A" and continue to call it Gmi.
 
 List of AHam & CBat individuals in deme "B" (39 in all):
   * **Albatross (11 total):** AHam_016, AHam_031, AHam_033, AHam_041, AHam_055,  AHam_060, AHam_065, AHam_078, AHam_079, AHam_083 & AHam_089
