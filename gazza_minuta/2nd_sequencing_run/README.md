@@ -1,6 +1,6 @@
 # Generic Data Processing Log
 
-Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *spp* samples.
+Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *Gazza minuta* samples from Hamilo Cove & Basud River. Second sequencing run (contains individuals sequenced in the first run as well as some new individuals).
 
 ---
 
