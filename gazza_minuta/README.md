@@ -317,40 +317,40 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 ```
 
 ---
-## Make a `VCF` file with monomorphic loci
 
-Create a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and move necessary files over.
+## 17. Make a `VCF` file with monomorphic loci
 
+Created a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and moved necessary files over.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta
 
 mkdir mkVCF_monomorphic
 
-mv mkBAM/*bam* mkVCF_monomorphic
-mv mkBAM/*fasta mkVCF_monomorphic
-mv mkBAM/config.5.cssl mkVCF_monomorphic/config.5.cssl.monomorphic
+ln mapDamageBAM/*bam* mkVCF_monomorphic
+cp mapDamageBAM/*fasta mkVCF_monomorphic
+cp mapDamageBAM/config.6.cssl mkVCF_monomorphic/config.6.cssl.monomorphic
 ```
 
-Change the `config.5.cssl.monomorphic` file so that the last setting (monomorphic) is set to yes.
+Changed the `config.6.cssl.monomorphic` file so that the last setting (monomorphic) is set to yes.
 
 ```
-yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+yes      freebayes    --report-monomorphic (no|yes)       Report even loci which appear to be monomorphic, and report allconsidered alleles,
 ```
 
-Genotype with [dDocentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
+Genotyped with `dDocentHPC.sbatch`.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
 
-sbatch ../../halichoeres_miniatus/mkVCF_monomorphic/dDocentHPC.sbatch config.5.cssl.monomorphic 
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.monomorphic
 ```
 
 ---
 
-## Filter the VCF with monomorphic loci
+## 18. Filtered the VCF with monomorphic loci
 
-First, set-up filtering for monomorphic sites only. Copy the `config.fltr.ind.cssl.mono` file over.
+First, set-up filtering for monomorphic sites only. Copied the `config.fltr.ind.cssl.mono` file over.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
@@ -358,27 +358,27 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_mono
 cp ../../scripts/config.fltr.ind.cssl.mono .
 ```
 
-Update the `config.fltr.ind.cssl.mono` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made. **The settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file.**
-
+Updated the `config.fltr.ind.cssl.mono` file paths and file extensions. 
+  * **The settings for filters 04, 14, 05, 16, 13 & 17 now match the settings used when filtering the original VCF file.**
 
 ```
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                                                                                      # order to run filters in
-        fltrVCF -c rad.RAW-10-10-RG                                                                                                      # cutoffs, ie ref description
-        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge                                         # path to *.bam files
-        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF                                                 # path to fltrVCF R scripts
-        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge/mapped.rad.RAW-10-10.bed                # bed file used in genotyping
-        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/TotalRawSNPs.rad.RAW-10-10.vcf   # vcf file to filter
-        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/reference.rad.RAW-10-10.fasta    # reference genome
-        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge/popmap.rad.RAW-10-10.HWEsplit      # popmap file
-        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                        # path to HWE filter script
-        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                        # path to rad_haplotyper script
-        fltrVCF -o Gmi.mono                                                                                                              # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                                                                    # number of threads [1]
+	fltrVCF -f 01 02 04 14 05 16 04 13 05 16 17                      # order to run filters in
+	fltrVCF -c rad.RAW-10-10-rescaled                                # cutoffs, ie ref description
+	fltrVCF -b ../mapDamageBAM                                       # path to *.bam files
+	fltrVCF -R ../../scripts/fltrVCF/scripts                         # path to fltrVCF R scripts
+	fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-10-10-rescaled.bed     # bed file used in genotyping
+	fltrVCF -v TotalRawSNPs.rad.RAW-10-10-rescaled.vcf               # vcf file to filter
+        fltrVCF -g reference.rad.RAW-10-10-rescaled.fasta                # reference genome
+	fltrVCF -p ../filterVCF/popmap.rad.RAW-10-10-rescaled.HWEsplit   # popmap file
+	fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl        # path to HWE filter script
+	fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl        # path to rad_haplotyper script
+	fltrVCF -o gmi.mono                                              # prefix on output files, use to track settings
+        fltrVCF -t 40                                                    # number of threads [1]
 ```
 
-Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for monomorphic sites.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
@@ -389,7 +389,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_mono
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
 ```
 
-Next, set-up filtering for polymorphic sites only. Make a `polymorphic_filter` directory in `mkVCF_monomorphic` and copy the `config.fltr.ind.cssl.poly` file over.
+Next, set-up filtering for polymorphic sites only. Made a `polymorphic_filter` directory in `mkVCF_monomorphic` and copied the `config.fltr.ind.cssl.poly` file over.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
@@ -400,26 +400,27 @@ cd polymorphic_filter
 cp ../../../scripts/config.fltr.ind.cssl.poly .
 ```
 
-Update the `config.fltr.ind.cssl.poly` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made AND the HWEsplit popmap you made if you had any cryptic population structure. **The settings for all your filters should match the settings used when filtering the original VCF file.**
+Updated the `config.fltr.ind.cssl.poly` file paths and file extensions. 
+  * **The settings for all filters now match the settings used when filtering the original VCF file.**
 
 ```
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17                                                             # order to run filters in
-        fltrVCF -c rad.RAW-10-10-RG                                                                                                        # cutoffs, ie ref description
-        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic                                    # path to *.bam files
-        fltrVCF -R /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/scripts                                           # path to fltrVCF R scripts
-        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge/mapped.rad.RAW-10-10.bed                  # bed file used in genotyping
-        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/TotalRawSNPs.rad.RAW-10-10.vcf     # vcf file to filter
-        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/reference.rad.RAW-10-10.fasta      # reference genome
-        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge/popmap.rad.RAW-10-10.HWEsplit        # popmap file
-        fltrVCF -w /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                          # path to HWE filter script
-        fltrVCF -r /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/scripts/rad_haplotyper/rad_haplotyper.pl                          # path to rad_haplotyper script
-        fltrVCF -o Gmi.poly                                                                                                                # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                                                                      # number of threads [1]
+	fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07 18 17   # order to run filters in
+	fltrVCF -c rad.RAW-10-10-rescaled                                        # cutoffs, ie ref description
+	fltrVCF -b ../../mapDamageBAM                                            # path to *.bam files
+	fltrVCF -R ../../../scripts/fltrVCF/scripts                              # path to fltrVCF R scripts
+	fltrVCF -d ../../mapDamagBAM/mapped.rad.RAW-10-10-rescaled.bed           # bed file used in genotyping
+	fltrVCF -v ../TotalRawSNPs.rad.RAW-10-10-rescaled.vcf                    # vcf file to filter
+        fltrVCF -g ../reference.rad.RAW-10-10-rescaled.fasta                     # reference genome
+	fltrVCF -p ../../filterVCF/popmap.rad.RAW-10-10-rescaled.HWEsplit        # popmap file
+	fltrVCF -w ../../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl             # path to HWE filter script
+	fltrVCF -r ../../../scripts/rad_haplotyper/rad_haplotyper.pl             # path to rad_haplotyper script
+	fltrVCF -o gmi.poly                                                      # prefix on output files, use to track settings
+        fltrVCF -t 40                                                            # number of threads [1]
 ```
 
-Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch) for polymorphic sites.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/polymorphic_filter
@@ -431,73 +432,142 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_mono
 sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly 
 ```
 
+---
 
-## Merge monomorphic & polymorphic VCF files
+## 18. Merge monomorphic & polymorphic VCF files
 
-Check the *filtered* monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. If not, remove the necessary individuals from the relevant files. *Your monomorphic and polymorphic VCFs should have the EXACT same individuals present. If not, merging will not work!*
+Checked the *filtered* monomorphic & polymorphic VCF files to make sure that filtering removed the same individuals. 
+  * **mono.VCF filtering removed:** ABas_001, ABas_003, ABas_004, ABas_008-016, ABas_024-043, ABas_045-053, ABas_055-061, AHam_001, AHam_005-009, AHam_012, AHam_015, AHam_019-025, AHam_034, AHam_036, AHam_038, AHam_040, AHam_043-054, AHam_056-059, AHam_061-064, AHam_066-077, AHam_080-082, AHam_084, AHam_086-088, AHam_090-096, CBas_003, CBas_008, CBas_021, CBas_038, CBas_043, CBas_077
+  * **poly.VCF filtering removed:** ABas_001, ABas_003, ABas_004, ABas_008-017, ABas_024-043, ABas_045-053, ABas_055-061, AHam_001, AHam_005-009, AHam_012, AHam_015, AHam_019-025, AHam_034, AHam_036, AHam_038, AHam_040, AHam_043-054, AHam_056-059, AHam_061-064, AHam_066-077, AHam_080-082, AHam_084, AHam_086-088, AHam_090-096, CBas_003, CBas_008, CBas_021, CBas_038, CBas_043, CBas_077
+    * *Gmi-ABas_017-merged* removed from the polymorphic but not monomorphic VCF.
 
-Next, sort each VCF file.
+Created `indv_missing.txt` in `mkVCF_monomorphic` directory. This is a list of individuals that are missing in one but not the other VCF. Used this to make sure number of individuals matched in both filtered VCFs.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
 
 module load vcftools
-
-vcftools --vcf Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.vcf
-vcf-sort Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.vcf > Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf
-
-vcftools --vcf Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.vcf --remove ../indv_missing.txt --recode --recode-INFO-all --out Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.vcf
-vcf-sort Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.vcf > Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.vcf
-```
-
-Zip each VCF file.
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
-
-module load samtools/1.9
-
-bgzip -c Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf > Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf.gz
-bgzip -c Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.vcf > Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.vcf.gz
-
-```
-
-Index each VCF file.
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
-
-module load samtools/1.9
-
-tabix Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf.gz
-tabix Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.vcf.gz
-```
-
-Had to re-sort and reheader poly VCF file
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic/polymorphic_filter
-
-crun bcftools reheader -h header_poly.txt -o Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.FIXING.vcf Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.vcf
-bgzip -c Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.FIXING.vcf > Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.FIXING.vcf.gz
-
 bash
 export SINGULARITY_BIND=/home/e1garcia
-crun bcftools concat --allow-overlaps Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf.gz Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.FIXING.vcf.gz -O z -o Gmi.all.recode.sorted.vcf.gz
 
-tabix Gmi.all.recode.nomissing.sorted.vcf.gz
+#remove indvs monomorphic
+vcftools --vcf gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.vcf --remove indv_missing.txt --recode --recode-INFO-all --out gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing
+mv gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.recode.vcf gmi.mono.rad.RAW-10.10.Fltr17.11-rescaled.recode.nomissing.vcf
+
+#remove indvs polymorphic
+cd polymorphic_filter
+
+vcftools --vcf gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.vcf --remove ../indv_missing.txt --recode --recode-INFO-all --out gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing
+mv gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.recode.vcf gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf
 
 exit
 ```
 
+Before zipping, sorting, etc. kept getting `[W::vcf_parse_info] INFO 'technology.illumina' is not defined in the header, assuming Type=String` error. Had to add that line to the header (along with the `technology.Illumina` header line), otherwise would get a sorting error.
+
+Zipped each VCF file.
+
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
 
-module load container_env bcftools
-module load samtools/1.9
-
+module load container_env samtools
 bash
-crun bcftools concat --allow-overlaps Gmi.mono.rad.RAW-10-10-RG.Fltr17.11.recode.nomissing.sorted.vcf.gz Gmi.poly.rad.RAW-10-10-RG.Fltr17.20.recode.nomissing.sorted.FIXING.vcf.gz -O z -o Gmi.all.recode.sorted.vcf.gz
-tabix Gmi.all.recode.nomissing.sorted.vcf.gz
+export SINGULARITY_BIND=/home/e1garcia
+
+#zip monomorphic
+crun bgzip -c Gmi.mono.rad.RAW-10-10-rescaled.Fltr17.11.recode.nomissing.vcf > Gmi.mono.rad.RAW-10-10-rescaled.Fltr17.11.recode.nomissing.vcf
+
+#zip polymorphic
+cd polymorphic_filter
+
+crun bgzip -c Gmi.poly.rad.RAW-10-10-rescaled.Fltr17.20.recode.nomissing..vcf > Gmi.poly.rad.RAW-10-10-rescaled.Fltr17.20.recode.nomissing..vcf.gz
+
+exit
+```
+
+Indexed each VCF file.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load container_env samtools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+#index monomorphic
+tabix Gmi.mono.rad.RAW-10-10-rescaled.Fltr17.11.recode.nomissing.vcf.gz
+
+#index polymorphic
+cd polymorphic filter
+
+tabix Gmi.poly.rad.RAW-10-10-rescaled.Fltr17.20.recode.nomissing.vcf.gz
+
+exit
+```
+
+Sorted each VCF file.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module unload samtools
+module load container_env bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+#sort monomorphic
+crun bcftools sort gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf.gz -o gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz
+
+#sort polymorphic
+cd polymorphic filter
+
+crun bcftools sort gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf.gz -o gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz
+
+exit
+```
+
+Indexed each sorted file.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load container_env samtools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+mv polymorphic_filter/gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz .
+
+crun tabix gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz
+crun tabix gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz
+
+exit
+```
+
+Merged monomorphic and polymorphic files together.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_procesing/mkVCF_monomorphic
+
+module unload samtools
+module load container_env bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+crun bcftools concat --allow-overlaps  gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz  gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz -O z -o gmi.all.recode.nomissing.sorted.vcf.gz
+
+exit
+```
+
+Indexed "all sites" VCF.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
+
+module load container_env samtools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+crun tabix gmi.all.recode.nomissing.sorted.vcf.gz
+
 exit
 ```
