@@ -971,9 +971,11 @@ module load container_env samtools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
+mv polymorphic_filter/<POLYMORPHIC SORTED VCF.GZ> . #move polymorphic sorted VCF file to the main mkVCF_monomorphic directory
+
 #index the VCF files
 crun tabix <NOMISSING SORTED MONOMORPHIC VCF.GZ>
-crun tabix <NOMISSING SORTED POLYMORPHIC VCF.GZ> #from the polymorphic_filter dir
+crun tabix <NOMISSING SORTED POLYMORPHIC VCF.GZ>
 
 exit
 
