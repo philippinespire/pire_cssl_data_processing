@@ -1,7 +1,11 @@
-2023-04-25 15:27:41,311	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta
-2023-04-25 15:28:56,709	DEBUG	main: BAM read in 87.763396 seconds
-2023-04-25 16:43:55,403	INFO	mapdamage.rscript: Performing Bayesian estimates
-2023-04-25 16:43:55,853	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Stats_out 0 0 0 results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/acgt_ratio.csv 0 0
-2023-04-25 17:15:56,378	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1920.525322 seconds
-2023-04-25 17:15:56,496	INFO	main: Successful run
-2023-04-25 17:15:56,496	DEBUG	main: Run completed in 6507.550488 seconds
+2023-11-13 10:34:52,781	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta -l 150 --rescale --merge-reference-sequences
+2023-11-13 10:35:50,170	DEBUG	main: BAM read in 64.015864 seconds
+2023-11-13 10:35:54,665	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-11-13 10:35:54,665	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Stats_out 0 0 0 results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/acgt_ratio.csv 0 0
+2023-11-13 11:03:05,423	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1630.757985 seconds
+2023-11-13 11:03:05,424	INFO	mapdamage.rescale: Rescaling BAM: 'Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam' -> 'results_Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Aen-AHam_018-AeA01018_CKDL210012719-1a-AK7761-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.rescaled.bam'
+2023-11-13 11:03:05,542	WARNING	mapdamage.rescale: Warning! Assuming the pairs are non-overlapping, facing inwards and correctly paired.
+2023-11-13 11:03:26,428	WARNING	mapdamage.rescale: Number of non-rescaled reads due to improper pairing:  215733
+2023-11-13 11:03:26,576	DEBUG	mapdamage.rescale: Rescaling completed in 21.151881 seconds
+2023-11-13 11:03:26,579	INFO	main: Successful run
+2023-11-13 11:03:26,579	DEBUG	main: Run completed in 1720.425021 seconds

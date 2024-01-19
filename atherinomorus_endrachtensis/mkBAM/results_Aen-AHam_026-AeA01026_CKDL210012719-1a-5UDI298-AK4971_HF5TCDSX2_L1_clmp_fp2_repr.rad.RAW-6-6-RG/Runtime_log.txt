@@ -1,2 +1,11 @@
-2023-04-25 15:27:40,389	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta
-2023-04-25 15:29:51,420	DEBUG	main: BAM read in 142.474061 seconds
+2023-11-13 10:34:52,688	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta -l 150 --rescale --merge-reference-sequences
+2023-11-13 10:39:00,994	DEBUG	main: BAM read in 254.840746 seconds
+2023-11-13 10:39:06,331	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-11-13 10:39:06,331	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Stats_out 0 0 0 results_Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/acgt_ratio.csv 0 0
+2023-11-13 11:05:14,689	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1568.357992 seconds
+2023-11-13 11:05:14,690	INFO	mapdamage.rescale: Rescaling BAM: 'Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam' -> 'results_Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Aen-AHam_026-AeA01026_CKDL210012719-1a-5UDI298-AK4971_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.rescaled.bam'
+2023-11-13 11:05:14,799	WARNING	mapdamage.rescale: Warning! Assuming the pairs are non-overlapping, facing inwards and correctly paired.
+2023-11-13 11:06:13,406	WARNING	mapdamage.rescale: Number of non-rescaled reads due to improper pairing:  654960
+2023-11-13 11:06:13,514	DEBUG	mapdamage.rescale: Rescaling completed in 58.824179 seconds
+2023-11-13 11:06:13,517	INFO	main: Successful run
+2023-11-13 11:06:13,517	DEBUG	main: Run completed in 1887.363423 seconds

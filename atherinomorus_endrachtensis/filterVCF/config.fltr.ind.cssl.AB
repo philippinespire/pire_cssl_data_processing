@@ -7,15 +7,15 @@ Notes: These settings are designed to clean a raw VCF file made from individuals
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
         fltrVCF -f 01 02 03 04 014 07 05 16 15                  # order to run filters in
-        fltrVCF -c rad.RAW-6-6                               # cutoffs, ie ref description
-        fltrVCF -b /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM                                                                  # path to *.bam files
-        fltrVCF -R ../../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-        fltrVCF -d /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mapped.rad.RAW-6-6.bed           # bed file used in genotyping
-        fltrVCF -v /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_diploid/TotalRawSNPs.rad.RAW-6-6.vcf  # vcf file to filter
-        fltrVCF -g /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/reference.rad.RAW-6-6.fasta      # reference genome
-        fltrVCF -p /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/popmap.rad.RAW-6-6                # popmap file
-        fltrVCF -w ../../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-        fltrVCF -r ../../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
+        fltrVCF -c rad.RAW-6-6-rescaled                               # cutoffs, ie ref description
+        fltrVCF -b /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM                                                                  # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
+        fltrVCF -d /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mapped.rad.RAW-6-6-rescaled.bed           # bed file used in genotyping
+        fltrVCF -v /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/TotalRawSNPs.rad.RAW-6-6-rescaled.vcf  # vcf file to filter
+        fltrVCF -g /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/reference.rad.RAW-6-6-rescaled.fasta      # reference genome
+        fltrVCF -p /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/popmap.rad.RAW-6-6-rescaled                # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
         fltrVCF -o Aen.AB                                                                    # prefix on output files, use to track settings
         fltrVCF -t 32                                                                        # number of threads [1]
         
@@ -30,13 +30,13 @@ Filters
         01 vcftools --min-alleles       2               #Remove sites with less alleles [2]
         01 vcftools --max-alleles       2               #Remove sites with more alleles [2]
         02 vcftools --remove-indels                     #Remove sites with indels.  Not adjustable
-        03 vcftools --minQ              20              #Remove sites with lower QUAL [20]
-        04 vcftools --min-meanDP        10:15            #Remove sites with lower mean depth [15]
+        03 vcftools --minQ              100              #Remove sites with lower QUAL [20]
+        04 vcftools --min-meanDP        5:15            #Remove sites with lower mean depth [15]
         041 custom bash                 0.01            #Remove contigs with lower mean of mean depth across sites, percentile [0.01]
         041 custom bash                 0.99            #Remove contigs with higher mean of mean depth across sites, percentile [0.99]
         041 custom bash                 0               #Remove contigs with lower CV of mean depth across sites, percentile [0]
         041 custom bash                 0.99            #Remove contigs with higher CV of mean depth across sites, percentile [0.99]
-        05 vcftools --max-missing       0.75:0.8        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
+        05 vcftools --max-missing       0.55:0.6        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
 
         06 vcffilter AB min             0.375           #Remove sites with equal or lower allele balance [0.2]
         06 vcffilter AB max             0.625           #Remove sites with equal or lower allele balance [0.8]
@@ -48,12 +48,12 @@ Filters
         11 vcffilter QUAL/DP min        0.02             #Remove sites where the ratio of QUAL to DP is deemed to be too low. [0.25]
 
         12 vcftools QUAL/DP max                         #Remove sites where the ratio of QUAL to DP is deemed to be too high (2x). Not adjustable
-        13 vcftools --max-meanDP        200             #Remove sites with higher mean depth [250]
+        13 vcftools --max-meanDP        400             #Remove sites with higher mean depth [250]
         131 custom bash                 250             #Remove contigs with higher mean of mean depths across sites
-        14 vcftools --minDP             10              #Code genotypes with lesser depth of coverage as NA [5]
+        14 vcftools --minDP             5              #Code genotypes with lesser depth of coverage as NA [5]
         15 vcftools --maf               0               #Remove sites with lesser minor allele frequency.  Adjust based upon sample size. [0.005]
         15 vcftools --max-maf           1               #Remove sites with greater minor allele frequency.  Adjust based upon sample size. [0.995]
-        16 vcftools --missing-indv      0.8:0.5         #Remove individuals with more missing data. [0.5]
+        16 vcftools --missing-indv      0.6:0.5         #Remove individuals with more missing data. [0.5]
         161 vcftools --remove           rmInd.txt       #Remove individuals listed in file
         17 vcftools --missing-sites     0.5             #Remove sites with more data missing in a pop sample. [0.5]
         18 filter_hwe_by_pop_HPC        0.001           #Remove sites with <p in test for HWE by pop sample. Adjust based upon sample size [0.001]
