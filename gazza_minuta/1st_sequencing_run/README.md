@@ -197,21 +197,20 @@ Inserted `<assembly type>` into the `Cutoff1` variable and `<unique assembly inf
 
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
-rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-RAW-10-10               Cutoff2 (integer)
-                Use unique reads that occur in at least this many individuals for making the reference genome
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+PE              Type of reads for assembly (PE, SE, OL, RPE)        PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+rad             Cutoff1 (integer)                                   Use unique reads that have at least this much coverage for making the reference     genome
+RAW-10-10       Cutoff2 (integer)                                   Use unique reads that occur in at least this many individuals for making the reference genome
+0.05            rainbow merge -r <percentile> (decimal 0-1)         Percentile-based minimum number of seqs to assemble in a precluster
+0.95            rainbow merge -R <percentile> (decimal 0-1)         Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
 
 ----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
 Make sure the cutoffs above match the reference*fasta!
-1               bwa mem -A Mapping_Match_Value (integer)
-4               bwa mem -B Mapping_MisMatch_Value (integer)
-6               bwa mem -O Mapping_GapOpen_Penalty (integer)
-30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
-5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+1		bwa mem -A Mapping_Match_Value (integer) 			bwa mem default is 1
+4		bwa mem -B Mapping_MisMatch_Value (integer) 			bwa mem default is 4
+6		bwa mem -O Mapping_GapOpen_Penalty (integer) 			bwa mem default is 6
+30		bwa mem -T Mapping_Minimum_Alignment_Score (integer) 		bwa mem default is 30. Remove reads that have an alignment score less than this. don't go lower than 1 or else the resulting file will be huge. NOTE! in fltrBAM settings (below) there is an alignment score filter that uses a threshold relative to read length.  This -T setting here affects which reads the relative alignment score threshold will be applied to.
+5		bwa mem -L Mapping_Clipping_Penalty (integer,integer) 		bwa mem default is 5
 ------------------------------------------------------------------------------------------------------------------
 ```
 
@@ -381,7 +380,7 @@ cp mkBAM/config.5.cssl mkVCF_monomorphic
 Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
 
 ```
-yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+yes      freebayes    --report-monomorphic (no|yes)      Report even loci which appear to be monomorphic, and report allconsidered alleles,
 ```
 
 ```
