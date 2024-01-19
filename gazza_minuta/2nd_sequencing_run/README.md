@@ -4,7 +4,7 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-## Step 0. Rename files for dDocent HPC
+## 0. Rename files for dDocent HPC
 
 Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture` (check `Gazza-minuta` channel on Slack). Starting analyses in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture`.
 
@@ -31,7 +31,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/raw_fq
 
 ---
 
-## Step 1.  Check data quality with fastqc
+## 1.  Check data quality with fastqc
 
 Ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).
 
@@ -41,8 +41,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 #Multi_FastQC.sh "<indir>" "<file_extension>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture" "fq.gz"
 ```
-
-[Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
@@ -54,7 +52,7 @@ Potential issues:
 
 ---
 
-## Step 2. 1st fastp
+## 2. 1st fastp
 
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
@@ -64,8 +62,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 #runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/raw_fq_capture/ fq_fp1
 ```
-
-[Report](URL for your report)
 
 Potential issues:  
   * % duplication - 
@@ -81,7 +77,7 @@ Potential issues:
 
 ---
 
-## Step 3. Clumpify
+## 3. Clumpify
 
 Ran [`runCLUMPIFY_r1r2_array.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash).
 
@@ -112,7 +108,7 @@ All files ran successfully
 
 ---
 
-## Step 4. 2nd fastp
+## 4. 2nd fastp
 
 Ran [`runFASTP_2_cssl.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_cssl.sbatch).
 
@@ -122,8 +118,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 #runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
-
-[Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
@@ -139,7 +133,7 @@ Potential issues:
 
 ---
 
-## Step 5. Run fastq_screen
+## 5. Run fastq_screen
 
 Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
@@ -179,8 +173,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastqc_screen_report
 ```
 
-[Report](URL for your report).
-
 Potential issues:
 
   * one hit, one genome, no ID - 
@@ -190,7 +182,7 @@ Potential issues:
     
 ---
 
-## Step 6. Repair fastq_screen paired end files
+## 6. Re-pair fastq_screen paired end files
 
 Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
 
@@ -210,8 +202,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz"
 ```
 
-[Report](URL for your report).
-
 Potential issues:  
   * % duplication - 
     * Alb: 39.73%, Contemp: 19.58%
@@ -222,7 +212,7 @@ Potential issues:
 
 ---
 
-## Step 7. Calculate the percent of reads lost in each step
+## 7. Calculate the percent of reads lost in each step
 
 Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
@@ -243,11 +233,11 @@ Reads lost:
 
 Reads remaining:
 
-Total reads remaining: 42.52%
+  * Total reads remaining: 42.52%
 
 ---
 
-## Step 8. Set up mapping dir and get reference genome
+## 8. Set up mapping dir and get reference genome
 
 Make mapping directory and move `*fq.gz` files over.
 
@@ -320,7 +310,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-## Step 9. Map reads to reference - Filter Maps - Genotype Maps
+## 9. Map reads to reference
 
 Since mkVCF was already run during the 1st sequencing run, dDocentHPC.sbatch script was duplicated and had the mkVCF commented out in the script under the new name dDocentHPC_nomkVCF.sbatch.
 
@@ -332,4 +322,4 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequen
 sbatch ../../dDocentHPC_nomkVCF.sbatch config.5.cssl
 ```
 
-Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main GMI readME for more information)
+Stopped here as the 1st and 2nd sequencing run was combined and ran through filtering and pop structure steps together (see main Gmi README for more information).
