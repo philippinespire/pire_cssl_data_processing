@@ -389,7 +389,7 @@ After merging you can use these merged .bam files with the unmerged files from r
 
 Move into the `mkBAM` dir (or the `mkBAMmerge` directory if you have multiple sequencing runs) and execute the following scripts:
 
-1. [getBAITcvg.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/getBAITcvg.sbatch) which calculates the breath and depth of coverage for the targeted bait regions (as determined by a bed file).
+1. [getBAITcvg.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/getBAITcvg.sbatch) which calculates the breadth and depth of coverage for the targeted bait regions (as determined by a bed file).
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
