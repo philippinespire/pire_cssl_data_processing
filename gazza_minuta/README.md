@@ -154,7 +154,7 @@ Updated config with correct paths
 fltrVCF Settings, run fltrVCF -h for description of settings
          # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
         fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07         # order to run filters in
-        fltrVCF -c rad.RAW-10-10-rescale                                         # cutoffs, ie ref description
+        fltrVCF -c rad.RAW-10-10-rescaled                                         # cutoffs, ie ref description
         fltrVCF -b ../mapDamageBAM                                               # path to *.bam files
         fltrVCF -R ../../scripts/fltrVCF/scripts                                 # path to fltrVCF R scripts
         fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-10-10-rescaled.bed             # bed file used in genotyping
@@ -287,28 +287,31 @@ cp ../mapDamageBAM/popmap.rad.RAW-10-10-rescaled  ./popmap.rad.RAW-10-10-rescale
 #added -B to end of pop assignment (second column) to assign individual to deme B. deme A pop assignments remained unchanged
 ```
 
-Made a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with correct file paths and extensions.
+Made a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with correct file paths, extensions, and filters.
 
 ```
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 18 17                                                                     # order to run filters in
-        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off                               # cutoffs, ie ref description
-        fltrVCF -b ../mkBAMmerge                                                             # path to *.bam files
-        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-        fltrVCF -d ../mkBAMmerge/mapped.rad.RAW-10-10.bed                                    # bed file used in genotyping
-        fltrVCF -v Gmi.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noisolate-off.Fltr07.18.vcf           # vcf file to filter
-        fltrVCF -g ../mkBAMmerge/reference.rad.RAW-10-10.fasta                               # reference genome
-        fltrVCF -p popmap.rad.RAW-10-10.HWEsplit                                             # popmap file
-        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
-        fltrVCF -o Gmi.A                                                                     # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                        # number of threads [1]
+        fltrVCF -f 18 17                                                        # order to run filters in
+        fltrVCF -c rad.RAW-10-10-rescaled                                       # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                              # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-10-10-rescaled.bed            # bed file used in genotyping
+        fltrVCF -v Gmi.A.rad.RAW-10-10-rescale.Fltr07.18.vcf                    # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.rad.RAW-10-10-rescaled.fasta       # reference genome
+        fltrVCF -p popmap.rad.RAW-10-10-rescaled.HWEsplit                       # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl               # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl               # path to rad_haplotyper script
+        fltrVCF -o Gmi.A                                                        # prefix on output files, use to track settings
+        fltrVCF -t 40                                                           # number of threads [1]
 ```
-Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+Did not change the filter settings.
+
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/filterVCF
 
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 ```
