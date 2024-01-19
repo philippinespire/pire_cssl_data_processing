@@ -1,10 +1,10 @@
 # Gmi Data Processing Log
 
-Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *Gazza minuta* samples from Hamilo Cove.
+Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *Gazza minuta* samples from Hamilo Cove & Basud River. First sequencing run.
 
 ---
 
-## Step 1.  1st fastp
+## 1.  1st fastp
 
 Raw data in `/home/e1garcia/shotgun_PIRE/Gmi/raw_fq_capture` (check Gazza minuta channel on Slack).  The root outdir for all analyses will be  `/home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta`. Both on Wahab/Turing (ODU HPCs).
 
@@ -31,7 +31,7 @@ Potential issues:
 
 ---
 
-## Step 2. Clumpify
+## 2. Clumpify
 
 ```
 #on Turing
@@ -46,7 +46,7 @@ Checked that all files ran with `checkCLUMPIFY.R`. All ran (no RAM issues).
 
 ---
 
-## Step 3. Run fastp2
+## 3. Run fastp2
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
@@ -71,7 +71,7 @@ Potential issues:
 
 ---
 
-## Step 4. Run fastq_screen
+## 4. Run fastq_screen
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
@@ -110,7 +110,7 @@ mv *out logs
 
 ---
 
-## Step 5. Repair fastq_screen paired end files
+## 5. Re-pair fastq_screen paired end files
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
@@ -123,7 +123,7 @@ sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 4
 
 ---
 
-## Step 6. Rename files for dDocent HPC and put into mapping dir
+## 6. Rename files for dDocent HPC and put into mapping dir
 
 Used decode file from Sharon Magnuson & Chris Bird.
 
@@ -159,7 +159,7 @@ ls ../mkBAM
 
 ---
 
-## Step 7. Set up mapping dir and get reference genome
+## 7. Set up mapping dir and get reference genome
 
 Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
 
@@ -217,7 +217,7 @@ Make sure the cutoffs above match the reference*fasta!
 
 ---
 
-## Step 8. Map reads to reference - Filter Maps - Genotype Maps
+## 8. Map reads to reference - Filter Maps - Genotype Maps
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM
@@ -227,9 +227,11 @@ cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta/mkBAM
 sbatch ../dDocentHPC.sbatch config.5.cssl
 ```
 
+**NOTE:** Because this was the first sequencing run (and we did not know we would do a 2nd at the time) we "finished" this pipeline all the way through making the "all sites" VCF. However, the filtered `.bam` files from this step were later merged with those from the second sequencing run and used for the official full dataset. See the Gmi README for more information.
+
 ---
 
-## Step 9. Filter VCF Files
+## 9. Filter VCF Files
 
 Pulled latest changes from fltrVCF and rad_haplotyper repos
 
@@ -277,7 +279,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl
 
 ---
 
-## Step 10. Check for cryptic species
+## 10. Check for cryptic species
 
 ```
 cd /home/r3clark/PIRE/pire_cssl_data_processing/gazza_minuta
@@ -331,7 +333,7 @@ Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_css
 
 ---
 
-## Step 11. Filter VCF file for HWE
+## 11. Filter VCF file for HWE
 
 **NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
 
@@ -363,7 +365,7 @@ sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ---
 
-## Step 12. Make VCF with Monomorphic Loci
+## 12. Make VCF with monomorphic loci
 
 Moved the files needed for genotyping from `mkBAM` to `mkVCF`
 
@@ -396,7 +398,7 @@ sbatch ../dDocentHPC_mkVCF.sbatch config.5.cssl.monomorphic
 
 ---
 
-## Step 13. Filter VCF with monomorphic loci
+## 13. Filter VCF with monomorphic loci
 
 Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
 
@@ -458,7 +460,7 @@ sbatch ../../fltrVCF.sbatch config.fltr.ind.cssl.poly
 
 ---
 
-## Step 14. Merge monomorphic & polymorphic VCF files
+## 14. Merge monomorphic & polymorphic VCF files
 
 Check monomorphic & polymorphic VCF file sto make sure that filtering removed the same individuals. If not, remove necessary individuals from files.
 
