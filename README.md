@@ -401,7 +401,7 @@ sbatch getBAITcvg.sbatch . <path to singleLine.bed file with bait regions>
 sbatch ../../scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/06_Gazza_minuta/Gazza_Chosen_baits.singleLine.bed
 ```
 
-2. [mappedReadStats.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/mappedReadStats.sbatch) which calculates the number and % of reads that were kept or lost at each step in the pipeline.
+2. [mappedReadStats.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/mappedReadStats.sbatch) which calculates the number of reads in each filtered `.bam` file, along with their mean length, depth, etc.
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
