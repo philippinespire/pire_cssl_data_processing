@@ -464,7 +464,7 @@ Copy (and rename) the reference fasta and `config.6.cssl` file to `mapDamageBAM`
 cd YOUR_SPECIES_DIR/mapDamageBAM
 
 cp ../mkBAM/<reference_fasta> ./<reference_fasta_rescaled> #or cp ../mkBAMmerge/<reference_fasta> ./<reference_fasta_rescaled>
-cp ../mkBAM/config.6.cssl ./config.6.cssl.rescale
+cp ../mkBAM/config.6.cssl ./config.6.cssl.rescale #or cp ../2nd_sequencing_run/mkBAM/config.6.cssl ./config.6.cssl.rescale
 
 #Example for Gmi
 cp ../mkBAMmerge/reference.rad.RAW-10-10.fasta ./reference.rad.RAW-10-10-rescaled.fasta
