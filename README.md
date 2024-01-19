@@ -428,7 +428,7 @@ cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
 sbatch ../../scripts/runMAPDMG.2.sbatch <"bam files to run mapDamage on"> <path to reference fasta>
 
 #Example for Gmi:
-sbatch ../../scripts/runMAPDMG.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fasta
+sbatch ../../scripts/runMAPDMG.2.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fasta
 ```
 
 mapDamage will create a `results*` folder for each individual. This folder will contain a number of files, 2 of which are most important for us: 1) the rescaled `.bam` file and 2) the `Fragmisincorporation_plot.pdf`.
