@@ -4,10 +4,11 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-Information on data pre-processing steps (up to step 14 and 7 respectively) can be found in the READMEs for the 1st sequencing run and 2nd sequencing run directories.
+Information on data pre-processing & processing steps prior to merging `.bam` files can be found in the READMEs for the 1st sequencing run and 2nd sequencing run directories.
 
 ---
-## Merging .bam files from two separate runs (12/15/22)
+
+## Merging .bam files from two separate runs (12.15.2022)
 
 Used the following command:
 
