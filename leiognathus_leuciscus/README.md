@@ -611,43 +611,37 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 ---
 
-## Step 13. Make VCF with Monomorphic Loci
+## 17. Make a VCF file with monomorphic loci
 
-Moved the files needed for genotyping from `mkBAM` to `mkVCF`
+Created a `mkVCF_monomorphic` dir to make an "all sites" VCF (with monomorphic loci included) and moved necessary files over.
 
 ```sh
-#run in scratch if need more space
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
 mkdir mKVCF_monomorphic
-mv mkBAM/*bam* mkVCF_monomorphic
-cp mkBAM/*fasta mkVCF_monomorphic
-cp mkBAM/config.5.cssl mkVCF_monomorphic
+
+ln mapDamage/*bam* mkVCF_monomorphic
+cp mapDamgeBAM/*fasta mkVCF_monomorphic
+cp mapDamageBAM/config.6.cssl.mkVCF.rescale mkVCF_monomorphic/config.6.cssl.rescale.monomorphic
 ```
 
-Changed the config file so that the last setting (monomorphic) is set to yes and renamed it with the suffix `.monomorphic`
+Changed the config file so that the last setting (monomorphic) is set to yes.
 
 ```
-yes      freebayes    --report-monomorphic (no|yes)                      Report even loci which appear to be monomorphic, and report allconsidered alleles,
+yes      freebayes    --report-monomorphic (no|yes)          Report even loci which appear to be monomorphic, and report allconsidered alleles,
 ```
+
+Genotyped with `dDocentHPC.sbatch`.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
 
-mv config.5.cssl config.5.cssl.monomrphic
-```
-
-Genotyped with [dDoceentHPC_mkVCF.sbatch](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC_mkVCF.sbatch).
-
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkVCF_monomorphic
-
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl.monomorphic 
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale.monomorphic 
 ```
 
 ---
 
-## Step 14. Filter VCF with monomorphic loci
+## 18. Filter VCF with monomorphic loci
 
 Will filter for monomorphic & polymorphic loci separately, then merge the VCFs together for one "all sites" VCF. Again, probably best to do this in scratch.
 
