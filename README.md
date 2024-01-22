@@ -781,7 +781,7 @@ mkdir mkVCF_monomorphic
 
 ln mapDamageBAM/*bam mkVCF_monomorphic #NOTE: want to use the rescaled bam files for this!
 cp mapDamageBAM/*fasta mkVCF_monomorphic
-cp mapDamageBAM/config.6.cssl mkVCF_monomorphic/config.6.cssl.monomorphic
+cp mapDamageBAM/config.6.cssl.rescale mkVCF_monomorphic/config.6.cssl.monomorphic
 ```
 
 Change the `config.6.cssl.monomorphic` file so that the last mkVCF setting (monomorphic) is set to yes.
