@@ -1,0 +1,11 @@
+2023-11-13 12:02:21,335	INFO	main: Started with the command: /opt/mapdamage2/bin/mapDamage -i Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam -r reference.rad.RAW-6-6.fasta -l 150 --rescale --merge-reference-sequences
+2023-11-13 12:13:46,788	DEBUG	main: BAM read in 690.695255 seconds
+2023-11-13 12:13:51,645	INFO	mapdamage.rscript: Performing Bayesian estimates
+2023-11-13 12:13:51,646	DEBUG	mapdamage.rscript: Call: Rscript /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/ /opt/mapdamage2/lib/python3.7/site-packages/mapdamage/Rscripts/stats/ results_Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Stats_out 0 0 0 results_Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/acgt_ratio.csv 0 0
+2023-11-13 12:33:08,960	DEBUG	mapdamage.rscript: Bayesian estimates completed in 1157.313848 seconds
+2023-11-13 12:33:08,960	INFO	mapdamage.rescale: Rescaling BAM: 'Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.bam' -> 'results_Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG/Aen-Cbat_061-AeC01061_CKDL210012719-1a-5UDI301-AK10343_HF5TCDSX2_L1_clmp_fp2_repr.rad.RAW-6-6-RG.rescaled.bam'
+2023-11-13 12:33:09,066	WARNING	mapdamage.rescale: Warning! Assuming the pairs are non-overlapping, facing inwards and correctly paired.
+2023-11-13 12:41:59,634	WARNING	mapdamage.rescale: Number of non-rescaled reads due to improper pairing:  660120
+2023-11-13 12:41:59,666	DEBUG	mapdamage.rescale: Rescaling completed in 530.705688 seconds
+2023-11-13 12:41:59,669	INFO	main: Successful run
+2023-11-13 12:41:59,669	DEBUG	main: Run completed in 2383.576571 seconds
