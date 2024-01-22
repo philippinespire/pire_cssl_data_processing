@@ -96,17 +96,10 @@ Copied and renamed reference fasta and `config.6.cssl` to `mapDamageBAM`:
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mapDamageBAM
 
 cp ../mkBAMmerge/referencerad.RAW-10-10.fasta ./reference.rad.RAW-10-10-rescaled.fasta
-cp ../2nd_sequencing_run/mkBAM/config.6.cssl ./config.6.cssl.rescale
+cp ../2nd_sequencing_run/mkBAM/config.6.cssl ./config.6.cssl.mkVCF.rescale
 ```
 
-```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkBAMmerge
-
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch fltrBAM config.5.cssl #Run filtering
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl #Make VCF files
-```
-
-Edited `config.6.cssl.rescale` so that the file names match and the settings are as desired:
+Edited `config.6.cssl.mkVCF.rescale` so that the file names match and the settings are as desired:
 
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
@@ -123,7 +116,7 @@ Ran mkVCF:
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mapDamageBAM
 
-sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.mkVCF.rescale
 ```
 
 ---
@@ -329,10 +322,10 @@ mkdir mkVCF_monomorphic
 
 ln mapDamageBAM/*bam* mkVCF_monomorphic
 cp mapDamageBAM/*fasta mkVCF_monomorphic
-cp mapDamageBAM/config.6.cssl mkVCF_monomorphic/config.6.cssl.monomorphic
+cp mapDamageBAM/config.6.cssl.mkVCF.rescale mkVCF_monomorphic/config.6.cssl.rescale.monomorphic
 ```
 
-Changed the `config.6.cssl.monomorphic` file so that the last setting (monomorphic) is set to yes.
+Changed the `config.6.cssl.rescale.monomorphic` file so that the last setting (monomorphic) is set to yes.
 
 ```
 yes      freebayes    --report-monomorphic (no|yes)       Report even loci which appear to be monomorphic, and report allconsidered alleles,
@@ -343,7 +336,7 @@ Genotyped with `dDocentHPC.sbatch`.
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mkVCF_monomorphic
 
-sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.monomorphic
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale.monomorphic
 ```
 
 ---
