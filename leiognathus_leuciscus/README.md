@@ -1,12 +1,13 @@
-# Generic Data Processing Log
+# Lle Data Processing Log
 
-Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *spp* samples.
+Log to track progress through capture bioinformatics pipeline for the Albatross and Contemporary *Leiognathus leuciscus* samples from Hamilo Cove.
+  * **NOTE:** *Leiognathus leuciscus* & *Equulites leuciscus* are the same species. Furthermore, subsequent species identification work has revealed that many of these individuals are actually *Equulites laterofenestra* and NOT *Leiognathus leuciscus*.
 
 ---
 
-## Step 0. Rename files for dDocent HPC
+## 0. Rename files for dDocent HPC
 
-Raw data in `<full path to raw data on Wahab>` (check `<spp>` channel on Slack). Starting analyses in `<full path to species dir>`.
+Raw data in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture` (check *Leiognathus leuciscus* channel on Slack). Starting analyses in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus`.
 
 Used decode file from Sharon Magnuson & Chris Bird.
 
@@ -30,18 +31,15 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Lle_Captu
 
 ---
 
-## Step 1.  Check data quality with fastqc
+## 1.  Check data quality with fastqc
 
 Ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture
 
-#Multi_FastQC.sh "<indir>" "<file_extension>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/raw_fq_capture" "fq.gz"
 ```
-
-[Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
@@ -53,18 +51,15 @@ Potential issues:
 
 ---
 
-## Step 2. 1st fastp
+## 2. 1st fastp
 
 Ran [`runFASTP_1st_trim.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runFASTP_1st_trim.sbatch <INDIR/full path to files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch raw_fq_capture fq_fp1
 ```
-
-[Report](URL for your report)
 
 Potential issues:  
   * % duplication - 
@@ -80,14 +75,13 @@ Potential issues:
 
 ---
 
-## Step 3. Clumpify
+## 3. Clumpify
 
 Ran [`runCLUMPIFY_r1r2_array.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runCLUMPIFY_r1r2_array.bash <indir;fast1 files > <outdir> <tempdir> <max # of nodes to use at once>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/mmalabag 10
 ```
 
@@ -112,25 +106,20 @@ Ran [`runMULTIQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processi
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#sbatch Multi_FASTQC.sh "<indir>" "<mqc report name>" "<file extension to qc>"
-#do not use trailing / in paths. Example:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
 ---
 
-## Step 4. 2nd fastp
+## 4. 2nd fastp
 
 Ran [`runFASTP_2_cssl.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_cssl.sbatch).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runFASTP_2_cssl.sbatch <INDIR/full path to clumpified files> <OUTDIR/full path to desired outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_cssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
-
-[Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
@@ -146,17 +135,16 @@ Potential issues:
 
 ---
 
-## Step 5. Run fastq_screen
+## 5. Run fastq_screen
 
 Ran [`runFQSCRN_6.bash`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFQSCRN_6.bash).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
-Some files didn't run (either due to storage problems or general errors) so I had to rerun them individually, to success.
+Some files didn't run (either due to storage problems or general errors) so I had to rerun them individually.
 
 ```sh
 bash ../pire_fq_gz_procesing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Lle-CNas_089.clmp.fp2_r2.fq.gz
@@ -175,7 +163,7 @@ Checked that all files were successfully completed.
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#checked that all 5 output files from fastqc screen were created for each file (should be XX for each = XX R1 & XX R2)
+#checked that all 5 output files from fastqc screen were created for each file (should be 256 for each = 128 R1 & 128 R2)
 ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l #256
 ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l #256 
 ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l #256
@@ -194,12 +182,8 @@ Ran [`runMultiQC.sbatch`](https://github.com/philippinespire/pire_fq_gz_processi
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runMULTIQC.sbatch <indir> <report name>
-#do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastqc_screen_report
 ```
-
-[Report](URL for your report).
 
 Potential issues:
 
@@ -210,14 +194,13 @@ Potential issues:
 
 ---
 
-## Step 6. Repair fastq_screen paired end files
+## 6. Re-pair fastq_screen paired end files
 
 Ran [`runREPAIR.sbatch`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_procesing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
@@ -226,14 +209,11 @@ Once finished, ran [`Multi_FASTQC.sh`](https://github.com/philippinespire/pire_f
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#Multi_FastQC.sh "<indir>" "<file_extension>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh ".../leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn_repaired" "fqc_rprd_report" "fq.gz"
 
 # check to be sure the job is running
 watch squeue -u mmalabag
 ```
-
-[Report](URL for your report).
 
 Potential issues:  
   * % duplication - 
@@ -245,18 +225,17 @@ Potential issues:
 
 ---
 
-## Step 7. Calculate the percent of reads lost in each step
+## 7. Calculate the percent of reads lost in each step
 
 Executed [`read_calculator_cssl.sh`](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_cssl.sh).
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-#read_calculator_cssl.sh "<Path to species home dir>" "<Path to dir with species raw files>"
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus" "raw_fq_capture"
 ```
 
-Generated the [percent_read_loss](URL for read loss table) and [percent_reads_remaining](URL for read remain table) tables.
+Generated the [percent_read_loss](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/preprocess_read_change/readLoss_table.tsv) and [percent_reads_remaining](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/preprocess_read_change/readsRemaining_table.tsv) tables.
 
 Reads lost:
 
@@ -266,13 +245,13 @@ Reads lost:
 
 Reads remaining:
 
-Total reads remaining: 34.56%
+  * Total reads remaining: 34.56%
 
 ---
 
-## Step 8. Set up mapping dir and get reference genome
+## 8. Set up mapping dir and get reference genome
 
-Make mapping directory and move `*fq.gz` files over.
+Made mapping directory and moved `*fq.gz` files over.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
@@ -281,23 +260,19 @@ mkdir mkBAM
 mv fq_fp1_clmp_fp2_fqscrn_repaired/*fq.gz mkBAM
 ```
 
-Pulled latest changes from dDocentHPC repo & copied `config.5.cssl` over.
+Pulled latest changes from dDocentHPC repo & copied `config.6.cssl` over.
 
 ```sh
-#if you haven't already, you first need to clone the dDocentHPC.git repo
-#cd pire_cssl_data_processing/scripts
-#git clone https://github.com/cbirdlab/dDocentHPC.git
-
-#if you have cloned, just pull the latest changes
 cd /pire_cssl_data_procesing/scripts/dDocentHPC
 git pull
 
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 
-cp ../../scripts/dDocentHPC/configs/config.5.cssl .
+cp ../../scripts/dDocentHPC/configs/config.6.cssl .
 ```
 
-Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *spp* is: `<BEST_ASSEMBLY.fasta>` in `<PATH TO DIR WITH BEST GENOME ASSEMBLY`. Copied this to `mkBAM`. Best genome had to be extracted from out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz and was placed in main lle_spades directory for easy access.
+Found the best genome by running `wrangleData.R`, sorted tibble by busco single copy complete, quast n50, and filtered by species in Rstudio. The best genome to map to for *Leiognathus leuciscus* is: `<scaffolds.fasta>` in `</home/e1garcia/shotgun_PIRE/lle_spades/scaffolds.faasta`. Copied this to `mkBAM`. 
+  * The best genome had to to first be extracted from `out_Lle-C_3NR_R1R2ORPH_contam_noisolate_covcutoff-off.tar.gz` and was placed in main `lle_spades` directory for easy access.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
@@ -317,19 +292,18 @@ Updated the config file with the ref genome info.
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 
-nano config.5.cssl
+nano config.6.cssl
 ```
 
 Inserted `<assembly type>` into the `Cutoff1` variable and `<unique assembly info>` into the `Cutoff2` variable.
 
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
-ssl               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-Lle-C-3NR-R1R2ORPH-contam-noIsolate              Cutoff2 (integer)
-                Use unique reads that occur in at least this many individuals for making the reference genome
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+PE                                     Type of reads for assembly (PE, SE, OL, RPE)         PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+ssl                                    Cutoff1 (integer)                                    Use unique reads that have at least this much coverage for making the reference genome
+Lle-C-3NR-R1R2ORPH-contam-noIsolate    Cutoff2 (integer)                                    Use unique reads that occur in at least this many individuals for making the reference genome
+0.05                                   rainbow merge -r <percentile> (decimal 0-1)          Percentile-based minimum number of seqs to assemble in a precluster
+0.95                                   rainbow merge -R <percentile> (decimal 0-1)          Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
 
 ----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
@@ -338,76 +312,164 @@ Make sure the cutoffs above match the reference*fasta!
 4               bwa mem -B Mapping_MisMatch_Value (integer)
 6               bwa mem -O Mapping_GapOpen_Penalty (integer)
 30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
-5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+5               bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
 ```
 
 ---
 
-## Step 9. Map reads to reference - Filter Maps - Genotype Maps
+## 9. Map reads to reference
 
 Ran [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 
-#this script has to be run from dir with fq.gz files to be mapped and the ref genome
-#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1 shot
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkBAM config.5.cssl    #make BAM files
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch fltrBAM config.5.cssl  #filter BAM files
-sbatch ../../../dDocentHPC/dDocentHPC_dev2.sbatch mkVCF config.5.cssl    #make VCF files
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
 ```
 
 ---
-## Generate Mapping Stats for Capture Targets with [`getBAITcvg.sbatch`]
+
+## 10. Filter BAM files
+
+Ran [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/dDocentHPC.sbatch).
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl
+```
+
+---
+
+## 11. Generate mapping stats for capture targets
+
+Ran `getBAITcvg.sbatch` to calculate the breadth and depth of coverage for the targeted bait regions:
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 
-# getBAITcvg.sbatch <Path to BAM file dir> <path to bedfile>
 sbatch ../scripts/getBAITcvg.sbatch ./mkBAM /home/e1garcia/shotgun_PIRE/pire_probe_sets/07_Leiognathus_leuciscus/Leiognathus_leuciscus_Chosen_baits.singleLine.bed
+```
+
+Ran `mappedReadStats.sbatch` to calculate the number of reads in each filtered `.bam` file, along with their mean length and depth:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
+
+sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
 ```
 
 ---
 
-## Step 10. Filter VCF File
+## 12. Run mapDamage
 
-Pulled latest changes from fltrVCF and rad_haplotyper repos.
+Ran mapDamage:
 
 ```sh
-#if you haven't already, you first need to clone the fltrVCF.git repo & the rad_haplotyper.git repo
-#cd pire_cssl_data_processing/scripts
-#git clone https://github.com/cbirdlab/fltrVCF.git
-#git clone https://github.com/cbirdlab/rad_haplotyper.git
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
 
-cd pire_cssl_data_processing/scripts/fltrVCF
-git pull
+sbatch ../../scripts/runMAPDMG.2.sbatch "Lle-*RG.bam" reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta
+```
 
-cd pire_cssl_data_processing/scripts/rad_haplotyper
-git pull
+Cleaning up directories:
 
-cd pire_cssl_data_processing/leiognathus_leuciscus
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mkBAM
+
+mkdir mapDamage_output
+mv results*-RG/ mapDamage_output
+
+cd ..
+mkdir mapdamageBAM
+
+cd mapDamageBAM
+mv ../mkBAM/mapDamage_output/results*/*bam .
+```
+
+Renamed the rescaled .bam files so that dDocent will recognize them (made them end in *-rescaled-RG.bam).
+
+---
+
+## 13. Run mkVCF on BAM files
+
+Copied and renamed reference faasta and `config.6.cssl` to `mapDamageBAM`:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mapDamageBAM
+
+cp ../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta ./reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.fasta
+cp ../mkBAM/config.6.cssl ./config.6.cssl.mkVCF.rescale
+```
+
+Edited `config.6.cssl.mkVCF.rescale` so that the file names match and the settings are as desired:
+
+```
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE                                     Type of reads for assembly (PE, SE, OL, RPE)         PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+ssl                                    Cutoff1 (integer)                                    Use unique reads that have at least this much coverage for making the reference genome
+Lle-C-3NR-R1R2ORPH-contam-noIsolate    Cutoff2 (integer)                                    Use unique reads that occur in at least this many individuals for making the reference genome
+0.05                                   rainbow merge -r <percentile> (decimal 0-1)          Percentile-based minimum number of seqs to assemble in a precluster
+0.95                                   rainbow merge -R <percentile> (decimal 0-1)          Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
+```
+
+Ran mkVCF:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/mapDamageBAM
+
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.mkVCF.rescale
+```
+
+---
+
+## 14. Filter VCF File
+
+Made a filtering directory and copied config file over:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir filterVCF
 cd filterVCF
 
 cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 ```
 
+Updated config file with correct paths:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15 06 11 09 10 04 13 05 16 07                                   # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled                                        # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                                                         # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                                           # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.bed             # bed file used in genotyping
+        fltrVCF -v ../mapDamageBAM/TotalRawSNPs.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.vcf       # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.fasta        # reference genome
+        fltrVCF -p ../mapDamageBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled                 # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                          # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                                          # path to rad_haplotyper script
+        fltrVCF -o Lle.A                                                                                   # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                      # number of threads [1]
+```
+
+Did not adjust the filter settings (left them as the default).
+
 Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
 
-#before running, make sure the config file is updated with file paths and file extensions based on your species
-#config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
-
-#troubleshooting will be necessary
 ```
 
 ---
 
-## Step 11. Check for cryptic species
+## 15. Check for cryptic species
+
+Made a `pop_structure` directory and copied filtered VCF file there.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
@@ -415,25 +477,44 @@ cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus
 mkdir pop_structure
 cd pop_structure
 
-#copy final VCF file made from fltrVCF step to `pop_structure` directory
-#will be from the SECOND 07 filter
 cp ../filterVCF/Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf .
-
-#There were too many "_" in sample ID names. This was rectified manually by editing the VCF using nano as there was issues with bcftools reading the VCF file. 
 ```
 
-Ran PCA w/PLINK. Instructions for installing PLINK with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+There were too many "_" in sample ID names for PLINK. Fixed with the following code:
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
-module load anaconda
-conda activate popgen
+module load bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia
+
+#created list of sample names
+crun bcftools query -l Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf > sample_names.txt
+
+#modified sample_names.txt so that the only _ in the sample name was between the population and the individual number (ex: Lle-AHam_001)
+
+#renamed
+crun bcftools reheader --samples sample_names.txt -o Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf
+
+exit
+```
+
+Ran PCA w/PLINK.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
+
+module load container_env python3
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
 #VCF file has split chromosome, so running PCA from bed file
-plink --vcf Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf --allow-extra-chr --make-bed --out PIRE.Lle.Ham.preHWE
-plink  --pca --allow-extra-chr --bfile PIRE.Lle.Ham.preHWE --out PIRE.Lle.Ham.preHWE
-conda deactivate
+crun.python3 -p ~/.conda/envs/popgen plink --vcf Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf
+ --alow-extra-chr --make-bed --out PIRE.Lle.Ham.rescaled.preHWE
+crun.python3 -p ~/.conda/envs/popgen plink --pca --allow-extra-chr --bfile PIRE.Lle.Ham.rescaled.preHWE --out PIRE.Lle.Ham.rescaled.preHWE
+
+exit
 ```
 
 Made input files for ADMIXTURE with PLINK.
@@ -441,75 +522,89 @@ Made input files for ADMIXTURE with PLINK.
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
-module load anaconda
-conda activate popgen
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
 #bed and bim files already made (for PCA)
-awk '{$1=0;print $0}' PIRE.Lle.Ham.preHWE.bim > PIRE.Lle.Ham.preHWE.bim.tmp
-mv PIRE.Lle.Ham.preHWE.bim.tmp PIRE.Lle.Ham.preHWE.bim
-conda deactivate
+awk '{$1=0;print $0}' PIRE.Lle.Ham.rescaled.preHWE.bim > PIRE.Lle.Ham.rescaled.preHWE.bim.tmp
+mv PIRE.Lle.Ham.rescaled.preHWE.bim.tmp PIRE.Lle.Ham.rescaled.preHWE.bim
+
+exit
 ```
 
-Ran ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
+Ran ADMIXTURE (K = 1-5).
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure
 
-module load anaconda
-conda activate popgen
+module load container_env python3
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
-admixture PIRE.Lle.Ham.preHWE.bed 1 --cv > PIRE.Lle.Ham.preHWE.log1.out #run from 1-5
-conda deactivate
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Lle.Ham.rescaled.preHWE.bed 1 --cv > PIRE.Lle.Ham.rescaled.preHWE.log1.out
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Lle.Ham.rescaled.preHWE.bed 2 --cv > PIRE.Lle.Ham.rescaled.preHWE.log2.out
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Lle.Ham.rescaled.preHWE.bed 3 --cv > PIRE.Lle.Ham.rescaled.preHWE.log3.out
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Lle.Ham.rescaled.preHWE.bed 4 --cv > PIRE.Lle.Ham.rescaled.preHWE.log4.out
+crun.python3 -p ~/.conda/envs/popgen admixture PIRE.Lle.Ham.rescaled.preHWE.bed 5 --cv > PIRE.Lle.Ham.rescaled.preHWE.log5.out
+
+exit
 ```
 
 Copied `*.eigenval`, `*.eigenvec` & `*.Q` files to local computer. Ran `pire_cssl_data_processing/scripts/popgen_analyses/pop_structure.R` on local computer to visualize PCA & ADMIXTURE results (figures in `/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/pop_structure`).
 
 ---
 
-## Step 12. Filter VCF file for HWE
+## 16. Filter VCF file for HWE
 
-**NOTE:** If PCA & ADMIXTURE results don't show cryptic structure, skip to running `fltrVCF.sbatch`.
+PCA & ADMIXTURE showed cryptic structure. AHam (Albatross individuals) were roughly split 50/50 between two demes (identified as demes "A" and "B" for now). CNas (contemporary individuals) were almost entirely assigned to deme "B" (with one exception).
+  * Species IDS are unknown at this point, however Roy did barcode one contemporary individual from this site (and some from other sites). CNas_054 barcoded to *Equulites laterofenestra*, an identification confirmed by Kent & Jem morphologically as well (they also looked at a few other contemporary individuals). Thus, we are tentatively considering deme "B" to be *Equulites laterofenestra* for now (although it is coded in the `popmap` file as "Lle-CNas-B" or "Lle-AHam-B").
+    * The other individuals (from other sites, NOT Hamilo Cove) Roy barcoded came out as *Equulites leuciscus* (aka *Leiognathus leuciscus*). We tentatively expect non-Ela individuals here (those assigned to deme "A") to also be truly *Leiognathus leuciscus* as well, but cannot be sure.
 
-PCA & ADMIXTURE showed cryptic structure. Most samples were assigned group "A" and the remaining were group "B"
+List of AHam & CNas individuals in deme "A" (20 in all):
+  * **Albatross (19 total):** AHam_001, AHam_002, AHam_003, AHam_004, AHam_011, AHam_012, AHam_014, AHam_015, AHam_016, AHam_017, AHam_018, AHam_023, AHam_024, AHam_025, AHam_026, AHam_027, AHam_028, AHam_029 & AHam_030
+  * **Contemporary (1 total):** CNas_043
 
 Adjusted popmap file to reflect new structure.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
-cp ../mkBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate ./popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit
+
+cp ../mapDamageBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled ./popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.HWEsplit
 
 #added -A or -B to end of pop assignment (second column) to assign individual to either group A or group B.
 ```
 
-Copy config for HWE.
+Made a copy of the `config.fltr.ind.cssl` file called `config.fltr.ind.cssl.HWE` with correct file paths, extensions, and filters.
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
+
 cp config.fltr.ind.cssl ./config.fltr.ind.cssl.HWE
 ```
-
-Edit config. Before running, make sure the config file is updated with file paths and file extensions based on your species. Popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected). Vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with). Config file should ONLY run filters 18 & 17 (in that order)
 
 ```sh
 fltrVCF Settings, run fltrVCF -h for description of settings
         # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
-        fltrVCF -f 18 17                                                                     # order to run filters in
-        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate                                   # cutoffs, ie ref description
-        fltrVCF -b ../mkBAM                                                                  # path to *.bam files
-        fltrVCF -R ../../scripts/fltrVCF/scripts                                             # path to fltrVCF R scripts
-        fltrVCF -d ../mkBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.bed               # bed file used in genotyping
-        fltrVCF -v Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf               # vcf file to filter
-        fltrVCF -g ../mkBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.fasta          # reference genome
-        fltrVCF -p popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.HWEsplit                   # popmap file
-        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                            # path to HWE filter script
-        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                            # path to rad_haplotyper script
-        fltrVCF -o Lle.A                                                                     # prefix on output files, use to track settings
-        fltrVCF -t 40                                                                        # number of threads [1]
+        fltrVCF -f 18 17                                                                                   # order to run filters in
+        fltrVCF -c ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled                                        # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                                                         # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                                                           # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.bed             # bed file used in genotyping
+        fltrVCF -v Lle.A.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate.Fltr07.18.vcf                             # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.fasta        # reference genome
+        fltrVCF -p ../mapDamageBAM/popmap.ssl.Lle-C-3NR-R1R2ORPH-contam-noIsolate-rescaled.HWEsplit        # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl                                          # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl                                          # path to rad_haplotyper script
+        fltrVCF -o Lle.A                                                                                   # prefix on output files, use to track settings
+        fltrVCF -t 40                                                                                      # number of threads [1]
 ```
-Run [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
+
+Did not change the filter settings.
+
+Ran [`fltrVCF.sbatch`](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/fltrVCF.sbatch).
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF_merge/filterVCF_merge
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus/filterVCF
 
 sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE 
 ```
