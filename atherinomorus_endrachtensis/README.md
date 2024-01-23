@@ -168,6 +168,7 @@ cp ../../scripts/dDocentHPC/configs/config.6.cssl .
 ```
 
 Because there is no whole genome reference for *A. endrachtensis*, I am using the full "raw" reference fasta from the RAD data used to make probes. This file can be found on Wahab in `/RC/group/rc_carpenterlab_ngs/rad_PIRE/Aen` in the zipped `PIRE-Aen-C-Bat_probedev.tar.gz` file. Copied over to the mapping dir and renamed.
+  * Reference fasta also lives in `/home/e1garcia/shotgun_PIRE/pire_probe_sets/04_Atherinomorus_endrachtensis` as well (as `pire_AtherinomorusEndrachtensis_ArborBioSciProbeSet_unfiltered.fasta`).
 
 ```
 #the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
@@ -220,6 +221,71 @@ sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
 ```
 
 ---
+
+ ## 9. Filter BAM files
+
+Ran `dDocentHPC.sbatch`.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl
+```
+
+---
+
+## 10. Generate mapping stats for capture targets
+
+Ran `getBAITcvg.sbatch` to calculate the breadth and depth of coverage for the targeted bait regions:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+sbatch ../../scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_sets/04_Atherinomorus_endrachtensis/Atherinomorus_endrachtensis_Chosen_baits.singleLine.bed
+```
+
+Ran `mappedReadStats.sbatch` to calculate the number of reads in each filtered `.bam` file, along with their mean length and depth:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+```
+
+---
+
+## 11. Run mapDamage
+
+Ran mapDamage:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+sbatch ../../scripts/runMAPDMG.2.sbatch "Aen-*RG.bam" reference.rad.RAW-6-6.fasta
+```
+
+Cleaning up directories:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+mkdir mapDamage_output
+mv results*-RG/ mapDamage_output
+
+cd ..
+mkdir mapdamageBAM
+
+cd mapDamageBAM
+mv ../mkBAM/mapDamage_output/results*/*bam .
+```
+
+Renamed the rescaled .bam files so that dDocent will recognize them (made them end in *-rescaled-RG.bam).
+
+---
+
+## 12. Run mkVCF on BAM files
+
+
 
 ## Step 9. Filter VCF Files (up to Allele Balance)
 
