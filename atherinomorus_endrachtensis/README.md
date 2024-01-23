@@ -4,24 +4,37 @@ Log to track progress through capture bioinformatics pipeline for the Albatross 
 
 ---
 
-## Step 0. FastQC
+## 0. FastQC
 
-[Results](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/Multi_FASTQC/multiqc_report_.fq.gz.html?token=GHSAT0AAAAAABQHSGST2ASEM43PW2Z3AQQ6YTP7WRQ).
+Raw data in `/home/e1garcia/shotgun_PIRE/Aen/raw_fq` (check *Atherinomorus endrachtensis* channel on Slack). Starting analyses in `/home/e1garcia/shotgun_PRIE/pire_cssl_data_processing/atherinomorus_endrachtensis`.
+
+Ran `Multi_FASTQC.sh`. Copied fq files over to own `fq_raw` directory and ran fastQC there.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/fq_raw
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/fq_raw" "fq.gz"
+```
+
+Potential issues:
+  * % duplication -
+    * Alb: ~75% (some in the 40s), Contemp: ~50%
+  * GC content - good
+    * Alb: ~45-50%, Contemp: 45%
+  * number of reads - seems to be okay
+    * Alb: generally much higher # (>40 mil) BUT some are very low (1-2 mil), Contemp: ~10-20 mil
 
 ---
 
-## Step 1.  1st fastp
+## 1.  1st fastp
 
-Raw data in `/home/e1garcia/shotgun_PIRE/Aen/raw_fq` (check Atherinomorus-endrachtensis channel on Slack).  The root outdir for all analyses will be  `/home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus-endrachtensis`. Both on Wahab/Turing (ODU HPCs).
+Ran `runFASTP_1st_trim.sbatch`.
 
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+sbatch ../../pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
-
-#runFASTP_1.sbatch <indir> <outdir>
-sbatch runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Aen/raw_fq fq_fp1
-```
-
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABQHSGSTSHR4JEHKOS6UKC4IYTP7W7A).
 
 Potential issues:  
 * % duplication - high for most but not all Albatross, lower for contemporary
@@ -37,31 +50,29 @@ Potential issues:
 
 ---
 
-## Step 2. Clumpify
+## 2. Clumpify
+
+Ran `runCLUMPIFY_r1r2_array.bash`.
 
 ```
-#on Turing
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
-enable_lmod
-#runCLUMPIFY_r1r2.sbatch <indir> <outdir> <tempdir>
-sbatch runCLUMPIFY_r1r2.sbatch fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark
+bash ../../pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch-lustre/r3clark 10
 ```
 
-Checked that all files ran with `checkCLUMPIFY.R`. All ran (no RAM issues).
+Checked that all files ran with `checkCLUMPIFY_EG.R`. All ran (no RAM issues).
 
 ---
 
-## Step 3. Run fastp2
+## 3. Run fastp2
 
+Ran `runFASTP_2_cssl.sbatch`.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+sbatch ../../pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
-
-#runFASTP_2.sbatch <indir> <outdir>
-sbatch runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
-```
-
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2/2nd_fastp_report.html?token=GHSAT0AAAAAABQHSGSTG7SNTJBX24XILSOYYTP7XRQ).
 
 Potential issues:  
 * % duplication - good
@@ -77,53 +88,52 @@ Potential issues:
 
 ---
 
-## Step 4. Run fastq_screen
+## 4. Run fastq_screen
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+Ran `runFQSCRN_6.bash`.
 
-#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 
 #check output for errors
 grep 'error' slurm-fqscrn.266930*out | less -S #nothing
-grep 'error' slurm-fqscrn.266930*out | less -S #nothing
+grep 'No reads in' slurm-fqscrn.266930*out | less -S #nothing
 ```
-
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn/fqscrn_report.html?token=GHSAT0AAAAAABQHSGSS6XONYRGZXFAX5C7GYTP7YDA).
 
 Potential issues:
 * None. Not many hits to other genomes. What did hit was to bacteria/protist and Albatross generally slightly more contam than contemp.
 
 Cleanup logs
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
 mkdir logs
 mv *out logs
 ```
----
-
-## Step 5. Repair fastq_screen paired end files
-
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
-
-#runREPAIR.sbatch <indir> <outdir> <threads>
-sbatch ruNREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
-```
-
-[Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/philippinespire/pire_cssl_data_processing/main/atherinomorus_endrachtensis/fq_fp1_clmp_fp2_fqscrn_repaired/multiqc_report_postrepair.html?token=GHSAT0AAAAAABQHSGSTMGGUSYOWKAWHJ3JGYTP7YVQ).
 
 ---
 
-## Step 6. Rename files for dDocent HPC and put into mapping dir
+## 5. Re-pair fastq_screen paired end files
+
+Ran `runREPAIR.sbatch`.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+sbatch ../../pire_fq_gz_processing/ruNREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
+
+---
+
+## 6. Rename files for dDocent HPC and put into mapping dir
 
 Used decode file from Sharon Magnuson & Chris Bird.
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
 
 #mkNewFileNames.bash <decode file name> <fqdir>
 bash ../scripts/mkNewFileNames.bash Aen_CaptureLibraries_SequenceNameDecode.txv fq_fp1_clmp_fp2_fqscrn_repaired > decode_newnames.txt
@@ -147,19 +157,17 @@ ls mkBAM
 
 ---
 
-## Step 7.  Set up mapping dir and get reference genome
+## 7.  Set up mapping dir and get reference genome
 
-Cloned dDocentHPC repo.
+Copied `config.6.cssl` over to mapping dir.
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
-git clone git@github.com:cbirdlab/dDocentHPC.git
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
 
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
-cp ../scripts/dDocentHPC/configs/config.5.cssl mkBAM
+cp ../../scripts/dDocentHPC/configs/config.6.cssl .
 ```
 
-Because there is no whole genome reference for *A. endrachtensis*, I am using the full "raw" reference fasta from the RAD data used to make probes.
+Because there is no whole genome reference for *A. endrachtensis*, I am using the full "raw" reference fasta from the RAD data used to make probes. This file can be found on Wahab in `/RC/group/rc_carpenterlab_ngs/rad_PIRE/Aen` in the zipped `PIRE-Aen-C-Bat_probedev.tar.gz` file. Copied over to the mapping dir and renamed.
 
 ```
 #the destination reference fasta should be named as follows: reference.<assembly type>.<unique assembly info>.fasta
@@ -167,26 +175,26 @@ Because there is no whole genome reference for *A. endrachtensis*, I am using th
 #this naming is a little messy, but it makes the ref 100% tracable back to the source
 #it is critical not to use `_` in name of reference for compatibility with ddocent and freebayes
 
-mv /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/PIRE_AtherinomorousEndrachtensis.A.6.6.probes4development.fasta reference.rad.RAW-6-6.fasta
+mv /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/PIRE_AtherinomorousEndrachtensis.A.6.6.probes4development.fasta reference.rad.RAW-6-6.fasta
 ```
 
 Updated the config file with the ref genome info
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
-nano config.5.cssl
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+nano config.6.cssl
 ```
 
 Inserted `<assembly type>` into `Cutoff1` variable and `<unique assembly info>` into `Cutoff2` variable
 
 ```
 ----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
-rad               Cutoff1 (integer)                                                                                         Use unique reads that have at least this much coverage for making the reference     genome
-RAW-6-6               Cutoff2 (integer)
-                Use unique reads that occur in at least this many individuals for making the reference genome
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-based minimum number of seqs to assemble in a precluster
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-based maximum number of seqs to assemble in a precluster
+PE              Type of reads for assembly (PE, SE, OL, RPE)           PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+rad             Cutoff1 (integer)                                      Use unique reads that have at least this much coverage for making the reference     genome
+RAW-6-6         Cutoff2 (integer)                                      Use unique reads that occur in at least this many individuals for making the reference genome
+0.05            rainbow merge -r <percentile> (decimal 0-1)            Percentile-based minimum number of seqs to assemble in a precluster
+0.95            rainbow merge -R <percentile> (decimal 0-1)            Percentile-based maximum number of seqs to assemble in a precluster
 ------------------------------------------------------------------------------------------------------------------
 
 ----------mkBAM: Settings for mapping the reads to the reference genome-------------------------------------------
@@ -195,20 +203,20 @@ Make sure the cutoffs above match the reference*fasta!
 4               bwa mem -B Mapping_MisMatch_Value (integer)
 6               bwa mem -O Mapping_GapOpen_Penalty (integer)
 30              bwa mem -T Mapping_Minimum_Alignment_Score (integer)                    Remove reads that have an alignment score less than this.
-5       bwa mem -L Mapping_Clipping_Penalty (integer,integer)
+5               bwa mem -L Mapping_Clipping_Penalty (integer,integer)
 ------------------------------------------------------------------------------------------------------------------
 ```
 
 ---
 
-## Step 8. Map reads to reference - Filter Maps - Genotype Maps
+## 8. Map reads to reference
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+Ran `dDocentHPC.sbatch`.
 
-#this has to be run from dir with fq.gz files to be mapped and the ref genome
-#this script is preconfigured to run mapping, filtering of the maps, and genotyping in 1  shot
-sbatch ../dDocentHPC.sbatch config.5.cssl
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
 ```
 
 ---
