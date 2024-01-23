@@ -379,7 +379,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.AB
 
 ---
 
-## 10. Create Octoploid VCF
+## 15. Create Octoploid VCF
 
 Created so can compare genotype calls in homozygous sites. Will filter out sites where genotype calls differ between VCFs created with different ploidy levels (diploid v. octoploid) downstream.
 
