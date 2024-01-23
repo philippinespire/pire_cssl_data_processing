@@ -285,72 +285,134 @@ Renamed the rescaled .bam files so that dDocent will recognize them (made them e
 
 ## 12. Run mkVCF on BAM files
 
+Copied and renamed reference fasta and `config.6.cssl` to `mapDamageBAM`:
 
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mapDamageBAM
 
-## Step 9. Filter VCF Files (up to Allele Balance)
-
-Originally filtered usual way (applying all filters in order in `config.fltr.ind.cssl` file with default settings). However, results of some filters (particularly the filter for AB) indicated *A. endrachtensis* is likely polyploid (octoploid) and/or is currently undergoing rediploidization genome duplication events. To deal with this, we have decided to filter *A. endrachtensis* in a slightly different manner, to try and maximize the number of diploid loci and minimize the number of polyploid loci retained in the final VCF file. 
-
-Cloned fltrVCF and rad_haplotyper repos.
-
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/scripts
-git clone git@github.com:cbirdlab/fltrVCF.git
-git clone git@github.com:cbirdlab/rad_haplotyper.git
-
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
-mkdir filterVCF
-
-cp ../scripts/fltrVCF/config_files/config.fltr.ind.cssl filterVCF
+cp ../mkBAM/reference.rad.RAW-6-6.fasta ./reference.rad.RAW-6-6-rescaled.fasta
+cp ../mkBAM/config.6.cssl ./config.6.cssl.mkVCF.rescale
 ```
 
-Ran `fltrVCF.sbatch`. Only running up to **Filter 15**.
+Edited `config.6.cssl.mkVCF.rescale` so that the file names match and the settings are as desired:
 
+```sh
+----------mkREF: Settings for de novo assembly of the reference genome--------------------------------------------
+PE                       Type of reads for assembly (PE, SE, OL, RPE)           PE=ddRAD & ezRAD pairedend, non-overlapping reads; SE=singleend reads; OL=ddRAD & ezRAD overlapping reads, miseq; RPE=oregonRAD, restriction site + random shear
+rad                      Cutoff1 (integer)                                      Use unique reads that have at least this much coverage for making the reference     genome
+RAW-6-6-rescaled         Cutoff2 (integer)                                      Use unique reads that occur in at least this many individuals for making the reference genome
+0.05                     rainbow merge -r <percentile> (decimal 0-1)            Percentile-based minimum number of seqs to assemble in a precluster
+0.95                     rainbow merge -R <percentile> (decimal 0-1)            Percentile-based maximum number of seqs to assemble in a precluster
+------------------------------------------------------------------------------------------------------------------
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
-mv config.fltr.ind.cssl config.fltr.ind.cssl.AB
 
-#before running, make sure the config file is updated with file paths and file extensions based on your species
-#config file should ONLY run up to Filter 15 (remove rest of the filters from config file)
-sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.AB
+Ran mkVCF:
 
-#troubleshooting will be necessary
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mapDamageBAM
+
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl.mkVCF.rescale
 ```
 
 ---
 
-## Step 10. Create Octoploid VCF
+## 14. Filter VCF Files (up to Allele Balance)
+
+Originally filtered usual way (applying all filters in order in `config.fltr.ind.cssl` file with default settings). However, results of some filters (particularly the filter for AB) indicated *A. endrachtensis* is likely polyploid (octoploid) and/or is currently undergoing rediploidization genome duplication events. To deal with this, we have decided to filter *A. endrachtensis* in a slightly different manner, to try and maximize the number of diploid loci and minimize the number of polyploid loci retained in the final VCF file. 
+
+Made a filtering directory and copied config file over:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+mkdir filterVCF
+cd filterVCF
+
+cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl.AB .
+```
+
+Updated config file with correct paths:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 01 02 03 04 14 07 05 16 15                                  # order to run filters in
+        fltrVCF -c rad.RAW-6-6-rescaled                                        # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                             # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                               # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-6-6-rescaled.bed             # bed file used in genotyping
+        fltrVCF -v ../mapDamageBAM/TotalRawSNPs.rad.RAW-6-6-rescaled.vcf       # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.rad.RAW-6-6-rescaled.fasta        # reference genome
+        fltrVCF -p ../mapDamageBAM/popmap.rad.RAW-6-6-rescaled                 # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl              # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl              # path to rad_haplotyper script
+        fltrVCF -o Aen.AB                                                      # prefix on output files, use to track settings
+        fltrVCF -t 32                                                          # number of threads [1]
+```
+
+Adjusted fltrVCF settings as follows:
+
+```
+Filters
+        01 vcftools --min-alleles       2               #Remove sites with less alleles [2]
+        01 vcftools --max-alleles       2               #Remove sites with more alleles [2]
+        02 vcftools --remove-indels                     #Remove sites with indels.  Not adjustable
+        03 vcftools --minQ              100             #Remove sites with lower QUAL [20]
+        04 vcftools --min-meanDP        5:15            #Remove sites with lower mean depth [15]
+        05 vcftools --max-missing       0.55:0.6        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
+        07 vcffilter AC min             0               #Remove sites with equal or lower MINOR allele count [3]
+        14 vcftools --minDP             5               #Code genotypes with lesser depth of coverage as NA [5]
+        15 vcftools --maf               0               #Remove sites with lesser minor allele frequency.  Adjust based upon sample size. [0.005]
+        15 vcftools --max-maf           1               #Remove sites with greater minor allele frequency.  Adjust based upon sample size. [0.995]
+        16 vcftools --missing-indv      0.6:0.5         #Remove individuals with more missing data. [0.5]
+```
+       
+Ran `fltrVCF.sbatch`. Only running up to **Filter 15**.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis
+
+#before running, make sure the config file is updated with file paths and file extensions based on your species
+#config file should ONLY run up to Filter 15 (remove rest of the filters from config file)
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.AB
+```
+
+---
+
+## 10. Create Octoploid VCF
 
 Created so can compare genotype calls in homozygous sites. Will filter out sites where genotype calls differ between VCFs created with different ploidy levels (diploid v. octoploid) downstream.
 
-Moved the files need for genotyping from `mkBAM` to `mkBAM/mkVCF_octoploid`
+Copied and moved the files need for genotyping from `mapDamageBAM` to `mapDamageBAM/mkVCF_octoploid`
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mapDamageBAM
 mkdir mkVCF_octoploid
 
-mv *bam* mkVCF_octoploid
+ln *bam* mkVCF_octoploid
 mv namelist* mkVCF_octoploid
 cp *fasta mkVCF_octoploid
-cp config.5.cssl mkVCF_octoploid
+cp config.6.cssl.mkVCF.rescale mkVCF_octoploid
 ```
 
 Changed the config file so that the ploidy setting in the mkVCF section is set to 8 and renamed it with the suffix `.octo`
 
 ```
-8      freebayes -p  --ploidy (integer)                      Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
+8      freebayes -p  --ploidy (integer)       Whether pooled or not, if no cnv-map file is provided, then what is the ploidy of the samples? for pools, this number should be the number of individuals * ploidy
 ```
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
-mv config.5.cssl conf.5.cssl.octo
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mapDamageBAM/mkVCF_octoploid
+
+mv config.6.cssl.mkVCF.rescale config.6.cssl.mkVCF.rescale.octo
 ```
 
 Genotyped
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mkBAM/mkVCF_octoploid
-sbatch ../../dDocentHPC_mkVCF.sbatch config.5.cssl.octo
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/mapDamageBAM/mkVCF_octoploid
+
+sbatch ../../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.mkVCF.rescale.octo
 ```
 
 ---
