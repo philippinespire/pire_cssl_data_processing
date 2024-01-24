@@ -316,7 +316,7 @@ sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl.mkVCF.rescale
 
 ---
 
-## 14. Filter VCF Files (up to Allele Balance)
+## 14. Filter VCF files (up to allele balance)
 
 Originally filtered usual way (applying all filters in order in `config.fltr.ind.cssl` file with default settings). However, results of some filters (particularly the filter for AB) indicated *A. endrachtensis* is likely polyploid (octoploid) and/or is currently undergoing rediploidization genome duplication events. To deal with this, we have decided to filter *A. endrachtensis* in a slightly different manner, to try and maximize the number of diploid loci and minimize the number of polyploid loci retained in the final VCF file. 
 
@@ -379,7 +379,7 @@ sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.AB
 
 ---
 
-## 15. Create Octoploid VCF
+## 15. Create octoploid VCF
 
 Created so can compare genotype calls in homozygous sites. Will filter out sites where genotype calls differ between VCFs created with different ploidy levels (diploid v. octoploid) downstream.
 
@@ -417,27 +417,28 @@ sbatch ../../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.mkVCF.rescal
 
 ---
 
-## Step 11. Filter Octoploid VCF
+## 16. Filter octoploid VCF
 
 Need to remove non-biallelic SNPs and indels. Can't use VCFtools for filtering because it won't work with polyploidy data. Used BCFtools instead.
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+
 mkdir filterVCF_octoploid
-
 cd filterVCF_octoploid
-cp ../../mkBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6.vcf .
+
+cp ../../mapDamageBAM/mkVCF_octoploid/TotalRawSNPs.rad.RAW-6-6-rescaled.vcf .
 ```
 
-```
-#grab interactive node
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
 
-module load container_env
-module load bcftools
+module load container_env bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
 #filter out indels
-crun bcftools filter -i 'TYPE="snp"' TotalRawSNPs.rad.RAW-6-6 > noindels.vcf
+crun bcftools filter -i 'TYPE="snp"' TotalRawSNPs.rad.RAW-6-6-rescaled > noindels.vcf
 
 #filter to only biallelic SNPs
 crun bcftools view -m2 -M2 noindels.vcf > noindels.biallelic.vcf
@@ -445,23 +446,21 @@ crun bcftools view -m2 -M2 noindels.vcf > noindels.biallelic.vcf
 
 ---
 
-## Step 12. Pull Genotype & Allele Depth Data From VCFs
+## 17. Pull genotype & allele depth data from VCFs
 
 Followed `pire_cssl_data_processing/scripts/indvAlleleBalance.bash` script to create files.
 
 For diploid data:
 
-```
-#grab interactive node
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 
-salloc
-enable_lmod
 module load container_env ddocent
 bash
+export SINGULARITY_BIND=/home/e1garcia
 
 #set variables
-VCFFILE=Aen.AB.rad.RAW-6-6.Fltr15.9.recode.vcf
+VCFFILE=Aen.AB.rad.RAW-6-6-rescaled.Fltr15.9.recode.vcf
 JUNK_PATTERN=_.*-..-.*-.*_.*_L1_clmp_fp2_repr
 NUM_CHR_ID=21
 FILE_PREFIX=$(echo $VCFFILE | sed 's/vcf//')
@@ -484,8 +483,12 @@ cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUA
 
 For octoploid data:
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF/filterVCF_octoploid
+
+module load container_env ddocent
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
 #set variables
 VCFFILE=noindels.biallelic.vcf
@@ -511,37 +514,80 @@ cat individuals.tsv <(crun vcf-query $VCFFILE -f '%CHROM\t%POS\t%REF\t%ALT\t%QUA
 
 ---
 
-## Step 13. Filter to Diploid Contigs
+## 18. Filter to diploid contigs
 
 Ran `pire_cssl_data_processing/scripts/diploid_filter.R` to create a "greenlist" of contigs that meet diploid assumptions. Assumed loci that fell under a heterozygosity cut-of of 0.6 and had a z-score between -2.5 & 2.5 were diploid. Kept list of contigs with >80% of loci passing diploid (HD) filters. Followed McKinney et al. (2017) [guidelines](https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.12613).
 
 Took created greenlist and filtered VCF to just those contigs.
+  * Kept 23,876 loci across 9,547 contigs.
 
-```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 
 module load vcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia
 
-vcftools --vcf Aen.AB.rad.RAW-6-6.Fltr15.9.recode.vcf --positions diploid_contigs.bed --recode --recode-INFO-all --out Fltr15.9.greenlist
+vcftools --vcf Aen.AB.rad.RAW-6-6-rescaled.Fltr15.9.recode.vcf --positions diploid_contigs.bed --recode --recode-INFO-all --out Fltr15.9.greenlist
 mv Fltr15.9.greenlist.recode.vcf Fltr15.9.greenlist.vcf
 ```
 
 ---
 
-## Step 14. Filter VCF Files
+## 19. Filter VCF file
 
 Ran `fltrVCF.sbatch`. From original list of filters, only running those **after Filter 06** and up to **second 07 filter**. Not running allele balance filter at all (essentially did that when applied z-score & heterozygosity cut-offs).
 
+Copied `config.fltr.ind.cssl.AB` to new config file for just postAB-preHWE filtering:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
+
+cp config.fltr.ind.cssl.AB config.fltr.ind.cssl.postAB_HD
 ```
-cd /home/r3clark/PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
-mv config.fltr.ind.cssl.AB config.fltr.ind.cssl.postAB_HD
+
+Updated config file with correct paths:
+
+```
+fltrVCF Settings, run fltrVCF -h for description of settings
+        # Paths assume you are in `filterVCF dir` when running fltrVCF, change as necessary
+        fltrVCF -f 11 09 10 04 13 05 16 07                                     # order to run filters in
+        fltrVCF -c rad.RAW-6-6-rescaled                                        # cutoffs, ie ref description
+        fltrVCF -b ../mapDamageBAM                                             # path to *.bam files
+        fltrVCF -R ../../scripts/fltrVCF/scripts                               # path to fltrVCF R scripts
+        fltrVCF -d ../mapDamageBAM/mapped.rad.RAW-6-6-rescaled.bed             # bed file used in genotyping
+        fltrVCF -v Fltr15.9.greenlist.vcf                                      # vcf file to filter
+        fltrVCF -g ../mapDamageBAM/reference.rad.RAW-6-6-rescaled.fasta        # reference genome
+        fltrVCF -p ../mapDamageBAM/popmap.rad.RAW-6-6-rescaled                 # popmap file
+        fltrVCF -w ../../scripts/fltrVCF/filter_hwe_by_pop_HPC.pl              # path to HWE filter script
+        fltrVCF -r ../../scripts/rad_haplotyper/rad_haplotyper.pl              # path to rad_haplotyper script
+        fltrVCF -o Aen.postAB_HD2.5                                            # prefix on output files, use to track settings
+        fltrVCF -t 32                                                          # number of threads [1]
+```
+
+Adjusted fltrVCF settings as follows:
+
+```
+Filters
+        04 vcftools --min-meanDP        5:15            #Remove sites with lower mean depth [15]
+        05 vcftools --max-missing       0.55:0.6        #Remove sites with at least 1 - value missing data (1 = no missing data) [0.5]
+        07 vcffilter AC min             0               #Remove sites with equal or lower MINOR allele count [3]
+        09 vcffilter MQM/MQMR min       0.25            #Remove sites where the difference in the ratio of mean mapping quality between REF and ALT alleles is greater than this proportion from 1. Ex: 0 means the mapping quality must be equal between REF and ALTERNATE. Smaller numbers are more stringent. Keep sites where the following is true: 1-X < MQM/MQMR < 1/(1-X) [0.1]
+        10 vcffilter PAIRED                             #Remove sites where one of the alleles is only supported by reads that are not properly paired (see SAM format specification). Not adjustable.
+        11 vcffilter QUAL/DP min        0.02            #Remove sites where the ratio of QUAL to DP is deemed to be too low. [0.25]
+        13 vcftools --max-meanDP        400             #Remove sites with higher mean depth [250]
+        16 vcftools --missing-indv      0.6:0.5         #Remove individuals with more missing data. [0.5]
+```
+
+Ran `fltrVCF.sbatch`:
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #vcf path should point to vcf made after removing contigs not in greenlist (the file just created by vcftools)
 #config file should ONLY run filters 11 09 10 04 13 05 16 07 (in that order)
 sbatch ../fltrVCF.sbatch config.fltr.ind.cssl.postAB_HD
-
-#troubleshooting will be necessary
 ```
 
 ---
