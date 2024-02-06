@@ -452,7 +452,17 @@ cd mapDamageBAM
 mv ../mkBAM/mapDamage_output/results*/*bam . #or mv ../mkBAMmerge/mapDamage_output/results*/*bam .
 ```
 
-Finally, rename the rescaled `.bam` files so that dDocent will recognize them. Essentially, the file endings need to change from `*-RG.rescaled.bam` to `*-rescaled-RG.bam`.
+Finally, rename the rescaled `.bam` files so that dDocent will recognize them. Essentially, the file endings need to change from `*-RG.rescaled.bam` to `*-rescaled-RG.bam`. You can do this with the following for loop:
+
+```sh
+cd /YOUR_SPECIES_DIR/mapDamageBAM
+
+bash
+
+for i in *-RG.rescaled.bam; do mv "$i" "${i/-RG\.rescaled\.bam/-rescaled-RG\.bam}"; done
+
+exit
+```
 
 ---
 
