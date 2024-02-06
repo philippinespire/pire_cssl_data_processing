@@ -661,6 +661,34 @@ exit
 #example for Gmi
 crun.python3 -p ~/.conda/envs/popgen plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.vcf --allow-extra-chr --pca --out PIRE.Gmi.Ham.preHWE
 ```
+
+**NOTE:** Sometimes there will be too many instances of "_" in the individual names in the VCF file for PLINK to work (it expects only 1). If this is the case, you can rename the individuals in your VCF with the following code:
+
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
+
+module load container_env bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
+
+#create list of sample names
+crun bcftools query -l <YOUR VCF> > sample_names.txt
+
+#modify sample_names.txt so that the only _ in the sample name was between the population and the individual number (ex: Gmi-ABas_018)
+sed -e 's/_/-/g' -e 's/-/_/2' sample_names.txt > sample_names2.txt #first replace all instances of "_" with "-", then replace the SECOND instance of "-" with "_"
+
+#rename VCF
+crun bcftools reheader --samples sample_names2.txt -o <YOUR VCF.renamed> <YOUR VCF>
+rm <YOUR VCF> sample_names.txt
+
+exit
+
+#Example for Gmi
+crun bcftools query -l Gmi.A.rad.RAW-10-10-rescaled.Fltr07.18.vcf > sample_names.txt
+sed -e 's/_/-/g' -e 's/-/_/2' sample_names.txt > sample_names2.txt
+crun bcftools reheader --samples sample_names.txt -o Gmi.A.rad.RAW-10-10-rescaled.Fltr07.18.renamed.vcf Gmi.A.rad.RAW-10-10-rescaled.Fltr07.18.vcf 
+rm Gmi.A.rad.RAW-10-10-rescaled.Fltr07.18.vcf sample_names.txt
+```
  
 Make input files for ADMIXTURE with PLINK.
  
