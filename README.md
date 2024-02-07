@@ -678,7 +678,7 @@ crun bcftools query -l <YOUR VCF> > sample_names.txt
 sed -e 's/_/-/g' -e 's/-/_/2' sample_names.txt > sample_names2.txt #first replace all instances of "_" with "-", then replace the SECOND instance of "-" with "_"
 
 #rename VCF
-crun bcftools reheader --samples sample_names2.txt -o <YOUR VCF.renamed> <YOUR VCF>
+crun bcftools reheader --samples sample_names2.txt -o <YOUR VCF RENAMED> <YOUR VCF>
 rm <YOUR VCF> sample_names.txt
 
 exit
@@ -941,7 +941,27 @@ Check the *filtered* monomorphic & polymorphic VCF files to make sure that filte
   * To see which individuals have been removed, you can look at the `*.out` files created during filtering.
   * For an example of how to remove these individuals, look at the Gmi README.md file.
 
-Next, zip each VCF file.
+Next, sort each VCF file.
+
+```sh
+cd YOUR_SPECIES_DIR/mkVCF_monomorphic
+
+module load container_env bcftools
+bash
+export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
+
+#sort the VCF files
+crun vcf-sort -c <NOMISSING MONOMORPHIC VCF> > <NOMISSING MONOMORPHIC SORTED VCF>
+crun vcf-sort -c <NOMISSING POLYMORPHIC VCF> > <NOMISSING POLYMORPHIC SORTED VCF> #in polymorphic_filter dir
+
+exit
+
+#Example for Gmi:
+crun vcf-sort gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf > gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf
+crun vcf-sort gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf > gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf
+```
+
+Then, zip the VCF files.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
@@ -951,73 +971,32 @@ bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #zip the VCF files
-crun bgzip -c <NOMISSING MONOMORPHIC VCF> > <NOMISSING MONOMORPHIC VCF>.gz
-crun bgzip -c <NOMISSING POLYMORPHIC VCF> > <NOMISSING POLYMORPHIC VCF>.gz #in polymorphic_filter dir
-
-exit
-
-#Example for Gmi:
-crun bgzip -c gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf > gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf.gz
-crun bgzip -c gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf > gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf.gz
-```
-
-Then, index the VCF files.
-
-```sh
-cd YOUR_SPECIES_DIR/mkVCF_monomorphic
-
-module load container_env samtools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
-
-#index the VCF files
-crun tabix <NOMISSING MONOMORPHIC VCF.GZ>
-crun tabix <NOMISSING POLYMORPHIC VCF.GZ> #from the polymorphic_filter dir
+crun bgzip -c <NOMISSING MONOMORPHIC SORTED VCF> > <NOMISSING MONOMORPHIC SORTED VCF.GZ>
+crun bgzip -c <NOMISSING POLYMORPHIC SORTED VCF> > <NOMISSING MONOMORPHIC SORTED VCF.GZ> #from the polymorphic_filter dir
 
 exit
 
 #Example for Gmi
-crun tabix gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf.gz
-crun tabix gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf.gz
+crun bgzip -c gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf > gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz
+crun bgzip -c gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf > crun bgzip -c gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz
 ```
 
-Now, sort the VCF files.
-
-```sh
-module unload samtools #if you had it loaded before
-module load bcftools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
-
-#sort the VCF files
-crun bcftools sort <NOMISSING MONOMORPHIC VCF.GZ> -o <NOMISSING MONOMORPHIC SORTED VCF.GZ>
-crun bcftools sort <NOMISSING POLYMORPHIC VCF.GZ> -o <NOMISSING POLYMORPHIC SORTED VCF.GZ> #from polymorphic_filter dir
-
-exit
-
-#Example for Gmi:
-crun bcftools sort gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.vcf.gz -o gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz
-crun bcftools sort gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.vcf.gz -o gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz
-```
-
-Finally, index each sorted VCF file.
+Finally, index the VCF files.
 
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
-module load container_env samtools
+module load samtools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
-mv polymorphic_filter/<POLYMORPHIC SORTED VCF.GZ> . #move polymorphic sorted VCF file to the main mkVCF_monomorphic directory
-
 #index the VCF files
-crun tabix <NOMISSING SORTED MONOMORPHIC VCF.GZ>
-crun tabix <NOMISSING SORTED POLYMORPHIC VCF.GZ>
+crun tabix <NOMISSING MONOMORPHIC SORTED VCF.GZ>
+crun tabix <NOMISSING POLYMORPHIC SORTED VCF.GZ> #from polymorphic_filter dir
 
 exit
 
-#Example for Gmi
+#Example for Gmi:
 crun tabix gmi.mono.rad.RAW-10.10-rescaled.Fltr17.11.recode.nomissing.sorted.vcf.gz
 crun tabix gmi.poly.rad.RAW-10.10-rescaled.Fltr17.20.recode.nomissing.sorted.vcf.gz
 ```
@@ -1027,7 +1006,7 @@ Now, merge the monomorphic and polymorphic files together!
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
-module unload samtools #if you had it loaded before
+#module unload samtools #if you had it loaded before
 module load container_env bcftools
 bash
 export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
