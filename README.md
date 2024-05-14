@@ -142,10 +142,11 @@ mkdir mkBAM
 ln fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM
 ```
 
-If you are **NOT** working with `e1garcia`, clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
+If you are **NOT** working within `e1garcia` or the `archive` directory, clone the [`dDocentHPC`](https://github.com/cbirdlab/dDocentHPC) repo.
 
   * If you have previously cloned `dDocentHPC` just pull any of the latest changes with `git pull`.
   * DO NOT do this step if you were working within `e1garcia` (`shotgun_PIRE/dDocentHPC` dir is already cloned).
+  * DO NOT do this step if you are working within `/archive/carpenterlab/pire` (the `dDocentHPC` dir is already cloned).
 
 ```bash
 cd YOUR_SPECIES_DIR
@@ -153,6 +154,7 @@ cd ../../
 
 # you should now be in the dir that holds your CSSL repo dir (e.g. shotgun_PIRE)
 # DO NOT do this if you are in e1garcia dir on wahab
+# DO NOT do this if you are in /archive/carpenterlab/pire dir on wahab
 git clone https://github.com/cbirdlab/dDocentHPC.git
 ```
 
@@ -160,7 +162,7 @@ Copy the dDocentHPC config file to your mkBAM dir
 
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM
-cp /../../../dDocentHPC/configs/config.6.cssl .
+cp ../../../dDocentHPC/configs/config.6.cssl . #for archive dir: cp ../../dDocentHPC/configs/config.6.cssl .
 ```
 
 ---
@@ -262,7 +264,7 @@ Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_proc
 cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with fq.gz files to be mapped and the ref genome
-sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl #for archive dir: sbatch ../../dDocentHPC/dDocentHPC.sbatch mkBAM config.6.cssl
 ```
 
 ---
@@ -328,7 +330,7 @@ Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_proc
 cd YOUR_SPECIES_DIR/mkBAM
 
 #this script has to be run from dir with the raw BAM files to be filtered
-sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl #for archive dir: sbatch ../../dDocentHPC/dDocentHPC.sbatch fltrBAM config.6.cssl
 ```
 
 ---
@@ -344,7 +346,7 @@ To run the merge script:
 ```sh
 cd YOUR_SPECIES_DIR
 
-bash ../scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code>
+bash ../scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code>  #for archive dir: bash ../pire_cssl_data_processing/scripts/runmerge_2runs_cssl_array.bash <path to species cssl folder> <3-letter species code>
 
 #Example for Gmi
 bash ../scripts/runmerge_2runs_cssl_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/ Gmi
@@ -360,7 +362,7 @@ To run the fixrg script:
 ```sh
 cd YOUR_SPECIES_DIR
 
-bash ../scripts/merge_fixrg_array.bash <path to species mergebam dir>
+bash ../scripts/merge_fixrg_array.bash <path to species mergebam dir> #for archive dir: bash ../pire_cssl_data_processing/scripts/merge_fixrg_array.bash <path to species mergebam dir>
 
 #Example for Gmi
 bash ../scripts/merge_fixrg_array.bash /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/mergebams_run1run2
@@ -375,7 +377,7 @@ cd YOUR_SPECIES_DIR
 
 #assumes original bam files are in mkBAM folders within 1st_sequencing_run and 2nd_sequencing_run, and merged files are in mergebams_run1run2
 
-sbatch ../scripts/copyunmerged.sbatch <path to species directory> <merged bams directory> mkBAMmerge
+sbatch ../scripts/copyunmerged.sbatch <path to species directory> <merged bams directory> mkBAMmerge #for archive dir: sbatch ../pire_cssl_data_processing/scripts/copyunmerged.sbatch <path to species directory> <merged bams directory> mkBAMmerge
 
 #Example for Gmi
 e.g. sbatch ../scripts/copyunmerged.sbatch /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta mergebams_run1run2 mkBAMmerge
@@ -394,7 +396,7 @@ Move into the `mkBAM` dir (or the `mkBAMmerge` directory if you have multiple se
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
 
-sbatch getBAITcvg.sbatch . <path to singleLine.bed file with bait regions>
+sbatch ../../scripts/getBAITcvg.sbatch . <path to singleLine.bed file with bait regions> #for archive dir: sbatch ../../pire_cssl_data_processing/scripts/getBAITcvg.sbatch . <path to singleLine.bed file with bait regions>
 #most all the bed files can be found in /home/e1garcia/shotgun_PIRE/pire_probe_sets
 
 #Example for Gmi
@@ -406,7 +408,7 @@ sbatch ../../scripts/getBAITcvg.sbatch . /home/e1garcia/shotgun_PIRE/pire_probe_
 ```bash
 cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
  
-sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
+sbatch ../../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads #for archive dir: sbatch ../../pire_fq_gz_processing/mappedReadStats.sbatch . coverageMappedReads
 ```
 
 ***NOTE:*** Sometimes the scripts don't process all files. Thus, check the output to make sure you have output for all the BAM files in your directory. 
@@ -425,7 +427,7 @@ cd YOUR_SPECIES_DIR/mkBAM #or YOUR_SPECIES_DIR/mkBAMmerge
 
 #this script has to be run from the dir with the FILTERED (.RG.bam) bam files
 #NOTE: if you are running out of mkBAMmerge, you may need to copy the reference genome fasta file over
-sbatch ../../scripts/runMAPDMG.2.sbatch <"bam files to run mapDamage on"> <path to reference fasta>
+sbatch ../../scripts/runMAPDMG.2.sbatch <"bam files to run mapDamage on"> <path to reference fasta> #for archive dir: sbatch ../../pire_cssl_data_processing/scripts/runMAPDMG.2.sbatch <"bam files to run mapDamage on"> <path to reference fasta>
 
 #Example for Gmi:
 sbatch ../../scripts/runMAPDMG.2.sbatch "Gmi-*RG.bam" reference.rad.RAW-10-10.fasta
@@ -533,7 +535,7 @@ Run [`dDocentHPC.sbatch`](https://github.com/philippinespire/pire_cssl_data_proc
 cd YOUR_SPECIES_DIR/mapDamageBAM
 
 #this script has to be run from dir with rescaled .bam files
-sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale
+sbatch ../../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale #for archive dir: sbatch ../../dDocentHPC/dDocentHPC.sbatch mkVCF config.6.cssl.rescale
 ```
 
 --
@@ -552,17 +554,19 @@ Clone the [`fltrVCF`](https://github.com/cbirdlab/fltrVCF) and [`rad_haplotyper`
 
   * If you have previously cloned either of these repos, just pull any of the latest changes with `git pull`.
   * **NOTE: If you are working out of Eric's `shotgun_PIRE` dir, they are already cloned.**
+  * **NOTE: If you are working out of the archive `carpenterlab/pire` dir, they are already cloned.**
 
 ```sh
 cd pire_cssl_data_processing/scripts
 
 #DO NOT DO THIS IF YOU ARE WORKING OUT OF ERIC'S DIRECTORY
+#DO NOT DO THIS IF YOU ARE WORKING OUT OF THE ARCHIVE DIRECTORY
 git clone https://github.com/cbirdlab/fltrVCF.git
 git clone https://github.com/cbirdlab/rad_haplotyper.git
 
 
 cd YOUR_SPECIES_DIR/filterVCF
-cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl .
+cp ../../scripts/fltrVCF/config_files/config.fltr.ind.cssl . #for archive dir: cp ../../pire_cssl_data_processing/scripts/fltrVCF/config_files/config.fltr.ind.cssl .
 ```
 
 Update the `config.fltr.ind.cssl` file with file paths and file extensions based on your species. Remove any filters that aren't run in this step (from the `fltrVCF -f` line). **You will only run up to the second 07 filter (remove filters 18 & 17 from the list of filters to run).**
@@ -621,7 +625,7 @@ cd YOUR_SPECIES_DIR/filterVCF
 
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #config file should ONLY run up to the second 07 filter (remove filters 18 & 17 from list of filters to run)
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl #for archive dir: sbatch ../../pire_cssl_data_processing/scripts/fltrVCF.sbatch config.fltr.ind.cssl
 
 #troubleshooting will be necessary
  ```
@@ -646,14 +650,12 @@ Run PCA and ADMIXTURE to identify any cryptic species/population structure in yo
  
 Run PCA using PLINK. Instructions for installing Plink with Conda are [here](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/scripts/popgen_analyses/README.md).
  
- ```sh
- cd YOUR_SPECIES_DIR/pop_structure
+```sh
+cd YOUR_SPECIES_DIR/pop_structure
  
- #create your conda popgen environment and install PLINK
+#create your conda popgen environment and install PLINK
  
 module load container_env python3
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --pca --out PIRE.<SP 3 letter code>.<LOC>.preHWE
 exit
@@ -668,8 +670,6 @@ crun.python3 -p ~/.conda/envs/popgen plink --vcf Gmi.A.rad.RAW-10-10.Fltr07.18.v
 cd YOUR_SPECIES_DIR/pop_structure
 
 module load container_env bcftools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #create list of sample names
 crun bcftools query -l <YOUR VCF> > sample_names.txt
@@ -696,8 +696,6 @@ Make input files for ADMIXTURE with PLINK.
 cd YOUR_SPECIES_DIR/pop_structure
 
 module load container_env python3
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --make-bed --out PIRE.<SP 3 letter code>.<LOC>.preHWE 
 awk '{$1=0;print $0}' PIRE.<SP 3 letter code>.<LOC>.preHWE.bim > PIRE.<SP 3 letter code>.<LOC>.preHWE.bim.tmp
@@ -715,9 +713,9 @@ Run ADMIXTURE (K = 1-5). Instructions for installing ADMIXTURE with Conda are [h
 ```sh
 cd YOUR_SPECIES_DIR/pop_structure
 
+#install ADMIXTURE into your conda environment
+
 module load container_env python3
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 crun.python3 -p ~/.conda/envs/popgen admixture PIRE.<SP 3 letter code>.<LOC>.preHWE.bed 1 --cv > PIRE.<SP 3 letter code>.<LOC>.preHWE.log1.out #run from 1-5
 exit
@@ -787,7 +785,7 @@ cd YOUR_SPECIES_DIR/filterVCF
 #popmap path should point to popmap file (*.HWEsplit) just made (if cryptic structure detected)
 #vcf path should point to vcf made at end of previous filtering run (the file PCA & ADMIXTURE was run with)
 #config file should ONLY run filters 18 & 17 (in that order)
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE #for archive: sbatch ../../pire_cssl_data_processing/scripts/fltrVCF.sbatch config.fltr.ind.cssl.HWE
 
 #troubleshooting will be necessary
 ```
@@ -849,7 +847,7 @@ First, set-up filtering for monomorphic sites only. Copy the `config.fltr.ind.cs
 ```sh
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
-cp ../../scripts/config.fltr.ind.cssl.mono .
+cp ../../scripts/config.fltr.ind.cssl.mono . #for archive dir: cp ../../pire_cssl_data_processing/scripts/config.fltr.ind.cssl.mono .
 ```
 
 Update the `config.fltr.ind.cssl.mono` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made. **The settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file.**
@@ -881,7 +879,7 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 #before running, make sure the config file is updated with file paths and file extensions based on your species
 #VCF file should be the VCF file made after the "make monomorphic VCF" step
 #settings for filters 04, 14, 05, 16, 13 & 17 should match the settings used when filtering the original VCF file
-sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
+sbatch ../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono #for archive dir: sbatch ../../pire_cssl_data_processing/scripts/fltrVCF.sbatch config.fltr.ind.cssl.mono
 ```
 
 ---
@@ -896,7 +894,7 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 mkdir polymorphic_filter
 cd polymorphic_filter
 
-cp ../../scripts/config.fltr.ind.cssl.poly .
+cp ../../scripts/config.fltr.ind.cssl.poly . #for archive dir: cp ../../pire_cssl_data_processing/scripts/config.fltr.ind.cssl.poly .
 ```
 
 Update the `config.fltr.ind.cssl.poly` file with file paths and file extensions based on your species. The VCF path should point to the "all sites" VCF file you just made AND the HWEsplit popmap you made if you had any cryptic population structure. **The settings for all your filters should match the settings used when filtering the original VCF file.**
@@ -929,7 +927,7 @@ cd YOUR_SPECIES_DIR/mkVCF_monomorphic/polymorphic_filter
 #VCF file should be the VCF file made after the "make monomorphic VCF" step
 #popmap file should be the one that accounts for any cryptic structure, if it exists (*HWEsplit extension)
 #settings should match the settings used when filtering the original VCF file
-sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
+sbatch ../../../scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly #for archive dir: sbatch ../../../pire_cssl_data_processing/scripts/fltrVCF.sbatch config.fltr.ind.cssl.poly
 ```
 
 ---
@@ -947,8 +945,6 @@ Next, sort each VCF file.
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load container_env bcftools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #sort the VCF files
 crun vcf-sort -c <NOMISSING MONOMORPHIC VCF> > <NOMISSING MONOMORPHIC SORTED VCF>
@@ -967,8 +963,6 @@ Then, zip the VCF files.
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load container_env samtools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #zip the VCF files
 crun bgzip -c <NOMISSING MONOMORPHIC SORTED VCF> > <NOMISSING MONOMORPHIC SORTED VCF.GZ>
@@ -987,8 +981,6 @@ Finally, index the VCF files.
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load samtools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #index the VCF files
 crun tabix <NOMISSING MONOMORPHIC SORTED VCF.GZ>
@@ -1026,8 +1018,6 @@ And index the final, merged file one last time.
 cd YOUR_SPECIES_DIR/mkVCF_monomorphic
 
 module load container_env samtools
-bash
-export SINGULARITY_BIND=/home/e1garcia #if working out of Eric's directory
 
 #index the all sites VCF
 crun tabix <ALL SITES VCF>
