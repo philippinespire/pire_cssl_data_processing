@@ -13,10 +13,8 @@
 #sbatch pixy.sbatch
 
 enable_lmod
-module load anaconda
+module load container_env python3
 
-conda activate popgen
-
-pixy --stats pi fst --vcf lle.all.recode.nomissing.sorted.vcf.gz --populations allsites_popfile.txt --window_size 1000 --n_cores 4
+crun.python3 -p ~/.conda/envs/popgen pixy --stats pi fst --vcf lle.all.recode.nomissing.sorted.vcf.gz --populations allsites_popfile.txt --window_size 1000 --n_cores 4
 
 #allsites_popfile.txt is the same structure as popmap file (just renamed and without any individuals that were removed during VCF filtering)
