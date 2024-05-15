@@ -657,7 +657,7 @@ cd YOUR_SPECIES_DIR/pop_structure
  
 module load container_env python3
 
-crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --pca --out PIRE.<SP 3 letter code>.<LOC>.preHWE
+crun.python3 -p ~/.conda/envs/popgen plink --vcf <YOUR VCF> --allow-extra-chr --pca var-wts --out PIRE.<SP 3 letter code>.<LOC>.preHWE
 exit
  
 #example for Gmi
