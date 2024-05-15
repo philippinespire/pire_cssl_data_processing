@@ -20,20 +20,15 @@ This directory has useful scripts & code to run any "standard" population geneti
 
 Necessary to run PCA (with PLINK). Also useful for easily filtering VCFs and creating bed/bim files.
 
-```
+```sh
 #to create conda environment that will contain popgen programs --> only need to do this ONCE
-module load container_env/0.1
-module load conda/3
-module load anaconda
+module load container_env python3
 
-conda create -n popgen
-conda activate popgen
-conda config --add channels conda-forge
+crun.python3 -c -s -p ~/envs/popgen
+crun.python3 -p ~/envs/popgen mamba
 
 #install plink
-conda install -c bioconda plink
-
-conda deactivate
+install -c bioconda -c conda-forge plink
 ```
 
 ---
@@ -42,15 +37,14 @@ conda deactivate
 
 Necessary to run ADMIXTURE to visualize population structure (best supported # of population clusters).
 
-```
+```sh
 #assumes popgen conda environment has already been created
-module load anaconda
-conda activate popgen
+module load container_env python3
+
+crun.python3 ~/envs/popgen mamba
 
 #install admixture
-conda install -c bioconda admixture
-
-conda deactivate
+install -c bioconda admixture
 ```
 
 ---
@@ -61,14 +55,11 @@ Necessary to run pixy to calculate pi.
 
 ```
 #assumes popgen conda environment has already been created
-module load container_env/0.1
-module load conda/3
-module load anaconda
-conda activate popgen
+module load container_env python3
+
+crun.python3 ~/envs/popgen mamba
 
 #install pixy
-conda install -c conda-forge pixy
-conda install -c bioconda htslib
-
-conda deactivate
+install -c conda-forge pixy
+install -c bioconda htslib
 ```
