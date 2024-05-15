@@ -53,7 +53,7 @@ install -c bioconda admixture
 
 Necessary to run pixy to calculate pi.
 
-```
+```sh
 #assumes popgen conda environment has already been created
 module load container_env python3
 
