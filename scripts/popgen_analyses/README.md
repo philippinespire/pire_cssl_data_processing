@@ -24,8 +24,8 @@ Necessary to run PCA (with PLINK). Also useful for easily filtering VCFs and cre
 #to create conda environment that will contain popgen programs --> only need to do this ONCE
 module load container_env python3
 
-crun.python3 -c -s -p ~/envs/popgen
-crun.python3 -p ~/envs/popgen mamba
+crun.python3 -c -s -p ~/.conda/envs/popgen
+crun.python3 -p ~/.conda/envs/popgen mamba
 
 #install plink
 install -c bioconda -c conda-forge plink
@@ -41,7 +41,7 @@ Necessary to run ADMIXTURE to visualize population structure (best supported # o
 #assumes popgen conda environment has already been created
 module load container_env python3
 
-crun.python3 -p ~/envs/popgen mamba
+crun.python3 -p ~/.conda/envs/popgen mamba
 
 #install admixture
 install -c bioconda admixture
@@ -57,7 +57,7 @@ Necessary to run pixy to calculate pi.
 #assumes popgen conda environment has already been created
 module load container_env python3
 
-crun.python3 -p ~/envs/popgen mamba
+crun.python3 -p ~/.conda/envs/popgen mamba
 
 #install pixy
 install -c conda-forge pixy
