@@ -41,7 +41,7 @@ Necessary to run ADMIXTURE to visualize population structure (best supported # o
 #assumes popgen conda environment has already been created
 module load container_env python3
 
-crun.python3 ~/envs/popgen mamba
+crun.python3 -p ~/envs/popgen mamba
 
 #install admixture
 install -c bioconda admixture
@@ -57,7 +57,7 @@ Necessary to run pixy to calculate pi.
 #assumes popgen conda environment has already been created
 module load container_env python3
 
-crun.python3 ~/envs/popgen mamba
+crun.python3 -p ~/envs/popgen mamba
 
 #install pixy
 install -c conda-forge pixy
