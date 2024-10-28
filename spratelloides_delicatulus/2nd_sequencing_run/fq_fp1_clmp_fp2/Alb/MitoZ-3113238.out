@@ -1,0 +1,61 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+Sde-ATum_018-Ex1-cssl.
+2024-04-11 21:06:23
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 20
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 20 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+20 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ATum_018-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ATum_018-Ex1-cssl.clmp.fp2_r1.fq.gz
+time spent on hash reads: 111s, 21766026 reads processed
+[LIB] 0, avg_ins 250, reverse 0 
+316841526 nodes allocated, 1044720062 kmer in reads, 1044720062 kmer processed
+301323892 linear nodes
+time spent on marking linear nodes 4s
+slurmstepd: error: *** JOB 3113238 ON e3-w6420b-15 CANCELLED AT 2024-04-13T21:06:20 DUE TO TIME LIMIT ***

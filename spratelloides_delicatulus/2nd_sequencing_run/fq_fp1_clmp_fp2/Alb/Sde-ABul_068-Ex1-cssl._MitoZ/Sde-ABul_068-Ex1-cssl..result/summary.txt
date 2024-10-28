@@ -1,0 +1,59 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold42     323            no             Spratelloides delicatulus
+C33665         7014           no             Spratelloides delicatulus
+C33663         4319           no             Spratelloides delicatulus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold42     <3     324    322        -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C33663         1      627    627        -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C33663         627    699    73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C33663         699    1653   955        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C33663         1653   1722   70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C33663         2705   2775   71         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C33663         2774   2844   71         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C33663         2844   3985   1142       -          CDS    CYTB       cytochrome b                      1              
+C33663         3989   4057   69         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C33663         4057   4319   263        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C33665         3      942    940        +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C33665         940    1012   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C33665         1015   1084   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C33665         1085   1158   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C33665         1189   1255   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C33665         1256   1327   72         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C33665         1328   2879   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C33665         2879   2950   72         -          tRNA   trnS(uga)  tRNA-Ser                          1              
+C33665         2954   3024   71         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C33665         3034   3739   706        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C33665         3725   3799   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C33665         3800   3968   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C33665         3958   4642   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C33665         4641   5426   786        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C33665         5425   5497   73         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C33665         5497   5848   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C33665         5846   5916   71         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C33665         5916   6213   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C33665         6206   >7013  808        +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:           15
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                29
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ND1                                  1
+tRNA-Gln                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Met                             1
+tRNA-Ser                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

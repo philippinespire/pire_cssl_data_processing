@@ -1,0 +1,60 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C18245         583            no             Arapaima gigas      
+C18851         2685           no             Spratelloides delicatulus
+scaffold108    1027           no             Spratelloides gracilis
+C18773         1129           no             Spratelloides delicatulus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold108    <3     600    598        -          CDS    CYTB       cytochrome b                      1              
+scaffold108    604    672    69         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+scaffold108    672    >1026  355        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C18245         <6     174    169        -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C18245         167    464    298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C18245         464    534    71         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C18773         206    278    73         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C18773         277    348    72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C18773         347    416    70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C18773         416    >1130  715        +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C18851         24     1137   1114       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C18851         1137   1208   72         -          tRNA   trnS(uga)  tRNA-Ser                          1              
+C18851         1212   1282   71         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C18851         1292   1997   706        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C18851         1983   2057   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C18851         2058   2226   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C18851         2216   >2684  469        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+
+
+Protein coding genes totally found:  9
+tRNA genes totally found:            8
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                17
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX3                                 1
+ND1                                  1
+ND3                                  1
+ND5                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Cys                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             2
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

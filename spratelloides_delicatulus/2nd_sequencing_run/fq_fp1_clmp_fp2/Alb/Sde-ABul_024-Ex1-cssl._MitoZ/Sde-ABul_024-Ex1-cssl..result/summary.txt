@@ -1,0 +1,61 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C46701         1062           no             Lutjanus johnii     
+C46671         917            no             Spratelloides delicatulus
+scaffold105    1405           no             Spratelloides delicatulus
+C46747         1738           no             Spratelloides delicatulus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold105    <1     286    286        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold105    286    355    70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold105    354    425    72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+scaffold105    424    496    73         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold105    500    1379   880        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C46671         <3     780    778        -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C46671         780    852    73         -          tRNA   trnL(uag)  tRNA-Leu                          1              
+C46671         852    917    66         -          tRNA   trnS(gcu)  tRNA-Ser                          1              
+C46701         <1     979    979        -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C46701         971    1042   72         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C46747         16     86     71         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C46747         86     1227   1142       -          CDS    CYTB       cytochrome b                      1              
+C46747         1231   1299   69         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C46747         1299   1738   440        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+
+
+Protein coding genes totally found:  6
+tRNA genes totally found:            8
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                14
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX2                                 1
+COX3                                 1
+ND3                                  1
+ND4                                  1
+ND4L                                 1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             1
+tRNA-Lys                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Trp                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

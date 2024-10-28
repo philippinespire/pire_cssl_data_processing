@@ -1,0 +1,60 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C49343         4763           no             Spratelloides delicatulus
+C49269         1135           no             Spratelloides delicatulus
+C46917         388            no             Brevoortia tyrannus 
+C49267         1135           no             Spratelloides gracilis
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C46917         <2     380    379        -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C49267         <3     324    322        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C49267         324    392    69         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C49267         396    >1136  741        +          CDS    CYTB       cytochrome b                      1              
+C49269         <3     456    454        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C49269         460    532    73         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C49269         531    602    72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C49269         601    670    70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C49269         670    >1132  463        +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C49343         310    381    72         -          tRNA   trnS(uga)  tRNA-Ser                          1              
+C49343         385    455    71         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C49343         465    1170   706        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C49343         1156   1230   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C49343         1231   1399   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C49343         1389   2073   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C49343         2072   2857   786        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C49343         2856   2928   73         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C49343         2928   3279   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C49343         3277   3347   71         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C49343         3347   3644   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C49343         3637   >4762  1126       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:            9
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                21
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX1                                 1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Cys                             1
+tRNA-His                             1
+tRNA-Leu                             2
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

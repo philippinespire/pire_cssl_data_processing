@@ -1,0 +1,62 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C132068        751            no             Cnemaspis limi      
+C133540        1221           no             Spratelloides delicatulus
+C133688        1659           no             Spratelloides delicatulus
+C133678        1629           no             Spratelloides delicatulus
+C125072        445            no             Spratelloides gracilis
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C125072        4      >445   442        +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C132068        1      740    740        -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C133540        <1     130    130        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C133540        130    205    76         -          tRNA   trnL(uaa)  tRNA-Leu                          1              
+C133540        206    1222   1017       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C133678        <3     249    247        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C133678        239    407    169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C133678        408    482    75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C133678        468    1173   706        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C133678        1183   1253   71         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C133678        1257   1328   72         +          tRNA   trnS(uga)  tRNA-Ser                          1              
+C133688        <1     253    253        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C133688        253    321    69         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C133688        325    1466   1142       +          CDS    CYTB       cytochrome b                      1              
+C133688        1466   1536   71         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C133688        1535   1605   71         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+
+
+Protein coding genes totally found:  8
+tRNA genes totally found:            7
+rRNA genes totally found:            1
+--------------------------------------
+Genes totally found:                16
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX1                                 1
+COX3                                 1
+ND2                                  1
+ND3                                  1
+ND4L                                 1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Ser                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

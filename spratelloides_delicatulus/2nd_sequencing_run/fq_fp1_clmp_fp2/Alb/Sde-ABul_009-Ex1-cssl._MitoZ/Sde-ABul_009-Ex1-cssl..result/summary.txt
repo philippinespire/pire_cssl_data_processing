@@ -1,0 +1,61 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C79141         1890           no             Perca flavescens    
+C79113         1407           no             Spratelloides delicatulus
+C78991         943            no             Spratelloides delicatulus
+C78683         664            no             Spratelloides delicatulus
+C79153         2309           no             Spratelloides delicatulus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C78683         <1     133    133        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C78683         131    201    71         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C78683         201    498    298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C78683         491    >665   175        +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C78991         <1     379    379        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C78991         365    439    75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C78991         440    608    169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C78991         598    >943   346        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C79113         1      1060   1060       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C79113         1061   1136   76         +          tRNA   trnL(uaa)  tRNA-Leu                          1              
+C79113         1136   >1406  271        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C79141         173    245    73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C79141         248    317    70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C79141         318    391    74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C79141         422    488    67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C79141         489    560    72         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C79141         552    >1890  1339       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C79153         36     1177   1142       -          CDS    CYTB       cytochrome b                      1              
+C79153         1181   1249   69         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C79153         1249   1771   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C79153         1767   2295   529        -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+
+
+Protein coding genes totally found: 11
+tRNA genes totally found:            9
+rRNA genes totally found:            1
+--------------------------------------
+Genes totally found:                21
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX3                                 1
+ND2                                  1
+s-rRNA                               1
+tRNA-Asp                             1
+tRNA-Gln                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

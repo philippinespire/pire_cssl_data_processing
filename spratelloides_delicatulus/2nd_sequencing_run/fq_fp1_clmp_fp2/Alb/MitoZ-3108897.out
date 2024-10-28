@@ -1,0 +1,441 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+Sde-ABul_011-Ex1-cssl.
+2024-04-11 18:00:37
+/opt/MitoZ/bin/assemble/mitoAssemble all  -K 71 -o work71 -s work71.soaptrans.lib -p 20
+
+
+mitoAssemble is based on SoapTrans v1.03 and modified to fit mitogenome assembly by BGI-ENVers
+
+pregraph -s work71.soaptrans.lib -K 71 -p 20 -o work71 
+In work71.soaptrans.lib, 1 libs, max seq len 150, max name len 256
+
+20 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+time spent on hash reads: 10s, 2317344 reads processed
+[LIB] 0, avg_ins 250, reverse 0 
+20208048 nodes allocated, 64322896 kmer in reads, 64322896 kmer processed
+18888830 linear nodes
+time spent on marking linear nodes 0s
+time spent on pre-graph construction: 10s
+
+deLowKmer 0, deLowEdge 1
+Start to remove kmer of out frequency kmers < 0.100000
+38877 kmers off
+20 thread created
+0 linear nodes
+time spent on cut kmer: 1s
+
+Start to remove tips of single frequency kmers short than 142
+0 tips off
+20 thread created
+0 linear nodes
+Start to remove tips which don't contribute the most links
+kmer set 0 done
+kmer set 1 done
+kmer set 2 done
+kmer set 3 done
+kmer set 4 done
+kmer set 5 done
+kmer set 6 done
+kmer set 7 done
+kmer set 8 done
+kmer set 9 done
+kmer set 10 done
+kmer set 11 done
+kmer set 12 done
+kmer set 13 done
+kmer set 14 done
+kmer set 15 done
+kmer set 16 done
+kmer set 17 done
+kmer set 18 done
+kmer set 19 done
+567931 tips off
+20 thread created
+0 linear nodes
+time spent on cutTipe: 15s
+
+384000 (192000) edges 27728 extra nodes
+time spent on making edges: 5s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+20 thread created
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+2317344 reads processed
+time 2,1,1,0,0,0,0
+searchKmer: kmer 0 cce eccccccccccccccc cccccccccccccccc is not found
+searchKmer: kmer 0 1999 9999999999999999 9999999999911999 is not found
+searchKmer: kmer 0 2975 21aaa575002752aa e005a94354899431 is not found
+searchKmer: kmer 0 133 e66a6aea065a5966 6648844444444444 is not found
+searchKmer: kmer 0 2666 6666666666666648 8444444444444444 is not found
+searchKmer: kmer 0 204c f99a9aba81969659 9992211111111111 is not found
+searchKmer: kmer 0 1999 9999999999999992 2111111111111111 is not found
+0 markers outputed
+done mapping reads, 1144382 reads deleted, 158449 arcs created
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 6s
+
+213516 vertex outputed
+overall time for lightgraph: 0m
+
+contig -g work71 -M 3 
+there're 213516 kmers in vertex file
+there're 384000 edge in edge file
+done sort
+input 384000 edges
+279528 pre-arcs loaded
+start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 30, MAX DIFF 10
+108580 startingPoints, 83467 dheap nodes
+530 pairs found, 357 pairs of paths compared, 184 pairs merged
+sequenc compare failure: 0 173 0 0
+DFibHeap: 715 Nodes allocated
+a linear concatenation lap, 15179 concatenated
+a linear concatenation lap, 51 concatenated
+a linear concatenation lap, 0 concatenated
+352926 edges in graph
+time spent on bubblePinch: 0s
+
+Start to remove the low coverage edge < 2
+0 edges removed
+
+strict 0, cutLen 142
+a cutTipsInGraph lap, 149091 tips cut
+a cutTipsInGraph lap, 17848 tips cut
+a cutTipsInGraph lap, 3890 tips cut
+a cutTipsInGraph lap, 1231 tips cut
+a cutTipsInGraph lap, 477 tips cut
+a cutTipsInGraph lap, 203 tips cut
+a cutTipsInGraph lap, 91 tips cut
+a cutTipsInGraph lap, 57 tips cut
+a cutTipsInGraph lap, 42 tips cut
+a cutTipsInGraph lap, 21 tips cut
+a cutTipsInGraph lap, 12 tips cut
+a cutTipsInGraph lap, 5 tips cut
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 3 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 4 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 2 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 1 tips cut
+a cutTipsInGraph lap, 0 tips cut
+3189 dead arcs removed
+a linear concatenation lap, 2196 concatenated
+a linear concatenation lap, 161 concatenated
+a linear concatenation lap, 3 concatenated
+a linear concatenation lap, 0 concatenated
+2214 edges in graph
+there're 384000 edges
+after compacting 2214 edges left
+
+delete unlike arc :868
+1 time to delete light arcs 
+100 loops removed in Graph
+Start to remove light arc using the rate 0.050000 and 0.020000
+delete light arc :1/1
+a linear concatenation lap, 175 concatenated
+a linear concatenation lap, 14 concatenated
+a linear concatenation lap, 0 concatenated
+1836 edges in graph
+there're 2214 edges
+after compacting 1836 edges left
+
+2 time to delete light arcs 
+4 loops removed in Graph
+Start to remove light arc using the rate 0.050000 and 0.020000
+delete light arc :0/0
+
+229 short contig(<48) removed 
+a linear concatenation lap, 16 concatenated
+a linear concatenation lap, 0 concatenated
+1346 edges in graph
+there're 1836 edges
+after compacting 1346 edges left
+
+654 ctgs longer than 100, sum up 174752bp, with average length 267
+the longest is 1327bp, contig N50 is 266 bp,contig N90 is 213 bp
+673 contigs longer than 72 output
+time elapsed: 0m
+
+map -s work71.soaptrans.lib -g work71 -p 20 -K 71 -f 
+K = 71
+contig len cutoff: 73
+
+there're 673 contigs in file: work71, max seq len 1327, min seq len 72, max name len 10
+time spent on parse contigs file 0s
+20 thread created
+time spent on hash reads: 0s
+128997 nodes allocated, 129193 kmer in reads, 129193 kmer processed
+time spent on De bruijn graph construction: 0s
+
+In file: work71.soaptrans.lib, max seq len 150, max name len 256
+
+20 thread created
+1346 edges in graph
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+read from file:
+ /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl.clmp.fp2_r1.fq.gz
+current insert size 250, map_len 32
+Output 6354 out of 2317344 (0.3)% reads in gaps
+93600 out of 2317344 (4.0)% reads mapped to contigs
+1 pe insert size, the largest boundary is 2317344
+
+[LIB] 0, avg_ins 250, reverse 0 
+time spent on mapping reads: 6s
+
+overall time for alignment: 0m
+
+scaff -g work71 -F -p 20 
+there're 1 grads, 2317344 reads, max read len 150
+K = 71
+there're 1346 edge in edge file
+116 arcs loaded
+input 673 contigs
+done loading updated edges
+time spent on loading edges 0s
+
+for insert size: 250
+Total_PE_link	Same_contig_right	Same_contig_wrong	Minus_dis_PE	Plus_dis_PE	Correct_PE	Accumulate_connect
+46800	0	45410	330	0	1060	434
+Using contigs longer than 250 to estimate insert size: 
+Pair_num	SD	insert_size
+0	217 new connections
+all PEs attached
+time spent on loading pair end info 0s
+
+
+181 link to masked contigs, 0 links on a single scaff
+Insert size 250: 216 links input
+Cutoff for number of pairs to make a reliable connection: 3
+all links loaded
+time spent on creating scaffolds 0s
+
+mask the short contigs, which are shorter than 100
+268 links built by the informations of single read
+90 weak connections(<10) removed (there were 114 active cnnects))
+23 simple loops found and removed in graph
+Begin to linearize the graph
+Delete the unnecessary connections : 0+0
+Remove the error connections
+0 complex loops found and removed in graph
+The second time to linearize the graph 
+Delete the unnecessary connections : 0+0
+Divided into 533 loci by the connections
+
+There are 6 locis, which contain more than 2 contigs
+The loci can be classified to four kinds:
+LINEAR:4
+FORK:2
+BUBBLE:0
+COMPLEX:0
+time spent on creating transcriptome 0s
+
+Start to load reads for gap filling. 50 length discrepancy is allowed
+...
+Loaded 6354 reads from work71.readInGap
+20 thread created
+...
+Done with 8 scaffolds, 0 gaps finished, 2 gaps overall
+Threads processed 8 scaffolds
+time elapsed: 0m
+time for the whole pipeline: 0m
+2024-04-11 18:01:23
+rm -rf work71*.Arc work71*.ContigIndex work71*.PEreadOnContig.gz work71*.agp work71*.contig work71*.ctg2Read work71*.edge.gz work71*.gapSeq work71*.kmerFreq work71*.newContigIndex work71*.peGrads work71*.preArc work71*.preGraphBasic work71*.readInGap work71*.readInformation work71*.readOnContig work71*.readOnScaf work71*.scaf_gap work71*.shortreadInGap.gz work71*.updated.edge work71*.vertex
+
+2024-04-11 18:01:23
+nhmmer -o work71.hmmout --tblout work71.hmmtblout --cpu 20 /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl._MitoZ/tmp/Sde-ABul_011-Ex1-cssl..assembly/work71.scafSeq
+
+2024-04-11 18:01:25
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/get_besthit_of_each_CDS_from_nhmmer.py work71.hmmtblout work71.hmmtblout.besthit
+
+2024-04-11 18:01:25
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/simlify_nhmmer_tbl_besthit.py work71.hmmtblout.besthit work71.hmmtblout.besthit.sim
+
+2024-04-11 18:01:25
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/extract_fasta.py -i /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl._MitoZ/tmp/Sde-ABul_011-Ex1-cssl..assembly/work71.scafSeq -q work71.hmmtblout.besthit.sim -o work71.hmmtblout.besthit.sim.fa
+
+2024-04-11 18:01:25
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/filter_taxonomy_by_CDS_annotation.py -fa work71.hmmtblout.besthit.sim.fa -MTsoft /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl -db /opt/MitoZ/bin/profiles/MT_database/Animal_CDS_protein.fa -thread 20 -genetic_code 2 -requiring_taxa 'Arthropoda' -relax 0 -WISECONFIGDIR /opt/MitoZ/bin/annotate/wisecfg -outf work71.hmmtblout.besthit.sim.filtered.fa
+
+2024-04-11 18:01:25
+export WISECONFIGDIR=/opt/MitoZ/bin/annotate/wisecfg
+perl /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl -i work71.hmmtblout.besthit.sim.fa -d /opt/MitoZ/bin/profiles/MT_database/Animal_CDS_protein.fa -cpu 20 -g 5 -o ./
+
+
+
+makeblastdb -in work71.hmmtblout.besthit.sim.fa -dbtype nucl
+run the tblastn shell file
+Run solar to conjoin HSPs and filter bad HSPs and redundance.
+preparing genewise input directories and files
+name gi_NC_009093_ATP6_Galendromus_occidentalis_222_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 3091.
+name gi_NC_009093_ATP8_Galendromus_occidentalis_53_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 6665.
+name gi_NC_009093_COX1_Galendromus_occidentalis_517_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 9629.
+name gi_NC_009093_COX2_Galendromus_occidentalis_221_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 12383.
+name gi_NC_009093_COX3_Galendromus_occidentalis_275_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 15953.
+name gi_NC_009093_CYTB_Galendromus_occidentalis_357_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 19517.
+name gi_NC_009093_ND1_Galendromus_occidentalis_270_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 23099.
+name gi_NC_009093_ND4_Galendromus_occidentalis_437_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 33775.
+name gi_NC_009093_ND4L_Galendromus_occidentalis_89_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 37351.
+name gi_NC_009093_ND5_Galendromus_occidentalis_560_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 40913.
+name gi_NC_KM273123_COX3_Drepane_punctata_261_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 83213.
+name gi_NC_KP164983_COX3_Drepane_longimana_261_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 87659.
+name gi_NC_010292_CYTB_Heteronotia_binoei_379_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 98393.
+name gi_NC_019615_ND5_Hoplobatrachus_rugulosus_611_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 144729.
+name gi_NC_027267_ND6_Phalacrocorax_carbo_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 152161.
+name gi_NC_018340_ND6_Champsocephalus_gunnari_174_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 153949.
+name gi_NC_025925_ND6_Ixobrychus_sinensis_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154499.
+name gi_NC_025924_ND6_Ixobrychus_eurhythmus_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154503.
+name gi_NC_025923_ND6_Botaurus_stellaris_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154507.
+name gi_NC_025922_ND6_Butorides_striata_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154511.
+name gi_NC_025921_ND6_Ardeola_bacchus_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154515.
+name gi_NC_025920_ND6_Egretta_sacra_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 154519.
+name gi_NC_015087_ND6_Penelopides_panini_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 155151.
+name gi_NC_015085_ND6_Aceros_waldeni_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 155155.
+name gi_NC_029147_ND6_Turdus_philomelos_171_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 156555.
+name gi_NC_029140_ND6_Notiomystis_cincta_172_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 156569.
+name gi_NC_026190_ND6_Phoebastria_albatrus_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157075.
+name gi_NC_026189_ND6_Phoebastria_immutabilis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157079.
+name gi_NC_026188_ND6_Phoebastria_nigripes_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 157083.
+name gi_NC_010292_ND6_Heteronotia_binoei_173_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 159083.
+name gi_NC_007172.2_ND6_Thalassarche_melanophrys_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 159239.
+name gi_NC_016465_COX1_Clava_multicornis_521_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 160481.
+name gi_NC_026908_ATP6_Illex_argentinus_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164365.
+name gi_NC_020348_ATP6_Ommastrephes_bartramii_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164435.
+name gi_NC_016423_ATP6_Bathyteuthis_abyssicola_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164513.
+name gi_NC_007893_ATP6_Watasenia_scintillans_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164857.
+name gi_NC_006354_ATP6_Todarodes_pacificus_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164865.
+name gi_NC_011581_ATP6_Architeuthis_dux_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164873.
+name gi_NC_010636_ATP6_Sthenoteuthis_oualaniensis_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164877.
+name gi_NC_009734_ATP6_Dosidicus_gigas_230_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 164887.
+name gi_NC_026908_ATP8_Illex_argentinus_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165019.
+name gi_NC_020348_ATP8_Ommastrephes_bartramii_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165087.
+name gi_NC_016423_ATP8_Bathyteuthis_abyssicola_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165143.
+name gi_NC_007893_ATP8_Watasenia_scintillans_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165421.
+name gi_NC_006354_ATP8_Todarodes_pacificus_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165429.
+name gi_NC_011581_ATP8_Architeuthis_dux_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165437.
+name gi_NC_010636_ATP8_Sthenoteuthis_oualaniensis_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165441.
+name gi_NC_009734_ATP8_Dosidicus_gigas_51_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165451.
+name gi_NC_026908_COX1_Illex_argentinus_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165593.
+name gi_NC_020348_COX1_Ommastrephes_bartramii_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165669.
+name gi_NC_016423_COX1_Bathyteuthis_abyssicola_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 165749.
+name gi_NC_007893_COX1_Watasenia_scintillans_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166083.
+name gi_NC_011581_COX1_Architeuthis_dux_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166097.
+name gi_NC_010636_COX1_Sthenoteuthis_oualaniensis_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166101.
+name gi_NC_009734_COX1_Dosidicus_gigas_510_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166111.
+name gi_NC_020348_COX2_Ommastrephes_bartramii_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166331.
+name gi_NC_016423_COX2_Bathyteuthis_abyssicola_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166405.
+name gi_NC_007893_COX2_Watasenia_scintillans_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166743.
+name gi_NC_011581_COX2_Architeuthis_dux_228_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166757.
+name gi_NC_010636_COX2_Sthenoteuthis_oualaniensis_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166761.
+name gi_NC_009734_COX2_Dosidicus_gigas_229_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166771.
+name gi_NC_026908_COX3_Illex_argentinus_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166923.
+name gi_NC_020348_COX3_Ommastrephes_bartramii_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 166999.
+name gi_NC_007893_COX3_Watasenia_scintillans_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167411.
+name gi_NC_006354_COX3_Todarodes_pacificus_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167417.
+name gi_NC_011581_COX3_Architeuthis_dux_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167425.
+name gi_NC_010636_COX3_Sthenoteuthis_oualaniensis_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167429.
+name gi_NC_009734_COX3_Dosidicus_gigas_259_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 167439.
+name gi_NC_008828_ATP6_Hexamermis_agrotis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 173019.
+name gi_NC_008828_ATP6_Hexamermis_agrotis_175_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 173021.
+name gi_NC_008693_ND3_Romanomermis_iyengari_115_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175141.
+name gi_NC_008640_ND3_Romanomermis_culicivorax_117_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175147.
+name gi_NC_008640_ND3_Romanomermis_culicivorax_117_aa is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 175149.
+name C1285 is not uniq at /opt/MitoZ/bin/annotate/MT_annotation_BGI_V1.32/MT_annotation_BGI.pl line 240, <IN> line 43.
+run the genewise shell file
+running genewise
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  6%[   2000] Cells 12%[   3000] Cells 19%[   4000] Cells 25%[   5000] Cells 32%[   6000] Cells 38%[   7000] Cells 45%[   8000] Cells 51%[   9000] Cells 58%[  10000] Cells 64%[  11000] Cells 70%[  12000] Cells 77%[  13000] Cells 83%[  14000] Cells 90%[  15000] Cells 96%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  5%[   4000] Cells  7%[   5000] Cells  9%[   6000] Cells 11%[   7000] Cells 12%[   8000] Cells 14%[   9000] Cells 16%[  10000] Cells 18%[  11000] Cells 20%[  12000] Cells 22%[  13000] Cells 24%[  14000] Cells 25%[  15000] Cells 27%[  16000] Cells 29%[  17000] Cells 31%[  18000] Cells 33%[  19000] Cells 35%[  20000] Cells 37%[  21000] Cells 38%[  22000] Cells 40%[  23000] Cells 42%[  24000] Cells 44%[  25000] Cells 46%[  26000] Cells 48%[  27000] Cells 49%[  28000] Cells 51%[  29000] Cells 53%[  30000] Cells 55%[  31000] Cells 57%[  32000] Cells 59%[  33000] Cells 61%[  34000] Cells 62%[  35000] Cells 64%[  36000] Cells 66%[  37000] Cells 68%[  38000] Cells 70%[  39000] Cells 72%[  40000] Cells 74%[  41000] Cells 75%[  42000] Cells 77%[  43000] Cells 79%[  44000] Cells 81%[  45000] Cells 83%[  46000] Cells 85%[  47000] Cells 86%[  48000] Cells 88%[  49000] Cells 90%[  50000] Cells 92%[  51000] Cells 94%[  52000] Cells 96%[  53000] Cells 98%[  54000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  1%[   4000] Cells  2%[   5000] Cells  2%[   6000] Cells  3%[   7000] Cells  3%[   8000] Cells  4%[   9000] Cells  4%[  10000] Cells  5%[  11000] Cells  6%[  12000] Cells  6%[  13000] Cells  7%[  14000] Cells  7%[  15000] Cells  8%[  16000] Cells  8%[  17000] Cells  9%[  18000] Cells  9%[  19000] Cells 10%[  20000] Cells 11%[  21000] Cells 11%[  22000] Cells 12%[  23000] Cells 12%[  24000] Cells 13%[  25000] Cells 13%[  26000] Cells 14%[  27000] Cells 14%[  28000] Cells 15%[  29000] Cells 15%[  30000] Cells 16%[  31000] Cells 17%[  32000] Cells 17%[  33000] Cells 18%[  34000] Cells 18%[  35000] Cells 19%[  36000] Cells 19%[  37000] Cells 20%[  38000] Cells 20%[  39000] Cells 21%[  40000] Cells 22%[  41000] Cells 22%[  42000] Cells 23%[  43000] Cells 23%[  44000] Cells 24%[  45000] Cells 24%[  46000] Cells 25%[  47000] Cells 25%[  48000] Cells 26%[  49000] Cells 26%[  50000] Cells 27%[  51000] Cells 28%[  52000] Cells 28%[  53000] Cells 29%[  54000] Cells 29%[  55000] Cells 30%[  56000] Cells 30%[  57000] Cells 31%[  58000] Cells 31%[  59000] Cells 32%[  60000] Cells 33%[  61000] Cells 33%[  62000] Cells 34%[  63000] Cells 34%[  64000] Cells 35%[  65000] Cells 35%[  66000] Cells 36%[  67000] Cells 36%[  68000] Cells 37%[  69000] Cells 37%[  70000] Cells 38%[  71000] Cells 39%[  72000] Cells 39%[  73000] Cells 40%[  74000] Cells 40%[  75000] Cells 41%[  76000] Cells 41%[  77000] Cells 42%[  78000] Cells 42%[  79000] Cells 43%[  80000] Cells 44%[  81000] Cells 44%[  82000] Cells 45%[  83000] Cells 45%[  84000] Cells 46%[  85000] Cells 46%[  86000] Cells 47%[  87000] Cells 47%[  88000] Cells 48%[  89000] Cells 48%[  90000] Cells 49%[  91000] Cells 50%[  92000] Cells 50%[  93000] Cells 51%[  94000] Cells 51%[  95000] Cells 52%[  96000] Cells 52%[  97000] Cells 53%[  98000] Cells 53%[  99000] Cells 54%[ 100000] Cells 55%[ 101000] Cells 55%[ 102000] Cells 56%[ 103000] Cells 56%[ 104000] Cells 57%[ 105000] Cells 57%[ 106000] Cells 58%[ 107000] Cells 58%[ 108000] Cells 59%[ 109000] Cells 60%[ 110000] Cells 60%[ 111000] Cells 61%[ 112000] Cells 61%[ 113000] Cells 62%[ 114000] Cells 62%[ 115000] Cells 63%[ 116000] Cells 63%[ 117000] Cells 64%[ 118000] Cells 64%[ 119000] Cells 65%[ 120000] Cells 66%[ 121000] Cells 66%[ 122000] Cells 67%[ 123000] Cells 67%[ 124000] Cells 68%[ 125000] Cells 68%[ 126000] Cells 69%[ 127000] Cells 69%[ 128000] Cells 70%[ 129000] Cells 71%[ 130000] Cells 71%[ 131000] Cells 72%[ 132000] Cells 72%[ 133000] Cells 73%[ 134000] Cells 73%[ 135000] Cells 74%[ 136000] Cells 74%[ 137000] Cells 75%[ 138000] Cells 75%[ 139000] Cells 76%[ 140000] Cells 77%[ 141000] Cells 77%[ 142000] Cells 78%[ 143000] Cells 78%[ 144000] Cells 79%[ 145000] Cells 79%[ 146000] Cells 80%[ 147000] Cells 80%[ 148000] Cells 81%[ 149000] Cells 82%[ 150000] Cells 82%[ 151000] Cells 83%[ 152000] Cells 83%[ 153000] Cells 84%[ 154000] Cells 84%[ 155000] Cells 85%[ 156000] Cells 85%[ 157000] Cells 86%[ 158000] Cells 86%[ 159000] Cells 87%[ 160000] Cells 88%[ 161000] Cells 88%[ 162000] Cells 89%[ 163000] Cells 89%[ 164000] Cells 90%[ 165000] Cells 90%[ 166000] Cells 91%[ 167000] Cells 91%[ 168000] Cells 92%[ 169000] Cells 93%[ 170000] Cells 93%[ 171000] Cells 94%[ 172000] Cells 94%[ 173000] Cells 95%[ 174000] Cells 95%[ 175000] Cells 96%[ 176000] Cells 96%[ 177000] Cells 97%[ 178000] Cells 97%[ 179000] Cells 98%[ 180000] Cells 99%[ 181000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  2%[   3000] Cells  3%[   4000] Cells  5%[   5000] Cells  6%[   6000] Cells  7%[   7000] Cells  8%[   8000] Cells 10%[   9000] Cells 11%[  10000] Cells 12%[  11000] Cells 13%[  12000] Cells 15%[  13000] Cells 16%[  14000] Cells 17%[  15000] Cells 19%[  16000] Cells 20%[  17000] Cells 21%[  18000] Cells 22%[  19000] Cells 24%[  20000] Cells 25%[  21000] Cells 26%[  22000] Cells 27%[  23000] Cells 29%[  24000] Cells 30%[  25000] Cells 31%[  26000] Cells 33%[  27000] Cells 34%[  28000] Cells 35%[  29000] Cells 36%[  30000] Cells 38%[  31000] Cells 39%[  32000] Cells 40%[  33000] Cells 41%[  34000] Cells 43%[  35000] Cells 44%[  36000] Cells 45%[  37000] Cells 46%[  38000] Cells 48%[  39000] Cells 49%[  40000] Cells 50%[  41000] Cells 52%[  42000] Cells 53%[  43000] Cells 54%[  44000] Cells 55%[  45000] Cells 57%[  46000] Cells 58%[  47000] Cells 59%[  48000] Cells 60%[  49000] Cells 62%[  50000] Cells 63%[  51000] Cells 64%[  52000] Cells 66%[  53000] Cells 67%[  54000] Cells 68%[  55000] Cells 69%[  56000] Cells 71%[  57000] Cells 72%[  58000] Cells 73%[  59000] Cells 74%[  60000] Cells 76%[  61000] Cells 77%[  62000] Cells 78%[  63000] Cells 80%[  64000] Cells 81%[  65000] Cells 82%[  66000] Cells 83%[  67000] Cells 85%[  68000] Cells 86%[  69000] Cells 87%[  70000] Cells 88%[  71000] Cells 90%[  72000] Cells 91%[  73000] Cells 92%[  74000] Cells 93%[  75000] Cells 95%[  76000] Cells 96%[  77000] Cells 97%[  78000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  2%[   3000] Cells  3%[   4000] Cells  5%[   5000] Cells  6%[   6000] Cells  7%[   7000] Cells  8%[   8000] Cells 10%[   9000] Cells 11%[  10000] Cells 12%[  11000] Cells 13%[  12000] Cells 15%[  13000] Cells 16%[  14000] Cells 17%[  15000] Cells 18%[  16000] Cells 20%[  17000] Cells 21%[  18000] Cells 22%[  19000] Cells 23%[  20000] Cells 25%[  21000] Cells 26%[  22000] Cells 27%[  23000] Cells 28%[  24000] Cells 30%[  25000] Cells 31%[  26000] Cells 32%[  27000] Cells 33%[  28000] Cells 35%[  29000] Cells 36%[  30000] Cells 37%[  31000] Cells 38%[  32000] Cells 40%[  33000] Cells 41%[  34000] Cells 42%[  35000] Cells 43%[  36000] Cells 45%[  37000] Cells 46%[  38000] Cells 47%[  39000] Cells 48%[  40000] Cells 50%[  41000] Cells 51%[  42000] Cells 52%[  43000] Cells 53%[  44000] Cells 55%[  45000] Cells 56%[  46000] Cells 57%[  47000] Cells 58%[  48000] Cells 60%[  49000] Cells 61%[  50000] Cells 62%[  51000] Cells 63%[  52000] Cells 65%[  53000] Cells 66%[  54000] Cells 67%[  55000] Cells 69%[  56000] Cells 70%[  57000] Cells 71%[  58000] Cells 72%[  59000] Cells 74%[  60000] Cells 75%[  61000] Cells 76%[  62000] Cells 77%[  63000] Cells 79%[  64000] Cells 80%[  65000] Cells 81%[  66000] Cells 82%[  67000] Cells 84%[  68000] Cells 85%[  69000] Cells 86%[  70000] Cells 87%[  71000] Cells 89%[  72000] Cells 90%[  73000] Cells 91%[  74000] Cells 92%[  75000] Cells 94%[  76000] Cells 95%[  77000] Cells 96%[  78000] Cells 97%[  79000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  3%[   2000] Cells  7%[   3000] Cells 10%[   4000] Cells 14%[   5000] Cells 18%[   6000] Cells 21%[   7000] Cells 25%[   8000] Cells 28%[   9000] Cells 32%[  10000] Cells 36%[  11000] Cells 39%[  12000] Cells 43%[  13000] Cells 46%[  14000] Cells 50%[  15000] Cells 54%[  16000] Cells 57%[  17000] Cells 61%[  18000] Cells 64%[  19000] Cells 68%[  20000] Cells 72%[  21000] Cells 75%[  22000] Cells 79%[  23000] Cells 82%[  24000] Cells 86%[  25000] Cells 90%[  26000] Cells 93%[  27000] Cells 97%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  2%[   2000] Cells  5%[   3000] Cells  8%[   4000] Cells 11%[   5000] Cells 14%[   6000] Cells 17%[   7000] Cells 20%[   8000] Cells 23%[   9000] Cells 26%[  10000] Cells 29%[  11000] Cells 32%[  12000] Cells 35%[  13000] Cells 38%[  14000] Cells 41%[  15000] Cells 44%[  16000] Cells 47%[  17000] Cells 50%[  18000] Cells 52%[  19000] Cells 55%[  20000] Cells 58%[  21000] Cells 61%[  22000] Cells 64%[  23000] Cells 67%[  24000] Cells 70%[  25000] Cells 73%[  26000] Cells 76%[  27000] Cells 79%[  28000] Cells 82%[  29000] Cells 85%[  30000] Cells 88%[  31000] Cells 91%[  32000] Cells 94%[  33000] Cells 97%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  3%[   2000] Cells  7%[   3000] Cells 10%[   4000] Cells 14%[   5000] Cells 17%[   6000] Cells 21%[   7000] Cells 24%[   8000] Cells 28%[   9000] Cells 31%[  10000] Cells 35%[  11000] Cells 39%[  12000] Cells 42%[  13000] Cells 46%[  14000] Cells 49%[  15000] Cells 53%[  16000] Cells 56%[  17000] Cells 60%[  18000] Cells 63%[  19000] Cells 67%[  20000] Cells 71%[  21000] Cells 74%[  22000] Cells 78%[  23000] Cells 81%[  24000] Cells 85%[  25000] Cells 88%[  26000] Cells 92%[  27000] Cells 95%[  28000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  2%[   3000] Cells  3%[   4000] Cells  4%[   5000] Cells  5%[   6000] Cells  6%[   7000] Cells  8%[   8000] Cells  9%[   9000] Cells 10%[  10000] Cells 11%[  11000] Cells 12%[  12000] Cells 13%[  13000] Cells 15%[  14000] Cells 16%[  15000] Cells 17%[  16000] Cells 18%[  17000] Cells 19%[  18000] Cells 20%[  19000] Cells 22%[  20000] Cells 23%[  21000] Cells 24%[  22000] Cells 25%[  23000] Cells 26%[  24000] Cells 27%[  25000] Cells 28%[  26000] Cells 30%[  27000] Cells 31%[  28000] Cells 32%[  29000] Cells 33%[  30000] Cells 34%[  31000] Cells 35%[  32000] Cells 37%[  33000] Cells 38%[  34000] Cells 39%[  35000] Cells 40%[  36000] Cells 41%[  37000] Cells 42%[  38000] Cells 44%[  39000] Cells 45%[  40000] Cells 46%[  41000] Cells 47%[  42000] Cells 48%[  43000] Cells 49%[  44000] Cells 50%[  45000] Cells 52%[  46000] Cells 53%[  47000] Cells 54%[  48000] Cells 55%[  49000] Cells 56%[  50000] Cells 57%[  51000] Cells 59%[  52000] Cells 60%[  53000] Cells 61%[  54000] Cells 62%[  55000] Cells 63%[  56000] Cells 64%[  57000] Cells 66%[  58000] Cells 67%[  59000] Cells 68%[  60000] Cells 69%[  61000] Cells 70%[  62000] Cells 71%[  63000] Cells 72%[  64000] Cells 74%[  65000] Cells 75%[  66000] Cells 76%[  67000] Cells 77%[  68000] Cells 78%[  69000] Cells 79%[  70000] Cells 81%[  71000] Cells 82%[  72000] Cells 83%[  73000] Cells 84%[  74000] Cells 85%[  75000] Cells 86%[  76000] Cells 88%[  77000] Cells 89%[  78000] Cells 90%[  79000] Cells 91%[  80000] Cells 92%[  81000] Cells 93%[  82000] Cells 94%[  83000] Cells 96%[  84000] Cells 97%[  85000] Cells 98%[  86000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  5%[   4000] Cells  7%[   5000] Cells  8%[   6000] Cells 10%[   7000] Cells 12%[   8000] Cells 14%[   9000] Cells 16%[  10000] Cells 17%[  11000] Cells 19%[  12000] Cells 21%[  13000] Cells 23%[  14000] Cells 24%[  15000] Cells 26%[  16000] Cells 28%[  17000] Cells 30%[  18000] Cells 32%[  19000] Cells 33%[  20000] Cells 35%[  21000] Cells 37%[  22000] Cells 39%[  23000] Cells 40%[  24000] Cells 42%[  25000] Cells 44%[  26000] Cells 46%[  27000] Cells 48%[  28000] Cells 49%[  29000] Cells 51%[  30000] Cells 53%[  31000] Cells 55%[  32000] Cells 56%[  33000] Cells 58%[  34000] Cells 60%[  35000] Cells 62%[  36000] Cells 64%[  37000] Cells 65%[  38000] Cells 67%[  39000] Cells 69%[  40000] Cells 71%[  41000] Cells 72%[  42000] Cells 74%[  43000] Cells 76%[  44000] Cells 78%[  45000] Cells 80%[  46000] Cells 81%[  47000] Cells 83%[  48000] Cells 85%[  49000] Cells 87%[  50000] Cells 88%[  51000] Cells 90%[  52000] Cells 92%[  53000] Cells 94%[  54000] Cells 96%[  55000] Cells 97%[  56000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  2%[   4000] Cells  3%[   5000] Cells  4%[   6000] Cells  4%[   7000] Cells  5%[   8000] Cells  6%[   9000] Cells  7%[  10000] Cells  8%[  11000] Cells  8%[  12000] Cells  9%[  13000] Cells 10%[  14000] Cells 11%[  15000] Cells 12%[  16000] Cells 12%[  17000] Cells 13%[  18000] Cells 14%[  19000] Cells 15%[  20000] Cells 16%[  21000] Cells 16%[  22000] Cells 17%[  23000] Cells 18%[  24000] Cells 19%[  25000] Cells 20%[  26000] Cells 20%[  27000] Cells 21%[  28000] Cells 22%[  29000] Cells 23%[  30000] Cells 24%[  31000] Cells 25%[  32000] Cells 25%[  33000] Cells 26%[  34000] Cells 27%[  35000] Cells 28%[  36000] Cells 29%[  37000] Cells 29%[  38000] Cells 30%[  39000] Cells 31%[  40000] Cells 32%[  41000] Cells 33%[  42000] Cells 33%[  43000] Cells 34%[  44000] Cells 35%[  45000] Cells 36%[  46000] Cells 37%[  47000] Cells 37%[  48000] Cells 38%[  49000] Cells 39%[  50000] Cells 40%[  51000] Cells 41%[  52000] Cells 41%[  53000] Cells 42%[  54000] Cells 43%[  55000] Cells 44%[  56000] Cells 45%[  57000] Cells 46%[  58000] Cells 46%[  59000] Cells 47%[  60000] Cells 48%[  61000] Cells 49%[  62000] Cells 50%[  63000] Cells 50%[  64000] Cells 51%[  65000] Cells 52%[  66000] Cells 53%[  67000] Cells 54%[  68000] Cells 54%[  69000] Cells 55%[  70000] Cells 56%[  71000] Cells 57%[  72000] Cells 58%[  73000] Cells 58%[  74000] Cells 59%[  75000] Cells 60%[  76000] Cells 61%[  77000] Cells 62%[  78000] Cells 62%[  79000] Cells 63%[  80000] Cells 64%[  81000] Cells 65%[  82000] Cells 66%[  83000] Cells 67%[  84000] Cells 67%[  85000] Cells 68%[  86000] Cells 69%[  87000] Cells 70%[  88000] Cells 71%[  89000] Cells 71%[  90000] Cells 72%[  91000] Cells 73%[  92000] Cells 74%[  93000] Cells 75%[  94000] Cells 75%[  95000] Cells 76%[  96000] Cells 77%[  97000] Cells 78%[  98000] Cells 79%[  99000] Cells 79%[ 100000] Cells 80%[ 101000] Cells 81%[ 102000] Cells 82%[ 103000] Cells 83%[ 104000] Cells 83%[ 105000] Cells 84%[ 106000] Cells 85%[ 107000] Cells 86%[ 108000] Cells 87%[ 109000] Cells 88%[ 110000] Cells 88%[ 111000] Cells 89%[ 112000] Cells 90%[ 113000] Cells 91%[ 114000] Cells 92%[ 115000] Cells 92%[ 116000] Cells 93%[ 117000] Cells 94%[ 118000] Cells 95%[ 119000] Cells 96%[ 120000] Cells 96%[ 121000] Cells 97%[ 122000] Cells 98%[ 123000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  4%[   4000] Cells  6%[   5000] Cells  7%[   6000] Cells  9%[   7000] Cells 10%[   8000] Cells 12%[   9000] Cells 13%[  10000] Cells 15%[  11000] Cells 16%[  12000] Cells 18%[  13000] Cells 19%[  14000] Cells 21%[  15000] Cells 23%[  16000] Cells 24%[  17000] Cells 26%[  18000] Cells 27%[  19000] Cells 29%[  20000] Cells 30%[  21000] Cells 32%[  22000] Cells 33%[  23000] Cells 35%[  24000] Cells 36%[  25000] Cells 38%[  26000] Cells 39%[  27000] Cells 41%[  28000] Cells 42%[  29000] Cells 44%[  30000] Cells 46%[  31000] Cells 47%[  32000] Cells 49%[  33000] Cells 50%[  34000] Cells 52%[  35000] Cells 53%[  36000] Cells 55%[  37000] Cells 56%[  38000] Cells 58%[  39000] Cells 59%[  40000] Cells 61%[  41000] Cells 62%[  42000] Cells 64%[  43000] Cells 66%[  44000] Cells 67%[  45000] Cells 69%[  46000] Cells 70%[  47000] Cells 72%[  48000] Cells 73%[  49000] Cells 75%[  50000] Cells 76%[  51000] Cells 78%[  52000] Cells 79%[  53000] Cells 81%[  54000] Cells 82%[  55000] Cells 84%[  56000] Cells 85%[  57000] Cells 87%[  58000] Cells 89%[  59000] Cells 90%[  60000] Cells 92%[  61000] Cells 93%[  62000] Cells 95%[  63000] Cells 96%[  64000] Cells 98%[  65000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  7%[   2000] Cells 14%[   3000] Cells 21%[   4000] Cells 28%[   5000] Cells 35%[   6000] Cells 42%[   7000] Cells 49%[   8000] Cells 56%[   9000] Cells 63%[  10000] Cells 70%[  11000] Cells 77%[  12000] Cells 84%[  13000] Cells 91%[  14000] Cells 98%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  4%[   4000] Cells  6%[   5000] Cells  7%[   6000] Cells  9%[   7000] Cells 10%[   8000] Cells 12%[   9000] Cells 13%[  10000] Cells 15%[  11000] Cells 16%[  12000] Cells 18%[  13000] Cells 19%[  14000] Cells 21%[  15000] Cells 22%[  16000] Cells 24%[  17000] Cells 25%[  18000] Cells 27%[  19000] Cells 28%[  20000] Cells 30%[  21000] Cells 31%[  22000] Cells 33%[  23000] Cells 34%[  24000] Cells 36%[  25000] Cells 37%[  26000] Cells 39%[  27000] Cells 40%[  28000] Cells 42%[  29000] Cells 43%[  30000] Cells 45%[  31000] Cells 46%[  32000] Cells 48%[  33000] Cells 49%[  34000] Cells 51%[  35000] Cells 52%[  36000] Cells 54%[  37000] Cells 55%[  38000] Cells 57%[  39000] Cells 58%[  40000] Cells 60%[  41000] Cells 61%[  42000] Cells 63%[  43000] Cells 64%[  44000] Cells 66%[  45000] Cells 67%[  46000] Cells 69%[  47000] Cells 70%[  48000] Cells 72%[  49000] Cells 73%[  50000] Cells 75%[  51000] Cells 76%[  52000] Cells 78%[  53000] Cells 79%[  54000] Cells 81%[  55000] Cells 82%[  56000] Cells 84%[  57000] Cells 85%[  58000] Cells 87%[  59000] Cells 88%[  60000] Cells 90%[  61000] Cells 91%[  62000] Cells 93%[  63000] Cells 94%[  64000] Cells 96%[  65000] Cells 97%[  66000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  4%[   2000] Cells  9%[   3000] Cells 13%[   4000] Cells 18%[   5000] Cells 22%[   6000] Cells 27%[   7000] Cells 31%[   8000] Cells 36%[   9000] Cells 40%[  10000] Cells 45%[  11000] Cells 50%[  12000] Cells 54%[  13000] Cells 59%[  14000] Cells 63%[  15000] Cells 68%[  16000] Cells 72%[  17000] Cells 77%[  18000] Cells 81%[  19000] Cells 86%[  20000] Cells 90%[  21000] Cells 95%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  4%[   2000] Cells  9%[   3000] Cells 13%[   4000] Cells 18%[   5000] Cells 23%[   6000] Cells 27%[   7000] Cells 32%[   8000] Cells 37%[   9000] Cells 41%[  10000] Cells 46%[  11000] Cells 51%[  12000] Cells 55%[  13000] Cells 60%[  14000] Cells 64%[  15000] Cells 69%[  16000] Cells 74%[  17000] Cells 78%[  18000] Cells 83%[  19000] Cells 88%[  20000] Cells 92%[  21000] Cells 97%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  2%[   4000] Cells  2%[   5000] Cells  3%[   6000] Cells  4%[   7000] Cells  5%[   8000] Cells  5%[   9000] Cells  6%[  10000] Cells  7%[  11000] Cells  8%[  12000] Cells  8%[  13000] Cells  9%[  14000] Cells 10%[  15000] Cells 10%[  16000] Cells 11%[  17000] Cells 12%[  18000] Cells 13%[  19000] Cells 13%[  20000] Cells 14%[  21000] Cells 15%[  22000] Cells 16%[  23000] Cells 16%[  24000] Cells 17%[  25000] Cells 18%[  26000] Cells 18%[  27000] Cells 19%[  28000] Cells 20%[  29000] Cells 21%[  30000] Cells 21%[  31000] Cells 22%[  32000] Cells 23%[  33000] Cells 24%[  34000] Cells 24%[  35000] Cells 25%[  36000] Cells 26%[  37000] Cells 26%[  38000] Cells 27%[  39000] Cells 28%[  40000] Cells 29%[  41000] Cells 29%[  42000] Cells 30%[  43000] Cells 31%[  44000] Cells 32%[  45000] Cells 32%[  46000] Cells 33%[  47000] Cells 34%[  48000] Cells 34%[  49000] Cells 35%[  50000] Cells 36%[  51000] Cells 37%[  52000] Cells 37%[  53000] Cells 38%[  54000] Cells 39%[  55000] Cells 40%[  56000] Cells 40%[  57000] Cells 41%[  58000] Cells 42%[  59000] Cells 43%[  60000] Cells 43%[  61000] Cells 44%[  62000] Cells 45%[  63000] Cells 45%[  64000] Cells 46%[  65000] Cells 47%[  66000] Cells 48%[  67000] Cells 48%[  68000] Cells 49%[  69000] Cells 50%[  70000] Cells 51%[  71000] Cells 51%[  72000] Cells 52%[  73000] Cells 53%[  74000] Cells 53%[  75000] Cells 54%[  76000] Cells 55%[  77000] Cells 56%[  78000] Cells 56%[  79000] Cells 57%[  80000] Cells 58%[  81000] Cells 59%[  82000] Cells 59%[  83000] Cells 60%[  84000] Cells 61%[  85000] Cells 61%[  86000] Cells 62%[  87000] Cells 63%[  88000] Cells 64%[  89000] Cells 64%[  90000] Cells 65%[  91000] Cells 66%[  92000] Cells 67%[  93000] Cells 67%[  94000] Cells 68%[  95000] Cells 69%[  96000] Cells 69%[  97000] Cells 70%[  98000] Cells 71%[  99000] Cells 72%[ 100000] Cells 72%[ 101000] Cells 73%[ 102000] Cells 74%[ 103000] Cells 75%[ 104000] Cells 75%[ 105000] Cells 76%[ 106000] Cells 77%[ 107000] Cells 77%[ 108000] Cells 78%[ 109000] Cells 79%[ 110000] Cells 80%[ 111000] Cells 80%[ 112000] Cells 81%[ 113000] Cells 82%[ 114000] Cells 83%[ 115000] Cells 83%[ 116000] Cells 84%[ 117000] Cells 85%[ 118000] Cells 86%[ 119000] Cells 86%[ 120000] Cells 87%[ 121000] Cells 88%[ 122000] Cells 88%[ 123000] Cells 89%[ 124000] Cells 90%[ 125000] Cells 91%[ 126000] Cells 91%[ 127000] Cells 92%[ 128000] Cells 93%[ 129000] Cells 94%[ 130000] Cells 94%[ 131000] Cells 95%[ 132000] Cells 96%[ 133000] Cells 96%[ 134000] Cells 97%[ 135000] Cells 98%[ 136000] Cells 99%[ 137000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  2%[   4000] Cells  3%[   5000] Cells  4%[   6000] Cells  5%[   7000] Cells  6%[   8000] Cells  7%[   9000] Cells  8%[  10000] Cells  9%[  11000] Cells 10%[  12000] Cells 11%[  13000] Cells 12%[  14000] Cells 13%[  15000] Cells 14%[  16000] Cells 15%[  17000] Cells 16%[  18000] Cells 17%[  19000] Cells 18%[  20000] Cells 19%[  21000] Cells 20%[  22000] Cells 21%[  23000] Cells 22%[  24000] Cells 23%[  25000] Cells 24%[  26000] Cells 25%[  27000] Cells 26%[  28000] Cells 27%[  29000] Cells 28%[  30000] Cells 29%[  31000] Cells 30%[  32000] Cells 31%[  33000] Cells 32%[  34000] Cells 32%[  35000] Cells 33%[  36000] Cells 34%[  37000] Cells 35%[  38000] Cells 36%[  39000] Cells 37%[  40000] Cells 38%[  41000] Cells 39%[  42000] Cells 40%[  43000] Cells 41%[  44000] Cells 42%[  45000] Cells 43%[  46000] Cells 44%[  47000] Cells 45%[  48000] Cells 46%[  49000] Cells 47%[  50000] Cells 48%[  51000] Cells 49%[  52000] Cells 50%[  53000] Cells 51%[  54000] Cells 52%[  55000] Cells 53%[  56000] Cells 54%[  57000] Cells 55%[  58000] Cells 56%[  59000] Cells 57%[  60000] Cells 58%[  61000] Cells 59%[  62000] Cells 60%[  63000] Cells 61%[  64000] Cells 62%[  65000] Cells 63%[  66000] Cells 64%[  67000] Cells 64%[  68000] Cells 65%[  69000] Cells 66%[  70000] Cells 67%[  71000] Cells 68%[  72000] Cells 69%[  73000] Cells 70%[  74000] Cells 71%[  75000] Cells 72%[  76000] Cells 73%[  77000] Cells 74%[  78000] Cells 75%[  79000] Cells 76%[  80000] Cells 77%[  81000] Cells 78%[  82000] Cells 79%[  83000] Cells 80%[  84000] Cells 81%[  85000] Cells 82%[  86000] Cells 83%[  87000] Cells 84%[  88000] Cells 85%[  89000] Cells 86%[  90000] Cells 87%[  91000] Cells 88%[  92000] Cells 89%[  93000] Cells 90%[  94000] Cells 91%[  95000] Cells 92%[  96000] Cells 93%[  97000] Cells 94%[  98000] Cells 95%[  99000] Cells 96%[ 100000] Cells 97%[ 101000] Cells 97%[ 102000] Cells 98%[ 103000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  4%[   4000] Cells  6%[   5000] Cells  8%[   6000] Cells  9%[   7000] Cells 11%[   8000] Cells 12%[   9000] Cells 14%[  10000] Cells 16%[  11000] Cells 17%[  12000] Cells 19%[  13000] Cells 21%[  14000] Cells 22%[  15000] Cells 24%[  16000] Cells 25%[  17000] Cells 27%[  18000] Cells 29%[  19000] Cells 30%[  20000] Cells 32%[  21000] Cells 34%[  22000] Cells 35%[  23000] Cells 37%[  24000] Cells 38%[  25000] Cells 40%[  26000] Cells 42%[  27000] Cells 43%[  28000] Cells 45%[  29000] Cells 47%[  30000] Cells 48%[  31000] Cells 50%[  32000] Cells 51%[  33000] Cells 53%[  34000] Cells 55%[  35000] Cells 56%[  36000] Cells 58%[  37000] Cells 60%[  38000] Cells 61%[  39000] Cells 63%[  40000] Cells 64%[  41000] Cells 66%[  42000] Cells 68%[  43000] Cells 69%[  44000] Cells 71%[  45000] Cells 73%[  46000] Cells 74%[  47000] Cells 76%[  48000] Cells 77%[  49000] Cells 79%[  50000] Cells 81%[  51000] Cells 82%[  52000] Cells 84%[  53000] Cells 86%[  54000] Cells 87%[  55000] Cells 89%[  56000] Cells 90%[  57000] Cells 92%[  58000] Cells 94%[  59000] Cells 95%[  60000] Cells 97%[  61000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  0%[   2000] Cells  1%[   3000] Cells  2%[   4000] Cells  2%[   5000] Cells  3%[   6000] Cells  4%[   7000] Cells  4%[   8000] Cells  5%[   9000] Cells  6%[  10000] Cells  6%[  11000] Cells  7%[  12000] Cells  8%[  13000] Cells  9%[  14000] Cells  9%[  15000] Cells 10%[  16000] Cells 11%[  17000] Cells 11%[  18000] Cells 12%[  19000] Cells 13%[  20000] Cells 13%[  21000] Cells 14%[  22000] Cells 15%[  23000] Cells 16%[  24000] Cells 16%[  25000] Cells 17%[  26000] Cells 18%[  27000] Cells 18%[  28000] Cells 19%[  29000] Cells 20%[  30000] Cells 20%[  31000] Cells 21%[  32000] Cells 22%[  33000] Cells 23%[  34000] Cells 23%[  35000] Cells 24%[  36000] Cells 25%[  37000] Cells 25%[  38000] Cells 26%[  39000] Cells 27%[  40000] Cells 27%[  41000] Cells 28%[  42000] Cells 29%[  43000] Cells 30%[  44000] Cells 30%[  45000] Cells 31%[  46000] Cells 32%[  47000] Cells 32%[  48000] Cells 33%[  49000] Cells 34%[  50000] Cells 34%[  51000] Cells 35%[  52000] Cells 36%[  53000] Cells 37%[  54000] Cells 37%[  55000] Cells 38%[  56000] Cells 39%[  57000] Cells 39%[  58000] Cells 40%[  59000] Cells 41%[  60000] Cells 41%[  61000] Cells 42%[  62000] Cells 43%[  63000] Cells 43%[  64000] Cells 44%[  65000] Cells 45%[  66000] Cells 46%[  67000] Cells 46%[  68000] Cells 47%[  69000] Cells 48%[  70000] Cells 48%[  71000] Cells 49%[  72000] Cells 50%[  73000] Cells 50%[  74000] Cells 51%[  75000] Cells 52%[  76000] Cells 53%[  77000] Cells 53%[  78000] Cells 54%[  79000] Cells 55%[  80000] Cells 55%[  81000] Cells 56%[  82000] Cells 57%[  83000] Cells 57%[  84000] Cells 58%[  85000] Cells 59%[  86000] Cells 60%[  87000] Cells 60%[  88000] Cells 61%[  89000] Cells 62%[  90000] Cells 62%[  91000] Cells 63%[  92000] Cells 64%[  93000] Cells 64%[  94000] Cells 65%[  95000] Cells 66%[  96000] Cells 67%[  97000] Cells 67%[  98000] Cells 68%[  99000] Cells 69%[ 100000] Cells 69%[ 101000] Cells 70%[ 102000] Cells 71%[ 103000] Cells 71%[ 104000] Cells 72%[ 105000] Cells 73%[ 106000] Cells 74%[ 107000] Cells 74%[ 108000] Cells 75%[ 109000] Cells 76%[ 110000] Cells 76%[ 111000] Cells 77%[ 112000] Cells 78%[ 113000] Cells 78%[ 114000] Cells 79%[ 115000] Cells 80%[ 116000] Cells 80%[ 117000] Cells 81%[ 118000] Cells 82%[ 119000] Cells 83%[ 120000] Cells 83%[ 121000] Cells 84%[ 122000] Cells 85%[ 123000] Cells 85%[ 124000] Cells 86%[ 125000] Cells 87%[ 126000] Cells 87%[ 127000] Cells 88%[ 128000] Cells 89%[ 129000] Cells 90%[ 130000] Cells 90%[ 131000] Cells 91%[ 132000] Cells 92%[ 133000] Cells 92%[ 134000] Cells 93%[ 135000] Cells 94%[ 136000] Cells 94%[ 137000] Cells 95%[ 138000] Cells 96%[ 139000] Cells 97%[ 140000] Cells 97%[ 141000] Cells 98%[ 142000] Cells 99%[ 143000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  3%[   3000] Cells  4%[   4000] Cells  6%[   5000] Cells  7%[   6000] Cells  9%[   7000] Cells 10%[   8000] Cells 12%[   9000] Cells 14%[  10000] Cells 15%[  11000] Cells 17%[  12000] Cells 18%[  13000] Cells 20%[  14000] Cells 21%[  15000] Cells 23%[  16000] Cells 24%[  17000] Cells 26%[  18000] Cells 28%[  19000] Cells 29%[  20000] Cells 31%[  21000] Cells 32%[  22000] Cells 34%[  23000] Cells 35%[  24000] Cells 37%[  25000] Cells 39%[  26000] Cells 40%[  27000] Cells 42%[  28000] Cells 43%[  29000] Cells 45%[  30000] Cells 46%[  31000] Cells 48%[  32000] Cells 49%[  33000] Cells 51%[  34000] Cells 53%[  35000] Cells 54%[  36000] Cells 56%[  37000] Cells 57%[  38000] Cells 59%[  39000] Cells 60%[  40000] Cells 62%[  41000] Cells 64%[  42000] Cells 65%[  43000] Cells 67%[  44000] Cells 68%[  45000] Cells 70%[  46000] Cells 71%[  47000] Cells 73%[  48000] Cells 74%[  49000] Cells 76%[  50000] Cells 78%[  51000] Cells 79%[  52000] Cells 81%[  53000] Cells 82%[  54000] Cells 84%[  55000] Cells 85%[  56000] Cells 87%[  57000] Cells 89%[  58000] Cells 90%[  59000] Cells 92%[  60000] Cells 93%[  61000] Cells 95%[  62000] Cells 96%[  63000] Cells 98%[  64000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  2%[   3000] Cells  3%[   4000] Cells  5%[   5000] Cells  6%[   6000] Cells  7%[   7000] Cells  9%[   8000] Cells 10%[   9000] Cells 11%[  10000] Cells 12%[  11000] Cells 14%[  12000] Cells 15%[  13000] Cells 16%[  14000] Cells 18%[  15000] Cells 19%[  16000] Cells 20%[  17000] Cells 21%[  18000] Cells 23%[  19000] Cells 24%[  20000] Cells 25%[  21000] Cells 27%[  22000] Cells 28%[  23000] Cells 29%[  24000] Cells 31%[  25000] Cells 32%[  26000] Cells 33%[  27000] Cells 34%[  28000] Cells 36%[  29000] Cells 37%[  30000] Cells 38%[  31000] Cells 40%[  32000] Cells 41%[  33000] Cells 42%[  34000] Cells 43%[  35000] Cells 45%[  36000] Cells 46%[  37000] Cells 47%[  38000] Cells 49%[  39000] Cells 50%[  40000] Cells 51%[  41000] Cells 53%[  42000] Cells 54%[  43000] Cells 55%[  44000] Cells 56%[  45000] Cells 58%[  46000] Cells 59%[  47000] Cells 60%[  48000] Cells 62%[  49000] Cells 63%[  50000] Cells 64%[  51000] Cells 65%[  52000] Cells 67%[  53000] Cells 68%[  54000] Cells 69%[  55000] Cells 71%[  56000] Cells 72%[  57000] Cells 73%[  58000] Cells 75%[  59000] Cells 76%[  60000] Cells 77%[  61000] Cells 78%[  62000] Cells 80%[  63000] Cells 81%[  64000] Cells 82%[  65000] Cells 84%[  66000] Cells 85%[  67000] Cells 86%[  68000] Cells 87%[  69000] Cells 89%[  70000] Cells 90%[  71000] Cells 91%[  72000] Cells 93%[  73000] Cells 94%[  74000] Cells 95%[  75000] Cells 97%[  76000] Cells 98%[  77000] Cells 99%
+GeneWise6 Matrix calculation: [      0] Cells  0%[   1000] Cells  1%[   2000] Cells  2%[   3000] Cells  4%[   4000] Cells  5%[   5000] Cells  7%[   6000] Cells  8%[   7000] Cells 10%[   8000] Cells 11%[   9000] Cells 12%[  10000] Cells 14%[  11000] Cells 15%[  12000] Cells 17%[  13000] Cells 18%[  14000] Cells 20%[  15000] Cells 21%[  16000] Cells 22%[  17000] Cells 24%[  18000] Cells 25%[  19000] Cells 27%[  20000] Cells 28%[  21000] Cells 30%[  22000] Cells 31%[  23000] Cells 32%[  24000] Cells 34%[  25000] Cells 35%[  26000] Cells 37%[  27000] Cells 38%[  28000] Cells 40%[  29000] Cells 41%[  30000] Cells 42%[  31000] Cells 44%[  32000] Cells 45%[  33000] Cells 47%[  34000] Cells 48%[  35000] Cells 50%[  36000] Cells 51%[  37000] Cells 52%[  38000] Cells 54%[  39000] Cells 55%[  40000] Cells 57%[  41000] Cells 58%[  42000] Cells 60%[  43000] Cells 61%[  44000] Cells 62%[  45000] Cells 64%[  46000] Cells 65%[  47000] Cells 67%[  48000] Cells 68%[  49000] Cells 70%[  50000] Cells 71%[  51000] Cells 72%[  52000] Cells 74%[  53000] Cells 75%[  54000] Cells 77%[  55000] Cells 78%[  56000] Cells 80%[  57000] Cells 81%[  58000] Cells 82%[  59000] Cells 84%[  60000] Cells 85%[  61000] Cells 87%[  62000] Cells 88%[  63000] Cells 90%[  64000] Cells 91%[  65000] Cells 92%[  66000] Cells 94%[  67000] Cells 95%[  68000] Cells 97%[  69000] Cells 98%
+convert result to gff3 format
+Annotation finished
+2024-04-11 18:04:23
+rm -rf *.nhr *.nin *.nsq formatdb.log *.tblastn.shell *.length *.blast *.blast.filter *.shell *.blast.solar *.blast.solar.filter *.blast.solar.filter.table *.blast.solar.filter.table.nonredundance *.blast.solar.filter.nr *.genewise *.solar.genewise.gff *.solar.genewise.gff.cds
+
+2024-04-11 18:04:37
+sort -k3 work71.hmmtblout.besthit.sim.fa.solar.genewise.gff.cds.position.cds.taxa | uniq >work71.hmmtblout.besthit.sim.fa.solar.genewise.gff.cds.position.cds.taxa.sorted.uniq
+
+taxa_selected: Arthropoda
+result_seq:  {'C1051', 'C717'}
+2024-04-11 18:04:37
+/opt/conda/bin/python3 /opt/MitoZ/bin/findmitoscaf/filter_hmm-besthit-sim.py work71.hmmtblout.besthit.sim.filtered.fa work71.hmmtblout.besthit.sim work71.hmmtblout.besthit.sim.filtered
+
+2024-04-11 18:04:37
+/opt/conda/bin/python3 /opt/MitoZ/bin/assemble/filter_by_abundance.py 10  work71.hmmtblout.besthit.sim.filtered  /home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus/2nd_sequencing_run/fq_fp1_clmp_fp2/Alb/Sde-ABul_011-Ex1-cssl._MitoZ/tmp/Sde-ABul_011-Ex1-cssl..assembly/work71.scafSeq 
+
+All sequences are low abundance (<10X)
+CDS_found_lengths_list:  [0]
+quick mode got no result!

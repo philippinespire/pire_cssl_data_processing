@@ -1,0 +1,60 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C60751         733            no             Spratelloides delicatulus
+C59305         452            no             Spratelloides delicatulus
+C61229         2877           no             Spratelloides delicatulus
+C60967         889            no             Spratelloides delicatulus
+C53153         300            no             Spratelloides delicatulus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C53153         <1     286    286        -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C59305         <3     168    166        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C59305         168    237    70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C59305         236    307    72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C59305         306    378    73         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C60751         29     371    343        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C60751         357    431    75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C60751         432    600    169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C60751         590    >734   145        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C60967         <2     230    229        -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C60967         223    520    298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C60967         520    590    71         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C60967         588    885    298        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C61229         1      224    224        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C61229         224    293    70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C61229         1277   1347   71         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C61229         1346   1416   71         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C61229         1416   2557   1142       -          CDS    CYTB       cytochrome b                      1              
+C61229         2561   2629   69         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C61229         2629   >2878  250        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+
+
+Protein coding genes totally found: 10
+tRNA genes totally found:            9
+rRNA genes totally found:            1
+--------------------------------------
+Genes totally found:                20
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX1                                 1
+COX3                                 1
+ND1                                  1
+l-rRNA                               1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             2
+tRNA-Ser                             2
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!
