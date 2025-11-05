@@ -11,6 +11,7 @@
 
 enable_lmod
 module load container_env ddocent/2.7.8
+module load container_env vcflib
 export SINGULARITY_BIND=/home/e1garcia
 export PARALLEL_SHELL=/bin/bash
 
